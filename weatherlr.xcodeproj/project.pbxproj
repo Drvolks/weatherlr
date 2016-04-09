@@ -48,6 +48,7 @@
 		6E9F335A1CB7FCFE00A9D6A7 /* FavoriteCityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F33591CB7FCFE00A9D6A7 /* FavoriteCityHelper.swift */; };
 		6E9F335C1CB8011B00A9D6A7 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */; };
 		6E9F335E1CB8588D00A9D6A7 /* AlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */; };
+		6E9F33601CB942C700A9D6A7 /* WeatherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		6E9F33591CB7FCFE00A9D6A7 /* FavoriteCityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCityHelper.swift; sourceTree = "<group>"; };
 		6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
+		6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				6E2905371CB2D5550040EB8B /* Info.plist */,
 				6E9F32E41CB4005A00A9D6A7 /* Rss */,
 				6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */,
+				6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */,
 				6E9F32F61CB6C26C00A9D6A7 /* SettingsViewController.swift */,
 				6E9F334B1CB6F32E00A9D6A7 /* AddCityViewController.swift */,
 				6E9F32F41CB5AD3200A9D6A7 /* WeatherTableViewCell.swift */,
@@ -468,6 +471,7 @@
 				6E9F32F71CB6C26C00A9D6A7 /* SettingsViewController.swift in Sources */,
 				6E9F33581CB7FB0600A9D6A7 /* Constants.swift in Sources */,
 				6E9F32E61CB4009900A9D6A7 /* RssEntryToWeatherInformation.swift in Sources */,
+				6E9F33601CB942C700A9D6A7 /* WeatherHeaderCell.swift in Sources */,
 				6E9F32C21CB305BE00A9D6A7 /* WeatherEnums.swift in Sources */,
 				6E29052C1CB2D5550040EB8B /* AppDelegate.swift in Sources */,
 				6E9F32F51CB5AD3200A9D6A7 /* WeatherTableViewCell.swift in Sources */,

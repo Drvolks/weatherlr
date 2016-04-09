@@ -1,0 +1,155 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+  <!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+  <title>Montréal - Météo - Environnement Canada</title>
+  <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html" type="text/html"/>
+  <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-147_f.xml" type="application/atom+xml"/>
+  <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-147_e.xml" type="application/atom+xml"/>
+  <author>
+    <name>Environnement Canada</name>
+    <uri>http://www.meteo.gc.ca</uri>
+  </author>
+  <updated>2016-04-04T21:01:05Z</updated>
+  <id>tag:meteo.gc.ca,2013-04-16:20160404210105</id>
+  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+  <rights>Droit d'auteur 2016, Environnement Canada</rights>
+  <entry>
+    <title>Aucune veille ou alerte en vigueur, Montréal</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+    <updated>2016-04-02T20:30:00Z</updated>
+    <published>2016-04-02T20:30:00Z</published>
+    <category term="Veilles et avertissements"/>
+    <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_w1:20160402203000</id>
+  </entry>
+  <entry>
+    <title>Conditions actuelles: Partiellement nuageux, -3,5°C</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T21:00:00Z</updated>
+    <published>2016-04-04T21:00:00Z</published>
+    <category term="Conditions actuelles"/>
+    <summary type="html">&lt;b&gt;Enregistrées à:&lt;/b&gt; Aéroport int. de Montréal-Trudeau 17h00 HAE lundi 04 avril 2016 &lt;br/&gt;
+&lt;b&gt;Condition:&lt;/b&gt; Partiellement nuageux &lt;br/&gt;
+&lt;b&gt;Température:&lt;/b&gt; -3,5&amp;deg;C &lt;br/&gt;
+&lt;b&gt;Pression / Tendance:&lt;/b&gt; 101,9 kPa à la baisse&lt;br/&gt;
+&lt;b&gt;Visibilité:&lt;/b&gt; 48,3 km&lt;br/&gt;
+&lt;b&gt;Humidité:&lt;/b&gt; 30 %&lt;br/&gt;
+&lt;b&gt;Refroidissement éolien:&lt;/b&gt; -5 &lt;br/&gt;
+&lt;b&gt;Point de rosée:&lt;/b&gt; -18,8&amp;deg;C &lt;br/&gt;
+&lt;b&gt;Vent:&lt;/b&gt; NE 4 km/h&lt;br/&gt;
+&lt;b&gt;Cote air santé:&lt;/b&gt;  &lt;br/&gt;
+</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_cc:20160404210000</id>
+  </entry>
+  <entry>
+    <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 12.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Quelques nuages. Minimum moins 12. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc1:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Mardi: Ensoleillé. Maximum moins 2.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Ensoleillé. Vents devenant d'ouest à 20 km/h en après-midi. Maximum moins 2. Indice UV de 4 ou modéré. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc2:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Mardi soir et nuit: Dégagé. Minimum moins 8.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Dégagé. Ennuagement en fin de nuit. Vents d'ouest de 20 km/h devenant légers en soirée. Minimum moins 8. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc3:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Mercredi: Neige intermittente. Maximum plus 1.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Neige intermittente. Maximum plus 1. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc4:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Mercredi soir et nuit: Neige ou pluie. Minimum moins 1.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Neige ou pluie. Minimum moins 1. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc5:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Jeudi: Pluie intermittente. Maximum 11.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Pluie intermittente. Maximum 11. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc6:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Jeudi soir et nuit: Pluie. Minimum plus 4.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Pluie. Minimum plus 4. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc7:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Vendredi: Pluie. Maximum plus 4.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Pluie. Maximum plus 4. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc8:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Vendredi soir et nuit: Pluie intermittente ou neige. Minimum moins 5.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Pluie ou neige intermittente. Minimum moins 5. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc9:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Samedi: Possibilité d'averses de neige. Maximum plus 1. PdP 60%</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Maximum plus 1. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc10:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Samedi soir et nuit: Possibilité d'averses de neige. Minimum moins 7. PdP 30%</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 7. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc11:20160404194500</id>
+  </entry>
+  <entry>
+    <title>Dimanche: Ensoleillé. Maximum plus 5.</title>
+    <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-147_metric_f.html"/>
+    <updated>2016-04-04T19:45:00Z</updated>
+    <published>2016-04-04T19:45:00Z</published>
+    <category term="Prévisions météo"/>
+    <summary type="html">Ensoleillé. Maximum plus 5. Prévisions émises 15h45 HAE lundi 04 avril 2016</summary>
+    <id>tag:meteo.gc.ca,2013-04-16:qc-147_fc12:20160404194500</id>
+  </entry>
+</feed>

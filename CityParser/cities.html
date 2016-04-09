@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="fr" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="fr" dir="ltr">
+    <!--<![endif]--><head>
+        <meta charset="utf-8" />
+        <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+         wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="dcterms.creator" content="Environnement Canada" />
+        <meta name="dcterms.language" title="ISO639-2" content="fra" />
+        <title>Québec - Prévisions et conditions par endroits - Environnement Canada</title>
+        <meta name="dcterms.title" content="Québec - Prévisions et conditions par endroits" />
+        <meta name="description" content="Sélectionnez un lieu pour accéder à des renseignements météorologiques précis et détaillés" />
+        <meta name="dcterms.subject" title="scheme" content="prévisions météorologiques; alerte météorologique; climat; météorologie; conditions atmosphériques; données météorologiques" />
+        <meta name="dcterms.issued" title="W3CDTF" content="2013-04-16" />
+        <meta name="dcterms.modified" title="W3CDTF" content="2016-01-12" />
+        <!-- Meta data-->
+        <!--[if gte IE 9 | !IE ]><!-->
+        <link href="/template/gcweb/v4.0.18/assets/favicon.ico" rel="icon" type="image/x-icon" />
+        <link rel="stylesheet" href="/template/gcweb/v4.0.18/css/theme.min.css" />
+        <!--<![endif]-->
+        
+        <!--[if lt IE 9]>
+         <link href="/template/gcweb/v4.0.18/assets/favicon.ico" rel="shortcut icon" />
+         
+         <link rel="stylesheet" href="/template/gcweb/v4.0.18/css/ie8-wet-boew.min.css" />
+         <link rel="stylesheet" href="/template/wxo/css/wxo-ie8.css"/>
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+         <script src="/template/gcweb/v4.0.18/js/ie8-wet-boew.min.js"></script>
+         <![endif]-->
+        <!--[if lte IE 9]>
+         
+         <![endif]-->
+        
+        <noscript><link rel="stylesheet" href="/template/gcweb/v4.0.18/css/noscript.min.css" /></noscript>
+        <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
+        <script>dataLayer1 = [];</script>
+        <!-- End Google Tag Manager -->
+        <link rel="stylesheet" href="/cacheable/css/city/jquery-ui-1.10.3.custom.min.css" />
+        <link rel="stylesheet" href="/template/wxo/css/wxo.css" />
+    </head>
+    <body vocab="http://schema.org/" typeof="WebPage">
+        <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
+        <noscript><iframe title="Google Tag Manager" src="//www.googletagmanager.com/ns.html?id=GTM-TLGQ9K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer1'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer1','GTM-TLGQ9K');</script>
+        <!-- End Google Tag Manager -->
+        
+        <ul id="wb-tphp">
+            <li class="wb-slc">
+                <a class="wb-sl" href="#wb-cont">Passer au contenu principal</a>
+            </li>
+            <li class="wb-slc visible-sm visible-md visible-lg">
+                <a class="wb-sl" href="#wb-info">Passer à «&#160;À propos de ce site&#160;»</a>
+            </li>
+        </ul>
+        <header role="banner">
+            <div id="wb-bnr" class="container">
+                
+                <section id="wb-lng" class="visible-md visible-lg text-right">
+                    <h2 class="wb-inv">Sélection de la langue</h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-inline margin-bottom-none">
+                                <li><a lang="en" href="/include/lang.php">English</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                
+                <div class="row">
+                    <div class="brand col-xs-8 col-sm-9 col-md-6">
+                        <a href="http://www.canada.ca/fr/index.html"><object type="image/svg+xml" tabindex="-1" data="/template/gcweb/v4.0.18/assets/sig-blk-fr.svg"></object><span class="wb-inv"> Gouvernement du Canada</span></a>
+                    </div>
+                    
+                    <section class="wb-mb-links col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn" >
+                        <h2>Recherche et menus</h2>
+                        <ul class="list-inline text-right chvrn">
+                            <li><a href="#mb-pnl" title="Recherche et menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Recherche et menus</span></span></span></a></li>
+                        </ul>
+                        <div id="mb-pnl"></div>
+                    </section>
+                    <section id="wb-srch" class="col-xs-6 text-right visible-md visible-lg">
+                        <h2>Recherche</h2>
+                        <form action="http://recherche-search.gc.ca/rGs/s_r?#wb-land" method="get" name="cse-search-box" role="search" class="form-inline">
+                            <div class="form-group">
+                                <label for="wb-srch-q" class="wb-inv">Recherchez le site Web</label>
+                                <input name="cdn" value="canada" type="hidden"/>
+                                <input name="st" value="s" type="hidden"/>
+                                <input name="num" value="10" type="hidden"/>
+                                <input name="langs" value="fra" type="hidden"/>
+                                <input name="st1rt" value="0" type="hidden">
+                                    <input name="s5bm3ts21rch" value="x" type="hidden"/>
+                                    <input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Rechercher dans Canada.ca" />
+                                    <datalist id="wb-srch-q-ac">
+                                        <!--[if lte IE 9]><select><![endif]-->
+                                        <!--[if lte IE 9]></select><![endif]-->
+                                    </datalist>
+                                    </div>
+                            <div class="form-group submit">
+                                <button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Recherche</span></button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+            <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="/data/pco-fetch/sitemenu-fr.html" typeof="SiteNavigationElement">
+                <div class="container nvbar">
+                    <h2>Menu des sujets</h2>
+                    <div class="row">
+                        <ul class="list-inline menu">
+                            <li><a href="http://www.edsc.gc.ca/fr/emplois/index.page">Emplois</a></li>
+                            <li><a href="http://www.cic.gc.ca/francais/index.asp">Immigration</a></li>
+                            <li><a href="http://voyage.gc.ca">Voyage</a></li>
+                            <li><a href="http://www.canada.ca/fr/services/entreprises/index.html">Entreprises</a></li>
+                            <li><a href="http://www.canada.ca/fr/services/prestations/index.html">Prestations</a></li>
+                            <li><a href="http://canadiensensante.gc.ca/index-fra.php">Santé</a></li>
+                            <li><a href="http://www.canada.ca/fr/services/impots/index.html">Impôts</a></li>
+                            <li><a href="http://www.canada.ca/fr/services/index.html">Autres services</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <nav role="navigation" id="wb-bc" class="" property="breadcrumb">
+                <h2>Vous êtes ici :</h2>
+                <div class="container">
+                    <div class="row">
+                        <ol class="breadcrumb">
+                            <li><a href="http://www.canada.ca/fr/index.html">Accueil</a></li><li><a href="http://www.canada.ca/fr/services/environnement/index.html">Environnement et ressources naturelles</a></li>
+                            <li><a href="/index_f.html">Information météo</a></li>
+                            <li><a href="/mainmenu/weather_menu_f.html">Météo</a></li>
+                            <li><a href="/canada_f.html">Prévisions locales</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="container hidden-print">
+            <a href="#weather-topics" class="pull-right">Sujets m&eacute;t&eacute;orologiques</a>
+            <span id="wxo-divider" class="pull-right">|&nbsp;</span>
+            <form class="mrgn-rght-sm pull-right" role="search" id="cityjump" method="GET" action="/city/jump_f.html">
+                <label id="search-label" for="city" accesskey="g" class="pull-right">Acc&eacute;der &agrave; une ville</label>
+                <input id="city" type="text" name="city" pattern=".{2,50}" title="S&rsquo;il vous pla&icirc;t taper au moins deux caract&egrave;res (Au maximum 50)" required data-h5-errorid="invalid-city"/>
+                <input type="hidden" name="lang" value="f"/>
+                <input type="hidden" name="unit" value=""/>
+                <input type="submit" id="jump" class="wb-invisible" value="Aller"/>
+                <noscript><input type="submit" id="jumpnojs" value="Aller" formnovalidate/></noscript>
+                <div id="invalid-city"></div>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+        <main role="main" property="mainContentOfPage" class="container">
+            
+            <h1 id="wb-cont" property="name">Québec - Prévisions et conditions par endroits</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    
+                    <img src="images/qc_f.jpg" alt="Québec" usemap="#QC" class="thumbnail center-block img-responsive wxo-pddng-sm"/><map id="QC" name="QC" title="QC">
+                        <area href="/city/pages/qc-160_metric_f.html" coords="149,252,210,278" shape="rect" alt="Baie-Comeau" title="Baie-Comeau" />
+                        <area href="/city/pages/qc-163_metric_f.html" coords="313,152,405,178" shape="rect" alt="Blanc-Sablon" title="Blanc-Sablon" />
+                        <area href="/city/pages/qc-120_metric_f.html" coords="211,260,286,277" shape="rect" alt="Cap Chat" title="Cap Chat" />
+                        <area href="/city/pages/qc-121_metric_f.html" coords="25,262,129,284" shape="rect" alt="Chibougamau" title="Chibougamau" />
+                        <area href="/city/pages/qc-101_metric_f.html" coords="235,245,301,261" shape="rect" alt="Gaspé" title="Gaspé" />
+                        <area href="/city/pages/qc-131_metric_f.html" coords="34,97,101,125" shape="rect" alt="Inukjuak" title="Inukjuak" />
+                        <area href="/city/pages/qc-150_metric_f.html" coords="136,79,204,111" shape="rect" alt="Kuujjuaq" title="Kuujjuaq" />
+                        <area href="/city/pages/qc-105_metric_f.html" coords="40,166,143,187" shape="rect" alt="Kuujjuarapik" title="Kuujjuarapik" />
+                        <area href="/city/pages/qc-154_metric_f.html" coords="91,306,165,328" shape="rect" alt="La Tuque" title="La Tuque" />
+                        <area href="/city/pages/qc-102_metric_f.html" coords="47,336,126,358" shape="rect" alt="Maniwaki" title="Maniwaki" />
+                        <area href="/city/pages/qc-147_metric_f.html" coords="90,358,162,379" shape="rect" alt="Montréal" title="Montréal" />
+                        <area href="/city/pages/qc-133_metric_f.html" coords="171,319,254,337" shape="rect" alt="Québec" title="Québec" />
+                        <area href="/city/pages/qc-108_metric_f.html" coords="190,290,307,313" shape="rect" alt="Rivière-du-Loup" title="Rivière-du-Loup" />
+                        <area href="/city/pages/qc-166_metric_f.html" coords="103,284,181,307" shape="rect" alt="Saguenay" title="Saguenay" />
+                        <area href="/city/pages/qc-128_metric_f.html" coords="22,21,79,50" shape="rect" alt="Salluit" title="Salluit" />
+                        <area href="/city/pages/qc-141_metric_f.html" coords="154,223,234,247" shape="rect" alt="Sept-Îles" title="Sept-Îles" />
+                        <area href="/city/pages/qc-136_metric_f.html" coords="169,353,265,372" shape="rect" alt="Sherbrooke" title="Sherbrooke" />
+                        <area href="/city/pages/qc-130_metric_f.html" coords="154,335,263,353" shape="rect" alt="Trois-Rivières" title="Trois-Rivières" />
+                        <area href="/city/pages/qc-122_metric_f.html" coords="51,140,125,159" shape="rect" alt="Umiujaq" title="Umiujaq" />
+                        <area href="/city/pages/qc-149_metric_f.html" coords="28,308,89,334" shape="rect" alt="Val-d'Or" title="Val-d'Or" />
+                    </map>
+                    
+                </div>
+                <aside class="col-md-4 hidden-xs hidden-sm">
+                    <div class="well">
+                        <h2 class="mrgn-tp-0">Liens Météo</h2>
+                        <ul class="lst-spcd">
+                            <li><a href="/canada_f.html">Météo au Canada</a></li>
+                            <li><a href="/warnings/index_f.html">Alertes météo publiques - Canada</a></li>
+                            <li><a href="/radar/index_f.html">Radar - Canada</a></li>
+                            <li><a href="/satellite/index_f.html">Satellite - Canada</a></li>
+                            <li><a href="/saisons/index_f.html">Prévisions saisonnières</a></li>
+                            <li><a href="/mainmenu/airquality_menu_f.html">Qualité de l'air</a></li>
+                            <li><a href="/marine/index_f.html">Maritime - Canada</a></li>
+                            <li><a href="http://ec.gc.ca/rhc-wsc/default.asp?lang=Fr&amp;n=4EED50F1-1 ">Niveau d'eau et débit</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            <div>
+                <details id="gps-jq">
+                    <summary>Utiliser emplacement actuel</summary>
+                    <div id="GPSResults"></div>
+                </details>
+            </div>
+            
+            <span class="hidden-xs">ou choisissez une province ou un territoire :</span>
+            <ul class="nav nav-pills hidden-xs">
+                <li><a title="Alberta" href="/forecast/canada/index_f.html?id=AB"><span class="wb-inv">Alberta</span>AB</a></li>
+                <li><a title="Colombie-Britannique" href="/forecast/canada/index_f.html?id=BC"><span class="wb-inv">Colombie-Britannique</span>BC</a></li>
+                <li><a title="Île-du-Prince-Édouard" href="/forecast/canada/index_f.html?id=PE"><span class="wb-inv">Île-du-Prince-Édouard</span>PE</a></li>
+                <li><a title="Manitoba" href="/forecast/canada/index_f.html?id=MB"><span class="wb-inv">Manitoba</span>MB</a></li>
+                <li><a title="Nouveau-Brunswick" href="/forecast/canada/index_f.html?id=NB"><span class="wb-inv">Nouveau-Brunswick</span>NB</a></li>
+                <li><a title="Nouvelle-Écosse" href="/forecast/canada/index_f.html?id=NS"><span class="wb-inv">Nouvelle-Écosse</span>NS</a></li>
+                <li><a title="Nunavut" href="/forecast/canada/index_f.html?id=NU"><span class="wb-inv">Nunavut</span>NU</a></li>
+                <li><a title="Ontario" href="/forecast/canada/index_f.html?id=ON"><span class="wb-inv">Ontario</span>ON</a></li>
+                <li><a title="Québec" href="/forecast/canada/index_f.html?id=QC"><span class="wb-inv">Québec</span>QC</a></li>
+                <li><a title="Saskatchewan" href="/forecast/canada/index_f.html?id=SK"><span class="wb-inv">Saskatchewan</span>SK</a></li>
+                <li><a title="Terre-Neuve et Labrador" href="/forecast/canada/index_f.html?id=NL"><span class="wb-inv">Terre-Neuve et Labrador</span>NL</a></li>
+                <li><a title="Territoires du Nord-Ouest" href="/forecast/canada/index_f.html?id=NT"><span class="wb-inv">Territoires du Nord-Ouest</span>NT</a></li>
+                <li><a title="Yukon" href="/forecast/canada/index_f.html?id=YT"><span class="wb-inv">Yukon</span>YT</a></li>
+            </ul>
+            <div class="visible-xs">
+                <details>
+                    <summary>Régions de prévisions</summary>
+                    <ul class="list-unstyled wxo-btn">
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=AB">Alberta</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=BC">Colombie-Britannique</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=PE">Île-du-Prince-Édouard</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=MB">Manitoba</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=NB">Nouveau-Brunswick</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=NS">Nouvelle-Écosse</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=NU">Nunavut</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=ON">Ontario</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=QC">Québec</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=SK">Saskatchewan</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=NL">Terre-Neuve et Labrador</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=NT">Territoires du Nord-Ouest</a></li>
+                        <li><a class="btn btn-default btn-sm btn-block" role="button" href="/forecast/canada/index_f.html?id=YT">Yukon</a></li>
+                    </ul></details></div>
+            <div class="visible-xs">
+                <details>
+                    <summary>Québec - Localité</summary>
+                    <nav role="navigation">
+                        <h2 class="wb-inv">Les villes</h2>
+                        <ul class="list-inline">
+                            <li><a href="#A" role="button" class="btn btn-default btn-xs">A - D</a></li>
+                            <li><a href="#E" role="button" class="btn btn-default btn-xs">E - H</a></li>
+                            <li><a href="#I" role="button" class="btn btn-default btn-xs">I - M</a></li>
+                            <li><a href="#N" role="button" class="btn btn-default btn-xs">N - Q</a></li>
+                            <li><a href="#R" role="button" class="btn btn-default btn-xs">R - S</a></li>
+                            <li><a href="#T" role="button" class="btn btn-default btn-xs">T - Y</a></li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <div class="well"><div class="row">
+                            <section><h2 class="mrgn-tp-0"><a id="A">A-D</a></h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="/city/pages/qc-36_metric_f.html">Akulivik</a></li>
+                                    <li><a href="/city/pages/qc-144_metric_f.html">Alma</a></li>
+                                    <li><a href="/city/pages/qc-168_metric_f.html">Amos</a></li>
+                                    <li><a href="/city/pages/qc-146_metric_f.html">Amqui</a></li>
+                                    <li><a href="/city/pages/qc-38_metric_f.html">Asbestos</a></li>
+                                    <li><a href="/city/pages/qc-117_metric_f.html">Aupaluk</a></li>
+                                    <li><a href="/city/pages/qc-161_metric_f.html">Bagotville</a></li>
+                                    <li><a href="/city/pages/qc-160_metric_f.html">Baie-Comeau</a></li>
+                                    <li><a href="/city/pages/qc-69_metric_f.html">Baie-James</a></li>
+                                    <li><a href="/city/pages/qc-165_metric_f.html">Baie-Saint-Paul</a></li>
+                                    <li><a href="/city/pages/qc-48_metric_f.html">Beauceville</a></li>
+                                    <li><a href="/city/pages/qc-49_metric_f.html">Beauharnois</a></li>
+                                    <li><a href="/city/pages/qc-50_metric_f.html">Bécancour</a></li>
+                                    <li><a href="/city/pages/qc-51_metric_f.html">Bernières</a></li>
+                                    <li><a href="/city/pages/qc-25_metric_f.html">Berthierville</a></li>
+                                    <li><a href="/city/pages/qc-52_metric_f.html">Blainville</a></li>
+                                    <li><a href="/city/pages/qc-163_metric_f.html">Blanc-Sablon</a></li>
+                                    <li><a href="/city/pages/qc-53_metric_f.html">Boisbriand</a></li>
+                                    <li><a href="/city/pages/qc-54_metric_f.html">Bonaventure</a></li>
+                                    <li><a href="/city/pages/qc-55_metric_f.html">Candiac</a></li>
+                                    <li><a href="/city/pages/qc-120_metric_f.html">Cap Chat</a></li>
+                                    <li><a href="/city/pages/qc-56_metric_f.html">Carignan</a></li>
+                                    <li><a href="/city/pages/qc-57_metric_f.html">Carleton-sur-Mer</a></li>
+                                    <li><a href="/city/pages/qc-58_metric_f.html">Chambly</a></li>
+                                    <li><a href="/city/pages/qc-d4_metric_f.html">Chandler</a></li>
+                                    <li><a href="/city/pages/qc-119_metric_f.html">Charlevoix</a></li>
+                                    <li><a href="/city/pages/qc-59_metric_f.html">Chelsea</a></li>
+                                    <li><a href="/city/pages/qc-152_metric_f.html">Chevery</a></li>
+                                    <li><a href="/city/pages/qc-121_metric_f.html">Chibougamau</a></li>
+                                    <li><a href="/city/pages/qc-60_metric_f.html">Coaticook</a></li>
+                                    <li><a href="/city/pages/qc-46_metric_f.html">Contrecoeur</a></li>
+                                    <li><a href="/city/pages/qc-61_metric_f.html">Cowansville</a></li>
+                                    <li><a href="/city/pages/qc-62_metric_f.html">Delson</a></li>
+                                    <li><a href="/city/pages/qc-63_metric_f.html">Deux-Montagnes</a></li>
+                                    <li><a href="/city/pages/qc-64_metric_f.html">Dolbeau-Mistassini</a></li>
+                                    <li><a href="/city/pages/qc-65_metric_f.html">Donnacona</a></li>
+                                    <li><a href="/city/pages/qc-2_metric_f.html">Drummondville</a></li>
+                                </ul></section>
+                        </div></div>
+                        <div class="well"><div class="row">
+                            <section><h2 class="mrgn-tp-0"><a id="E">E-H</a></h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="/city/pages/qc-26_metric_f.html">Escoumins</a></li>
+                                    <li><a href="/city/pages/qc-140_metric_f.html">Farnham</a></li>
+                                    <li><a href="/city/pages/qc-29_metric_f.html">Fermont</a></li>
+                                    <li><a href="/city/pages/qc-27_metric_f.html">Forestville</a></li>
+                                    <li><a href="/city/pages/qc-67_metric_f.html">Forillon</a></li>
+                                    <li><a href="/city/pages/qc-95_metric_f.html">Forillon ( Parc national)</a></li>
+                                    <li><a href="/city/pages/qc-101_metric_f.html">Gaspé</a></li>
+                                    <li><a href="/city/pages/qc-94_metric_f.html">Gaspésie (Parc national)</a></li>
+                                    <li><a href="/city/pages/qc-126_metric_f.html">Gatineau</a></li>
+                                    <li><a href="/city/pages/qc-a1_metric_f.html">Gouin (Réservoir)</a></li>
+                                    <li><a href="/city/pages/qc-5_metric_f.html">Granby</a></li>
+                                    <li><a href="/city/pages/qc-169_metric_f.html">Grande-Vallée</a></li>
+                                    <li><a href="/city/pages/qc-104_metric_f.html">Havre St-Pierre</a></li>
+                                    <li><a href="/city/pages/qc-68_metric_f.html">Huntingdon</a></li>
+                                </ul></section>
+                        </div></div>
+                        <div class="well"><div class="row">
+                            <section><h2 class="mrgn-tp-0"><a id="I">I-M</a></h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="/city/pages/qc-103_metric_f.html">Îles-de-la-Madeleine</a></li>
+                                    <li><a href="/city/pages/qc-131_metric_f.html">Inukjuak</a></li>
+                                    <li><a href="/city/pages/qc-112_metric_f.html">Ivujivik</a></li>
+                                    <li><a href="/city/pages/qc-137_metric_f.html">Joliette</a></li>
+                                    <li><a href="/city/pages/qc-70_metric_f.html">Kamouraska</a></li>
+                                    <li><a href="/city/pages/qc-118_metric_f.html">Kangiqsualujjuaq</a></li>
+                                    <li><a href="/city/pages/qc-155_metric_f.html">Kangiqsujuaq</a></li>
+                                    <li><a href="/city/pages/qc-159_metric_f.html">Kangirsuk</a></li>
+                                    <li><a href="/city/pages/qc-150_metric_f.html">Kuujjuaq</a></li>
+                                    <li><a href="/city/pages/qc-105_metric_f.html">Kuujjuarapik</a></li>
+                                    <li><a href="/city/pages/qc-156_metric_f.html">L'Assomption</a></li>
+                                    <li><a href="/city/pages/qc-77_metric_f.html">L'Islet</a></li>
+                                    <li><a href="/city/pages/qc-158_metric_f.html">La Grande Rivière</a></li>
+                                    <li><a href="/city/pages/qc-100_metric_f.html">La Grande-Quatre</a></li>
+                                    <li><a href="/city/pages/qc-11_metric_f.html">La Malbaie</a></li>
+                                    <li><a href="/city/pages/qc-71_metric_f.html">La Prairie</a></li>
+                                    <li><a href="/city/pages/qc-45_metric_f.html">La Sarre</a></li>
+                                    <li><a href="/city/pages/qc-154_metric_f.html">La Tuque</a></li>
+                                    <li><a href="/city/pages/qc-30_metric_f.html">La Vérendrye (Réserve faunique)</a></li>
+                                    <li><a href="/city/pages/qc-99_metric_f.html">Lac Raglan</a></li>
+                                    <li><a href="/city/pages/qc-72_metric_f.html">Lac-Mégantic</a></li>
+                                    <li><a href="/city/pages/qc-73_metric_f.html">Lac-Saint-Jean</a></li>
+                                    <li><a href="/city/pages/qc-14_metric_f.html">Lachute</a></li>
+                                    <li><a href="/city/pages/qc-74_metric_f.html">Lanaudière</a></li>
+                                    <li><a href="/city/pages/qc-113_metric_f.html">Laurentides (Réserve faunique)</a></li>
+                                    <li><a href="/city/pages/qc-76_metric_f.html">Laval</a></li>
+                                    <li><a href="/city/pages/qc-d3_metric_f.html">Le Gardeur</a></li>
+                                    <li><a href="/city/pages/qc-78_metric_f.html">Lévis</a></li>
+                                    <li><a href="/city/pages/qc-109_metric_f.html">Longueuil</a></li>
+                                    <li><a href="/city/pages/qc-81_metric_f.html">Lorraine</a></li>
+                                    <li><a href="/city/pages/qc-d2_metric_f.html">Louiseville</a></li>
+                                    <li><a href="/city/pages/qc-83_metric_f.html">Magog</a></li>
+                                    <li><a href="/city/pages/qc-153_metric_f.html">Manicouagan</a></li>
+                                    <li><a href="/city/pages/qc-102_metric_f.html">Maniwaki</a></li>
+                                    <li><a href="/city/pages/qc-84_metric_f.html">Marieville</a></li>
+                                    <li><a href="/city/pages/qc-85_metric_f.html">Mascouche</a></li>
+                                    <li><a href="/city/pages/qc-129_metric_f.html">Matagami</a></li>
+                                    <li><a href="/city/pages/qc-15_metric_f.html">Matane</a></li>
+                                    <li><a href="/city/pages/qc-151_metric_f.html">Matapédia</a></li>
+                                    <li><a href="/city/pages/qc-89_metric_f.html">Mauricie</a></li>
+                                    <li><a href="/city/pages/qc-90_metric_f.html">Mingan</a></li>
+                                    <li><a href="/city/pages/qc-123_metric_f.html">Mirabel</a></li>
+                                    <li><a href="/city/pages/qc-92_metric_f.html">Mont Saint-Hilaire</a></li>
+                                    <li><a href="/city/pages/qc-127_metric_f.html">Mont-Joli</a></li>
+                                    <li><a href="/city/pages/qc-47_metric_f.html">Mont-Laurier</a></li>
+                                    <li><a href="/city/pages/qc-167_metric_f.html">Mont-Tremblant</a></li>
+                                    <li><a href="/city/pages/qc-124_metric_f.html">Montmagny</a></li>
+                                    <li><a href="/city/pages/qc-147_metric_f.html">Montréal</a></li>
+                                    <li><a href="/city/pages/qc-16_metric_f.html">Murdochville</a></li>
+                                </ul></section>
+                        </div></div>
+                        <div class="well"><div class="row">
+                            <section><h2 class="mrgn-tp-0"><a id="N">N-Q</a></h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="/city/pages/qc-125_metric_f.html">Natashquan</a></li>
+                                    <li><a href="/city/pages/qc-111_metric_f.html">New Carlisle</a></li>
+                                    <li><a href="/city/pages/qc-110_metric_f.html">Nicolet</a></li>
+                                    <li><a href="/city/pages/qc-93_metric_f.html">Otterburn Park</a></li>
+                                    <li><a href="/city/pages/qc-17_metric_f.html">Papineau</a></li>
+                                    <li><a href="/city/pages/qc-114_metric_f.html">Parent</a></li>
+                                    <li><a href="/city/pages/qc-18_metric_f.html">Percé</a></li>
+                                    <li><a href="/city/pages/qc-96_metric_f.html">Pincourt</a></li>
+                                    <li><a href="/city/pages/qc-20_metric_f.html">Pointe-à-la-Croix</a></li>
+                                    <li><a href="/city/pages/qc-19_metric_f.html">Pontiac</a></li>
+                                    <li><a href="/city/pages/qc-97_metric_f.html">Port-Cartier</a></li>
+                                    <li><a href="/city/pages/qc-142_metric_f.html">Port-Menier</a></li>
+                                    <li><a href="/city/pages/qc-98_metric_f.html">Prévost</a></li>
+                                    <li><a href="/city/pages/qc-40_metric_f.html">Puvirnituq</a></li>
+                                    <li><a href="/city/pages/qc-106_metric_f.html">Quaqtaq</a></li>
+                                    <li><a href="/city/pages/qc-133_metric_f.html">Québec</a></li>
+                                </ul></section>
+                        </div></div>
+                        <div class="well"><div class="row">
+                            <section><h2 class="mrgn-tp-0"><a id="R">R-S</a></h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="/city/pages/qc-a0_metric_f.html">Repentigny</a></li>
+                                    <li><a href="/city/pages/qc-21_metric_f.html">Richelieu</a></li>
+                                    <li><a href="/city/pages/qc-a2_metric_f.html">Rigaud</a></li>
+                                    <li><a href="/city/pages/qc-138_metric_f.html">Rimouski</a></li>
+                                    <li><a href="/city/pages/qc-108_metric_f.html">Rivière-du-Loup</a></li>
+                                    <li><a href="/city/pages/qc-134_metric_f.html">Roberval</a></li>
+                                    <li><a href="/city/pages/qc-a3_metric_f.html">Rosemère</a></li>
+                                    <li><a href="/city/pages/qc-148_metric_f.html">Rouyn-Noranda</a></li>
+                                    <li><a href="/city/pages/qc-166_metric_f.html">Saguenay</a></li>
+                                    <li><a href="/city/pages/qc-a5_metric_f.html">Saint-Amable</a></li>
+                                    <li><a href="/city/pages/qc-a6_metric_f.html">Saint-Basile Le Grand</a></li>
+                                    <li><a href="/city/pages/qc-a7_metric_f.html">Saint-Constant</a></li>
+                                    <li><a href="/city/pages/qc-b4_metric_f.html">Saint-Eustache</a></li>
+                                    <li><a href="/city/pages/qc-b5_metric_f.html">Saint-Félicien</a></li>
+                                    <li><a href="/city/pages/qc-b6_metric_f.html">Saint-Georges</a></li>
+                                    <li><a href="/city/pages/qc-22_metric_f.html">Saint-Hyacinthe</a></li>
+                                    <li><a href="/city/pages/qc-28_metric_f.html">Saint-Jean-sur-Richelieu</a></li>
+                                    <li><a href="/city/pages/qc-13_metric_f.html">Saint-Jérôme</a></li>
+                                    <li><a href="/city/pages/qc-b7_metric_f.html">Saint-Lazare</a></li>
+                                    <li><a href="/city/pages/qc-b8_metric_f.html">Saint-Lin-Laurentides</a></li>
+                                    <li><a href="/city/pages/qc-b9_metric_f.html">Saint-Luc</a></li>
+                                    <li><a href="/city/pages/qc-c0_metric_f.html">Saint-Michel-des-Saints</a></li>
+                                    <li><a href="/city/pages/qc-c1_metric_f.html">Saint-Nicéphore</a></li>
+                                    <li><a href="/city/pages/qc-c2_metric_f.html">Saint-Rémi</a></li>
+                                    <li><a href="/city/pages/qc-c3_metric_f.html">Saint-Sauveur</a></li>
+                                    <li><a href="/city/pages/qc-c4_metric_f.html">Saint-Timothée</a></li>
+                                    <li><a href="/city/pages/qc-33_metric_f.html">Sainte-Agathe</a></li>
+                                    <li><a href="/city/pages/qc-a8_metric_f.html">Sainte-Anne-Des-Monts</a></li>
+                                    <li><a href="/city/pages/qc-a9_metric_f.html">Sainte-Anne-Des-Plaines</a></li>
+                                    <li><a href="/city/pages/qc-b0_metric_f.html">Sainte-Catherine</a></li>
+                                    <li><a href="/city/pages/qc-b1_metric_f.html">Sainte-Julie</a></li>
+                                    <li><a href="/city/pages/qc-b2_metric_f.html">Sainte-Sophie</a></li>
+                                    <li><a href="/city/pages/qc-b3_metric_f.html">Sainte-Thérèse</a></li>
+                                    <li><a href="/city/pages/qc-143_metric_f.html">Salaberry-de-Valleyfield</a></li>
+                                    <li><a href="/city/pages/qc-128_metric_f.html">Salluit</a></li>
+                                    <li><a href="/city/pages/qc-115_metric_f.html">Schefferville</a></li>
+                                    <li><a href="/city/pages/qc-141_metric_f.html">Sept-Îles</a></li>
+                                    <li><a href="/city/pages/qc-132_metric_f.html">Shawinigan</a></li>
+                                    <li><a href="/city/pages/qc-136_metric_f.html">Sherbrooke</a></li>
+                                    <li><a href="/city/pages/qc-c6_metric_f.html">Sorel-Tracy</a></li>
+                                    <li><a href="/city/pages/qc-135_metric_f.html">Sutton</a></li>
+                                </ul></section>
+                        </div></div>
+                        <div class="well"><div class="row">
+                            <section><h2 class="mrgn-tp-0"><a id="T">T-Y</a></h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="/city/pages/qc-107_metric_f.html">Tadoussac</a></li>
+                                    <li><a href="/city/pages/qc-145_metric_f.html">Tasiujaq</a></li>
+                                    <li><a href="/city/pages/qc-139_metric_f.html">Témiscamingue</a></li>
+                                    <li><a href="/city/pages/qc-35_metric_f.html">Témiscouata</a></li>
+                                    <li><a href="/city/pages/qc-c7_metric_f.html">Terrebonne</a></li>
+                                    <li><a href="/city/pages/qc-c8_metric_f.html">Thetford Mines</a></li>
+                                    <li><a href="/city/pages/qc-c9_metric_f.html">Tracy</a></li>
+                                    <li><a href="/city/pages/qc-24_metric_f.html">Trois-Pistoles</a></li>
+                                    <li><a href="/city/pages/qc-130_metric_f.html">Trois-Rivières</a></li>
+                                    <li><a href="/city/pages/qc-122_metric_f.html">Umiujaq</a></li>
+                                    <li><a href="/city/pages/qc-149_metric_f.html">Val-d'Or</a></li>
+                                    <li><a href="/city/pages/qc-42_metric_f.html">Val-des-Monts</a></li>
+                                    <li><a href="/city/pages/qc-d0_metric_f.html">Vallée de la Matapédia</a></li>
+                                    <li><a href="/city/pages/qc-41_metric_f.html">Vanier</a></li>
+                                    <li><a href="/city/pages/qc-162_metric_f.html">Varennes</a></li>
+                                    <li><a href="/city/pages/qc-66_metric_f.html">Vaudreuil-Dorion</a></li>
+                                    <li><a href="/city/pages/qc-157_metric_f.html">Victoriaville</a></li>
+                                    <li><a href="/city/pages/qc-116_metric_f.html">Waskaganish</a></li>
+                                </ul></section>
+                        </div></div>
+                    </div>
+                </details>
+                <ul class="list-unstyled mrgn-tp-sm"><li><a class="btn btn-default btn-sm btn-block" role="button" href="/provincialsummary_table/index_f.html?prov=qc"><p class="text-left mrgn-lft-md mrgn-bttm-0">Sommaire provincial</p></a></li>
+                </ul>
+            </div>
+            
+            <div class="hidden-xs">
+                <p><a href="/provincialsummary_table/index_f.html?prov=qc">[Sommaire provincial]</a>&nbsp;</p>
+                <div class="well"><div class="row">
+                    <ul class="list-unstyled col-sm-4">
+                        <li><a href="/city/pages/qc-36_metric_f.html">Akulivik</a></li>
+                        <li><a href="/city/pages/qc-144_metric_f.html">Alma</a></li>
+                        <li><a href="/city/pages/qc-168_metric_f.html">Amos</a></li>
+                        <li><a href="/city/pages/qc-146_metric_f.html">Amqui</a></li>
+                        <li><a href="/city/pages/qc-38_metric_f.html">Asbestos</a></li>
+                        <li><a href="/city/pages/qc-117_metric_f.html">Aupaluk</a></li>
+                        <li><a href="/city/pages/qc-161_metric_f.html">Bagotville</a></li>
+                        <li><a href="/city/pages/qc-160_metric_f.html">Baie-Comeau</a></li>
+                        <li><a href="/city/pages/qc-69_metric_f.html">Baie-James</a></li>
+                        <li><a href="/city/pages/qc-165_metric_f.html">Baie-Saint-Paul</a></li>
+                        <li><a href="/city/pages/qc-48_metric_f.html">Beauceville</a></li>
+                        <li><a href="/city/pages/qc-49_metric_f.html">Beauharnois</a></li>
+                        <li><a href="/city/pages/qc-50_metric_f.html">Bécancour</a></li>
+                        <li><a href="/city/pages/qc-51_metric_f.html">Bernières</a></li>
+                        <li><a href="/city/pages/qc-25_metric_f.html">Berthierville</a></li>
+                        <li><a href="/city/pages/qc-52_metric_f.html">Blainville</a></li>
+                        <li><a href="/city/pages/qc-163_metric_f.html">Blanc-Sablon</a></li>
+                        <li><a href="/city/pages/qc-53_metric_f.html">Boisbriand</a></li>
+                        <li><a href="/city/pages/qc-54_metric_f.html">Bonaventure</a></li>
+                        <li><a href="/city/pages/qc-55_metric_f.html">Candiac</a></li>
+                        <li><a href="/city/pages/qc-120_metric_f.html">Cap Chat</a></li>
+                        <li><a href="/city/pages/qc-56_metric_f.html">Carignan</a></li>
+                        <li><a href="/city/pages/qc-57_metric_f.html">Carleton-sur-Mer</a></li>
+                        <li><a href="/city/pages/qc-58_metric_f.html">Chambly</a></li>
+                        <li><a href="/city/pages/qc-d4_metric_f.html">Chandler</a></li>
+                        <li><a href="/city/pages/qc-119_metric_f.html">Charlevoix</a></li>
+                        <li><a href="/city/pages/qc-59_metric_f.html">Chelsea</a></li>
+                        <li><a href="/city/pages/qc-152_metric_f.html">Chevery</a></li>
+                        <li><a href="/city/pages/qc-121_metric_f.html">Chibougamau</a></li>
+                        <li><a href="/city/pages/qc-60_metric_f.html">Coaticook</a></li>
+                        <li><a href="/city/pages/qc-46_metric_f.html">Contrecoeur</a></li>
+                        <li><a href="/city/pages/qc-61_metric_f.html">Cowansville</a></li>
+                        <li><a href="/city/pages/qc-62_metric_f.html">Delson</a></li>
+                        <li><a href="/city/pages/qc-63_metric_f.html">Deux-Montagnes</a></li>
+                        <li><a href="/city/pages/qc-64_metric_f.html">Dolbeau-Mistassini</a></li>
+                        <li><a href="/city/pages/qc-65_metric_f.html">Donnacona</a></li>
+                        <li><a href="/city/pages/qc-2_metric_f.html">Drummondville</a></li>
+                        <li><a href="/city/pages/qc-26_metric_f.html">Escoumins</a></li>
+                        <li><a href="/city/pages/qc-140_metric_f.html">Farnham</a></li>
+                        <li><a href="/city/pages/qc-29_metric_f.html">Fermont</a></li>
+                        <li><a href="/city/pages/qc-27_metric_f.html">Forestville</a></li>
+                        <li><a href="/city/pages/qc-67_metric_f.html">Forillon</a></li>
+                        <li><a href="/city/pages/qc-95_metric_f.html">Forillon ( Parc national)</a></li>
+                        <li><a href="/city/pages/qc-101_metric_f.html">Gaspé</a></li>
+                        <li><a href="/city/pages/qc-94_metric_f.html">Gaspésie (Parc national)</a></li>
+                        <li><a href="/city/pages/qc-126_metric_f.html">Gatineau</a></li>
+                        <li><a href="/city/pages/qc-a1_metric_f.html">Gouin (Réservoir)</a></li>
+                        <li><a href="/city/pages/qc-5_metric_f.html">Granby</a></li>
+                        <li><a href="/city/pages/qc-169_metric_f.html">Grande-Vallée</a></li>
+                        <li><a href="/city/pages/qc-104_metric_f.html">Havre St-Pierre</a></li>
+                        <li><a href="/city/pages/qc-68_metric_f.html">Huntingdon</a></li>
+                        <li><a href="/city/pages/qc-103_metric_f.html">Îles-de-la-Madeleine</a></li>
+                        <li><a href="/city/pages/qc-131_metric_f.html">Inukjuak</a></li>
+                        <li><a href="/city/pages/qc-112_metric_f.html">Ivujivik</a></li>
+                        <li><a href="/city/pages/qc-137_metric_f.html">Joliette</a></li>
+                        <li><a href="/city/pages/qc-70_metric_f.html">Kamouraska</a></li>
+                        <li><a href="/city/pages/qc-118_metric_f.html">Kangiqsualujjuaq</a></li>
+                        <li><a href="/city/pages/qc-155_metric_f.html">Kangiqsujuaq</a></li>
+                        <li><a href="/city/pages/qc-159_metric_f.html">Kangirsuk</a></li>
+                    </ul>
+                    <ul class="list-unstyled col-sm-4">
+                        <li><a href="/city/pages/qc-150_metric_f.html">Kuujjuaq</a></li>
+                        <li><a href="/city/pages/qc-105_metric_f.html">Kuujjuarapik</a></li>
+                        <li><a href="/city/pages/qc-156_metric_f.html">L'Assomption</a></li>
+                        <li><a href="/city/pages/qc-77_metric_f.html">L'Islet</a></li>
+                        <li><a href="/city/pages/qc-158_metric_f.html">La Grande Rivière</a></li>
+                        <li><a href="/city/pages/qc-100_metric_f.html">La Grande-Quatre</a></li>
+                        <li><a href="/city/pages/qc-11_metric_f.html">La Malbaie</a></li>
+                        <li><a href="/city/pages/qc-71_metric_f.html">La Prairie</a></li>
+                        <li><a href="/city/pages/qc-45_metric_f.html">La Sarre</a></li>
+                        <li><a href="/city/pages/qc-154_metric_f.html">La Tuque</a></li>
+                        <li><a href="/city/pages/qc-30_metric_f.html">La Vérendrye (Réserve faunique)</a></li>
+                        <li><a href="/city/pages/qc-99_metric_f.html">Lac Raglan</a></li>
+                        <li><a href="/city/pages/qc-72_metric_f.html">Lac-Mégantic</a></li>
+                        <li><a href="/city/pages/qc-73_metric_f.html">Lac-Saint-Jean</a></li>
+                        <li><a href="/city/pages/qc-14_metric_f.html">Lachute</a></li>
+                        <li><a href="/city/pages/qc-74_metric_f.html">Lanaudière</a></li>
+                        <li><a href="/city/pages/qc-113_metric_f.html">Laurentides (Réserve faunique)</a></li>
+                        <li><a href="/city/pages/qc-76_metric_f.html">Laval</a></li>
+                        <li><a href="/city/pages/qc-d3_metric_f.html">Le Gardeur</a></li>
+                        <li><a href="/city/pages/qc-78_metric_f.html">Lévis</a></li>
+                        <li><a href="/city/pages/qc-109_metric_f.html">Longueuil</a></li>
+                        <li><a href="/city/pages/qc-81_metric_f.html">Lorraine</a></li>
+                        <li><a href="/city/pages/qc-d2_metric_f.html">Louiseville</a></li>
+                        <li><a href="/city/pages/qc-83_metric_f.html">Magog</a></li>
+                        <li><a href="/city/pages/qc-153_metric_f.html">Manicouagan</a></li>
+                        <li><a href="/city/pages/qc-102_metric_f.html">Maniwaki</a></li>
+                        <li><a href="/city/pages/qc-84_metric_f.html">Marieville</a></li>
+                        <li><a href="/city/pages/qc-85_metric_f.html">Mascouche</a></li>
+                        <li><a href="/city/pages/qc-129_metric_f.html">Matagami</a></li>
+                        <li><a href="/city/pages/qc-15_metric_f.html">Matane</a></li>
+                        <li><a href="/city/pages/qc-151_metric_f.html">Matapédia</a></li>
+                        <li><a href="/city/pages/qc-89_metric_f.html">Mauricie</a></li>
+                        <li><a href="/city/pages/qc-90_metric_f.html">Mingan</a></li>
+                        <li><a href="/city/pages/qc-123_metric_f.html">Mirabel</a></li>
+                        <li><a href="/city/pages/qc-92_metric_f.html">Mont Saint-Hilaire</a></li>
+                        <li><a href="/city/pages/qc-127_metric_f.html">Mont-Joli</a></li>
+                        <li><a href="/city/pages/qc-47_metric_f.html">Mont-Laurier</a></li>
+                        <li><a href="/city/pages/qc-167_metric_f.html">Mont-Tremblant</a></li>
+                        <li><a href="/city/pages/qc-124_metric_f.html">Montmagny</a></li>
+                        <li><a href="/city/pages/qc-147_metric_f.html">Montréal</a></li>
+                        <li><a href="/city/pages/qc-16_metric_f.html">Murdochville</a></li>
+                        <li><a href="/city/pages/qc-125_metric_f.html">Natashquan</a></li>
+                        <li><a href="/city/pages/qc-111_metric_f.html">New Carlisle</a></li>
+                        <li><a href="/city/pages/qc-110_metric_f.html">Nicolet</a></li>
+                        <li><a href="/city/pages/qc-93_metric_f.html">Otterburn Park</a></li>
+                        <li><a href="/city/pages/qc-17_metric_f.html">Papineau</a></li>
+                        <li><a href="/city/pages/qc-114_metric_f.html">Parent</a></li>
+                        <li><a href="/city/pages/qc-18_metric_f.html">Percé</a></li>
+                        <li><a href="/city/pages/qc-96_metric_f.html">Pincourt</a></li>
+                        <li><a href="/city/pages/qc-20_metric_f.html">Pointe-à-la-Croix</a></li>
+                        <li><a href="/city/pages/qc-19_metric_f.html">Pontiac</a></li>
+                        <li><a href="/city/pages/qc-97_metric_f.html">Port-Cartier</a></li>
+                        <li><a href="/city/pages/qc-142_metric_f.html">Port-Menier</a></li>
+                        <li><a href="/city/pages/qc-98_metric_f.html">Prévost</a></li>
+                        <li><a href="/city/pages/qc-40_metric_f.html">Puvirnituq</a></li>
+                        <li><a href="/city/pages/qc-106_metric_f.html">Quaqtaq</a></li>
+                        <li><a href="/city/pages/qc-133_metric_f.html">Québec</a></li>
+                        <li><a href="/city/pages/qc-a0_metric_f.html">Repentigny</a></li>
+                        <li><a href="/city/pages/qc-21_metric_f.html">Richelieu</a></li>
+                    </ul>
+                    <ul class="list-unstyled col-sm-4">
+                        <li><a href="/city/pages/qc-a2_metric_f.html">Rigaud</a></li>
+                        <li><a href="/city/pages/qc-138_metric_f.html">Rimouski</a></li>
+                        <li><a href="/city/pages/qc-108_metric_f.html">Rivière-du-Loup</a></li>
+                        <li><a href="/city/pages/qc-134_metric_f.html">Roberval</a></li>
+                        <li><a href="/city/pages/qc-a3_metric_f.html">Rosemère</a></li>
+                        <li><a href="/city/pages/qc-148_metric_f.html">Rouyn-Noranda</a></li>
+                        <li><a href="/city/pages/qc-166_metric_f.html">Saguenay</a></li>
+                        <li><a href="/city/pages/qc-a5_metric_f.html">Saint-Amable</a></li>
+                        <li><a href="/city/pages/qc-a6_metric_f.html">Saint-Basile Le Grand</a></li>
+                        <li><a href="/city/pages/qc-a7_metric_f.html">Saint-Constant</a></li>
+                        <li><a href="/city/pages/qc-b4_metric_f.html">Saint-Eustache</a></li>
+                        <li><a href="/city/pages/qc-b5_metric_f.html">Saint-Félicien</a></li>
+                        <li><a href="/city/pages/qc-b6_metric_f.html">Saint-Georges</a></li>
+                        <li><a href="/city/pages/qc-22_metric_f.html">Saint-Hyacinthe</a></li>
+                        <li><a href="/city/pages/qc-28_metric_f.html">Saint-Jean-sur-Richelieu</a></li>
+                        <li><a href="/city/pages/qc-13_metric_f.html">Saint-Jérôme</a></li>
+                        <li><a href="/city/pages/qc-b7_metric_f.html">Saint-Lazare</a></li>
+                        <li><a href="/city/pages/qc-b8_metric_f.html">Saint-Lin-Laurentides</a></li>
+                        <li><a href="/city/pages/qc-b9_metric_f.html">Saint-Luc</a></li>
+                        <li><a href="/city/pages/qc-c0_metric_f.html">Saint-Michel-des-Saints</a></li>
+                        <li><a href="/city/pages/qc-c1_metric_f.html">Saint-Nicéphore</a></li>
+                        <li><a href="/city/pages/qc-c2_metric_f.html">Saint-Rémi</a></li>
+                        <li><a href="/city/pages/qc-c3_metric_f.html">Saint-Sauveur</a></li>
+                        <li><a href="/city/pages/qc-c4_metric_f.html">Saint-Timothée</a></li>
+                        <li><a href="/city/pages/qc-33_metric_f.html">Sainte-Agathe</a></li>
+                        <li><a href="/city/pages/qc-a8_metric_f.html">Sainte-Anne-Des-Monts</a></li>
+                        <li><a href="/city/pages/qc-a9_metric_f.html">Sainte-Anne-Des-Plaines</a></li>
+                        <li><a href="/city/pages/qc-b0_metric_f.html">Sainte-Catherine</a></li>
+                        <li><a href="/city/pages/qc-b1_metric_f.html">Sainte-Julie</a></li>
+                        <li><a href="/city/pages/qc-b2_metric_f.html">Sainte-Sophie</a></li>
+                        <li><a href="/city/pages/qc-b3_metric_f.html">Sainte-Thérèse</a></li>
+                        <li><a href="/city/pages/qc-143_metric_f.html">Salaberry-de-Valleyfield</a></li>
+                        <li><a href="/city/pages/qc-128_metric_f.html">Salluit</a></li>
+                        <li><a href="/city/pages/qc-115_metric_f.html">Schefferville</a></li>
+                        <li><a href="/city/pages/qc-141_metric_f.html">Sept-Îles</a></li>
+                        <li><a href="/city/pages/qc-132_metric_f.html">Shawinigan</a></li>
+                        <li><a href="/city/pages/qc-136_metric_f.html">Sherbrooke</a></li>
+                        <li><a href="/city/pages/qc-c6_metric_f.html">Sorel-Tracy</a></li>
+                        <li><a href="/city/pages/qc-135_metric_f.html">Sutton</a></li>
+                        <li><a href="/city/pages/qc-107_metric_f.html">Tadoussac</a></li>
+                        <li><a href="/city/pages/qc-145_metric_f.html">Tasiujaq</a></li>
+                        <li><a href="/city/pages/qc-139_metric_f.html">Témiscamingue</a></li>
+                        <li><a href="/city/pages/qc-35_metric_f.html">Témiscouata</a></li>
+                        <li><a href="/city/pages/qc-c7_metric_f.html">Terrebonne</a></li>
+                        <li><a href="/city/pages/qc-c8_metric_f.html">Thetford Mines</a></li>
+                        <li><a href="/city/pages/qc-c9_metric_f.html">Tracy</a></li>
+                        <li><a href="/city/pages/qc-24_metric_f.html">Trois-Pistoles</a></li>
+                        <li><a href="/city/pages/qc-130_metric_f.html">Trois-Rivières</a></li>
+                        <li><a href="/city/pages/qc-122_metric_f.html">Umiujaq</a></li>
+                        <li><a href="/city/pages/qc-149_metric_f.html">Val-d'Or</a></li>
+                        <li><a href="/city/pages/qc-42_metric_f.html">Val-des-Monts</a></li>
+                        <li><a href="/city/pages/qc-d0_metric_f.html">Vallée de la Matapédia</a></li>
+                        <li><a href="/city/pages/qc-41_metric_f.html">Vanier</a></li>
+                        <li><a href="/city/pages/qc-162_metric_f.html">Varennes</a></li>
+                        <li><a href="/city/pages/qc-66_metric_f.html">Vaudreuil-Dorion</a></li>
+                        <li><a href="/city/pages/qc-157_metric_f.html">Victoriaville</a></li>
+                        <li><a href="/city/pages/qc-116_metric_f.html">Waskaganish</a></li>
+                    </ul>
+                </div></div>
+            </div>
+            
+            <section class="hidden-print" id="weather-topics">
+                <h2 class="wb-inv">Ce que nous faisons</h2>
+                <div class="row wb-eqht">
+                    <section class="col-lg-4 col-md-6">
+                        <h3 class="wxo-footer-nav">Prévisions météorologiques</h3>
+                        <ul class="mrgn-bttm-lg lst-spcd">
+                            <li><a href="/canada_f.html">Météo au Canada</a></li>
+                            <li><a href="/radar/index_f.html">Radar - Canada</a></li>
+                            <li><a href="/satellite/index_f.html">Satellite - Canada</a></li>
+                            <li><a href="/marine/index_f.html">Maritime - Canada</a></li>
+                            <li><a href="/mainmenu/airquality_menu_f.html">Qualité de l'air</a></li>
+                            <li><a href="http://www.ec.gc.ca/glaces-ice/default.asp?lang=Fr&amp;n=D32C361E-1">Service canadien des glaces</a></li>
+                            <li><a href="/saisons/index_f.html">Prévisions saisonnières</a></li>
+                            <li><a href="/forecast/public_bulletins_f.html">Prévisions à long terme</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-lg-4 col-md-6">
+                        <h3 class="wxo-footer-nav">Alertes météorologiques</h3>
+                        <ul class="mrgn-bttm-lg lst-spcd">
+                            <li><a href="/warnings/index_f.html">Alertes météo publiques - Canada</a></li>
+                            <li><a href="/lightning/index_f.html">Foudre</a></li>
+                            <li><a href="/hurricane/index_f.html">Ouragans</a></li>
+                            <li><a href="/warnings/weathersummaries_f.html">Résumés météorologiques</a></li>
+                            <li><a href="http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&amp;n=15E59C08-1">Conditions m&eacute;t&eacute;orologiques dangereuses</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-lg-4 col-md-6">
+                        <h3 class="wxo-footer-nav">Ressources météorologiques</h3>
+                        <ul class="mrgn-bttm-lg lst-spcd">
+                            <li><a href="/model_forecast/model_f.html">Modèles global et régional de prévision</a></li>
+                            <li><a href="/astro/index_f.html">Astronomie</a></li>
+                            <li><a href="http://ec.gc.ca/rhc-wsc/default.asp?lang=Fr&amp;n=4EED50F1-1 ">Niveau d'eau et débit</a></li>
+                            <li><a href="http://climat.meteo.gc.ca/index_f.html ">Données climatologiques historiques</a></li>
+                            <li><a href="https://flightplanning.navcanada.ca/cgi-bin/CreePage.pl?Langue=francais&amp;NoSession=NS_Inconnu&amp;Page=forecast-observation&amp;TypeDoc=html">Aviation</a></li>
+                            <li><a href="http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&amp;n=4D51ECA8-1">Guide des prévisions météorologiques</a></li>
+                            <li><a href="http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&amp;n=2EC4EC51-1">Guide des prévisions maritimes</a></li>
+                            <li><a href="http://ec.gc.ca/meteo-weather/default.asp?lang=Fr&amp;n=8E7198BB-1">Guide sur les prévisions de la cote air santé</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+            <div class="row pagedetails">
+                <div class="col-sm-5 col-xs-12 datemod">
+                    <dl id="wb-dtmd">
+                        <dt>Date de modification&#160;:&#32;</dt>
+                        <dd><time property="dateModified">2016-01-12</time></dd>
+                    </dl>
+                </div>
+                <div class="clear visible-xs"></div>
+                <div class="col-sm-4 col-xs-6"><a href="/mainmenu/contact_us_f.html" class="btn btn-default"><span class="glyphicon glyphicon-comment mrgn-rght-sm"></span>Rétroaction<span class="wb-inv"> sur ce site Web</span></a></div>
+                <div class="col-sm-3 col-xs-6 text-right">
+                    <div class="wb-share" data-wb-share='{"lnkClass": "btn btn-default"}'></div>
+                </div>
+                <div class="clear visible-xs"></div>
+            </div>
+        </main>
+        <aside class="gc-nttvs container">
+            <h2>Activit&eacute;s et initiatives du gouvernement du Canada</h2>
+            <div id="gcwb_prts" class="wb-eqht row"   data-ajax-replace="/data/pco-fetch/features-fr.html">
+                <p class="mrgn-lft-md"><a href="http://www.canada.ca/activites.html">Acc&eacute;dez aux activit&eacute;s et initiatives du gouvernement du Canada</a></p>
+            </div></aside><footer role="contentinfo" id="wb-info">
+                <nav role="navigation" class="container visible-sm visible-md visible-lg wb-navcurr">
+                    <h2 class="wb-inv">À propos de ce site</h2>
+                    <div class="row">
+                        
+                        <div class="col-sm-3 col-lg-3">
+                            <section>
+                                <h3>Coordonnées</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="/mainmenu/contact_us_f.html">Questions et commentaires</a></li>
+                                    <li><a href="http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&amp;n=F3FC6CAA-1">Messages sur le temps violent</a></li>
+                                    <li><a href="/business/index_f.html">Restez branchés</a></li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h3>Nouvelles</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="http://nouvelles.gc.ca/web/index-fr.do">Salle de presse</a></li>
+                                    <li><a href="http://nouvelles.gc.ca/web/nwsprdct-fr.do?mthd=tp&amp;crtr.tp1D=1">Communiqués de presse</a></li>
+                                    <li><a href="http://nouvelles.gc.ca/web/nwsprdct-fr.do?mthd=tp&amp;crtr.tp1D=3">Avis aux médias</a></li>
+                                    <li><a href="http://nouvelles.gc.ca/web/nwsprdct-fr.do?mthd=tp&amp;crtr.tp1D=970">Discours</a></li>
+                                    <li><a href="http://nouvelles.gc.ca/web/nwsprdct-fr.do?mthd=tp&amp;crtr.tp1D=980">Déclarations</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                        <section class="col-sm-3 col-lg-3">
+                            <h3>Gouvernement</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="http://www.canada.ca/fr/gouv/systeme">Comment le gouvernement fonctionne</a></li>
+                                <li><a href="http://www.canada.ca/fr/gouv/min">Ministères et organismes</a></li>
+                                <li><a href="http://pm.gc.ca/fra">Premier ministre</a></li>
+                                <li><a href="http://www.canada.ca/fr/gouv/ministres">Ministres</a></li>
+                                <li><a href="http://www.canada.ca/fr/gouv/fonctionpublique">Fonction publique et force militaire</a></li>
+                                <li><a href="https://www.canada.ca/fr/gouvernement/systeme/lois.html">Traités, lois et règlements</a></li>
+                                <li><a href="http://www.canada.ca/fr/gouv/bibliotheques">Bibliothèques</a></li>
+                                <li><a href="http://www.canada.ca/fr/gouv/publications">Publications</a></li>
+                                <li><a href="http://www.canada.ca/fr/gouv/statistiques">Statistiques et données</a></li>
+                                <li><a href="http://www.canada.ca/fr/nouveausite.html">À propos de Canada.ca</a></li>
+                            </ul>
+                        </section>
+                        <section class="col-sm-3 col-lg-3 brdr-lft">
+                            <h3>Transparence</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="http://www.canada.ca/fr/transparence/rapports.html">Établissement de rapports à l'échelle du gouvernement</a></li>
+                                <li><a href="http://ouvert.canada.ca/fr">Gouvernement ouvert</a></li>
+                                <li><a href="http://www.canada.ca/fr/transparence/divulgation.html">Divulgation proactive</a></li>
+                                <li><a href="http://www.canada.ca/fr/transparence/avis.html">Avis</a></li>
+                                <li><a href="http://www.canada.ca/fr/transparence/confidentialite.html">Confidentialité</a></li>
+                            </ul>
+                        </section>
+                        <div class="col-sm-3 col-lg-3 brdr-lft">
+                            <section>
+                                <h3>Rétroaction</h3>
+                                <p><a href="http://www.canada.ca/fr/contact/retroaction.html"><img src="/template/gcweb/v4.0.18/assets/feedback.png" alt="Rétroaction sur ce site Web" /></a></p>
+                            </section>
+                            <section>
+                                <h3>Médias sociaux</h3>
+                                <p><a href="http://www.canada.ca/fr/sociaux"><img src="/template/gcweb/v4.0.18/assets/social.png" alt="Médias sociaux" /></a></p>
+                            </section>
+                            <section>
+                                <h3>Centre mobile</h3>
+                                <p><a href="http://www.canada.ca/fr/mobile"><img src="/template/gcweb/v4.0.18/assets/mobile.png" alt="Centre mobile" /></a></p>
+                            </section>
+                        </div>
+                    </div>
+                </nav>
+                <div class="brand">
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-xs-6 visible-sm visible-xs tofpg">
+                                <a href="#wb-cont">Haut de la page <span class="glyphicon glyphicon-chevron-up"></span></a>
+                            </div>
+                            <div class="col-xs-6 col-md-12 text-right">
+                                <object type="image/svg+xml" tabindex="-1" role="img" data="/template/gcweb/v4.0.18/assets/wmms-blk.svg" aria-label="Symbole du gouvernement du Canada"></object>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--[if gte IE 9 | !IE ]><!-->
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+            <script src="/template/gcweb/v4.0.18/js/wet-boew.min.js"></script>
+            <!--<![endif]-->
+            <!--[if lt IE 9]>
+             <script src="/template/gcweb/v4.0.18/js/ie8-wet-boew2.min.js"></script>
+             <![endif]-->
+            
+            <script src="/cacheable/js/city/jquery-ui-1.10.3.custom.min.js"></script>
+            <script src="/cacheable/js/city/availableTags_f.min.js"></script>
+            <script src="/city/js/cityjump.js"></script>
+            <script>
+                document.getElementById("jump").className = "";
+                var max_chars = 50;
+                
+                $('#city').keydown( function(e){
+                                   if ($(this).val().length > max_chars) {
+                                   $(this).val($(this).val().substr(0, max_chars));
+                                   }
+                                   });
+                                   
+                                   $('#city').keyup( function(e){
+                                                    if ($(this).val().length > max_chars) {
+                                                    $(this).val($(this).val().substr(0, max_chars));
+                                                    }
+                                                    });
+                </script>
+            <script src="/city/js/jquery.h5validate.js"></script>
+            <script>
+                $(document).ready(function () {
+                                  $('form').h5Validate({
+                                                       errorClass:'white'
+                                                       });
+                                  });
+                </script>
+            <script src="/cacheable/js/responsive/jquery.rwdImageMaps.js"></script>
+            <script>
+                $(document).ready(function(e) {
+                                  $('img[usemap]').rwdImageMaps();
+                                  });
+                </script>
+            <script>LANG = "fr-CA";</script><script src="/gps/js/translate.js"></script>
+            <script src="/gps/js/gps.js"></script>
+            <script src="/gps/js/langStrings.js"></script>
+            <script src="/gps/js/cityLatLon.js"></script>
+            
+            <script>
+                $(document).ready(function(){
+                                  $('#gps-jq').click(function(){
+                                                     if (!$("#gps-jq" ).hasClass("open"))
+                                                     getGPSLocation();
+                                                     });
+                                  });
+                </script>
+            
+    </body>
+</html>
+

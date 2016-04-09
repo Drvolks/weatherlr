@@ -10,16 +10,10 @@ import UIKit
 
 class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: outlets
-    @IBOutlet weak var currentWeatherImage: UIImageView!
-    @IBOutlet weak var currentWeatherTemperature: UILabel!
     @IBOutlet weak var weatherTable: UITableView!
-    @IBOutlet weak var maxLabel: UILabel!
-    @IBOutlet weak var minLabel: UILabel!
-    @IBOutlet weak var maxImage: UIImageView!
-    @IBOutlet weak var minImage: UIImageView!
-    @IBOutlet weak var villeLabel: UILabel!
     
     var weatherInformations = [WeatherInformation]()
+    var selectedCity:City?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +32,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.dataSource = self
         weatherTable.rowHeight = UITableViewAutomaticDimension
         weatherTable.estimatedRowHeight = 100.0
-
+        weatherTable.tableHeaderView = nil
+ 
         if FavoriteCityHelper.getSelectedCity() != nil {
             refresh()
         } else {
@@ -55,72 +50,20 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func refresh() {
         weatherInformations.removeAll()
         
-        let selectedCity = FavoriteCityHelper.getSelectedCity()!
-        let url = UrlHelper.getUrl(selectedCity)
+        if let city = FavoriteCityHelper.getSelectedCity() {
+            selectedCity = city
+            let url = UrlHelper.getUrl(city)
         
-        // TODO: Bilingue
-        villeLabel.text = selectedCity.frenchName
-        
-        // TODO: do not hardcode
-        if let url = NSURL(string: url) {
-            if let rssParser = RssParser(url: url, language: Language.French) {
-                let rssEntries = rssParser.parse()
-                let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
-                weatherInformations = weatherInformationProcess.perform()
+            // TODO: do not hardcode
+            if let url = NSURL(string: url) {
+                if let rssParser = RssParser(url: url, language: Language.French) {
+                    let rssEntries = rssParser.parse()
+                    let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
+                    weatherInformations = weatherInformationProcess.perform()
                 
-                var weatherInfo = weatherInformations[0]
-                currentWeatherTemperature.text = String(weatherInfo.temperature)
-                currentWeatherImage.image = weatherInfo.weatherStatusImage
-                
-                if weatherInformations.count > 1 {
-                    minLabel.hidden = false
-                    minImage.hidden = false
-                    
-                    weatherInfo = weatherInformations[1]
-                
-                    switch weatherInfo.tendancy {
-                    case Tendency.Maximum:
-                        let weatherInfoNight = weatherInformations[2]
-                        minLabel.text = String(weatherInfoNight.temperature)
-                        maxLabel.text = String(weatherInfo.temperature)
-                    
-                        maxLabel.hidden = false
-                        maxImage.hidden = false
-                        break
-                    case Tendency.Minimum:
-                        minLabel.text = String(weatherInfo.temperature)
-                    
-                        maxLabel.hidden = true
-                        maxImage.hidden = true
-                        break
-                    case Tendency.Steady:
-                        if weatherInfo.night {
-                            minLabel.text = String(weatherInfo.temperature)
-                        } else {
-                            let weatherInfoNight = weatherInformations[3]
-                            minLabel.text = String(weatherInfoNight.temperature)
-                        }
-                        maxLabel.text = String(weatherInfo.temperature)
-                    
-                        maxLabel.hidden = false
-                        maxImage.hidden = false
-                        break
-                    default:
-                        break
-                    }
-                } else {
-                    maxLabel.hidden = true
-                    maxImage.hidden = true
-                    minLabel.hidden = true
-                    minImage.hidden = true
+                    weatherTable.reloadData()
                 }
-                
-                weatherTable.reloadData()
-            } else {
-                //todayWeatherDetail.text = "ER2"
             }
-        } else {
-            //todayWeatherDetail.text = "ER3"
         }
     }
 
@@ -152,8 +95,87 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.whenLabel.text = weatherInfo.when
         }
         
+        //cell.contentView.alpha = 0
+        
         return cell
     }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+       // UIView.animateWithDuration(0.8, animations: {
+       //     cell.contentView.alpha = 1.0
+      //  })
+    }
+    
 
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCellWithIdentifier("header")! as! WeatherHeaderCell
+        
+        // TODO: Bilingue
+        if let city = selectedCity {
+            header.cityLabel.text = city.frenchName
+            
+            var weatherInfo = weatherInformations[0]
+            header.currentTemperatureLabel.text = String(weatherInfo.temperature)
+            header.weatherImage.image = weatherInfo.weatherStatusImage
+        
+            if weatherInformations.count > 1 {
+                header.minTemperatureLabel.hidden = false
+                header.minTemperatureImage.hidden = false
+                
+                weatherInfo = weatherInformations[1]
+                
+                switch weatherInfo.tendancy {
+                case Tendency.Maximum:
+                    let weatherInfoNight = weatherInformations[2]
+                    header.minTemperatureLabel.text = String(weatherInfoNight.temperature)
+                    header.maxTemperatureLabel.text = String(weatherInfo.temperature)
+                    
+                    header.maxTemperatureLabel.hidden = false
+                    header.maxTemperatureImage.hidden = false
+                    break
+                case Tendency.Minimum:
+                    header.minTemperatureLabel.text = String(weatherInfo.temperature)
+                    
+                    header.maxTemperatureLabel.hidden = true
+                    header.maxTemperatureImage.hidden = true
+                    break
+                case Tendency.Steady:
+                    if weatherInfo.night {
+                        header.minTemperatureLabel.text = String(weatherInfo.temperature)
+                    } else {
+                        let weatherInfoNight = weatherInformations[3]
+                        header.minTemperatureLabel.text = String(weatherInfoNight.temperature)
+                    }
+                    header.maxTemperatureLabel.text = String(weatherInfo.temperature)
+                    
+                    header.maxTemperatureLabel.hidden = false
+                    header.maxTemperatureImage.hidden = false
+                    break
+                default:
+                    break
+                }
+            } else {
+                header.maxTemperatureLabel.hidden = true
+                header.maxTemperatureImage.hidden = true
+                header.minTemperatureLabel.hidden = true
+                header.minTemperatureImage.hidden = true
+            }
+        }
+        
+       // header.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.8)
+       
+        let gradientMaskLayer:CAGradientLayer = CAGradientLayer()
+        gradientMaskLayer.frame = header.bounds
+        gradientMaskLayer.colors = [UIColor.whiteColor().colorWithAlphaComponent(0.95).CGColor, UIColor.whiteColor().colorWithAlphaComponent(0.5)]
+        gradientMaskLayer.locations = [0.80, 1.0]
+        header.layer.mask = gradientMaskLayer
+        header.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.95)
+
+        return header
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 130
+    }
 }
 

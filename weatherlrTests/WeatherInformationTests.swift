@@ -27,7 +27,6 @@ class WeatherInformationTests: XCTestCase {
         XCTAssertEqual(WeatherDay.Today, result.weatherDay)
         XCTAssertEqual("sumary", result.summary)
         XCTAssertEqual("detail", result.detail)
-        XCTAssertEqual("MostlyCloudy", result.weatherStatusImage.accessibilityIdentifier)
         
         // temperature negatire
         temperature = -10
@@ -37,6 +36,5 @@ class WeatherInformationTests: XCTestCase {
         
         // Image inconnue
         result = WeatherInformation(temperature: temperature, weatherStatus: .UnitTest, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        XCTAssertEqual("NA", result.weatherStatusImage.accessibilityIdentifier)
     }
 }

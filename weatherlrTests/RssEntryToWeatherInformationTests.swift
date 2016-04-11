@@ -20,6 +20,8 @@ class RssEntryToWeatherInformationTests: XCTestCase {
     let summaryNowEn = "<b>Observed at:</b> Montréal-Trudeau Int\'l Airport 08:00 AM EDT Tuesday 05 April 2016 <br/>\n        <b>Condition:</b> Mainly Sunny <br/>\n        <b>Temperature:</b> -8.2&deg;C <br/>\n        <b>Pressure / Tendency:</b> 103.0 kPa rising<br/>\n        <b>Visibility:</b> 24.1 km<br/>\n        <b>Humidity:</b> 48 %<br/>\n        <b>Wind Chill:</b> -14 <br/>\n        <b>Dewpoint:</b> -17.4&deg;C <br/>\n        <b>Wind:</b> NNE 14 km/h<br/>\n        <b>Air Quality Health Index:</b>  <br/>"
     let alertWithWarningTitleFr = "AVERTISSEMENT DE PLUIE EN VIGUEUR, Montréal"
     let alertWithWarningTitleEn = "RAINFALL WARNING IN EFFECT, Montréal"
+    let alertWithReportTitleFr = "BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR, Montréal"
+    let alertWithReportTitleEn = "SPECIAL WEATHER STATEMENT IN EFFECT, Montréal"
     let alertTitleFr = "Aucune veille ou alerte en vigueur, Abbotsford"
     let alertTitleEn = "No watches or warnings in effect, Montréal"
     
@@ -361,6 +363,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractTemperature("Vendredi: Quelques averses de pluie ou de neige. Températures stables près de plus 3.")
         XCTAssertEqual("plus 3", result)
+        
+        result = performer.extractTemperature("Sunny. High 15 except 21 inland. UV index 5 or moderate.")
+        XCTAssertEqual("15", result)
+        
+        result = performer.extractTemperature("Ensoleillé. Maximum 15 sauf 21 à l'intérieur. Indice UV de 5 ou modéré.")
+        XCTAssertEqual("15", result)
     }
     
     func testConvertWeatherDay() {
@@ -598,6 +606,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.isAlert(alertWithWarningTitleEn)
         XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertWithReportTitleFr)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertWithReportTitleEn)
+        XCTAssertTrue(result)
     }
     
     func testExtractAlertText() {
@@ -613,6 +627,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractAlertText(alertWithWarningTitleEn)
         XCTAssertEqual("RAINFALL WARNING IN EFFECT", result)
+        
+        result = performer.extractAlertText("AVERTISSEMENT DE PLUIE EN VIGUEUR")
+        XCTAssertEqual("AVERTISSEMENT DE PLUIE EN VIGUEUR", result)
+        
+        result = performer.extractAlertText(alertWithWarningTitleEn)
+        XCTAssertEqual("RAINFALL WARNING IN EFFECT", result)
+        
+        result = performer.extractAlertText(alertWithReportTitleFr)
+        XCTAssertEqual("BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR", result)
+        
+        result = performer.extractAlertText(alertWithReportTitleEn)
+        XCTAssertEqual("SPECIAL WEATHER STATEMENT IN EFFECT", result)
         
         result = performer.extractAlertText(alertTitleFr)
         XCTAssertEqual("", result)

@@ -79,6 +79,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let weatherInfo = weatherInformations[indexPath.row+2]
         cell.weatherImage.image = weatherInfo.weatherStatusImage
         cell.weatherDetailLabel.text = weatherInfo.detail
+        cell.backgroundColor = UIColor.clearColor()
 
         var minMaxImage:UIImage? = nil
         
@@ -99,8 +100,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             cell.whenLabel.text = weatherInfo.when
         }
-        
-        cell.backgroundColor = UIColor.clearColor()
         
         return cell
     }
@@ -172,7 +171,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         gradientMaskLayer.colors = [UIColor.whiteColor().colorWithAlphaComponent(0.95).CGColor, UIColor.whiteColor().colorWithAlphaComponent(0.5)]
         gradientMaskLayer.locations = [0.80, 1.0]
         header.layer.mask = gradientMaskLayer
-        header.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.95)
+        header.backgroundColor = self.view.backgroundColor!.colorWithAlphaComponent(0.95)
 
         /*
         header.backgroundColor = UIColor.clearColor()
@@ -185,5 +184,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 130
     }
+    
 }
 

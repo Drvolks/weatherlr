@@ -33,6 +33,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.rowHeight = UITableViewAutomaticDimension
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.tableHeaderView = nil
+        weatherTable.backgroundColor = UIColor.clearColor()
  
         if FavoriteCityHelper.getSelectedCity() != nil {
             refresh()
@@ -78,16 +79,20 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let weatherInfo = weatherInformations[indexPath.row+2]
         cell.weatherImage.image = weatherInfo.weatherStatusImage
         cell.weatherDetailLabel.text = weatherInfo.detail
+
+        var minMaxImage:UIImage? = nil
         
         if weatherInfo.tendancy == Tendency.Minimum {
-            cell.minMaxImage.image = UIImage(named: "down")!
+            minMaxImage = UIImage(named: "down")!
         } else if weatherInfo.tendancy == Tendency.Maximum {
-            cell.minMaxImage.image = UIImage(named: "up")!
+            minMaxImage = UIImage(named: "up")!
         } else {
-            cell.minMaxImage.image = nil
+            minMaxImage = nil
         }
-        cell.minMaxLabel.text = String(weatherInfo.temperature)
         
+        cell.minMaxLabel.text = String(weatherInfo.temperature)
+        cell.minMaxImage.image = minMaxImage
+
         if weatherInfo.weatherDay == WeatherDay.Today && !weatherInfo.night {
             // TODO: Ne pas hardcoder les labels
             cell.whenLabel.text = "Aujourd'hui"
@@ -95,7 +100,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.whenLabel.text = weatherInfo.when
         }
         
-        //cell.contentView.alpha = 0
+        cell.backgroundColor = UIColor.clearColor()
         
         return cell
     }
@@ -162,15 +167,18 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
-       // header.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.8)
-       
         let gradientMaskLayer:CAGradientLayer = CAGradientLayer()
         gradientMaskLayer.frame = header.bounds
         gradientMaskLayer.colors = [UIColor.whiteColor().colorWithAlphaComponent(0.95).CGColor, UIColor.whiteColor().colorWithAlphaComponent(0.5)]
         gradientMaskLayer.locations = [0.80, 1.0]
         header.layer.mask = gradientMaskLayer
-        header.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.95)
+        header.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.95)
 
+        /*
+        header.backgroundColor = UIColor.clearColor()
+        header.backgroundView = UIImageView(image: UIImage(named: "CloudyHeader")!)
+        header.backgroundView!.contentMode = UIViewContentMode.Top;
+        */
         return header
     }
     

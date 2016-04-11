@@ -197,7 +197,7 @@ class RssEntryToWeatherInformation {
     }
     
     func extractTemperature(summary: String) -> String {
-        let regex = try! NSRegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables près de|steady near) (.*?)(\\.|with|avec)", options: [.CaseInsensitive])
+        let regex = try! NSRegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables près de|steady near) (.*?)(\\.|with|avec|sauf|except)", options: [.CaseInsensitive])
         return performRegex(regex, text: summary, index: 2)
     }
     
@@ -283,7 +283,7 @@ class RssEntryToWeatherInformation {
     }
     
     func isAlert(title: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|WARNING|AVERTISSEMENT).*?", options: [])
+        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT).*?", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return false
@@ -293,7 +293,7 @@ class RssEntryToWeatherInformation {
     }
     
     func extractAlertText(title: String) -> String {
-        var regex = try! NSRegularExpression(pattern: "(WARNING|AVERTISSEMENT)", options: [])
+        var regex = try! NSRegularExpression(pattern: "(WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT)", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return ""

@@ -34,6 +34,7 @@ enum WeatherStatus {
     case Rain
     case RainAtTimesHeavy
     case RainShowersOrFlurries
+    case Snow
     case SnowOrRain
     case Sunny
     case NA

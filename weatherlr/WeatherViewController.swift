@@ -173,11 +173,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         header.layer.mask = gradientMaskLayer
         header.backgroundColor = self.view.backgroundColor!.colorWithAlphaComponent(0.95)
 
-        /*
-        header.backgroundColor = UIColor.clearColor()
-        header.backgroundView = UIImageView(image: UIImage(named: "CloudyHeader")!)
-        header.backgroundView!.contentMode = UIViewContentMode.Top;
-        */
         return header
     }
     

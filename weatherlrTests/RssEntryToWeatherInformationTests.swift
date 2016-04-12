@@ -243,6 +243,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("A few clouds")
         XCTAssertEqual(WeatherStatus.AFewClouds, result)
         
+        // Clearing
+        result = performer.convertWeatherStatus("Dégagement")
+        XCTAssertEqual(WeatherStatus.Clearing, result)
+        result = performer.convertWeatherStatus("Clearing")
+        XCTAssertEqual(WeatherStatus.Clearing, result)
+        
+        // Mist
+        result = performer.convertWeatherStatus("Brume")
+        XCTAssertEqual(WeatherStatus.Mist, result)
+        result = performer.convertWeatherStatus("Mist")
+        XCTAssertEqual(WeatherStatus.Mist, result)
+        
         // Cloudy with X percent chance of flurries
         // Juste un cas pour convertWeatherStatusWithRegex
         result = performer.convertWeatherStatus("Nuageux avec 60 pour cent de probabilité d'averses de neige")

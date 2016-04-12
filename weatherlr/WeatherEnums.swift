@@ -22,6 +22,7 @@ enum WeatherStatus {
     case CloudyPeriods
     case CloudyWithXPercentChanceOfFlurries
     case LightRain
+    case LightRainshower
     case LightSnow
     case MainlySunny
     case Mist

@@ -17,12 +17,14 @@ enum WeatherStatus {
     case ChanceOfRainShowersOrFlurries
     case ChanceOfShowers
     case Clear
+    case Clearing
     case Cloudy
     case CloudyPeriods
     case CloudyWithXPercentChanceOfFlurries
     case LightRain
     case LightSnow
     case MainlySunny
+    case Mist
     case MostlyCloudy
     case PartlyCloudy
     case PeriodsOfRain

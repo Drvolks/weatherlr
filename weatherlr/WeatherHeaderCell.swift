@@ -17,6 +17,7 @@ class WeatherHeaderCell: UITableViewCell {
     @IBOutlet weak var maxTemperatureImage: UIImageView!
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var minTemperatureImage: UIImageView!
+    @IBOutlet weak var daysMinMaxLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -124,6 +124,10 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.AFewFlurries
         case "Quelques nuages","A few clouds":
             return WeatherStatus.AFewClouds
+        case "Dégagement","Clearing":
+            return WeatherStatus.Clearing
+        case "Brume", "Mist":
+            return WeatherStatus.Mist
         default:
             return convertWeatherStatusWithRegex(text)
         }

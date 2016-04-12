@@ -14,6 +14,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var weatherInformations = [WeatherInformation]()
     var selectedCity:City?
+    var header:WeatherHeaderCell?
+    var stackedWeatherCells = [Int: UIImageView]()
+    var lastContentOffset: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +104,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.whenLabel.text = weatherInfo.when
         }
         
+        cell.weatherInformation = weatherInfo
+        
         return cell
     }
     
@@ -165,14 +170,17 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 header.minTemperatureImage.hidden = true
             }
         }
-        
+        /*
         let gradientMaskLayer:CAGradientLayer = CAGradientLayer()
         gradientMaskLayer.frame = header.bounds
         gradientMaskLayer.colors = [UIColor.whiteColor().colorWithAlphaComponent(0.95).CGColor, UIColor.whiteColor().colorWithAlphaComponent(0.5)]
         gradientMaskLayer.locations = [0.80, 1.0]
         header.layer.mask = gradientMaskLayer
+ */
         header.backgroundColor = self.view.backgroundColor!.colorWithAlphaComponent(0.95)
 
+        self.header = header
+        
         return header
     }
     
@@ -180,5 +188,117 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 130
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var moveUp = true
+        if (self.lastContentOffset > scrollView.contentOffset.y) {
+            moveUp = false
+        }
+    
+        // update the new position acquired
+        self.lastContentOffset = scrollView.contentOffset.y
+    
+        let indexes = weatherTable.indexPathsForVisibleRows!
+        if let displayedHeader = header {
+            let headerBottom  = displayedHeader.frame.height + 5
+
+            for i in 0..<indexes.count {
+                let index = indexes[i]
+                let currentVisibleRow = weatherTable.cellForRowAtIndexPath(index) as! WeatherTableViewCell
+                let rectOfCellInTableView: CGRect = weatherTable.rectForRowAtIndexPath(index)
+                let rectOfCellInSuperview: CGRect = weatherTable.convertRect(rectOfCellInTableView, toView: weatherTable.superview)
+                let position = rectOfCellInSuperview.origin.y
+                
+                if moveUp {
+                    if position <= headerBottom && stackedWeatherCells[index.row] == nil {
+                        print("position \(position) for cell \(currentVisibleRow.whenLabel.text)")
+                        if  displayedHeader.minMaxDaysStackView.arrangedSubviews.count == 0 {
+                            // dummy label for right alignement of images
+                            let label = UILabel()
+                            label.text = ""
+                            displayedHeader.minMaxDaysStackView.addArrangedSubview(label)
+                        }
+                        
+                        let imageView = UIImageView()
+                        imageView.image = textToImage(currentVisibleRow.minMaxLabel.text!, inImage: currentVisibleRow.minMaxImage.image!)
+                        imageView.contentMode = .ScaleAspectFit
+                        imageView.alpha = 0
+                        imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 23))
+                        imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 23))
+                        
+                        displayedHeader.minMaxDaysStackView.addArrangedSubview(imageView)
+                        
+                        UIView.animateWithDuration(0.25, animations: {
+                            imageView.alpha = 1
+                        })
+                            
+                        stackedWeatherCells[index.row] = imageView
+                        
+                        /*
+                        UIView.animateWithDuration(0.25, animations: {
+                            currentVisibleRow.minMaxImage.alpha = 0
+                            currentVisibleRow.minMaxLabel.alpha = 0
+                        })
+                         */
+                        
+                        return
+                    }
+                } else {
+                    if position > headerBottom {
+                        if let imageView = stackedWeatherCells[index.row] {
+                            UIView.animateWithDuration(0.25, animations: {
+                                imageView.alpha = 0
+                            })
+                            
+                            imageView.removeFromSuperview()
+                            
+                            stackedWeatherCells.removeValueForKey(index.row)
+                            
+                            /*
+                            UIView.animateWithDuration(0.25, animations: {
+                                currentVisibleRow.minMaxImage.alpha = 1
+                                currentVisibleRow.minMaxLabel.alpha = 1
+                            })
+                             */
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func textToImage(drawText: NSString, inImage: UIImage)->UIImage{
+        
+        // Setup the font specific variables
+        let textColor: UIColor = UIColor.whiteColor()
+        let textFont: UIFont = UIFont.systemFontOfSize(32)
+        
+        //Setup the image context using the passed image.
+        UIGraphicsBeginImageContext(inImage.size)
+        
+        //Setups up the font attributes that will be later used to dictate how the text should be drawn
+        let textFontAttributes = [
+            NSFontAttributeName: textFont,
+            NSForegroundColorAttributeName: textColor,
+            ]
+        
+        //Put the image into a rectangle as large as the original image.
+        inImage.drawInRect(CGRectMake(0, 0, inImage.size.width, inImage.size.height))
+        
+        // Creating a point within the space that is as bit as the image.
+        let rect: CGRect = CGRectMake(2, 2, inImage.size.width, inImage.size.height)
+        
+        //Now Draw the text into an image.
+        drawText.drawInRect(rect, withAttributes: textFontAttributes)
+        
+        // Create a new image out of the images we have created
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        // End the context now that we have the image we need
+        UIGraphicsEndImageContext()
+        
+        //And pass it back up to the caller.
+        return newImage
+        
+    }
 }
 

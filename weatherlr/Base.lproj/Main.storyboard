@@ -42,7 +42,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="140" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0UC-87-mQn">
-                                <rect key="frame" x="20" y="28" width="560" height="572"/>
+                                <rect key="frame" x="20" y="28" width="560" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="header" id="UnG-sV-I34" userLabel="Header" customClass="WeatherHeaderCell" customModule="weatherlr" customModuleProvider="target">
@@ -277,7 +277,7 @@
                                                                 </stackView>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="right" ambiguous="YES" misplaced="YES" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="emy-4F-x9H">
+                                                        <stackView opaque="NO" contentMode="right" ambiguous="YES" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="emy-4F-x9H">
                                                             <rect key="frame" x="0.0" y="100" width="550" height="23"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="23" id="bsj-oe-qj1"/>
@@ -504,7 +504,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="BiU-Eh-a79"/>
                             <constraint firstItem="0UC-87-mQn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="KFO-2J-ZXA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0UC-87-mQn" secondAttribute="leading" id="Ppz-Yv-rEV"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" constant="-44" id="Ynh-lN-TuX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="Ynh-lN-TuX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0UC-87-mQn" secondAttribute="trailing" id="YwF-t0-axs"/>
                         </constraints>
                         <variation key="default">

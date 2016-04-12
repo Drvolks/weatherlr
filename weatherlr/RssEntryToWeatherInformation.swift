@@ -128,6 +128,10 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.Clearing
         case "Brume", "Mist":
             return WeatherStatus.Mist
+        case "Faible averse de pluie", "Light Rainshower":
+            return WeatherStatus.LightRainshower
+        case "Neige", "Snow":
+            return WeatherStatus.Snow
         default:
             return convertWeatherStatusWithRegex(text)
         }

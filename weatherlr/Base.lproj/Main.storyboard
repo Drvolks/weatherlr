@@ -53,9 +53,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wwy-My-QKu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="121"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="123"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-9P-Atq">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-9P-Atq">
                                                             <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="8nP-l1-tAb">
@@ -277,20 +277,24 @@
                                                                 </stackView>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-3I-Y7U">
-                                                            <rect key="frame" x="0.0" y="100" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="right" ambiguous="YES" misplaced="YES" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="emy-4F-x9H">
+                                                            <rect key="frame" x="0.0" y="100" width="550" height="23"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="23" id="bsj-oe-qj1"/>
+                                                            </constraints>
+                                                        </stackView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="3vb-vy-STZ"/>
                                                         <constraint firstItem="xXu-9P-Atq" firstAttribute="width" secondItem="wwy-My-QKu" secondAttribute="width" id="Pi4-8E-w9Z"/>
+                                                        <constraint firstAttribute="trailing" secondItem="emy-4F-x9H" secondAttribute="trailing" constant="10" id="Sqr-WT-IZ1"/>
+                                                        <constraint firstItem="emy-4F-x9H" firstAttribute="leading" secondItem="wwy-My-QKu" secondAttribute="leading" id="nTB-wF-iIz"/>
+                                                        <constraint firstItem="emy-4F-x9H" firstAttribute="width" secondItem="wwy-My-QKu" secondAttribute="width" id="odS-L3-LPH"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="3vb-vy-STZ"/>
+                                                            <exclude reference="odS-L3-LPH"/>
                                                         </mask>
                                                     </variation>
                                                 </stackView>
@@ -322,9 +326,9 @@
                                         <connections>
                                             <outlet property="cityLabel" destination="asN-ag-xjG" id="rfA-Db-eDv"/>
                                             <outlet property="currentTemperatureLabel" destination="FYP-WF-AVk" id="cP3-xB-PNv"/>
-                                            <outlet property="daysMinMaxLabel" destination="gaS-3I-Y7U" id="fvc-F7-xqh"/>
                                             <outlet property="maxTemperatureImage" destination="0RI-NP-if0" id="Dgg-ke-z7n"/>
                                             <outlet property="maxTemperatureLabel" destination="e0K-S5-rdU" id="gov-ww-thg"/>
+                                            <outlet property="minMaxDaysStackView" destination="emy-4F-x9H" id="4KE-Nt-Olt"/>
                                             <outlet property="minTemperatureImage" destination="GYL-mk-P4N" id="IQz-yL-Eqw"/>
                                             <outlet property="minTemperatureLabel" destination="tGD-K0-WGP" id="3jw-Ss-Q7i"/>
                                             <outlet property="weatherImage" destination="8nP-l1-tAb" id="hE6-aO-ArR"/>
@@ -700,7 +704,7 @@
     </scenes>
     <resources>
         <image name="downHeader" width="250" height="250"/>
-        <image name="up" width="250" height="250"/>
+        <image name="up" width="46" height="46"/>
         <image name="upHeader" width="250" height="250"/>
     </resources>
 </document>

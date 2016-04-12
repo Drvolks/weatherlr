@@ -12,6 +12,7 @@ class MinMaxLabel: UILabel {
 
     let topInset = CGFloat(0), bottomInset = CGFloat(0), leftInset = CGFloat(2), rightInset = CGFloat(2)
     
+    
     override func drawTextInRect(rect: CGRect) {
         
         let insets: UIEdgeInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)

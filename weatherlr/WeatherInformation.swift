@@ -41,6 +41,7 @@ class WeatherInformation {
         self.when = when
         self.night = night
         
+        // TODO: gestion jour / nuit pour les images
         if let image = UIImage(named: String(self.weatherStatus)) {
             self.weatherStatusImage = image
         } else {

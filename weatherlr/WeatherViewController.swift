@@ -76,7 +76,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCellWithIdentifier("weatherCell", forIndexPath: indexPath) as! WeatherTableViewCell
         
-        let weatherInfo = weatherInformations[indexPath.row+2]
+        let weatherInfo = weatherInformations[indexPath.row+1]
         cell.weatherImage.image = weatherInfo.weatherStatusImage
         cell.weatherDetailLabel.text = weatherInfo.detail
         cell.backgroundColor = UIColor.clearColor()
@@ -87,6 +87,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             minMaxImage = UIImage(named: "down")!
         } else if weatherInfo.tendancy == Tendency.Maximum {
             minMaxImage = UIImage(named: "up")!
+        } else if weatherInfo.tendancy == Tendency.Steady {
+            if weatherInfo.night {
+                minMaxImage = UIImage(named: "down")!
+            } else {
+                minMaxImage = UIImage(named: "up")!
+            }
         } else {
             minMaxImage = nil
         }

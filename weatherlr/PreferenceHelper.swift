@@ -102,4 +102,12 @@ class PreferenceHelper {
         NSUserDefaults.standardUserDefaults().setObject(language.rawValue, forKey: Constants.languageKey)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
+    
+    static func isFrench() -> Bool {
+        if getLanguage() == Language.French {
+            return true
+        }
+        
+        return false
+    }
 }

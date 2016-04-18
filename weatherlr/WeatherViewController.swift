@@ -55,9 +55,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             selectedCity = city
             let url = UrlHelper.getUrl(city)
         
-            // TODO: do not hardcode
             if let url = NSURL(string: url) {
-                if let rssParser = RssParser(url: url, language: Language.French) {
+                if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
                     let rssEntries = rssParser.parse()
                     let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
                     weatherInformations = weatherInformationProcess.perform()
@@ -85,8 +84,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.minMaxImage.image = getMinMaxImage(weatherInfo, header: false)
 
         if weatherInfo.weatherDay == WeatherDay.Today && !weatherInfo.night {
-            // TODO: Ne pas hardcoder les labels
-            cell.whenLabel.text = "Aujourd'hui"
+            cell.whenLabel.text = "Today".localized()
         } else {
             cell.whenLabel.text = weatherInfo.when
         }
@@ -122,9 +120,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCellWithIdentifier("header")! as! WeatherHeaderCell
         
-        // TODO: Bilingue
         if let city = selectedCity {
-            header.cityLabel.text = city.frenchName
+            var name = city.englishName
+            if PreferenceHelper.isFrench() {
+                name = city.frenchName
+            }
+            header.cityLabel.text = name
             
             var weatherInfo = weatherInformations[0]
             header.currentTemperatureLabel.text = String(weatherInfo.temperature)

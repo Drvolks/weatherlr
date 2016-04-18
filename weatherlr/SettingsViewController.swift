@@ -71,8 +71,11 @@ class SettingsViewController: UITableViewController {
             
             let city = savedCities[indexPath.row]
             
-            // TODO: bilingue
-            cell.cityLabel.text = city.frenchName
+            var name = city.englishName
+            if(PreferenceHelper.isFrench()) {
+                name = city.frenchName
+            }
+            cell.cityLabel.text = name
             
             if selectedCity != nil && city.id == selectedCity!.id {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
@@ -105,11 +108,10 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        // TODO lang
         if section == citySection {
             return "City".localized()
         } else {
-            return "Language"
+            return "Language".localized()
         }
     }
     

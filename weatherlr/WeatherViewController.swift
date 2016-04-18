@@ -131,52 +131,25 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             if weatherInformations.count > 1 {
                 weatherInfo = weatherInformations[1]
                 
+                header.temperatureLabel.text = String(weatherInfo.temperature)
+                
                 switch weatherInfo.tendancy {
                 case Tendency.Maximum:
-                    //let weatherInfoNight = weatherInformations[2]
-                    //header.minTemperatureLabel.text = String(weatherInfoNight.temperature)
-                    header.maxTemperatureLabel.text = String(weatherInfo.temperature)
-                    
-                    header.maxTemperatureLabel.hidden = false
-                    header.maxTemperatureImage.hidden = false
-                    header.minTemperatureLabel.hidden = true
-                    header.minTemperatureImage.hidden = true
+                    header.temperatureImage.image = UIImage(named: "upHeader")
                     break
                 case Tendency.Minimum:
-                    header.minTemperatureLabel.text = String(weatherInfo.temperature)
-                    
-                    header.maxTemperatureLabel.hidden = true
-                    header.maxTemperatureImage.hidden = true
-                    header.minTemperatureLabel.hidden = false
-                    header.minTemperatureImage.hidden = false
+                    header.temperatureImage.image = UIImage(named: "downHeader")
                     break
                 case Tendency.Steady:
                     if weatherInfo.night {
-                        header.minTemperatureLabel.text = String(weatherInfo.temperature)
-                        
-                        header.minTemperatureLabel.hidden = false
-                        header.minTemperatureImage.hidden = false
-                        header.maxTemperatureLabel.hidden = true
-                        header.maxTemperatureImage.hidden = true
+                        header.temperatureImage.image = UIImage(named: "downHeader")
                     } else {
-                        //let weatherInfoNight = weatherInformations[3]
-                        //header.minTemperatureLabel.text = String(weatherInfoNight.temperature)
-                        header.maxTemperatureLabel.text = String(weatherInfo.temperature)
-                        
-                        header.maxTemperatureLabel.hidden = false
-                        header.maxTemperatureImage.hidden = false
-                        header.minTemperatureLabel.hidden = true
-                        header.minTemperatureImage.hidden = true
+                        header.temperatureImage.image = UIImage(named: "upHeader")
                     }
                     break
                 default:
                     break
                 }
-            } else {
-                header.maxTemperatureLabel.hidden = true
-                header.maxTemperatureImage.hidden = true
-                header.minTemperatureLabel.hidden = true
-                header.minTemperatureImage.hidden = true
             }
         }
         

@@ -35,7 +35,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.tableHeaderView = nil
         weatherTable.backgroundColor = UIColor.clearColor()
  
-        if FavoriteCityHelper.getSelectedCity() != nil {
+        if PreferenceHelper.getSelectedCity() != nil {
             refresh()
         } else {
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addCity") as UIViewController
@@ -51,7 +51,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func refresh() {
         weatherInformations.removeAll()
         
-        if let city = FavoriteCityHelper.getSelectedCity() {
+        if let city = PreferenceHelper.getSelectedCity() {
             selectedCity = city
             let url = UrlHelper.getUrl(city)
         

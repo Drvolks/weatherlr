@@ -103,7 +103,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let city = filteredCities[indexPath.row]
         
-        FavoriteCityHelper.addFavorite(city)
+        PreferenceHelper.addFavorite(city)
         
         dismissViewControllerAnimated(true, completion: nil)
     }

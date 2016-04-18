@@ -11,6 +11,5 @@ import Foundation
 class Constants {
     static let selectedCityKey = "selectedCity"
     static let favotiteCitiesKey = "favoriteCities"
-    static let baseUrlFrench = "https://meteo.gc.ca/rss/city/{id}_f.xml"
-    static let baseUrlEnglish = "https://weather.gc.ca/rss/city/{id}_f.xml"
+    static let languageKey = "lang"
 }

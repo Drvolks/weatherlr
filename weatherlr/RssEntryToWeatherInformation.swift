@@ -260,7 +260,7 @@ class RssEntryToWeatherInformation {
     }
     
     func isNight(title: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "(Ce soir|Night)", options: [.CaseInsensitive])
+        let regex = try! NSRegularExpression(pattern: "(Ce soir|Soir et nuit|Night)", options: [.CaseInsensitive])
         let night = performRegex(regex, text: title, index: 1)
         if night.isEmpty {
             return false

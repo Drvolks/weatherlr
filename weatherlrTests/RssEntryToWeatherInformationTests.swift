@@ -564,6 +564,9 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.isNight("Ce soir et cette nuit: Pluie. Minimum plus 3.")
         XCTAssertTrue(result)
+        
+        result = performer.isNight("Samedi soir et nuit: Dégagé. Minimum moins 2.")
+        XCTAssertTrue(result)
     }
     
     func testExtractWhen() {

@@ -81,24 +81,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.weatherDetailLabel.text = weatherInfo.detail
         cell.backgroundColor = UIColor.clearColor()
 
-        var minMaxImage:UIImage? = nil
-        
-        if weatherInfo.tendancy == Tendency.Minimum {
-            minMaxImage = UIImage(named: "down")!
-        } else if weatherInfo.tendancy == Tendency.Maximum {
-            minMaxImage = UIImage(named: "up")!
-        } else if weatherInfo.tendancy == Tendency.Steady {
-            if weatherInfo.night {
-                minMaxImage = UIImage(named: "down")!
-            } else {
-                minMaxImage = UIImage(named: "up")!
-            }
-        } else {
-            minMaxImage = nil
-        }
-        
         cell.minMaxLabel.text = String(weatherInfo.temperature)
-        cell.minMaxImage.image = minMaxImage
+        cell.minMaxImage.image = getMinMaxImage(weatherInfo, header: false)
 
         if weatherInfo.weatherDay == WeatherDay.Today && !weatherInfo.night {
             // TODO: Ne pas hardcoder les labels
@@ -114,6 +98,24 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
        // UIView.animateWithDuration(0.8, animations: {
        //     cell.contentView.alpha = 1.0
       //  })
+    }
+    
+    func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {
+        var name = "up"
+        
+        if weatherInfo.tendancy == Tendency.Minimum {
+            name = "down"
+        } else if weatherInfo.tendancy == Tendency.Steady {
+            if weatherInfo.night {
+                name = "down"
+            }
+        }
+        
+        if header {
+            return UIImage(named: name + "Header")
+        } else {
+            return UIImage(named: name)
+        }
     }
     
 
@@ -132,24 +134,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 weatherInfo = weatherInformations[1]
                 
                 header.temperatureLabel.text = String(weatherInfo.temperature)
-                
-                switch weatherInfo.tendancy {
-                case Tendency.Maximum:
-                    header.temperatureImage.image = UIImage(named: "upHeader")
-                    break
-                case Tendency.Minimum:
-                    header.temperatureImage.image = UIImage(named: "downHeader")
-                    break
-                case Tendency.Steady:
-                    if weatherInfo.night {
-                        header.temperatureImage.image = UIImage(named: "downHeader")
-                    } else {
-                        header.temperatureImage.image = UIImage(named: "upHeader")
-                    }
-                    break
-                default:
-                    break
-                }
+                header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
             }
         }
         

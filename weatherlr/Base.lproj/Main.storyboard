@@ -112,12 +112,12 @@
                                                                             </constraints>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-hN-9tC">
-                                                                            <rect key="frame" x="400" y="10" width="40" height="80"/>
+                                                                            <rect key="frame" x="400" y="30" width="40" height="40"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eN7-iZ-mb6">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                                     <subviews>
-                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="upHeader" translatesAutoresizingMaskIntoConstraints="NO" id="0RI-NP-if0">
+                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0RI-NP-if0">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="40" id="bLZ-tK-jRm"/>
@@ -167,75 +167,15 @@
                                                                                         </mask>
                                                                                     </variation>
                                                                                 </stackView>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ki0-hZ-oC5">
-                                                                                    <rect key="frame" x="0.0" y="40" width="40" height="40"/>
-                                                                                    <subviews>
-                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="downHeader" translatesAutoresizingMaskIntoConstraints="NO" id="GYL-mk-P4N">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
-                                                                                            <constraints>
-                                                                                                <constraint firstAttribute="height" constant="40" id="EDD-0a-6bc"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="KhD-ZF-ZBk"/>
-                                                                                            </constraints>
-                                                                                            <variation key="default">
-                                                                                                <mask key="constraints">
-                                                                                                    <exclude reference="EDD-0a-6bc"/>
-                                                                                                    <exclude reference="KhD-ZF-ZBk"/>
-                                                                                                </mask>
-                                                                                            </variation>
-                                                                                        </imageView>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tGD-K0-WGP" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                                                            <constraints>
-                                                                                                <constraint firstAttribute="height" constant="40" id="4Cb-kh-VEG"/>
-                                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="5SA-ij-C83"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="gpM-AL-2AN"/>
-                                                                                            </constraints>
-                                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                            <nil key="highlightedColor"/>
-                                                                                            <variation key="default">
-                                                                                                <mask key="constraints">
-                                                                                                    <exclude reference="4Cb-kh-VEG"/>
-                                                                                                    <exclude reference="5SA-ij-C83"/>
-                                                                                                    <exclude reference="gpM-AL-2AN"/>
-                                                                                                </mask>
-                                                                                            </variation>
-                                                                                        </label>
-                                                                                    </subviews>
-                                                                                    <constraints>
-                                                                                        <constraint firstItem="GYL-mk-P4N" firstAttribute="width" secondItem="ki0-hZ-oC5" secondAttribute="width" id="38r-id-LoO"/>
-                                                                                        <constraint firstItem="GYL-mk-P4N" firstAttribute="height" secondItem="ki0-hZ-oC5" secondAttribute="height" id="3L5-vN-VkI"/>
-                                                                                        <constraint firstAttribute="width" constant="40" id="Elt-XI-mOy"/>
-                                                                                        <constraint firstItem="tGD-K0-WGP" firstAttribute="width" secondItem="ki0-hZ-oC5" secondAttribute="width" id="Fh4-ak-W9g"/>
-                                                                                        <constraint firstItem="GYL-mk-P4N" firstAttribute="trailing" secondItem="tGD-K0-WGP" secondAttribute="trailing" id="Q7J-cc-zUs"/>
-                                                                                        <constraint firstItem="tGD-K0-WGP" firstAttribute="height" secondItem="ki0-hZ-oC5" secondAttribute="height" id="StN-fc-eqI"/>
-                                                                                        <constraint firstItem="GYL-mk-P4N" firstAttribute="leading" secondItem="tGD-K0-WGP" secondAttribute="leading" id="Wwa-Rc-DWq"/>
-                                                                                        <constraint firstItem="GYL-mk-P4N" firstAttribute="top" secondItem="tGD-K0-WGP" secondAttribute="top" id="oGe-hh-jjr"/>
-                                                                                        <constraint firstAttribute="height" constant="40" id="yJA-Rv-e3U"/>
-                                                                                    </constraints>
-                                                                                    <variation key="default">
-                                                                                        <mask key="constraints">
-                                                                                            <exclude reference="Elt-XI-mOy"/>
-                                                                                            <exclude reference="Q7J-cc-zUs"/>
-                                                                                            <exclude reference="Wwa-Rc-DWq"/>
-                                                                                            <exclude reference="oGe-hh-jjr"/>
-                                                                                        </mask>
-                                                                                    </variation>
-                                                                                </stackView>
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="40" id="3QV-hR-n7x"/>
-                                                                                <constraint firstItem="ki0-hZ-oC5" firstAttribute="top" secondItem="eN7-iZ-mb6" secondAttribute="bottom" constant="10" id="5Bv-OM-SOK"/>
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="fAW-xJ-Bku"/>
                                                                                 <constraint firstItem="eN7-iZ-mb6" firstAttribute="width" secondItem="QQr-hN-9tC" secondAttribute="width" id="fRl-ah-0UZ"/>
-                                                                                <constraint firstItem="ki0-hZ-oC5" firstAttribute="width" secondItem="QQr-hN-9tC" secondAttribute="width" id="sry-3W-b1D"/>
-                                                                                <constraint firstItem="eN7-iZ-mb6" firstAttribute="leading" secondItem="ki0-hZ-oC5" secondAttribute="trailing" constant="-10" id="ttz-gX-wWw"/>
                                                                             </constraints>
                                                                             <variation key="default">
                                                                                 <mask key="constraints">
                                                                                     <exclude reference="fAW-xJ-Bku"/>
-                                                                                    <exclude reference="ttz-gX-wWw"/>
-                                                                                    <exclude reference="5Bv-OM-SOK"/>
                                                                                 </mask>
                                                                             </variation>
                                                                         </stackView>
@@ -282,10 +222,8 @@
                                         <connections>
                                             <outlet property="cityLabel" destination="asN-ag-xjG" id="rfA-Db-eDv"/>
                                             <outlet property="currentTemperatureLabel" destination="FYP-WF-AVk" id="cP3-xB-PNv"/>
-                                            <outlet property="maxTemperatureImage" destination="0RI-NP-if0" id="Dgg-ke-z7n"/>
-                                            <outlet property="maxTemperatureLabel" destination="e0K-S5-rdU" id="gov-ww-thg"/>
-                                            <outlet property="minTemperatureImage" destination="GYL-mk-P4N" id="IQz-yL-Eqw"/>
-                                            <outlet property="minTemperatureLabel" destination="tGD-K0-WGP" id="3jw-Ss-Q7i"/>
+                                            <outlet property="temperatureImage" destination="0RI-NP-if0" id="NWX-6w-KsT"/>
+                                            <outlet property="temperatureLabel" destination="e0K-S5-rdU" id="Fco-CN-qiv"/>
                                             <outlet property="weatherImage" destination="8nP-l1-tAb" id="hE6-aO-ArR"/>
                                         </connections>
                                     </tableViewCell>
@@ -658,8 +596,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="downHeader" width="250" height="250"/>
         <image name="up" width="250" height="250"/>
-        <image name="upHeader" width="250" height="250"/>
     </resources>
 </document>

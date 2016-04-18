@@ -23,8 +23,13 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
         cities = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
-        // TODO: bilingue
-        cities.sortInPlace({ $0.frenchName < $1.frenchName })
+
+        if PreferenceHelper.isFrench() {
+            cities.sortInPlace({ $0.frenchName < $1.frenchName })
+        } else {
+            cities.sortInPlace({ $0.englishName < $1.englishName })
+        }
+        
         filteredCities = cities
         
         cityTable.delegate = self
@@ -54,8 +59,12 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             for i in 0..<cities.count {
                 let city = cities[i]
-                // TODO: bilingue
-                if city.frenchName.containsString(searchText) {
+
+                var name = city.englishName
+                if(PreferenceHelper.isFrench()) {
+                    name = city.frenchName
+                }
+                if name.containsString(searchText) {
                     filteredCities.append(city)
                 }
             }
@@ -94,8 +103,12 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! CityTableViewCell
         
         let city = filteredCities[indexPath.row]
-        // TODO: bilingue
-        cell.cityLabel.text = city.frenchName + ", " + city.province.uppercaseString
+        
+        var name = city.englishName
+        if(PreferenceHelper.isFrench()) {
+            name = city.frenchName
+        }
+        cell.cityLabel.text = name + ", " + city.province.uppercaseString
 
         return cell
     }

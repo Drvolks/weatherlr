@@ -10,8 +10,7 @@ import Foundation
 
 class UrlHelper {
     static func getUrl(city: City) -> String {
-        // TODO bilingue
-        let url = Constants.baseUrlFrench.stringByReplacingOccurrencesOfString("{id}", withString: city.id)
+        let url = "url".localized().stringByReplacingOccurrencesOfString("{id}", withString: city.id)
         
         return url
     }

@@ -11,6 +11,8 @@ import UIKit
 class SettingsViewController: UITableViewController {
     
     @IBOutlet weak var cityTable: UITableView!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     var savedCities = [City]()
     var selectedCity:City?
@@ -31,6 +33,11 @@ class SettingsViewController: UITableViewController {
         selectedCity = PreferenceHelper.getSelectedCity()
         
         navigationItem.leftBarButtonItem = editButtonItem()
+        setEditing(false, animated: false)
+        
+        self.title = "Settings".localized()
+        // TODO à vérifier, ne fonctionne pas
+        doneButton.title = "Done".localized()
         
         // TODO: remove
         //let parser = CityParser()
@@ -62,7 +69,19 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        if indexPath.section == citySection {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if indexPath.section == citySection {
+            return UITableViewCellEditingStyle.Delete
+        } else {
+            return UITableViewCellEditingStyle.None
+        }
     }
     
     override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
@@ -87,7 +106,7 @@ class SettingsViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("langCell", forIndexPath: indexPath) as! LangTableViewCell
             
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            cell.accessoryType = UITableViewCellAccessoryType.None
             
             if indexPath.row == francaisRow {
                 cell.langLabel.text = "Français"
@@ -148,6 +167,21 @@ class SettingsViewController: UITableViewController {
             
             tableView.reloadSectionIndexTitles()
             tableView.reloadData()
+        }
+    }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        // Toggles the edit button state
+        super.setEditing(editing, animated: animated)
+        
+        if editing {
+            navigationItem.leftBarButtonItem!.title = "Done".localized()
+            addButton.enabled = false
+            doneButton.enabled = false
+        } else {
+            navigationItem.leftBarButtonItem!.title = "Edit".localized()
+            addButton.enabled = true
+            doneButton.enabled = true
         }
     }
     

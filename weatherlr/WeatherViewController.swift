@@ -62,6 +62,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
                     weatherInformations = weatherInformationProcess.perform()
                 
+                    let weatherInfo = weatherInformations[0]
+                    self.view.backgroundColor = weatherInfo.color()
+                    
                     weatherTable.reloadData()
                 }
             }
@@ -77,7 +80,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("weatherCell", forIndexPath: indexPath) as! WeatherTableViewCell
         
         let weatherInfo = weatherInformations[indexPath.row+1]
-        cell.weatherImage.image = weatherInfo.weatherStatusImage
+        cell.weatherImage.image = weatherInfo.image()
         cell.weatherDetailLabel.text = weatherInfo.detail
         cell.backgroundColor = UIColor.clearColor()
 
@@ -128,7 +131,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             var weatherInfo = weatherInformations[0]
             header.currentTemperatureLabel.text = String(weatherInfo.temperature)
-            header.weatherImage.image = weatherInfo.weatherStatusImage
+            header.weatherImage.image = weatherInfo.image()
         
             if weatherInformations.count > 1 {
                 weatherInfo = weatherInformations[1]
@@ -138,12 +141,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
+        let color = self.view.backgroundColor!
         let gradientMaskLayer:CAGradientLayer = CAGradientLayer()
         gradientMaskLayer.frame = header.bounds
-        gradientMaskLayer.colors = [UIColor.whiteColor().colorWithAlphaComponent(0.95).CGColor, UIColor.whiteColor().colorWithAlphaComponent(0.5)]
+        gradientMaskLayer.colors = [color.colorWithAlphaComponent(0.95).CGColor, color.colorWithAlphaComponent(0.5)]
         gradientMaskLayer.locations = [0.80, 1.0]
         header.layer.mask = gradientMaskLayer
-        header.backgroundColor = self.view.backgroundColor!.colorWithAlphaComponent(0.95)
+        header.backgroundColor = color.colorWithAlphaComponent(0.95)
 
         return header
     }

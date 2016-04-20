@@ -132,6 +132,8 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.LightRainshower
         case "Neige", "Snow":
             return WeatherStatus.Snow
+        case "Averses", "Showers":
+            return WeatherStatus.Showers
         default:
             return convertWeatherStatusWithRegex(text)
         }

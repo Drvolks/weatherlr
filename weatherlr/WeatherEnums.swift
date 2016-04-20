@@ -34,11 +34,21 @@ enum WeatherStatus {
     case Rain
     case RainAtTimesHeavy
     case RainShowersOrFlurries
+    case Showers
     case Snow
     case SnowOrRain
     case Sunny
     case NA
     case UnitTest
+}
+
+enum WeatherColor : Int {
+    case ClearDay = 0x009ec2
+    case ClearNight = 0x00465c
+    case CloudyDay = 0x9eacb4
+    case CloudyNight = 0x778289
+    case SnowDay = 0xb4b7b7
+    case SnowNight = 0xaaadad
 }
 
 enum WeatherDay : Int {

@@ -11,7 +11,6 @@ import UIKit
 class WeatherInformation {
     var temperature:Int
     var weatherStatus:WeatherStatus
-    var weatherStatusImage:UIImage
     var weatherDay:WeatherDay
     var detail:String
     var summary:String
@@ -25,7 +24,6 @@ class WeatherInformation {
         weatherDay = .Now
         summary = ""
         detail = ""
-        weatherStatusImage = UIImage(named: "NA")!
         tendancy = Tendency.NA
         when = ""
         night = false
@@ -40,20 +38,65 @@ class WeatherInformation {
         self.tendancy = tendancy
         self.when = when
         self.night = night
-        
-        self.weatherStatusImage = UIImage(named: "NA")!
+    }
+    
+    func image() -> UIImage {
         if night {
             let nameNight = String(self.weatherStatus) + "Night"
             if let image = UIImage(named: nameNight) {
-                self.weatherStatusImage = image
+                return image
             } else {
                 if let image = UIImage(named: String(self.weatherStatus)) {
-                    self.weatherStatusImage = image
+                    return image
                 }
             }
         } else {
             if let image = UIImage(named: String(self.weatherStatus)) {
-                self.weatherStatusImage = image
+                return image
+            }
+        }
+        
+        return UIImage(named: "NA")!
+    }
+    
+    func color() -> UIColor {
+        switch weatherStatus {
+        case .AFewRainShowersOrFlurries,
+             .ChanceOfRainShowersOrFlurries,
+             .ChanceOfShowers,
+             .Cloudy,
+             .CloudyWithXPercentChanceOfFlurries,
+             .LightRain,
+             .LightRainshower,
+             .Mist,
+             .MostlyCloudy,
+             .PeriodsOfRain,
+             .PeriodsOfRainOrSnow,
+             .Rain,
+             .RainAtTimesHeavy,
+             .RainShowersOrFlurries,
+             .Showers,
+             .SnowOrRain:
+            if night {
+                return UIColor(weatherColor: WeatherColor.CloudyNight)
+            } else {
+                return UIColor(weatherColor: WeatherColor.CloudyDay)
+            }
+        case .AFewFlurries,
+             .ChanceOfFlurries,
+             .LightSnow,
+             .PeriodsOfSnow,
+             .Snow:
+            if night {
+                return UIColor(weatherColor: WeatherColor.SnowNight)
+            } else {
+                return UIColor(weatherColor: WeatherColor.SnowDay)
+            }
+        default:
+            if night {
+                return UIColor(weatherColor: WeatherColor.ClearNight)
+            } else {
+                return UIColor(weatherColor: WeatherColor.ClearDay)
             }
         }
     }

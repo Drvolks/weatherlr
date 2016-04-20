@@ -11,9 +11,14 @@ import UIKit
 class SettingsViewController: UITableViewController {
     
     @IBOutlet weak var cityTable: UITableView!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     var savedCities = [City]()
     var selectedCity:City?
+    
+    let citySection = 0
+    let francaisRow = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +29,16 @@ class SettingsViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        savedCities = FavoriteCityHelper.getFavoriteCities()
-        selectedCity = FavoriteCityHelper.getSelectedCity()
+        savedCities = PreferenceHelper.getFavoriteCities()
+        selectedCity = PreferenceHelper.getSelectedCity()
         
-        //cityTable.delegate = self
-        //cityTable.dataSource = self
         navigationItem.leftBarButtonItem = editButtonItem()
+        setEditing(false, animated: false)
         
         // TODO: remove
         //let parser = CityParser()
         //parser.perform()
-        
+
         cityTable.reloadData()
     }
 
@@ -49,57 +53,140 @@ class SettingsViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savedCities.count
+        if section == citySection {
+            return savedCities.count
+        } else {
+            return 2
+        }
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        if indexPath.section == citySection {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if indexPath.section == citySection {
+            return UITableViewCellEditingStyle.Delete
+        } else {
+            return UITableViewCellEditingStyle.None
+        }
     }
     
     override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! CityTableViewCell
-        
-        let city = savedCities[indexPath.row]
-        
-        // TODO: bilingue
-        cell.cityLabel.text = city.frenchName
-        
-        if selectedCity != nil && city.id == selectedCity!.id {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        if indexPath.section == citySection {
+            let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! CityTableViewCell
+            
+            let city = savedCities[indexPath.row]
+            
+            var name = city.englishName
+            if(PreferenceHelper.isFrench()) {
+                name = city.frenchName
+            }
+            cell.cityLabel.text = name
+            
+            if selectedCity != nil && city.id == selectedCity!.id {
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            }
+            
+            return cell;
         } else {
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            let cell = tableView.dequeueReusableCellWithIdentifier("langCell", forIndexPath: indexPath) as! LangTableViewCell
+            
+            cell.accessoryType = UITableViewCellAccessoryType.None
+            
+            if indexPath.row == francaisRow {
+                cell.langLabel.text = "Français"
+                
+                if Language.French == PreferenceHelper.getLanguage() {
+                    cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                }
+            } else {
+                cell.langLabel.text = "English"
+                
+                if Language.English == PreferenceHelper.getLanguage() {
+                    cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                }
+            }
+            
+            return cell
         }
-        
-        return cell;
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "City"
+        if section == citySection {
+            return "City".localized()
+        } else {
+            return "Language".localized()
+        }
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            let city = savedCities[indexPath.row]
-            
-            savedCities.removeAtIndex(indexPath.row)
-            FavoriteCityHelper.removeFavorite(city)
-            
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        if indexPath.section == citySection {
+            if editingStyle == .Delete {
+                let city = savedCities[indexPath.row]
+                
+                savedCities.removeAtIndex(indexPath.row)
+                PreferenceHelper.removeFavorite(city)
+                
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            } else if editingStyle == .Insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
         }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let city = savedCities[indexPath.row]
+        if indexPath.section == citySection {
+            let city = savedCities[indexPath.row]
+            
+            PreferenceHelper.saveSelectedCity(city)
+            
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            if indexPath.row == francaisRow {
+                PreferenceHelper.saveLanguage(Language.French)
+            } else {
+                PreferenceHelper.saveLanguage(Language.English)
+            }
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+            tableView.reloadSectionIndexTitles()
+            tableView.reloadData()
+        }
+    }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        // Toggles the edit button state
+        super.setEditing(editing, animated: animated)
         
-        FavoriteCityHelper.saveSelectedCity(city)
-        
-        dismissViewControllerAnimated(true, completion: nil)
+        if editing {
+            navigationItem.leftBarButtonItem!.title = "Done".localized()
+            addButton.enabled = false
+            doneButton.enabled = false
+        } else {
+            navigationItem.leftBarButtonItem!.title = "Edit".localized()
+            addButton.enabled = true
+            doneButton.enabled = true
+            
+            libelles()
+        }
+    }
+    
+    func libelles() {
+        self.title = "Settings".localized()
+        // TODO à vérifier, ne fonctionne pas
+        doneButton.title = "Done".localized()
     }
     
     /*

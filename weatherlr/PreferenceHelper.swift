@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FavoriteCityHelper {
+class PreferenceHelper {
     static func addFavorite(city: City) {
         var favorites = getFavoriteCities()
         
@@ -80,5 +80,34 @@ class FavoriteCityHelper {
                 saveSelectedCity(newFavorites[0])
             }
         }
+    }
+    
+    static func getLanguage() -> Language {
+        if let lang = NSUserDefaults.standardUserDefaults().objectForKey(Constants.languageKey) as? String {
+            if let langEnum = Language(rawValue: lang) {
+                return langEnum
+            }
+        } else {
+            let preferredLanguage = NSLocale.preferredLanguages()[0]
+            if let lang = Language(rawValue: preferredLanguage) {
+                saveLanguage(lang)
+                return lang
+            }
+        }
+         
+         return Language.English
+    }
+    
+    static func saveLanguage(language: Language) {
+        NSUserDefaults.standardUserDefaults().setObject(language.rawValue, forKey: Constants.languageKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    static func isFrench() -> Bool {
+        if getLanguage() == Language.French {
+            return true
+        }
+        
+        return false
     }
 }

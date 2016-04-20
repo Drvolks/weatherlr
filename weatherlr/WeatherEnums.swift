@@ -65,7 +65,7 @@ enum Tendency {
     case NA
 }
 
-enum Language {
-    case French
-    case Enhlish
+enum Language: String {
+    case French = "fr"
+    case English = "en"
 }

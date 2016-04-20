@@ -21,6 +21,12 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Add City".localized()
+        // TODO à vérifier, ne fonctionne pas
+        cancelButton.possibleTitles = ["Cancel".localized()]
+        cancelButton.title = "Cancel".localized()
+        searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
+        
         let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
         cities = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
 

@@ -145,8 +145,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let color = self.view.backgroundColor!
         let gradientMaskLayer:CAGradientLayer = CAGradientLayer()
         gradientMaskLayer.frame = header.bounds
-        gradientMaskLayer.colors = [color.colorWithAlphaComponent(0.95).CGColor, color.colorWithAlphaComponent(0.5)]
-        gradientMaskLayer.locations = [0.80, 1.0]
+        gradientMaskLayer.colors = [color.colorWithAlphaComponent(0.95).CGColor, color.colorWithAlphaComponent(0)]
+        gradientMaskLayer.locations = [0.70, 1.0]
         header.layer.mask = gradientMaskLayer
         header.backgroundColor = color.colorWithAlphaComponent(0.95)
 

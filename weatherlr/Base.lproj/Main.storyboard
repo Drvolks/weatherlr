@@ -52,10 +52,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-9P-Atq">
-                                                    <rect key="frame" x="0.0" y="20" width="560" height="100"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-9P-Atq">
+                                                    <rect key="frame" x="0.0" y="8" width="560" height="100"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="8nP-l1-tAb">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="8nP-l1-tAb">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="CcF-fi-Krh"/>
@@ -72,16 +72,16 @@
                                                                 </mask>
                                                             </variation>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gd6-WM-4BQ">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gd6-WM-4BQ">
                                                             <rect key="frame" x="120" y="0.0" width="440" height="100"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vlx-LA-Wjy">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vlx-LA-Wjy">
                                                                     <rect key="frame" x="0.0" y="0.0" width="440" height="100"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L6i-Ra-uWF">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L6i-Ra-uWF">
                                                                             <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ville" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asN-ag-xjG">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asN-ag-xjG">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="400" height="21"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="21" id="Woy-am-vq9"/>
@@ -90,7 +90,7 @@
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="-00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FYP-WF-AVk">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FYP-WF-AVk">
                                                                                     <rect key="frame" x="0.0" y="21" width="400" height="79"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="5jo-9T-bDL"/>
@@ -109,15 +109,16 @@
                                                                             <constraints>
                                                                                 <constraint firstItem="asN-ag-xjG" firstAttribute="width" secondItem="L6i-Ra-uWF" secondAttribute="width" id="SZO-zJ-oJn"/>
                                                                                 <constraint firstItem="FYP-WF-AVk" firstAttribute="width" secondItem="L6i-Ra-uWF" secondAttribute="width" id="Vw6-A3-FfA"/>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="o1M-9u-6kU"/>
                                                                             </constraints>
                                                                         </stackView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-hN-9tC">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-hN-9tC">
                                                                             <rect key="frame" x="400" y="30" width="40" height="40"/>
                                                                             <subviews>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eN7-iZ-mb6">
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eN7-iZ-mb6">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                                     <subviews>
-                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0RI-NP-if0">
+                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0RI-NP-if0">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="40" id="bLZ-tK-jRm"/>
@@ -130,7 +131,7 @@
                                                                                                 </mask>
                                                                                             </variation>
                                                                                         </imageView>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e0K-S5-rdU" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e0K-S5-rdU" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
                                                                                             <rect key="frame" x="40" y="0.0" width="0.0" height="40"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="40" id="7Fs-Pg-sxJ"/>
@@ -150,32 +151,49 @@
                                                                                         </label>
                                                                                     </subviews>
                                                                                     <constraints>
-                                                                                        <constraint firstItem="e0K-S5-rdU" firstAttribute="height" secondItem="eN7-iZ-mb6" secondAttribute="height" id="An2-nX-SRk"/>
+                                                                                        <constraint firstItem="e0K-S5-rdU" firstAttribute="height" secondItem="eN7-iZ-mb6" secondAttribute="height" id="58n-oy-MbZ"/>
+                                                                                        <constraint firstItem="e0K-S5-rdU" firstAttribute="height" secondItem="eN7-iZ-mb6" secondAttribute="height" constant="40" id="An2-nX-SRk"/>
                                                                                         <constraint firstItem="0RI-NP-if0" firstAttribute="leading" secondItem="e0K-S5-rdU" secondAttribute="leading" id="Blv-2w-sCf"/>
+                                                                                        <constraint firstAttribute="width" constant="40" id="K2R-Z2-evd"/>
                                                                                         <constraint firstAttribute="height" constant="40" id="NUn-wr-2Tl"/>
-                                                                                        <constraint firstItem="0RI-NP-if0" firstAttribute="height" secondItem="eN7-iZ-mb6" secondAttribute="height" id="Q1d-on-g2M"/>
+                                                                                        <constraint firstItem="0RI-NP-if0" firstAttribute="height" secondItem="eN7-iZ-mb6" secondAttribute="height" constant="40" id="Q1d-on-g2M"/>
+                                                                                        <constraint firstItem="e0K-S5-rdU" firstAttribute="width" secondItem="eN7-iZ-mb6" secondAttribute="width" id="VO2-le-u9V"/>
                                                                                         <constraint firstItem="e0K-S5-rdU" firstAttribute="top" secondItem="0RI-NP-if0" secondAttribute="top" id="WLh-y0-x0a"/>
                                                                                         <constraint firstItem="e0K-S5-rdU" firstAttribute="trailing" secondItem="0RI-NP-if0" secondAttribute="trailing" id="Wm6-hZ-cdc"/>
-                                                                                        <constraint firstItem="0RI-NP-if0" firstAttribute="width" secondItem="eN7-iZ-mb6" secondAttribute="width" id="bYV-QY-cJq"/>
-                                                                                        <constraint firstItem="e0K-S5-rdU" firstAttribute="width" secondItem="eN7-iZ-mb6" secondAttribute="width" id="whP-To-j6K"/>
+                                                                                        <constraint firstItem="0RI-NP-if0" firstAttribute="height" secondItem="eN7-iZ-mb6" secondAttribute="height" id="Wxq-6M-Pe2"/>
+                                                                                        <constraint firstItem="0RI-NP-if0" firstAttribute="width" secondItem="eN7-iZ-mb6" secondAttribute="width" id="XJu-Pe-dY5"/>
+                                                                                        <constraint firstItem="0RI-NP-if0" firstAttribute="width" secondItem="eN7-iZ-mb6" secondAttribute="width" constant="40" id="bYV-QY-cJq"/>
+                                                                                        <constraint firstItem="e0K-S5-rdU" firstAttribute="width" secondItem="eN7-iZ-mb6" secondAttribute="width" constant="40" id="whP-To-j6K"/>
                                                                                     </constraints>
                                                                                     <variation key="default">
                                                                                         <mask key="constraints">
+                                                                                            <exclude reference="K2R-Z2-evd"/>
+                                                                                            <exclude reference="NUn-wr-2Tl"/>
                                                                                             <exclude reference="Blv-2w-sCf"/>
+                                                                                            <exclude reference="Q1d-on-g2M"/>
+                                                                                            <exclude reference="bYV-QY-cJq"/>
+                                                                                            <exclude reference="An2-nX-SRk"/>
                                                                                             <exclude reference="WLh-y0-x0a"/>
                                                                                             <exclude reference="Wm6-hZ-cdc"/>
+                                                                                            <exclude reference="whP-To-j6K"/>
                                                                                         </mask>
                                                                                     </variation>
                                                                                 </stackView>
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="40" id="3QV-hR-n7x"/>
+                                                                                <constraint firstItem="eN7-iZ-mb6" firstAttribute="width" secondItem="QQr-hN-9tC" secondAttribute="width" id="MMy-T0-MZU"/>
+                                                                                <constraint firstAttribute="width" constant="40" id="SAR-Tv-mTl"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="Uic-ti-OAp"/>
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="fAW-xJ-Bku"/>
                                                                                 <constraint firstItem="eN7-iZ-mb6" firstAttribute="width" secondItem="QQr-hN-9tC" secondAttribute="width" id="fRl-ah-0UZ"/>
+                                                                                <constraint firstItem="eN7-iZ-mb6" firstAttribute="height" secondItem="QQr-hN-9tC" secondAttribute="height" id="xWV-gt-lcu"/>
                                                                             </constraints>
                                                                             <variation key="default">
                                                                                 <mask key="constraints">
+                                                                                    <exclude reference="3QV-hR-n7x"/>
                                                                                     <exclude reference="fAW-xJ-Bku"/>
+                                                                                    <exclude reference="fRl-ah-0UZ"/>
                                                                                 </mask>
                                                                             </variation>
                                                                         </stackView>
@@ -217,6 +235,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xXu-9P-Atq" firstAttribute="width" secondItem="Heb-MF-3Tf" secondAttribute="width" id="1Mu-zq-MGF"/>
+                                                <constraint firstItem="xXu-9P-Atq" firstAttribute="leading" secondItem="Heb-MF-3Tf" secondAttribute="leadingMargin" constant="-8" id="Bra-zI-DBP"/>
+                                                <constraint firstItem="xXu-9P-Atq" firstAttribute="top" secondItem="Heb-MF-3Tf" secondAttribute="topMargin" id="QVG-ll-F3l"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var weatherInformations = [WeatherInformation]()
     var selectedCity:City?
+    let blankImage = UIImage(named: String(WeatherStatus.Blank))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,8 +141,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             var weatherInfo = weatherInformations[0]
             header.currentTemperatureLabel.text = String(weatherInfo.temperature)
-            header.weatherImage.image = weatherInfo.image()
-        
+            
+            if(weatherInfo.image() == blankImage) {
+                header.weatherImage.hidden = true
+            } else {
+                header.weatherImage.image = weatherInfo.image()
+                header.weatherImage.hidden = false
+            }
+            
             if weatherInformations.count > 1 {
                 weatherInfo = weatherInformations[1]
                 

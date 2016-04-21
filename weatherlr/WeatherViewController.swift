@@ -83,13 +83,21 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.weatherDetailLabel.text = weatherInfo.detail
         cell.backgroundColor = UIColor.clearColor()
 
-        cell.minMaxLabel.text = String(weatherInfo.temperature)
-        cell.minMaxImage.image = getMinMaxImage(weatherInfo, header: false)
+        cell.whenLabel.text = weatherInfo.when
 
-        if weatherInfo.weatherDay == WeatherDay.Today && !weatherInfo.night {
-            cell.whenLabel.text = "Today".localized()
+        if weatherInfo.weatherDay == WeatherDay.Today {
+            cell.minMaxLabel.hidden = true
+            cell.minMaxImage.hidden = true
+            
+            if !weatherInfo.night {
+                cell.whenLabel.text = "Today".localized()
+            }
         } else {
-            cell.whenLabel.text = weatherInfo.when
+            cell.minMaxLabel.text = String(weatherInfo.temperature)
+            cell.minMaxImage.image = getMinMaxImage(weatherInfo, header: false)
+            
+            cell.minMaxLabel.hidden = false
+            cell.minMaxImage.hidden = false
         }
         
         return cell

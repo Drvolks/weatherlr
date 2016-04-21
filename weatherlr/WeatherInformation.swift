@@ -80,7 +80,6 @@ class WeatherInformation {
              .PeriodsOfDrizzleMixedWithFreezingDrizzle,
              .PeriodsOfDrizzle,
              .Overcast,
-             .MostlyCloudy,
              .Mist,
              .LightRainshower,
              .LightRain,
@@ -121,6 +120,7 @@ class WeatherInformation {
             }
         case .Sunny,
              .PartlyCloudy,
+             .MostlyCloudy,
              .MainlySunny,
              .MainlyClear,
              .CloudyPeriods,

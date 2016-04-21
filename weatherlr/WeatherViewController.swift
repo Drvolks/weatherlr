@@ -34,7 +34,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.tableHeaderView = nil
         weatherTable.backgroundColor = UIColor.clearColor()
- 
+         
         if PreferenceHelper.getSelectedCity() != nil {
             refresh()
         } else {
@@ -149,7 +149,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         gradientMaskLayer.locations = [0.70, 1.0]
         header.layer.mask = gradientMaskLayer
         header.backgroundColor = color.colorWithAlphaComponent(0.95)
-
+        
         return header
     }
     

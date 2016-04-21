@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Buchans - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nl-4_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nl-4_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-21T13:05:40Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160421130540</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Buchans</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-19T19:30:00Z</updated>
+ <published>2016-04-19T19:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_w1:20160419193000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 0,7&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T13:00:00Z</updated>
+ <published>2016-04-21T13:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Badger 10h30 HAT jeudi 21 avril 2016 <br/>
+<b>Température:</b> 0,7&deg;C <br/>
+<b>Pression / Tendance:</b> 99,6 kPa à la hausse<br/>
+<b>Humidité:</b> 93 %<br/>
+<b>Point de rosée:</b> -0,3&deg;C <br/>
+<b>Vent:</b> NNE 12 km/h rafale 29 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_cc:20160421130000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Neige intermittente ou pluie. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige intermittente cessant en mi-journée. Nuageux par la suite avec 40 pour cent de probabilité d'averses de pluie ou de neige. Accumulation de neige de 2 cm. Vents du nord-ouest de 30 km/h avec rafales à 50 devenant du nord-est à 20 avec rafales à 40 cet après-midi. Maximum plus 3. Indice UV de 3 ou modéré. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc1:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Bruine verglaçante ou bruine. Minimum zéro. Températures à la hausse pour atteindre plus 3 au cours de la
+nuit.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Bruine verglaçante ou averses de neige débutant ce soir puis se changeant en bruine ou averses de pluie au cours de la nuit. Nappes de brouillard se formant ce soir. Vents du nord-est de 20 km/h avec rafales à 40 devenant légers ce soir. Minimum zéro. Températures à la hausse pour atteindre plus 3 au cours de la nuit. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc2:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Possibilité de bruine. Maximum 9. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité de bruine ou averses. Nappes de brouillard se dissipant le matin. Vents devenant du nord-est à 20 km/h le matin. Maximum 9. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc3:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité de bruine. Minimum plus 2. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité de bruine ou averses. Minimum plus 2. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc4:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité de bruine. Maximum 9. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité de bruine ou averses. Maximum 9. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc5:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc6:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Averses. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Maximum 12. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc7:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Averses de pluie ou de neige. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses de pluie ou de neige. Minimum moins 6. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc8:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement. Maximum plus 5. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc9:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 4. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc10:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 7. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc11:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 3. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc12:20160421080000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-4_metric_f.html"/>
+ <updated>2016-04-21T08:00:00Z</updated>
+ <published>2016-04-21T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 7. Prévisions émises 05h30 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-4_fc13:20160421080000</id>
+ </entry>
+ </feed>
+

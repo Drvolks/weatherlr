@@ -61,6 +61,18 @@ class WeatherInformationTests: XCTestCase {
         XCTAssertEqual(UIImage(named: "NA"), resultat)
     }
     
+    func testAllImagesExists() {
+        for status in TestUtils.iterateEnum(WeatherStatus) {
+            if status != WeatherStatus.UnitTest {
+                let result = UIImage(named: String(status))
+                if result == nil {
+                    print(status)
+                }
+                XCTAssertNotNil(result)
+            }
+        }
+    }
+    
     func testColor() {
         /********************************************** Gris nuage */
         var bean = WeatherInformation(temperature: 10, weatherStatus: .AFewRainShowersOrFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
@@ -84,10 +96,6 @@ class WeatherInformationTests: XCTestCase {
         XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .Cloudy, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .CloudyWithXPercentChanceOfFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         resultat = bean.color()
         XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
         
@@ -133,18 +141,6 @@ class WeatherInformationTests: XCTestCase {
 
         
         /********************************************** Gris neige */
-        bean = WeatherInformation(temperature: 10, weatherStatus: .AFewFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.SnowDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .AFewFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.SnowNight), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .ChanceOfFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.SnowDay), resultat)
-        
         bean = WeatherInformation(temperature: 10, weatherStatus: .LightSnow, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         resultat = bean.color()
         XCTAssertEqual(UIColor(weatherColor:WeatherColor.SnowDay), resultat)
@@ -170,5 +166,22 @@ class WeatherInformationTests: XCTestCase {
         bean = WeatherInformation(temperature: 10, weatherStatus: .Clear, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
         resultat = bean.color()
         XCTAssertEqual(UIColor(weatherColor:WeatherColor.ClearNight), resultat)
+    }
+    
+    func testAllColorsExists() {
+        let defaultColor = UIColor(weatherColor: WeatherColor.DefaultColor)
+        
+        for status in TestUtils.iterateEnum(WeatherStatus) {
+            if status != WeatherStatus.UnitTest {
+                let bean = WeatherInformation(temperature: 10, weatherStatus: status, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
+                let resultat = bean.color()
+                
+                if defaultColor == resultat {
+                    print(status)
+                }
+                
+                XCTAssertNotEqual(defaultColor, resultat)
+            }
+        }
     }
 }

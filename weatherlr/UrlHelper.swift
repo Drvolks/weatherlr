@@ -14,4 +14,10 @@ class UrlHelper {
         
         return url
     }
+    
+    static func getUrl(city: City, lang: Language) -> String {
+        let url = "url".localized(lang).stringByReplacingOccurrencesOfString("{id}", withString: city.id)
+        
+        return url
+    }
 }

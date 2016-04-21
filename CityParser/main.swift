@@ -34,7 +34,7 @@ for (_, city) in parser.cities {
     cityArray.append(city)
 }
 
-let path = "Cities.plist"
+let path = "ParsedCities.plist"
 let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cityArray, toFile: path)
 if !isSuccessfulSave {
     print("Error saving cities :(")

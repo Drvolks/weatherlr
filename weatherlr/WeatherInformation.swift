@@ -61,43 +61,85 @@ class WeatherInformation {
     
     func color() -> UIColor {
         switch weatherStatus {
-        case .AFewRainShowersOrFlurries,
-             .ChanceOfRainShowersOrFlurries,
-             .ChanceOfShowers,
-             .Cloudy,
-             .CloudyWithXPercentChanceOfFlurries,
-             .LightRain,
-             .LightRainshower,
-             .Mist,
-             .MostlyCloudy,
-             .PeriodsOfRain,
-             .PeriodsOfRainOrSnow,
-             .Rain,
-             .RainAtTimesHeavy,
-             .RainShowersOrFlurries,
+        case .SnowOrRain,
+             .ShowersOrDrizzle,
              .Showers,
-             .SnowOrRain:
+             .RainShowersOrFlurries,
+             .RainOrFreezingRain,
+             .RainAtTimesHeavy,
+             .Rain,
+             .PeriodsOfSnowOrRain,
+             .PeriodsOfRainOrSnow,
+             .PeriodsOfRainOrFreezingRain,
+             .PeriodsOfRainOrDrizzle,
+             .PeriodsOfRainMixedWithSnow,
+             .PeriodsOfRainMixedWithSnow,
+             .PeriodsOfRain,
+             .PeriodsOfLightSnowOrFreezingRain,
+             .PeriodsOfFreezingRain,
+             .PeriodsOfDrizzleMixedWithFreezingDrizzle,
+             .PeriodsOfDrizzle,
+             .Overcast,
+             .MostlyCloudy,
+             .Mist,
+             .LightRainshower,
+             .LightRain,
+             .LightFreezingDrizzle,
+             .IncreasingCloudiness,
+             .FreezingDrizzleOrDrizzle,
+             .FlurriesOrRainShowers,
+             .DrizzleMixedWithFreezingDrizzle,
+             .Drizzle,
+             .Cloudy,
+             .ChanceOfShowersOrDrizzle,
+             .ChanceOfShowers,
+             .ChanceOfRainShowersOrFlurries,
+             .ChanceOfDrizzleMixedWithFreezingDrizzle,
+             .AFewShowers,
+             .AFewRainShowersOrFlurries:
             if night {
                 return UIColor(weatherColor: WeatherColor.CloudyNight)
             } else {
                 return UIColor(weatherColor: WeatherColor.CloudyDay)
             }
-        case .AFewFlurries,
-             .ChanceOfFlurries,
-             .LightSnow,
+        case .Snow,
+             .PeriodsOfSnowAndBlowingSnow,
              .PeriodsOfSnow,
-             .Snow:
+             .PeriodsOfLightSnow,
+             .LightSnowshower,
+             .LightSnowAndBlowingSnow,
+             .LightSnow,
+             .Flurries,
+             .DriftingSnow,
+             .CloudyWithXPercentChanceOfFlurries,
+             .BlowingSnow,
+             .Blizzard:
             if night {
                 return UIColor(weatherColor: WeatherColor.SnowNight)
             } else {
                 return UIColor(weatherColor: WeatherColor.SnowDay)
             }
-        default:
+        case .Sunny,
+             .PartlyCloudy,
+             .MainlySunny,
+             .MainlyClear,
+             .CloudyPeriods,
+             .Clearing,
+             .Clear,
+             .ChanceOfFlurries,
+             .ChanceOfDrizzle,
+             .AMixOfSunAndCloud,
+             .AFewFlurries,
+             .AFewClouds,
+             .Blank,
+             .NA:
             if night {
                 return UIColor(weatherColor: WeatherColor.ClearNight)
             } else {
                 return UIColor(weatherColor: WeatherColor.ClearDay)
             }
+        default:
+            return UIColor(weatherColor: WeatherColor.DefaultColor)
         }
     }
 }

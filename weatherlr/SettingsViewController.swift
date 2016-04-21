@@ -38,6 +38,9 @@ class SettingsViewController: UITableViewController {
         // TODO: remove
         //let parser = CityParser()
         //parser.perform()
+        
+        //let downloader = CityDownloader(outputPath: "/Users/jfdufour/Desktop/cities")
+        //downloader.process()
 
         cityTable.reloadData()
     }

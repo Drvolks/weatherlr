@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-ca">
+ 
+<!--
+This is a data file that is meant to be read by RSS readers or aggregators.
+See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn more about our RSS service.
+-->
+
+ <title>Naujaat - Weather - Environment Canada</title>
+ <link rel="related" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html" type="text/html"/>
+ <link rel="self" href="http://www.weather.gc.ca/rss/city/nu-3_e.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="fr-ca" href="http://www.meteo.gc.ca/rss/city/nu-3_f.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environment Canada</name>
+ <uri>http://www.weather.gc.ca</uri>
+ </author>
+ <updated>2016-04-21T13:02:29Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160421130229</id>
+ <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Copyright 2016, Environment Canada</rights>
+ <entry>
+ <title>BLIZZARD WARNING IN EFFECT, Naujaat</title>
+ <link type="text/html" href="http://www.weather.gc.ca/warnings/report_e.html?nu5"/>
+ <updated>2016-04-21T08:29:00Z</updated>
+ <published>2016-04-21T08:29:00Z</published>
+ <category term="Warnings and Watches"/>
+ <summary type="html">Persons in or near this area should be on the lookout for adverse weather conditions and take necessary safety precautions. Issued: 03:29 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_w1:201604210829</id>
+ </entry>
+ <entry>
+ <title>Current Conditions: Blowing Snow, -21.7&#xB0;C</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T13:00:00Z</updated>
+ <published>2016-04-21T13:00:00Z</published>
+ <category term="Current Conditions"/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Naujaat 08:00 AM CDT Thursday 21 April 2016 <br/>
+<b>Condition:</b> Blowing Snow <br/>
+<b>Temperature:</b> -21.7&deg;C <br/>
+<b>Pressure / Tendency:</b> 100.2 kPa falling<br/>
+<b>Visibility:</b> 0.4 km<br/>
+<b>Humidity:</b> 76 %<br/>
+<b>Wind Chill:</b> -38 <br/>
+<b>Dewpoint:</b> -24.9&deg;C <br/>
+<b>Wind:</b> NNW 52 km/h gust 68 km/h<br/>
+<b>Air Quality Health Index:</b> N/A <br/>
+]]></summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_cc:20160421130000</id>
+ </entry>
+ <entry>
+ <title>Thursday: Blizzard. High minus 14.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Blizzard. Wind north 40 km/h gusting to 60 increasing to 60 gusting to 80 this morning. High minus 14. Wind chill minus 38 this morning and minus 30 this afternoon. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc1:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Thursday night: Blizzard. Temperature rising to minus 9 by morning.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Blizzard ending this evening then cloudy with 60 percent chance of flurries. Blowing snow with visibilities at times less than 2 kilometres late this evening and overnight. Wind north 60 km/h gusting to 80 becoming northwest 40 gusting to 60 this evening. Temperature rising to minus 9 by morning. Wind chill minus 28. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc2:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Friday: Chance of flurries. High minus 6. POP 60%</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy with 60 percent chance of flurries. Wind northwest 30 km/h. High minus 6. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc3:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Friday night: Cloudy periods. Low minus 14.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy periods. Low minus 14. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc4:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Saturday: Sunny. High minus 10.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Sunny. High minus 10. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc5:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Saturday night: Clear. Low minus 15.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Clear. Low minus 15. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc6:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Sunday: Sunny. High minus 12.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Sunny. High minus 12. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc7:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Sunday night: Clear. Low minus 16.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Clear. Low minus 16. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc8:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Monday: A mix of sun and cloud. High minus 9.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. Windy. High minus 9. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc9:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Monday night: Cloudy periods. Low minus 15.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy periods. Low minus 15. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc10:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Tuesday: A mix of sun and cloud. High minus 10.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. High minus 10. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc11:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Tuesday night: Cloudy periods. Low minus 13.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy periods. Low minus 13. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc12:20160421090000</id>
+ </entry>
+ <entry>
+ <title>Wednesday: A mix of sun and cloud. High minus 8.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-3_metric_e.html"/>
+ <updated>2016-04-21T09:00:00Z</updated>
+ <published>2016-04-21T09:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. High minus 8. Forecast issued 04:00 AM CDT Thursday 21 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-3_fc13:20160421090000</id>
+ </entry>
+ </feed>
+

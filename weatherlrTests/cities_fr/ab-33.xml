@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Mildred Lake - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ab-33_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ab-33_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-21T13:03:35Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160421130335</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Mildred Lake</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-03-17T06:45:00Z</updated>
+ <published>2016-03-17T06:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_w1:20160317064500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: -5,2&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T13:00:00Z</updated>
+ <published>2016-04-21T13:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Mildred Lake 07h00 HAR jeudi 21 avril 2016 <br/>
+<b>Température:</b> -5,2&deg;C <br/>
+<b>Humidité:</b> 75 %<br/>
+<b>Point de rosée:</b> -8,9&deg;C <br/>
+<b>Vent:</b>   km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_cc:20160421130000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Devenant alternance de soleil et de nuages ce matin. Maximum 8. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc1:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques nuages. Minimum moins 6. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc2:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Généralement ensoleillé. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Vents devenant d'est à 20 km/h en après-midi. Maximum 9. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc3:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 3. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc4:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc5:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc6:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 8. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc7:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Possibilité d'averses. Minimum zéro. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum zéro. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc8:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Possibilité d'averses. Maximum 11. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 11. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc9:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc10:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 13. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc11:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc12:20160421110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-04-21T11:00:00Z</updated>
+ <published>2016-04-21T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 15. Prévisions émises 05h00 HAR jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc13:20160421110000</id>
+ </entry>
+ </feed>
+

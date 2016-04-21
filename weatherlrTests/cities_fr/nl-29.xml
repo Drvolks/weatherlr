@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Mary's Harbour - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nl-29_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nl-29_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-21T13:04:46Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160421130446</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Mary's Harbour</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-04T09:30:00Z</updated>
+ <published>2016-04-04T09:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_w1:20160404093000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Bruine intermittente. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses de neige ou bruine verglaçante se changeant en bruine intermittente ce matin. Nappes de brouillard. Vents du nord de 30 km/h avec rafales à 50 devenant légers en mi-journée. Maximum plus 4. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc1:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Averses ou bruine. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses ou bruine. Nappes de brouillard. Hauteur prévue de 5 mm. Minimum plus 2. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc2:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Averses ou bruine. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses ou bruine. Nappes de brouillard. Maximum plus 3. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc3:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité de bruine. Minimum zéro. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité de bruine ou averses. Minimum zéro. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc4:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité de bruine. Maximum plus 5. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité de bruine ou averses. Maximum plus 5. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc5:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Possibilité d'averses de pluie ou de neige. Minimum moins 1. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de pluie ou de neige. Minimum moins 1. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc6:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Pluie intermittente ou neige. Maximum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente ou neige. Maximum 6. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc7:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Possibilité d'averses de pluie ou de neige. Minimum moins 7. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de pluie ou de neige. Minimum moins 7. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc8:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Possibilité d'averses de pluie ou de neige. Maximum zéro. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de pluie ou de neige. Maximum zéro. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc9:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Possibilité d'averses de neige. Minimum moins 8. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Minimum moins 8. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc10:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 1. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc11:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 6. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc12:20160421083000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-29_metric_f.html"/>
+ <updated>2016-04-21T08:30:00Z</updated>
+ <published>2016-04-21T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum zéro. Prévisions émises 06h00 HAT jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-29_fc13:20160421083000</id>
+ </entry>
+ </feed>
+

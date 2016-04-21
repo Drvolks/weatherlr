@@ -45,7 +45,7 @@
                                 <rect key="frame" x="20" y="28" width="560" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="header" id="UnG-sV-I34" userLabel="Header" customClass="WeatherHeaderCell" customModule="weatherlr" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" id="UnG-sV-I34" userLabel="Header" customClass="WeatherHeaderCell" customModule="weatherlr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="560" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UnG-sV-I34" id="Heb-MF-3Tf">

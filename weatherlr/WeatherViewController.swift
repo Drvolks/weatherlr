@@ -128,6 +128,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        weatherTable.reloadData()
+    }
 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCellWithIdentifier("header")! as! WeatherHeaderCell
@@ -156,6 +159,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
             }
         }
+        
+        header.bounds.size.width = weatherTable.bounds.size.width
         
         let color = self.view.backgroundColor!
         let gradientMaskLayer:CAGradientLayer = CAGradientLayer()

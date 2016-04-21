@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Pitt Meadows - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-35_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-35_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-21T13:04:55Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160421130455</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Pitt Meadows</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-03-14T05:30:00Z</updated>
+ <published>2016-03-14T05:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_w1:20160314053000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 14,2&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T13:00:00Z</updated>
+ <published>2016-04-21T13:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Pitt Meadows 06h00 HAP jeudi 21 avril 2016 <br/>
+<b>Température:</b> 14,2&deg;C <br/>
+<b>Pression / Tendance:</b> 100,8 kPa à la baisse<br/>
+<b>Humidité:</b> 79 %<br/>
+<b>Point de rosée:</b> 10,6&deg;C <br/>
+<b>Vent:</b> ESE 7 km/h<br/>
+<b>Cote air santé:</b> 2 <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_cc:20160421130000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Quelques averses. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques averses cessant tôt ce matin. Généralement nuageux par la suite. Maximum 19. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc1:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. Minimum 11. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc2:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Averses. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Averses débutant tard le matin. Maximum 14. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc3:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 10. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 10. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc4:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 16. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc5:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Averses. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Minimum 10. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc6:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Averses. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Maximum 14. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc7:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 8. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc8:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 15. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc9:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. Minimum 6. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc10:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Nuageux. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 16. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc11:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum 8. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 8. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc12:20160421120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 14. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-35_metric_f.html"/>
+ <updated>2016-04-21T12:00:00Z</updated>
+ <published>2016-04-21T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 14. Prévisions émises 05h00 HAP jeudi 21 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-35_fc13:20160421120000</id>
+ </entry>
+ </feed>
+

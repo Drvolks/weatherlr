@@ -47,20 +47,52 @@ class RssEntryToWeatherInformationTests: XCTestCase {
     }
     
     func testPerform() {
-        let parser = RssParserStub(xmlName: "TestData")!
-        let rssEntries = parser.parse()
+        /* Un cas de nuit */
+        var parser = RssParserStub(xmlName: "TestData")!
+        var rssEntries = parser.parse()
         
-        let performer = RssEntryToWeatherInformation(rssEntries: rssEntries)
+        var performer = RssEntryToWeatherInformation(rssEntries: rssEntries)
         var result = performer.perform()
         XCTAssertEqual(13, result.count)
 
-        let current = result[0]
+        var current = result[0]
         XCTAssertNotNil(current)
         XCTAssertEqual(WeatherDay.Now, current.weatherDay)
+        XCTAssertTrue(current.night)
         
-        let today = result[1]
+        var today = result[1]
         XCTAssertNotNil(today)
         XCTAssertEqual(WeatherDay.Today, today.weatherDay)
+        XCTAssertTrue(today.night)
+        
+        var tomorow = result[2]
+        XCTAssertNotNil(tomorow)
+        XCTAssertEqual(WeatherDay.Tomorow, tomorow.weatherDay)
+        XCTAssertFalse(tomorow.night)
+        
+        
+        /* Un cas de jour */
+        parser = RssParserStub(xmlName: "TestData_EN")!
+        rssEntries = parser.parse()
+        
+        performer = RssEntryToWeatherInformation(rssEntries: rssEntries)
+        result = performer.perform()
+        XCTAssertEqual(14, result.count)
+        
+        current = result[0]
+        XCTAssertNotNil(current)
+        XCTAssertEqual(WeatherDay.Now, current.weatherDay)
+        XCTAssertFalse(current.night)
+        
+        today = result[1]
+        XCTAssertNotNil(today)
+        XCTAssertEqual(WeatherDay.Today, today.weatherDay)
+        XCTAssertFalse(today.night)
+        
+        tomorow = result[2]
+        XCTAssertNotNil(tomorow)
+        XCTAssertEqual(WeatherDay.Tomorow, tomorow.weatherDay)
+        XCTAssertTrue(tomorow.night)
     }
  
     func testConvertCurrent() {

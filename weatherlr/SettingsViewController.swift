@@ -18,6 +18,8 @@ class SettingsViewController: UITableViewController {
     var selectedCity:City?
     
     let citySection = 0
+    let langSection = 1
+    let contactSection = 2
     let francaisRow = 1
     
     override func viewDidLoad() {
@@ -42,6 +44,9 @@ class SettingsViewController: UITableViewController {
         //let downloader = CityDownloader(outputPath: "/Users/jfdufour/Desktop/cities")
         //downloader.process()
 
+        cityTable.estimatedRowHeight = 21
+        cityTable.rowHeight = UITableViewAutomaticDimension
+        
         cityTable.reloadData()
     }
 
@@ -56,14 +61,16 @@ class SettingsViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == citySection {
             return savedCities.count
-        } else {
+        } else if section == langSection {
             return 2
+        } else {
+            return 1
         }
     }
     
@@ -102,7 +109,7 @@ class SettingsViewController: UITableViewController {
             }
             
             return cell;
-        } else {
+        } else if indexPath.section == langSection {
             let cell = tableView.dequeueReusableCellWithIdentifier("langCell", forIndexPath: indexPath) as! LangTableViewCell
             
             cell.accessoryType = UITableViewCellAccessoryType.None
@@ -122,14 +129,23 @@ class SettingsViewController: UITableViewController {
             }
             
             return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("contactCell", forIndexPath: indexPath) as! ContactTableViewCell
+            
+            cell.contactText.text = "Contact".localized()
+            cell.backgroundColor = UIColor.clearColor()
+            
+            return cell
         }
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == citySection {
             return "City".localized()
-        } else {
+        } else if section == langSection {
             return "Language".localized()
+        } else {
+            return nil
         }
     }
     

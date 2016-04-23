@@ -118,25 +118,15 @@ class SettingsViewController: UITableViewController {
                 
                 let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                 dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                    let url = UrlHelper.getUrl(city)
-                    var weatherInfo:WeatherInformation?
-                    
-                    if let url = NSURL(string: url) {
-                        if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
-                            let rssEntries = rssParser.parse()
-                            let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
-                            let weatherInformations = weatherInformationProcess.perform()
-                            
-                            weatherInfo = weatherInformations[0]
-                        }
-                    }
+                    let weatherInformations = CityHelper.getWeatherInformations(city)
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         cell.activityIndicator.stopAnimating()
                         
-                        if weatherInfo != nil {
+                        if weatherInformations.count > 0 {
+                            let weatherInfo = weatherInformations[0]
                             cell.weatherImage.hidden = false
-                            cell.weatherImage.image = weatherInfo?.image()
+                            cell.weatherImage.image = weatherInfo.image()
                             cell.activityIndicator.hidden = true
                         }
                     }

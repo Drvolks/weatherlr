@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,14 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="weatherlr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oP6-77-RW9">
-                                <rect key="frame" x="264" y="289" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weatherlr" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oP6-77-RW9">
+                                <rect key="frame" x="20" y="420" width="560" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clearing" translatesAutoresizingMaskIntoConstraints="NO" id="t58-3i-cny">
+                                <rect key="frame" x="180" y="200" width="240" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HbZ-0j-XF9"/>
+                                    <constraint firstAttribute="width" constant="240" id="dUO-xr-O2e"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oP6-77-RW9" firstAttribute="top" secondItem="t58-3i-cny" secondAttribute="bottom" constant="20" id="4dS-Iw-qS4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="oP6-77-RW9" secondAttribute="leading" id="Jdw-ge-N8R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oP6-77-RW9" secondAttribute="trailing" id="PY3-tY-yYb"/>
+                            <constraint firstItem="t58-3i-cny" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Wgd-6x-P1X"/>
+                            <constraint firstItem="t58-3i-cny" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eud-uy-FwD"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oP6-77-RW9" secondAttribute="bottom" constant="100" id="vjt-EU-JOZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vjt-EU-JOZ"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -32,4 +53,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Clearing" width="600" height="500"/>
+    </resources>
 </document>

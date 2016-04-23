@@ -16,6 +16,7 @@ class SettingsViewController: UITableViewController {
     
     var savedCities = [City]()
     var selectedCity:City?
+    var selectedCityWeatherInformation:WeatherInformation?
     
     let citySection = 0
     let langSection = 1
@@ -104,8 +105,42 @@ class SettingsViewController: UITableViewController {
             
             if selectedCity != nil && city.id == selectedCity!.id {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                
+                cell.weatherImage.hidden = false
+                cell.weatherImage.image = selectedCityWeatherInformation?.image()
+                cell.activityIndicator.hidden = true
             } else {
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                
+                cell.weatherImage.hidden = true
+                cell.activityIndicator.hidden = false
+                cell.activityIndicator.startAnimating()
+                
+                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                    let url = UrlHelper.getUrl(city)
+                    var weatherInfo:WeatherInformation?
+                    
+                    if let url = NSURL(string: url) {
+                        if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
+                            let rssEntries = rssParser.parse()
+                            let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
+                            let weatherInformations = weatherInformationProcess.perform()
+                            
+                            weatherInfo = weatherInformations[0]
+                        }
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        cell.activityIndicator.stopAnimating()
+                        
+                        if weatherInfo != nil {
+                            cell.weatherImage.hidden = false
+                            cell.weatherImage.image = weatherInfo?.image()
+                            cell.activityIndicator.hidden = true
+                        }
+                    }
+                }
             }
             
             return cell;

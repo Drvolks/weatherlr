@@ -21,6 +21,7 @@ class GradientView: UIView {
         gradientLayer.frame = CGRectMake(0.0, 150, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
         gradientLayer.colors = [ firstColor.CGColor, secondColor.CGColor ]
         
+        self.layer.sublayers = nil
         self.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
     

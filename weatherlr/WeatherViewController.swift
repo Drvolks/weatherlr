@@ -177,5 +177,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 130
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Settings" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let targetController = navigationController.topViewController as! SettingsViewController
+            targetController.selectedCityWeatherInformation = weatherInformations[0]
+        }
+    }
 }
 

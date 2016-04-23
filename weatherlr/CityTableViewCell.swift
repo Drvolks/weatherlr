@@ -11,6 +11,8 @@ import UIKit
 class CityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     

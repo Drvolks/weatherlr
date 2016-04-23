@@ -54,20 +54,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if let city = PreferenceHelper.getSelectedCity() {
             selectedCity = city
-            let url = UrlHelper.getUrl(city)
-        
-            if let url = NSURL(string: url) {
-                if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
-                    let rssEntries = rssParser.parse()
-                    let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
-                    weatherInformations = weatherInformationProcess.perform()
-                
-                    let weatherInfo = weatherInformations[0]
-                    self.view.backgroundColor = weatherInfo.color()
-                    
-                    weatherTable.reloadData()
-                }
-            }
+            weatherInformations = CityHelper.getWeatherInformations(city)
+            
+            let weatherInfo = weatherInformations[0]
+            self.view.backgroundColor = weatherInfo.color()
+            
+            weatherTable.reloadData()
         }
     }
 

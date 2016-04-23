@@ -11,6 +11,7 @@ import UIKit
 class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!
+    @IBOutlet weak var gradientView: GradientView!
     
     var weatherInformations = [WeatherInformation]()
     var selectedCity:City?
@@ -35,7 +36,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.tableHeaderView = nil
         weatherTable.backgroundColor = UIColor.clearColor()
-         
+
         if PreferenceHelper.getSelectedCity() != nil {
             refresh()
         } else {
@@ -47,6 +48,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func applicationWillEnterForeground(notification: NSNotification) {
         refresh()
     }
+    
+    override func viewDidLayoutSubviews() {
+        decorate()
+    }
 
     
     func refresh() {
@@ -56,11 +61,36 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             selectedCity = city
             weatherInformations = CityHelper.getWeatherInformations(city)
             
-            let weatherInfo = weatherInformations[0]
-            self.view.backgroundColor = weatherInfo.color()
+            decorate()
             
             weatherTable.reloadData()
         }
+    }
+    
+    func decorate() {
+        let weatherInfo = weatherInformations[0]
+        
+        let colorDay = UIColor(weatherColor: weatherInfo.color())
+        
+        var colorNight:UIColor
+        switch weatherInfo.color() {
+        case .ClearDay:
+            colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
+            break
+        case .SnowDay:
+            colorNight = UIColor(weatherColor: WeatherColor.SnowNight)
+            break
+        case .CloudyDay:
+            colorNight = UIColor(weatherColor: WeatherColor.CloudyNight)
+            break
+        default:
+            colorNight = UIColor(weatherColor: WeatherColor.DefaultColor)
+        }
+        
+        view.backgroundColor = colorDay
+        gradientView.backgroundColor = colorDay
+        
+        gradientView.gradientWithColors(colorDay, colorNight)
     }
 
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -41,6 +41,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ok4-Zn-oFQ" customClass="GradientView" customModule="weatherlr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="576"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="140" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0UC-87-mQn">
                                 <rect key="frame" x="20" y="28" width="560" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -415,10 +419,14 @@
                         <color key="backgroundColor" red="0.0" green="0.61960784313725492" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="BiU-Eh-a79"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ok4-Zn-oFQ" secondAttribute="bottom" constant="-20" id="Ceo-Zp-21E"/>
                             <constraint firstItem="0UC-87-mQn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="KFO-2J-ZXA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0UC-87-mQn" secondAttribute="leading" id="Ppz-Yv-rEV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="Ynh-lN-TuX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0UC-87-mQn" secondAttribute="trailing" id="YwF-t0-axs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ok4-Zn-oFQ" secondAttribute="trailing" constant="-20" id="h4v-Hv-V6u"/>
+                            <constraint firstItem="ok4-Zn-oFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="jAa-zQ-cYK"/>
+                            <constraint firstItem="ok4-Zn-oFQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="oH6-Q3-7rw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -436,12 +444,13 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="oQ1-eD-ZCC"/>
                     <connections>
+                        <outlet property="gradientView" destination="ok4-Zn-oFQ" id="uhv-NR-e8v"/>
                         <outlet property="weatherTable" destination="0UC-87-mQn" id="8dB-z3-7hh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="406"/>
+            <point key="canvasLocation" x="-38" y="407"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gmf-Y4-7GZ">

@@ -59,7 +59,7 @@ class WeatherInformation {
         return UIImage(named: "NA")!
     }
     
-    func color() -> UIColor {
+    func color() -> WeatherColor {
         switch weatherStatus {
         case .SnowOrRain,
              .ShowersOrDrizzle,
@@ -96,11 +96,7 @@ class WeatherInformation {
              .ChanceOfDrizzleMixedWithFreezingDrizzle,
              .AFewShowers,
              .AFewRainShowersOrFlurries:
-            if night {
-                return UIColor(weatherColor: WeatherColor.CloudyNight)
-            } else {
-                return UIColor(weatherColor: WeatherColor.CloudyDay)
-            }
+            return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,
              .PeriodsOfSnow,
@@ -113,11 +109,7 @@ class WeatherInformation {
              .CloudyWithXPercentChanceOfFlurries,
              .BlowingSnow,
              .Blizzard:
-            if night {
-                return UIColor(weatherColor: WeatherColor.SnowNight)
-            } else {
-                return UIColor(weatherColor: WeatherColor.SnowDay)
-            }
+            return WeatherColor.SnowDay
         case .Sunny,
              .PartlyCloudy,
              .MostlyCloudy,
@@ -133,13 +125,9 @@ class WeatherInformation {
              .AFewClouds,
              .Blank,
              .NA:
-            if night {
-                return UIColor(weatherColor: WeatherColor.ClearNight)
-            } else {
-                return UIColor(weatherColor: WeatherColor.ClearDay)
-            }
+            return WeatherColor.ClearDay
         default:
-            return UIColor(weatherColor: WeatherColor.DefaultColor)
+            return WeatherColor.DefaultColor
         }
     }
 }

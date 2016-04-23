@@ -77,99 +77,24 @@ class WeatherInformationTests: XCTestCase {
         /********************************************** Gris nuage */
         var bean = WeatherInformation(temperature: 10, weatherStatus: .AFewRainShowersOrFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         var resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
+        XCTAssertEqual(WeatherColor.CloudyDay, resultat)
         
-        bean = WeatherInformation(temperature: 10, weatherStatus: .AFewRainShowersOrFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyNight), resultat)
         
-        bean = WeatherInformation(temperature: 10, weatherStatus: .AFewRainShowersOrFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .ChanceOfRainShowersOrFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .ChanceOfShowers, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .Cloudy, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .LightRain, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .Mist, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .MostlyCloudy, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .PeriodsOfRain, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .PeriodsOfRainOrSnow, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .Rain, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .RainAtTimesHeavy, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .RainShowersOrFlurries, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .Showers, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .SnowOrRain, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.CloudyDay), resultat)
-
         
         /********************************************** Gris neige */
         bean = WeatherInformation(temperature: 10, weatherStatus: .LightSnow, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.SnowDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .PeriodsOfSnow, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.SnowDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .Snow, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.SnowDay), resultat)
+        XCTAssertEqual(WeatherColor.SnowDay, resultat)
         
  
         /********************************************** Beau temps */
         bean = WeatherInformation(temperature: 10, weatherStatus: .Sunny, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.ClearDay), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .Sunny, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.ClearNight), resultat)
-        
-        bean = WeatherInformation(temperature: 10, weatherStatus: .Clear, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
-        resultat = bean.color()
-        XCTAssertEqual(UIColor(weatherColor:WeatherColor.ClearNight), resultat)
+        XCTAssertEqual(WeatherColor.ClearDay, resultat)
     }
     
     func testAllColorsExists() {
-        let defaultColor = UIColor(weatherColor: WeatherColor.DefaultColor)
+        let defaultColor = WeatherColor.DefaultColor
         
         for status in TestUtils.iterateEnum(WeatherStatus) {
             if status != WeatherStatus.UnitTest {

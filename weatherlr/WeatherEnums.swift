@@ -77,9 +77,9 @@ enum WeatherColor : Int {
     case ClearDay = 0x009ec2
     case ClearNight = 0x00465c
     case CloudyDay = 0x9eacb4
-    case CloudyNight = 0x778289
+    case CloudyNight = 0x555d62
     case SnowDay = 0xb4b7b7
-    case SnowNight = 0xaaadad
+    case SnowNight = 0x7d7f7f
     case DefaultColor = 0x009ec1
 }
 

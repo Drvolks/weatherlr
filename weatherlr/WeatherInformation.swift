@@ -60,6 +60,7 @@ class WeatherInformation {
     }
     
     func color() -> WeatherColor {
+        
         switch weatherStatus {
         case .SnowOrRain,
              .ShowersOrDrizzle,
@@ -72,7 +73,6 @@ class WeatherInformation {
              .PeriodsOfRainOrSnow,
              .PeriodsOfRainOrFreezingRain,
              .PeriodsOfRainOrDrizzle,
-             .PeriodsOfRainMixedWithSnow,
              .PeriodsOfRainMixedWithSnow,
              .PeriodsOfRain,
              .PeriodsOfLightSnowOrFreezingRain,

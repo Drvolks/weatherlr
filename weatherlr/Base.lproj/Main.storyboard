@@ -11,6 +11,7 @@
         <scene sceneID="wgr-rU-wVU">
             <objects>
                 <navigationController storyboardIdentifier="weatherNavigation" extendedLayoutIncludesOpaqueBars="YES" navigationBarHidden="YES" toolbarHidden="NO" id="vda-Mz-Pqn" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4AH-KA-65Y">

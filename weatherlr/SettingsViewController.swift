@@ -259,4 +259,8 @@ class SettingsViewController: UITableViewController {
             selectedCityWeatherInformation = nil
         }
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
+    }
 }

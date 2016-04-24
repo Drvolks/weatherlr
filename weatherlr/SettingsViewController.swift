@@ -106,34 +106,17 @@ class SettingsViewController: UITableViewController {
             if selectedCity != nil && city.id == selectedCity!.id {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
                 
-                cell.weatherImage.hidden = false
-                cell.weatherImage.image = selectedCityWeatherInformation?.image()
-                cell.activityIndicator.hidden = true
+                if let currentWeatherInformation = selectedCityWeatherInformation {
+                    cell.weatherImage.hidden = false
+                    cell.activityIndicator.hidden = true
+                    cell.weatherImage.image = currentWeatherInformation.image()
+                } else {
+                    fetchWeather(cell, city: city)
+                }
             } else {
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 
-                cell.weatherImage.hidden = true
-                cell.activityIndicator.hidden = false
-                cell.activityIndicator.startAnimating()
-                
-                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-                dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                    let weatherInformations = CityHelper.getWeatherInformations(city)
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        cell.activityIndicator.stopAnimating()
-                        
-                        cell.activityIndicator.hidden = true
-                        cell.weatherImage.hidden = false
-                        
-                        if weatherInformations.count > 0 {
-                            let weatherInfo = weatherInformations[0]
-                            cell.weatherImage.image = weatherInfo.image()
-                        } else {
-                            cell.weatherImage.image = UIImage(named: String(WeatherStatus.Blank))
-                        }
-                    }
-                }
+                fetchWeather(cell, city: city)
             }
             
             return cell;
@@ -164,6 +147,31 @@ class SettingsViewController: UITableViewController {
             cell.backgroundColor = UIColor.clearColor()
             
             return cell
+        }
+    }
+    
+    func fetchWeather(cell: CityTableViewCell, city: City) {
+        cell.weatherImage.hidden = true
+        cell.activityIndicator.hidden = false
+        cell.activityIndicator.startAnimating()
+        
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            let weatherInformations = CityHelper.getWeatherInformations(city)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                cell.activityIndicator.stopAnimating()
+                
+                cell.activityIndicator.hidden = true
+                cell.weatherImage.hidden = false
+                
+                if weatherInformations.count > 0 {
+                    let weatherInfo = weatherInformations[0]
+                    cell.weatherImage.image = weatherInfo.image()
+                } else {
+                    cell.weatherImage.image = UIImage(named: String(WeatherStatus.Blank))
+                }
+            }
         }
     }
     
@@ -235,14 +243,11 @@ class SettingsViewController: UITableViewController {
         // TODO à vérifier, ne fonctionne pas
         doneButton.title = "Done".localized()
     }
-    
-    /*
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "addCity" {
+            selectedCityWeatherInformation = nil
+        }
     }
-    */
-
 }

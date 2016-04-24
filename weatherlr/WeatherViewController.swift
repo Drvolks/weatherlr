@@ -221,5 +221,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             targetController.selectedCityWeatherInformation = weatherInformations[0]
         }
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
 }
 

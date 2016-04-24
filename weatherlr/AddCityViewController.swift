@@ -130,4 +130,8 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
+    }
 }

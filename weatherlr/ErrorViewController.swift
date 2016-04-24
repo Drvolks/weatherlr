@@ -40,6 +40,9 @@ class ErrorViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
 
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation

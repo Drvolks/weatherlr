@@ -41,7 +41,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             refresh()
         } else {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addCity") as UIViewController
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addCityNavigation") as! UINavigationController
                 self.presentViewController(viewController, animated: false, completion: nil)
             })
         }

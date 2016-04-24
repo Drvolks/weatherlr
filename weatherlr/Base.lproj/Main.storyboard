@@ -685,7 +685,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="ypS-Fz-qdF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yon-rF-ZOW">
                             <connections>
-                                <segue destination="M1r-4r-3bv" kind="presentation" id="a8D-uy-fao"/>
+                                <segue destination="M1r-4r-3bv" kind="presentation" identifier="addCity" id="a8D-uy-fao"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

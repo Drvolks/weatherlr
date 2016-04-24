@@ -21,6 +21,7 @@ class SettingsViewController: UITableViewController {
     let citySection = 0
     let langSection = 1
     let contactSection = 2
+    let dataProviderSection = 3
     let francaisRow = 1
     
     override func viewDidLoad() {
@@ -62,7 +63,7 @@ class SettingsViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,13 +141,21 @@ class SettingsViewController: UITableViewController {
             }
             
             return cell
-        } else {
+        } else if indexPath.section == contactSection {
             let cell = tableView.dequeueReusableCellWithIdentifier("contactCell", forIndexPath: indexPath) as! ContactTableViewCell
             
             cell.contactText.text = "Contact".localized()
             cell.backgroundColor = UIColor.clearColor()
             
             return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("dataProviderCell", forIndexPath: indexPath) as! DataProviderTableViewCell
+            
+            cell.dataProviderLabel.text = "Provider".localized()
+            cell.backgroundColor = UIColor.clearColor()
+            
+            return cell
+
         }
     }
     

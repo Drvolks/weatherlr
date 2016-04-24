@@ -687,7 +687,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="canada" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-cm-edW">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Flag_of_Canada.png" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-cm-edW">
                                             <rect key="frame" x="8" y="12" width="40" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="BFQ-6Z-Oy9"/>
@@ -868,9 +868,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RainAtTimesHeavy" width="600" height="500"/>
-        <image name="canada" width="640" height="320"/>
+        <image name="Flag_of_Canada.png" width="426" height="213"/>
+        <image name="RainAtTimesHeavy" width="71" height="59"/>
         <image name="settings" width="28" height="28"/>
-        <image name="up" width="250" height="250"/>
+        <image name="up" width="29" height="29"/>
     </resources>
 </document>

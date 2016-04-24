@@ -446,11 +446,12 @@
                     <connections>
                         <outlet property="gradientView" destination="ok4-Zn-oFQ" id="uhv-NR-e8v"/>
                         <outlet property="weatherTable" destination="0UC-87-mQn" id="8dB-z3-7hh"/>
+                        <segue destination="Gf6-dD-xkg" kind="presentation" identifier="error" id="7Qi-nV-v9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="407"/>
+            <point key="canvasLocation" x="-53" y="406"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gmf-Y4-7GZ">
@@ -472,6 +473,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yK-bd-RcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="697" y="802"/>
+        </scene>
+        <!--Error View Controller-->
+        <scene sceneID="RUX-em-NKm">
+            <objects>
+                <viewController storyboardIdentifier="error" id="XQk-Oo-rZV" customClass="ErrorViewController" customModule="weatherlr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pvA-KP-hiS"/>
+                        <viewControllerLayoutGuide type="bottom" id="2IG-gb-cZE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tbU-JH-KsX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5s-10-wuh" customClass="GradientView" customModule="weatherlr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RainAtTimesHeavy" translatesAutoresizingMaskIntoConstraints="NO" id="Vw1-HO-HLk">
+                                <rect key="frame" x="180" y="120" width="240" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="HkE-h5-vfU"/>
+                                    <constraint firstAttribute="height" constant="200" id="sSt-5M-rdd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Erreur :(" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-Wj-AwD">
+                                <rect key="frame" x="269" y="340" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G5s-10-wuh" firstAttribute="leading" secondItem="tbU-JH-KsX" secondAttribute="leadingMargin" constant="-20" id="3qR-3l-2ho"/>
+                            <constraint firstItem="Vw1-HO-HLk" firstAttribute="centerX" secondItem="tbU-JH-KsX" secondAttribute="centerX" id="7ar-HA-iVZ"/>
+                            <constraint firstItem="4aY-Wj-AwD" firstAttribute="centerX" secondItem="Vw1-HO-HLk" secondAttribute="centerX" id="Jbr-Nf-4gY"/>
+                            <constraint firstItem="Vw1-HO-HLk" firstAttribute="centerY" secondItem="tbU-JH-KsX" secondAttribute="centerY" id="WbW-B7-aAp"/>
+                            <constraint firstItem="4aY-Wj-AwD" firstAttribute="top" secondItem="Vw1-HO-HLk" secondAttribute="top" constant="20" id="YIo-Ac-A2m"/>
+                            <constraint firstItem="G5s-10-wuh" firstAttribute="top" secondItem="pvA-KP-hiS" secondAttribute="bottom" constant="-20" id="Yqw-Jf-p1k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G5s-10-wuh" secondAttribute="trailing" constant="-20" id="Z8w-QM-f8s"/>
+                            <constraint firstItem="2IG-gb-cZE" firstAttribute="top" secondItem="G5s-10-wuh" secondAttribute="bottom" id="fuI-21-Chq"/>
+                            <constraint firstItem="4aY-Wj-AwD" firstAttribute="top" secondItem="Vw1-HO-HLk" secondAttribute="bottom" constant="20" id="jBN-mb-mLH"/>
+                            <constraint firstItem="Vw1-HO-HLk" firstAttribute="centerX" secondItem="tbU-JH-KsX" secondAttribute="centerX" id="oBc-rx-glY"/>
+                            <constraint firstItem="Vw1-HO-HLk" firstAttribute="top" secondItem="pvA-KP-hiS" secondAttribute="bottom" constant="180" id="w1v-DJ-zPS"/>
+                            <constraint firstItem="2IG-gb-cZE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4aY-Wj-AwD" secondAttribute="bottom" constant="20" id="xOU-7p-jHx"/>
+                            <constraint firstItem="Vw1-HO-HLk" firstAttribute="top" secondItem="pvA-KP-hiS" secondAttribute="bottom" constant="100" id="xQE-PU-VBu"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WbW-B7-aAp"/>
+                                <exclude reference="oBc-rx-glY"/>
+                                <exclude reference="w1v-DJ-zPS"/>
+                                <exclude reference="YIo-Ac-A2m"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Try again" id="evo-9c-NBg">
+                            <connections>
+                                <action selector="tryAgainClicked:" destination="XQk-Oo-rZV" id="8Zo-7C-mop"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="iba-1b-WTB"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="4aY-Wj-AwD" id="ph9-IW-yzE"/>
+                        <outlet property="gradientView" destination="G5s-10-wuh" id="DWW-wW-Dy8"/>
+                        <outlet property="tryAgainButton" destination="evo-9c-NBg" id="9r4-YZ-TWV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHA-f5-bK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="-378"/>
         </scene>
         <!--Settings-->
         <scene sceneID="vEq-hf-5Ht">
@@ -721,8 +797,34 @@
             </objects>
             <point key="canvasLocation" x="2850" y="735"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zDl-j4-pRN">
+            <objects>
+                <navigationController storyboardIdentifier="errorNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" toolbarHidden="NO" id="Gf6-dD-xkg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="oi1-eL-hi4"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="St9-Pp-RFb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="sY2-iy-hgc">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="XQk-Oo-rZV" kind="relationship" relationship="rootViewController" id="74D-Cw-ZsR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mW2-sZ-thc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="-340"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="RainAtTimesHeavy" width="600" height="500"/>
         <image name="settings" width="28" height="28"/>
         <image name="up" width="250" height="250"/>
     </resources>

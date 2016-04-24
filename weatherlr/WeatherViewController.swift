@@ -40,8 +40,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if PreferenceHelper.getSelectedCity() != nil {
             refresh()
         } else {
-            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addCity") as UIViewController
-            self.presentViewController(viewController, animated: false, completion: nil)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addCity") as UIViewController
+                self.presentViewController(viewController, animated: false, completion: nil)
+            })
         }
     }
     
@@ -61,30 +63,41 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             selectedCity = city
             weatherInformations = CityHelper.getWeatherInformations(city)
             
-            decorate()
+            if weatherInformations.count == 0 {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("errorNav") as! UINavigationController
+                    self.presentViewController(viewController, animated: false, completion: nil)
+                })
+            } else {
+                decorate()
             
-            weatherTable.reloadData()
+                weatherTable.reloadData()
+            }
         }
     }
     
     func decorate() {
-        let weatherInfo = weatherInformations[0]
+        var colorDay = UIColor(weatherColor: WeatherColor.ClearDay)
+        var colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
         
-        let colorDay = UIColor(weatherColor: weatherInfo.color())
-        
-        var colorNight:UIColor
-        switch weatherInfo.color() {
-        case .ClearDay:
-            colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
-            break
-        case .SnowDay:
-            colorNight = UIColor(weatherColor: WeatherColor.SnowNight)
-            break
-        case .CloudyDay:
-            colorNight = UIColor(weatherColor: WeatherColor.CloudyNight)
-            break
-        default:
-            colorNight = UIColor(weatherColor: WeatherColor.DefaultColor)
+        if weatherInformations.count > 0 {
+            let weatherInfo = weatherInformations[0]
+            
+            colorDay = UIColor(weatherColor: weatherInfo.color())
+            
+            switch weatherInfo.color() {
+            case .ClearDay:
+                colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
+                break
+            case .SnowDay:
+                colorNight = UIColor(weatherColor: WeatherColor.SnowNight)
+                break
+            case .CloudyDay:
+                colorNight = UIColor(weatherColor: WeatherColor.CloudyNight)
+                break
+            default:
+                colorNight = UIColor(weatherColor: WeatherColor.DefaultColor)
+            }
         }
         
         view.backgroundColor = colorDay
@@ -164,21 +177,23 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             header.cityLabel.text = name
             
-            var weatherInfo = weatherInformations[0]
-            header.currentTemperatureLabel.text = String(weatherInfo.temperature)
-            
-            if(weatherInfo.image() == blankImage) {
-                header.weatherImage.hidden = true
-            } else {
-                header.weatherImage.image = weatherInfo.image()
-                header.weatherImage.hidden = false
-            }
-            
-            if weatherInformations.count > 1 {
-                weatherInfo = weatherInformations[1]
+            if weatherInformations.count > 0 {
+                var weatherInfo = weatherInformations[0]
+                header.currentTemperatureLabel.text = String(weatherInfo.temperature)
                 
-                header.temperatureLabel.text = String(weatherInfo.temperature)
-                header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
+                if(weatherInfo.image() == blankImage) {
+                    header.weatherImage.hidden = true
+                } else {
+                    header.weatherImage.image = weatherInfo.image()
+                    header.weatherImage.hidden = false
+                }
+                
+                if weatherInformations.count > 1 {
+                    weatherInfo = weatherInformations[1]
+                    
+                    header.temperatureLabel.text = String(weatherInfo.temperature)
+                    header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
+                }
             }
         }
         

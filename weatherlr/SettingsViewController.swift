@@ -123,11 +123,14 @@ class SettingsViewController: UITableViewController {
                     dispatch_async(dispatch_get_main_queue()) {
                         cell.activityIndicator.stopAnimating()
                         
+                        cell.activityIndicator.hidden = true
+                        cell.weatherImage.hidden = false
+                        
                         if weatherInformations.count > 0 {
                             let weatherInfo = weatherInformations[0]
-                            cell.weatherImage.hidden = false
                             cell.weatherImage.image = weatherInfo.image()
-                            cell.activityIndicator.hidden = true
+                        } else {
+                            cell.weatherImage.image = UIImage(named: String(WeatherStatus.Blank))
                         }
                     }
                 }

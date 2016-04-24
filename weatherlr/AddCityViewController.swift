@@ -70,7 +70,11 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if(PreferenceHelper.isFrench()) {
                     name = city.frenchName
                 }
-                if name.containsString(searchText) {
+                
+                let searched = searchText.lowercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
+                name = name.lowercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
+                
+                if name.containsString(searched) {
                     filteredCities.append(city)
                 }
             }

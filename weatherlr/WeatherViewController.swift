@@ -38,7 +38,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.backgroundColor = UIColor.clearColor()
 
         if PreferenceHelper.getSelectedCity() != nil {
-            refresh()
+            refresh(false)
         } else {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addCityNavigation") as! UINavigationController
@@ -48,7 +48,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func applicationWillEnterForeground(notification: NSNotification) {
-        refresh()
+        refresh(true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,23 +56,38 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     
-    func refresh() {
-        weatherInformations.removeAll()
-        
+    func refresh(thread: Bool) {
         if let city = PreferenceHelper.getSelectedCity() {
-            selectedCity = city
-            weatherInformations = CityHelper.getWeatherInformations(city)
+            self.selectedCity = city
             
-            if weatherInformations.count == 0 {
+            if thread {
+                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                    self.weatherInformations = CityHelper.getWeatherInformations(city)
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.displayWeather(false)
+                    }
+                }
+            } else {
+                self.weatherInformations = CityHelper.getWeatherInformations(city)
+                displayWeather(true)
+            }
+        }
+    }
+    
+    func displayWeather(foreground: Bool) {
+        if self.weatherInformations.count == 0 {
+            if(foreground) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("errorNav") as! UINavigationController
                     self.presentViewController(viewController, animated: false, completion: nil)
                 })
-            } else {
-                decorate()
-            
-                weatherTable.reloadData()
             }
+        } else {
+            self.decorate()
+            
+            self.weatherTable.reloadData()
         }
     }
     

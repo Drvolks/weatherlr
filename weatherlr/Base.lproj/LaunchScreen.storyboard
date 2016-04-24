@@ -31,18 +31,39 @@
                                     <constraint firstAttribute="width" constant="240" id="dUO-xr-O2e"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="canada" highlightedImage="canada" translatesAutoresizingMaskIntoConstraints="NO" id="icY-hp-b60">
+                                <rect key="frame" x="20" y="548" width="60" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="aYe-pi-czx"/>
+                                    <constraint firstAttribute="width" constant="60" id="sVP-8t-SFE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Data provided by Environment Canada" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mel-mm-4xu">
+                                <rect key="frame" x="88" y="553" width="216" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oP6-77-RW9" firstAttribute="top" secondItem="t58-3i-cny" secondAttribute="bottom" constant="20" id="4dS-Iw-qS4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="icY-hp-b60" secondAttribute="leading" id="4jv-YZ-N5N"/>
+                            <constraint firstItem="mel-mm-4xu" firstAttribute="leading" secondItem="icY-hp-b60" secondAttribute="trailing" constant="8" id="5Id-gK-dWV"/>
+                            <constraint firstItem="icY-hp-b60" firstAttribute="top" secondItem="mel-mm-4xu" secondAttribute="bottom" constant="-26" id="6bB-2z-lfl"/>
                             <constraint firstAttribute="leadingMargin" secondItem="oP6-77-RW9" secondAttribute="leading" id="Jdw-ge-N8R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oP6-77-RW9" secondAttribute="trailing" id="PY3-tY-yYb"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="icY-hp-b60" secondAttribute="bottom" constant="20" id="PbT-Bh-vUr"/>
                             <constraint firstItem="t58-3i-cny" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Wgd-6x-P1X"/>
+                            <constraint firstItem="mel-mm-4xu" firstAttribute="centerY" secondItem="icY-hp-b60" secondAttribute="centerY" id="b62-oO-4aw"/>
+                            <constraint firstItem="mel-mm-4xu" firstAttribute="leading" secondItem="icY-hp-b60" secondAttribute="trailing" constant="8" id="bw5-p2-Vtd"/>
                             <constraint firstItem="t58-3i-cny" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eud-uy-FwD"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oP6-77-RW9" secondAttribute="bottom" constant="100" id="vjt-EU-JOZ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="6bB-2z-lfl"/>
+                                <exclude reference="bw5-p2-Vtd"/>
                                 <exclude reference="vjt-EU-JOZ"/>
                             </mask>
                         </variation>
@@ -55,5 +76,6 @@
     </scenes>
     <resources>
         <image name="Clearing" width="600" height="500"/>
+        <image name="canada" width="640" height="320"/>
     </resources>
 </document>

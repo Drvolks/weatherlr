@@ -673,6 +673,49 @@
                                     <outlet property="contactText" destination="hit-5d-yFk" id="T64-1Z-RFO"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataProviderCell" id="Efk-fV-Yab" customClass="DataProviderTableViewCell" customModule="weatherlr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="245.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Efk-fV-Yab" id="THy-ec-UiK">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJm-Ix-Cop">
+                                            <rect key="frame" x="56" y="14" width="536" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="canada" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-cm-edW">
+                                            <rect key="frame" x="8" y="12" width="40" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="BFQ-6Z-Oy9"/>
+                                                <constraint firstAttribute="width" constant="40" id="afD-Lh-zN0"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DJm-Ix-Cop" secondAttribute="trailing" id="7PM-pE-zjN"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="ktR-cm-edW" secondAttribute="leading" id="Xxq-Ye-Ymc"/>
+                                        <constraint firstItem="ktR-cm-edW" firstAttribute="centerY" secondItem="THy-ec-UiK" secondAttribute="centerY" id="dcc-MD-xv8"/>
+                                        <constraint firstItem="DJm-Ix-Cop" firstAttribute="leading" secondItem="ktR-cm-edW" secondAttribute="trailing" constant="8" id="iui-dq-I7V"/>
+                                        <constraint firstItem="DJm-Ix-Cop" firstAttribute="centerY" secondItem="THy-ec-UiK" secondAttribute="centerY" id="qfb-JO-0Pw"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="ktR-cm-edW" secondAttribute="leading" id="wX0-Tt-3EG"/>
+                                        <constraint firstItem="ktR-cm-edW" firstAttribute="top" secondItem="THy-ec-UiK" secondAttribute="topMargin" constant="-5" id="wfp-1H-XLa"/>
+                                        <constraint firstItem="ktR-cm-edW" firstAttribute="centerY" secondItem="THy-ec-UiK" secondAttribute="centerY" id="yG4-ar-jaL"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Xxq-Ye-Ymc"/>
+                                            <exclude reference="wfp-1H-XLa"/>
+                                            <exclude reference="yG4-ar-jaL"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dataProviderLabel" destination="DJm-Ix-Cop" id="uTU-4u-YIr"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <toolbarItems>
@@ -825,6 +868,7 @@
     </scenes>
     <resources>
         <image name="RainAtTimesHeavy" width="600" height="500"/>
+        <image name="canada" width="640" height="320"/>
         <image name="settings" width="28" height="28"/>
         <image name="up" width="250" height="250"/>
     </resources>

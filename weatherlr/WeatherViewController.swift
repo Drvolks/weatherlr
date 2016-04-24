@@ -138,13 +138,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-       // UIView.animateWithDuration(0.8, animations: {
-       //     cell.contentView.alpha = 1.0
-      //  })
-    }
-    
+
     func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {
         var name = "up"
         

@@ -166,7 +166,7 @@ class SettingsViewController: UITableViewController {
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            let weatherInformations = CityHelper.getWeatherInformations(city)
+            let weatherInformations = WeatherHelper.getWeatherInformations(city)
             
             dispatch_async(dispatch_get_main_queue()) {
                 cell.activityIndicator.stopAnimating()

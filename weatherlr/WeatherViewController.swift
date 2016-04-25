@@ -63,14 +63,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             if thread {
                 let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                 dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                    self.weatherInformations = CityHelper.getWeatherInformations(city)
+                    self.weatherInformations = WeatherHelper.getWeatherInformations(city)
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         self.displayWeather(false)
                     }
                 }
             } else {
-                self.weatherInformations = CityHelper.getWeatherInformations(city)
+                self.weatherInformations = WeatherHelper.getWeatherInformations(city)
                 displayWeather(true)
             }
         }

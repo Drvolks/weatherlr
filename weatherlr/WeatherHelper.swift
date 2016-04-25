@@ -8,15 +8,24 @@
 
 import Foundation
 
-class CityHelper {
+class WeatherHelper {
     static func getWeatherInformations(city:City) -> [WeatherInformation] {
+        let cachedWeather = ExpiringCache.instance.objectForKey(city.id) as? [WeatherInformation]
+        
+        if cachedWeather != nil {
+            return cachedWeather!
+        }
+        
         let url = UrlHelper.getUrl(city)
         
         if let url = NSURL(string: url) {
             if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
                 let rssEntries = rssParser.parse()
                 let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
-                return weatherInformationProcess.perform()
+                let weatherInformations = weatherInformationProcess.perform()
+                
+                ExpiringCache.instance.setObject(weatherInformations, forKey: city.id)
+                return weatherInformations
             }
         }
         

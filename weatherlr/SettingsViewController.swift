@@ -203,8 +203,6 @@ class SettingsViewController: UITableViewController {
                 PreferenceHelper.removeFavorite(city)
                 
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            } else if editingStyle == .Insert {
-                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             }
         }
     }
@@ -222,6 +220,8 @@ class SettingsViewController: UITableViewController {
             } else {
                 PreferenceHelper.saveLanguage(Language.English)
             }
+            
+            ExpiringCache.instance.removeAllObjects()
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             

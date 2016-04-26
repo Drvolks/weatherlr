@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Wingham - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/on-110_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/on-110_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-26T19:18:51Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160426191851</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Wingham</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-11T06:15:00Z</updated>
+ <published>2016-04-11T06:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_w1:20160411061500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 3,6&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Mount Forest 15h00 HAE mardi 26 avril 2016 <br/>
+<b>Température:</b> 3,6&deg;C <br/>
+<b>Humidité:</b> 89 %<br/>
+<b>Point de rosée:</b> 2,0&deg;C <br/>
+<b>Vent:</b> NNE 14 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_cc:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagement. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement ce soir. Vents devenant du nord-est à 20 km/h ce soir. Minimum moins 1. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc1:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 13 sauf 9 près du lac Huron.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents du nord-est de 20 km/h devenant du nord-ouest à 20 le matin. Maximum 13 sauf 9 près du lac Huron. Indice UV de 7 ou élevé. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc2:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Ennuagement. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement vers minuit. Vents du nord-ouest de 20 km/h devenant du nord-est à 20 en soirée. Minimum moins 1. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc3:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 10. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc4:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc5:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 13. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc6:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc7:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc8:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc9:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 13. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc10:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. Minimum 8. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc11:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Possibilité d'averses. Maximum 12. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-110_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 12. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-110_fc12:20160426193000</id>
+ </entry>
+ </feed>
+

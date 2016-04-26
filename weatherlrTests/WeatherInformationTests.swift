@@ -28,7 +28,7 @@ class WeatherInformationTests: XCTestCase {
         XCTAssertEqual("sumary", result.summary)
         XCTAssertEqual("detail", result.detail)
         
-        // temperature negatire
+        // temperature negative
         temperature = -10
         result = WeatherInformation(temperature: temperature, weatherStatus: .Sunny, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         XCTAssertNotNil(result)

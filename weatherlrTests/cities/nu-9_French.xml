@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Coral Harbour - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nu-9_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nu-9_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-26T19:01:53Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160426190153</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVERTISSEMENT DE BLIZZARD EN VIGUEUR, Coral Harbour</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?nu4"/>
+ <updated>2016-04-26T15:59:00Z</updated>
+ <published>2016-04-26T15:59:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émis à: 10h59 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_w1:201604261559</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Poudrerie basse, -9,3&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Coral Harbour 14h00 HNE mardi 26 avril 2016 <br/>
+<b>Condition:</b> Poudrerie basse <br/>
+<b>Température:</b> -9,3&deg;C <br/>
+<b>Pression / Tendance:</b> 102,5 kPa à la baisse<br/>
+<b>Visibilité:</b> 19,3 km<br/>
+<b>Humidité:</b> 78 %<br/>
+<b>Refroidissement éolien:</b> -21 <br/>
+<b>Point de rosée:</b> -12,5&deg;C <br/>
+<b>Vent:</b> NNO 48 km/h rafale 58 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_cc:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Nuageux. Maximum moins 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Vents du nord de 30 km/h avec rafales à 50 augmentant à 50 avec rafales à 70 tôt cet après-midi. Maximum moins 11. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc1:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Blizzard. Températures à la hausse pour atteindre moins 8 au cours de la nuit.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Blizzard débutant ce soir. Vents du nord de 50 km/h avec rafales à 70. Températures à la hausse pour atteindre moins 8 au cours de la nuit. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc2:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Blizzard. Maximum moins 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Blizzard cessant en après-midi. Nuageux par la suite. Vents du nord de 50 km/h avec rafales à 70. Maximum moins 5. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc3:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses de neige. Minimum moins 9. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 9. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc4:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum moins 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum moins 7. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc5:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum moins 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 12. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc6:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum moins 3. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc7:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 6. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc8:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum plus 1. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc9:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 6. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc10:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 1. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc11:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 3. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc12:20160426160000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-9_metric_f.html"/>
+ <updated>2016-04-26T16:00:00Z</updated>
+ <published>2016-04-26T16:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 2. Prévisions émises 11h00 HNE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-9_fc13:20160426160000</id>
+ </entry>
+ </feed>
+

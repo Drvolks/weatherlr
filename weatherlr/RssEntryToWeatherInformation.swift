@@ -164,7 +164,7 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.ChanceOfDrizzle
         case "bruine", "drizzle":
             return WeatherStatus.Drizzle
-        case "neige intermittente ou pluie", "periods of snow or rain":
+        case "neige intermittente ou pluie", "periods of snow or rain", "pluie et neige faibles", "light rain and snow":
             return WeatherStatus.PeriodsOfSnowOrRain
         case "faible bruine verglaçante", "light freezing drizzle":
             return WeatherStatus.LightFreezingDrizzle
@@ -172,7 +172,7 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.PeriodsOfFreezingRain
         case "pluie intermittente ou pluie verglaçante", "periods of rain or freezing rain":
             return WeatherStatus.PeriodsOfRainOrFreezingRain
-        case "bruine intermittente", "periods of drizzle":
+        case "bruine intermittente", "periods of drizzle", "bruine faible", "light drizzle":
             return WeatherStatus.PeriodsOfDrizzle
         case "averses de neige ou de pluie", "flurries or rain showers":
             return WeatherStatus.FlurriesOrRainShowers
@@ -210,6 +210,32 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.PeriodsOfDrizzleMixedWithFreezingDrizzle
         case "bruine verglaçante ou bruine", "freezing drizzle or drizzle":
             return WeatherStatus.FreezingDrizzleOrDrizzle
+        case "possibilité d'averses de pluie ou de neige fondante", "chance of rain showers or wet flurries":
+            return WeatherStatus.ChanceOfRainShowersOrWetFlurries
+        case "neige et poudrerie", "snow and blowing snow", "neige et poudrerie élevée":
+            return WeatherStatus.SnowAndBlowingSnow
+        case "neige forte", "heavy snow":
+            return WeatherStatus.HeavySnow
+        case "averses de neige parfois fortes", "flurries at times heavy":
+            return WeatherStatus.FlurriesAtTimesHeavy
+        case "neige mêlée de pluie", "snow mixed with rain":
+            return WeatherStatus.SnowMixedWithRain
+        case "possibilité de neige", "chance of snow":
+            return WeatherStatus.ChanceOfSnow
+        case "possibilité de faible neige", "chance of light snow":
+            return WeatherStatus.ChanceOfLightSnow
+        case "neige parfois forte", "snow at times heavy":
+            return WeatherStatus.SnowAtTimesHeavy
+        case "pluie verglaçante ou neige", "freezing rain or snow":
+            return WeatherStatus.FreezingRainOrSnow
+        case "faible pluie verglaçante", "light freezing rain":
+            return WeatherStatus.LightFreezingRain
+        case "cristaux de glace", "ice crystals":
+            return WeatherStatus.IceCrystals
+        case "neige en grains", "snow grains":
+            return WeatherStatus.SnowGrains
+        case "neige fondante", "wet snow":
+            return WeatherStatus.WetSnow
         default:
             return convertWeatherStatusWithRegex(text)
         }
@@ -369,7 +395,7 @@ class RssEntryToWeatherInformation {
     }
     
     func isAlert(title: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT).*?", options: [])
+        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY).*?", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return false
@@ -379,7 +405,7 @@ class RssEntryToWeatherInformation {
     }
     
     func extractAlertText(title: String) -> String {
-        var regex = try! NSRegularExpression(pattern: "(WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT)", options: [])
+        var regex = try! NSRegularExpression(pattern: "(WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY)", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return ""

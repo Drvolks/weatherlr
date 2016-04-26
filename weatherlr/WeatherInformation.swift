@@ -95,7 +95,12 @@ class WeatherInformation {
              .ChanceOfRainShowersOrFlurries,
              .ChanceOfDrizzleMixedWithFreezingDrizzle,
              .AFewShowers,
-             .AFewRainShowersOrFlurries:
+             .AFewRainShowersOrFlurries,
+             .ChanceOfRainShowersOrWetFlurries,
+             .SnowMixedWithRain,
+             .FreezingRainOrSnow,
+             .LightFreezingRain,
+             .WetSnow:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,
@@ -108,7 +113,14 @@ class WeatherInformation {
              .DriftingSnow,
              .CloudyWithXPercentChanceOfFlurries,
              .BlowingSnow,
-             .Blizzard:
+             .Blizzard,
+             .SnowAndBlowingSnow,
+             .HeavySnow,
+             .FlurriesAtTimesHeavy,
+             .ChanceOfSnow,
+             .ChanceOfLightSnow,
+             .SnowAtTimesHeavy,
+             .SnowGrains:
             return WeatherColor.SnowDay
         case .Sunny,
              .PartlyCloudy,
@@ -123,6 +135,7 @@ class WeatherInformation {
              .AMixOfSunAndCloud,
              .AFewFlurries,
              .AFewClouds,
+             .IceCrystals,
              .Blank,
              .NA:
             return WeatherColor.ClearDay

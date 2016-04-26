@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Bay Roberts - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nl-43_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nl-43_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-26T18:23:52Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160426182352</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR, Bay Roberts</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?nl28"/>
+ <updated>2016-04-26T18:09:00Z</updated>
+ <published>2016-04-26T18:09:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 15h39 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_w1:201604261809</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses de neige. Minimum moins 2. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses de neige tôt ce soir. Neige débutant après minuit. Accumulation de 5 à 10 cm. Vents du sud-ouest de 30 km/h avec rafales à 50 devenant du sud à 20 vers minuit puis du sud-est à 30 avec rafales à 50 en fin de nuit. Minimum moins 2. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc1:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Neige ou pluie. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige se changeant en averses de pluie ou bruine et cessant en mi-journée. Alternance de soleil et de nuages par la suite. Accumulation de neige de 2 à 4 cm. Hauteur de pluie prévue de 2 mm. Vents du sud-est de 50 km/h avec rafales à 80 devenant du sud-ouest à 30 avec rafales à 50 en mi-journée. Maximum 7. Indice UV de 5 ou modéré. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc2:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Quelques nuages. Minimum moins 3 sauf moins 6 en terrains bas dans l'intérieur.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement en soirée. Vents du sud-ouest de 20 km/h avec rafales à 40 devenant légers après minuit. Minimum moins 3 sauf moins 6 en terrains bas dans l'intérieur. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc3:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses. Maximum plus 5. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 40 pour cent de probabilité d'averses. Maximum plus 5. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc4:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum moins 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 5. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc5:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 6. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc6:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc7:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 8. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc8:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 2. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc9:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 6. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc10:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc11:20160426183000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-43_metric_f.html"/>
+ <updated>2016-04-26T18:30:00Z</updated>
+ <published>2016-04-26T18:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 6. Prévisions émises 16h00 HAT mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-43_fc12:20160426183000</id>
+ </entry>
+ </feed>
+

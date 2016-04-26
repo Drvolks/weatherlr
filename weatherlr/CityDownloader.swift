@@ -26,17 +26,17 @@ class CityDownloader {
                 let url = UrlHelper.getUrl(city, lang: lang)
                 
                 if let url = NSURL(string: url) {
-                    load(url, city: city)
+                    load(url, city: city, lang: lang)
                 }
             }
         }
     }
     
-    func load(url: NSURL, city:City) {
+    func load(url: NSURL, city:City, lang: Language) {
         print("Downloading \(city.frenchName) \(city.province)")
         
         if let data = NSData(contentsOfURL: url) {
-            let path = outputPath + "/" + city.id + ".xml"
+            let path = outputPath + "/" + city.id + "_" + String(lang) + ".xml"
             try! data.writeToFile(path, options: NSDataWritingOptions.AtomicWrite)
         }
     }

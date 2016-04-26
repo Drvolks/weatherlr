@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Stettler - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ab-5_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ab-5_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-26T17:27:14Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160426172714</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Stettler</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-09T19:30:00Z</updated>
+ <published>2016-04-09T19:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_w1:20160409193000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 5,1&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Stettler 11h00 HAR mardi 26 avril 2016 <br/>
+<b>Température:</b> 5,1&deg;C <br/>
+<b>Humidité:</b> 90 %<br/>
+<b>Point de rosée:</b> 3,5&deg;C <br/>
+<b>Vent:</b> S 13 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_cc:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Généralement nuageux. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Devenant alternance de soleil et de nuages cet après-midi. Nappes de brouillard se dissipant cet après-midi. Maximum 11. Indice UV de 3 ou modéré. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc1:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. Dégagement vers minuit. Minimum moins 1. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc2:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Devenant alternance de soleil et de nuages le matin. Maximum 13. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc3:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Nuageux. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum plus 1. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc4:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 12. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc5:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc6:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Nuageux. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 14. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc7:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum plus 4. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 4. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc8:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 13. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 13. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc9:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc10:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 19. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc11:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc12:20160426170000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-04-26T17:00:00Z</updated>
+ <published>2016-04-26T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 22. Prévisions émises 11h00 HAR mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc13:20160426170000</id>
+ </entry>
+ </feed>
+

@@ -13,9 +13,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var weatherTable: UITableView!
     @IBOutlet weak var gradientView: GradientView!
     
+    var refreshControl: UIRefreshControl!
     var weatherInformations = [WeatherInformation]()
     var selectedCity:City?
     let blankImage = UIImage(named: String(WeatherStatus.Blank))
+    var lastRefresh:NSDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.tableHeaderView = nil
         weatherTable.backgroundColor = UIColor.clearColor()
+        
+        refreshControl = UIRefreshControl()
+        refreshLabel()
+        refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        weatherTable.addSubview(refreshControl)
 
         if PreferenceHelper.getSelectedCity() != nil {
             refresh(false)
@@ -45,6 +52,23 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.presentViewController(viewController, animated: false, completion: nil)
             })
         }
+    }
+    
+    func refreshLabel() {
+        let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
+        let refreshLabel:String
+        if lastRefresh != nil {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.timeStyle = .ShortStyle
+            refreshLabel = "Last refresh".localized() + " " + dateFormatter.stringFromDate(lastRefresh!)
+        } else {
+            refreshLabel = "Refreshing".localized()
+        }
+        refreshControl.attributedTitle = NSAttributedString(string: refreshLabel, attributes: refreshControlFont)
+    }
+    
+    func refreshFromScroll(sender:AnyObject) {
+        refresh(true)
     }
     
     func applicationWillEnterForeground(notification: NSNotification) {
@@ -85,6 +109,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 })
             }
         } else {
+            lastRefresh = NSDate()
+            refreshLabel()
+            
+            refreshControl.endRefreshing()
+            
             self.decorate()
             
             self.weatherTable.reloadData()

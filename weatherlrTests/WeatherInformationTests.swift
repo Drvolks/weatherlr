@@ -46,11 +46,11 @@ class WeatherInformationTests: XCTestCase {
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .PartlyCloudy, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         resultat = bean.image()
-        XCTAssertEqual(UIImage(named: "PartlyCloudy"), resultat)
+        XCTAssertEqual(UIImage(named: "AFewClouds"), resultat)
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .PartlyCloudy, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
         resultat = bean.image()
-        XCTAssertEqual(UIImage(named: "PartlyCloudyNight"), resultat)
+        XCTAssertEqual(UIImage(named: "AFewCloudsNight"), resultat)
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .UnitTest, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         resultat = bean.image()

@@ -104,7 +104,7 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         parser.parser.parse()
         
         var performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        var result = performer.convert(rssEntry, position: 0)
+        var result = performer.convert(rssEntry)
         
         XCTAssertEqual(WeatherDay.Now, result.weatherDay)
         XCTAssertEqual(-4, result.temperature)
@@ -120,7 +120,7 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         parser.parser.delegate = rssEntry
         parser.parser.parse()
         performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        result = performer.convert(rssEntry, position: 2)
+        result = performer.convert(rssEntry)
         XCTAssertEqual("Quelques nuages. Minimum moins 12.", result.detail)
         XCTAssertEqual(Tendency.Minimum, result.tendancy)
         XCTAssertTrue(result.night)
@@ -130,7 +130,7 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         parser.parser.delegate = rssEntry
         parser.parser.parse()
         performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        result = performer.convert(rssEntry, position: 2)
+        result = performer.convert(rssEntry)
         XCTAssertEqual("Sunny. Wind north 20 km/h becoming west 20 near noon. High minus 2. UV index 4 or moderate.", result.detail)
         XCTAssertEqual(Tendency.Maximum, result.tendancy)
         XCTAssertFalse(result.night)
@@ -140,7 +140,7 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         parser.parser.delegate = rssEntry
         parser.parser.parse()
         performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        result = performer.convert(rssEntry, position: 2)
+        result = performer.convert(rssEntry)
         XCTAssertEqual(WeatherDay.Now, result.weatherDay)
         XCTAssertEqual(-4, result.temperature)
         XCTAssertEqual(WeatherStatus.Blank, result.weatherStatus)
@@ -752,27 +752,27 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         // Conditions actuelles
         let performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        var result = performer.convertWeatherDay("Conditions actuelles", position: 0)
+        var result = performer.convertWeatherDay("Conditions actuelles", currentDay: 0)
         XCTAssertEqual(WeatherDay.Now, result)
-        result = performer.convertWeatherDay("Current Conditions", position: 0)
+        result = performer.convertWeatherDay("Current Conditions", currentDay: 0)
         XCTAssertEqual(WeatherDay.Now, result)
-        result = performer.convertWeatherDay("Conditions actuelles", position: 3)
+        result = performer.convertWeatherDay("Conditions actuelles", currentDay: 3)
         XCTAssertEqual(WeatherDay.Now, result)
         
         // Prévisions météo
-        result = performer.convertWeatherDay("Prévisions météo", position: 1)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 1)
         XCTAssertEqual(WeatherDay.Today, result)
-        result = performer.convertWeatherDay("Weather Forecasts", position: 1)
+        result = performer.convertWeatherDay("Weather Forecasts", currentDay: 1)
         XCTAssertEqual(WeatherDay.Today, result)
-        result = performer.convertWeatherDay("Prévisions météo", position: 2)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 2)
         XCTAssertEqual(WeatherDay.Tomorow, result)
-        result = performer.convertWeatherDay("Prévisions météo", position: 3)
-        XCTAssertEqual(WeatherDay.NA, result)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 3)
+        XCTAssertEqual(WeatherDay.Day2, result)
         
         // Invalid data
-        result = performer.convertWeatherDay("test", position: 0)
+        result = performer.convertWeatherDay("test", currentDay: 0)
         XCTAssertEqual(WeatherDay.NA, result)
-        result = performer.convertWeatherDay("Prévisions météo", position: 162)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 162)
         XCTAssertEqual(WeatherDay.NA, result)
     }
     

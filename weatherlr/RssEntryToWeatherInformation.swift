@@ -10,6 +10,7 @@ import UIKit
 
 class RssEntryToWeatherInformation {
     var rssEntries:[RssEntry]
+    var day:Int = 0
     
     init(rssEntries: [RssEntry]) {
         self.rssEntries = rssEntries
@@ -34,7 +35,7 @@ class RssEntryToWeatherInformation {
         }
         
         for i in debut..<rssEntries.count {
-            let weatherInformation = convert(rssEntries[i], position: i-debut)
+            let weatherInformation = convert(rssEntries[i])
             
             if weatherInformation.weatherDay == WeatherDay.Today && weatherInformation.night {
                 result[result.count-1].night = true
@@ -46,11 +47,12 @@ class RssEntryToWeatherInformation {
         return result
     }
     
-    func convert(rssEntry: RssEntry, position: Int) -> WeatherInformation {
-        let day = convertWeatherDay(rssEntry.category, position: position)
+    func convert(rssEntry: RssEntry) -> WeatherInformation {
+        let night = isNight(rssEntry.title)
+        let weatherDay = convertWeatherDay(rssEntry.category, currentDay: day)
         
         let statusText:String;
-        if day == .Now {
+        if weatherDay == .Now {
             statusText = extractWeatherConditionNowFromTitle(rssEntry.title)
         } else {
             statusText = extractWeatherCondition(rssEntry.title)
@@ -58,7 +60,7 @@ class RssEntryToWeatherInformation {
 
         let temperature:Int
         let weatherStatus:WeatherStatus
-        if day == .Now {
+        if weatherDay == .Now {
             let temperatureText = extractTemperatureNowFromTitle(rssEntry.title)
             temperature = convertTemperature(temperatureText)
             
@@ -76,9 +78,13 @@ class RssEntryToWeatherInformation {
         let detail = nettoyerDetail(rssEntry.summary)
         let tendendy = extractTendency(rssEntry.title)
         let when = extractWhen(rssEntry.title)
-        let night = isNight(rssEntry.title)
+
+        let result = WeatherInformation(temperature: temperature, weatherStatus: weatherStatus, weatherDay: weatherDay, summary: rssEntry.title, detail: detail, tendancy: tendendy, when: when, night: night)
         
-        let result = WeatherInformation(temperature: temperature, weatherStatus: weatherStatus, weatherDay: day, summary: rssEntry.title, detail: detail, tendancy: tendendy, when: when, night: night)
+        if(!night || weatherDay == WeatherDay.Today) {
+            day = day + 1
+        }
+        
         return result
     }
     
@@ -257,12 +263,12 @@ class RssEntryToWeatherInformation {
         return WeatherStatus.NA
     }
     
-    func convertWeatherDay(text: String, position: Int) -> WeatherDay {
+    func convertWeatherDay(text: String, currentDay: Int) -> WeatherDay {
         switch text {
         case "Conditions actuelles", "Current Conditions":
             return WeatherDay.Now
         case "Prévisions météo", "Weather Forecasts":
-            if let day = WeatherDay(rawValue: position) {
+            if let day = WeatherDay(rawValue: currentDay) {
                 return day
             }
             return WeatherDay.NA

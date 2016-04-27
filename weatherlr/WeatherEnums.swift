@@ -100,6 +100,25 @@ enum WeatherDay : Int {
     case Now = 0
     case Today = 1
     case Tomorow = 2
+    case Day2 = 3
+    case Day3 = 4
+    case Day4 = 5
+    case Day5 = 6
+    case Day6 = 7
+    case Day7 = 8
+    case Day8 = 9
+    case Day9 = 10
+    case Day10 = 11
+    case Day11 = 12
+    case Day12 = 13
+    case Day13 = 14
+    case Day14 = 15
+    case Day15 = 16
+    case Day16 = 17
+    case Day17 = 18
+    case Day18 = 19
+    case Day19 = 20
+    case Day20 = 21
     case NA = -99
 }
 

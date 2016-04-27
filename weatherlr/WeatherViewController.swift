@@ -59,6 +59,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let refreshLabel:String
         if lastRefresh != nil {
             let dateFormatter = NSDateFormatter()
+            let lang = PreferenceHelper.getLanguage()
+            dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
             dateFormatter.timeStyle = .ShortStyle
             refreshLabel = "Last refresh".localized() + " " + dateFormatter.stringFromDate(lastRefresh!)
         } else {
@@ -155,7 +157,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("weatherCell", forIndexPath: indexPath) as! WeatherTableViewCell
         
         let weatherInfo = weatherInformations[indexPath.row+1]
@@ -163,13 +164,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.weatherDetailLabel.text = weatherInfo.detail
         cell.backgroundColor = UIColor.clearColor()
 
-        cell.whenLabel.text = weatherInfo.when
-
         if weatherInfo.weatherDay == WeatherDay.Today {
             cell.minMaxLabel.hidden = true
             cell.minMaxImage.hidden = true
             
-            if !weatherInfo.night {
+            if weatherInfo.night {
+                cell.whenLabel.text = weatherInfo.when
+            } else {
                 cell.whenLabel.text = "Today".localized()
             }
         } else {
@@ -178,9 +179,38 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             cell.minMaxLabel.hidden = false
             cell.minMaxImage.hidden = false
+            
+            if weatherInfo.night {
+                cell.whenLabel.text = weatherInfo.when
+            } else {
+                let today = NSDate()
+                let theDate = addDaystoGivenDate(today, NumberOfDaysToAdd: weatherInfo.weatherDay.rawValue - 1)
+                let dateFormatter = NSDateFormatter()
+                let lang = PreferenceHelper.getLanguage()
+                dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
+                if(lang == Language.French) {
+                    dateFormatter.dateFormat = "d MMMM"
+                } else {
+                    dateFormatter.dateFormat = "MMMM d"
+                }
+                
+                cell.whenLabel.text = weatherInfo.when + " " + dateFormatter.stringFromDate(theDate)
+            }
         }
         
         return cell
+    }
+    
+    func addDaystoGivenDate(baseDate:NSDate,NumberOfDaysToAdd:Int)->NSDate
+    {
+        let dateComponents = NSDateComponents()
+        let CurrentCalendar = NSCalendar.currentCalendar()
+        let CalendarOption = NSCalendarOptions()
+        
+        dateComponents.day = NumberOfDaysToAdd
+        
+        let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
+        return newDate!
     }
 
     func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {

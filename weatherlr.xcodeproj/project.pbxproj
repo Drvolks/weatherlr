@@ -30,10 +30,10 @@
 		6E816BD01CCD7A0100533684 /* Flag_of_Canada@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BCD1CCD7A0100533684 /* Flag_of_Canada@2x.png */; };
 		6E816BD11CCD7A0100533684 /* Flag_of_Canada@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BCE1CCD7A0100533684 /* Flag_of_Canada@3x.png */; };
 		6E816BD31CCE473E00533684 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E816BD21CCE473E00533684 /* ExpiringCache.swift */; };
-		6E816BD91CCF9D9400533684 /* launch@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BD61CCF9D9400533684 /* launch@1x.png */; };
 		6E816BDA1CCF9D9400533684 /* launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BD71CCF9D9400533684 /* launch@2x.png */; };
 		6E816BDB1CCF9D9400533684 /* launch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BD81CCF9D9400533684 /* launch@3x.png */; };
 		6E816C0D1CCFF87800533684 /* cities in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C0C1CCFF87800533684 /* cities */; };
+		6E816C0F1CD10E9100533684 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C0E1CD10E9100533684 /* launch.png */; };
 		6E9B63511CC593DE00B27334 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B63501CC593DE00B27334 /* StringExtension.swift */; };
 		6E9F32BE1CB3048100A9D6A7 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
 		6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
@@ -149,10 +149,10 @@
 		6E816BCD1CCD7A0100533684 /* Flag_of_Canada@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flag_of_Canada@2x.png"; sourceTree = "<group>"; };
 		6E816BCE1CCD7A0100533684 /* Flag_of_Canada@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flag_of_Canada@3x.png"; sourceTree = "<group>"; };
 		6E816BD21CCE473E00533684 /* ExpiringCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiringCache.swift; sourceTree = "<group>"; };
-		6E816BD61CCF9D9400533684 /* launch@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@1x.png"; sourceTree = "<group>"; };
 		6E816BD71CCF9D9400533684 /* launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@2x.png"; sourceTree = "<group>"; };
 		6E816BD81CCF9D9400533684 /* launch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@3x.png"; sourceTree = "<group>"; };
 		6E816C0C1CCFF87800533684 /* cities */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities; sourceTree = "<group>"; };
+		6E816C0E1CD10E9100533684 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		6E9B63501CC593DE00B27334 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 				6E816BCC1CCD7A0100533684 /* Flag_of_Canada.png */,
 				6E816BCD1CCD7A0100533684 /* Flag_of_Canada@2x.png */,
 				6E816BCE1CCD7A0100533684 /* Flag_of_Canada@3x.png */,
-				6E816BD61CCF9D9400533684 /* launch@1x.png */,
+				6E816C0E1CD10E9100533684 /* launch.png */,
 				6E816BD71CCF9D9400533684 /* launch@2x.png */,
 				6E816BD81CCF9D9400533684 /* launch@3x.png */,
 			);
@@ -506,13 +506,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E816C0F1CD10E9100533684 /* launch.png in Resources */,
 				6E4910A21CC59629006D3C82 /* Localizable.strings in Resources */,
 				6E816BDB1CCF9D9400533684 /* launch@3x.png in Resources */,
 				6E2905361CB2D5550040EB8B /* LaunchScreen.storyboard in Resources */,
 				6E2905331CB2D5550040EB8B /* Assets.xcassets in Resources */,
 				6E816BD01CCD7A0100533684 /* Flag_of_Canada@2x.png in Resources */,
 				6E816BD11CCD7A0100533684 /* Flag_of_Canada@3x.png in Resources */,
-				6E816BD91CCF9D9400533684 /* launch@1x.png in Resources */,
 				6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */,
 				6E816BCF1CCD7A0100533684 /* Flag_of_Canada.png in Resources */,
 				6E9F33561CB70D6300A9D6A7 /* Cities.plist in Resources */,

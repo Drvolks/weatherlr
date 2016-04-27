@@ -67,6 +67,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             refreshLabel = "Refreshing".localized()
         }
         refreshControl.attributedTitle = NSAttributedString(string: refreshLabel, attributes: refreshControlFont)
+        
+        refreshControl.beginRefreshing()
+        refreshControl.endRefreshing()
     }
     
     func refreshFromScroll(sender:AnyObject) {

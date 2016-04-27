@@ -31,4 +31,64 @@ class WeatherHelper {
         
         return [WeatherInformation]()
     }
+    
+    static func getImageSubstitute(weatherStatus: WeatherStatus) -> WeatherStatus? {
+        switch(weatherStatus) {
+        case .MainlyClear:
+            return WeatherStatus.MainlySunny
+        case .AFewFlurries,
+             .LightSnowshower,
+             .PeriodsOfLightSnow,
+             .PeriodsOfSnow:
+            return WeatherStatus.LightSnow
+        case .AFewShowers,
+             .LightRainshower,
+             .PeriodsOfRain,
+             .Showers:
+            return WeatherStatus.LightRain
+        case .AMixOfSunAndCloud,
+             .CloudyPeriods,
+             .PartlyCloudy:
+            return WeatherStatus.AFewClouds
+        case .ChanceOfFlurries,
+             .ChanceOfLightSnow,
+             .CloudyWithXPercentChanceOfFlurries:
+            return WeatherStatus.ChanceOfSnow
+        case .ChanceOfRainShowersOrFlurries:
+            return WeatherStatus.AFewRainShowersOrFlurries
+        case .ChanceOfRainShowersOrWetFlurries,
+             .RainOrFreezingRain:
+            return WeatherStatus.PeriodsOfRainOrFreezingRain
+        case .ChanceOfShowersOrDrizzle,
+             .ShowersOrDrizzle:
+            return WeatherStatus.PeriodsOfRainOrDrizzle
+        case .DrizzleMixedWithFreezingDrizzle,
+             .FreezingDrizzleOrDrizzle,
+             .PeriodsOfDrizzleMixedWithFreezingDrizzle:
+            return WeatherStatus.ChanceOfDrizzleMixedWithFreezingDrizzle
+        case .Flurries:
+            return WeatherStatus.Snow
+        case .FlurriesAtTimesHeavy:
+            return WeatherStatus.SnowAtTimesHeavy
+        case .FlurriesOrRainShowers,
+             .PeriodsOfRainMixedWithSnow,
+             .PeriodsOfSnowOrRain,
+             .RainShowersOrFlurries,
+             .SnowMixedWithRain,
+             .SnowOrRain:
+            return WeatherStatus.PeriodsOfRainOrSnow
+        case .FreezingRainOrSnow:
+            return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
+        case .IncreasingCloudiness:
+            return WeatherStatus.Clearing
+        case .Overcast:
+            return WeatherStatus.Cloudy
+        case .PeriodsOfDrizzle:
+            return WeatherStatus.ChanceOfDrizzle
+        case .SnowAndBlowingSnow:
+            return WeatherStatus.LightSnowAndBlowingSnow
+        default:
+            return nil
+        }
+    }
 }

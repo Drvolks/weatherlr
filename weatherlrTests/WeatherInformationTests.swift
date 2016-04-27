@@ -62,13 +62,27 @@ class WeatherInformationTests: XCTestCase {
     }
     
     func testAllImagesExists() {
+        let defaultImage = UIImage(named: String(WeatherStatus.NA))
+        
         for status in TestUtils.iterateEnum(WeatherStatus) {
-            if status != WeatherStatus.UnitTest {
-                let result = UIImage(named: String(status))
-                if result == nil {
+            if status != WeatherStatus.UnitTest && status != WeatherStatus.NA {
+                // day
+                var bean = WeatherInformation(temperature: 10, weatherStatus: status, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
+                
+                var result = bean.image()
+                if result == defaultImage {
                     print(status)
                 }
-                XCTAssertNotNil(result)
+                XCTAssertNotEqual(defaultImage, result)
+                
+                // night
+                bean = WeatherInformation(temperature: 10, weatherStatus: status, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
+                
+                result = bean.image()
+                if result == defaultImage {
+                    print(status)
+                }
+                XCTAssertNotEqual(defaultImage, result)
             }
         }
     }

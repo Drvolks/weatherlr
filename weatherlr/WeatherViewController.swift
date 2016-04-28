@@ -252,7 +252,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 var weatherInfo = weatherInformations[0]
                 header.currentTemperatureLabel.text = String(weatherInfo.temperature)
                 
-                if(weatherInfo.image() == blankImage) {
+                if(weatherInfo.weatherStatus == .Blank) {
                     header.weatherImage.hidden = true
                 } else {
                     header.weatherImage.image = weatherInfo.image()
@@ -262,8 +262,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if weatherInformations.count > 1 {
                     weatherInfo = weatherInformations[1]
                     
+                    header.temperatureLabel.hidden = false
+                    header.temperatureImage.hidden = false
                     header.temperatureLabel.text = String(weatherInfo.temperature)
                     header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
+                } else {
+                    header.temperatureLabel.text = ""
+                    header.temperatureLabel.hidden = true
+                    header.temperatureImage.hidden = true
                 }
             }
         }

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Three Hills - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ab-69_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ab-69_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-28T10:59:58Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160428105958</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Three Hills</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-09T22:15:00Z</updated>
+ <published>2016-04-09T22:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_w1:20160409221500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 3,7&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T10:00:00Z</updated>
+ <published>2016-04-28T10:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Three Hills 04h00 HAR jeudi 28 avril 2016 <br/>
+<b>Température:</b> 3,7&deg;C <br/>
+<b>Humidité:</b> 85 %<br/>
+<b>Point de rosée:</b> 1,4&deg;C <br/>
+<b>Vent:</b> SE 10 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_cc:20160428100000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Généralement nuageux. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Vents devenant du sud à 20 km/h avec rafales à 40 en mi-journée. Maximum 13. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc1:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. Dégagement en fin de nuit. Vents du sud de 20 km/h avec rafales à 40 devenant légers ce soir. Minimum plus 1. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc2:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Généralement ensoleillé. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Ennuagement en après-midi. Vents devenant du sud à 30 km/h avec rafales à 50 en mi-journée. Maximum 16. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc3:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 4. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc4:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 16. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc5:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc6:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc7:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc8:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 24.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 24. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc9:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc10:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 26.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 26. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc11:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc12:20160428110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 27.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-69_metric_f.html"/>
+ <updated>2016-04-28T11:00:00Z</updated>
+ <published>2016-04-28T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 27. Prévisions émises 05h00 HAR jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-69_fc13:20160428110000</id>
+ </entry>
+ </feed>
+

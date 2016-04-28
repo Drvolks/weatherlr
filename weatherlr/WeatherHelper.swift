@@ -87,6 +87,10 @@ class WeatherHelper {
             return WeatherStatus.ChanceOfDrizzle
         case .SnowAndBlowingSnow:
             return WeatherStatus.LightSnowAndBlowingSnow
+        case .WetFlurries:
+            return WeatherStatus.WetSnow
+        case .Fog:
+            return WeatherStatus.Mist
         default:
             return nil
         }

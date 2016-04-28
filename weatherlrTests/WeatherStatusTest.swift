@@ -20,15 +20,23 @@ class WeatherStatusTests: XCTestCase {
         noMissingStatus("/cities_en", lang: Language.English)
     }
     
-    func testNoMissingStatus() {
+    func testNoMissingStatus1() {
+        noMissingStatus("/cities")
+    }
+    
+    func testNoMissingStatus2() {
+        noMissingStatus("/cities2")
+    }
+    
+    func noMissingStatus(subPath: String) {
         let fileManager = NSFileManager.defaultManager()
         let path = testBundle.resourcePath!
-        let items = try! fileManager.contentsOfDirectoryAtPath(path + "/cities")
+        let items = try! fileManager.contentsOfDirectoryAtPath(path + subPath)
         for item in items {
             let url = NSURL(fileURLWithPath: item)
             let baseName = url.URLByDeletingPathExtension?.lastPathComponent!
             
-            if let file = testBundle.pathForResource("/cities/" + baseName!, ofType: "xml")
+            if let file = testBundle.pathForResource(subPath + "/" + baseName!, ofType: "xml")
             {
                 var lang = Language.French
                 if file.containsString(String(Language.English)) {

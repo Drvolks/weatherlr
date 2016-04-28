@@ -22,14 +22,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: UIApplicationWillEnterForegroundNotification, object: nil)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated);
         
         weatherTable.delegate = self
         weatherTable.dataSource = self
@@ -38,12 +30,18 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.tableHeaderView = nil
         weatherTable.backgroundColor = UIColor.clearColor()
         
-        if refreshControl == nil {
-            refreshControl = UIRefreshControl()
-            refreshLabel()
-            refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), forControlEvents: UIControlEvents.ValueChanged)
-            weatherTable.addSubview(refreshControl)
-        }
+        refreshControl = UIRefreshControl()
+        refreshLabel()
+        refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        weatherTable.addSubview(refreshControl)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
         
         if PreferenceHelper.getSelectedCity() != nil {
             refresh(false)

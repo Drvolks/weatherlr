@@ -39,11 +39,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.tableHeaderView = nil
         weatherTable.backgroundColor = UIColor.clearColor()
         
-        refreshControl = UIRefreshControl()
-        refreshLabel()
-        refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        weatherTable.addSubview(refreshControl)
-
+        if refreshControl == nil {
+            refreshControl = UIRefreshControl()
+            refreshLabel()
+            refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), forControlEvents: UIControlEvents.ValueChanged)
+            weatherTable.addSubview(refreshControl)
+        }
+        
         if PreferenceHelper.getSelectedCity() != nil {
             refresh(false)
         } else {

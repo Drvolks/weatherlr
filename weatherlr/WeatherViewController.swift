@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var weatherInformations = [WeatherInformation]()
     var selectedCity:City?
     var lastRefresh:NSDate?
+    let maxWidth = CGFloat(600)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,6 +153,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         gradientView.backgroundColor = colorDay
         
         gradientView.gradientWithColors(colorDay, colorNight)
+        
+        if view.bounds.size.width > maxWidth {
+            weatherTable.bounds.size.width = maxWidth
+        }
     }
 
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {

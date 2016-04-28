@@ -16,7 +16,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var refreshControl: UIRefreshControl!
     var weatherInformations = [WeatherInformation]()
     var selectedCity:City?
-    let blankImage = UIImage(named: String(WeatherStatus.Blank))
     var lastRefresh:NSDate?
     
     override func viewDidLoad() {

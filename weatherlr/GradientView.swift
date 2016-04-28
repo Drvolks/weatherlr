@@ -18,7 +18,7 @@ class GradientView: UIView {
         
         let deviceScale = UIScreen.mainScreen().scale
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRectMake(0.0, 150, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
+        gradientLayer.frame = CGRectMake(0.0, 300, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
         gradientLayer.colors = [ firstColor.CGColor, secondColor.CGColor ]
         
         self.layer.sublayers = nil

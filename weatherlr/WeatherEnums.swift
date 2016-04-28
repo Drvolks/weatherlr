@@ -36,7 +36,9 @@ enum WeatherStatus {
     case Flurries
     case FlurriesAtTimesHeavy
     case FlurriesOrRainShowers
+    case Fog
     case FreezingDrizzleOrDrizzle
+    case FreezingFog
     case FreezingRainOrSnow
     case HeavySnow
     case IceCrystals
@@ -80,6 +82,7 @@ enum WeatherStatus {
     case SnowMixedWithRain
     case SnowOrRain
     case Sunny
+    case WetFlurries
     case WetSnow
     case Blank
     case NA

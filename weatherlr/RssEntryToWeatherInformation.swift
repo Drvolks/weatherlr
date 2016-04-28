@@ -170,7 +170,7 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.ChanceOfDrizzle
         case "bruine", "drizzle":
             return WeatherStatus.Drizzle
-        case "neige intermittente ou pluie", "periods of snow or rain", "pluie et neige faibles", "light rain and snow":
+        case "neige intermittente ou pluie", "periods of snow or rain", "pluie et neige faibles", "light rain and snow", "faible neige intermittente ou pluie", "periods of light snow or rain", "quelques averses de neige ou de pluie", "a few flurries or rain showers":
             return WeatherStatus.PeriodsOfSnowOrRain
         case "faible bruine verglaçante", "light freezing drizzle":
             return WeatherStatus.LightFreezingDrizzle
@@ -218,7 +218,7 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.FreezingDrizzleOrDrizzle
         case "possibilité d'averses de pluie ou de neige fondante", "chance of rain showers or wet flurries":
             return WeatherStatus.ChanceOfRainShowersOrWetFlurries
-        case "neige et poudrerie", "snow and blowing snow", "neige et poudrerie élevée":
+        case "neige et poudrerie", "snow and blowing snow", "neige et poudrerie élevée", "neige parfois forte et poudrerie", "snow at times heavy and blowing snow":
             return WeatherStatus.SnowAndBlowingSnow
         case "neige forte", "heavy snow":
             return WeatherStatus.HeavySnow
@@ -242,6 +242,12 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.SnowGrains
         case "neige fondante", "wet snow":
             return WeatherStatus.WetSnow
+        case "averses de neige fondante", "wet flurries":
+            return WeatherStatus.WetFlurries
+        case "brouillard givrant", "freezing fog":
+            return WeatherStatus.FreezingFog
+        case "brouillard", "fog":
+            return WeatherStatus.Fog
         default:
             return convertWeatherStatusWithRegex(text)
         }

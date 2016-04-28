@@ -15,8 +15,10 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var navigationTitle: UINavigationItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
-    var cities = [City]()
-    var filteredCities = [City]()
+    var cityList = [City]()
+    var filteredCityList = [City]()
+    var filteredCities = [String:[City]]()
+    var sections = [Int:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +30,9 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
         
         let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
-        cities = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+        cityList = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
 
-        if PreferenceHelper.isFrench() {
-            cities.sortInPlace({ $0.frenchName < $1.frenchName })
-        } else {
-            cities.sortInPlace({ $0.englishName < $1.englishName })
-        }
-        
-        filteredCities = cities
+        resetSearch()
         
         cityTable.delegate = self
         cityTable.dataSource = self
@@ -48,6 +44,51 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             cancelButton.enabled = true
         }
+        
+        cityTable.sectionIndexBackgroundColor = UIColor.clearColor()
+    }
+    
+    func sortCityList(cityListToSort: [City]) -> [City] {
+        var newCityList = cityListToSort
+        
+        if PreferenceHelper.isFrench() {
+            newCityList.sortInPlace({ $0.frenchName < $1.frenchName })
+        } else {
+            newCityList.sortInPlace({ $0.englishName < $1.englishName })
+        }
+        
+        return newCityList
+    }
+    
+    func buildCityIndex(cityListToProcess: [City]) -> [String:[City]] {
+        var cityDictionary = [String:[City]]()
+        
+        for i in 0..<cityListToProcess.count {
+            let city = cityListToProcess[i]
+            let name = cityName(city)
+            let letter = (name.uppercaseString as NSString).substringToIndex(1)
+            
+            var cityListForLettre = cityDictionary[letter]
+            if cityListForLettre == nil {
+                cityListForLettre = [City]()
+            }
+            
+            cityListForLettre!.append(city)
+            cityDictionary[letter] = cityListForLettre
+        }
+        
+        let sortedKeys = cityDictionary.keys.sort()
+        var newSections = [Int:String]()
+        for i in 0..<sortedKeys.count {
+            let key = sortedKeys[i]
+            newSections[i] = key
+            
+            let cityListForLettre = cityDictionary[key]!
+            cityDictionary[key] = sortCityList(cityListForLettre)
+        }
+        sections = newSections
+        
+        return cityDictionary
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,36 +98,39 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredCities = [City]()
+        var newFilteredList = [City]()
         
-        if searchText.isEmpty && filteredCities.count < cities.count {
-            filteredCities = cities
-            cityTable.reloadData()
+        if searchText.isEmpty && filteredCityList.count < cityList.count {
+            resetSearch()
         } else {
-            for i in 0..<cities.count {
-                let city = cities[i]
+            for i in 0..<cityList.count {
+                let city = cityList[i]
 
-                var name = city.englishName
-                if(PreferenceHelper.isFrench()) {
-                    name = city.frenchName
-                }
+                let name = cityName(city)
                 
-                let searched = searchText.lowercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
-                name = name.lowercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
+                let searched = searchText.uppercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
                 
                 if name.containsString(searched) {
-                    filteredCities.append(city)
+                    newFilteredList.append(city)
                 }
             }
+            
+            filteredCities = buildCityIndex(newFilteredList)
+            filteredCityList = newFilteredList
         }
-        
         cityTable.reloadData()
+    }
+    
+    func resetSearch() {
+        filteredCityList.removeAll()
+        filteredCityList.appendContentsOf(cityList)
+        filteredCities = buildCityIndex(cityList)
     }
     
     // MARK: serch bar
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        if filteredCities.count < cities.count {
-            filteredCities = cities
+        if filteredCityList.count < cityList.count {
+            resetSearch()
             cityTable.reloadData()
         }
         
@@ -104,15 +148,36 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     // MARK: table
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        return filteredCities.keys.sort()
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredCities.count
+        let key = sections[section]!
+        if let sectionValues = filteredCities[key] {
+            return sectionValues.count
+        }
+        
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
     }
     
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! CityTableViewCell
         
-        let city = filteredCities[indexPath.row]
+        let city = cityRow(indexPath)
         
         var name = city.englishName
         if(PreferenceHelper.isFrench()) {
@@ -123,8 +188,23 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func cityName(city: City) -> String {
+        var name = city.englishName
+        if(PreferenceHelper.isFrench()) {
+            name = city.frenchName
+        }
+        
+        name = name.uppercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
+    
+        return name
+    }
+    
+    func cityRow(indexPath: NSIndexPath) -> City {
+        return filteredCities[sections[indexPath.section]!]![indexPath.row]
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let city = filteredCities[indexPath.row]
+        let city = cityRow(indexPath)
         
         PreferenceHelper.addFavorite(city)
         

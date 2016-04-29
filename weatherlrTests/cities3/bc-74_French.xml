@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Vancouver - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-74_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-74_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-29T11:03:03Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110303</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Vancouver</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-03-14T05:30:00Z</updated>
+ <published>2016-03-14T05:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_w1:20160314053000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, 11,9&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport int. de Vancouver 04h00 HAP vendredi 29 avril 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 11,9&deg;C <br/>
+<b>Pression / Tendance:</b> 101,8 kPa à la hausse<br/>
+<b>Visibilité:</b> 32,2 km<br/>
+<b>Humidité:</b> 71 %<br/>
+<b>Point de rosée:</b> 6,9&deg;C <br/>
+<b>Vent:</b> ENE 7 km/h<br/>
+<b>Cote air santé:</b> 2 <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_cc:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum 9. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. 30 pour cent de probabilité d'averses au cours de la nuit. Minimum 9. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc1:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Possibilité d'averses. Maximum 16. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses le matin. Dégagement en après-midi. Devenant venteux en après-midi. Maximum 16. Indice UV de 3 ou modéré. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc2:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Venteux en soirée. Minimum 7. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc3:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 17. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc4:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 8. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc5:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 20 sauf 25 à l'intérieur.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20 sauf 25 à l'intérieur. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc6:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc7:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 22 sauf 27 à l'intérieur.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 22 sauf 27 à l'intérieur. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc8:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 9. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc9:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses. Maximum 17. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 17. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc10:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum 10. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 10. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc11:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Nuageux. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-74_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 17. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-74_fc12:20160428230000</id>
+ </entry>
+ </feed>
+

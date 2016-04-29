@@ -75,7 +75,9 @@ class WeatherHelper {
              .PeriodsOfSnowOrRain,
              .RainShowersOrFlurries,
              .SnowMixedWithRain,
-             .SnowOrRain:
+             .SnowOrRain,
+             .SnowAtTimesHeavyMixedWithRain,
+             .PeriodsOfSnowMixedWithRain:
             return WeatherStatus.PeriodsOfRainOrSnow
         case .FreezingRainOrSnow:
             return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
@@ -89,7 +91,8 @@ class WeatherHelper {
             return WeatherStatus.LightSnowAndBlowingSnow
         case .WetFlurries:
             return WeatherStatus.WetSnow
-        case .Fog:
+        case .Fog,
+             .Haze:
             return WeatherStatus.Mist
         default:
             return nil

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Natashquan - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-125_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-125_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-29T11:03:17Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110317</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Natashquan</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-13T09:15:00Z</updated>
+ <published>2016-04-13T09:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_w1:20160413091500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, -2,3&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Natashquan 07h00 HAE vendredi 29 avril 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> -2,3&deg;C <br/>
+<b>Pression:</b> 101,2 kPa <br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 70 %<br/>
+<b>Refroidissement éolien:</b> -10 <br/>
+<b>Point de rosée:</b> -7,1&deg;C <br/>
+<b>Vent:</b> O 30 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_cc:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Généralement ensoleillé. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Vents d'ouest de 30 km/h avec rafales à 50 augmentant à 50 avec rafales à 70 ce matin. Maximum plus 4. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc1:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement. Vents d'ouest de 50 km/h avec rafales à 70 devenant du nord-ouest à 20 avec rafales à 40 ce soir. Minimum zéro. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc2:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 7. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc3:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc4:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 7. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc5:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 3. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc6:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc7:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Pluie intermittente. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum zéro. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc8:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Pluie ou neige. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie ou neige. Venteux. Maximum plus 4. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc9:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Pluie ou neige. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie ou neige. Minimum plus 1. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc10:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Pluie ou neige. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie ou neige. Maximum plus 5. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc11:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum plus 1. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 1. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc12:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Nuageux. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-125_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 7. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-125_fc13:20160429090000</id>
+ </entry>
+ </feed>
+

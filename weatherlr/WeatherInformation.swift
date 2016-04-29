@@ -108,7 +108,10 @@ class WeatherInformation {
              .WetSnow,
              .WetFlurries,
              .FreezingFog,
-             .Fog:
+             .Fog,
+             .Haze,
+             .SnowAtTimesHeavyMixedWithRain,
+             .PeriodsOfSnowMixedWithRain:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

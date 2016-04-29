@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Lytton - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-33_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-33_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-29T11:02:28Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110228</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Lytton</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-02-02T13:15:00Z</updated>
+ <published>2016-02-02T13:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_w1:20160202131500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Nuageux, 12,6&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Lytton 04h00 HAP vendredi 29 avril 2016 <br/>
+<b>Condition:</b> Nuageux <br/>
+<b>Température:</b> 12,6&deg;C <br/>
+<b>Pression:</b> 101,5 kPa <br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 62 %<br/>
+<b>Point de rosée:</b> 5,5&deg;C <br/>
+<b>Vent:</b> S 28 km/h rafale 41 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_cc:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum 11. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. 40 pour cent de probabilité d'averses au cours de la nuit. Vents du sud de 30 km/h avec rafales à 50 devenant légers tard ce soir. Minimum 11. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc1:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Pluie intermittente. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Hauteur prévue de 5 à 10 mm. Vents devenant du sud à 30 km/h avec rafales à 50 en après-midi. Maximum 14. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc2:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 7. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux avec 40 pour cent de probabilité d'averses en soirée. Dégagement au cours de la nuit. Vents du sud de 30 km/h avec rafales à 50. Minimum 7. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc3:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc4:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc5:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 26.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 26. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc6:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc7:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 27.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 27. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc8:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc9:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc10:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc11:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-33_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-33_fc12:20160428230000</id>
+ </entry>
+ </feed>
+

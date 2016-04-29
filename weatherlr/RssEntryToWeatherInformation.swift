@@ -248,6 +248,12 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.FreezingFog
         case "brouillard", "fog":
             return WeatherStatus.Fog
+        case "brume sèche", "haze":
+            return WeatherStatus.Haze
+        case "neige parfois forte mêlée de pluie", "snow at times heavy mixed with rain":
+            return WeatherStatus.SnowAtTimesHeavyMixedWithRain
+        case "neige intermittente mêlée de pluie", "periods of snow mixed with rain":
+            return WeatherStatus.PeriodsOfSnowMixedWithRain
         default:
             return convertWeatherStatusWithRegex(text)
         }

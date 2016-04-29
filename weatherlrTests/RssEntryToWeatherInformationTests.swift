@@ -638,6 +638,25 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Fog")
         XCTAssertEqual(WeatherStatus.Fog, result)
         
+        // Haze
+        result = performer.convertWeatherStatus("Brume sèche")
+        XCTAssertEqual(WeatherStatus.Haze, result)
+        result = performer.convertWeatherStatus("Haze")
+        XCTAssertEqual(WeatherStatus.Haze, result)
+        
+        // SnowAtTimesHeavyMixedWithRain
+        result = performer.convertWeatherStatus("Neige parfois forte mêlée de pluie")
+        XCTAssertEqual(WeatherStatus.SnowAtTimesHeavyMixedWithRain, result)
+        result = performer.convertWeatherStatus("Snow at times heavy mixed with rain")
+        XCTAssertEqual(WeatherStatus.SnowAtTimesHeavyMixedWithRain, result)
+        
+        // PeriodsOfSnowMixedWithRain
+        result = performer.convertWeatherStatus("Neige intermittente mêlée de pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowMixedWithRain, result)
+        result = performer.convertWeatherStatus("Periods of snow mixed with rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowMixedWithRain, result)
+
+        
         
         
         // Cloudy with X percent chance of flurries

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Sparwood - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-52_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-52_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-29T11:03:39Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110339</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Sparwood</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2015-12-09T15:15:00Z</updated>
+ <published>2015-12-09T15:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_w1:20151209151500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: -0,6&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Sparwood 05h00 HAR vendredi 29 avril 2016 <br/>
+<b>Température:</b> -0,6&deg;C <br/>
+<b>Pression / Tendance:</b> 101,8 kPa à la baisse<br/>
+<b>Humidité:</b> 91 %<br/>
+<b>Refroidissement éolien:</b> -3 <br/>
+<b>Point de rosée:</b> -1,9&deg;C <br/>
+<b>Vent:</b> NNE 7 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_cc:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Possibilité d'averses. Maximum 10. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux avec 60 pour cent de probabilité d'averses. Maximum 10. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc1:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum zéro. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum zéro. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc2:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 12. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. 30 pour cent de probabilité d'averses en après-midi avec risque d'un orage. Maximum 12. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc3:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc4:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc5:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc6:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc7:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc8:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 24.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 24. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc9:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc10:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc11:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc12:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-52_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 22. Prévisions émises 05h00 HAR vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-52_fc13:20160429110000</id>
+ </entry>
+ </feed>
+

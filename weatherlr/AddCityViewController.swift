@@ -15,10 +15,12 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var navigationTitle: UINavigationItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
-    var cityList = [City]()
+    var allCityList = [City]()
+    var allCities = [String:[City]]()
     var filteredCityList = [City]()
     var filteredCities = [String:[City]]()
     var sections = [Int:String]()
+    var allSections = [Int:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,9 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
         
         let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
-        cityList = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+        allCityList = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+        allCities = buildCityIndex(allCityList)
+        allSections = buildSections(allCities)
 
         resetSearch()
         
@@ -77,18 +81,32 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
             cityDictionary[letter] = cityListForLettre
         }
         
+        return sortCityIndex(cityDictionary)
+    }
+    
+    func buildSections(cityDictionary : [String:[City]]) -> [Int:String] {
         let sortedKeys = cityDictionary.keys.sort()
         var newSections = [Int:String]()
         for i in 0..<sortedKeys.count {
             let key = sortedKeys[i]
             newSections[i] = key
+        }
+
+        return newSections
+    }
+    
+    func sortCityIndex(cityDictionary : [String:[City]]) -> [String:[City]] {
+        var sortedCityDictionary = [String:[City]]()
+        let sortedKeys = cityDictionary.keys.sort()
+        
+        for i in 0..<sortedKeys.count {
+            let key = sortedKeys[i]
             
             let cityListForLettre = cityDictionary[key]!
-            cityDictionary[key] = sortCityList(cityListForLettre)
+            sortedCityDictionary[key] = sortCityList(cityListForLettre)
         }
-        sections = newSections
-        
-        return cityDictionary
+
+        return sortedCityDictionary
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,11 +118,11 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         var newFilteredList = [City]()
         
-        if searchText.isEmpty && filteredCityList.count < cityList.count {
+        if searchText.isEmpty {
             resetSearch()
         } else {
-            for i in 0..<cityList.count {
-                let city = cityList[i]
+            for i in 0..<allCityList.count {
+                let city = allCityList[i]
 
                 let name = cityName(city)
                 
@@ -116,26 +134,26 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             
             filteredCities = buildCityIndex(newFilteredList)
+            sections = buildSections(filteredCities)
             filteredCityList = newFilteredList
         }
         cityTable.reloadData()
     }
     
     func resetSearch() {
-        filteredCityList.removeAll()
-        filteredCityList.appendContentsOf(cityList)
-        filteredCities = buildCityIndex(cityList)
+        filteredCityList = allCityList
+        filteredCities = allCities
+        sections = allSections
     }
     
     // MARK: serch bar
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        if filteredCityList.count < cityList.count {
-            resetSearch()
-            cityTable.reloadData()
-        }
+        resetSearch()
         
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        
+        cityTable.reloadData()
     }
     
     // MARK: - Navigation

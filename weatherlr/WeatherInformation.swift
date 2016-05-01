@@ -111,7 +111,14 @@ class WeatherInformation {
              .Fog,
              .Haze,
              .SnowAtTimesHeavyMixedWithRain,
-             .PeriodsOfSnowMixedWithRain:
+             .PeriodsOfSnowMixedWithRain,
+             .PeriodsOfDrizzleOrRain,
+             .RainOrDrizzle,
+             .LightDrizzleAndFog,
+             .LightRainAndFog,
+             .PeriodsOfDrizzleMixedWithRain,
+             .PeriodsOfSnowMixedWithFreezingRain,
+             .FogPatches:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

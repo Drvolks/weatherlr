@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Umiujaq - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-122_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-122_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-01T12:05:50Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160501120550</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Umiujaq</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-27T08:45:00Z</updated>
+ <published>2016-04-27T08:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_w1:20160427084500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, -2,8&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport d'Umiujaq 08h00 HAE dimanche 01 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> -2,8&deg;C <br/>
+<b>Pression:</b> 103,1 kPa <br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 90 %<br/>
+<b>Refroidissement éolien:</b> -6 <br/>
+<b>Point de rosée:</b> -4,2&deg;C <br/>
+<b>Vent:</b> ENE 9 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_cc:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Généralement nuageux. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Maximum plus 1. Indice UV de 4 ou modéré. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc1:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Températures stables près de plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Dégagement au cours de la nuit. Vents devenant d'est à 20 km/h ce soir. Températures stables près de plus 1. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc2:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents du sud-est de 20 km/h. Maximum plus 5. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc3:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Nuageux. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. Minimum moins 2. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc4:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Nuageux. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum plus 4. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc5:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum plus 1. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 1. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc6:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum plus 5. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum plus 5. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc7:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 4. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc8:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum moins 1. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc9:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Nuageux. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum moins 2. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc10:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Nuageux. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum plus 5. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc11:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum moins 1. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc12:20160501083000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-122_metric_f.html"/>
+ <updated>2016-05-01T08:30:00Z</updated>
+ <published>2016-05-01T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 4. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-122_fc13:20160501083000</id>
+ </entry>
+ </feed>
+

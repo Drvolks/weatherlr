@@ -254,6 +254,20 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.SnowAtTimesHeavyMixedWithRain
         case "neige intermittente mêlée de pluie", "periods of snow mixed with rain":
             return WeatherStatus.PeriodsOfSnowMixedWithRain
+        case "pluie ou bruine", "rain or drizzle":
+            return WeatherStatus.RainOrDrizzle
+        case "bruine intermittente ou pluie", "periods of drizzle or rain":
+            return WeatherStatus.PeriodsOfDrizzleOrRain
+        case "bruine faible et brouillard", "light drizzle and fog":
+            return WeatherStatus.LightDrizzleAndFog
+        case "pluie faible et brouillard", "light rain and fog":
+            return WeatherStatus.LightRainAndFog
+        case "bruine intermittente mêlée de pluie", "periods of drizzle mixed with rain":
+            return WeatherStatus.PeriodsOfDrizzleMixedWithRain
+        case "neige intermittente mêlée de pluie verglaçante", "periods of snow mixed with freezing rain":
+            return WeatherStatus.PeriodsOfSnowMixedWithFreezingRain
+        case "bancs de brouillard", "fog patches":
+            return WeatherStatus.FogPatches
         default:
             return convertWeatherStatusWithRegex(text)
         }

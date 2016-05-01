@@ -9,8 +9,9 @@
 import Foundation
 
 class WeatherHelper {
-    static func getWeatherInformations(city:City) -> [WeatherInformation] {
-        let cachedWeather = ExpiringCache.instance.objectForKey(city.id) as? [WeatherInformation]
+    static func getWeatherInformations(city:City) -> WeatherInformationWrapper {
+        let cache = ExpiringCache.instance
+        let cachedWeather = cache.objectForKey(city.id) as? WeatherInformationWrapper
         
         if cachedWeather != nil {
             return cachedWeather!
@@ -24,12 +25,13 @@ class WeatherHelper {
                 let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
                 let weatherInformations = weatherInformationProcess.perform()
                 
-                ExpiringCache.instance.setObject(weatherInformations, forKey: city.id)
-                return weatherInformations
+                let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations)
+                cache.setObject(weatherInformationWrapper, forKey: city.id)
+                return weatherInformationWrapper
             }
         }
         
-        return [WeatherInformation]()
+        return WeatherInformationWrapper()
     }
     
     static func getImageSubstitute(weatherStatus: WeatherStatus) -> WeatherStatus? {

@@ -14,9 +14,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var gradientView: GradientView!
     
     var refreshControl: UIRefreshControl!
-    var weatherInformations = [WeatherInformation]()
+    var weatherInformationWrapper = WeatherInformationWrapper()
     var selectedCity:City?
-    var lastRefresh:NSDate?
     let maxWidth = CGFloat(600)
     
     override func viewDidLoad() {
@@ -57,15 +56,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func refreshLabel() {
         let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
         let refreshLabel:String
-        if lastRefresh != nil {
-            let dateFormatter = NSDateFormatter()
-            let lang = PreferenceHelper.getLanguage()
-            dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
-            dateFormatter.timeStyle = .ShortStyle
-            refreshLabel = "Last refresh".localized() + " " + dateFormatter.stringFromDate(lastRefresh!)
-        } else {
-            refreshLabel = "Refreshing".localized()
-        }
+        let dateFormatter = NSDateFormatter()
+        let lang = PreferenceHelper.getLanguage()
+        dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
+        dateFormatter.timeStyle = .ShortStyle
+        refreshLabel = "Last refresh".localized() + " " + dateFormatter.stringFromDate(weatherInformationWrapper.lastRefresh)
+
         refreshControl.attributedTitle = NSAttributedString(string: refreshLabel, attributes: refreshControlFont)
         
         refreshControl.beginRefreshing()
@@ -92,21 +88,21 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             if thread {
                 let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                 dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                    self.weatherInformations = WeatherHelper.getWeatherInformations(city)
+                    self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         self.displayWeather(false)
                     }
                 }
             } else {
-                self.weatherInformations = WeatherHelper.getWeatherInformations(city)
+                self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
                 displayWeather(true)
             }
         }
     }
     
     func displayWeather(foreground: Bool) {
-        if self.weatherInformations.count == 0 {
+        if weatherInformationWrapper.weatherInformations.count == 0 {
             if(foreground) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("errorNav") as! UINavigationController
@@ -114,7 +110,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 })
             }
         } else {
-            lastRefresh = NSDate()
             refreshLabel()
             
             refreshControl.endRefreshing()
@@ -129,8 +124,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         var colorDay = UIColor(weatherColor: WeatherColor.ClearDay)
         var colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
         
-        if weatherInformations.count > 0 {
-            let weatherInfo = weatherInformations[0]
+        if weatherInformationWrapper.weatherInformations.count > 0 {
+            let weatherInfo = weatherInformationWrapper.weatherInformations[0]
             
             colorDay = UIColor(weatherColor: weatherInfo.color())
             
@@ -160,13 +155,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weatherInformations.count - 2
+        return weatherInformationWrapper.weatherInformations.count - 2
     }
     
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("weatherCell", forIndexPath: indexPath) as! WeatherTableViewCell
         
-        let weatherInfo = weatherInformations[indexPath.row+1]
+        let weatherInfo = weatherInformationWrapper.weatherInformations[indexPath.row+1]
         cell.weatherImage.image = weatherInfo.image()
         cell.weatherDetailLabel.text = weatherInfo.detail
         cell.backgroundColor = UIColor.clearColor()
@@ -252,8 +247,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             header.cityLabel.text = name
             
-            if weatherInformations.count > 0 {
-                var weatherInfo = weatherInformations[0]
+            if weatherInformationWrapper.weatherInformations.count > 0 {
+                var weatherInfo = weatherInformationWrapper.weatherInformations[0]
                 header.currentTemperatureLabel.text = String(weatherInfo.temperature)
                 
                 if(weatherInfo.weatherStatus == .Blank) {
@@ -263,8 +258,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                     header.weatherImage.hidden = false
                 }
                 
-                if weatherInformations.count > 1 {
-                    weatherInfo = weatherInformations[1]
+                if weatherInformationWrapper.weatherInformations.count > 1 {
+                    weatherInfo = weatherInformationWrapper.weatherInformations[1]
                     
                     header.temperatureLabel.hidden = false
                     header.temperatureImage.hidden = false
@@ -299,7 +294,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "Settings" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let targetController = navigationController.topViewController as! SettingsViewController
-            targetController.selectedCityWeatherInformation = weatherInformations[0]
+            targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
         }
     }
     

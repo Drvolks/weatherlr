@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>New Glasgow - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ns-1_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ns-1_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-01T07:33:46Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160501073346</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, New Glasgow</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-15T08:30:00Z</updated>
+ <published>2016-04-15T08:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_w1:20160415083000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 14 sauf 7 dans la brise de mer près de la côte.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 14 sauf 7 dans la brise de mer près de la côte. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc1:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Ennuagement. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques nuages. Ennuagement tard ce soir. Minimum plus 4. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc2:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du sud-est à 20 km/h en après-midi. Maximum 14. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc3:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Pluie intermittente. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum 6. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc4:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Pluie intermittente. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Maximum 12. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc5:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Pluie intermittente. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum 6. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc6:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Pluie intermittente. Maximum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Maximum 10. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc7:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Pluie intermittente. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum 8. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc8:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Pluie intermittente. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Maximum 14. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc9:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Pluie intermittente. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum 8. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc10:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Pluie intermittente. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Maximum 16. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc11:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Nuageux. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum 8. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc12:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Nuageux. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-1_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 16. Prévisions émises 05h00 HAA dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-1_fc13:20160501080000</id>
+ </entry>
+ </feed>
+

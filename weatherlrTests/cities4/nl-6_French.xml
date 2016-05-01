@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Grand Falls-Windsor - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nl-6_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nl-6_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-01T12:51:27Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160501125127</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Grand Falls-Windsor</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-22T08:45:00Z</updated>
+ <published>2016-04-22T08:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_w1:20160422084500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 7,0&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Badger 09h30 HAT dimanche 01 mai 2016 <br/>
+<b>Température:</b> 7,0&deg;C <br/>
+<b>Pression / Tendance:</b> 102,7 kPa à la hausse<br/>
+<b>Humidité:</b> 60 %<br/>
+<b>Point de rosée:</b> -0,2&deg;C <br/>
+<b>Vent:</b> S 9 km/h<br/>
+<b>Cote air santé:</b> 1 <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_cc:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Possibilité d'averses. Maximum 13. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. 60 pour cent de probabilité d'averses cet après-midi. Maximum 13. Indice UV de 4 ou modéré. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc1:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum moins 2. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses ce soir. Dégagement au cours de la nuit. Minimum moins 2. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc2:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Possibilité d'averses. Maximum 13. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. 60 pour cent de probabilité d'averses en après-midi. Maximum 13. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc3:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Possibilité d'averses. Minimum plus 2. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 40 pour cent de probabilité d'averses. Minimum plus 2. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc4:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Pluie intermittente ou neige. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente ou neige. Maximum 7. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc5:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Pluie intermittente. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum plus 3. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc6:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 15. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 15. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc7:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc8:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Averses. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Maximum 9. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc9:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Averses. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Minimum 7. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc10:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Possibilité d'averses. Maximum 15. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 15. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc11:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 7. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 7. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc12:20160501080000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Nuageux. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-6_metric_f.html"/>
+ <updated>2016-05-01T08:00:00Z</updated>
+ <published>2016-05-01T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 18. Prévisions émises 05h30 HAT dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-6_fc13:20160501080000</id>
+ </entry>
+ </feed>
+

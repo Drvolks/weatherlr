@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Ucluelet - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-5_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-5_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-01T12:06:19Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160501120619</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Ucluelet</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-03-10T18:15:00Z</updated>
+ <published>2016-03-10T18:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_w1:20160310181500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 6,1&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Tofino 05h00 HAP dimanche 01 mai 2016 <br/>
+<b>Température:</b> 6,1&deg;C <br/>
+<b>Pression:</b> 102,4 kPa <br/>
+<b>Humidité:</b> 95 %<br/>
+<b>Point de rosée:</b> 5,4&deg;C <br/>
+<b>Vent:</b> NO 1 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_cc:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc1:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc2:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Généralement ensoleillé. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Maximum 22. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc3:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Nuageux. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. Minimum 10. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc4:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Pluie. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie. Maximum 12. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc5:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Pluie intermittente. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum 8. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc6:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc7:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc8:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 15. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc9:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 8. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 8. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc10:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 17. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc11:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 8. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc12:20160501120000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-5_metric_f.html"/>
+ <updated>2016-05-01T12:00:00Z</updated>
+ <published>2016-05-01T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 05h00 HAP dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-5_fc13:20160501120000</id>
+ </entry>
+ </feed>
+

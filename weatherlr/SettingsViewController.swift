@@ -166,7 +166,7 @@ class SettingsViewController: UITableViewController {
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            let weatherInformations = WeatherHelper.getWeatherInformations(city)
+            let weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
             
             dispatch_async(dispatch_get_main_queue()) {
                 cell.activityIndicator.stopAnimating()
@@ -174,8 +174,8 @@ class SettingsViewController: UITableViewController {
                 cell.activityIndicator.hidden = true
                 cell.weatherImage.hidden = false
                 
-                if weatherInformations.count > 0 {
-                    let weatherInfo = weatherInformations[0]
+                if weatherInformationWrapper.weatherInformations.count > 0 {
+                    let weatherInfo = weatherInformationWrapper.weatherInformations[0]
                     cell.weatherImage.image = weatherInfo.image()
                 } else {
                     cell.weatherImage.image = UIImage(named: String(WeatherStatus.Blank))

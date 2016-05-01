@@ -13,14 +13,19 @@ class ExpiringCache : NSCache {
     
     private let ExpiringCacheObjectKey = "expireObjectKey"
     private let ExpiringCacheDefaultTimeout: NSTimeInterval = 60 * 5
-
+    
+    override init() {
+        super.init()
+        countLimit = 10
+    }
+    
     func setObject(obj: AnyObject, forKey key: AnyObject, timeout: NSTimeInterval) {
         super.setObject(obj, forKey: key)
         NSTimer.scheduledTimerWithTimeInterval(timeout, target: self, selector: #selector(ExpiringCache.timerExpires(_:)), userInfo: [ExpiringCacheObjectKey : key], repeats: false)
     }
     
     override func setObject(obj: AnyObject, forKey key: AnyObject) {
-        setObject(obj, forKey: key, timeout: ExpiringCacheDefaultTimeout)
+        self.setObject(obj, forKey: key, timeout: ExpiringCacheDefaultTimeout)
     }
     
     func timerExpires(timer: NSTimer) {

@@ -118,7 +118,10 @@ class WeatherInformation {
              .LightRainAndFog,
              .PeriodsOfDrizzleMixedWithRain,
              .PeriodsOfSnowMixedWithFreezingRain,
-             .FogPatches:
+             .FogPatches,
+             .RainMixedWithSnow,
+             .PeriodsOfLightSnowMixedWithFreezingDrizzle,
+             .Smoke:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,
@@ -138,7 +141,8 @@ class WeatherInformation {
              .ChanceOfSnow,
              .ChanceOfLightSnow,
              .SnowAtTimesHeavy,
-             .SnowGrains:
+             .SnowGrains,
+             .SnowMixedWithIcePellets:
             return WeatherColor.SnowDay
         case .Sunny,
              .PartlyCloudy,

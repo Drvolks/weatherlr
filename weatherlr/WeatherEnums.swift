@@ -67,6 +67,7 @@ enum WeatherStatus {
     case PeriodsOfFreezingRain
     case PeriodsOfLightSnow
     case PeriodsOfLightSnowOrFreezingRain
+    case PeriodsOfLightSnowMixedWithFreezingDrizzle
     case PeriodsOfRain
     case PeriodsOfRainMixedWithSnow
     case PeriodsOfRainOrDrizzle
@@ -79,16 +80,19 @@ enum WeatherStatus {
     case PeriodsOfSnowOrRain
     case Rain
     case RainAtTimesHeavy
+    case RainMixedWithSnow
     case RainOrDrizzle
     case RainOrFreezingRain
     case RainShowersOrFlurries
     case Showers
     case ShowersOrDrizzle
+    case Smoke
     case Snow
     case SnowAndBlowingSnow
     case SnowAtTimesHeavy
     case SnowAtTimesHeavyMixedWithRain
     case SnowGrains
+    case SnowMixedWithIcePellets
     case SnowMixedWithRain
     case SnowOrRain
     case Sunny

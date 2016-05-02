@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Blanc-Sablon - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-163_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-163_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-02T11:03:40Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160502110340</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Blanc-Sablon</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-21T09:45:00Z</updated>
+ <published>2016-04-21T09:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_w1:20160421094500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement ensoleillé, 1,8&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Blanc-Sablon 07h00 HNA lundi 02 mai 2016 <br/>
+<b>Condition:</b> Généralement ensoleillé <br/>
+<b>Température:</b> 1,8&deg;C <br/>
+<b>Pression / Tendance:</b> 102,4 kPa à la baisse<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 89 %<br/>
+<b>Point de rosée:</b> 0,2&deg;C <br/>
+<b>Vent:</b> OSO 10 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_cc:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Généralement ensoleillé. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Maximum plus 4. Indice UV de 6 ou élevé. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc1:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques nuages. Minimum moins 1. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc2:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Pluie. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. Pluie débutant en après-midi. Vents devenant d'est à 20 km/h le matin. Maximum plus 3. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc3:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Pluie ou neige. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie ou neige. Minimum zéro. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc4:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Neige intermittente. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige intermittente. Maximum plus 5. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc5:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 2. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc6:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses. Maximum plus 4. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum plus 4. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc7:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Averses de pluie ou de neige. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses de pluie ou de neige. Minimum zéro. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc8:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Averses. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Maximum plus 5. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc9:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum plus 3. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc10:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 7. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 7. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc11:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Possibilité d'averses. Minimum plus 1. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 1. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc12:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Nuageux. Maximum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 8. Prévisions émises 05h00 HNA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc13:20160502090000</id>
+ </entry>
+ </feed>
+

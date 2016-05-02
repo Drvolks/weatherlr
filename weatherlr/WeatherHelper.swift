@@ -82,10 +82,12 @@ class WeatherHelper {
              .SnowMixedWithRain,
              .SnowOrRain,
              .SnowAtTimesHeavyMixedWithRain,
-             .PeriodsOfSnowMixedWithRain:
+             .PeriodsOfSnowMixedWithRain,
+             .RainMixedWithSnow:
             return WeatherStatus.PeriodsOfRainOrSnow
         case .FreezingRainOrSnow,
-             .PeriodsOfSnowMixedWithFreezingRain:
+             .PeriodsOfSnowMixedWithFreezingRain,
+             .PeriodsOfLightSnowMixedWithFreezingDrizzle:
             return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
         case .IncreasingCloudiness:
             return WeatherStatus.Clearing

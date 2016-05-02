@@ -28,6 +28,8 @@ class RssEntryToWeatherInformationTests: XCTestCase {
     let alertAirEn = "SPECIAL AIR QUALITY STATEMENT IN EFFECT, Fort St. John"
     let alertBlowingSnowFr = "AVIS DE POUDRERIE  EN VIGUEUR, Baie-James"
     let alertBlowingSnowEn = "BLOWING SNOW ADVISORY IN EFFECT, Baie-James"
+    let alertFrostFr = "AVIS DE GEL EN VIGUEUR, Lorraine"
+    let alertFrostEn = "FROST ADVISORY IN EFFECT, Mascouche"
     
     func testConstructor() {
         let parser = RssParserStub()!
@@ -698,6 +700,34 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Fog patches")
         XCTAssertEqual(WeatherStatus.FogPatches, result)
         
+        // RainMixedWithSnow
+        result = performer.convertWeatherStatus("Pluie mêlée de neige")
+        XCTAssertEqual(WeatherStatus.RainMixedWithSnow, result)
+        result = performer.convertWeatherStatus("Rain mixed with snow")
+        XCTAssertEqual(WeatherStatus.RainMixedWithSnow, result)
+        
+        // SnowMixedWithIcePellets
+        result = performer.convertWeatherStatus("Neige mêlée de grésil")
+        XCTAssertEqual(WeatherStatus.SnowMixedWithIcePellets, result)
+        result = performer.convertWeatherStatus("Snow mixed with ice pellets")
+        XCTAssertEqual(WeatherStatus.SnowMixedWithIcePellets, result)
+        
+        // PeriodsOfLightSnowMixedWithFreezingDrizzle
+        result = performer.convertWeatherStatus("Faible neige intermittente mêlée de bruine verglaçante")
+        XCTAssertEqual(WeatherStatus.PeriodsOfLightSnowMixedWithFreezingDrizzle, result)
+        result = performer.convertWeatherStatus("Periods of light snow mixed with freezing drizzle")
+        XCTAssertEqual(WeatherStatus.PeriodsOfLightSnowMixedWithFreezingDrizzle, result)
+        
+        // Smoke
+        result = performer.convertWeatherStatus("Fumée")
+        XCTAssertEqual(WeatherStatus.Smoke, result)
+        result = performer.convertWeatherStatus("Smoke")
+        XCTAssertEqual(WeatherStatus.Smoke, result)
+
+        
+        
+        
+        
         
         
         
@@ -1093,6 +1123,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.isAlert(alertBlowingSnowEn)
         XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertFrostFr)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertFrostEn)
+        XCTAssertTrue(result)
     }
     
     func testExtractAlertText() {
@@ -1132,6 +1168,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractAlertText(alertBlowingSnowEn)
         XCTAssertEqual("BLOWING SNOW ADVISORY IN EFFECT", result)
+        
+        result = performer.extractAlertText(alertFrostFr)
+        XCTAssertEqual("AVIS DE GEL EN VIGUEUR", result)
+        
+        result = performer.extractAlertText(alertFrostEn)
+        XCTAssertEqual("FROST ADVISORY IN EFFECT", result)
         
         result = performer.extractAlertText(alertTitleFr)
         XCTAssertEqual("", result)

@@ -11,6 +11,7 @@ import UIKit
 class RssEntryToWeatherInformation {
     var rssEntries:[RssEntry]
     var day:Int = 0
+    let alerts = "WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY|AVIS DE GEL|FROST ADVISORY"
     
     init(rssEntries: [RssEntry]) {
         self.rssEntries = rssEntries
@@ -268,6 +269,14 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.PeriodsOfSnowMixedWithFreezingRain
         case "bancs de brouillard", "fog patches":
             return WeatherStatus.FogPatches
+        case "pluie mêlée de neige", "rain mixed with snow":
+            return WeatherStatus.RainMixedWithSnow
+        case "neige mêlée de grésil", "snow mixed with ice pellets":
+            return WeatherStatus.SnowMixedWithIcePellets
+        case "faible neige intermittente mêlée de bruine verglaçante", "periods of light snow mixed with freezing drizzle":
+            return WeatherStatus.PeriodsOfLightSnowMixedWithFreezingDrizzle
+        case "fumée", "smoke":
+            return WeatherStatus.Smoke
         default:
             return convertWeatherStatusWithRegex(text)
         }
@@ -427,7 +436,7 @@ class RssEntryToWeatherInformation {
     }
     
     func isAlert(title: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY).*?", options: [])
+        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|" + alerts + ").*?", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return false
@@ -437,7 +446,7 @@ class RssEntryToWeatherInformation {
     }
     
     func extractAlertText(title: String) -> String {
-        var regex = try! NSRegularExpression(pattern: "(WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY)", options: [])
+        var regex = try! NSRegularExpression(pattern: "(" + alerts + ")", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return ""

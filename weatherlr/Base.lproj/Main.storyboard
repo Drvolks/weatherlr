@@ -635,20 +635,26 @@
                                     <outlet property="weatherImage" destination="suQ-gc-1wH" id="vOJ-1l-3v3"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="langCell" id="cYj-Lg-jBa" customClass="LangTableViewCell" customModule="weatherlr" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="langCell" rowHeight="44" id="cYj-Lg-jBa" customClass="LangTableViewCell" customModule="weatherlr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="157.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cYj-Lg-jBa" id="bda-Dg-IfL">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKe-Vx-PQH">
-                                            <rect key="frame" x="8" y="8" width="592" height="27.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKe-Vx-PQH">
+                                            <rect key="frame" x="8" y="8" width="584" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="XKe-Vx-PQH" secondAttribute="trailing" id="Afo-60-hgY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="XKe-Vx-PQH" secondAttribute="bottom" constant="-0.5" id="M3Z-J0-gz9"/>
+                                        <constraint firstAttribute="topMargin" secondItem="XKe-Vx-PQH" secondAttribute="top" id="a3q-x0-jjd"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="XKe-Vx-PQH" secondAttribute="leading" id="s50-Ri-AjZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="langLabel" destination="XKe-Vx-PQH" id="8qg-oP-H53"/>
@@ -710,6 +716,7 @@
                                         <constraint firstItem="ktR-cm-edW" firstAttribute="centerY" secondItem="THy-ec-UiK" secondAttribute="centerY" id="dcc-MD-xv8"/>
                                         <constraint firstItem="DJm-Ix-Cop" firstAttribute="leading" secondItem="ktR-cm-edW" secondAttribute="trailing" constant="8" id="iui-dq-I7V"/>
                                         <constraint firstItem="DJm-Ix-Cop" firstAttribute="centerY" secondItem="THy-ec-UiK" secondAttribute="centerY" id="qfb-JO-0Pw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ktR-cm-edW" secondAttribute="bottom" constant="2" id="rJ1-sU-Y6H"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="ktR-cm-edW" secondAttribute="leading" id="wX0-Tt-3EG"/>
                                         <constraint firstItem="ktR-cm-edW" firstAttribute="top" secondItem="THy-ec-UiK" secondAttribute="topMargin" constant="-5" id="wfp-1H-XLa"/>
                                         <constraint firstItem="ktR-cm-edW" firstAttribute="centerY" secondItem="THy-ec-UiK" secondAttribute="centerY" id="yG4-ar-jaL"/>
@@ -792,7 +799,7 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="OoV-LJ-VoK">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityCell" id="lJs-vt-E2X" customClass="CityTableViewCell" customModule="weatherlr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>

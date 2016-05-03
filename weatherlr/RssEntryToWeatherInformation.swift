@@ -277,6 +277,12 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.PeriodsOfLightSnowMixedWithFreezingDrizzle
         case "fumée", "smoke":
             return WeatherStatus.Smoke
+        case "neige mêlée de bruine verglaçante", "snow mixed with freezing drizzle":
+            return WeatherStatus.SnowMixedWithFreezingDrizzle
+        case "bruine verglaçante intermittente ou bruine", "periods of freezing drizzle or drizzle":
+            return WeatherStatus.PeriodsOfFreezingDrizzleOrDrizzle
+        case "possibilité de bruine ou pluie", "chance of drizzle or rain":
+            return WeatherStatus.ChanceOfDrizzleOrRain
         default:
             return convertWeatherStatusWithRegex(text)
         }

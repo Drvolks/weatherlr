@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Grande Prairie - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ab-31_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ab-31_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-03T12:00:57Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160503120057</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR, Grande Prairie</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?ab10"/>
+ <updated>2016-05-03T10:37:00Z</updated>
+ <published>2016-05-03T10:37:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 04h37 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_w1:201605031037</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement dégagé, 5,9&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Grande Prairie 06h00 HAR mardi 03 mai 2016 <br/>
+<b>Condition:</b> Généralement dégagé <br/>
+<b>Température:</b> 5,9&deg;C <br/>
+<b>Pression / Tendance:</b> 101,4 kPa à la hausse<br/>
+<b>Visibilité:</b> 40,2 km<br/>
+<b>Humidité:</b> 79 %<br/>
+<b>Point de rosée:</b> 2,6&deg;C <br/>
+<b>Vent:</b> ONO 5 km/h<br/>
+<b>Cote air santé:</b> 3 <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_cc:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 27.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents devenant du sud-ouest à 20 km/h cet après-midi. Maximum 27. Indice UV de 5 ou modéré. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc1:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Vents du sud-ouest de 20 km/h devenant légers ce soir. Minimum 10. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc2:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 19. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. 30 pour cent de probabilité d'averses tard en après-midi. Vents devenant d'ouest à 20 km/h avec rafales à 40 en mi-journée. Maximum 19. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc3:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Nuageux. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum 8. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc4:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement. Maximum 18. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc5:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc6:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc7:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 8. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc8:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 22. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc9:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 8. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc10:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 23. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc11:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc12:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-31_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 05h00 HAR mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-31_fc13:20160503110000</id>
+ </entry>
+ </feed>
+

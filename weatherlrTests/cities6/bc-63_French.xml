@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Muncho Lake - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-63_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-63_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-03T11:48:53Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160503114853</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Muncho Lake</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-19T07:00:00Z</updated>
+ <published>2016-04-19T07:00:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_w1:20160419070000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses. Maximum 16. Températures à la baisse pour atteindre 11 cet après-midi. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Ennuagement cet après-midi suivi de 30 pour cent de probabilité d'averses tard cet après-midi. Vents devenant du sud-ouest à 20 km/h avec rafales à 40 tard cet après-midi. Maximum 16. Températures à la baisse pour atteindre 11 cet après-midi. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc1:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum plus 3. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Vents du sud-ouest de 20 km/h avec rafales à 40 devenant légers ce soir. Minimum plus 3. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc2:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 10. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses tôt le matin. Dégagement tard le matin. Vents devenant d'ouest à 20 km/h avec rafales à 40 tard le matin. Maximum 10. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc3:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 1. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc4:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 10. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc5:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc6:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 12. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc7:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Nuageux. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum 6. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc8:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Nuageux. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 17. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc9:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 4. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc10:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc11:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc12:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-63_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 05h00 HAP mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-63_fc13:20160503120000</id>
+ </entry>
+ </feed>
+

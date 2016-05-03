@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Gaspé - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-101_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-101_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-03T12:05:50Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160503120550</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Gaspé</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-08T22:30:00Z</updated>
+ <published>2016-04-08T22:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_w1:20160408223000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Pluie faible, 3,5&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Gaspé 08h00 HAE mardi 03 mai 2016 <br/>
+<b>Condition:</b> Pluie faible <br/>
+<b>Température:</b> 3,5&deg;C <br/>
+<b>Pression / Tendance:</b> 101,6 kPa à la baisse<br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 95 %<br/>
+<b>Point de rosée:</b> 2,8&deg;C <br/>
+<b>Vent:</b> N 3 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_cc:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Pluie intermittente ou bruine. Maximum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Pluie ou bruine intermittente débutant tôt ce matin et cessant en mi-journée. Maximum 6. Indice UV de 3 ou modéré. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc1:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. Minimum moins 1. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc2:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc3:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. Minimum moins 1. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc4:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Pluie. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie. Maximum plus 3. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc5:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Pluie intermittente. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum plus 2. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc6:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc7:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum zéro. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc8:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 16. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc9:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 5. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc10:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Possibilité d'averses. Maximum 15. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 15. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc11:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Possibilité d'averses. Minimum 7. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 7. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc12:20160503090000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Possibilité d'averses. Maximum 12. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-101_metric_f.html"/>
+ <updated>2016-05-03T09:00:00Z</updated>
+ <published>2016-05-03T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 12. Prévisions émises 05h00 HAE mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-101_fc13:20160503090000</id>
+ </entry>
+ </feed>
+

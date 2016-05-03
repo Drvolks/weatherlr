@@ -121,7 +121,10 @@ class WeatherInformation {
              .FogPatches,
              .RainMixedWithSnow,
              .PeriodsOfLightSnowMixedWithFreezingDrizzle,
-             .Smoke:
+             .Smoke,
+             .SnowMixedWithFreezingDrizzle,
+             .PeriodsOfFreezingDrizzleOrDrizzle,
+             .ChanceOfDrizzleOrRain:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

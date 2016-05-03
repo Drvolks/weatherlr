@@ -65,11 +65,13 @@ class WeatherHelper {
              .ShowersOrDrizzle,
              .RainOrDrizzle,
              .PeriodsOfDrizzleOrRain,
-             .PeriodsOfDrizzleMixedWithRain:
+             .PeriodsOfDrizzleMixedWithRain,
+             .ChanceOfDrizzleOrRain:
             return WeatherStatus.PeriodsOfRainOrDrizzle
         case .DrizzleMixedWithFreezingDrizzle,
              .FreezingDrizzleOrDrizzle,
-             .PeriodsOfDrizzleMixedWithFreezingDrizzle:
+             .PeriodsOfDrizzleMixedWithFreezingDrizzle,
+             .PeriodsOfFreezingDrizzleOrDrizzle:
             return WeatherStatus.ChanceOfDrizzleMixedWithFreezingDrizzle
         case .Flurries:
             return WeatherStatus.Snow
@@ -86,9 +88,10 @@ class WeatherHelper {
              .RainMixedWithSnow:
             return WeatherStatus.PeriodsOfRainOrSnow
         case .FreezingRainOrSnow,
-             .PeriodsOfSnowMixedWithFreezingRain,
-             .PeriodsOfLightSnowMixedWithFreezingDrizzle:
+             .PeriodsOfSnowMixedWithFreezingRain:
             return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
+        case .PeriodsOfLightSnowMixedWithFreezingDrizzle:
+            return WeatherStatus.SnowMixedWithFreezingDrizzle
         case .IncreasingCloudiness:
             return WeatherStatus.Clearing
         case .Overcast:

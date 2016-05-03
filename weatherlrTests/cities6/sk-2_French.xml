@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Biggar - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/sk-2_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/sk-2_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-03T12:07:38Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160503120738</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Biggar</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-09T22:00:00Z</updated>
+ <published>2016-04-09T22:00:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_w1:20160409220000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 6,2&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T12:00:00Z</updated>
+ <published>2016-05-03T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Scott AAC 06h00 HNC mardi 03 mai 2016 <br/>
+<b>Température:</b> 6,2&deg;C <br/>
+<b>Pression / Tendance:</b> 101,7 kPa à la hausse<br/>
+<b>Humidité:</b> 86 %<br/>
+<b>Point de rosée:</b> 4,1&deg;C <br/>
+<b>Vent:</b> ENE 4 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_cc:20160503120000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 29.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents devenant du sud-est à 20 km/h en mi-journée. Maximum 29. Indice UV de 6 ou élevé. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc1:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Vents du sud-est de 20 km/h. Minimum 11. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc2:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 31.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents devenant du sud-ouest à 30 km/h avec rafales à 50 en mi-journée. Maximum 31. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc3:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc4:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 29.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 29. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc5:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 7. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 7. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc6:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc7:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc8:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 24.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 24. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc9:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc10:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 29.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 29. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc11:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc12:20160503110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-2_metric_f.html"/>
+ <updated>2016-05-03T11:00:00Z</updated>
+ <published>2016-05-03T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 22. Prévisions émises 05h00 HNC mardi 03 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-2_fc13:20160503110000</id>
+ </entry>
+ </feed>
+

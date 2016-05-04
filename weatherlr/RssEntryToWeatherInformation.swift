@@ -283,6 +283,12 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.PeriodsOfFreezingDrizzleOrDrizzle
         case "possibilité de bruine ou pluie", "chance of drizzle or rain":
             return WeatherStatus.ChanceOfDrizzleOrRain
+        case "possibilité d'averses de neige fondante", "chance of wet flurries":
+            return WeatherStatus.ChanceOfWetFlurries
+        case "bruine verglaçante intermittente ou pluie", "periods of freezing drizzle or rain":
+            return WeatherStatus.PeriodsOfFreezingDrizzleOrRain
+        case "bruine verglaçante intermittente", "periods of freezing drizzle":
+            return WeatherStatus.PeriodsOfFreezingDrizzle
         default:
             return convertWeatherStatusWithRegex(text)
         }

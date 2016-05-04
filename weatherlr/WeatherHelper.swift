@@ -66,7 +66,8 @@ class WeatherHelper {
              .RainOrDrizzle,
              .PeriodsOfDrizzleOrRain,
              .PeriodsOfDrizzleMixedWithRain,
-             .ChanceOfDrizzleOrRain:
+             .ChanceOfDrizzleOrRain,
+             .PeriodsOfFreezingDrizzleOrRain:
             return WeatherStatus.PeriodsOfRainOrDrizzle
         case .DrizzleMixedWithFreezingDrizzle,
              .FreezingDrizzleOrDrizzle,
@@ -106,6 +107,8 @@ class WeatherHelper {
              .Haze,
              .FogPatches:
             return WeatherStatus.Mist
+        case .PeriodsOfFreezingDrizzle:
+            return WeatherStatus.LightFreezingDrizzle
         default:
             return nil
         }

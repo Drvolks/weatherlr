@@ -742,6 +742,27 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Chance of drizzle or rain")
         XCTAssertEqual(WeatherStatus.ChanceOfDrizzleOrRain, result)
         
+        // ChanceOfWetFlurries
+        result = performer.convertWeatherStatus("Possibilité d'averses de neige fondante")
+        XCTAssertEqual(WeatherStatus.ChanceOfWetFlurries, result)
+        result = performer.convertWeatherStatus("Chance of wet flurries")
+        XCTAssertEqual(WeatherStatus.ChanceOfWetFlurries, result)
+        
+        // PeriodsOfFreezingDrizzleOrRain
+        result = performer.convertWeatherStatus("Bruine verglaçante intermittente ou pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzleOrRain, result)
+        result = performer.convertWeatherStatus("Periods of freezing drizzle or rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzleOrRain, result)
+        
+        // PeriodsOfFreezingDrizzle
+        result = performer.convertWeatherStatus("Bruine verglaçante intermittente")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzle, result)
+        result = performer.convertWeatherStatus("Periods of freezing drizzle")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzle, result)
+        
+        
+        
+        
         
         
         

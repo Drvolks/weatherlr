@@ -124,7 +124,10 @@ class WeatherInformation {
              .Smoke,
              .SnowMixedWithFreezingDrizzle,
              .PeriodsOfFreezingDrizzleOrDrizzle,
-             .ChanceOfDrizzleOrRain:
+             .ChanceOfDrizzleOrRain,
+             .ChanceOfWetFlurries,
+             .PeriodsOfFreezingDrizzleOrRain,
+             .PeriodsOfFreezingDrizzle:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

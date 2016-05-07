@@ -362,7 +362,7 @@ class RssEntryToWeatherInformation {
     }
     
     func extractTemperature(summary: String) -> String {
-        let regex = try! NSRegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables près de|steady near) (.*?)(\\.|with|avec|sauf|except)", options: [.CaseInsensitive])
+        let regex = try! NSRegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables près de|steady near|à la baisse pour atteindre|falling to) (.*?)(\\.|with|avec|sauf|except|en après-midi|in the afternoon)", options: [.CaseInsensitive])
         return performRegex(regex, text: summary, index: 2)
     }
     

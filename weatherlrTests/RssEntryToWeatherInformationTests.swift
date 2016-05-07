@@ -902,6 +902,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractTemperature("Ensoleillé. Maximum 15 sauf 21 à l'intérieur. Indice UV de 5 ou modéré.")
         XCTAssertEqual("15", result)
+        
+        result = performer.extractTemperature("Pluie. Températures à la baisse pour atteindre 8 en après-midi.")
+        XCTAssertEqual("8", result)
+        
+        result = performer.extractTemperature("Rain. Temperature falling to 8 in the afternoon.")
+        XCTAssertEqual("8", result)
     }
     
     func testConvertWeatherDay() {

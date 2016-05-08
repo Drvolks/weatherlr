@@ -14,7 +14,7 @@ class TemperatureTests: XCTestCase {
     let testBundle = NSBundle(forClass: TemperatureTests.self)
 
     func testNoMissingTemperature1() {
-        noMissingTemperature("/cities")
+        noMissingTemperature("/cities1")
     }
     
     func testNoMissingTemperature2() {

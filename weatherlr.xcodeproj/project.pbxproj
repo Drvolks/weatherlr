@@ -20,7 +20,7 @@
 		6E4910BE1CC90598006D3C82 /* CityDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910BD1CC90598006D3C82 /* CityDownloader.swift */; };
 		6E4910C11CC90A7D006D3C82 /* cities_en in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910BF1CC90A7D006D3C82 /* cities_en */; };
 		6E4910C21CC90A7D006D3C82 /* cities_fr in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910C01CC90A7D006D3C82 /* cities_fr */; };
-		6E4910C41CC90AA3006D3C82 /* WeatherStatusTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910C31CC90AA3006D3C82 /* WeatherStatusTest.swift */; };
+		6E4910C41CC90AA3006D3C82 /* WeatherStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910C31CC90AA3006D3C82 /* WeatherStatusTests.swift */; };
 		6E4910C61CC91854006D3C82 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910C51CC91854006D3C82 /* TestUtils.swift */; };
 		6E4910C81CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910C71CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml */; };
 		6E4910CA1CCA561C006D3C82 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910C91CCA561C006D3C82 /* ContactTableViewCell.swift */; };
@@ -44,6 +44,7 @@
 		6E9B63511CC593DE00B27334 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B63501CC593DE00B27334 /* StringExtension.swift */; };
 		6E9E12B31CDB6F1700791284 /* cities8 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B21CDB6F1700791284 /* cities8 */; };
 		6E9E12B51CDF8DAD00791284 /* cities9 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B41CDF8DAD00791284 /* cities9 */; };
+		6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12B61CDF96A800791284 /* TemperatureTests.swift */; };
 		6E9F32BE1CB3048100A9D6A7 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
 		6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
 		6E9F32C21CB305BE00A9D6A7 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */; };
@@ -148,7 +149,7 @@
 		6E4910BD1CC90598006D3C82 /* CityDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDownloader.swift; sourceTree = "<group>"; };
 		6E4910BF1CC90A7D006D3C82 /* cities_en */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities_en; sourceTree = "<group>"; };
 		6E4910C01CC90A7D006D3C82 /* cities_fr */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities_fr; sourceTree = "<group>"; };
-		6E4910C31CC90AA3006D3C82 /* WeatherStatusTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherStatusTest.swift; sourceTree = "<group>"; };
+		6E4910C31CC90AA3006D3C82 /* WeatherStatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherStatusTests.swift; sourceTree = "<group>"; };
 		6E4910C51CC91854006D3C82 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		6E4910C71CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestDataEntryCurrentNoObservation.xml; sourceTree = "<group>"; };
 		6E4910C91CCA561C006D3C82 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 		6E9B63501CC593DE00B27334 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6E9E12B21CDB6F1700791284 /* cities8 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities8; sourceTree = "<group>"; };
 		6E9E12B41CDF8DAD00791284 /* cities9 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities9; sourceTree = "<group>"; };
+		6E9E12B61CDF96A800791284 /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
 		6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
 		6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
@@ -313,7 +315,8 @@
 				6E2905421CB2D5550040EB8B /* Info.plist */,
 				6E9F32E71CB4011B00A9D6A7 /* Rss */,
 				6E9F32C71CB30C6D00A9D6A7 /* WeatherInformationTests.swift */,
-				6E4910C31CC90AA3006D3C82 /* WeatherStatusTest.swift */,
+				6E4910C31CC90AA3006D3C82 /* WeatherStatusTests.swift */,
+				6E9E12B61CDF96A800791284 /* TemperatureTests.swift */,
 				6E4910C51CC91854006D3C82 /* TestUtils.swift */,
 			);
 			path = weatherlrTests;
@@ -626,10 +629,11 @@
 			files = (
 				6E9F32C61CB30A3D00A9D6A7 /* RssParserTests.swift in Sources */,
 				6E9F32C81CB30C6D00A9D6A7 /* WeatherInformationTests.swift in Sources */,
-				6E4910C41CC90AA3006D3C82 /* WeatherStatusTest.swift in Sources */,
+				6E4910C41CC90AA3006D3C82 /* WeatherStatusTests.swift in Sources */,
 				6E9F32E91CB4012B00A9D6A7 /* RssEntryToWeatherInformationTests.swift in Sources */,
 				6E4910C61CC91854006D3C82 /* TestUtils.swift in Sources */,
 				6E9F32E11CB3F55C00A9D6A7 /* RssEntryTests.swift in Sources */,
+				6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */,
 				6E9F32EB1CB4018400A9D6A7 /* RssParserStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

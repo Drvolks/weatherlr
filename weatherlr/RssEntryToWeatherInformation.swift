@@ -313,6 +313,10 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.FreezingDrizzleOrRain
         case "pluie parfois forte ou bruine", "rain at times heavy or drizzle":
             return WeatherStatus.RainAtTimesHeavyOrDrizzle
+        case "faible neige intermittente mêlée de pluie", "periods of light snow mixed with rain":
+            return WeatherStatus.PeriodsOfLightSnowMixedWithRain
+        case "quelques averses ou bruine", "a few showers or drizzle":
+            return WeatherStatus.AFewShowersOrDrizzle
         default:
             return convertWeatherStatusWithRegex(text)
         }

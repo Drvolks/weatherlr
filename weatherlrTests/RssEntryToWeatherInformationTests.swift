@@ -832,6 +832,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Rain at times heavy or drizzle")
         XCTAssertEqual(WeatherStatus.RainAtTimesHeavyOrDrizzle, result)
         
+        // PeriodsOfLightSnowMixedWithRain
+        result = performer.convertWeatherStatus("Faible neige intermittente mêlée de pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfLightSnowMixedWithRain, result)
+        result = performer.convertWeatherStatus("Periods of light snow mixed with rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfLightSnowMixedWithRain, result)
+        
+        // AFewShowersOrDrizzle
+        result = performer.convertWeatherStatus("Quelques averses ou bruine")
+        XCTAssertEqual(WeatherStatus.AFewShowersOrDrizzle, result)
+        result = performer.convertWeatherStatus("A few showers or drizzle")
+        XCTAssertEqual(WeatherStatus.AFewShowersOrDrizzle, result)
+        
         
         
         

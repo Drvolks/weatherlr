@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Webequie - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/on-132_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/on-132_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-05T12:01:56Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160505120156</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR, Webequie</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?on12"/>
+ <updated>2016-05-05T09:37:00Z</updated>
+ <published>2016-05-05T09:37:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 05h37 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_w1:201605050937</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, 4,7&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Lansdowne House 08h00 HAE jeudi 05 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 4,7&deg;C <br/>
+<b>Pression:</b> 100,9 kPa <br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 64 %<br/>
+<b>Point de rosée:</b> -1,6&deg;C <br/>
+<b>Vent:</b> SSO 15 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_cc:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du sud-ouest à 20 km/h ce matin puis devenant du nord à 20 avec rafales à 40 tard cet après-midi. Maximum 13. Indice UV de 5 ou modéré. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc1:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques nuages. Ennuagement après minuit. Vents du nord de 20 km/h avec rafales à 40 devenant d'est à 20 après minuit. Minimum moins 3. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc2:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Pluie verglaçante intermittente ou neige. Maximum plus 2. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité de pluie verglaçante ou de grésil le matin et tôt en après-midi. Quelques averses de neige débutant en après-midi sauf quelques averses de pluie sur le secteur sud. Vents du sud-est de 30 km/h devenant du nord à 20 en après-midi. Maximum plus 2. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc3:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Pluie intermittente ou neige. Minimum moins 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente ou neige. Minimum moins 5. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc4:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc5:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 4. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc6:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 8. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc7:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 3. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc8:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 11. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc9:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc10:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 15. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc11:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 4. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc12:20160505094200</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-132_metric_f.html"/>
+ <updated>2016-05-05T09:42:00Z</updated>
+ <published>2016-05-05T09:42:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 14. Prévisions émises 05h42 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-132_fc13:20160505094200</id>
+ </entry>
+ </feed>
+

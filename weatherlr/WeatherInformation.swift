@@ -127,7 +127,12 @@ class WeatherInformation {
              .ChanceOfDrizzleOrRain,
              .ChanceOfWetFlurries,
              .PeriodsOfFreezingDrizzleOrRain,
-             .PeriodsOfFreezingDrizzle:
+             .PeriodsOfFreezingDrizzle,
+             .PeriodsOfFreezingRainOrSnow,
+             .FreezingRainMixedWithIcePellets,
+             .PeriodsOfFreezingRainMixedWithIcePellets,
+             .ChanceOfShowersOrThunderstorms,
+             .ChanceOfWetFlurriesOrRainShowers:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

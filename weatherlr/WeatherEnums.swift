@@ -25,8 +25,10 @@ enum WeatherStatus {
     case ChanceOfRainShowersOrWetFlurries
     case ChanceOfShowers
     case ChanceOfShowersOrDrizzle
+    case ChanceOfShowersOrThunderstorms
     case ChanceOfSnow
     case ChanceOfWetFlurries
+    case ChanceOfWetFlurriesOrRainShowers
     case Clear
     case Clearing
     case Cloudy
@@ -42,6 +44,7 @@ enum WeatherStatus {
     case FogPatches
     case FreezingDrizzleOrDrizzle
     case FreezingFog
+    case FreezingRainMixedWithIcePellets
     case FreezingRainOrSnow
     case Haze
     case HeavySnow
@@ -70,6 +73,8 @@ enum WeatherStatus {
     case PeriodsOfFreezingDrizzleOrDrizzle
     case PeriodsOfFreezingDrizzleOrRain
     case PeriodsOfFreezingRain
+    case PeriodsOfFreezingRainMixedWithIcePellets
+    case PeriodsOfFreezingRainOrSnow
     case PeriodsOfLightSnow
     case PeriodsOfLightSnowOrFreezingRain
     case PeriodsOfLightSnowMixedWithFreezingDrizzle

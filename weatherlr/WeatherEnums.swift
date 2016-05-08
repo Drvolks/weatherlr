@@ -13,6 +13,7 @@ enum WeatherStatus {
     case AFewFlurries
     case AFewRainShowersOrFlurries
     case AFewShowers
+    case AFewShowersOrDrizzle
     case AMixOfSunAndCloud
     case Blizzard
     case BlowingSnow
@@ -83,6 +84,7 @@ enum WeatherStatus {
     case PeriodsOfLightSnow
     case PeriodsOfLightSnowOrFreezingRain
     case PeriodsOfLightSnowMixedWithFreezingDrizzle
+    case PeriodsOfLightSnowMixedWithRain
     case PeriodsOfRain
     case PeriodsOfRainMixedWithSnow
     case PeriodsOfRainOrDrizzle

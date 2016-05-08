@@ -760,7 +760,35 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Periods of freezing drizzle")
         XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzle, result)
         
+        // PeriodsOfFreezingRainOrSnow
+        result = performer.convertWeatherStatus("Pluie verglaçante intermittente ou neige")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingRainOrSnow, result)
+        result = performer.convertWeatherStatus("Periods of freezing rain or snow")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingRainOrSnow, result)
         
+        // FreezingRainMixedWithIcePellets
+        result = performer.convertWeatherStatus("Pluie verglaçante mêlée de grésil")
+        XCTAssertEqual(WeatherStatus.FreezingRainMixedWithIcePellets, result)
+        result = performer.convertWeatherStatus("Freezing rain mixed with ice pellets")
+        XCTAssertEqual(WeatherStatus.FreezingRainMixedWithIcePellets, result)
+        
+        // PeriodsOfFreezingRainMixedWithIcePellets
+        result = performer.convertWeatherStatus("Pluie verglaçante intermittente mêlée de grésil")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingRainMixedWithIcePellets, result)
+        result = performer.convertWeatherStatus("Periods of freezing rain mixed with ice pellets")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingRainMixedWithIcePellets, result)
+        
+        // ChanceOfShowersOrThunderstorms
+        result = performer.convertWeatherStatus("Possibilité d'averses ou orages")
+        XCTAssertEqual(WeatherStatus.ChanceOfShowersOrThunderstorms, result)
+        result = performer.convertWeatherStatus("Chance of showers or thunderstorms")
+        XCTAssertEqual(WeatherStatus.ChanceOfShowersOrThunderstorms, result)
+        
+        // ChanceOfWetFlurriesOrRainShowers
+        result = performer.convertWeatherStatus("Possibilité d'averses de neige fondante ou de pluie")
+        XCTAssertEqual(WeatherStatus.ChanceOfWetFlurriesOrRainShowers, result)
+        result = performer.convertWeatherStatus("Chance of wet flurries or rain showers")
+        XCTAssertEqual(WeatherStatus.ChanceOfWetFlurriesOrRainShowers, result)
         
         
         

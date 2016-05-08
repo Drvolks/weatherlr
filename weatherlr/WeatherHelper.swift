@@ -58,8 +58,7 @@ class WeatherHelper {
             return WeatherStatus.ChanceOfSnow
         case .ChanceOfRainShowersOrFlurries:
             return WeatherStatus.AFewRainShowersOrFlurries
-        case .ChanceOfRainShowersOrWetFlurries,
-             .RainOrFreezingRain:
+        case .RainOrFreezingRain:
             return WeatherStatus.PeriodsOfRainOrFreezingRain
         case .ChanceOfShowersOrDrizzle,
              .ShowersOrDrizzle,
@@ -89,7 +88,8 @@ class WeatherHelper {
              .RainMixedWithSnow:
             return WeatherStatus.PeriodsOfRainOrSnow
         case .FreezingRainOrSnow,
-             .PeriodsOfSnowMixedWithFreezingRain:
+             .PeriodsOfSnowMixedWithFreezingRain,
+             .PeriodsOfFreezingRainOrSnow:
             return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
         case .PeriodsOfLightSnowMixedWithFreezingDrizzle:
             return WeatherStatus.SnowMixedWithFreezingDrizzle
@@ -109,6 +109,10 @@ class WeatherHelper {
             return WeatherStatus.Mist
         case .PeriodsOfFreezingDrizzle:
             return WeatherStatus.LightFreezingDrizzle
+        case .PeriodsOfFreezingRainMixedWithIcePellets:
+            return WeatherStatus.FreezingRainMixedWithIcePellets
+        case .ChanceOfWetFlurriesOrRainShowers:
+            return WeatherStatus.ChanceOfRainShowersOrWetFlurries
         default:
             return nil
         }

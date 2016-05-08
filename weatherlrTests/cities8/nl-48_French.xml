@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Gull Island Rapids (Rte Trans-Labrador) - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nl-48_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nl-48_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-05T08:27:25Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160505082725</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Gull Island Rapids (Rte Trans-Labrador)</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-03-24T09:30:00Z</updated>
+ <published>2016-03-24T09:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_w1:20160324093000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Généralement ensoleillé. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Vents devenant du sud à 20 km/h cet après-midi. Maximum 16. Indice UV de 6 ou élevé. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc1:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Vents du sud de 20 km/h devenant légers ce soir. Minimum moins 3. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc2:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Généralement ensoleillé. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Vents devenant du sud à 20 km/h en mi-journée. Maximum 11. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc3:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses de neige. Minimum moins 3. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 40 pour cent de probabilité d'averses de neige. Minimum moins 3. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc4:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 13. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc5:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc6:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Possibilité d'averses. Maximum 15. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 15. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc7:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Possibilité d'averses. Minimum plus 4. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 4. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc8:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Averses. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Maximum 11. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc9:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Possibilité d'averses. Minimum plus 1. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 40 pour cent de probabilité d'averses. Minimum plus 1. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc10:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc11:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc12:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-48_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 11. Prévisions émises 06h00 HAT jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-48_fc13:20160505083000</id>
+ </entry>
+ </feed>
+

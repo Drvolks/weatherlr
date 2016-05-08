@@ -43,6 +43,7 @@
 		6E816C191CD76DBB00533684 /* cities5 in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C181CD76DBB00533684 /* cities5 */; };
 		6E9B63511CC593DE00B27334 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B63501CC593DE00B27334 /* StringExtension.swift */; };
 		6E9E12B31CDB6F1700791284 /* cities8 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B21CDB6F1700791284 /* cities8 */; };
+		6E9E12B51CDF8DAD00791284 /* cities9 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B41CDF8DAD00791284 /* cities9 */; };
 		6E9F32BE1CB3048100A9D6A7 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
 		6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
 		6E9F32C21CB305BE00A9D6A7 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */; };
@@ -170,6 +171,7 @@
 		6E816C181CD76DBB00533684 /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
 		6E9B63501CC593DE00B27334 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6E9E12B21CDB6F1700791284 /* cities8 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities8; sourceTree = "<group>"; };
+		6E9E12B41CDF8DAD00791284 /* cities9 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities9; sourceTree = "<group>"; };
 		6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
 		6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				6E39BF151CD8CDAF008CD674 /* cities6 */,
 				6E39BF171CDA272A008CD674 /* cities7 */,
 				6E9E12B21CDB6F1700791284 /* cities8 */,
+				6E9E12B41CDF8DAD00791284 /* cities9 */,
 				6E2905421CB2D5550040EB8B /* Info.plist */,
 				6E9F32E71CB4011B00A9D6A7 /* Rss */,
 				6E9F32C71CB30C6D00A9D6A7 /* WeatherInformationTests.swift */,
@@ -557,6 +560,7 @@
 				6E4910C21CC90A7D006D3C82 /* cities_fr in Resources */,
 				6E9E12B31CDB6F1700791284 /* cities8 in Resources */,
 				6E9F32DF1CB3F4E700A9D6A7 /* TestDataEntry.xml in Resources */,
+				6E9E12B51CDF8DAD00791284 /* cities9 in Resources */,
 				6E816C0D1CCFF87800533684 /* cities in Resources */,
 				6E9F32D91CB3EAB000A9D6A7 /* TestData_EN.xml in Resources */,
 				6E9F32ED1CB4069300A9D6A7 /* TestDataEntryCurrent.xml in Resources */,

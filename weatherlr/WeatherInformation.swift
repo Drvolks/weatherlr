@@ -132,7 +132,14 @@ class WeatherInformation {
              .FreezingRainMixedWithIcePellets,
              .PeriodsOfFreezingRainMixedWithIcePellets,
              .ChanceOfShowersOrThunderstorms,
-             .ChanceOfWetFlurriesOrRainShowers:
+             .ChanceOfWetFlurriesOrRainShowers,
+             .ChanceOfRain,
+             .LightWetSnow,
+             .Precipitation,
+             .DrizzleOrRain,
+             .FreezingRainMixedWithSnow,
+             .FreezingDrizzleOrRain,
+             .RainAtTimesHeavyOrDrizzle:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

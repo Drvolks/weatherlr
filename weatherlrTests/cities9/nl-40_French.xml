@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Nain - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nl-40_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nl-40_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-08T15:01:08Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508150108</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVERTISSEMENT DE PLUIE VERGLAÇANTE EN VIGUEUR, Nain</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?nl23"/>
+ <updated>2016-05-08T14:17:00Z</updated>
+ <published>2016-05-08T14:17:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émis à: 11h17 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_w1:201605081417</id>
+ </entry>
+ <entry>
+ <title>BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR, Nain</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?nl23"/>
+ <updated>2016-05-08T14:17:00Z</updated>
+ <published>2016-05-08T14:17:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 11h17 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_w2:201605081417</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, 7,5&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Nain 12h00 HAA dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 7,5&deg;C <br/>
+<b>Pression / Tendance:</b> 100,3 kPa stationnaire<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 61 %<br/>
+<b>Point de rosée:</b> 0,5&deg;C <br/>
+<b>Vent:</b> NNE 3 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_cc:20160508150000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du nord à 20 km/h cet après-midi. Maximum 8. Indice UV de 6 ou élevé. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc1:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Pluie verglaçante mêlée de neige. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Devenant nuageux ce soir suivi de pluie verglaçante. Pluie verglaçante mêlée de neige au cours de la nuit. Vents du nord de 30 km/h avec rafales à 50. Minimum moins 1. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc2:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Averses de pluie ou de neige. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie verglaçante se changeant en quelques averses de pluie ou de neige le matin puis en neige parfois mêlée de pluie tard en après-midi. Vents du nord de 20 km/h avec rafales à 40. Maximum plus 3. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc3:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Neige intermittente. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige intermittente. Minimum moins 2. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc4:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Neige intermittente. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige intermittente. Maximum plus 1. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc5:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Averses de neige. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses de neige. Minimum zéro. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc6:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Averses de neige. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses de neige. Maximum plus 3. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc7:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Minimum moins 4. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc8:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Nuageux. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum plus 4. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc9:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 2. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc10:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Nuageux. Maximum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum plus 2. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc11:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum moins 1. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc12:20160508140000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Nuageux. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-40_metric_f.html"/>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum plus 3. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-40_fc13:20160508140000</id>
+ </entry>
+ </feed>
+

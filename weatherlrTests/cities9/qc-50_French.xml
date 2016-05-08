@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Bécancour - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-50_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-50_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-08T15:03:03Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508150303</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVIS DE GEL EN VIGUEUR, Bécancour</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?qc45"/>
+ <updated>2016-05-08T14:10:00Z</updated>
+ <published>2016-05-08T14:10:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 10h10 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_w1:201605081410</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Pluie faible, 3,8&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Trois-Rivières 11h00 HAE dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Pluie faible <br/>
+<b>Température:</b> 3,8&deg;C <br/>
+<b>Pression:</b> 99,9 kPa <br/>
+<b>Visibilité:</b> 14,5 km<br/>
+<b>Humidité:</b> 93 %<br/>
+<b>Point de rosée:</b> 2,8&deg;C <br/>
+<b>Vent:</b> N 24 km/h rafale 35 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_cc:20160508150000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Pluie. Températures à la baisse pour atteindre 6 cet après-midi.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie. Vents devenant du nord-ouest à 30 km/h avec rafales à 50 en mi-journée. Températures à la baisse pour atteindre 6 cet après-midi. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc1:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagement. Minimum zéro avec gel par endroits.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement ce soir. Vents du nord-ouest de 20 km/h devenant légers ce soir. Minimum zéro avec gel par endroits. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc2:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Possibilité d'averses. Maximum 7. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. 40 pour cent de probabilité d'averses en après-midi. Vents devenant d'ouest à 20 km/h avec rafales à 40 le matin. Maximum 7. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc3:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement. Minimum plus 3. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc4:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc5:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc6:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 16. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc7:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc8:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 17. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc9:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. Minimum 12. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc10:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Possibilité d'averses. Maximum 20. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 20. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc11:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 11. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 11. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc12:20160508090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 16. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-50_metric_f.html"/>
+ <updated>2016-05-08T09:00:00Z</updated>
+ <published>2016-05-08T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 05h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-50_fc13:20160508090000</id>
+ </entry>
+ </feed>
+

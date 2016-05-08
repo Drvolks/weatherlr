@@ -979,6 +979,24 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractTemperature("Rain. Temperature falling to 8 in the afternoon.")
         XCTAssertEqual("8", result)
+        
+        result = performer.extractTemperature("Ce soir et cette nuit: Neige. Températures à la hausse pour atteindre moins 9 au cours de la nuit.")
+        XCTAssertEqual("moins 9", result)
+        
+        result = performer.extractTemperature("Tuesday night: Snow. Temperature rising to minus 9 by morning.")
+        XCTAssertEqual("minus 9", result)
+        
+        result = performer.extractTemperature("Jeudi: Quelques averses de neige. Températures à la baisse pour atteindre zéro cet après-midi.")
+        XCTAssertEqual("zéro", result)
+        
+        result = performer.extractTemperature("Thursday: A few flurries. Temperature falling to zero this afternoon.")
+        XCTAssertEqual("zero", result)
+        
+        result = performer.extractTemperature("Wednesday: Showers. Temperature falling to 9 this morning then rising.")
+        XCTAssertEqual("9", result)
+        
+        result = performer.extractTemperature("Mercredi: Averses. Températures à la baisse pour atteindre 9 ce matin puis à la hausse.")
+        XCTAssertEqual("9", result)
     }
     
     func testConvertWeatherDay() {

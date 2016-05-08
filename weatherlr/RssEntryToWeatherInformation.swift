@@ -299,6 +299,20 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.ChanceOfShowersOrThunderstorms
         case "possibilité d'averses de neige fondante ou de pluie", "chance of wet flurries or rain showers":
             return WeatherStatus.ChanceOfWetFlurriesOrRainShowers
+        case "possibilité de pluie", "chance of rain":
+            return WeatherStatus.ChanceOfRain
+        case "faible neige fondante", "light wet snow":
+            return WeatherStatus.LightWetSnow
+        case "précipitations", "precipitation":
+            return WeatherStatus.Precipitation
+        case "bruine ou pluie", "drizzle or rain":
+            return WeatherStatus.DrizzleOrRain
+        case "pluie verglaçante mêlée de neige", "freezing rain mixed with snow":
+            return WeatherStatus.FreezingRainMixedWithSnow
+        case "bruine verglaçante ou pluie", "freezing drizzle or rain":
+            return WeatherStatus.FreezingDrizzleOrRain
+        case "pluie parfois forte ou bruine", "rain at times heavy or drizzle":
+            return WeatherStatus.RainAtTimesHeavyOrDrizzle
         default:
             return convertWeatherStatusWithRegex(text)
         }

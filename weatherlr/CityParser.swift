@@ -36,17 +36,17 @@ class CityParser {
             cityArray.append(city)
         }
         
-        let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("Cities.plist")
+        let path = "/Users/jfdufour/Desktop/cities.plist"
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cityArray, toFile: path)
         
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cityArray, toFile: ArchiveURL.path!)
+        
         if !isSuccessfulSave {
             print("Error saving cities :(")
         }
     }
     
     func parse(data:String) {
-        let regex = try! NSRegularExpression(pattern: "/city/pages/(\\w*)-(\\d*)_metric_(f|e).html\">(.*?)<", options: [.CaseInsensitive])
+        let regex = try! NSRegularExpression(pattern: "/city/pages/(\\w*)-(\\w\\d*)_metric_(f|e).html\">(.*?)<", options: [.CaseInsensitive])
         let results = regex.matchesInString(data, options: [], range: NSMakeRange(0, data.startIndex.distanceTo(data.endIndex)))
         for i in 0..<results.count {
             let province = (data as NSString).substringWithRange(results[i].rangeAtIndex(1))

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Esther - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ab-67_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ab-67_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-04T12:08:12Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160504120812</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR, Esther</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?ab11"/>
+ <updated>2016-05-04T11:03:00Z</updated>
+ <published>2016-05-04T11:03:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 05h03 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_w1:201605041103</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 12,8&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Esther 06h00 HAR mercredi 04 mai 2016 <br/>
+<b>Température:</b> 12,8&deg;C <br/>
+<b>Pression / Tendance:</b> 101,0 kPa à la baisse<br/>
+<b>Humidité:</b> 47 %<br/>
+<b>Point de rosée:</b> 1,8&deg;C <br/>
+<b>Vent:</b> S 29 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_cc:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 30.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents d'ouest de 20 km/h. Maximum 30. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc1:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Quelques nuages. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques nuages. Vents du sud-ouest de 20 km/h devenant du nord à 20 après minuit. Minimum 9. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc2:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement en mi-journée. Vents du nord de 30 km/h avec rafales à 50. Maximum 20. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc3:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum plus 2. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 2. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc4:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc5:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc6:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 26.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 26. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc7:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc8:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 29.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 29. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc9:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 7. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc10:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc11:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 4. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc12:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-67_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 16. Prévisions émises 05h00 HAR mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-67_fc13:20160504110000</id>
+ </entry>
+ </feed>
+

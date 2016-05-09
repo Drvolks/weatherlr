@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Inukjuak - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-131_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-131_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-26T19:16:54Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160426191654</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVERTISSEMENT DE BLIZZARD EN VIGUEUR, Inukjuak</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?qc7"/>
+ <updated>2016-04-26T19:09:00Z</updated>
+ <published>2016-04-26T19:09:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émis à: 15h09 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_w1:201604261909</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Neige forte, -10,0&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport d'Inukjuak 15h00 HAE mardi 26 avril 2016 <br/>
+<b>Condition:</b> Neige forte <br/>
+<b>Température:</b> -10,0&deg;C <br/>
+<b>Pression:</b> 101,1 kPa <br/>
+<b>Visibilité:</b> 0,2 km<br/>
+<b>Humidité:</b> 90 %<br/>
+<b>Refroidissement éolien:</b> -23 <br/>
+<b>Point de rosée:</b> -11,3&deg;C <br/>
+<b>Vent:</b> NNO 65 km/h rafale 74 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_cc:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Blizzard. Températures à la hausse pour atteindre zéro au cours de la nuit.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Blizzard cessant tard ce soir. Nuageux par la suite. Vents du nord de 50 km/h avec rafales à 80 devenant du nord-est à 30 avec rafales à 50 tard ce soir. Températures à la hausse pour atteindre zéro au cours de la nuit. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc1:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Généralement nuageux. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Vents du nord-est de 20 km/h avec rafales à 40. Maximum plus 3. Indice UV de 4 ou modéré. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc2:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Généralement nuageux. Minimum moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Vents du nord-est de 20 km/h devenant légers au cours de la nuit. Minimum moins 8. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc3:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum moins 6. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc4:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum moins 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 11. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc5:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum plus 1. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc6:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 6. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc7:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum moins 2. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc8:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum moins 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 7. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc9:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum zéro. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc10:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 5. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc11:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-131_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 2. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-131_fc12:20160426193000</id>
+ </entry>
+ </feed>
+

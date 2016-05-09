@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Gogama - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/on-37_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/on-37_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-01T09:17:38Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160501091738</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Gogama</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-22T10:00:00Z</updated>
+ <published>2016-04-22T10:00:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_w1:20160422100000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Possibilité d'averses. Maximum 10. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 40 pour cent de probabilité d'averses. Maximum 10. Indice UV de 6 ou élevé. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc1:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Généralement nuageux. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Minimum plus 2. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc2:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 13. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc3:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc4:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses. Maximum 13. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 13. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc5:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum plus 2. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 2. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc6:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 7. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 7. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc7:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum moins 1. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum moins 1. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc8:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses. Maximum 11. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 11. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc9:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum plus 1. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum plus 1. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc10:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc11:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 4. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc12:20160501093000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-37_metric_f.html"/>
+ <updated>2016-05-01T09:30:00Z</updated>
+ <published>2016-05-01T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 19. Prévisions émises 05h30 HAE dimanche 01 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-37_fc13:20160501093000</id>
+ </entry>
+ </feed>
+

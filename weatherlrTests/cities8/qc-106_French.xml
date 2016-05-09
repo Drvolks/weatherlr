@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Quaqtaq - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-106_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-106_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-05T12:01:02Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160505120102</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Quaqtaq</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-27T08:45:00Z</updated>
+ <published>2016-04-27T08:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_w1:20160427084500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: -9,3&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Quaqtaq 08h00 HAE jeudi 05 mai 2016 <br/>
+<b>Température:</b> -9,3&deg;C <br/>
+<b>Pression:</b> 101,2 kPa <br/>
+<b>Humidité:</b> 75 %<br/>
+<b>Refroidissement éolien:</b> -13 <br/>
+<b>Point de rosée:</b> -13,0&deg;C <br/>
+<b>Vent:</b> SSO 7 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_cc:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Neige. Maximum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Devenant nuageux ce matin. Neige débutant cet après-midi. Vents devenant du sud-est à 20 km/h avec rafales à 40 en mi-journée. Maximum moins 3. Indice UV de 3 ou modéré. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc1:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Neige et poudrerie. Minimum moins 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige et poudrerie. Vents du sud-est de 50 km/h avec rafales à 70. Minimum moins 11. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc2:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Faible neige intermittente. Maximum moins 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Faible neige intermittente et poudrerie par endroits. Vents du sud-est de 30 km/h avec rafales à 50 devenant du nord à 20 avec rafales à 40 en après-midi. Maximum moins 5. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc3:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses de neige. Minimum moins 12. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Minimum moins 12. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc4:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Nuageux. Maximum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum moins 3. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc5:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Possibilité d'averses de neige. Minimum moins 8. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Minimum moins 8. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc6:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Possibilité d'averses de neige. Maximum moins 2. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Venteux. Maximum moins 2. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc7:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Venteux. Minimum moins 4. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc8:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Nuageux. Maximum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement. Venteux. Maximum plus 2. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc9:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 4. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc10:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum zéro. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc11:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 4. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc12:20160505083000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-106_metric_f.html"/>
+ <updated>2016-05-05T08:30:00Z</updated>
+ <published>2016-05-05T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 1. Prévisions émises 04h30 HAE jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-106_fc13:20160505083000</id>
+ </entry>
+ </feed>
+

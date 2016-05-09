@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Kootenay (Parc national) - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-11_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-11_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-02T11:02:42Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160502110242</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Kootenay (Parc national)</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-01-03T18:30:00Z</updated>
+ <published>2016-01-03T18:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_w1:20160103183000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: -0,8&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Parc national de Yoho 05h00 HAR lundi 02 mai 2016 <br/>
+<b>Température:</b> -0,8&deg;C <br/>
+<b>Pression / Tendance:</b> 102,2 kPa à la hausse<br/>
+<b>Humidité:</b> 91 %<br/>
+<b>Point de rosée:</b> -2,1&deg;C <br/>
+<b>Vent:</b>   km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_cc:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents d'ouest de 20 km/h. Maximum 20. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc1:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Vents d'ouest de 20 km/h devenant légers ce soir. Minimum plus 2. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc2:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents devenant d'ouest à 20 km/h en après-midi. Maximum 21. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc3:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc4:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc5:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc6:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses. Maximum 13. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 13. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc7:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Pluie intermittente. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Minimum plus 2. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc8:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc9:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc10:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc11:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc12:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 26.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-11_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 26. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-11_fc13:20160502110000</id>
+ </entry>
+ </feed>
+

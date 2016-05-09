@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Dundalk - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/on-36_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/on-36_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-29T11:06:56Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110656</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Dundalk</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-11T07:30:00Z</updated>
+ <published>2016-04-11T07:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_w1:20160411073000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 3,4&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Mount Forest 07h00 HAE vendredi 29 avril 2016 <br/>
+<b>Température:</b> 3,4&deg;C <br/>
+<b>Pression / Tendance:</b> 101,9 kPa à la hausse<br/>
+<b>Humidité:</b> 65 %<br/>
+<b>Point de rosée:</b> -2,6&deg;C <br/>
+<b>Vent:</b> ESE 9 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_cc:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Généralement nuageux. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Dégagement tard cet après-midi. Maximum 11. Indice UV de 5 ou modéré. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc1:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 2. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc2:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Généralement ensoleillé. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Ennuagement tard en après-midi. Maximum 13. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc3:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 5. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc4:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc5:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc6:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 11. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc7:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc8:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 12. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc9:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum 6. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 6. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc10:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 12. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 12. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc11:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc12:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses. Maximum 14. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-36_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 14. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-36_fc13:20160429090000</id>
+ </entry>
+ </feed>
+

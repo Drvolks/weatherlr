@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Masset - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-56_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-56_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-04T12:04:38Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160504120438</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Masset</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-02-21T22:15:00Z</updated>
+ <published>2016-02-21T22:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_w1:20160221221500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 2,7&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport municipal de Masset 05h00 HAP mercredi 04 mai 2016 <br/>
+<b>Température:</b> 2,7&deg;C <br/>
+<b>Pression:</b> 102,3 kPa <br/>
+<b>Humidité:</b> 93 %<br/>
+<b>Point de rosée:</b> 1,7&deg;C <br/>
+<b>Vent:</b> S 4 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_cc:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 12. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. 30 pour cent de probabilité d'averses ce matin. Maximum 12. Indice UV de 5 ou modéré. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc1:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. Minimum 6. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc2:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement tôt le matin. Maximum 11. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc3:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 8. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc4:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Nuageux. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 14. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc5:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 10. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum 10. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc6:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 13. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 13. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc7:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Possibilité d'averses. Minimum 8. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 8. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc8:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 13. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc9:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc10:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc11:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc12:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-56_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 05h00 HAP mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-56_fc13:20160504120000</id>
+ </entry>
+ </feed>
+

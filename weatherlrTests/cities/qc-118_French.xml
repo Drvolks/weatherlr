@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Kangiqsualujjuaq - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-118_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-118_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-26T19:16:55Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160426191655</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Kangiqsualujjuaq</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-18T09:00:00Z</updated>
+ <published>2016-04-18T09:00:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_w1:20160418090000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, -4,2&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Kangiqsualujjuaq 15h00 HAE mardi 26 avril 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> -4,2&deg;C <br/>
+<b>Pression / Tendance:</b> 99,9 kPa à la hausse<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 79 %<br/>
+<b>Refroidissement éolien:</b> -6 <br/>
+<b>Point de rosée:</b> -7,3&deg;C <br/>
+<b>Vent:</b> N 3 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_cc:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Généralement nuageux. Minimum moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Minimum moins 8. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc1:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum moins 4. Indice UV de 5 ou modéré. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc2:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Quelques nuages. Minimum moins 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement tard en soirée. Minimum moins 11. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc3:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses de neige. Maximum moins 5. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Maximum moins 5. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc4:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Minimum moins 4. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc5:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Possibilité d'averses de neige. Maximum moins 2. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Venteux. Maximum moins 2. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc6:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Venteux. Minimum moins 4. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc7:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses de neige. Maximum zéro. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Maximum zéro. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc8:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 6. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc9:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum zéro. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc10:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 5. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc11:20160426193000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-118_metric_f.html"/>
+ <updated>2016-04-26T19:30:00Z</updated>
+ <published>2016-04-26T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 1. Prévisions émises 15h30 HAE mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-118_fc12:20160426193000</id>
+ </entry>
+ </feed>
+

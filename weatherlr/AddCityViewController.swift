@@ -232,4 +232,8 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .Default
     }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        searchText.resignFirstResponder()
+    }
 }

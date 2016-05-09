@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>St. Leonard - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nb-24_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nb-24_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-26T19:12:37Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160426191237</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, St. Leonard</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-02T01:30:00Z</updated>
+ <published>2016-04-02T01:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_w1:20160402013000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 4,2&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de St. Leonard 16h00 HAA mardi 26 avril 2016 <br/>
+<b>Température:</b> 4,2&deg;C <br/>
+<b>Pression / Tendance:</b> 100,8 kPa à la baisse<br/>
+<b>Humidité:</b> 26 %<br/>
+<b>Point de rosée:</b> -13,8&deg;C <br/>
+<b>Vent:</b> O 22 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_cc:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses de neige. Minimum moins 6. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement. 40 pour cent de probabilité d'averses de neige au cours de la nuit. Minimum moins 6. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc1:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses de neige. Maximum plus 1. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Ennuagement en mi-journée suivi de 60 pour cent de probabilité d'averses de neige tard en après-midi. Vents devenant d'ouest à 20 km/h en après-midi. Maximum plus 1. Indice UV de 6 ou élevé. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc2:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses de neige. Minimum moins 6. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Minimum moins 6. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc3:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses de neige. Maximum plus 5. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 40 pour cent de probabilité d'averses de neige. Maximum plus 5. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc4:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 8. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc5:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 11. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc6:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 3. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc7:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 12. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc8:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc9:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 12. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc10:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc11:20160426190000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-24_metric_f.html"/>
+ <updated>2016-04-26T19:00:00Z</updated>
+ <published>2016-04-26T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 12. Prévisions émises 16h00 HAA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-24_fc12:20160426190000</id>
+ </entry>
+ </feed>
+

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Cape Dorset - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nu-2_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nu-2_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-02T11:03:18Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160502110318</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVERTISSEMENT DE NEIGE EN VIGUEUR, Cape Dorset</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?nu15"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émis à: 04h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_w1:201605020800</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Neige, -3,8&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Cape Dorset 07h00 HAE lundi 02 mai 2016 <br/>
+<b>Condition:</b> Neige <br/>
+<b>Température:</b> -3,8&deg;C <br/>
+<b>Pression:</b> 101,0 kPa <br/>
+<b>Visibilité:</b> 0,8 km<br/>
+<b>Humidité:</b> 92 %<br/>
+<b>Refroidissement éolien:</b> -13 <br/>
+<b>Point de rosée:</b> -4,9&deg;C <br/>
+<b>Vent:</b> SO 41 km/h rafale 63 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_cc:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Neige. Maximum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Neige débutant tôt ce matin. Poudrerie avec visibilité réduite fréquemment à moins d'un kilomètre ce matin et tôt cet après-midi. Accumulation de 2 à 4 cm. Vents du sud-ouest de 50 km/h avec rafales à 70. Maximum zéro. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc1:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Neige. Minimum moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige. Accumulation de 10 cm. Vents du sud-ouest de 40 km/h avec rafales à 60 diminuant à 20 ce soir puis devenant légers après minuit. Minimum moins 8. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc2:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Neige. Températures stables près de moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige cessant en après-midi. Nuageux par la suite. Accumulation de 5 cm. Vents devenant du nord à 20 km/h le matin. Températures stables près de moins 8. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc3:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses de neige. Minimum moins 11. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Minimum moins 11. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc4:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Neige intermittente. Maximum moins 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige intermittente. Maximum moins 7. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc5:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Neige. Minimum moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige. Minimum moins 8. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc6:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses de neige. Maximum moins 5. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Maximum moins 5. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc7:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses de neige. Minimum moins 5. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Minimum moins 5. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc8:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Possibilité d'averses de neige ou de pluie. Maximum plus 2. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige ou de pluie. Maximum plus 2. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc9:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum moins 3. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum moins 3. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc10:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Nuageux. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum plus 3. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc11:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Nuageux. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum moins 3. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc12:20160502090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Nuageux. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-2_metric_f.html"/>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum plus 1. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-2_fc13:20160502090000</id>
+ </entry>
+ </feed>
+

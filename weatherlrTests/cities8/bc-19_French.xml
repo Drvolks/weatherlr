@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Campbell River - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-19_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-19_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-05T12:00:59Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160505120059</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Campbell River</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-03-10T18:15:00Z</updated>
+ <published>2016-03-10T18:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_w1:20160310181500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 6,1&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Campbell River 05h00 HAP jeudi 05 mai 2016 <br/>
+<b>Température:</b> 6,1&deg;C <br/>
+<b>Pression:</b> 101,9 kPa <br/>
+<b>Humidité:</b> 81 %<br/>
+<b>Point de rosée:</b> 3,1&deg;C <br/>
+<b>Vent:</b> ONO 14 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_cc:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Venteux près du détroit de Georgia. Maximum 22. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc1:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Venteux près du détroit de Georgia. Minimum 9. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc2:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Venteux près du détroit de Georgia. Maximum 25. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc3:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 11. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc4:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 22. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc5:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Venteux. Minimum 8. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc6:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Venteux. Maximum 15. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc7:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Venteux. Minimum 8. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc8:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc9:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc10:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc11:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc12:20160505120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-19_metric_f.html"/>
+ <updated>2016-05-05T12:00:00Z</updated>
+ <published>2016-05-05T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 05h00 HAP jeudi 05 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-19_fc13:20160505120000</id>
+ </entry>
+ </feed>
+

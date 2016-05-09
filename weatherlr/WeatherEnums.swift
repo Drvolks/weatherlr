@@ -18,10 +18,18 @@ enum WeatherStatus {
     case BlowingSnow
     case ChanceOfDrizzle
     case ChanceOfDrizzleMixedWithFreezingDrizzle
+    case ChanceOfDrizzleOrRain
     case ChanceOfFlurries
+    case ChanceOfLightSnow
     case ChanceOfRainShowersOrFlurries
+    case ChanceOfRainShowersOrWetFlurries
+    case ChanceOfRain
     case ChanceOfShowers
     case ChanceOfShowersOrDrizzle
+    case ChanceOfShowersOrThunderstorms
+    case ChanceOfSnow
+    case ChanceOfWetFlurries
+    case ChanceOfWetFlurriesOrRainShowers
     case Clear
     case Clearing
     case Cloudy
@@ -30,16 +38,32 @@ enum WeatherStatus {
     case DriftingSnow
     case Drizzle
     case DrizzleMixedWithFreezingDrizzle
+    case DrizzleOrRain
     case Flurries
+    case FlurriesAtTimesHeavy
     case FlurriesOrRainShowers
+    case Fog
+    case FogPatches
     case FreezingDrizzleOrDrizzle
+    case FreezingDrizzleOrRain
+    case FreezingFog
+    case FreezingRainMixedWithIcePellets
+    case FreezingRainMixedWithSnow
+    case FreezingRainOrSnow
+    case Haze
+    case HeavySnow
+    case IceCrystals
     case IncreasingCloudiness
+    case LightDrizzleAndFog
     case LightFreezingDrizzle
+    case LightFreezingRain
     case LightRain
+    case LightRainAndFog
     case LightRainshower
     case LightSnow
     case LightSnowAndBlowingSnow
     case LightSnowshower
+    case LightWetSnow
     case MainlyClear
     case MainlySunny
     case Mist
@@ -48,9 +72,17 @@ enum WeatherStatus {
     case PartlyCloudy
     case PeriodsOfDrizzle
     case PeriodsOfDrizzleMixedWithFreezingDrizzle
+    case PeriodsOfDrizzleMixedWithRain
+    case PeriodsOfDrizzleOrRain
+    case PeriodsOfFreezingDrizzle
+    case PeriodsOfFreezingDrizzleOrDrizzle
+    case PeriodsOfFreezingDrizzleOrRain
     case PeriodsOfFreezingRain
+    case PeriodsOfFreezingRainMixedWithIcePellets
+    case PeriodsOfFreezingRainOrSnow
     case PeriodsOfLightSnow
     case PeriodsOfLightSnowOrFreezingRain
+    case PeriodsOfLightSnowMixedWithFreezingDrizzle
     case PeriodsOfRain
     case PeriodsOfRainMixedWithSnow
     case PeriodsOfRainOrDrizzle
@@ -58,16 +90,32 @@ enum WeatherStatus {
     case PeriodsOfRainOrSnow
     case PeriodsOfSnow
     case PeriodsOfSnowAndBlowingSnow
+    case PeriodsOfSnowMixedWithFreezingRain
+    case PeriodsOfSnowMixedWithRain
     case PeriodsOfSnowOrRain
+    case Precipitation
     case Rain
     case RainAtTimesHeavy
+    case RainAtTimesHeavyOrDrizzle
+    case RainMixedWithSnow
+    case RainOrDrizzle
     case RainOrFreezingRain
     case RainShowersOrFlurries
     case Showers
     case ShowersOrDrizzle
+    case Smoke
     case Snow
+    case SnowAndBlowingSnow
+    case SnowAtTimesHeavy
+    case SnowAtTimesHeavyMixedWithRain
+    case SnowGrains
+    case SnowMixedWithFreezingDrizzle
+    case SnowMixedWithIcePellets
+    case SnowMixedWithRain
     case SnowOrRain
     case Sunny
+    case WetFlurries
+    case WetSnow
     case Blank
     case NA
     case UnitTest
@@ -87,6 +135,25 @@ enum WeatherDay : Int {
     case Now = 0
     case Today = 1
     case Tomorow = 2
+    case Day2 = 3
+    case Day3 = 4
+    case Day4 = 5
+    case Day5 = 6
+    case Day6 = 7
+    case Day7 = 8
+    case Day8 = 9
+    case Day9 = 10
+    case Day10 = 11
+    case Day11 = 12
+    case Day12 = 13
+    case Day13 = 14
+    case Day14 = 15
+    case Day15 = 16
+    case Day16 = 17
+    case Day17 = 18
+    case Day18 = 19
+    case Day19 = 20
+    case Day20 = 21
     case NA = -99
 }
 

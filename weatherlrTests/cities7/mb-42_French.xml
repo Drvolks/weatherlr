@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Churchill - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/mb-42_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/mb-42_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-04T12:05:44Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160504120544</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Churchill</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-15T01:15:00Z</updated>
+ <published>2016-04-15T01:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_w1:20160415011500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Nuageux, -2,4&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Churchill 07h00 HAC mercredi 04 mai 2016 <br/>
+<b>Condition:</b> Nuageux <br/>
+<b>Température:</b> -2,4&deg;C <br/>
+<b>Pression / Tendance:</b> 101,5 kPa à la baisse<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 82 %<br/>
+<b>Refroidissement éolien:</b> -8 <br/>
+<b>Point de rosée:</b> -5,1&deg;C <br/>
+<b>Vent:</b> SSO 18 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_cc:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Généralement nuageux. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Vents devenant du sud-ouest à 20 km/h tôt ce matin. Maximum 11. Indice UV de 3 ou modéré. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc1:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum moins 9. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. 30 pour cent de probabilité d'averses ce soir et après minuit. Vents du sud-ouest de 20 km/h devenant du nord-est à 40 avec rafales à 60 tard ce soir puis diminuant à 20 en fin de nuit. Minimum moins 9. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc2:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Nuageux. Maximum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Vents du nord-est de 20 km/h devenant légers le matin. Maximum moins 4. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc3:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 6. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc4:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Possibilité d'averses de neige ou de pluie. Maximum plus 3. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige ou de pluie. Maximum plus 3. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc5:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum moins 6. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum moins 6. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc6:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 3. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc7:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 4. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc8:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 7. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc9:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Dégagé. Minimum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 4. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc10:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 3. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc11:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 3. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc12:20160504100000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-42_metric_f.html"/>
+ <updated>2016-05-04T10:00:00Z</updated>
+ <published>2016-05-04T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 3. Prévisions émises 05h00 HAC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-42_fc13:20160504100000</id>
+ </entry>
+ </feed>
+

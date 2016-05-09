@@ -28,7 +28,7 @@ class WeatherInformationTests: XCTestCase {
         XCTAssertEqual("sumary", result.summary)
         XCTAssertEqual("detail", result.detail)
         
-        // temperature negatire
+        // temperature negative
         temperature = -10
         result = WeatherInformation(temperature: temperature, weatherStatus: .Sunny, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         XCTAssertNotNil(result)
@@ -46,11 +46,11 @@ class WeatherInformationTests: XCTestCase {
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .PartlyCloudy, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         resultat = bean.image()
-        XCTAssertEqual(UIImage(named: "PartlyCloudy"), resultat)
+        XCTAssertEqual(UIImage(named: "AFewClouds"), resultat)
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .PartlyCloudy, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
         resultat = bean.image()
-        XCTAssertEqual(UIImage(named: "PartlyCloudyNight"), resultat)
+        XCTAssertEqual(UIImage(named: "AFewCloudsNight"), resultat)
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .UnitTest, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
         resultat = bean.image()
@@ -62,13 +62,27 @@ class WeatherInformationTests: XCTestCase {
     }
     
     func testAllImagesExists() {
+        let defaultImage = UIImage(named: String(WeatherStatus.NA))
+        
         for status in TestUtils.iterateEnum(WeatherStatus) {
-            if status != WeatherStatus.UnitTest {
-                let result = UIImage(named: String(status))
-                if result == nil {
+            if status != WeatherStatus.UnitTest && status != WeatherStatus.NA {
+                // day
+                var bean = WeatherInformation(temperature: 10, weatherStatus: status, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: false)
+                
+                var result = bean.image()
+                if result == defaultImage {
                     print(status)
                 }
-                XCTAssertNotNil(result)
+                XCTAssertNotEqual(defaultImage, result)
+                
+                // night
+                bean = WeatherInformation(temperature: 10, weatherStatus: status, weatherDay: .Today, summary: "sumary", detail: "detail", tendancy: Tendency.NA, when: "", night: true)
+                
+                result = bean.image()
+                if result == defaultImage {
+                    print(status)
+                }
+                XCTAssertNotEqual(defaultImage, result)
             }
         }
     }

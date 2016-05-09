@@ -13,14 +13,27 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var weatherTable: UITableView!
     @IBOutlet weak var gradientView: GradientView!
     
-    var weatherInformations = [WeatherInformation]()
+    var refreshControl: UIRefreshControl!
+    var weatherInformationWrapper = WeatherInformationWrapper()
     var selectedCity:City?
-    let blankImage = UIImage(named: String(WeatherStatus.Blank))
+    let maxWidth = CGFloat(600)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
+        weatherTable.delegate = self
+        weatherTable.dataSource = self
+        weatherTable.rowHeight = UITableViewAutomaticDimension
+        weatherTable.estimatedRowHeight = 100.0
+        weatherTable.tableHeaderView = nil
+        weatherTable.backgroundColor = UIColor.clearColor()
+        
+        refreshControl = UIRefreshControl()
+        refreshLabel()
+        refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        weatherTable.addSubview(refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,13 +43,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         
-        weatherTable.delegate = self
-        weatherTable.dataSource = self
-        weatherTable.rowHeight = UITableViewAutomaticDimension
-        weatherTable.estimatedRowHeight = 100.0
-        weatherTable.tableHeaderView = nil
-        weatherTable.backgroundColor = UIColor.clearColor()
-
         if PreferenceHelper.getSelectedCity() != nil {
             refresh(false)
         } else {
@@ -45,6 +51,25 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.presentViewController(viewController, animated: false, completion: nil)
             })
         }
+    }
+    
+    func refreshLabel() {
+        let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
+        let refreshLabel:String
+        let dateFormatter = NSDateFormatter()
+        let lang = PreferenceHelper.getLanguage()
+        dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
+        dateFormatter.timeStyle = .ShortStyle
+        refreshLabel = "Last refresh".localized() + " " + dateFormatter.stringFromDate(weatherInformationWrapper.lastRefresh)
+
+        refreshControl.attributedTitle = NSAttributedString(string: refreshLabel, attributes: refreshControlFont)
+        
+        refreshControl.beginRefreshing()
+        refreshControl.endRefreshing()
+    }
+    
+    func refreshFromScroll(sender:AnyObject) {
+        refresh(true)
     }
     
     func applicationWillEnterForeground(notification: NSNotification) {
@@ -63,21 +88,21 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             if thread {
                 let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                 dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                    self.weatherInformations = WeatherHelper.getWeatherInformations(city)
+                    self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         self.displayWeather(false)
                     }
                 }
             } else {
-                self.weatherInformations = WeatherHelper.getWeatherInformations(city)
+                self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
                 displayWeather(true)
             }
         }
     }
     
     func displayWeather(foreground: Bool) {
-        if self.weatherInformations.count == 0 {
+        if weatherInformationWrapper.weatherInformations.count == 0 {
             if(foreground) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("errorNav") as! UINavigationController
@@ -85,6 +110,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 })
             }
         } else {
+            refreshLabel()
+            
+            refreshControl.endRefreshing()
+            
             self.decorate()
             
             self.weatherTable.reloadData()
@@ -95,8 +124,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         var colorDay = UIColor(weatherColor: WeatherColor.ClearDay)
         var colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
         
-        if weatherInformations.count > 0 {
-            let weatherInfo = weatherInformations[0]
+        if weatherInformationWrapper.weatherInformations.count > 0 {
+            let weatherInfo = weatherInformationWrapper.weatherInformations[0]
             
             colorDay = UIColor(weatherColor: weatherInfo.color())
             
@@ -119,28 +148,31 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         gradientView.backgroundColor = colorDay
         
         gradientView.gradientWithColors(colorDay, colorNight)
+        
+        if view.bounds.size.width > maxWidth {
+            weatherTable.bounds.size.width = maxWidth
+        }
     }
 
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weatherInformations.count - 2
+        return weatherInformationWrapper.weatherInformations.count - 2
     }
     
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("weatherCell", forIndexPath: indexPath) as! WeatherTableViewCell
         
-        let weatherInfo = weatherInformations[indexPath.row+1]
+        let weatherInfo = weatherInformationWrapper.weatherInformations[indexPath.row+1]
         cell.weatherImage.image = weatherInfo.image()
         cell.weatherDetailLabel.text = weatherInfo.detail
         cell.backgroundColor = UIColor.clearColor()
-
-        cell.whenLabel.text = weatherInfo.when
 
         if weatherInfo.weatherDay == WeatherDay.Today {
             cell.minMaxLabel.hidden = true
             cell.minMaxImage.hidden = true
             
-            if !weatherInfo.night {
+            if weatherInfo.night {
+                cell.whenLabel.text = weatherInfo.when
+            } else {
                 cell.whenLabel.text = "Today".localized()
             }
         } else {
@@ -149,9 +181,38 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             cell.minMaxLabel.hidden = false
             cell.minMaxImage.hidden = false
+            
+            if weatherInfo.night {
+                cell.whenLabel.text = weatherInfo.when
+            } else {
+                let today = NSDate()
+                let theDate = addDaystoGivenDate(today, NumberOfDaysToAdd: weatherInfo.weatherDay.rawValue - 1)
+                let dateFormatter = NSDateFormatter()
+                let lang = PreferenceHelper.getLanguage()
+                dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
+                if(lang == Language.French) {
+                    dateFormatter.dateFormat = "d MMMM"
+                } else {
+                    dateFormatter.dateFormat = "MMMM d"
+                }
+                
+                cell.whenLabel.text = weatherInfo.when + " " + dateFormatter.stringFromDate(theDate)
+            }
         }
         
         return cell
+    }
+    
+    func addDaystoGivenDate(baseDate:NSDate,NumberOfDaysToAdd:Int)->NSDate
+    {
+        let dateComponents = NSDateComponents()
+        let CurrentCalendar = NSCalendar.currentCalendar()
+        let CalendarOption = NSCalendarOptions()
+        
+        dateComponents.day = NumberOfDaysToAdd
+        
+        let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
+        return newDate!
     }
 
     func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {
@@ -186,22 +247,28 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             header.cityLabel.text = name
             
-            if weatherInformations.count > 0 {
-                var weatherInfo = weatherInformations[0]
+            if weatherInformationWrapper.weatherInformations.count > 0 {
+                var weatherInfo = weatherInformationWrapper.weatherInformations[0]
                 header.currentTemperatureLabel.text = String(weatherInfo.temperature)
                 
-                if(weatherInfo.image() == blankImage) {
+                if(weatherInfo.weatherStatus == .Blank) {
                     header.weatherImage.hidden = true
                 } else {
                     header.weatherImage.image = weatherInfo.image()
                     header.weatherImage.hidden = false
                 }
                 
-                if weatherInformations.count > 1 {
-                    weatherInfo = weatherInformations[1]
+                if weatherInformationWrapper.weatherInformations.count > 1 {
+                    weatherInfo = weatherInformationWrapper.weatherInformations[1]
                     
+                    header.temperatureLabel.hidden = false
+                    header.temperatureImage.hidden = false
                     header.temperatureLabel.text = String(weatherInfo.temperature)
                     header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
+                } else {
+                    header.temperatureLabel.text = ""
+                    header.temperatureLabel.hidden = true
+                    header.temperatureImage.hidden = true
                 }
             }
         }
@@ -227,7 +294,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "Settings" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let targetController = navigationController.topViewController as! SettingsViewController
-            targetController.selectedCityWeatherInformation = weatherInformations[0]
+            targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
         }
     }
     

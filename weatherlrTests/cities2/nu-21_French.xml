@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Iqaluit - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nu-21_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nu-21_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-28T10:01:37Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160428100137</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Iqaluit</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-25T09:30:00Z</updated>
+ <published>2016-04-25T09:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_w1:20160425093000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, -0,2&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T10:00:00Z</updated>
+ <published>2016-04-28T10:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport d'Iqaluit 06h00 HAE jeudi 28 avril 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> -0,2&deg;C <br/>
+<b>Pression / Tendance:</b> 102,3 kPa à la hausse<br/>
+<b>Visibilité:</b> 48,3 km<br/>
+<b>Humidité:</b> 85 %<br/>
+<b>Refroidissement éolien:</b> -1 <br/>
+<b>Point de rosée:</b> -2,4&deg;C <br/>
+<b>Vent:</b> N 3 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_cc:20160428100000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 6. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc1:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. Minimum zéro. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc2:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du nord-ouest à 30 km/h avec rafales à 50 le matin. Maximum plus 5. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc3:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 4. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc4:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum moins 1. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc5:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum moins 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 7. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc6:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Nuageux. Maximum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum moins 1. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc7:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Nuageux. Minimum moins 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum moins 5. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc8:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Nuageux. Maximum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum moins 1. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc9:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Possibilité d'averses de neige. Minimum moins 5. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 5. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc10:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses de neige. Maximum moins 2. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses de neige. Maximum moins 2. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc11:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 4. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc12:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses de neige. Maximum zéro. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-21_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses de neige. Maximum zéro. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-21_fc13:20160428090000</id>
+ </entry>
+ </feed>
+

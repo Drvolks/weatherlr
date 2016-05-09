@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Blanc-Sablon - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-163_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-163_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-26T19:22:30Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160426192230</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Blanc-Sablon</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-21T09:45:00Z</updated>
+ <published>2016-04-21T09:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_w1:20160421094500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Nuageux, -3,6&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T19:20:00Z</updated>
+ <published>2016-04-26T19:20:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Blanc-Sablon 15h20 HNA mardi 26 avril 2016 <br/>
+<b>Condition:</b> Nuageux <br/>
+<b>Température:</b> -3,6&deg;C <br/>
+<b>Pression:</b> 100,8 kPa <br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 70 %<br/>
+<b>Refroidissement éolien:</b> -11 <br/>
+<b>Point de rosée:</b> -8,3&deg;C <br/>
+<b>Vent:</b> SO 31 km/h rafale 46 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_cc:20160426192000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Généralement nuageux. Maximum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Vents du sud-ouest de 30 km/h avec rafales à 50. Maximum moins 3. Indice UV de 4 ou modéré. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc1:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Quelques averses de neige. Températures stables près de moins 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Quelques averses de neige débutant vers minuit. Vents du sud-ouest de 30 km/h avec rafales à 50 devenant légers ce soir. Températures stables près de moins 4. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc2:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Neige. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige. Accumulation de 2 à 4 cm. Vents devenant d'est à 30 km/h avec rafales à 50 le matin. Maximum plus 1. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc3:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 4. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc4:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses de neige. Maximum plus 4. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Maximum plus 4. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc5:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Minimum moins 4. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc6:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Neige intermittente. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige intermittente. Venteux. Maximum plus 1. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc7:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Neige intermittente. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige intermittente. Venteux. Minimum moins 3. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc8:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses de neige. Maximum 6. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Maximum 6. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc9:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 3. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc10:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 4. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc11:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum moins 3. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc12:20160426153000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-163_metric_f.html"/>
+ <updated>2016-04-26T15:30:00Z</updated>
+ <published>2016-04-26T15:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 4. Prévisions émises 11h30 HNA mardi 26 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-163_fc13:20160426153000</id>
+ </entry>
+ </feed>
+

@@ -26,6 +26,10 @@ class RssEntryToWeatherInformationTests: XCTestCase {
     let alertTitleEn = "No watches or warnings in effect, Montréal"
     let alertAirFr = "BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR EN VIGUEUR, Fort St. John"
     let alertAirEn = "SPECIAL AIR QUALITY STATEMENT IN EFFECT, Fort St. John"
+    let alertBlowingSnowFr = "AVIS DE POUDRERIE  EN VIGUEUR, Baie-James"
+    let alertBlowingSnowEn = "BLOWING SNOW ADVISORY IN EFFECT, Baie-James"
+    let alertFrostFr = "AVIS DE GEL EN VIGUEUR, Lorraine"
+    let alertFrostEn = "FROST ADVISORY IN EFFECT, Mascouche"
     
     func testConstructor() {
         let parser = RssParserStub()!
@@ -102,7 +106,7 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         parser.parser.parse()
         
         var performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        var result = performer.convert(rssEntry, position: 0)
+        var result = performer.convert(rssEntry)
         
         XCTAssertEqual(WeatherDay.Now, result.weatherDay)
         XCTAssertEqual(-4, result.temperature)
@@ -118,7 +122,7 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         parser.parser.delegate = rssEntry
         parser.parser.parse()
         performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        result = performer.convert(rssEntry, position: 2)
+        result = performer.convert(rssEntry)
         XCTAssertEqual("Quelques nuages. Minimum moins 12.", result.detail)
         XCTAssertEqual(Tendency.Minimum, result.tendancy)
         XCTAssertTrue(result.night)
@@ -128,7 +132,7 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         parser.parser.delegate = rssEntry
         parser.parser.parse()
         performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        result = performer.convert(rssEntry, position: 2)
+        result = performer.convert(rssEntry)
         XCTAssertEqual("Sunny. Wind north 20 km/h becoming west 20 near noon. High minus 2. UV index 4 or moderate.", result.detail)
         XCTAssertEqual(Tendency.Maximum, result.tendancy)
         XCTAssertFalse(result.night)
@@ -138,7 +142,7 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         parser.parser.delegate = rssEntry
         parser.parser.parse()
         performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        result = performer.convert(rssEntry, position: 2)
+        result = performer.convert(rssEntry)
         XCTAssertEqual(WeatherDay.Now, result.weatherDay)
         XCTAssertEqual(-4, result.temperature)
         XCTAssertEqual(WeatherStatus.Blank, result.weatherStatus)
@@ -378,6 +382,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         XCTAssertEqual(WeatherStatus.PeriodsOfSnowOrRain, result)
         result = performer.convertWeatherStatus("Periods of snow or rain")
         XCTAssertEqual(WeatherStatus.PeriodsOfSnowOrRain, result)
+        result = performer.convertWeatherStatus("Pluie et neige faibles")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowOrRain, result)
+        result = performer.convertWeatherStatus("Light Rain and Snow")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowOrRain, result)
+        result = performer.convertWeatherStatus("Faible neige intermittente ou pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowOrRain, result)
+        result = performer.convertWeatherStatus("Periods of light snow or rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowOrRain, result)
+        result = performer.convertWeatherStatus("Quelques averses de neige ou de pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowOrRain, result)
+        result = performer.convertWeatherStatus("A few flurries or rain showers")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowOrRain, result)
         
         // LightFreezingDrizzle
         result = performer.convertWeatherStatus("Faible bruine verglaçante")
@@ -401,6 +417,10 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Bruine intermittente")
         XCTAssertEqual(WeatherStatus.PeriodsOfDrizzle, result)
         result = performer.convertWeatherStatus("Periods of drizzle")
+        XCTAssertEqual(WeatherStatus.PeriodsOfDrizzle, result)
+        result = performer.convertWeatherStatus("Bruine faible")
+        XCTAssertEqual(WeatherStatus.PeriodsOfDrizzle, result)
+        result = performer.convertWeatherStatus("Light Drizzle")
         XCTAssertEqual(WeatherStatus.PeriodsOfDrizzle, result)
         
         // FlurriesOrRainShowers
@@ -506,8 +526,6 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Chance of drizzle mixed with freezing drizzle")
         XCTAssertEqual(WeatherStatus.ChanceOfDrizzleMixedWithFreezingDrizzle, result)
         
-        
-        
         // PeriodsOfDrizzleMixedWithFreezingDrizzle
         result = performer.convertWeatherStatus("Bruine intermittente mêlée de bruine verglaçante")
         XCTAssertEqual(WeatherStatus.PeriodsOfDrizzleMixedWithFreezingDrizzle, result)
@@ -519,6 +537,306 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         XCTAssertEqual(WeatherStatus.FreezingDrizzleOrDrizzle, result)
         result = performer.convertWeatherStatus("Freezing drizzle or drizzle")
         XCTAssertEqual(WeatherStatus.FreezingDrizzleOrDrizzle, result)
+        
+        // ChanceOfRainShowersOrWetFlurries
+        result = performer.convertWeatherStatus("Possibilité d'averses de pluie ou de neige fondante")
+        XCTAssertEqual(WeatherStatus.ChanceOfRainShowersOrWetFlurries, result)
+        result = performer.convertWeatherStatus("Chance of rain showers or wet flurries")
+        XCTAssertEqual(WeatherStatus.ChanceOfRainShowersOrWetFlurries, result)
+        
+        // SnowAndBlowingSnow
+        result = performer.convertWeatherStatus("Neige et poudrerie")
+        XCTAssertEqual(WeatherStatus.SnowAndBlowingSnow, result)
+        result = performer.convertWeatherStatus("Snow and blowing snow")
+        XCTAssertEqual(WeatherStatus.SnowAndBlowingSnow, result)
+        result = performer.convertWeatherStatus("Neige et Poudrerie élevée")
+        XCTAssertEqual(WeatherStatus.SnowAndBlowingSnow, result)
+        result = performer.convertWeatherStatus("Neige parfois forte et poudrerie")
+        XCTAssertEqual(WeatherStatus.SnowAndBlowingSnow, result)
+        result = performer.convertWeatherStatus("Snow at times heavy and blowing snow")
+        XCTAssertEqual(WeatherStatus.SnowAndBlowingSnow, result)
+        
+        // HeavySnow
+        result = performer.convertWeatherStatus("Neige forte")
+        XCTAssertEqual(WeatherStatus.HeavySnow, result)
+        result = performer.convertWeatherStatus("Heavy Snow")
+        XCTAssertEqual(WeatherStatus.HeavySnow, result)
+        
+        // FlurriesAtTimesHeavy
+        result = performer.convertWeatherStatus("Averses de neige parfois fortes")
+        XCTAssertEqual(WeatherStatus.FlurriesAtTimesHeavy, result)
+        result = performer.convertWeatherStatus("Flurries at times heavy")
+        XCTAssertEqual(WeatherStatus.FlurriesAtTimesHeavy, result)
+        
+        // SnowMixedWithRain
+        result = performer.convertWeatherStatus("Neige mêlée de pluie")
+        XCTAssertEqual(WeatherStatus.SnowMixedWithRain, result)
+        result = performer.convertWeatherStatus("Snow mixed with rain")
+        XCTAssertEqual(WeatherStatus.SnowMixedWithRain, result)
+        
+        // ChanceOfSnow
+        result = performer.convertWeatherStatus("Possibilité de neige")
+        XCTAssertEqual(WeatherStatus.ChanceOfSnow, result)
+        result = performer.convertWeatherStatus("Chance of snow")
+        XCTAssertEqual(WeatherStatus.ChanceOfSnow, result)
+        
+        // ChanceOfLightSnow
+        result = performer.convertWeatherStatus("Possibilité de faible neige")
+        XCTAssertEqual(WeatherStatus.ChanceOfLightSnow, result)
+        result = performer.convertWeatherStatus("Chance of light snow")
+        XCTAssertEqual(WeatherStatus.ChanceOfLightSnow, result)
+        
+        // SnowAtTimesHeavy
+        result = performer.convertWeatherStatus("Neige parfois forte")
+        XCTAssertEqual(WeatherStatus.SnowAtTimesHeavy, result)
+        result = performer.convertWeatherStatus("Snow at times heavy")
+        XCTAssertEqual(WeatherStatus.SnowAtTimesHeavy, result)
+        
+        // FreezingRainOrSnow
+        result = performer.convertWeatherStatus("Pluie verglaçante ou neige")
+        XCTAssertEqual(WeatherStatus.FreezingRainOrSnow, result)
+        result = performer.convertWeatherStatus("Freezing rain or snow")
+        XCTAssertEqual(WeatherStatus.FreezingRainOrSnow, result)
+        
+        // LightFreezingRain
+        result = performer.convertWeatherStatus("Faible pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.LightFreezingRain, result)
+        result = performer.convertWeatherStatus("Light freezing rain")
+        XCTAssertEqual(WeatherStatus.LightFreezingRain, result)
+        
+        // IceCrystals
+        result = performer.convertWeatherStatus("Cristaux de glace")
+        XCTAssertEqual(WeatherStatus.IceCrystals, result)
+        result = performer.convertWeatherStatus("Ice crystals")
+        XCTAssertEqual(WeatherStatus.IceCrystals, result)
+        
+        // SnowGrains
+        result = performer.convertWeatherStatus("Neige en grains")
+        XCTAssertEqual(WeatherStatus.SnowGrains, result)
+        result = performer.convertWeatherStatus("Snow grains")
+        XCTAssertEqual(WeatherStatus.SnowGrains, result)
+        
+        // WetSnow
+        result = performer.convertWeatherStatus("Neige fondante")
+        XCTAssertEqual(WeatherStatus.WetSnow, result)
+        result = performer.convertWeatherStatus("Wet snow")
+        XCTAssertEqual(WeatherStatus.WetSnow, result)
+
+        // WetFlurries
+        result = performer.convertWeatherStatus("Averses de neige fondante")
+        XCTAssertEqual(WeatherStatus.WetFlurries, result)
+        result = performer.convertWeatherStatus("Wet flurries")
+        XCTAssertEqual(WeatherStatus.WetFlurries, result)
+        
+        // FreezingFog
+        result = performer.convertWeatherStatus("Brouillard givrant")
+        XCTAssertEqual(WeatherStatus.FreezingFog, result)
+        result = performer.convertWeatherStatus("Freezing fog")
+        XCTAssertEqual(WeatherStatus.FreezingFog, result)
+        
+        // Fog
+        result = performer.convertWeatherStatus("Brouillard")
+        XCTAssertEqual(WeatherStatus.Fog, result)
+        result = performer.convertWeatherStatus("Fog")
+        XCTAssertEqual(WeatherStatus.Fog, result)
+        
+        // Haze
+        result = performer.convertWeatherStatus("Brume sèche")
+        XCTAssertEqual(WeatherStatus.Haze, result)
+        result = performer.convertWeatherStatus("Haze")
+        XCTAssertEqual(WeatherStatus.Haze, result)
+        
+        // SnowAtTimesHeavyMixedWithRain
+        result = performer.convertWeatherStatus("Neige parfois forte mêlée de pluie")
+        XCTAssertEqual(WeatherStatus.SnowAtTimesHeavyMixedWithRain, result)
+        result = performer.convertWeatherStatus("Snow at times heavy mixed with rain")
+        XCTAssertEqual(WeatherStatus.SnowAtTimesHeavyMixedWithRain, result)
+        
+        // PeriodsOfSnowMixedWithRain
+        result = performer.convertWeatherStatus("Neige intermittente mêlée de pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowMixedWithRain, result)
+        result = performer.convertWeatherStatus("Periods of snow mixed with rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowMixedWithRain, result)
+
+        // RainOrDrizzle
+        result = performer.convertWeatherStatus("Pluie ou bruine")
+        XCTAssertEqual(WeatherStatus.RainOrDrizzle, result)
+        result = performer.convertWeatherStatus("Rain or drizzle")
+        XCTAssertEqual(WeatherStatus.RainOrDrizzle, result)
+        
+        // PeriodsOfDrizzleOrRain
+        result = performer.convertWeatherStatus("Bruine intermittente ou pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfDrizzleOrRain, result)
+        result = performer.convertWeatherStatus("Periods of drizzle or rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfDrizzleOrRain, result)
+        
+        // LightDrizzleAndFog
+        result = performer.convertWeatherStatus("Bruine faible et brouillard")
+        XCTAssertEqual(WeatherStatus.LightDrizzleAndFog, result)
+        result = performer.convertWeatherStatus("Light drizzle and fog")
+        XCTAssertEqual(WeatherStatus.LightDrizzleAndFog, result)
+        
+        // LightRainAndFog
+        result = performer.convertWeatherStatus("Pluie faible et brouillard")
+        XCTAssertEqual(WeatherStatus.LightRainAndFog, result)
+        result = performer.convertWeatherStatus("Light rain and fog")
+        XCTAssertEqual(WeatherStatus.LightRainAndFog, result)
+        
+        // PeriodsOfDrizzleMixedWithRain
+        result = performer.convertWeatherStatus("Bruine intermittente mêlée de pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfDrizzleMixedWithRain, result)
+        result = performer.convertWeatherStatus("Periods of drizzle mixed with rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfDrizzleMixedWithRain, result)
+        
+        // PeriodsOfSnowMixedWithFreezingRain
+        result = performer.convertWeatherStatus("Neige intermittente mêlée de pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowMixedWithFreezingRain, result)
+        result = performer.convertWeatherStatus("Periods of snow mixed with freezing rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfSnowMixedWithFreezingRain, result)
+        
+        // FogPatches
+        result = performer.convertWeatherStatus("Bancs de brouillard")
+        XCTAssertEqual(WeatherStatus.FogPatches, result)
+        result = performer.convertWeatherStatus("Fog patches")
+        XCTAssertEqual(WeatherStatus.FogPatches, result)
+        
+        // RainMixedWithSnow
+        result = performer.convertWeatherStatus("Pluie mêlée de neige")
+        XCTAssertEqual(WeatherStatus.RainMixedWithSnow, result)
+        result = performer.convertWeatherStatus("Rain mixed with snow")
+        XCTAssertEqual(WeatherStatus.RainMixedWithSnow, result)
+        
+        // SnowMixedWithIcePellets
+        result = performer.convertWeatherStatus("Neige mêlée de grésil")
+        XCTAssertEqual(WeatherStatus.SnowMixedWithIcePellets, result)
+        result = performer.convertWeatherStatus("Snow mixed with ice pellets")
+        XCTAssertEqual(WeatherStatus.SnowMixedWithIcePellets, result)
+        
+        // PeriodsOfLightSnowMixedWithFreezingDrizzle
+        result = performer.convertWeatherStatus("Faible neige intermittente mêlée de bruine verglaçante")
+        XCTAssertEqual(WeatherStatus.PeriodsOfLightSnowMixedWithFreezingDrizzle, result)
+        result = performer.convertWeatherStatus("Periods of light snow mixed with freezing drizzle")
+        XCTAssertEqual(WeatherStatus.PeriodsOfLightSnowMixedWithFreezingDrizzle, result)
+        
+        // Smoke
+        result = performer.convertWeatherStatus("Fumée")
+        XCTAssertEqual(WeatherStatus.Smoke, result)
+        result = performer.convertWeatherStatus("Smoke")
+        XCTAssertEqual(WeatherStatus.Smoke, result)
+
+        // SnowMixedWithFreezingDrizzle
+        result = performer.convertWeatherStatus("Neige mêlée de bruine verglaçante")
+        XCTAssertEqual(WeatherStatus.SnowMixedWithFreezingDrizzle, result)
+        result = performer.convertWeatherStatus("Snow mixed with freezing drizzle")
+        XCTAssertEqual(WeatherStatus.SnowMixedWithFreezingDrizzle, result)
+        
+        // PeriodsOfFreezingDrizzleOrDrizzle
+        result = performer.convertWeatherStatus("Bruine verglaçante intermittente ou bruine")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzleOrDrizzle, result)
+        result = performer.convertWeatherStatus("Periods of freezing drizzle or drizzle")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzleOrDrizzle, result)
+        
+        // ChanceOfDrizzleOrRain
+        result = performer.convertWeatherStatus("Possibilité de bruine ou pluie")
+        XCTAssertEqual(WeatherStatus.ChanceOfDrizzleOrRain, result)
+        result = performer.convertWeatherStatus("Chance of drizzle or rain")
+        XCTAssertEqual(WeatherStatus.ChanceOfDrizzleOrRain, result)
+        
+        // ChanceOfWetFlurries
+        result = performer.convertWeatherStatus("Possibilité d'averses de neige fondante")
+        XCTAssertEqual(WeatherStatus.ChanceOfWetFlurries, result)
+        result = performer.convertWeatherStatus("Chance of wet flurries")
+        XCTAssertEqual(WeatherStatus.ChanceOfWetFlurries, result)
+        
+        // PeriodsOfFreezingDrizzleOrRain
+        result = performer.convertWeatherStatus("Bruine verglaçante intermittente ou pluie")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzleOrRain, result)
+        result = performer.convertWeatherStatus("Periods of freezing drizzle or rain")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzleOrRain, result)
+        
+        // PeriodsOfFreezingDrizzle
+        result = performer.convertWeatherStatus("Bruine verglaçante intermittente")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzle, result)
+        result = performer.convertWeatherStatus("Periods of freezing drizzle")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingDrizzle, result)
+        
+        // PeriodsOfFreezingRainOrSnow
+        result = performer.convertWeatherStatus("Pluie verglaçante intermittente ou neige")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingRainOrSnow, result)
+        result = performer.convertWeatherStatus("Periods of freezing rain or snow")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingRainOrSnow, result)
+        
+        // FreezingRainMixedWithIcePellets
+        result = performer.convertWeatherStatus("Pluie verglaçante mêlée de grésil")
+        XCTAssertEqual(WeatherStatus.FreezingRainMixedWithIcePellets, result)
+        result = performer.convertWeatherStatus("Freezing rain mixed with ice pellets")
+        XCTAssertEqual(WeatherStatus.FreezingRainMixedWithIcePellets, result)
+        
+        // PeriodsOfFreezingRainMixedWithIcePellets
+        result = performer.convertWeatherStatus("Pluie verglaçante intermittente mêlée de grésil")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingRainMixedWithIcePellets, result)
+        result = performer.convertWeatherStatus("Periods of freezing rain mixed with ice pellets")
+        XCTAssertEqual(WeatherStatus.PeriodsOfFreezingRainMixedWithIcePellets, result)
+        
+        // ChanceOfShowersOrThunderstorms
+        result = performer.convertWeatherStatus("Possibilité d'averses ou orages")
+        XCTAssertEqual(WeatherStatus.ChanceOfShowersOrThunderstorms, result)
+        result = performer.convertWeatherStatus("Chance of showers or thunderstorms")
+        XCTAssertEqual(WeatherStatus.ChanceOfShowersOrThunderstorms, result)
+        
+        // ChanceOfWetFlurriesOrRainShowers
+        result = performer.convertWeatherStatus("Possibilité d'averses de neige fondante ou de pluie")
+        XCTAssertEqual(WeatherStatus.ChanceOfWetFlurriesOrRainShowers, result)
+        result = performer.convertWeatherStatus("Chance of wet flurries or rain showers")
+        XCTAssertEqual(WeatherStatus.ChanceOfWetFlurriesOrRainShowers, result)
+        
+        // ChanceOfRain
+        result = performer.convertWeatherStatus("Possibilité de pluie")
+        XCTAssertEqual(WeatherStatus.ChanceOfRain, result)
+        result = performer.convertWeatherStatus("Chance of rain")
+        XCTAssertEqual(WeatherStatus.ChanceOfRain, result)
+        
+        // LightWetSnow
+        result = performer.convertWeatherStatus("Faible neige fondante")
+        XCTAssertEqual(WeatherStatus.LightWetSnow, result)
+        result = performer.convertWeatherStatus("Light wet snow")
+        XCTAssertEqual(WeatherStatus.LightWetSnow, result)
+        
+        // Precipitation
+        result = performer.convertWeatherStatus("Précipitations")
+        XCTAssertEqual(WeatherStatus.Precipitation, result)
+        result = performer.convertWeatherStatus("Precipitation")
+        XCTAssertEqual(WeatherStatus.Precipitation, result)
+        
+        // DrizzleOrRain
+        result = performer.convertWeatherStatus("Bruine ou pluie")
+        XCTAssertEqual(WeatherStatus.DrizzleOrRain, result)
+        result = performer.convertWeatherStatus("Drizzle or rain")
+        XCTAssertEqual(WeatherStatus.DrizzleOrRain, result)
+        
+        // FreezingRainMixedWithSnow
+        result = performer.convertWeatherStatus("Pluie verglaçante mêlée de neige")
+        XCTAssertEqual(WeatherStatus.FreezingRainMixedWithSnow, result)
+        result = performer.convertWeatherStatus("Freezing rain mixed with snow")
+        XCTAssertEqual(WeatherStatus.FreezingRainMixedWithSnow, result)
+        
+        // FreezingDrizzleOrRain
+        result = performer.convertWeatherStatus("Bruine verglaçante ou pluie")
+        XCTAssertEqual(WeatherStatus.FreezingDrizzleOrRain, result)
+        result = performer.convertWeatherStatus("Freezing drizzle or rain")
+        XCTAssertEqual(WeatherStatus.FreezingDrizzleOrRain, result)
+        
+        // RainAtTimesHeavyOrDrizzle
+        result = performer.convertWeatherStatus("Pluie parfois forte ou bruine")
+        XCTAssertEqual(WeatherStatus.RainAtTimesHeavyOrDrizzle, result)
+        result = performer.convertWeatherStatus("Rain at times heavy or drizzle")
+        XCTAssertEqual(WeatherStatus.RainAtTimesHeavyOrDrizzle, result)
+        
+        
+        
+        
+        
+        
         
         
         
@@ -655,6 +973,30 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractTemperature("Ensoleillé. Maximum 15 sauf 21 à l'intérieur. Indice UV de 5 ou modéré.")
         XCTAssertEqual("15", result)
+        
+        result = performer.extractTemperature("Pluie. Températures à la baisse pour atteindre 8 en après-midi.")
+        XCTAssertEqual("8", result)
+        
+        result = performer.extractTemperature("Rain. Temperature falling to 8 in the afternoon.")
+        XCTAssertEqual("8", result)
+        
+        result = performer.extractTemperature("Ce soir et cette nuit: Neige. Températures à la hausse pour atteindre moins 9 au cours de la nuit.")
+        XCTAssertEqual("moins 9", result)
+        
+        result = performer.extractTemperature("Tuesday night: Snow. Temperature rising to minus 9 by morning.")
+        XCTAssertEqual("minus 9", result)
+        
+        result = performer.extractTemperature("Jeudi: Quelques averses de neige. Températures à la baisse pour atteindre zéro cet après-midi.")
+        XCTAssertEqual("zéro", result)
+        
+        result = performer.extractTemperature("Thursday: A few flurries. Temperature falling to zero this afternoon.")
+        XCTAssertEqual("zero", result)
+        
+        result = performer.extractTemperature("Wednesday: Showers. Temperature falling to 9 this morning then rising.")
+        XCTAssertEqual("9", result)
+        
+        result = performer.extractTemperature("Mercredi: Averses. Températures à la baisse pour atteindre 9 ce matin puis à la hausse.")
+        XCTAssertEqual("9", result)
     }
     
     func testConvertWeatherDay() {
@@ -663,27 +1005,27 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         // Conditions actuelles
         let performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
-        var result = performer.convertWeatherDay("Conditions actuelles", position: 0)
+        var result = performer.convertWeatherDay("Conditions actuelles", currentDay: 0)
         XCTAssertEqual(WeatherDay.Now, result)
-        result = performer.convertWeatherDay("Current Conditions", position: 0)
+        result = performer.convertWeatherDay("Current Conditions", currentDay: 0)
         XCTAssertEqual(WeatherDay.Now, result)
-        result = performer.convertWeatherDay("Conditions actuelles", position: 3)
+        result = performer.convertWeatherDay("Conditions actuelles", currentDay: 3)
         XCTAssertEqual(WeatherDay.Now, result)
         
         // Prévisions météo
-        result = performer.convertWeatherDay("Prévisions météo", position: 1)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 1)
         XCTAssertEqual(WeatherDay.Today, result)
-        result = performer.convertWeatherDay("Weather Forecasts", position: 1)
+        result = performer.convertWeatherDay("Weather Forecasts", currentDay: 1)
         XCTAssertEqual(WeatherDay.Today, result)
-        result = performer.convertWeatherDay("Prévisions météo", position: 2)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 2)
         XCTAssertEqual(WeatherDay.Tomorow, result)
-        result = performer.convertWeatherDay("Prévisions météo", position: 3)
-        XCTAssertEqual(WeatherDay.NA, result)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 3)
+        XCTAssertEqual(WeatherDay.Day2, result)
         
         // Invalid data
-        result = performer.convertWeatherDay("test", position: 0)
+        result = performer.convertWeatherDay("test", currentDay: 0)
         XCTAssertEqual(WeatherDay.NA, result)
-        result = performer.convertWeatherDay("Prévisions météo", position: 162)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 162)
         XCTAssertEqual(WeatherDay.NA, result)
     }
     
@@ -907,6 +1249,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.isAlert(alertAirEn)
         XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertBlowingSnowFr)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertBlowingSnowEn)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertFrostFr)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertFrostEn)
+        XCTAssertTrue(result)
     }
     
     func testExtractAlertText() {
@@ -940,6 +1294,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractAlertText(alertAirEn)
         XCTAssertEqual("SPECIAL AIR QUALITY STATEMENT IN EFFECT", result)
+        
+        result = performer.extractAlertText(alertBlowingSnowFr)
+        XCTAssertEqual("AVIS DE POUDRERIE  EN VIGUEUR", result)
+        
+        result = performer.extractAlertText(alertBlowingSnowEn)
+        XCTAssertEqual("BLOWING SNOW ADVISORY IN EFFECT", result)
+        
+        result = performer.extractAlertText(alertFrostFr)
+        XCTAssertEqual("AVIS DE GEL EN VIGUEUR", result)
+        
+        result = performer.extractAlertText(alertFrostEn)
+        XCTAssertEqual("FROST ADVISORY IN EFFECT", result)
         
         result = performer.extractAlertText(alertTitleFr)
         XCTAssertEqual("", result)

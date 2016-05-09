@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Cap Baccaro - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ns-37_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ns-37_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-02T11:02:02Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160502110202</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Cap Baccaro</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-09T07:45:00Z</updated>
+ <published>2016-04-09T07:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_w1:20160409074500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 6,5&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Baccaro Point 08h00 HAA lundi 02 mai 2016 <br/>
+<b>Température:</b> 6,5&deg;C <br/>
+<b>Pression / Tendance:</b> 102,3 kPa à la baisse<br/>
+<b>Humidité:</b> 86 %<br/>
+<b>Point de rosée:</b> 4,3&deg;C <br/>
+<b>Vent:</b> ESE 13 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_cc:20160502110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Quelques averses. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Quelques averses débutant ce matin. Vents devenant d'est à 30 km/h en mi-journée. Maximum 9. Indice UV de 3 ou modéré. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc1:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Pluie intermittente. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente cessant au cours de la nuit. Nuageux par la suite avec 40 pour cent de probabilité d'averses ou de bruine. Risque d'un orage ce soir. Nappes de brouillard se formant après minuit. Hauteur prévue de 10 à 20 mm. Vents d'est de 30 km/h avec rafales à 50 devenant légers après minuit. Minimum 7. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc2:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses ou bruine. Maximum 9. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses ou de bruine. Nappes de brouillard se dissipant le matin. Maximum 9. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc3:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum 6. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum 6. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc4:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Nuageux. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 12. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc5:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Averses. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Minimum 8. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc6:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Averses. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Maximum 12. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc7:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 8. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 8. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc8:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 14. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc9:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 8. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc10:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 14. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc11:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc12:20160502080000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Nuageux. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-37_metric_f.html"/>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 15. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-37_fc13:20160502080000</id>
+ </entry>
+ </feed>
+

@@ -41,17 +41,22 @@ class WeatherInformation {
     }
     
     func image() -> UIImage {
+        var status = self.weatherStatus
+        if let substitute = WeatherHelper.getImageSubstitute(self.weatherStatus) {
+            status = substitute
+        }
+        
         if night {
-            let nameNight = String(self.weatherStatus) + "Night"
+            let nameNight = String(status) + "Night"
             if let image = UIImage(named: nameNight) {
                 return image
             } else {
-                if let image = UIImage(named: String(self.weatherStatus)) {
+                if let image = UIImage(named: String(status)) {
                     return image
                 }
             }
         } else {
-            if let image = UIImage(named: String(self.weatherStatus)) {
+            if let image = UIImage(named: String(status)) {
                 return image
             }
         }
@@ -95,7 +100,46 @@ class WeatherInformation {
              .ChanceOfRainShowersOrFlurries,
              .ChanceOfDrizzleMixedWithFreezingDrizzle,
              .AFewShowers,
-             .AFewRainShowersOrFlurries:
+             .AFewRainShowersOrFlurries,
+             .ChanceOfRainShowersOrWetFlurries,
+             .SnowMixedWithRain,
+             .FreezingRainOrSnow,
+             .LightFreezingRain,
+             .WetSnow,
+             .WetFlurries,
+             .FreezingFog,
+             .Fog,
+             .Haze,
+             .SnowAtTimesHeavyMixedWithRain,
+             .PeriodsOfSnowMixedWithRain,
+             .PeriodsOfDrizzleOrRain,
+             .RainOrDrizzle,
+             .LightDrizzleAndFog,
+             .LightRainAndFog,
+             .PeriodsOfDrizzleMixedWithRain,
+             .PeriodsOfSnowMixedWithFreezingRain,
+             .FogPatches,
+             .RainMixedWithSnow,
+             .PeriodsOfLightSnowMixedWithFreezingDrizzle,
+             .Smoke,
+             .SnowMixedWithFreezingDrizzle,
+             .PeriodsOfFreezingDrizzleOrDrizzle,
+             .ChanceOfDrizzleOrRain,
+             .ChanceOfWetFlurries,
+             .PeriodsOfFreezingDrizzleOrRain,
+             .PeriodsOfFreezingDrizzle,
+             .PeriodsOfFreezingRainOrSnow,
+             .FreezingRainMixedWithIcePellets,
+             .PeriodsOfFreezingRainMixedWithIcePellets,
+             .ChanceOfShowersOrThunderstorms,
+             .ChanceOfWetFlurriesOrRainShowers,
+             .ChanceOfRain,
+             .LightWetSnow,
+             .Precipitation,
+             .DrizzleOrRain,
+             .FreezingRainMixedWithSnow,
+             .FreezingDrizzleOrRain,
+             .RainAtTimesHeavyOrDrizzle:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,
@@ -108,7 +152,15 @@ class WeatherInformation {
              .DriftingSnow,
              .CloudyWithXPercentChanceOfFlurries,
              .BlowingSnow,
-             .Blizzard:
+             .Blizzard,
+             .SnowAndBlowingSnow,
+             .HeavySnow,
+             .FlurriesAtTimesHeavy,
+             .ChanceOfSnow,
+             .ChanceOfLightSnow,
+             .SnowAtTimesHeavy,
+             .SnowGrains,
+             .SnowMixedWithIcePellets:
             return WeatherColor.SnowDay
         case .Sunny,
              .PartlyCloudy,
@@ -123,6 +175,7 @@ class WeatherInformation {
              .AMixOfSunAndCloud,
              .AFewFlurries,
              .AFewClouds,
+             .IceCrystals,
              .Blank,
              .NA:
             return WeatherColor.ClearDay

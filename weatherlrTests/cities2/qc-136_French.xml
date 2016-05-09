@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Sherbrooke - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-136_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-136_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-04-28T10:04:24Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160428100424</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Sherbrooke</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-06T10:15:00Z</updated>
+ <published>2016-04-06T10:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_w1:20160406101500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Nuageux, -3,3&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T10:00:00Z</updated>
+ <published>2016-04-28T10:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Sherbrooke 06h00 HAE jeudi 28 avril 2016 <br/>
+<b>Condition:</b> Nuageux <br/>
+<b>Température:</b> -3,3&deg;C <br/>
+<b>Pression:</b> 101,8 kPa <br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 73 %<br/>
+<b>Refroidissement éolien:</b> -5 <br/>
+<b>Point de rosée:</b> -7,4&deg;C <br/>
+<b>Vent:</b> O 5 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_cc:20160428100000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Généralement ensoleillé. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement. Vents devenant du nord-ouest à 20 km/h cet après-midi. Maximum 7. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc1:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum moins 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 7. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc2:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 9. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc3:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 8. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc4:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc5:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 2. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc6:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Possibilité d'averses. Maximum 11. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 11. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc7:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Pluie. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie. Minimum plus 2. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc8:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Pluie. Maximum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie. Maximum 10. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc9:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Pluie. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie. Minimum plus 5. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc10:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Pluie intermittente. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie intermittente. Maximum 11. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc11:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum plus 3. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 3. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc12:20160428090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 13. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-136_metric_f.html"/>
+ <updated>2016-04-28T09:00:00Z</updated>
+ <published>2016-04-28T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 13. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-136_fc13:20160428090000</id>
+ </entry>
+ </feed>
+

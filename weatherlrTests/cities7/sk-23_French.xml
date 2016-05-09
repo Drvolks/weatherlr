@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Rosetown - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/sk-23_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/sk-23_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-04T12:03:17Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160504120317</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Rosetown</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-09T22:00:00Z</updated>
+ <published>2016-04-09T22:00:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_w1:20160409220000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 13,7&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T12:00:00Z</updated>
+ <published>2016-05-04T12:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Rosetown 06h00 HNC mercredi 04 mai 2016 <br/>
+<b>Température:</b> 13,7&deg;C <br/>
+<b>Pression / Tendance:</b> 101,1 kPa à la baisse<br/>
+<b>Humidité:</b> 53 %<br/>
+<b>Point de rosée:</b> 4,5&deg;C <br/>
+<b>Vent:</b> SSO 25 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_cc:20160504120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 31.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Vents du sud de 20 km/h devenant d'ouest à 30 avec rafales à 50 en mi-journée. Maximum 31. Indice UV de 6 ou élevé. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc1:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Quelques nuages. Minimum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques nuages. Vents d'ouest de 30 km/h avec rafales à 50 devenant légers ce soir. Minimum 11. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc2:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 24.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du nord-ouest à 20 km/h le matin puis du nord à 40 avec rafales à 60 en après-midi. Maximum 24. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc3:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement. Minimum 6. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc4:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc5:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc6:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 24.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 24. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc7:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc8:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 27.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 27. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc9:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 7. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc10:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 20. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc11:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc12:20160504110000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-23_metric_f.html"/>
+ <updated>2016-05-04T11:00:00Z</updated>
+ <published>2016-05-04T11:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 05h00 HNC mercredi 04 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-23_fc13:20160504110000</id>
+ </entry>
+ </feed>
+

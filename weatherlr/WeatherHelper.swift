@@ -78,7 +78,8 @@ class WeatherHelper {
         case .DrizzleMixedWithFreezingDrizzle,
              .FreezingDrizzleOrDrizzle,
              .PeriodsOfDrizzleMixedWithFreezingDrizzle,
-             .PeriodsOfFreezingDrizzleOrDrizzle:
+             .PeriodsOfFreezingDrizzleOrDrizzle,
+             .PeriodsOfDrizzleOrFreezingDrizzle:
             return WeatherStatus.ChanceOfDrizzleMixedWithFreezingDrizzle
         case .Flurries:
             return WeatherStatus.Snow
@@ -92,14 +93,17 @@ class WeatherHelper {
              .SnowOrRain,
              .SnowAtTimesHeavyMixedWithRain,
              .PeriodsOfSnowMixedWithRain,
-             .RainMixedWithSnow:
+             .RainMixedWithSnow,
+             .LightSnowMixedWithRain:
             return WeatherStatus.PeriodsOfRainOrSnow
         case .FreezingRainOrSnow,
              .PeriodsOfSnowMixedWithFreezingRain,
              .PeriodsOfFreezingRainOrSnow,
              .FreezingRainMixedWithSnow:
             return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
-        case .PeriodsOfLightSnowMixedWithFreezingDrizzle:
+        case .PeriodsOfLightSnowMixedWithFreezingDrizzle,
+             .PeriodsOfSnowOrFreezingDrizzle,
+             .PeriodsOfSnowMixedWithFreezingDrizzle:
             return WeatherStatus.SnowMixedWithFreezingDrizzle
         case .IncreasingCloudiness:
             return WeatherStatus.Clearing
@@ -115,11 +119,13 @@ class WeatherHelper {
              .Haze,
              .FogPatches:
             return WeatherStatus.Mist
-        case .PeriodsOfFreezingDrizzle:
+        case .PeriodsOfFreezingDrizzle,
+             .ChanceOfFreezingDrizzle:
             return WeatherStatus.LightFreezingDrizzle
         case .PeriodsOfFreezingRainMixedWithIcePellets:
             return WeatherStatus.FreezingRainMixedWithIcePellets
-        case .ChanceOfWetFlurriesOrRainShowers:
+        case .ChanceOfWetFlurriesOrRainShowers,
+             .PeriodsOfWetSnowOrRain:
             return WeatherStatus.ChanceOfRainShowersOrWetFlurries
         case .LightWetSnow:
             return WeatherStatus.ChanceOfWetFlurries

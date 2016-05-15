@@ -317,6 +317,22 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.PeriodsOfLightSnowMixedWithRain
         case "quelques averses ou bruine", "a few showers or drizzle":
             return WeatherStatus.AFewShowersOrDrizzle
+        case "neige fondante intermittente ou pluie", "periods of wet snow or rain":
+            return WeatherStatus.PeriodsOfWetSnowOrRain
+        case "faible neige mêlée de pluie", "light snow mixed with rain":
+            return WeatherStatus.LightSnowMixedWithRain
+        case "bruine intermittente ou bruine verglaçante", "periods of drizzle or freezing drizzle":
+            return WeatherStatus.PeriodsOfDrizzleOrFreezingDrizzle
+        case "neige fondante intermittente", "periods of wet snow":
+            return WeatherStatus.PeriodsOfWetSnow
+        case "neige intermittente ou bruine verglaçante", "periods of snow or freezing drizzle":
+            return WeatherStatus.PeriodsOfSnowOrFreezingDrizzle
+        case "possibilité de bruine verglaçante", "chance of freezing drizzle":
+            return WeatherStatus.ChanceOfFreezingDrizzle
+        case "bruine verglaçante", "freezing drizzle":
+            return WeatherStatus.FreezingDrizzle
+        case "neige intermittente mêlée de bruine verglaçante", "periods of snow mixed with freezing drizzle":
+            return WeatherStatus.PeriodsOfSnowMixedWithFreezingDrizzle
         default:
             return convertWeatherStatusWithRegex(text)
         }

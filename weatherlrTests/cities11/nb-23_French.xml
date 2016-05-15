@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Saint John - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nb-23_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nb-23_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-15T20:31:10Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160515203110</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Saint John</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-05-08T08:45:00Z</updated>
+ <published>2016-05-08T08:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_w1:20160508084500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, 9,6&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T20:29:00Z</updated>
+ <published>2016-05-15T20:29:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Saint John 17h29 HAA dimanche 15 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 9,6&deg;C <br/>
+<b>Pression / Tendance:</b> 99,7 kPa à la baisse<br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 85 %<br/>
+<b>Point de rosée:</b> 7,2&deg;C <br/>
+<b>Vent:</b> SSO 28 km/h rafale 41 km/h<br/>
+<b>Cote air santé:</b> 3 <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_cc:20160515202900</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Averses. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. 40 pour cent de probabilité d'averses tôt ce soir. Quelques averses débutant tôt ce soir et cessant vers minuit. Risque d'orages tôt ce soir. Hauteur prévue de 2 mm. Vents du sud de 20 km/h avec rafales à 40 devenant du sud-ouest à 20 avec rafales à 40 ce soir. Minimum plus 4. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc1:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Quelques averses. Maximum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Quelques averses débutant le matin. Hauteur prévue de 2 mm. Vents du sud-ouest de 30 km/h avec rafales à 50. Maximum 7. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc2:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Quelques averses. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques averses cessant vers minuit. Généralement nuageux par la suite. Hauteur prévue de 2 mm. Vents d'ouest de 30 km/h avec rafales à 50. Minimum plus 4. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc3:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Nuageux. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 14. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc4:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc5:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Possibilité d'averses. Maximum 16. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc6:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc7:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 17. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc8:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc9:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc10:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc11:20160515190000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nb-23_metric_f.html"/>
+ <updated>2016-05-15T19:00:00Z</updated>
+ <published>2016-05-15T19:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 16h00 HAA dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nb-23_fc12:20160515190000</id>
+ </entry>
+ </feed>
+

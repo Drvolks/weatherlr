@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Whale Cove - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nu-6_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nu-6_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-15T20:02:15Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160515200215</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Whale Cove</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-22T00:15:00Z</updated>
+ <published>2016-04-22T00:15:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_w1:20160422001500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, -3,2&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Whale Cove 15h00 HAC dimanche 15 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> -3,2&deg;C <br/>
+<b>Pression:</b> 100,7 kPa <br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 88 %<br/>
+<b>Refroidissement éolien:</b> -12 <br/>
+<b>Point de rosée:</b> -4,9&deg;C <br/>
+<b>Vent:</b> N 44 km/h rafale 56 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_cc:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Quelques averses de neige. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques averses de neige cessant au cours de la nuit. Nuageux par la suite. Vents du nord de 40 km/h avec rafales à 60 diminuant à 20 tôt ce soir. Minimum moins 6. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc1:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Nuageux. Maximum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Vents du nord de 20 km/h. Maximum moins 1. Indice UV de 3 ou modéré. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc2:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Généralement nuageux. Minimum moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Vents du nord de 20 km/h devenant légers tôt en soirée. Minimum moins 8. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc3:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum zéro. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc4:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Nuageux. Minimum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum moins 3. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc5:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum zéro. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc6:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum moins 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 7. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc7:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum zéro. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc8:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 6. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc9:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum plus 1. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc10:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum moins 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 6. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc11:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-6_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum plus 2. Prévisions émises 15h00 HAC dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-6_fc12:20160515200000</id>
+ </entry>
+ </feed>
+

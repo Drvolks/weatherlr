@@ -45,6 +45,7 @@
 		6E9E12B31CDB6F1700791284 /* cities8 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B21CDB6F1700791284 /* cities8 */; };
 		6E9E12B51CDF8DAD00791284 /* cities9 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B41CDF8DAD00791284 /* cities9 */; };
 		6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12B61CDF96A800791284 /* TemperatureTests.swift */; };
+		6E9E12BD1CE9223D00791284 /* nl-19_French.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12BC1CE9223D00791284 /* nl-19_French.xml */; };
 		6E9F32BE1CB3048100A9D6A7 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
 		6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
 		6E9F32C21CB305BE00A9D6A7 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */; };
@@ -174,6 +175,7 @@
 		6E9E12B21CDB6F1700791284 /* cities8 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities8; sourceTree = "<group>"; };
 		6E9E12B41CDF8DAD00791284 /* cities9 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities9; sourceTree = "<group>"; };
 		6E9E12B61CDF96A800791284 /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
+		6E9E12BC1CE9223D00791284 /* nl-19_French.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nl-19_French.xml"; sourceTree = "<group>"; };
 		6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
 		6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				6E29052F1CB2D5550040EB8B /* Main.storyboard */,
 				6E2905341CB2D5550040EB8B /* LaunchScreen.storyboard */,
 				6E9F33551CB70D6300A9D6A7 /* Cities.plist */,
+				6E9E12BC1CE9223D00791284 /* nl-19_French.xml */,
 				6E2905371CB2D5550040EB8B /* Info.plist */,
 				6E816BD41CCF8A3B00533684 /* Fetchers */,
 				6E4910BA1CC9056B006D3C82 /* Validators */,
@@ -541,6 +544,7 @@
 				6E816BDB1CCF9D9400533684 /* launch@3x.png in Resources */,
 				6E2905361CB2D5550040EB8B /* LaunchScreen.storyboard in Resources */,
 				6E2905331CB2D5550040EB8B /* Assets.xcassets in Resources */,
+				6E9E12BD1CE9223D00791284 /* nl-19_French.xml in Resources */,
 				6E816BD01CCD7A0100533684 /* Flag_of_Canada@2x.png in Resources */,
 				6E816BD11CCD7A0100533684 /* Flag_of_Canada@3x.png in Resources */,
 				6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */,

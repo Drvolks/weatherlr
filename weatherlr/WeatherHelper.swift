@@ -10,6 +10,9 @@ import Foundation
 
 class WeatherHelper {
     static func getWeatherInformations(city:City) -> WeatherInformationWrapper {
+        // TODO remove
+        //return getOfflineWeather()
+        
         let cache = ExpiringCache.instance
         let cachedWeather = cache.objectForKey(city.id) as? WeatherInformationWrapper
         
@@ -29,6 +32,22 @@ class WeatherHelper {
                 cache.setObject(weatherInformationWrapper, forKey: city.id)
                 return weatherInformationWrapper
             }
+        }
+        
+        return WeatherInformationWrapper()
+    }
+    
+    static func getOfflineWeather() -> WeatherInformationWrapper {
+        let path = NSBundle.mainBundle().pathForResource("nl-19_French", ofType: "xml")
+        let url = NSURL(fileURLWithPath: path!)
+        
+        if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
+            let rssEntries = rssParser.parse()
+            let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
+            let weatherInformations = weatherInformationProcess.perform()
+            
+            let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations)
+            return weatherInformationWrapper
         }
         
         return WeatherInformationWrapper()

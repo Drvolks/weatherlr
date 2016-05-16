@@ -152,7 +152,8 @@ class WeatherHelper {
         case .HeavyRainshower:
             return WeatherStatus.RainAtTimesHeavy
         case .AFewShowersOrThunderstorms,
-             .Thunderstorm:
+             .Thunderstorm,
+             .ThunderstormWithLightRainshowers:
             return WeatherStatus.ChanceOfShowersOrThunderstorms
         default:
             return nil

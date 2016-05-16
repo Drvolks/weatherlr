@@ -373,6 +373,8 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.AFewShowersOrThunderstorms
         case "orage", "thunderstorm":
             return WeatherStatus.Thunderstorm
+        case "orage avec averse de pluie", "thunderstorm with light rainshowers":
+            return WeatherStatus.ThunderstormWithLightRainshowers
         default:
             return convertWeatherStatusWithRegex(text)
         }

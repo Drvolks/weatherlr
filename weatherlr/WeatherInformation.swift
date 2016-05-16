@@ -155,7 +155,8 @@ class WeatherInformation {
              .SnowOrFreezingRain,
              .HeavyRainshower,
              .AFewShowersOrThunderstorms,
-             .Thunderstorm:
+             .Thunderstorm,
+             .ThunderstormWithLightRainshowers:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

@@ -61,5 +61,13 @@ class RssEntryTests: XCTestCase {
         XCTAssertEqual("Current Conditions: Mainly Sunny, -8.2°C", entry.title)
         XCTAssertEqual("Current Conditions", entry.category)
         XCTAssertEqual("2016-04-05T12:00:00Z", entry.updated)
+        
+        // alert
+        rssParser = RssParserStub(xmlName: "TestDataEntryAlert")!
+        entry = RssEntry(parent: rssParser)
+        rssParser.parser.delegate = entry
+        rssParser.parser.parse()
+        XCTAssertEqual("http://www.meteo.gc.ca/warnings/report_f.html?nl5", entry.link)
+        XCTAssertEqual("AVERTISSEMENT DE PLUIE EN VIGUEUR, Winterland", entry.title)
     }
 }

@@ -170,3 +170,11 @@ enum Language: String {
     
     static let all = [French, English]
 }
+
+enum AlertType {
+    case Warning
+    case Watch
+    case Advisory
+    case Special
+    case None
+}

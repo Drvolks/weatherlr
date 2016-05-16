@@ -46,6 +46,11 @@
 		6E9E12B51CDF8DAD00791284 /* cities9 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B41CDF8DAD00791284 /* cities9 */; };
 		6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12B61CDF96A800791284 /* TemperatureTests.swift */; };
 		6E9E12BD1CE9223D00791284 /* nl-19_French.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12BC1CE9223D00791284 /* nl-19_French.xml */; };
+		6E9E12C11CE92BEC00791284 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12C01CE92BEC00791284 /* AlertViewController.swift */; };
+		6E9E12C31CEA012400791284 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12C21CEA012400791284 /* AlertDetailViewController.swift */; };
+		6E9E12C51CEA062000791284 /* TestDataEntryAlert.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12C41CEA062000791284 /* TestDataEntryAlert.xml */; };
+		6E9E12C71CEA0F9A00791284 /* AlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12C61CEA0F9A00791284 /* AlertTests.swift */; };
+		6E9E12C91CEA10D200791284 /* nu-29_English.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12C81CEA10D200791284 /* nu-29_English.xml */; };
 		6E9F32BE1CB3048100A9D6A7 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
 		6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
 		6E9F32C21CB305BE00A9D6A7 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */; };
@@ -176,6 +181,11 @@
 		6E9E12B41CDF8DAD00791284 /* cities9 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities9; sourceTree = "<group>"; };
 		6E9E12B61CDF96A800791284 /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
 		6E9E12BC1CE9223D00791284 /* nl-19_French.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nl-19_French.xml"; sourceTree = "<group>"; };
+		6E9E12C01CE92BEC00791284 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		6E9E12C21CEA012400791284 /* AlertDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDetailViewController.swift; sourceTree = "<group>"; };
+		6E9E12C41CEA062000791284 /* TestDataEntryAlert.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestDataEntryAlert.xml; sourceTree = "<group>"; };
+		6E9E12C61CEA0F9A00791284 /* AlertTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTests.swift; sourceTree = "<group>"; };
+		6E9E12C81CEA10D200791284 /* nu-29_English.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nu-29_English.xml"; sourceTree = "<group>"; };
 		6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
 		6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
@@ -273,6 +283,7 @@
 				6E2905341CB2D5550040EB8B /* LaunchScreen.storyboard */,
 				6E9F33551CB70D6300A9D6A7 /* Cities.plist */,
 				6E9E12BC1CE9223D00791284 /* nl-19_French.xml */,
+				6E9E12C81CEA10D200791284 /* nu-29_English.xml */,
 				6E2905371CB2D5550040EB8B /* Info.plist */,
 				6E816BD41CCF8A3B00533684 /* Fetchers */,
 				6E4910BA1CC9056B006D3C82 /* Validators */,
@@ -280,6 +291,8 @@
 				6E816BD51CCF8A5700533684 /* Cells */,
 				6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */,
 				6E9F32F61CB6C26C00A9D6A7 /* SettingsViewController.swift */,
+				6E9E12C01CE92BEC00791284 /* AlertViewController.swift */,
+				6E9E12C21CEA012400791284 /* AlertDetailViewController.swift */,
 				6E9F334B1CB6F32E00A9D6A7 /* AddCityViewController.swift */,
 				6E4910CF1CCD08A6006D3C82 /* ErrorViewController.swift */,
 				6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */,
@@ -320,6 +333,7 @@
 				6E9F32C71CB30C6D00A9D6A7 /* WeatherInformationTests.swift */,
 				6E4910C31CC90AA3006D3C82 /* WeatherStatusTests.swift */,
 				6E9E12B61CDF96A800791284 /* TemperatureTests.swift */,
+				6E9E12C61CEA0F9A00791284 /* AlertTests.swift */,
 				6E4910C51CC91854006D3C82 /* TestUtils.swift */,
 			);
 			path = weatherlrTests;
@@ -397,6 +411,7 @@
 				6E9F32EC1CB4069300A9D6A7 /* TestDataEntryCurrent.xml */,
 				6E4910C71CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml */,
 				6E9F32F01CB4457D00A9D6A7 /* TestDataEntryCurrent_EN.xml */,
+				6E9E12C41CEA062000791284 /* TestDataEntryAlert.xml */,
 				6E9F32C51CB30A3D00A9D6A7 /* RssParserTests.swift */,
 				6E9F32E01CB3F55C00A9D6A7 /* RssEntryTests.swift */,
 				6E9F32E81CB4012B00A9D6A7 /* RssEntryToWeatherInformationTests.swift */,
@@ -547,6 +562,7 @@
 				6E9E12BD1CE9223D00791284 /* nl-19_French.xml in Resources */,
 				6E816BD01CCD7A0100533684 /* Flag_of_Canada@2x.png in Resources */,
 				6E816BD11CCD7A0100533684 /* Flag_of_Canada@3x.png in Resources */,
+				6E9E12C91CEA10D200791284 /* nu-29_English.xml in Resources */,
 				6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */,
 				6E816BCF1CCD7A0100533684 /* Flag_of_Canada.png in Resources */,
 				6E9F33561CB70D6300A9D6A7 /* Cities.plist in Resources */,
@@ -559,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E39BF161CD8CDAF008CD674 /* cities6 in Resources */,
+				6E9E12C51CEA062000791284 /* TestDataEntryAlert.xml in Resources */,
 				6E4910C81CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml in Resources */,
 				6E816C191CD76DBB00533684 /* cities5 in Resources */,
 				6E816C111CD231BE00533684 /* cities2 in Resources */,
@@ -596,6 +613,7 @@
 				6E4910CA1CCA561C006D3C82 /* ContactTableViewCell.swift in Sources */,
 				6E29052E1CB2D5550040EB8B /* WeatherViewController.swift in Sources */,
 				6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */,
+				6E9E12C31CEA012400791284 /* AlertDetailViewController.swift in Sources */,
 				6E9F32FB1CB6C95200A9D6A7 /* City.swift in Sources */,
 				6E4910BE1CC90598006D3C82 /* CityDownloader.swift in Sources */,
 				6E9F32D71CB3E91D00A9D6A7 /* RssEntry.swift in Sources */,
@@ -622,6 +640,7 @@
 				6E9F32DD1CB3F30D00A9D6A7 /* RssParserBase.swift in Sources */,
 				6E9F335E1CB8588D00A9D6A7 /* AlertInformation.swift in Sources */,
 				6E9F32F91CB6C5AB00A9D6A7 /* CityTableViewCell.swift in Sources */,
+				6E9E12C11CE92BEC00791284 /* AlertViewController.swift in Sources */,
 				6E9B63511CC593DE00B27334 /* StringExtension.swift in Sources */,
 				6E9F33501CB6FF7800A9D6A7 /* CityParser.swift in Sources */,
 			);
@@ -639,6 +658,7 @@
 				6E9F32E11CB3F55C00A9D6A7 /* RssEntryTests.swift in Sources */,
 				6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */,
 				6E9F32EB1CB4018400A9D6A7 /* RssParserStub.swift in Sources */,
+				6E9E12C71CEA0F9A00791284 /* AlertTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -930,8 +930,11 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Thunderstorm")
         XCTAssertEqual(WeatherStatus.Thunderstorm, result)
         
-        
-        
+        // ThunderstormWithLightRainshowers
+        result = performer.convertWeatherStatus("Orage avec averse de pluie")
+        XCTAssertEqual(WeatherStatus.ThunderstormWithLightRainshowers, result)
+        result = performer.convertWeatherStatus("Thunderstorm with light rainshowers")
+        XCTAssertEqual(WeatherStatus.ThunderstormWithLightRainshowers, result)
         
         
         

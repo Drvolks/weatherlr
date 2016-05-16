@@ -130,6 +130,7 @@ enum WeatherStatus {
     case SnowOrRain
     case Sunny
     case Thunderstorm
+    case ThunderstormWithLightRainshowers
     case WetFlurries
     case WetSnow
     case Blank

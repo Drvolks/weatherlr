@@ -88,7 +88,7 @@ class PreferenceHelper {
                 return langEnum
             }
         } else {
-            let preferredLanguage = NSLocale.preferredLanguages()[0]
+            let preferredLanguage = extractLang(NSLocale.preferredLanguages()[0])
             if let lang = Language(rawValue: preferredLanguage) {
                 saveLanguage(lang)
                 return lang
@@ -109,5 +109,13 @@ class PreferenceHelper {
         }
         
         return false
+    }
+    
+    static func extractLang(locale:String) -> String {
+        if let index = locale.rangeOfString("-") {
+            return locale.substringToIndex(index.startIndex)
+        }
+                
+        return locale
     }
 }

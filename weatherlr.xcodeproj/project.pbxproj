@@ -18,8 +18,6 @@
 		6E4910A21CC59629006D3C82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910A41CC59629006D3C82 /* Localizable.strings */; };
 		6E4910A91CC7E99A006D3C82 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910A81CC7E99A006D3C82 /* UIColorExtension.swift */; };
 		6E4910BE1CC90598006D3C82 /* CityDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910BD1CC90598006D3C82 /* CityDownloader.swift */; };
-		6E4910C11CC90A7D006D3C82 /* cities_en in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910BF1CC90A7D006D3C82 /* cities_en */; };
-		6E4910C21CC90A7D006D3C82 /* cities_fr in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910C01CC90A7D006D3C82 /* cities_fr */; };
 		6E4910C41CC90AA3006D3C82 /* WeatherStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910C31CC90AA3006D3C82 /* WeatherStatusTests.swift */; };
 		6E4910C61CC91854006D3C82 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910C51CC91854006D3C82 /* TestUtils.swift */; };
 		6E4910C81CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910C71CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml */; };
@@ -34,7 +32,7 @@
 		6E816BD31CCE473E00533684 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E816BD21CCE473E00533684 /* ExpiringCache.swift */; };
 		6E816BDA1CCF9D9400533684 /* launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BD71CCF9D9400533684 /* launch@2x.png */; };
 		6E816BDB1CCF9D9400533684 /* launch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BD81CCF9D9400533684 /* launch@3x.png */; };
-		6E816C0D1CCFF87800533684 /* cities in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C0C1CCFF87800533684 /* cities */; };
+		6E816C0D1CCFF87800533684 /* cities1 in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C0C1CCFF87800533684 /* cities1 */; };
 		6E816C0F1CD10E9100533684 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C0E1CD10E9100533684 /* launch.png */; };
 		6E816C111CD231BE00533684 /* cities2 in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C101CD231BE00533684 /* cities2 */; };
 		6E816C131CD385DC00533684 /* cities3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C121CD385DC00533684 /* cities3 */; };
@@ -51,6 +49,8 @@
 		6E9E12C51CEA062000791284 /* TestDataEntryAlert.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12C41CEA062000791284 /* TestDataEntryAlert.xml */; };
 		6E9E12C71CEA0F9A00791284 /* AlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12C61CEA0F9A00791284 /* AlertTests.swift */; };
 		6E9E12C91CEA10D200791284 /* nu-29_English.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12C81CEA10D200791284 /* nu-29_English.xml */; };
+		6E9E12B91CDFC2F000791284 /* cities10 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B81CDFC2F000791284 /* cities10 */; };
+		6E9E12BB1CE9155B00791284 /* cities11 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12BA1CE9155A00791284 /* cities11 */; };
 		6E9F32BE1CB3048100A9D6A7 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
 		6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
 		6E9F32C21CB305BE00A9D6A7 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */; };
@@ -153,8 +153,6 @@
 		6E4910A71CC59672006D3C82 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E4910A81CC7E99A006D3C82 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		6E4910BD1CC90598006D3C82 /* CityDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDownloader.swift; sourceTree = "<group>"; };
-		6E4910BF1CC90A7D006D3C82 /* cities_en */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities_en; sourceTree = "<group>"; };
-		6E4910C01CC90A7D006D3C82 /* cities_fr */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities_fr; sourceTree = "<group>"; };
 		6E4910C31CC90AA3006D3C82 /* WeatherStatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherStatusTests.swift; sourceTree = "<group>"; };
 		6E4910C51CC91854006D3C82 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		6E4910C71CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestDataEntryCurrentNoObservation.xml; sourceTree = "<group>"; };
@@ -169,7 +167,7 @@
 		6E816BD21CCE473E00533684 /* ExpiringCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiringCache.swift; sourceTree = "<group>"; };
 		6E816BD71CCF9D9400533684 /* launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@2x.png"; sourceTree = "<group>"; };
 		6E816BD81CCF9D9400533684 /* launch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@3x.png"; sourceTree = "<group>"; };
-		6E816C0C1CCFF87800533684 /* cities */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities; sourceTree = "<group>"; };
+		6E816C0C1CCFF87800533684 /* cities1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities1; sourceTree = "<group>"; };
 		6E816C0E1CD10E9100533684 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		6E816C101CD231BE00533684 /* cities2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities2; sourceTree = "<group>"; };
 		6E816C121CD385DC00533684 /* cities3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities3; sourceTree = "<group>"; };
@@ -186,6 +184,8 @@
 		6E9E12C41CEA062000791284 /* TestDataEntryAlert.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestDataEntryAlert.xml; sourceTree = "<group>"; };
 		6E9E12C61CEA0F9A00791284 /* AlertTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTests.swift; sourceTree = "<group>"; };
 		6E9E12C81CEA10D200791284 /* nu-29_English.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nu-29_English.xml"; sourceTree = "<group>"; };
+		6E9E12B81CDFC2F000791284 /* cities10 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities10; sourceTree = "<group>"; };
+		6E9E12BA1CE9155A00791284 /* cities11 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities11; sourceTree = "<group>"; };
 		6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
 		6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
@@ -317,9 +317,7 @@
 		6E29053F1CB2D5550040EB8B /* weatherlrTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E4910BF1CC90A7D006D3C82 /* cities_en */,
-				6E4910C01CC90A7D006D3C82 /* cities_fr */,
-				6E816C0C1CCFF87800533684 /* cities */,
+				6E816C0C1CCFF87800533684 /* cities1 */,
 				6E816C101CD231BE00533684 /* cities2 */,
 				6E816C121CD385DC00533684 /* cities3 */,
 				6E816C141CD633EE00533684 /* cities4 */,
@@ -328,6 +326,8 @@
 				6E39BF171CDA272A008CD674 /* cities7 */,
 				6E9E12B21CDB6F1700791284 /* cities8 */,
 				6E9E12B41CDF8DAD00791284 /* cities9 */,
+				6E9E12B81CDFC2F000791284 /* cities10 */,
+				6E9E12BA1CE9155A00791284 /* cities11 */,
 				6E2905421CB2D5550040EB8B /* Info.plist */,
 				6E9F32E71CB4011B00A9D6A7 /* Rss */,
 				6E9F32C71CB30C6D00A9D6A7 /* WeatherInformationTests.swift */,
@@ -579,13 +579,12 @@
 				6E4910C81CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml in Resources */,
 				6E816C191CD76DBB00533684 /* cities5 in Resources */,
 				6E816C111CD231BE00533684 /* cities2 in Resources */,
-				6E4910C11CC90A7D006D3C82 /* cities_en in Resources */,
 				6E816C131CD385DC00533684 /* cities3 in Resources */,
-				6E4910C21CC90A7D006D3C82 /* cities_fr in Resources */,
 				6E9E12B31CDB6F1700791284 /* cities8 in Resources */,
 				6E9F32DF1CB3F4E700A9D6A7 /* TestDataEntry.xml in Resources */,
 				6E9E12B51CDF8DAD00791284 /* cities9 in Resources */,
-				6E816C0D1CCFF87800533684 /* cities in Resources */,
+				6E816C0D1CCFF87800533684 /* cities1 in Resources */,
+				6E9E12B91CDFC2F000791284 /* cities10 in Resources */,
 				6E9F32D91CB3EAB000A9D6A7 /* TestData_EN.xml in Resources */,
 				6E9F32ED1CB4069300A9D6A7 /* TestDataEntryCurrent.xml in Resources */,
 				6E9F32F31CB4479A00A9D6A7 /* TestDataEntry_EN.xml in Resources */,
@@ -593,6 +592,7 @@
 				6E9F32D21CB3116C00A9D6A7 /* TestData.xml in Resources */,
 				6E9F32F11CB4457D00A9D6A7 /* TestDataEntryCurrent_EN.xml in Resources */,
 				6E39BF181CDA272A008CD674 /* cities7 in Resources */,
+				6E9E12BB1CE9155B00791284 /* cities11 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

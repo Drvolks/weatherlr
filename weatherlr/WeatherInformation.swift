@@ -139,7 +139,17 @@ class WeatherInformation {
              .DrizzleOrRain,
              .FreezingRainMixedWithSnow,
              .FreezingDrizzleOrRain,
-             .RainAtTimesHeavyOrDrizzle:
+             .RainAtTimesHeavyOrDrizzle,
+             .PeriodsOfLightSnowMixedWithRain,
+             .AFewShowersOrDrizzle,
+             .PeriodsOfWetSnowOrRain,
+             .LightSnowMixedWithRain,
+             .PeriodsOfDrizzleOrFreezingDrizzle,
+             .PeriodsOfWetSnow,
+             .PeriodsOfSnowOrFreezingDrizzle,
+             .ChanceOfFreezingDrizzle,
+             .FreezingDrizzle,
+             .PeriodsOfSnowMixedWithFreezingDrizzle:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Bracebridge - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/on-9_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/on-9_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-15T20:06:16Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160515200616</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVIS DE GEL EN VIGUEUR, Bracebridge</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?on15"/>
+ <updated>2016-05-15T19:06:00Z</updated>
+ <published>2016-05-15T19:06:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 15h06 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_w1:201605151906</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Nuageux, 3,9&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T20:00:00Z</updated>
+ <published>2016-05-15T20:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Muskoka 16h00 HAE dimanche 15 mai 2016 <br/>
+<b>Condition:</b> Nuageux <br/>
+<b>Température:</b> 3,9&deg;C <br/>
+<b>Pression:</b> 101,1 kPa <br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 56 %<br/>
+<b>Point de rosée:</b> -4,0&deg;C <br/>
+<b>Vent:</b> NO 24 km/h rafale 39 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_cc:20160515200000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses de neige ou de pluie. Minimum zéro avec gel par endroits. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. 60 pour cent de probabilité d'averses de neige ou de pluie tôt ce soir. Vents d'ouest de 30 km/h avec rafales à 50 devenant légers après minuit. Minimum zéro avec gel par endroits. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc1:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Généralement ensoleillé. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Maximum 11. Indice UV de 6 ou élevé. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc2:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Dégagé. Minimum moins 1 avec gel par endroits.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 1 avec gel par endroits. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc3:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc4:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc5:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc6:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc7:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc8:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc9:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc10:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 8. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc11:20160515193000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-9_metric_f.html"/>
+ <updated>2016-05-15T19:30:00Z</updated>
+ <published>2016-05-15T19:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 23. Prévisions émises 15h30 HAE dimanche 15 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-9_fc12:20160515193000</id>
+ </entry>
+ </feed>
+

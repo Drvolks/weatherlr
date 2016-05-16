@@ -186,8 +186,6 @@ enum Language: String {
 
 enum AlertType {
     case Warning
-    case Watch
-    case Advisory
-    case Special
+    case Ended
     case None
 }

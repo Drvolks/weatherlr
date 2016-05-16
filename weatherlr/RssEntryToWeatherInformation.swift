@@ -55,7 +55,7 @@ class RssEntryToWeatherInformation {
             if(isAlert(rssEntries[i].title)) {
                 let alert = convertAlert(rssEntries[i])
                 
-                if alert.type != AlertType.None {
+                if alert.type != AlertType.None && alert.type != AlertType.Ended {
                     result.append(alert)
                 }
             }
@@ -108,11 +108,23 @@ class RssEntryToWeatherInformation {
     func convertAlert(rssEntry: RssEntry) -> AlertInformation {
         let alertText = extractAlertText(rssEntry.title)
         if !alertText.isEmpty {
-            let alert = AlertInformation(alertText: alertText, url: rssEntry.link, type:AlertType.Warning)
-            return alert
+            let alertType = extractAlertType(alertText)
+            
+            return AlertInformation(alertText: alertText, url: rssEntry.link, type:alertType)
         }
         
         return AlertInformation()
+    }
+    
+    func extractAlertType(alertText:String) -> AlertType {
+        let regex = try! NSRegularExpression(pattern: "(TERMINÉ|ENDED)$", options: [.CaseInsensitive])
+        let ended = performRegex(regex, text: alertText, index: 1)
+        
+        if !ended.isEmpty {
+            return AlertType.Ended
+        }
+        
+        return AlertType.Warning
     }
     
     func convertWeatherStatus(text: String) -> WeatherStatus {

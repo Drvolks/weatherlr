@@ -1406,4 +1406,22 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.extractAlertText(alertTitleEn)
         XCTAssertEqual("", result)
     }
+    
+    func testExtractAlertType() {
+        let parser = RssParserStub(xmlName: "TestDataEntryCurrent")!
+        let rssEntry = RssEntry(parent: parser as RssParser)
+        let performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
+        
+        var result = performer.extractAlertType("AVIS DE BROUILLARD TERMINÉ")
+        XCTAssertEqual(AlertType.Ended, result)
+        
+        result = performer.extractAlertType("FOG ADVISORY ENDED")
+        XCTAssertEqual(AlertType.Ended, result)
+        
+        result = performer.extractAlertType("FROST ADVISORY IN EFFECT")
+        XCTAssertEqual(AlertType.Warning, result)
+        
+        result = performer.extractAlertType("test")
+        XCTAssertEqual(AlertType.Warning, result)
+    }
 }

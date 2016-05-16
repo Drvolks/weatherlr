@@ -537,6 +537,7 @@
                     <size key="freeformSize" width="300" height="100"/>
                     <connections>
                         <outlet property="alertLabel" destination="jYn-IN-Jm2" id="ADl-eF-QeG"/>
+                        <outlet property="moreDetailButton" destination="kbN-fj-ieT" id="BaA-16-sFk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnL-u6-Nwa" userLabel="First Responder" sceneMemberID="firstResponder"/>

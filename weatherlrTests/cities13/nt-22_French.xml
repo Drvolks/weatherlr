@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Deline - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/nt-22_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/nt-22_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T21:02:47Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516210247</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Deline</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-19T21:45:00Z</updated>
+ <published>2016-04-19T21:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_w1:20160419214500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, 2,9&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T21:00:00Z</updated>
+ <published>2016-05-16T21:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Deline 15h00 HAR lundi 16 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 2,9&deg;C <br/>
+<b>Pression / Tendance:</b> 102,0 kPa à la hausse<br/>
+<b>Visibilité:</b> 32,2 km<br/>
+<b>Humidité:</b> 68 %<br/>
+<b>Point de rosée:</b> -2,4&deg;C <br/>
+<b>Vent:</b> SE 19 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_cc:20160516210000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Neige intermittente mêlée de pluie. Maximum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige intermittente mêlée de pluie. Accumulation de neige de 2 cm. Vents devenant d'est à 20 km/h cet après-midi. Maximum plus 3. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc1:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses de neige. Minimum zéro. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Faible neige intermittente mêlée de pluie cessant tard ce soir. Nuageux par la suite avec 60 pour cent de probabilité d'averses de neige. Vents d'est de 20 km/h devenant légers ce soir. Minimum zéro. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc2:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses de neige ou de pluie. Maximum plus 4. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. 60 pour cent de probabilité d'averses de neige le matin puis 60 pour cent de probabilité d'averses de pluie en après-midi. Vents devenant d'est à 20 km/h le matin. Maximum plus 4. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc3:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses de neige ou de pluie. Minimum moins 1. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige ou de pluie. Minimum moins 1. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc4:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 5. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc5:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum moins 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum moins 5. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc6:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 10. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc7:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 1. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc8:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc9:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc10:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc11:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc12:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-22_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-22_fc13:20160516170000</id>
+ </entry>
+ </feed>
+

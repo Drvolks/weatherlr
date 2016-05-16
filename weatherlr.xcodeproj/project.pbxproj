@@ -55,6 +55,7 @@
 		6E9E12CD1CEA1ED800791284 /* nu-2_French.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12CC1CEA1ED800791284 /* nu-2_French.xml */; };
 		6E9E12CF1CEA20D800791284 /* PreferenceHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12CE1CEA20D800791284 /* PreferenceHelperTests.swift */; };
 		6E9E12D31CEA5ED000791284 /* RadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12D21CEA5ED000791284 /* RadarViewController.swift */; };
+		6E9E12D51CEA6F5200791284 /* cities13 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12D41CEA6F5100791284 /* cities13 */; };
 		6E9F32BE1CB3048100A9D6A7 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
 		6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
 		6E9F32C21CB305BE00A9D6A7 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */; };
@@ -194,6 +195,7 @@
 		6E9E12CC1CEA1ED800791284 /* nu-2_French.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nu-2_French.xml"; sourceTree = "<group>"; };
 		6E9E12CE1CEA20D800791284 /* PreferenceHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelperTests.swift; sourceTree = "<group>"; };
 		6E9E12D21CEA5ED000791284 /* RadarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarViewController.swift; sourceTree = "<group>"; };
+		6E9E12D41CEA6F5100791284 /* cities13 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities13; sourceTree = "<group>"; };
 		6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
 		6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				6E9E12B81CDFC2F000791284 /* cities10 */,
 				6E9E12BA1CE9155A00791284 /* cities11 */,
 				6E9E12CA1CEA18E500791284 /* cities12 */,
+				6E9E12D41CEA6F5100791284 /* cities13 */,
 				6E2905421CB2D5550040EB8B /* Info.plist */,
 				6E9F32E71CB4011B00A9D6A7 /* Rss */,
 				6E9F32C71CB30C6D00A9D6A7 /* WeatherInformationTests.swift */,
@@ -587,6 +590,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9E12D51CEA6F5200791284 /* cities13 in Resources */,
 				6E39BF161CD8CDAF008CD674 /* cities6 in Resources */,
 				6E9E12C51CEA062000791284 /* TestDataEntryAlert.xml in Resources */,
 				6E4910C81CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml in Resources */,

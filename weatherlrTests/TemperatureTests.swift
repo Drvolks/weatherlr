@@ -61,6 +61,10 @@ class TemperatureTests: XCTestCase {
         noMissingTemperature("/cities12")
     }
     
+    func testNoMissingTemperature13() {
+        noMissingTemperature("/cities13")
+    }
+    
     func noMissingTemperature(subPath: String) {
         let fileManager = NSFileManager.defaultManager()
         let path = testBundle.resourcePath!

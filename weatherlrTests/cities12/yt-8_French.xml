@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Ross River - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/yt-8_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/yt-8_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T14:04:10Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516140410</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Ross River</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2015-10-09T06:45:00Z</updated>
+ <published>2015-10-09T06:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_w1:20151009064500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Partiellement nuageux, 5,1&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T14:00:00Z</updated>
+ <published>2016-05-16T14:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Faro 07h00 HAP lundi 16 mai 2016 <br/>
+<b>Condition:</b> Partiellement nuageux <br/>
+<b>Température:</b> 5,1&deg;C <br/>
+<b>Pression / Tendance:</b> 100,9 kPa à la hausse<br/>
+<b>Visibilité:</b> 48,3 km<br/>
+<b>Humidité:</b> 75 %<br/>
+<b>Point de rosée:</b> 1,0&deg;C <br/>
+<b>Vent:</b> N 2 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_cc:20160516140000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Devenant alternance de soleil et de nuages ce matin. Vents devenant du sud-ouest à 20 km/h cet après-midi. Maximum 15. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc1:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. 30 pour cent de probabilité d'averses ce soir. Vents du sud-ouest de 20 km/h devenant légers tôt ce soir. Minimum plus 5. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc2:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses. Maximum 12. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Devenant nuageux le matin suivi de 30 pour cent de probabilité d'averses tard le matin et en après-midi. Vents devenant du sud à 20 km/h en après-midi. Maximum 12. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc3:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc4:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Nuageux. Maximum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 14. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc5:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Nuageux. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum 6. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc6:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc7:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc8:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc9:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc10:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc11:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc12:20160516120000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-8_metric_f.html"/>
+ <updated>2016-05-16T12:00:00Z</updated>
+ <published>2016-05-16T12:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 05h00 HAP lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-8_fc13:20160516120000</id>
+ </entry>
+ </feed>
+

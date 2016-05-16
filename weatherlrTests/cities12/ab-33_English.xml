@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-ca">
+ 
+<!--
+This is a data file that is meant to be read by RSS readers or aggregators.
+See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn more about our RSS service.
+-->
+
+ <title>Mildred Lake - Weather - Environment Canada</title>
+ <link rel="related" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html" type="text/html"/>
+ <link rel="self" href="http://www.weather.gc.ca/rss/city/ab-33_e.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="fr-ca" href="http://www.meteo.gc.ca/rss/city/ab-33_f.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environment Canada</name>
+ <uri>http://www.weather.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T14:05:37Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160516140537</id>
+ <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Copyright 2016, Environment Canada</rights>
+ <entry>
+ <title>SPECIAL AIR QUALITY STATEMENT IN EFFECT, Mildred Lake</title>
+ <link type="text/html" href="http://www.weather.gc.ca/warnings/report_e.html?ab31"/>
+ <updated>2016-05-16T08:57:00Z</updated>
+ <published>2016-05-16T08:57:00Z</published>
+ <category term="Warnings and Watches"/>
+ <summary type="html">Persons in or near this area should be on the lookout for adverse weather conditions and take necessary safety precautions. Issued: 02:57 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_w1:201605160857</id>
+ </entry>
+ <entry>
+ <title>Current Conditions: 13.7&#xB0;C</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T14:00:00Z</updated>
+ <published>2016-05-16T14:00:00Z</published>
+ <category term="Current Conditions"/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Mildred Lake 08:00 AM MDT Monday 16 May 2016 <br/>
+<b>Temperature:</b> 13.7&deg;C <br/>
+<b>Humidity:</b> 46 %<br/>
+<b>Dewpoint:</b> 2.5&deg;C <br/>
+<b>Wind:</b> ESE 8 km/h<br/>
+<b>Air Quality Health Index:</b> N/A <br/>
+]]></summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_cc:20160516140000</id>
+ </entry>
+ <entry>
+ <title>Monday: Smoke. High 25.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Sunny. Widespread smoke. Wind becoming southwest 20 km/h gusting to 40 near noon. High 25. UV index 6 or high. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc1:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Monday night: Smoke. Low 11.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Clear. Increasing cloudiness after midnight. Widespread smoke. Wind southwest 20 km/h gusting to 40 becoming light this evening. Low 11. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc2:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Tuesday: Smoke. High 26.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. Widespread smoke. Wind becoming west 20 km/h near noon. High 26. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc3:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Tuesday night: Clear. Low 10.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Clear. Low 10. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc4:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Wednesday: Sunny. High 25.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Sunny. High 25. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc5:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Wednesday night: Cloudy. Low 13.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy. Low 13. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc6:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Thursday: Cloudy. High 19.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy. High 19. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc7:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Thursday night: Chance of showers. Low plus 5. POP 30%</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy with 30 percent chance of showers. Low plus 5. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc8:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Friday: A mix of sun and cloud. High 18.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. High 18. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc9:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Friday night: Cloudy periods. Low plus 4.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy periods. Low plus 4. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc10:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Saturday: A mix of sun and cloud. High 22.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. High 22. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc11:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Saturday night: Cloudy periods. Low 6.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy periods. Low 6. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc12:20160516110000</id>
+ </entry>
+ <entry>
+ <title>Sunday: A mix of sun and cloud. High 22.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/ab-33_metric_e.html"/>
+ <updated>2016-05-16T11:00:00Z</updated>
+ <published>2016-05-16T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. High 22. Forecast issued 05:00 AM MDT Monday 16 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:ab-33_fc13:20160516110000</id>
+ </entry>
+ </feed>
+

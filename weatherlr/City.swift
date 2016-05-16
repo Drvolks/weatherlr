@@ -13,6 +13,7 @@ class City : NSObject, NSCoding {
     var frenchName = ""
     var englishName = ""
     var province = ""
+    var radarId = ""
     
     // MARK: Types
     struct PropertyKey {
@@ -20,17 +21,19 @@ class City : NSObject, NSCoding {
         static let englishNameKey = "englishName"
         static let idKey = "id"
         static let provinceKey = "province"
+        static let radarKey = "radar"
     }
     
     override init() {
         super.init()
     }
     
-    init(id: String, frenchName: String, englishName: String, province: String) {
+    init(id: String, frenchName: String, englishName: String, province: String, radarId: String) {
         self.id = id
         self.frenchName = frenchName
         self.englishName = englishName
         self.province = province
+        self.radarId = radarId
     }
     
     // MARK: NSCoding
@@ -39,6 +42,7 @@ class City : NSObject, NSCoding {
         aCoder.encodeObject(englishName, forKey: PropertyKey.englishNameKey)
         aCoder.encodeObject(id, forKey: PropertyKey.idKey)
         aCoder.encodeObject(province, forKey: PropertyKey.provinceKey)
+        aCoder.encodeObject(radarId, forKey: PropertyKey.radarKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -46,7 +50,12 @@ class City : NSObject, NSCoding {
         let englishName = aDecoder.decodeObjectForKey(PropertyKey.englishNameKey) as! String
         let province = aDecoder.decodeObjectForKey(PropertyKey.provinceKey) as! String
         let id = aDecoder.decodeObjectForKey(PropertyKey.idKey) as! String
+        var radarId = aDecoder.decodeObjectForKey(PropertyKey.radarKey) as? String
         
-        self.init(id: id, frenchName: frenchName, englishName: englishName, province: province)
+        if radarId == nil {
+            radarId = ""
+        }
+        
+        self.init(id: id, frenchName: frenchName, englishName: englishName, province: province, radarId: radarId!)
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 class AlertViewController: UIViewController {
 
     @IBOutlet weak var alertLabel: UILabel!
+    @IBOutlet weak var moreDetailButton: UIButton!
 
     var alerts = [AlertInformation]()
     
@@ -29,6 +30,7 @@ class AlertViewController: UIViewController {
         }
 
         alertLabel.text = alertTexts
+        moreDetailButton.setTitle("More details".localized(), forState: .Normal)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

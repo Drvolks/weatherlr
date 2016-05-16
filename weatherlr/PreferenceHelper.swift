@@ -51,11 +51,40 @@ class PreferenceHelper {
     static func getSelectedCity() -> City? {
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Constants.selectedCityKey) as? NSData {
             if let selectedCity = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? City {
+                if selectedCity.radarId.isEmpty {
+                    return refreshCity(selectedCity)
+                }
+                
                 return selectedCity
             }
         }
         
         return nil
+    }
+    
+    static func refreshCity(city:City) -> City {
+        let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
+        let cities = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+        
+        for i in 0..<cities.count {
+            let currentCity = cities[i]
+            if currentCity.id == city.id {
+                // avoid infinite loop
+                saveSelectedCity(currentCity)
+                
+                removeFavorite(currentCity)
+                
+                var favorites = getFavoriteCities()
+                favorites.append(currentCity)
+                saveFavoriteCities(favorites)
+                
+                // reset selected to current
+                saveSelectedCity(currentCity)
+                return currentCity
+            }
+        }
+        
+        return city
     }
     
     static func removeFavorite(city: City) {

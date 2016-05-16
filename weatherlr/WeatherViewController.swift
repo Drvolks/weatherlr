@@ -13,6 +13,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var weatherTable: UITableView!
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var warningBarButton: UIBarButtonItem!
+    @IBOutlet weak var radarButton: UIBarButtonItem!
     
     var refreshControl: UIRefreshControl!
     var weatherInformationWrapper = WeatherInformationWrapper()
@@ -161,6 +162,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             warningBarButton.enabled = false
             warningBarButton.tintColor = UIColor.clearColor()
         }
+        
+        if !selectedCity!.radarId.isEmpty {
+            radarButton.enabled = true
+            radarButton.tintColor = nil
+        } else {
+            radarButton.enabled = false
+            radarButton.tintColor = UIColor.clearColor()
+        }
     }
 
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -304,6 +313,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             let navigationController = segue.destinationViewController as! UINavigationController
             let targetController = navigationController.topViewController as! SettingsViewController
             targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
+        } else if segue.identifier  == "ShowRadar" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let targetController = navigationController.topViewController as! RadarViewController
+            targetController.city = selectedCity
         }
     }
 

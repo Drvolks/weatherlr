@@ -45,7 +45,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Qp-vA-NhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222" y="1677"/>
+            <point key="canvasLocation" x="-624" y="1666"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -475,10 +475,16 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="YgH-pi-g8L"/>
+                        <barButtonItem image="radar" id="7SW-Zm-9Eg">
+                            <connections>
+                                <segue destination="vmE-98-jTJ" kind="presentation" identifier="ShowRadar" id="VIv-6D-GFL"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="oQ1-eD-ZCC"/>
                     <connections>
                         <outlet property="gradientView" destination="ok4-Zn-oFQ" id="uhv-NR-e8v"/>
+                        <outlet property="radarButton" destination="7SW-Zm-9Eg" id="mmd-DB-eME"/>
                         <outlet property="warningBarButton" destination="4Bz-ee-TLE" id="v8H-gH-yo1"/>
                         <outlet property="weatherTable" destination="0UC-87-mQn" id="8dB-z3-7hh"/>
                         <segue destination="Gf6-dD-xkg" kind="presentation" identifier="error" id="7Qi-nV-v9P"/>
@@ -544,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnL-u6-Nwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222" y="1014"/>
+            <point key="canvasLocation" x="-624" y="884"/>
         </scene>
         <!--Alert Detail View Controller-->
         <scene sceneID="6eL-17-AAg">
@@ -585,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JpY-Ys-0e7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542" y="1677"/>
+            <point key="canvasLocation" x="-624" y="2567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gmf-Y4-7GZ">
@@ -607,6 +613,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yK-bd-RcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="697" y="802"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wm2-uu-ZyX">
+            <objects>
+                <navigationController id="vmE-98-jTJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QFk-1I-ZEa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HYE-2b-Eta" kind="relationship" relationship="rootViewController" id="jc7-tI-pTb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dl-Zm-xV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="1673"/>
+        </scene>
+        <!--Radar View Controller-->
+        <scene sceneID="Xch-Ae-rKo">
+            <objects>
+                <viewController id="HYE-2b-Eta" customClass="RadarViewController" customModule="weatherlr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S1b-Ou-duL"/>
+                        <viewControllerLayoutGuide type="bottom" id="lzU-se-ROR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wWW-9d-D22">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jR-9S-bQh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4jR-9S-bQh" firstAttribute="leading" secondItem="wWW-9d-D22" secondAttribute="leadingMargin" constant="-20" id="JGq-VU-8dX"/>
+                            <constraint firstItem="lzU-se-ROR" firstAttribute="top" secondItem="4jR-9S-bQh" secondAttribute="bottom" id="UT5-w5-1jE"/>
+                            <constraint firstItem="4jR-9S-bQh" firstAttribute="top" secondItem="S1b-Ou-duL" secondAttribute="bottom" constant="-64" id="X7u-fI-DEv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4jR-9S-bQh" secondAttribute="trailing" constant="-20" id="zFo-oP-wqx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ivu-S9-4Bo">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="pTB-kY-sDZ">
+                            <connections>
+                                <action selector="done:" destination="HYE-2b-Eta" id="BCO-Sw-RRL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="4jR-9S-bQh" id="m4G-h1-uNe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQc-pQ-EeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="2567"/>
         </scene>
         <!--Error View Controller-->
         <scene sceneID="RUX-em-NKm">
@@ -1010,6 +1072,7 @@
     <resources>
         <image name="Flag_of_Canada.png" width="213" height="106"/>
         <image name="RainAtTimesHeavy" width="200" height="166"/>
+        <image name="radar" width="28" height="28"/>
         <image name="settings" width="28" height="28"/>
         <image name="up" width="83" height="83"/>
         <image name="warning" width="28" height="28"/>

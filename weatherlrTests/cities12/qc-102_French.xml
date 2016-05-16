@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Maniwaki - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-102_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-102_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T14:45:56Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516144556</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVIS DE GEL EN VIGUEUR, Maniwaki</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?qc58"/>
+ <updated>2016-05-16T08:11:00Z</updated>
+ <published>2016-05-16T08:11:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 04h11 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_w1:201605160811</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 1,8&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T14:00:00Z</updated>
+ <published>2016-05-16T14:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Maniwaki 10h00 HAE lundi 16 mai 2016 <br/>
+<b>Température:</b> 1,8&deg;C <br/>
+<b>Pression / Tendance:</b> 101,3 kPa à la hausse<br/>
+<b>Humidité:</b> 69 %<br/>
+<b>Point de rosée:</b> -3,2&deg;C <br/>
+<b>Vent:</b> O 10 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_cc:20160516140000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Averses de neige ou de pluie. Maximum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques averses de neige cessant tard ce matin. Nuageux par la suite avec 30 pour cent de probabilité d'averses de pluie. Vents devenant d'ouest à 20 km/h avec rafales à 40 ce matin. Maximum 8. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc1:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum zéro avec gel.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. Vents du nord-ouest de 20 km/h avec rafales à 40 devenant légers ce soir. Minimum zéro avec gel. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc2:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses de neige fondante ou de pluie. Maximum 11. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses de neige fondante le matin puis 30 pour cent de probabilité d'averses de pluie en après-midi. Vents devenant du nord-ouest à 20 km/h le matin. Maximum 11. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc3:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement. Minimum zéro. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc4:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc5:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc6:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc7:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc8:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc9:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc10:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc11:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc12:20160516090000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-102_metric_f.html"/>
+ <updated>2016-05-16T09:00:00Z</updated>
+ <published>2016-05-16T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 05h00 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-102_fc13:20160516090000</id>
+ </entry>
+ </feed>
+

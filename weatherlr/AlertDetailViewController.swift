@@ -12,6 +12,7 @@ class AlertDetailViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     
     var alert:AlertInformation?
+    var popOver:AlertViewController?
 
     override func viewDidLoad() {
         webView.delegate = self
@@ -21,15 +22,16 @@ class AlertDetailViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         
         self.title = "Warning".localized()
-        
-        
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: {()->Void in
+                self.popOver?.dismissViewControllerAnimated(true, completion: nil)
+            })
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

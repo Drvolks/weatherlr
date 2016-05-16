@@ -40,6 +40,7 @@ class AlertViewController: UIViewController {
             
             // pour le URL c'est toujours le même peut importe l'alerte
             targetController.alert = alerts[0]
+            targetController.popOver = self
         }
     }
     

@@ -8,6 +8,7 @@
 
 "City" = "Ville";
 "url" = "https://meteo.gc.ca/rss/city/{id}_f.xml";
+"radarUrl" = "https://meteo.gc.ca/radar/index_f.html?id={id}";
 "Language" = "Langue";
 "Today" = "Aujourd'hui";
 "Edit" = "Éditer";
@@ -23,3 +24,4 @@
 "Last refresh" = "Météo mise à jour à";
 "Warning" = "Avertissement";
 "More details" = "Plus de détail";
+"Radar" = "Radar";

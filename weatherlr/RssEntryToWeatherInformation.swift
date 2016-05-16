@@ -367,6 +367,12 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.FreezingRain
         case "neige ou pluie verglaçante", "snow or freezing rain":
             return WeatherStatus.SnowOrFreezingRain
+        case "forte averse de pluie", "heavy rainshower":
+            return WeatherStatus.HeavyRainshower
+        case "quelques averses ou orages", "a few showers or thunderstorms":
+            return WeatherStatus.AFewShowersOrThunderstorms
+        case "orage", "thunderstorm":
+            return WeatherStatus.Thunderstorm
         default:
             return convertWeatherStatusWithRegex(text)
         }

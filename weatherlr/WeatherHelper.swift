@@ -149,6 +149,11 @@ class WeatherHelper {
             return WeatherStatus.ChanceOfRainShowersOrWetFlurries
         case .LightWetSnow:
             return WeatherStatus.ChanceOfWetFlurries
+        case .HeavyRainshower:
+            return WeatherStatus.RainAtTimesHeavy
+        case .AFewShowersOrThunderstorms,
+             .Thunderstorm:
+            return WeatherStatus.ChanceOfShowersOrThunderstorms
         default:
             return nil
         }

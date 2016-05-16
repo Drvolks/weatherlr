@@ -27,7 +27,7 @@ class RssEntryToWeatherInformation {
         
         var debut = 0
         // l'entrée alerte est optionnelle et en plus on la retire si elle ne contient pas d'alerte
-        for i in debut..<rssEntries.count {
+        for i in 0..<rssEntries.count {
             if(isAlert(rssEntries[i].title)) {
                 debut = i+1
             } else {
@@ -43,6 +43,22 @@ class RssEntryToWeatherInformation {
             }
             
             result.append(weatherInformation)
+        }
+        
+        return result
+    }
+    
+    func getAlerts() -> [AlertInformation] {
+        var result = [AlertInformation]()
+        
+        for i in 0..<rssEntries.count {
+            if(isAlert(rssEntries[i].title)) {
+                let alert = convertAlert(rssEntries[i])
+                
+                if alert.type != AlertType.None {
+                    result.append(alert)
+                }
+            }
         }
         
         return result
@@ -89,14 +105,14 @@ class RssEntryToWeatherInformation {
         return result
     }
     
-    func convertAlert(rssEntry: RssEntry) -> AlertInformation? {
+    func convertAlert(rssEntry: RssEntry) -> AlertInformation {
         let alertText = extractAlertText(rssEntry.title)
         if !alertText.isEmpty {
-            let alert = AlertInformation(alertText: alertText, url: rssEntry.link)
+            let alert = AlertInformation(alertText: alertText, url: rssEntry.link, type:AlertType.Warning)
             return alert
         }
         
-        return nil
+        return AlertInformation()
     }
     
     func convertWeatherStatus(text: String) -> WeatherStatus {

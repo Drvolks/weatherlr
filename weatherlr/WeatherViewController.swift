@@ -8,10 +8,11 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!
     @IBOutlet weak var gradientView: GradientView!
+    @IBOutlet weak var warningBarButton: UIBarButtonItem!
     
     var refreshControl: UIRefreshControl!
     var weatherInformationWrapper = WeatherInformationWrapper()
@@ -152,6 +153,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if view.bounds.size.width > maxWidth {
             weatherTable.bounds.size.width = maxWidth
         }
+        
+        if weatherInformationWrapper.alerts.count > 0 {
+            warningBarButton.enabled = true
+            warningBarButton.tintColor = UIColor.redColor()
+        } else {
+            warningBarButton.enabled = false
+            warningBarButton.tintColor = UIColor.clearColor()
+        }
     }
 
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -291,11 +300,39 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Settings" {
+        if segue.identifier  == "Settings" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let targetController = navigationController.topViewController as! SettingsViewController
             targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
         }
+    }
+
+    @IBAction func showAlert(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let alertController = storyboard.instantiateViewControllerWithIdentifier("Alert") as! AlertViewController
+        
+        var width = weatherTable.bounds.size.width - 40
+        if width > 300 {
+            width = 300
+        }
+        let height = CGFloat(80 + (21*weatherInformationWrapper.alerts.count))
+        
+        alertController.modalPresentationStyle = .Popover;
+        alertController.preferredContentSize = CGSizeMake(width, height)
+        
+        let popoverPresentation = alertController.popoverPresentationController!
+        popoverPresentation.permittedArrowDirections = .Any
+        popoverPresentation.barButtonItem = sender
+        popoverPresentation.delegate = self
+        popoverPresentation.backgroundColor = UIColor.whiteColor()
+        
+        alertController.alerts = weatherInformationWrapper.alerts
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

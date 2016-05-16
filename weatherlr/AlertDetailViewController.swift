@@ -25,7 +25,9 @@ class AlertDetailViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        
+        // followus hidden-print
+        let js = "document.getElementById('wb-bc').remove(); document.getElementsByClassName('followus hidden-print')[0].remove(); document.getElementsByClassName('container hidden-print')[0].remove(); document.getElementById('weather-topics').remove(); document.getElementsByClassName('row pagedetails')[0].remove(); document.getElementsByClassName('gc-nttvs container')[0].remove(); document.getElementById('wb-info').remove();"
+        webView.stringByEvaluatingJavaScriptFromString(js)
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {

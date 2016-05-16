@@ -10,11 +10,12 @@ import Foundation
 
 class CityParser {
     var cities = [String:City]()
+    let provinces = ["AB","BC","PE","MB","NB","NS","NU","ON","QC","SK","NL","NT","YT"]
+    let lang = ["https://meteo.gc.ca/forecast/canada/index_f.html?id=", "https://weather.gc.ca/forecast/canada/index_e.html?id="]
+    let weatherUrl1 = "https://meteo.gc.ca/city/pages/"
+    let weatherUrl2 = "_metric_f.html"
     
     func perform() {
-        let provinces = ["AB","BC","PE","MB","NB","NS","NU","ON","QC","SK","NL","NT","YT"]
-        let lang = ["https://meteo.gc.ca/forecast/canada/index_f.html?id=", "https://weather.gc.ca/forecast/canada/index_e.html?id="]
-        
         for i in 0..<provinces.count {
             for j in 0..<lang.count {
                 print("Parsing " + lang[j] + provinces[i])
@@ -72,6 +73,28 @@ class CityParser {
             } else {
                 city.englishName = cityName
             }
+            
+            let radarId = getRadarId(cityId)
+            city.radarId = radarId
         }
+    }
+    
+    func getRadarId(cityId:String) -> String {
+        // TODO caching resultat car le même pour français et anglais
+        let urlStr = weatherUrl1 + cityId + weatherUrl2
+        if let url = NSURL(string: urlStr) {
+            let content = try! NSString(contentsOfURL: url, usedEncoding: nil) as String
+            
+            let regex = try! NSRegularExpression(pattern: "\"/radar/index_f.html\\?id=(.*?)\"", options: [.CaseInsensitive])
+            let results = regex.matchesInString(content, options: [], range: NSMakeRange(0, content.startIndex.distanceTo(content.endIndex)))
+            
+            if results.count > 0 {
+                let radarId = (content as NSString).substringWithRange(results[0].rangeAtIndex(1))
+                
+                return radarId
+            }
+        }
+        
+        return ""
     }
 }

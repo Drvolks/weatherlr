@@ -50,6 +50,7 @@ enum WeatherStatus {
     case FreezingDrizzleOrDrizzle
     case FreezingDrizzleOrRain
     case FreezingFog
+    case FreezingRain
     case FreezingRainMixedWithIcePellets
     case FreezingRainMixedWithSnow
     case FreezingRainOrSnow
@@ -66,6 +67,7 @@ enum WeatherStatus {
     case LightSnow
     case LightSnowAndBlowingSnow
     case LightSnowMixedWithRain
+    case LightSnowOrRain
     case LightSnowshower
     case LightWetSnow
     case MainlyClear
@@ -122,6 +124,7 @@ enum WeatherStatus {
     case SnowMixedWithFreezingDrizzle
     case SnowMixedWithIcePellets
     case SnowMixedWithRain
+    case SnowOrFreezingRain
     case SnowOrRain
     case Sunny
     case WetFlurries

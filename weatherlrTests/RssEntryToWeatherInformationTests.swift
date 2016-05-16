@@ -30,6 +30,8 @@ class RssEntryToWeatherInformationTests: XCTestCase {
     let alertBlowingSnowEn = "BLOWING SNOW ADVISORY IN EFFECT, Baie-James"
     let alertFrostFr = "AVIS DE GEL EN VIGUEUR, Lorraine"
     let alertFrostEn = "FROST ADVISORY IN EFFECT, Mascouche"
+    let alertFrostEndedFr = "AVIS DE BROUILLARD TERMINÉ, Lorraine"
+    let alertFrostEndedEn = "FOG ADVISORY ENDED, Mascouche"
     
     func testConstructor() {
         let parser = RssParserStub()!
@@ -892,6 +894,24 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Periods of snow mixed with freezing drizzle")
         XCTAssertEqual(WeatherStatus.PeriodsOfSnowMixedWithFreezingDrizzle, result)
         
+        // LightSnowOrRain
+        result = performer.convertWeatherStatus("Faible neige ou pluie")
+        XCTAssertEqual(WeatherStatus.LightSnowOrRain, result)
+        result = performer.convertWeatherStatus("Light snow or rain")
+        XCTAssertEqual(WeatherStatus.LightSnowOrRain, result)
+        
+        // FreezingRain
+        result = performer.convertWeatherStatus("Pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.FreezingRain, result)
+        result = performer.convertWeatherStatus("Freezing rain")
+        XCTAssertEqual(WeatherStatus.FreezingRain, result)
+        
+        // SnowOrFreezingRain
+        result = performer.convertWeatherStatus("Neige ou pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.SnowOrFreezingRain, result)
+        result = performer.convertWeatherStatus("Snow or freezing rain")
+        XCTAssertEqual(WeatherStatus.SnowOrFreezingRain, result)
+
         
         
         
@@ -1322,6 +1342,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.isAlert(alertFrostEn)
         XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertFrostEndedFr)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertFrostEndedEn)
+        XCTAssertTrue(result)
     }
     
     func testExtractAlertText() {
@@ -1367,6 +1393,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractAlertText(alertFrostEn)
         XCTAssertEqual("FROST ADVISORY IN EFFECT", result)
+        
+        result = performer.extractAlertText(alertFrostEndedFr)
+        XCTAssertEqual("AVIS DE BROUILLARD TERMINÉ", result)
+        
+        result = performer.extractAlertText(alertFrostEndedEn)
+        XCTAssertEqual("FOG ADVISORY ENDED", result)
         
         result = performer.extractAlertText(alertTitleFr)
         XCTAssertEqual("", result)

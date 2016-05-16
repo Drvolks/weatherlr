@@ -11,7 +11,7 @@ import UIKit
 class RssEntryToWeatherInformation {
     var rssEntries:[RssEntry]
     var day:Int = 0
-    let alerts = "WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY|AVIS DE GEL|FROST ADVISORY"
+    let alerts = "WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY|AVIS DE GEL|FROST ADVISORY|AVIS DE BROUILLARD|FOG ADVISORY"
     
     init(rssEntries: [RssEntry]) {
         self.rssEntries = rssEntries
@@ -333,6 +333,12 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.FreezingDrizzle
         case "neige intermittente mêlée de bruine verglaçante", "periods of snow mixed with freezing drizzle":
             return WeatherStatus.PeriodsOfSnowMixedWithFreezingDrizzle
+        case "faible neige ou pluie", "light snow or rain":
+            return WeatherStatus.LightSnowOrRain
+        case "pluie verglaçante", "freezing rain":
+            return WeatherStatus.FreezingRain
+        case "neige ou pluie verglaçante", "snow or freezing rain":
+            return WeatherStatus.SnowOrFreezingRain
         default:
             return convertWeatherStatusWithRegex(text)
         }

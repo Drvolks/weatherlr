@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:03:17Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160428100317</id>
+ <updated>2016-04-29T11:01:02Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110102</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,140 +29,140 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nl-32_w1:20160422133000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Neige faible, -3,4&#xB0;C</title>
+ <title>Conditions actuelles: Neige faible, -4,8&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Cartwright 07h00 HAA jeudi 28 avril 2016 <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Cartwright 08h00 HAA vendredi 29 avril 2016 <br/>
 <b>Condition:</b> Neige faible <br/>
-<b>Température:</b> -3,4&deg;C <br/>
-<b>Pression / Tendance:</b> 101,0 kPa à la baisse<br/>
-<b>Visibilité:</b> 2,4 km<br/>
-<b>Humidité:</b> 92 %<br/>
-<b>Refroidissement éolien:</b> -11 <br/>
-<b>Point de rosée:</b> -4,5&deg;C <br/>
-<b>Vent:</b> NO 31 km/h<br/>
+<b>Température:</b> -4,8&deg;C <br/>
+<b>Pression:</b> 99,3 kPa <br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 72 %<br/>
+<b>Refroidissement éolien:</b> -12 <br/>
+<b>Point de rosée:</b> -9,1&deg;C <br/>
+<b>Vent:</b> SO 27 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_cc:20160428100000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Jeudi: Neige. Maximum zéro.</title>
+ <title>Vendredi: Neige mêlée de pluie. Maximum plus 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Neige. Poudrerie sur les endroits à découvert cet après-midi. Accumulation de 5 à 10 cm. Vents du nord de 30 km/h avec rafales à 50 sauf rafales à 70 dans certain secteurs le long de la côte cet après-midi. Maximum zéro. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc1:20160428083000</id>
+ <summary type="html">Nuageux. Neige débutant ce matin. Neige mêlée de pluie tard cet après-midi. Poudrerie sur les endroits à découvert ce matin et tôt cet après-midi. Accumulation de neige de 5 cm. Vents d'ouest de 40 km/h avec rafales à 60. Maximum plus 2. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc1:20160429083000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Possibilité d'averses de neige. Minimum moins 6. PdP 60%</title>
+ <title>Ce soir et cette nuit: Neige mêlée de pluie. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Neige intermittente cessant ce soir. Généralement nuageux par la suite avec 60 pour cent de probabilité d'averses de neige. Vents du nord-ouest de 40 km/h avec rafales à 60 sauf rafales à 80 dans certain secteurs le long de la côte. Minimum moins 6. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc2:20160428083000</id>
+ <summary type="html">Neige. Neige mêlée de pluie tôt ce soir. Accumulation de neige de 2 à 4 cm. Vents du nord-ouest de 40 km/h avec rafales à 60. Minimum zéro. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc2:20160429083000</id>
  </entry>
  <entry>
- <title>Vendredi: Neige intermittente. Maximum plus 2.</title>
+ <title>Samedi: Averses de neige. Maximum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Neige intermittente débutant en mi-journée. Poudrerie sur les endroits à découvert en après-midi. Accumulation de 5 cm. Vents d'ouest de 40 km/h avec rafales à 60 sauf rafales à 80 dans certain secteurs le long de la côte en après-midi. Maximum plus 2. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc3:20160428083000</id>
+ <summary type="html">Averses de neige cessant en après-midi. Nuageux par la suite. Accumulation de 2 cm. Vents du nord-ouest de 30 km/h avec rafales à 50. Maximum plus 3. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc3:20160429083000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Neige intermittente. Minimum moins 1.</title>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum moins 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Neige intermittente. Minimum moins 1. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc4:20160428083000</id>
+ <summary type="html">Passages nuageux. Minimum moins 3. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc4:20160429083000</id>
  </entry>
  <entry>
- <title>Samedi: Possibilité d'averses de neige. Maximum plus 2. PdP 40%</title>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum plus 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Maximum plus 2. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc5:20160428083000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 4. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc5:20160429083000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Passages nuageux. Minimum moins 4.</title>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 4. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc6:20160428083000</id>
- </entry>
- <entry>
- <title>Dimanche: Alternance de soleil et de nuages. Maximum plus 5.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum plus 5. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc7:20160428083000</id>
- </entry>
- <entry>
- <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 2.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 2. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc8:20160428083000</id>
+ <summary type="html">Passages nuageux. Minimum moins 4. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc6:20160429083000</id>
  </entry>
  <entry>
  <title>Lundi: Alternance de soleil et de nuages. Maximum plus 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum plus 5. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc9:20160428083000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 5. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc7:20160429083000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Passages nuageux. Minimum moins 2.</title>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum moins 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 2. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc10:20160428083000</id>
+ <summary type="html">Passages nuageux. Minimum moins 3. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc8:20160429083000</id>
  </entry>
  <entry>
- <title>Mardi: Alternance de soleil et de nuages. Maximum 7.</title>
+ <title>Mardi: Nuageux. Maximum 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 7. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc11:20160428083000</id>
+ <summary type="html">Nuageux. Maximum 7. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc9:20160429083000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <title>Mardi soir et nuit: Possibilité d'averses de neige. Minimum zéro. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc12:20160428083000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Minimum zéro. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc10:20160429083000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses de pluie ou de neige. Maximum plus 4. PdP 40%</title>
+ <title>Mercredi: Possibilité d'averses de neige ou de pluie. Maximum plus 5. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de pluie ou de neige. Maximum plus 4. Prévisions émises 06h00 HAA jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc13:20160428083000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige ou de pluie. Maximum plus 5. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc11:20160429083000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc12:20160429083000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-32_metric_f.html"/>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum plus 5. Prévisions émises 06h00 HAA vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-32_fc13:20160429083000</id>
  </entry>
  </feed>
 

@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:01:59Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160428100159</id>
+ <updated>2016-04-29T11:01:55Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110155</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,140 +29,139 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:on-83_w1:20160411031500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Dégagé, -3,5&#xB0;C</title>
+ <title>Conditions actuelles: Ensoleillé, -2,7&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Garnison Petawawa 06h00 HAE jeudi 28 avril 2016 <br/>
-<b>Condition:</b> Dégagé <br/>
-<b>Température:</b> -3,5&deg;C <br/>
-<b>Pression / Tendance:</b> 102,0 kPa à la hausse<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Garnison Petawawa 07h00 HAE vendredi 29 avril 2016 <br/>
+<b>Condition:</b> Ensoleillé <br/>
+<b>Température:</b> -2,7&deg;C <br/>
+<b>Pression / Tendance:</b> 102,3 kPa à la hausse<br/>
 <b>Visibilité:</b> 14,5 km<br/>
-<b>Humidité:</b> 74 %<br/>
-<b>Refroidissement éolien:</b> -7 <br/>
-<b>Point de rosée:</b> -7,4&deg;C <br/>
-<b>Vent:</b> ONO 7 km/h<br/>
+<b>Humidité:</b> 82 %<br/>
+<b>Point de rosée:</b> -5,3&deg;C <br/>
+<b>Vent:</b>  0 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_cc:20160428100000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Jeudi: Ensoleillé. Maximum 10.</title>
+ <title>Vendredi: Généralement ensoleillé. Maximum 11.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 10. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc1:20160428090000</id>
+ <summary type="html">Généralement ensoleillé. Maximum 11. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc1:20160429090000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 5.</title>
+ <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Quelques nuages. Minimum moins 5. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc2:20160428090000</id>
+ <summary type="html">Dégagement ce soir. Minimum moins 4. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc2:20160429090000</id>
  </entry>
  <entry>
- <title>Vendredi: Ensoleillé. Maximum 11.</title>
+ <title>Samedi: Ensoleillé. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 11. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc3:20160428090000</id>
- </entry>
- <entry>
- <title>Vendredi soir et nuit: Dégagé. Minimum moins 6.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum moins 6. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc4:20160428090000</id>
- </entry>
- <entry>
- <title>Samedi: Ensoleillé. Maximum 15.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc5:20160428090000</id>
+ <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc3:20160429090000</id>
  </entry>
  <entry>
  <title>Samedi soir et nuit: Dégagé. Minimum plus 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc6:20160428090000</id>
+ <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc4:20160429090000</id>
  </entry>
  <entry>
  <title>Dimanche: Alternance de soleil et de nuages. Maximum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 6. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc7:20160428090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 6. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc5:20160429090000</id>
  </entry>
  <entry>
  <title>Dimanche soir et nuit: Passages nuageux. Minimum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc8:20160428090000</id>
+ <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc6:20160429090000</id>
  </entry>
  <entry>
- <title>Lundi: Alternance de soleil et de nuages. Maximum 7.</title>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 7. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc9:20160428090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 10. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc7:20160429090000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Passages nuageux. Minimum plus 4.</title>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 4. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc10:20160428090000</id>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc8:20160429090000</id>
  </entry>
  <entry>
  <title>Mardi: Alternance de soleil et de nuages. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 14. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc11:20160428090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 14. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc9:20160429090000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Passages nuageux. Minimum plus 5.</title>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 5. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc12:20160428090000</id>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc10:20160429090000</id>
  </entry>
  <entry>
  <title>Mercredi: Possibilité d'averses. Maximum 14. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 14. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-83_fc13:20160428090000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 14. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc11:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc12:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses. Maximum 16. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-83_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-83_fc13:20160429090000</id>
  </entry>
  </feed>
 

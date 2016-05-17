@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:49:12Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160428104912</id>
+ <updated>2016-04-29T11:04:22Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110422</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,130 +29,130 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:bc-92_w1:20160310181500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Dégagé, 9,0&#xB0;C</title>
+ <title>Conditions actuelles: Généralement nuageux, 9,3&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Comox 03h00 HAP jeudi 28 avril 2016 <br/>
-<b>Condition:</b> Dégagé <br/>
-<b>Température:</b> 9,0&deg;C <br/>
-<b>Pression / Tendance:</b> 101,8 kPa à la hausse<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Comox 04h00 HAP vendredi 29 avril 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 9,3&deg;C <br/>
+<b>Pression / Tendance:</b> 101,9 kPa à la hausse<br/>
 <b>Visibilité:</b> 32,2 km<br/>
-<b>Humidité:</b> 77 %<br/>
-<b>Point de rosée:</b> 5,2&deg;C <br/>
-<b>Vent:</b> ONO 8 km/h<br/>
-<b>Cote air santé:</b> 1 <br/>
+<b>Humidité:</b> 74 %<br/>
+<b>Point de rosée:</b> 5,0&deg;C <br/>
+<b>Vent:</b> O 5 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_cc:20160428100000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Partiellement nuageux. Minimum 6.</title>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum 8. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Partiellement nuageux. Minimum 6. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc1:20160427230000</id>
+ <summary type="html">Nuageux. 40 pour cent de probabilité d'averses tard ce soir et au cours de la nuit. Minimum 8. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc1:20160428230000</id>
  </entry>
  <entry>
- <title>Jeudi: Alternance de soleil et de nuages. Maximum 16.</title>
+ <title>Vendredi: Possibilité d'averses. Maximum 16. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Devenant nuageux tard en après-midi. Maximum 16. Indice UV de 5 ou modéré. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc2:20160427230000</id>
- </entry>
- <entry>
- <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 9. PdP 60%</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Nuageux. 60 pour cent de probabilité d'averses tard en soirée et au cours de la nuit. Minimum 9. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc3:20160427230000</id>
- </entry>
- <entry>
- <title>Vendredi: Possibilité d'averses. Maximum 15. PdP 60%</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 15. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc4:20160427230000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses le matin. Dégagement en mi-journée. Devenant venteux en mi-journée. Maximum 16. Indice UV de 5 ou modéré. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc2:20160428230000</id>
  </entry>
  <entry>
  <title>Vendredi soir et nuit: Dégagé. Minimum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 6. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc5:20160427230000</id>
+ <summary type="html">Dégagé. Venteux en soirée et après minuit. Minimum 6. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc3:20160428230000</id>
  </entry>
  <entry>
- <title>Samedi: Ensoleillé. Maximum 18.</title>
+ <title>Samedi: Ensoleillé. Maximum 17.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc6:20160427230000</id>
+ <summary type="html">Ensoleillé. Maximum 17. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc4:20160428230000</id>
  </entry>
  <entry>
  <title>Samedi soir et nuit: Dégagé. Minimum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 9. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc7:20160427230000</id>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc5:20160428230000</id>
  </entry>
  <entry>
- <title>Dimanche: Ensoleillé. Maximum 21.</title>
+ <title>Dimanche: Ensoleillé. Maximum 20.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc8:20160427230000</id>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc6:20160428230000</id>
  </entry>
  <entry>
- <title>Dimanche soir et nuit: Passages nuageux. Minimum 9.</title>
+ <title>Dimanche soir et nuit: Dégagé. Minimum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum 9. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc9:20160427230000</id>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc7:20160428230000</id>
  </entry>
  <entry>
- <title>Lundi: Alternance de soleil et de nuages. Maximum 19.</title>
+ <title>Lundi: Ensoleillé. Maximum 24.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 19. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc10:20160427230000</id>
+ <summary type="html">Ensoleillé. Maximum 24. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc8:20160428230000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Possibilité d'averses. Minimum 9. PdP 60%</title>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 9. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc11:20160427230000</id>
+ <summary type="html">Passages nuageux. Minimum 9. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc9:20160428230000</id>
  </entry>
  <entry>
- <title>Mardi: Possibilité d'averses. Maximum 16. PdP 60%</title>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 17.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 60 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 16h00 HAP mercredi 27 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc12:20160427230000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc10:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 9. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc11:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 17.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-92_metric_f.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 16h00 HAP jeudi 28 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-92_fc12:20160428230000</id>
  </entry>
  </feed>
 

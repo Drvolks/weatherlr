@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-29T11:01:53Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160429110153</id>
+ <updated>2016-05-02T11:00:59Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160502110059</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,139 +29,139 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:ns-2_w1:20160409074500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Ensoleillé, 0,4&#xB0;C</title>
+ <title>Conditions actuelles: Généralement nuageux, 6,7&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T11:00:00Z</updated>
- <published>2016-04-29T11:00:00Z</published>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> BFC Greenwood 08h00 HAA vendredi 29 avril 2016 <br/>
-<b>Condition:</b> Ensoleillé <br/>
-<b>Température:</b> 0,4&deg;C <br/>
-<b>Pression / Tendance:</b> 102,3 kPa à la hausse<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> BFC Greenwood 08h00 HAA lundi 02 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 6,7&deg;C <br/>
+<b>Pression / Tendance:</b> 102,3 kPa à la baisse<br/>
 <b>Visibilité:</b> 24,1 km<br/>
-<b>Humidité:</b> 85 %<br/>
-<b>Point de rosée:</b> -1,8&deg;C <br/>
-<b>Vent:</b> SO 9 km/h<br/>
+<b>Humidité:</b> 66 %<br/>
+<b>Point de rosée:</b> 0,9&deg;C <br/>
+<b>Vent:</b>  0 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_cc:20160429110000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_cc:20160502110000</id>
  </entry>
  <entry>
- <title>Vendredi: Ensoleillé. Maximum 8.</title>
+ <title>Lundi: Possibilité d'averses. Maximum 12. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 8. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc1:20160429080000</id>
+ <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses cet après-midi. Vents devenant du sud-est à 20 km/h en mi-journée. Maximum 12. Indice UV de 5 ou modéré. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc1:20160502080000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Dégagé. Minimum moins 1 sauf moins 6 en terrains bas dans l'intérieur.</title>
+ <title>Ce soir et cette nuit: Pluie intermittente. Minimum plus 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum moins 1 sauf moins 6 en terrains bas dans l'intérieur. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc2:20160429080000</id>
+ <summary type="html">Nuageux. Pluie intermittente débutant ce soir et cessant au cours de la nuit puis 40 pour cent de probabilité d'averses ou de bruine par la suite. Nappes de brouillard se formant après minuit. Hauteur prévue de 10 mm. Vents d'est de 20 km/h avec rafales à 40 devenant légers après minuit. Minimum plus 5. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc2:20160502080000</id>
  </entry>
  <entry>
- <title>Samedi: Ensoleillé. Maximum 11 sauf 6 le long de la côte.</title>
+ <title>Mardi: Possibilité d'averses ou bruine. Maximum 10. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 11 sauf 6 le long de la côte. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc3:20160429080000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses ou de bruine. Nappes de brouillard se dissipant le matin. Maximum 10. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc3:20160502080000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Dégagé. Minimum moins 4.</title>
+ <title>Mardi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum moins 4. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc4:20160429080000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc4:20160502080000</id>
  </entry>
  <entry>
- <title>Dimanche: Ensoleillé. Maximum 15.</title>
+ <title>Mercredi: Nuageux. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ennuagement. Maximum 15. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc5:20160429080000</id>
+ <summary type="html">Nuageux. Maximum 14. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc5:20160502080000</id>
  </entry>
  <entry>
- <title>Dimanche soir et nuit: Nuageux. Minimum plus 3.</title>
+ <title>Mercredi soir et nuit: Averses. Minimum plus 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Minimum plus 3. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc6:20160429080000</id>
+ <summary type="html">Averses. Minimum plus 5. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc6:20160502080000</id>
  </entry>
  <entry>
- <title>Lundi: Pluie. Maximum 9.</title>
+ <title>Jeudi: Averses. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie. Maximum 9. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc7:20160429080000</id>
+ <summary type="html">Averses. Maximum 14. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc7:20160502080000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Pluie. Minimum 9.</title>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie. Minimum 9. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc8:20160429080000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc8:20160502080000</id>
  </entry>
  <entry>
- <title>Mardi: Pluie intermittente. Maximum 12.</title>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 16.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie intermittente. Maximum 12. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc9:20160429080000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 16. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc9:20160502080000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Passages nuageux. Minimum 6.</title>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc10:20160429080000</id>
+ <summary type="html">Passages nuageux. Minimum 7. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc10:20160502080000</id>
  </entry>
  <entry>
- <title>Mercredi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 16.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 15. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc11:20160429080000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 16. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc11:20160502080000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Passages nuageux. Minimum 6.</title>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum plus 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc12:20160429080000</id>
+ <summary type="html">Passages nuageux. Minimum plus 5. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc12:20160502080000</id>
  </entry>
  <entry>
- <title>Jeudi: Alternance de soleil et de nuages. Maximum 17.</title>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 17.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ns-2_metric_f.html"/>
- <updated>2016-04-29T08:00:00Z</updated>
- <published>2016-04-29T08:00:00Z</published>
+ <updated>2016-05-02T08:00:00Z</updated>
+ <published>2016-05-02T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 05h00 HAA vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc13:20160429080000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 05h00 HAA lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ns-2_fc13:20160502080000</id>
  </entry>
  </feed>
 

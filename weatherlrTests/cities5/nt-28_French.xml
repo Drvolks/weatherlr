@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-02T11:08:21Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160502110821</id>
+ <updated>2016-05-08T18:34:37Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508183437</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,121 +29,139 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nt-28_w1:20160420003000</id>
  </entry>
  <entry>
- <title>Lundi: Généralement ensoleillé. Maximum 17.</title>
+ <title>Conditions actuelles: Pluie faible, 4,1&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Généralement ensoleillé. Maximum 17. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc1:20160502110000</id>
+ <updated>2016-05-08T18:33:00Z</updated>
+ <published>2016-05-08T18:33:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Gameti 12h33 HAR dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Pluie faible <br/>
+<b>Température:</b> 4,1&deg;C <br/>
+<b>Pression / Tendance:</b> 100,5 kPa à la hausse<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 87 %<br/>
+<b>Point de rosée:</b> 2,1&deg;C <br/>
+<b>Vent:</b> NO 17 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_cc:20160508183300</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Quelques nuages. Minimum 7.</title>
+ <title>Dimanche: Nuageux. Maximum 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Quelques nuages. Vents devenant du sud-est à 20 km/h ce soir. Minimum 7. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc2:20160502110000</id>
+ <summary type="html">Nuageux. Vents du nord de 30 km/h avec rafales à 50. Maximum 8. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc1:20160508170000</id>
  </entry>
  <entry>
- <title>Mardi: Généralement ensoleillé. Maximum 20.</title>
+ <title>Ce soir et cette nuit: Possibilité d'averses de neige. Minimum zéro. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement ensoleillé. Vents du sud-est de 20 km/h devenant légers en après-midi. Maximum 20. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc3:20160502110000</id>
+ <summary type="html">Nuageux. 30 pour cent de probabilité d'averses de neige au cours de la nuit. Vents du nord de 30 km/h avec rafales à 50. Minimum zéro. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc2:20160508170000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Dégagé. Minimum plus 2.</title>
+ <title>Lundi: Possibilité d'averses de neige. Maximum 6. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc4:20160502110000</id>
+ <summary type="html">Nuageux. 30 pour cent de probabilité d'averses de neige le matin. Vents du nord de 30 km/h avec rafales à 50. Maximum 6. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc3:20160508170000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses. Maximum 14. PdP 30%</title>
+ <title>Lundi soir et nuit: Nuageux. Minimum moins 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 14. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc5:20160502110000</id>
+ <summary type="html">Nuageux. Minimum moins 1. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc4:20160508170000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Possibilité d'averses. Minimum zéro. PdP 30%</title>
+ <title>Mardi: Ensoleillé. Maximum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Venteux. Minimum zéro. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc6:20160502110000</id>
+ <summary type="html">Ensoleillé. Maximum 10. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc5:20160508170000</id>
  </entry>
  <entry>
- <title>Jeudi: Ensoleillé. Maximum 11.</title>
+ <title>Mardi soir et nuit: Dégagé. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 11. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc7:20160502110000</id>
+ <summary type="html">Dégagé. Minimum zéro. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc6:20160508170000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Dégagé. Minimum plus 1.</title>
+ <title>Mercredi: Ensoleillé. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 1. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc8:20160502110000</id>
+ <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc7:20160508170000</id>
  </entry>
  <entry>
- <title>Vendredi: Ensoleillé. Maximum 14.</title>
+ <title>Mercredi soir et nuit: Dégagé. Minimum plus 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc9:20160502110000</id>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc8:20160508170000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <title>Jeudi: Ensoleillé. Maximum 18.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc10:20160502110000</id>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc9:20160508170000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc10:20160508170000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 16. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc11:20160508170000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc12:20160508170000</id>
  </entry>
  <entry>
  <title>Samedi: Ensoleillé. Maximum 17.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 17. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc11:20160502110000</id>
- </entry>
- <entry>
- <title>Samedi soir et nuit: Dégagé. Minimum plus 5.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc12:20160502110000</id>
- </entry>
- <entry>
- <title>Dimanche: Ensoleillé. Maximum 17.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nt-28_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 17. Prévisions émises 05h00 HAR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc13:20160502110000</id>
+ <summary type="html">Ensoleillé. Maximum 17. Prévisions émises 11h00 HAR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nt-28_fc13:20160508170000</id>
  </entry>
  </feed>
 

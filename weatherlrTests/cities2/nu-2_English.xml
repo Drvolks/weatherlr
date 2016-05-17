@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:34:08Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160428103408</id>
+ <updated>2016-04-29T11:01:58Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160429110158</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,140 +29,140 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:nu-2_w1:20160427011500</id>
  </entry>
  <entry>
- <title>Current Conditions: Fog, -0.5&#xB0;C</title>
+ <title>Current Conditions: Partly Cloudy, -1.2&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:16:00Z</updated>
- <published>2016-04-28T10:16:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Cape Dorset Airport 06:16 AM EDT Thursday 28 April 2016 <br/>
-<b>Condition:</b> Fog <br/>
-<b>Temperature:</b> -0.5&deg;C <br/>
-<b>Pressure:</b> 102.3 kPa <br/>
-<b>Visibility:</b> 0.6 km<br/>
-<b>Humidity:</b> 100 %<br/>
-<b>Wind Chill:</b> -4 <br/>
-<b>Dewpoint:</b> -0.5&deg;C <br/>
-<b>Wind:</b> E 11 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Cape Dorset Airport 07:00 AM EDT Friday 29 April 2016 <br/>
+<b>Condition:</b> Partly Cloudy <br/>
+<b>Temperature:</b> -1.2&deg;C <br/>
+<b>Pressure:</b> 102.5 kPa <br/>
+<b>Visibility:</b> 24.1 km<br/>
+<b>Humidity:</b> 96 %<br/>
+<b>Wind Chill:</b> -5 <br/>
+<b>Dewpoint:</b> -1.8&deg;C <br/>
+<b>Wind:</b> ESE 11 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_cc:20160428101600</id>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Thursday: Chance of rain showers or flurries. High plus 3. POP 30%</title>
+ <title>Friday: Chance of flurries. High minus 2. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly cloudy. 30 percent chance of flurries or rain showers changing to 30 percent chance of rain showers this morning. Fog patches dissipating this morning. High plus 3. UV index 3 or moderate. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc1:20160428102900</id>
+ <summary type="html">Mainly cloudy. 30 percent chance of flurries. High minus 2. UV index 3 or moderate. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc1:20160429090000</id>
  </entry>
  <entry>
- <title>Thursday night: Chance of flurries or rain showers. Low minus 2. POP 30%</title>
+ <title>Friday night: Clearing. Low minus 9.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly cloudy. 30 percent chance of rain showers changing to 30 percent chance of flurries this evening. Wind becoming northwest 20 km/h overnight. Low minus 2. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc2:20160428102900</id>
+ <summary type="html">Clearing. Low minus 9. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc2:20160429090000</id>
  </entry>
  <entry>
- <title>Friday: Chance of flurries. Temperature steady near minus 2. POP 30%</title>
+ <title>Saturday: Mainly sunny. High minus 3.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly cloudy with 30 percent chance of flurries. Wind northwest 20 km/h. Temperature steady near minus 2. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc3:20160428102900</id>
+ <summary type="html">Mainly sunny. High minus 3. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc3:20160429090000</id>
  </entry>
  <entry>
- <title>Friday night: Cloudy periods. Low minus 8.</title>
+ <title>Saturday night: Chance of flurries. Low minus 5. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low minus 8. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc4:20160428102900</id>
+ <summary type="html">Cloudy with 40 percent chance of flurries. Low minus 5. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc4:20160429090000</id>
  </entry>
  <entry>
- <title>Saturday: A mix of sun and cloud. High minus 3.</title>
+ <title>Sunday: Chance of flurries. High minus 4. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High minus 3. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc5:20160428102900</id>
+ <summary type="html">Cloudy with 40 percent chance of flurries. Windy. High minus 4. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc5:20160429090000</id>
  </entry>
  <entry>
- <title>Saturday night: Chance of flurries. Low minus 4. POP 30%</title>
+ <title>Sunday night: Cloudy. Low minus 5.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods with 30 percent chance of flurries. Low minus 4. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc6:20160428102900</id>
+ <summary type="html">Cloudy. Windy. Low minus 5. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc6:20160429090000</id>
  </entry>
  <entry>
- <title>Sunday: Chance of flurries. High minus 3. POP 30%</title>
+ <title>Monday: Chance of flurries. High zero. POP 70%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 30 percent chance of flurries. Windy. High minus 3. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc7:20160428102900</id>
+ <summary type="html">Cloudy with 70 percent chance of flurries. Windy. High zero. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc7:20160429090000</id>
  </entry>
  <entry>
- <title>Sunday night: Chance of flurries. Low minus 4. POP 40%</title>
+ <title>Monday night: Rain showers or flurries. Low minus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 40 percent chance of flurries. Windy. Low minus 4. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc8:20160428102900</id>
+ <summary type="html">Rain showers or flurries. Windy. Low minus 1. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc8:20160429090000</id>
  </entry>
  <entry>
- <title>Monday: Chance of flurries. High minus 3. POP 60%</title>
+ <title>Tuesday: Snow. High minus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of flurries. Windy. High minus 3. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc9:20160428102900</id>
+ <summary type="html">Snow. High minus 1. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc9:20160429090000</id>
  </entry>
  <entry>
- <title>Monday night: Chance of flurries. Low minus 8. POP 60%</title>
+ <title>Tuesday night: Periods of snow. Low minus 5.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of flurries. Low minus 8. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc10:20160428102900</id>
+ <summary type="html">Periods of snow. Low minus 5. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc10:20160429090000</id>
  </entry>
  <entry>
- <title>Tuesday: Chance of flurries. High minus 6. POP 60%</title>
+ <title>Wednesday: Chance of flurries. High minus 2. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of flurries. High minus 6. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc11:20160428102900</id>
+ <summary type="html">Cloudy with 40 percent chance of flurries. High minus 2. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc11:20160429090000</id>
  </entry>
  <entry>
- <title>Tuesday night: Chance of flurries. Low minus 8. POP 60%</title>
+ <title>Wednesday night: Chance of flurries. Low minus 5. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of flurries. Low minus 8. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc12:20160428102900</id>
+ <summary type="html">Cloudy with 40 percent chance of flurries. Low minus 5. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc12:20160429090000</id>
  </entry>
  <entry>
- <title>Wednesday: Chance of flurries. High minus 4. POP 60%</title>
+ <title>Thursday: Chance of flurries. High minus 2. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-2_metric_e.html"/>
- <updated>2016-04-28T10:29:00Z</updated>
- <published>2016-04-28T10:29:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of flurries. High minus 4. Forecast issued 06:29 AM EDT Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-2_fc13:20160428102900</id>
+ <summary type="html">Cloudy with 30 percent chance of flurries. High minus 2. Forecast issued 05:00 AM EDT Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nu-2_fc13:20160429090000</id>
  </entry>
  </feed>
 

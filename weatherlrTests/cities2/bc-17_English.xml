@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:06:00Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160428100600</id>
+ <updated>2016-04-29T11:04:23Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160429110423</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,128 +29,128 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:bc-17_w1:20160411130300</id>
  </entry>
  <entry>
- <title>Current Conditions: 5.5&#xB0;C</title>
+ <title>Current Conditions: 6.2&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Tofino Airport 03:00 AM PDT Thursday 28 April 2016 <br/>
-<b>Temperature:</b> 5.5&deg;C <br/>
-<b>Pressure:</b> 101.9 kPa <br/>
-<b>Humidity:</b> 98 %<br/>
-<b>Dewpoint:</b> 5.2&deg;C <br/>
-<b>Wind:</b> N 2 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Tofino Airport 04:00 AM PDT Friday 29 April 2016 <br/>
+<b>Temperature:</b> 6.2&deg;C <br/>
+<b>Pressure:</b> 102.0 kPa <br/>
+<b>Humidity:</b> 96 %<br/>
+<b>Dewpoint:</b> 5.6&deg;C <br/>
+<b>Wind:</b> N 7 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_cc:20160428100000</id>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Wednesday night: Partly cloudy. Low 8.</title>
+ <title>Thursday night: Chance of showers. Low 8. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Partly cloudy. Low 8. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc1:20160427230000</id>
+ <summary type="html">Cloudy with 60 percent chance of showers. Windy over exposed coastal sections early this evening. Low 8. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc1:20160428230000</id>
  </entry>
  <entry>
- <title>Thursday: Chance of showers. High 13. POP 30%</title>
+ <title>Friday: Chance of showers. High 15. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. 30 percent chance of showers in the afternoon. Becoming windy in the afternoon. High 13. UV index 3 or moderate. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc2:20160427230000</id>
- </entry>
- <entry>
- <title>Thursday night: Chance of showers. Low 7. POP 60%</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. Windy early in the evening. Low 7. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc3:20160427230000</id>
- </entry>
- <entry>
- <title>Friday: Showers. High 15.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Showers. High 15. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc4:20160427230000</id>
+ <summary type="html">Cloudy with 40 percent chance of showers early in the morning. Clearing late in the morning. Wind becoming northwest 30 km/h near noon except 60 over exposed coastal sections in the afternoon. High 15. UV index 5 or moderate. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc2:20160428230000</id>
  </entry>
  <entry>
  <title>Friday night: Clear. Low plus 4.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low plus 4. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc5:20160427230000</id>
+ <summary type="html">Clear. Wind northwest 30 km/h except 60 over exposed coastal sections in the evening. Wind becoming light near midnight. Low plus 4. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc3:20160428230000</id>
  </entry>
  <entry>
  <title>Saturday: Sunny. High 16.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 16. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc6:20160427230000</id>
+ <summary type="html">Sunny. High 16. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc4:20160428230000</id>
  </entry>
  <entry>
- <title>Saturday night: Clear. Low 8.</title>
+ <title>Saturday night: Cloudy periods. Low 7.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low 8. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc7:20160427230000</id>
+ <summary type="html">Cloudy periods. Low 7. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc5:20160428230000</id>
  </entry>
  <entry>
- <title>Sunday: Sunny. High 17.</title>
+ <title>Sunday: Sunny. High 18.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 17. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc8:20160427230000</id>
+ <summary type="html">Sunny. High 18. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc6:20160428230000</id>
  </entry>
  <entry>
- <title>Sunday night: Chance of showers. Low 8. POP 60%</title>
+ <title>Sunday night: Clear. Low 9.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. Low 8. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc9:20160427230000</id>
+ <summary type="html">Clear. Low 9. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc7:20160428230000</id>
  </entry>
  <entry>
- <title>Monday: Chance of showers. High 14. POP 60%</title>
+ <title>Monday: Chance of showers. High 20. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. High 14. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc10:20160427230000</id>
+ <summary type="html">Cloudy with 40 percent chance of showers. High 20. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc8:20160428230000</id>
  </entry>
  <entry>
- <title>Monday night: Chance of showers. Low 7. POP 60%</title>
+ <title>Monday night: Chance of showers. Low 8. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. Low 7. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc11:20160427230000</id>
+ <summary type="html">Cloudy periods with 40 percent chance of showers. Low 8. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc9:20160428230000</id>
  </entry>
  <entry>
- <title>Tuesday: Chance of showers. High 14. POP 30%</title>
+ <title>Tuesday: Chance of showers. High 13. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud with 30 percent chance of showers. High 14. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-17_fc12:20160427230000</id>
+ <summary type="html">A mix of sun and cloud with 30 percent chance of showers. High 13. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc10:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Tuesday night: Chance of showers. Low plus 5. POP 30%</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy periods with 30 percent chance of showers. Low plus 5. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc11:20160428230000</id>
+ </entry>
+ <entry>
+ <title>Wednesday: A mix of sun and cloud. High 14.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-17_metric_e.html"/>
+ <updated>2016-04-28T23:00:00Z</updated>
+ <published>2016-04-28T23:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. High 14. Forecast issued 4:00 PM PDT Thursday 28 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-17_fc12:20160428230000</id>
  </entry>
  </feed>
 

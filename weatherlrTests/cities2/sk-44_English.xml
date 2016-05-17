@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:33:51Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160428103351</id>
+ <updated>2016-04-29T11:12:20Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160429111220</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,137 +29,137 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:sk-44_w1:20160414173000</id>
  </entry>
  <entry>
- <title>Current Conditions: 0.2&#xB0;C</title>
+ <title>Current Conditions: 6.1&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Uranium City 04:00 AM CST Thursday 28 April 2016 <br/>
-<b>Temperature:</b> 0.2&deg;C <br/>
-<b>Pressure / Tendency:</b> 102.6 kPa rising<br/>
-<b>Humidity:</b> 90 %<br/>
-<b>Dewpoint:</b> -1.2&deg;C <br/>
-<b>Wind:</b> ENE 9 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Uranium City 05:00 AM CST Friday 29 April 2016 <br/>
+<b>Temperature:</b> 6.1&deg;C <br/>
+<b>Pressure / Tendency:</b> 101.9 kPa falling<br/>
+<b>Humidity:</b> 69 %<br/>
+<b>Dewpoint:</b> 0.9&deg;C <br/>
+<b>Wind:</b> ENE 10 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_cc:20160428100000</id>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Thursday: A mix of sun and cloud. High 13.</title>
+ <title>Friday: Cloudy. High 11.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. Fog patches dissipating this morning. High 13. UV index 5 or moderate. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc1:20160428110000</id>
+ <summary type="html">Cloudy. High 11. UV index 3 or moderate. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc1:20160429110000</id>
  </entry>
  <entry>
- <title>Thursday night: Partly cloudy. Low plus 3.</title>
+ <title>Friday night: Partly cloudy. Low plus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Partly cloudy. Becoming cloudy overnight. Low plus 3. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc2:20160428110000</id>
+ <summary type="html">Partly cloudy. Low plus 1. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc2:20160429110000</id>
  </entry>
  <entry>
- <title>Friday: Cloudy. High 13.</title>
+ <title>Saturday: A mix of sun and cloud. High 14.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. Wind becoming south 20 km/h gusting to 40 near noon. High 13. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc3:20160428110000</id>
+ <summary type="html">A mix of sun and cloud. High 14. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc3:20160429110000</id>
  </entry>
  <entry>
- <title>Friday night: Clear. Low plus 2.</title>
+ <title>Saturday night: Cloudy periods. Low minus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clearing. Low plus 2. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc4:20160428110000</id>
+ <summary type="html">Cloudy periods. Low minus 1. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc4:20160429110000</id>
  </entry>
  <entry>
- <title>Saturday: A mix of sun and cloud. High 16.</title>
+ <title>Sunday: Sunny. High 17.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Increasing cloudiness. High 16. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc5:20160428110000</id>
+ <summary type="html">Sunny. High 17. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc5:20160429110000</id>
  </entry>
  <entry>
- <title>Saturday night: Chance of showers. Low minus 3. POP 60%</title>
+ <title>Sunday night: Clear. Low plus 3.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. Low minus 3. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc6:20160428110000</id>
+ <summary type="html">Clear. Low plus 3. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc6:20160429110000</id>
  </entry>
  <entry>
- <title>Sunday: Sunny. High 14.</title>
+ <title>Monday: Sunny. High 15.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 14. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc7:20160428110000</id>
- </entry>
- <entry>
- <title>Sunday night: Clear. Low plus 1.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low plus 1. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc8:20160428110000</id>
- </entry>
- <entry>
- <title>Monday: Sunny. High 14.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 14. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc9:20160428110000</id>
+ <summary type="html">Sunny. High 15. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc7:20160429110000</id>
  </entry>
  <entry>
  <title>Monday night: Clear. Low plus 4.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low plus 4. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc10:20160428110000</id>
+ <summary type="html">Clear. Low plus 4. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc8:20160429110000</id>
  </entry>
  <entry>
  <title>Tuesday: Sunny. High 17.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 17. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc11:20160428110000</id>
+ <summary type="html">Sunny. High 17. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc9:20160429110000</id>
  </entry>
  <entry>
- <title>Tuesday night: Clear. Low 6.</title>
+ <title>Tuesday night: Clear. Low 8.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low 6. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc12:20160428110000</id>
+ <summary type="html">Clear. Low 8. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc10:20160429110000</id>
  </entry>
  <entry>
  <title>Wednesday: Sunny. High 19.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 19. Forecast issued 05:00 AM CST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-44_fc13:20160428110000</id>
+ <summary type="html">Sunny. High 19. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc11:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Wednesday night: Clear. Low plus 4.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Clear. Low plus 4. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc12:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Thursday: Sunny. High 15.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-44_metric_e.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Sunny. High 15. Forecast issued 05:00 AM CST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-44_fc13:20160429110000</id>
  </entry>
  </feed>
 

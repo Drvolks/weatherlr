@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Mildred Lake - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ab-33_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ab-33_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T21:07:29Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516210729</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR EN VIGUEUR, Mildred Lake</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?ab31"/>
+ <updated>2016-05-16T17:34:00Z</updated>
+ <published>2016-05-16T17:34:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 11h34 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_w1:201605161734</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 20,9&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T21:00:00Z</updated>
+ <published>2016-05-16T21:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Mildred Lake 15h00 HAR lundi 16 mai 2016 <br/>
+<b>Température:</b> 20,9&deg;C <br/>
+<b>Humidité:</b> 22 %<br/>
+<b>Point de rosée:</b> -1,4&deg;C <br/>
+<b>Vent:</b> SE 12 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_cc:20160516210000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Fumée. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Fumée généralisée. Vents du sud-ouest de 20 km/h avec rafales à 40. Maximum 25. Indice UV de 6 ou élevé. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc1:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Fumée. Minimum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Ennuagement après minuit. Fumée généralisée. Vents du sud-ouest de 20 km/h avec rafales à 40 devenant légers ce soir. Minimum 11. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc2:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Fumée. Maximum 26.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Fumée généralisée. Vents devenant d'ouest à 20 km/h en mi-journée. Maximum 26. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc3:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 12. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc4:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc5:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Nuageux. Minimum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum 13. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc6:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Nuageux. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 19. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc7:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc8:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc9:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 4. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc10:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 22. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc11:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc12:20160516170000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-33_metric_f.html"/>
+ <updated>2016-05-16T17:00:00Z</updated>
+ <published>2016-05-16T17:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 22. Prévisions émises 11h00 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-33_fc13:20160516170000</id>
+ </entry>
+ </feed>
+

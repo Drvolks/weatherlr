@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Kirkland Lake - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/on-76_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/on-76_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T15:00:55Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516150055</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Kirkland Lake</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-22T11:45:00Z</updated>
+ <published>2016-04-22T11:45:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_w1:20160422114500</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 5,5&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T15:00:00Z</updated>
+ <published>2016-05-16T15:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Kirkland Lake 11h00 HAE lundi 16 mai 2016 <br/>
+<b>Température:</b> 5,5&deg;C <br/>
+<b>Pression / Tendance:</b> 101,5 kPa à la hausse<br/>
+<b>Humidité:</b> 46 %<br/>
+<b>Point de rosée:</b> -5,2&deg;C <br/>
+<b>Vent:</b>   km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_cc:20160516150000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du nord-ouest à 20 km/h tard ce matin. Maximum 11. Indice UV de 6 ou élevé. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc1:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques nuages. Ennuagement après minuit. Vents du nord-ouest de 20 km/h devenant légers ce soir. Minimum zéro. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc2:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Généralement nuageux. Maximum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. Maximum 12. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc3:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc4:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc5:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc6:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 22. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc7:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc8:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 24.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 24. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc9:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 8. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 8. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc10:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 24. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 24. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc11:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 8. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc12:20160516093000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-16T09:30:00Z</updated>
+ <published>2016-05-16T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 05h30 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc13:20160516093000</id>
+ </entry>
+ </feed>
+

@@ -13,6 +13,8 @@ enum WeatherStatus {
     case AFewFlurries
     case AFewRainShowersOrFlurries
     case AFewShowers
+    case AFewShowersOrDrizzle
+    case AFewShowersOrThunderstorms
     case AMixOfSunAndCloud
     case Blizzard
     case BlowingSnow
@@ -20,6 +22,7 @@ enum WeatherStatus {
     case ChanceOfDrizzleMixedWithFreezingDrizzle
     case ChanceOfDrizzleOrRain
     case ChanceOfFlurries
+    case ChanceOfFreezingDrizzle
     case ChanceOfLightSnow
     case ChanceOfRainShowersOrFlurries
     case ChanceOfRainShowersOrWetFlurries
@@ -44,13 +47,16 @@ enum WeatherStatus {
     case FlurriesOrRainShowers
     case Fog
     case FogPatches
+    case FreezingDrizzle
     case FreezingDrizzleOrDrizzle
     case FreezingDrizzleOrRain
     case FreezingFog
+    case FreezingRain
     case FreezingRainMixedWithIcePellets
     case FreezingRainMixedWithSnow
     case FreezingRainOrSnow
     case Haze
+    case HeavyRainshower
     case HeavySnow
     case IceCrystals
     case IncreasingCloudiness
@@ -62,6 +68,8 @@ enum WeatherStatus {
     case LightRainshower
     case LightSnow
     case LightSnowAndBlowingSnow
+    case LightSnowMixedWithRain
+    case LightSnowOrRain
     case LightSnowshower
     case LightWetSnow
     case MainlyClear
@@ -73,6 +81,7 @@ enum WeatherStatus {
     case PeriodsOfDrizzle
     case PeriodsOfDrizzleMixedWithFreezingDrizzle
     case PeriodsOfDrizzleMixedWithRain
+    case PeriodsOfDrizzleOrFreezingDrizzle
     case PeriodsOfDrizzleOrRain
     case PeriodsOfFreezingDrizzle
     case PeriodsOfFreezingDrizzleOrDrizzle
@@ -83,6 +92,7 @@ enum WeatherStatus {
     case PeriodsOfLightSnow
     case PeriodsOfLightSnowOrFreezingRain
     case PeriodsOfLightSnowMixedWithFreezingDrizzle
+    case PeriodsOfLightSnowMixedWithRain
     case PeriodsOfRain
     case PeriodsOfRainMixedWithSnow
     case PeriodsOfRainOrDrizzle
@@ -92,7 +102,11 @@ enum WeatherStatus {
     case PeriodsOfSnowAndBlowingSnow
     case PeriodsOfSnowMixedWithFreezingRain
     case PeriodsOfSnowMixedWithRain
+    case PeriodsOfSnowMixedWithFreezingDrizzle
+    case PeriodsOfSnowOrFreezingDrizzle
     case PeriodsOfSnowOrRain
+    case PeriodsOfWetSnow
+    case PeriodsOfWetSnowOrRain
     case Precipitation
     case Rain
     case RainAtTimesHeavy
@@ -112,8 +126,11 @@ enum WeatherStatus {
     case SnowMixedWithFreezingDrizzle
     case SnowMixedWithIcePellets
     case SnowMixedWithRain
+    case SnowOrFreezingRain
     case SnowOrRain
     case Sunny
+    case Thunderstorm
+    case ThunderstormWithLightRainshowers
     case WetFlurries
     case WetSnow
     case Blank
@@ -169,4 +186,10 @@ enum Language: String {
     case English = "en"
     
     static let all = [French, English]
+}
+
+enum AlertType {
+    case Warning
+    case Ended
+    case None
 }

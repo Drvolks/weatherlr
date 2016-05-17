@@ -14,7 +14,7 @@ class TemperatureTests: XCTestCase {
     let testBundle = NSBundle(forClass: TemperatureTests.self)
 
     func testNoMissingTemperature1() {
-        noMissingTemperature("/cities")
+        noMissingTemperature("/cities1")
     }
     
     func testNoMissingTemperature2() {
@@ -47,6 +47,22 @@ class TemperatureTests: XCTestCase {
     
     func testNoMissingTemperature9() {
         noMissingTemperature("/cities9")
+    }
+    
+    func testNoMissingTemperature10() {
+        noMissingTemperature("/cities10")
+    }
+    
+    func testNoMissingTemperature11() {
+        noMissingTemperature("/cities11")
+    }
+    
+    func testNoMissingTemperature12() {
+        noMissingTemperature("/cities12")
+    }
+    
+    func testNoMissingTemperature13() {
+        noMissingTemperature("/cities13")
     }
     
     func noMissingTemperature(subPath: String) {

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Prévost - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-98_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-98_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T21:04:54Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516210454</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVIS DE GEL EN VIGUEUR, Prévost</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?qc62"/>
+ <updated>2016-05-16T19:18:00Z</updated>
+ <published>2016-05-16T19:18:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 15h18 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_w1:201605161918</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, 8,2&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T21:00:00Z</updated>
+ <published>2016-05-16T21:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport int. de Montréal-Mirabel 17h00 HAE lundi 16 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 8,2&deg;C <br/>
+<b>Pression / Tendance:</b> 101,4 kPa à la hausse<br/>
+<b>Visibilité:</b> 72,4 km<br/>
+<b>Humidité:</b> 49 %<br/>
+<b>Point de rosée:</b> -1,9&deg;C <br/>
+<b>Vent:</b> NO 21 km/h rafale 36 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_cc:20160516210000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum moins 2 avec gel. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Partiellement nuageux. 30 pour cent de probabilité d'averses tôt ce soir. Vents d'ouest de 20 km/h devenant légers ce soir. Minimum moins 2 avec gel. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc1:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Mardi: Possibilité d'averses de neige fondante ou de pluie. Maximum 11. PdP 40%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. 40 pour cent de probabilité d'averses de neige fondante le matin puis 40 pour cent de probabilité d'averses de pluie en après-midi. Vents devenant du nord-ouest à 20 km/h en mi-journée. Maximum 11. Indice UV de 5 ou modéré. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc2:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Partiellement nuageux. Minimum moins 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement en soirée. Minimum moins 2. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc3:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc4:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum zéro.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum zéro. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc5:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 19. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc6:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc7:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc8:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc9:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc10:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 10. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc11:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 24.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-98_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 24. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-98_fc12:20160516194500</id>
+ </entry>
+ </feed>
+

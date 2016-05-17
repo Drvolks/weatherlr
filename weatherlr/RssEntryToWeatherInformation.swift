@@ -11,7 +11,7 @@ import UIKit
 class RssEntryToWeatherInformation {
     var rssEntries:[RssEntry]
     var day:Int = 0
-    let alerts = "WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY|AVIS DE GEL|FROST ADVISORY"
+    let alerts = "WARNING|AVERTISSEMENT|BULLETIN MÉTÉOROLOGIQUE|WEATHER STATEMENT|BULLETIN SPÉCIAL SUR LA QUALITÉ DE L'AIR|SPECIAL AIR QUALITY STATEMENT|AVIS DE POUDRERIE|BLOWING SNOW ADVISORY|AVIS DE GEL|FROST ADVISORY|AVIS DE BROUILLARD|FOG ADVISORY"
     
     init(rssEntries: [RssEntry]) {
         self.rssEntries = rssEntries
@@ -27,7 +27,7 @@ class RssEntryToWeatherInformation {
         
         var debut = 0
         // l'entrée alerte est optionnelle et en plus on la retire si elle ne contient pas d'alerte
-        for i in debut..<rssEntries.count {
+        for i in 0..<rssEntries.count {
             if(isAlert(rssEntries[i].title)) {
                 debut = i+1
             } else {
@@ -43,6 +43,22 @@ class RssEntryToWeatherInformation {
             }
             
             result.append(weatherInformation)
+        }
+        
+        return result
+    }
+    
+    func getAlerts() -> [AlertInformation] {
+        var result = [AlertInformation]()
+        
+        for i in 0..<rssEntries.count {
+            if(isAlert(rssEntries[i].title)) {
+                let alert = convertAlert(rssEntries[i])
+                
+                if alert.type != AlertType.None && alert.type != AlertType.Ended {
+                    result.append(alert)
+                }
+            }
         }
         
         return result
@@ -89,14 +105,26 @@ class RssEntryToWeatherInformation {
         return result
     }
     
-    func convertAlert(rssEntry: RssEntry) -> AlertInformation? {
+    func convertAlert(rssEntry: RssEntry) -> AlertInformation {
         let alertText = extractAlertText(rssEntry.title)
         if !alertText.isEmpty {
-            let alert = AlertInformation(alertText: alertText, url: rssEntry.link)
-            return alert
+            let alertType = extractAlertType(alertText)
+            
+            return AlertInformation(alertText: alertText, url: rssEntry.link, type:alertType)
         }
         
-        return nil
+        return AlertInformation()
+    }
+    
+    func extractAlertType(alertText:String) -> AlertType {
+        let regex = try! NSRegularExpression(pattern: "(TERMINÉ|ENDED)$", options: [.CaseInsensitive])
+        let ended = performRegex(regex, text: alertText, index: 1)
+        
+        if !ended.isEmpty {
+            return AlertType.Ended
+        }
+        
+        return AlertType.Warning
     }
     
     func convertWeatherStatus(text: String) -> WeatherStatus {
@@ -313,6 +341,40 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.FreezingDrizzleOrRain
         case "pluie parfois forte ou bruine", "rain at times heavy or drizzle":
             return WeatherStatus.RainAtTimesHeavyOrDrizzle
+        case "faible neige intermittente mêlée de pluie", "periods of light snow mixed with rain":
+            return WeatherStatus.PeriodsOfLightSnowMixedWithRain
+        case "quelques averses ou bruine", "a few showers or drizzle":
+            return WeatherStatus.AFewShowersOrDrizzle
+        case "neige fondante intermittente ou pluie", "periods of wet snow or rain":
+            return WeatherStatus.PeriodsOfWetSnowOrRain
+        case "faible neige mêlée de pluie", "light snow mixed with rain":
+            return WeatherStatus.LightSnowMixedWithRain
+        case "bruine intermittente ou bruine verglaçante", "periods of drizzle or freezing drizzle":
+            return WeatherStatus.PeriodsOfDrizzleOrFreezingDrizzle
+        case "neige fondante intermittente", "periods of wet snow":
+            return WeatherStatus.PeriodsOfWetSnow
+        case "neige intermittente ou bruine verglaçante", "periods of snow or freezing drizzle":
+            return WeatherStatus.PeriodsOfSnowOrFreezingDrizzle
+        case "possibilité de bruine verglaçante", "chance of freezing drizzle":
+            return WeatherStatus.ChanceOfFreezingDrizzle
+        case "bruine verglaçante", "freezing drizzle":
+            return WeatherStatus.FreezingDrizzle
+        case "neige intermittente mêlée de bruine verglaçante", "periods of snow mixed with freezing drizzle":
+            return WeatherStatus.PeriodsOfSnowMixedWithFreezingDrizzle
+        case "faible neige ou pluie", "light snow or rain":
+            return WeatherStatus.LightSnowOrRain
+        case "pluie verglaçante", "freezing rain":
+            return WeatherStatus.FreezingRain
+        case "neige ou pluie verglaçante", "snow or freezing rain":
+            return WeatherStatus.SnowOrFreezingRain
+        case "forte averse de pluie", "heavy rainshower":
+            return WeatherStatus.HeavyRainshower
+        case "quelques averses ou orages", "a few showers or thunderstorms":
+            return WeatherStatus.AFewShowersOrThunderstorms
+        case "orage", "thunderstorm":
+            return WeatherStatus.Thunderstorm
+        case "orage avec averse de pluie", "thunderstorm with light rainshowers":
+            return WeatherStatus.ThunderstormWithLightRainshowers
         default:
             return convertWeatherStatusWithRegex(text)
         }

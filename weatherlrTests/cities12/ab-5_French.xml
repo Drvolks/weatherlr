@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Stettler - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/ab-5_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/ab-5_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T14:27:25Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516142725</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Stettler</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-05-05T05:30:00Z</updated>
+ <published>2016-05-05T05:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_w1:20160505053000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 10,4&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T14:00:00Z</updated>
+ <published>2016-05-16T14:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Stettler 08h00 HAR lundi 16 mai 2016 <br/>
+<b>Température:</b> 10,4&deg;C <br/>
+<b>Humidité:</b> 48 %<br/>
+<b>Point de rosée:</b> 0,0&deg;C <br/>
+<b>Vent:</b> S 20 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_cc:20160516140000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Brumeux ce matin. Vents du sud de 20 km/h augmentant à 40 avec rafales à 60 ce matin. Maximum 23. Indice UV de 6 ou élevé. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc1:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Ennuagement. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ennuagement ce soir. Vents du sud de 30 km/h avec rafales à 50 devenant légers vers minuit. Minimum 8. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc2:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Vents du nord-ouest de 20 km/h devenant légers en après-midi. Maximum 22. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc3:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc4:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Nuageux. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 23. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc5:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum 11. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 11. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc6:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Possibilité d'averses. Maximum 20. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 20. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc7:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Averses. Minimum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Minimum 11. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc8:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Averses. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Maximum 18. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc9:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 7. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 7. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc10:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 16. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc11:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Possibilité d'averses. Minimum 7. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 7. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc12:20160516124700</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Possibilité d'averses. Maximum 16. PdP 60%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/ab-5_metric_f.html"/>
+ <updated>2016-05-16T12:47:00Z</updated>
+ <published>2016-05-16T12:47:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 06h47 HAR lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:ab-5_fc13:20160516124700</id>
+ </entry>
+ </feed>
+

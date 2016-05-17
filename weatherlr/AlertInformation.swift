@@ -11,14 +11,17 @@ import Foundation
 class AlertInformation{
     var alertText:String
     var url:String
+    var type:AlertType
     
     init() {
         alertText = ""
         url = ""
+        type = AlertType.None
     }
     
-    init(alertText: String, url: String) {
+    init(alertText: String, url: String, type:AlertType) {
         self.alertText = alertText
         self.url = url
+        self.type = type
     }
 }

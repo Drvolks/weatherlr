@@ -1115,13 +1115,13 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         XCTAssertEqual(WeatherDay.Now, result)
         
         // Prévisions météo
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 0)
+        XCTAssertEqual(WeatherDay.Today, result)
+        result = performer.convertWeatherDay("Weather Forecasts", currentDay: 0)
+        XCTAssertEqual(WeatherDay.Today, result)
         result = performer.convertWeatherDay("Prévisions météo", currentDay: 1)
-        XCTAssertEqual(WeatherDay.Today, result)
-        result = performer.convertWeatherDay("Weather Forecasts", currentDay: 1)
-        XCTAssertEqual(WeatherDay.Today, result)
-        result = performer.convertWeatherDay("Prévisions météo", currentDay: 2)
         XCTAssertEqual(WeatherDay.Tomorow, result)
-        result = performer.convertWeatherDay("Prévisions météo", currentDay: 3)
+        result = performer.convertWeatherDay("Prévisions météo", currentDay: 2)
         XCTAssertEqual(WeatherDay.Day2, result)
         
         // Invalid data

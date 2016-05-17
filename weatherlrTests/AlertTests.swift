@@ -11,11 +11,11 @@ import XCTest
 
 class AlertTests: XCTestCase {
     let testBundle = NSBundle(forClass: AlertTests.self)
-    
+    /*
     func testFindAlerts1() {
         findAlert("/cities")
     }
-    
+    */
     func findAlert(subPath: String) {
         let fileManager = NSFileManager.defaultManager()
         let path = testBundle.resourcePath!

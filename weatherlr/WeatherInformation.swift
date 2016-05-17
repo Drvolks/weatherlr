@@ -177,7 +177,9 @@ class WeatherInformation {
              .ChanceOfLightSnow,
              .SnowAtTimesHeavy,
              .SnowGrains,
-             .SnowMixedWithIcePellets:
+             .SnowMixedWithIcePellets,
+             .IcePelletsOrSnow,
+             .SnowOrIcePellets:
             return WeatherColor.SnowDay
         case .Sunny,
              .PartlyCloudy,

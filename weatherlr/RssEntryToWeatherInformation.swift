@@ -325,7 +325,7 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.FreezingRainMixedWithIcePellets
         case "pluie verglaçante intermittente mêlée de grésil", "periods of freezing rain mixed with ice pellets":
             return WeatherStatus.PeriodsOfFreezingRainMixedWithIcePellets
-        case "possibilité d'averses ou orages", "chance of showers or thunderstorms":
+        case "possibilité d'averses ou orages", "chance of showers or thunderstorms", "chance of showers or thundershowers":
             return WeatherStatus.ChanceOfShowersOrThunderstorms
         case "possibilité d'averses de neige fondante ou de pluie", "chance of wet flurries or rain showers":
             return WeatherStatus.ChanceOfWetFlurriesOrRainShowers
@@ -377,6 +377,10 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.Thunderstorm
         case "orage avec averse de pluie", "thunderstorm with light rainshowers":
             return WeatherStatus.ThunderstormWithLightRainshowers
+        case "neige ou grésil", "snow or ice pellets":
+            return WeatherStatus.SnowOrIcePellets
+        case "grésil ou neige", "ice pellets or snow":
+            return WeatherStatus.IcePelletsOrSnow
         default:
             return convertWeatherStatusWithRegex(text)
         }

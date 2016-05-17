@@ -785,6 +785,8 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         XCTAssertEqual(WeatherStatus.ChanceOfShowersOrThunderstorms, result)
         result = performer.convertWeatherStatus("Chance of showers or thunderstorms")
         XCTAssertEqual(WeatherStatus.ChanceOfShowersOrThunderstorms, result)
+        result = performer.convertWeatherStatus("Chance of showers or thundershowers")
+        XCTAssertEqual(WeatherStatus.ChanceOfShowersOrThunderstorms, result)
         
         // ChanceOfWetFlurriesOrRainShowers
         result = performer.convertWeatherStatus("Possibilité d'averses de neige fondante ou de pluie")
@@ -935,6 +937,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         XCTAssertEqual(WeatherStatus.ThunderstormWithLightRainshowers, result)
         result = performer.convertWeatherStatus("Thunderstorm with light rainshowers")
         XCTAssertEqual(WeatherStatus.ThunderstormWithLightRainshowers, result)
+        
+        // SnowOrIcePellets
+        result = performer.convertWeatherStatus("Neige ou grésil")
+        XCTAssertEqual(WeatherStatus.SnowOrIcePellets, result)
+        result = performer.convertWeatherStatus("Snow or ice pellets")
+        XCTAssertEqual(WeatherStatus.SnowOrIcePellets, result)
+        
+        // IcePelletsOrSnow
+        result = performer.convertWeatherStatus("Grésil ou neige")
+        XCTAssertEqual(WeatherStatus.IcePelletsOrSnow, result)
+        result = performer.convertWeatherStatus("Ice pellets or snow")
+        XCTAssertEqual(WeatherStatus.IcePelletsOrSnow, result)
         
         
         

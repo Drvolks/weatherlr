@@ -155,6 +155,9 @@ class WeatherHelper {
              .Thunderstorm,
              .ThunderstormWithLightRainshowers:
             return WeatherStatus.ChanceOfShowersOrThunderstorms
+        case .SnowOrIcePellets,
+             .IcePelletsOrSnow:
+            return WeatherStatus.SnowMixedWithIcePellets
         default:
             return nil
         }

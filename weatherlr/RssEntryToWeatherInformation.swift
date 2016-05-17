@@ -98,7 +98,7 @@ class RssEntryToWeatherInformation {
 
         let result = WeatherInformation(temperature: temperature, weatherStatus: weatherStatus, weatherDay: weatherDay, summary: rssEntry.title, detail: detail, tendancy: tendendy, when: when, night: night)
         
-        if(!night || weatherDay == WeatherDay.Today) {
+        if(weatherDay != WeatherDay.Now && (!night || weatherDay == WeatherDay.Today)) {
             day = day + 1
         }
         

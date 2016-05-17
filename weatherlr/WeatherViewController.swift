@@ -204,7 +204,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.whenLabel.text = weatherInfo.when
             } else {
                 let today = NSDate()
-                let theDate = addDaystoGivenDate(today, NumberOfDaysToAdd: weatherInfo.weatherDay.rawValue - 1)
+                let theDate = addDaystoGivenDate(today, NumberOfDaysToAdd: weatherInfo.weatherDay.rawValue)
                 let dateFormatter = NSDateFormatter()
                 let lang = PreferenceHelper.getLanguage()
                 dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
@@ -267,26 +267,35 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             if weatherInformationWrapper.weatherInformations.count > 0 {
                 var weatherInfo = weatherInformationWrapper.weatherInformations[0]
-                header.currentTemperatureLabel.text = String(weatherInfo.temperature)
                 
-                if(weatherInfo.weatherStatus == .Blank) {
-                    header.weatherImage.hidden = true
-                } else {
-                    header.weatherImage.image = weatherInfo.image()
-                    header.weatherImage.hidden = false
-                }
-                
-                if weatherInformationWrapper.weatherInformations.count > 1 {
-                    weatherInfo = weatherInformationWrapper.weatherInformations[1]
+                if weatherInfo.weatherDay == WeatherDay.Now {
+                    header.currentTemperatureLabel.hidden = false
+                    header.currentTemperatureLabel.text = String(weatherInfo.temperature)
                     
-                    header.temperatureLabel.hidden = false
-                    header.temperatureImage.hidden = false
-                    header.temperatureLabel.text = String(weatherInfo.temperature)
-                    header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
+                    if(weatherInfo.weatherStatus == .Blank) {
+                        header.weatherImage.hidden = true
+                    } else {
+                        header.weatherImage.image = weatherInfo.image()
+                        header.weatherImage.hidden = false
+                    }
+                    
+                    if weatherInformationWrapper.weatherInformations.count > 1 {
+                        weatherInfo = weatherInformationWrapper.weatherInformations[1]
+                        
+                        header.temperatureLabel.hidden = false
+                        header.temperatureImage.hidden = false
+                        header.temperatureLabel.text = String(weatherInfo.temperature)
+                        header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
+                    } else {
+                        header.temperatureLabel.text = ""
+                        header.temperatureLabel.hidden = true
+                        header.temperatureImage.hidden = true
+                    }
                 } else {
-                    header.temperatureLabel.text = ""
                     header.temperatureLabel.hidden = true
                     header.temperatureImage.hidden = true
+                    header.weatherImage.hidden = true
+                    header.currentTemperatureLabel.hidden = true
                 }
             }
         }

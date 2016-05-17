@@ -163,7 +163,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             warningBarButton.tintColor = UIColor.clearColor()
         }
         
-        if !selectedCity!.radarId.isEmpty {
+        if selectedCity != nil && !selectedCity!.radarId.isEmpty {
             radarButton.enabled = true
             radarButton.tintColor = nil
         } else {

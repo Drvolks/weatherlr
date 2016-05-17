@@ -39,7 +39,9 @@ class RssEntryToWeatherInformation {
             let weatherInformation = convert(rssEntries[i])
             
             if weatherInformation.weatherDay == WeatherDay.Today && weatherInformation.night {
-                result[result.count-1].night = true
+                if result.count > 0 && result[result.count-1].weatherDay == WeatherDay.Now {
+                    result[result.count-1].night = true
+                }
             }
             
             result.append(weatherInformation)

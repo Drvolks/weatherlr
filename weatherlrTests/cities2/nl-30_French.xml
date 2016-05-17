@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:06:08Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160428100608</id>
+ <updated>2016-04-29T11:06:45Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110645</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,137 +29,137 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nl-30_w1:20160427091500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: 0,9&#xB0;C</title>
+ <title>Conditions actuelles: 1,8&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Argentia 07h30 HAT jeudi 28 avril 2016 <br/>
-<b>Température:</b> 0,9&deg;C <br/>
-<b>Pression / Tendance:</b> 100,9 kPa à la baisse<br/>
-<b>Humidité:</b> 91 %<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Argentia 08h30 HAT vendredi 29 avril 2016 <br/>
+<b>Température:</b> 1,8&deg;C <br/>
+<b>Pression / Tendance:</b> 101,1 kPa à la hausse<br/>
+<b>Humidité:</b> 86 %<br/>
 <b>Point de rosée:</b> -0,3&deg;C <br/>
-<b>Vent:</b> ENE 6 km/h<br/>
+<b>Vent:</b> O 16 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_cc:20160428100000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses. Maximum plus 4 sauf 7 à l'intérieur des terres. PdP 40%</title>
+ <title>Vendredi: Possibilité d'averses de pluie ou de neige. Maximum plus 3 sauf 6 à l'intérieur des terres. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ennuagement. 40 pour cent de probabilité d'averses cet après-midi. Vents devenant du sud-ouest à 30 km/h avec rafales à 50 tôt cet après-midi. Maximum plus 4 sauf 7 à l'intérieur des terres. Indice UV de 4 ou modéré. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc1:20160428080000</id>
+ <summary type="html">Généralement nuageux avec 60 pour cent de probabilité d'averses de pluie ou de neige ce matin. Dégagement en mi-journée. Vents du sud-ouest de 40 km/h avec rafales à 60. Maximum plus 3 sauf 6 à l'intérieur des terres. Indice UV de 5 ou modéré. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc1:20160429080000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Possibilité d'averses de pluie ou de neige. Minimum moins 1. PdP 60%</title>
+ <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses de pluie ou de neige se changeant en 60 pour cent de probabilité d'averses de neige vers minuit. Vents du sud-ouest de 30 km/h avec rafales à 50 devenant d'ouest à 40 avec rafales à 60 ce soir. Minimum moins 1. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc2:20160428080000</id>
+ <summary type="html">Quelques nuages. Vents du sud-ouest de 40 km/h avec rafales à 60. Minimum moins 1. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc2:20160429080000</id>
  </entry>
  <entry>
- <title>Vendredi: Alternance de soleil et de nuages. Maximum plus 4.</title>
+ <title>Samedi: Généralement ensoleillé. Maximum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Vents d'ouest de 30 km/h avec rafales à 50 devenant du sud-ouest à 40 avec rafales à 60 en mi-journée. Maximum plus 4. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc3:20160428080000</id>
+ <summary type="html">Ensoleillé. Devenant alternance de soleil et de nuages en mi-journée. Vents d'ouest de 50 km/h avec rafales à 70 diminuant à 30 avec rafales à 50 en mi-journée. Maximum 6. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc3:20160429080000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc4:20160428080000</id>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc4:20160429080000</id>
  </entry>
  <entry>
- <title>Samedi: Alternance de soleil et de nuages. Maximum 8.</title>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 8. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc5:20160428080000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 8. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc5:20160429080000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc6:20160428080000</id>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc6:20160429080000</id>
  </entry>
  <entry>
- <title>Dimanche: Alternance de soleil et de nuages. Maximum 9.</title>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc7:20160428080000</id>
- </entry>
- <entry>
- <title>Dimanche soir et nuit: Passages nuageux. Minimum moins 1.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc8:20160428080000</id>
- </entry>
- <entry>
- <title>Lundi: Alternance de soleil et de nuages. Maximum 9.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc9:20160428080000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 8. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc7:20160429080000</id>
  </entry>
  <entry>
  <title>Lundi soir et nuit: Passages nuageux. Minimum plus 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc10:20160428080000</id>
+ <summary type="html">Ennuagement. Minimum plus 1. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc8:20160429080000</id>
  </entry>
  <entry>
- <title>Mardi: Pluie intermittente. Maximum 6.</title>
+ <title>Mardi: Pluie intermittente. Maximum plus 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie intermittente. Maximum 6. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc11:20160428080000</id>
+ <summary type="html">Pluie intermittente. Maximum plus 5. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc9:20160429080000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Pluie. Minimum plus 4.</title>
+ <title>Mardi soir et nuit: Pluie intermittente. Minimum plus 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie. Minimum plus 4. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc12:20160428080000</id>
+ <summary type="html">Pluie intermittente. Minimum plus 4. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc10:20160429080000</id>
  </entry>
  <entry>
  <title>Mercredi: Pluie intermittente. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
- <updated>2016-04-28T08:00:00Z</updated>
- <published>2016-04-28T08:00:00Z</published>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie intermittente. Maximum 9. Prévisions émises 05h30 HAT jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc13:20160428080000</id>
+ <summary type="html">Pluie intermittente. Maximum 9. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc11:20160429080000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc12:20160429080000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-30_metric_f.html"/>
+ <updated>2016-04-29T08:00:00Z</updated>
+ <published>2016-04-29T08:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 10. Prévisions émises 05h30 HAT vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-30_fc13:20160429080000</id>
  </entry>
  </feed>
 

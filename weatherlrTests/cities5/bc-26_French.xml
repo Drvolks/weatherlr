@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-02T11:05:03Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160502110503</id>
+ <updated>2016-05-08T18:02:32Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508180232</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,137 +29,138 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:bc-26_w1:20151208010000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: 10,2&#xB0;C</title>
+ <title>Conditions actuelles: 20,9&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Creston 04h00 HNR lundi 02 mai 2016 <br/>
-<b>Température:</b> 10,2&deg;C <br/>
-<b>Pression / Tendance:</b> 102,1 kPa à la hausse<br/>
-<b>Humidité:</b> 59 %<br/>
-<b>Point de rosée:</b> 2,6&deg;C <br/>
-<b>Vent:</b> N 5 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Creston 11h00 HNR dimanche 08 mai 2016 <br/>
+<b>Température:</b> 20,9&deg;C <br/>
+<b>Pression / Tendance:</b> 100,1 kPa à la baisse<br/>
+<b>Humidité:</b> 56 %<br/>
+<b>Humidex:</b> 23 <br/>
+<b>Point de rosée:</b> 11,8&deg;C <br/>
+<b>Vent:</b> NO 12 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_cc:20160502110000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_cc:20160508180000</id>
  </entry>
  <entry>
- <title>Lundi: Ensoleillé. Maximum 25.</title>
+ <title>Dimanche: Possibilité d'averses. Maximum 24. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 25. Indice UV de 6 ou élevé. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc1:20160502110000</id>
+ <summary type="html">Ensoleillé en mi-journée. Devenant alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses tard cet après-midi. Risque d'orages sur le secteur sud tard cet après-midi. Vents devenant du nord-ouest à 20 km/h cet après-midi. Maximum 24. Indice UV de 7 ou élevé. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc1:20160508170000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Dégagé. Minimum 10.</title>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum 8. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 10. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc2:20160502110000</id>
+ <summary type="html">Généralement nuageux. 30 pour cent de probabilité d'averses ce soir. Pluie intermittente débutant vers minuit. Risque d'orages sur le secteur sud tôt ce soir. Niveau d'enneigement descendant à 1600 mètres au cours de la nuit. Vents du nord-ouest de 20 km/h devenant légers ce soir. Minimum 8. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc2:20160508170000</id>
  </entry>
  <entry>
- <title>Mardi: Généralement ensoleillé. Maximum 27.</title>
+ <title>Lundi: Possibilité d'averses. Maximum 15. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement ensoleillé. Maximum 27. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc3:20160502110000</id>
+ <summary type="html">Pluie intermittente cessant le matin. Nuageux par la suite avec 60 pour cent de probabilité d'averses. Risque d'un orage en après-midi. Niveau d'enneigement 1600 mètres montant à 1900 mètres le matin. Maximum 15. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc3:20160508170000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Dégagé. Minimum 13.</title>
+ <title>Lundi soir et nuit: Possibilité d'averses. Minimum 6. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 13. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc4:20160502110000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 6. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc4:20160508170000</id>
  </entry>
  <entry>
- <title>Mercredi: Ensoleillé. Maximum 26.</title>
+ <title>Mardi: Ensoleillé. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 26. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc5:20160502110000</id>
+ <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc5:20160508170000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Passages nuageux. Minimum 15.</title>
+ <title>Mardi soir et nuit: Dégagé. Minimum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum 15. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc6:20160502110000</id>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc6:20160508170000</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses. Maximum 21. PdP 60%</title>
+ <title>Mercredi: Possibilité d'averses. Maximum 18. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 21. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc7:20160502110000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 18. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc7:20160508170000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 11. PdP 60%</title>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum 9. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 11. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc8:20160502110000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 9. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc8:20160508170000</id>
  </entry>
  <entry>
- <title>Vendredi: Alternance de soleil et de nuages. Maximum 25.</title>
+ <title>Jeudi: Possibilité d'averses. Maximum 23. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 25. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc9:20160502110000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 23. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc9:20160508170000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Dégagé. Minimum 8.</title>
+ <title>Jeudi soir et nuit: Nuageux. Minimum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 8. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc10:20160502110000</id>
+ <summary type="html">Nuageux. Minimum 6. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc10:20160508170000</id>
  </entry>
  <entry>
- <title>Samedi: Ensoleillé. Maximum 29.</title>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 21.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 29. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc11:20160502110000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 21. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc11:20160508170000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Dégagé. Minimum 9.</title>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 9. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc12:20160502110000</id>
+ <summary type="html">Passages nuageux. Minimum 7. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc12:20160508170000</id>
  </entry>
  <entry>
- <title>Dimanche: Ensoleillé. Maximum 30.</title>
+ <title>Samedi: Ensoleillé. Maximum 23.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-26_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T17:00:00Z</updated>
+ <published>2016-05-08T17:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 30. Prévisions émises 05h00 HNR lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc13:20160502110000</id>
+ <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 11h00 HNR dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-26_fc13:20160508170000</id>
  </entry>
  </feed>
 

@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-29T11:03:29Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160429110329</id>
+ <updated>2016-05-02T11:03:56Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160502110356</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,138 +29,137 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:qc-72_w1:20160406101500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: -5,3&#xB0;C</title>
+ <title>Conditions actuelles: 4,3&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T11:00:00Z</updated>
- <published>2016-04-29T11:00:00Z</published>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Beauceville 07h00 HAE vendredi 29 avril 2016 <br/>
-<b>Température:</b> -5,3&deg;C <br/>
-<b>Pression / Tendance:</b> 102,3 kPa à la hausse<br/>
-<b>Humidité:</b> 77 %<br/>
-<b>Refroidissement éolien:</b> -7 <br/>
-<b>Point de rosée:</b> -8,7&deg;C <br/>
-<b>Vent:</b> ESE 3 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Beauceville 07h00 HAE lundi 02 mai 2016 <br/>
+<b>Température:</b> 4,3&deg;C <br/>
+<b>Pression / Tendance:</b> 101,9 kPa à la hausse<br/>
+<b>Humidité:</b> 94 %<br/>
+<b>Point de rosée:</b> 3,5&deg;C <br/>
+<b>Vent:</b> SSE 11 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_cc:20160429110000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_cc:20160502110000</id>
  </entry>
  <entry>
- <title>Vendredi: Ensoleillé. Maximum 9.</title>
+ <title>Lundi: Pluie ou bruine. Maximum 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 9. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc1:20160429090000</id>
+ <summary type="html">Pluie ou bruine intermittente. Maximum 8. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc1:20160502090000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 4.</title>
+ <title>Ce soir et cette nuit: Pluie ou bruine. Minimum plus 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Quelques nuages. Minimum moins 4. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc2:20160429090000</id>
+ <summary type="html">Pluie ou bruine intermittente. Minimum plus 4. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc2:20160502090000</id>
  </entry>
  <entry>
- <title>Samedi: Ensoleillé. Maximum 13.</title>
+ <title>Mardi: Généralement nuageux. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 13. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc3:20160429090000</id>
+ <summary type="html">Généralement nuageux. Maximum 14. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc3:20160502090000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Passages nuageux. Minimum moins 2.</title>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum moins 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 2. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc4:20160429090000</id>
+ <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc4:20160502090000</id>
  </entry>
  <entry>
- <title>Dimanche: Pluie intermittente. Maximum 10.</title>
+ <title>Mercredi: Possibilité d'averses. Maximum 16. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie intermittente. Maximum 10. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc5:20160429090000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc5:20160502090000</id>
  </entry>
  <entry>
- <title>Dimanche soir et nuit: Pluie. Minimum plus 2.</title>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum plus 3. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie. Minimum plus 2. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc6:20160429090000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 3. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc6:20160502090000</id>
  </entry>
  <entry>
- <title>Lundi: Pluie intermittente. Maximum 9.</title>
+ <title>Jeudi: Nuageux. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie intermittente. Maximum 9. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc7:20160429090000</id>
+ <summary type="html">Nuageux. Maximum 14. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc7:20160502090000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Pluie intermittente. Minimum plus 3.</title>
+ <title>Jeudi soir et nuit: Nuageux. Minimum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie intermittente. Minimum plus 3. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc8:20160429090000</id>
+ <summary type="html">Nuageux. Minimum plus 3. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc8:20160502090000</id>
  </entry>
  <entry>
- <title>Mardi: Pluie intermittente. Maximum 14.</title>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 19.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie intermittente. Maximum 14. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc9:20160429090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 19. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc9:20160502090000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Possibilité d'averses. Minimum plus 4. PdP 60%</title>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum plus 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 4. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc10:20160429090000</id>
+ <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc10:20160502090000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses. Maximum 14. PdP 60%</title>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 18.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 14. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc11:20160429090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc11:20160502090000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Possibilité d'averses. Minimum plus 4. PdP 60%</title>
+ <title>Samedi soir et nuit: Possibilité d'averses. Minimum 7. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum plus 4. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc12:20160429090000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 7. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc12:20160502090000</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses. Maximum 15. PdP 60%</title>
+ <title>Dimanche: Possibilité d'averses. Maximum 18. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-72_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 15. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc13:20160429090000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 18. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-72_fc13:20160502090000</id>
  </entry>
  </feed>
 

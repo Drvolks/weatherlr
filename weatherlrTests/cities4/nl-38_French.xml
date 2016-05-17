@@ -14,152 +14,161 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-01T12:07:31Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160501120731</id>
+ <updated>2016-05-08T14:22:22Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508142222</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
  <entry>
- <title>Aucune veille ou alerte en vigueur, Hopedale</title>
- <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
- <updated>2016-04-30T11:30:00Z</updated>
- <published>2016-04-30T11:30:00Z</published>
+ <title>AVERTISSEMENT DE PLUIE VERGLAÇANTE EN VIGUEUR, Hopedale</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?nl34"/>
+ <updated>2016-05-08T14:17:00Z</updated>
+ <published>2016-05-08T14:17:00Z</published>
  <category term="Veilles et avertissements"/>
- <summary type="html">Aucune veille ou alerte en vigueur.</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_w1:20160430113000</id>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émis à: 11h17 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_w1:201605081417</id>
  </entry>
  <entry>
- <title>Conditions actuelles: 0,8&#xB0;C</title>
+ <title>BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR, Hopedale</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?nl34"/>
+ <updated>2016-05-08T14:17:00Z</updated>
+ <published>2016-05-08T14:17:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 11h17 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_w2:201605081417</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 8,7&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Hopedale 09h00 HAA dimanche 01 mai 2016 <br/>
-<b>Température:</b> 0,8&deg;C <br/>
-<b>Pression / Tendance:</b> 102,5 kPa à la hausse<br/>
-<b>Humidité:</b> 92 %<br/>
-<b>Point de rosée:</b> -0,3&deg;C <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Hopedale 11h00 HAA dimanche 08 mai 2016 <br/>
+<b>Température:</b> 8,7&deg;C <br/>
+<b>Pression / Tendance:</b> 100,4 kPa à la baisse<br/>
+<b>Humidité:</b> 59 %<br/>
+<b>Point de rosée:</b> 1,2&deg;C <br/>
 <b>Vent:</b>   km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_cc:20160501120000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_cc:20160508140000</id>
  </entry>
  <entry>
- <title>Dimanche: Possibilité d'averses de neige ou de pluie. Maximum plus 4. PdP 40%</title>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. 40 pour cent de probabilité d'averses de neige ou de pluie cet après-midi. Maximum plus 4. Indice UV de 5 ou modéré. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc1:20160501083000</id>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du nord à 20 km/h cet après-midi. Maximum 8. Indice UV de 6 ou élevé. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc1:20160508140000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 40%</title>
+ <title>Ce soir et cette nuit: Pluie verglaçante mêlée de neige. Minimum moins 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Partiellement nuageux avec 40 pour cent de probabilité d'averses de neige. Minimum moins 4. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc2:20160501083000</id>
+ <summary type="html">Devenant nuageux ce soir suivi de pluie verglaçante. Pluie verglaçante mêlée de neige au cours de la nuit. Vents du nord de 30 km/h avec rafales à 50. Minimum moins 1. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc2:20160508140000</id>
  </entry>
  <entry>
- <title>Lundi: Alternance de soleil et de nuages. Maximum plus 1.</title>
+ <title>Lundi: Averses de pluie ou de neige. Maximum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum plus 1. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc3:20160501083000</id>
+ <summary type="html">Pluie verglaçante se changeant en quelques averses de pluie ou de neige le matin puis en neige parfois mêlée de pluie tard en après-midi. Vents du nord de 20 km/h avec rafales à 40. Maximum plus 3. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc3:20160508140000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Dégagé. Minimum moins 4.</title>
+ <title>Lundi soir et nuit: Neige intermittente. Minimum moins 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum moins 4. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc4:20160501083000</id>
+ <summary type="html">Neige intermittente. Minimum moins 2. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc4:20160508140000</id>
  </entry>
  <entry>
- <title>Mardi: Alternance de soleil et de nuages. Maximum plus 5.</title>
+ <title>Mardi: Neige intermittente. Maximum plus 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum plus 5. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc5:20160501083000</id>
+ <summary type="html">Neige intermittente. Maximum plus 1. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc5:20160508140000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Possibilité d'averses de neige ou de pluie. Minimum plus 1. PdP 60%</title>
+ <title>Mardi soir et nuit: Averses de neige. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige ou de pluie. Minimum plus 1. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc6:20160501083000</id>
+ <summary type="html">Averses de neige. Minimum zéro. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc6:20160508140000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses de neige. Maximum plus 4. PdP 40%</title>
+ <title>Mercredi: Averses de neige. Maximum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 40 pour cent de probabilité d'averses de neige. Maximum plus 4. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc7:20160501083000</id>
+ <summary type="html">Averses de neige. Maximum plus 3. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc7:20160508140000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Passages nuageux. Minimum plus 1.</title>
+ <title>Mercredi soir et nuit: Possibilité d'averses de neige. Minimum moins 4. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc8:20160501083000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Minimum moins 4. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc8:20160508140000</id>
  </entry>
  <entry>
- <title>Jeudi: Alternance de soleil et de nuages. Maximum plus 5.</title>
+ <title>Jeudi: Nuageux. Maximum plus 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum plus 5. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc9:20160501083000</id>
+ <summary type="html">Nuageux. Maximum plus 4. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc9:20160508140000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum moins 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc10:20160501083000</id>
+ <summary type="html">Passages nuageux. Minimum moins 2. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc10:20160508140000</id>
  </entry>
  <entry>
- <title>Vendredi: Alternance de soleil et de nuages. Maximum plus 3.</title>
+ <title>Vendredi: Nuageux. Maximum plus 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum plus 3. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc11:20160501083000</id>
+ <summary type="html">Nuageux. Maximum plus 2. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc11:20160508140000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <title>Vendredi soir et nuit: Nuageux. Minimum moins 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc12:20160501083000</id>
+ <summary type="html">Nuageux. Minimum moins 1. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc12:20160508140000</id>
  </entry>
  <entry>
- <title>Samedi: Alternance de soleil et de nuages. Maximum plus 4.</title>
+ <title>Samedi: Nuageux. Maximum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-38_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum plus 4. Prévisions émises 06h00 HAA dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc13:20160501083000</id>
+ <summary type="html">Nuageux. Maximum plus 3. Prévisions émises 11h30 HAA dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-38_fc13:20160508140000</id>
  </entry>
  </feed>
 

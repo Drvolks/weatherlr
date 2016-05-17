@@ -32,38 +32,6 @@ class WeatherStatusTests: XCTestCase {
         noMissingStatus("/cities5")
     }
     
-    func testNoMissingStatus6() {
-        noMissingStatus("/cities6")
-    }
-    
-    func testNoMissingStatus7() {
-        noMissingStatus("/cities7")
-    }
-    
-    func testNoMissingStatus8() {
-        noMissingStatus("/cities8")
-    }
-    
-    func testNoMissingStatus9() {
-        noMissingStatus("/cities9")
-    }
-    
-    func testNoMissingStatus10() {
-        noMissingStatus("/cities10")
-    }
-    
-    func testNoMissingStatus11() {
-        noMissingStatus("/cities11")
-    }
-    
-    func testNoMissingStatus12() {
-        noMissingStatus("/cities12")
-    }
-    
-    func testNoMissingStatus13() {
-        noMissingStatus("/cities13")
-    }
-    
     func noMissingStatus(subPath: String) {
         let fileManager = NSFileManager.defaultManager()
         let path = testBundle.resourcePath!

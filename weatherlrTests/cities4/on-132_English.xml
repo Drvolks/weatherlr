@@ -14,155 +14,154 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-01T12:02:28Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160501120228</id>
+ <updated>2016-05-08T15:05:28Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508150528</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
  <entry>
  <title>No watches or warnings in effect, Webequie</title>
  <link type="text/html" href="http://www.weather.gc.ca/warnings/index_e.html"/>
- <updated>2016-04-16T20:45:00Z</updated>
- <published>2016-04-16T20:45:00Z</published>
+ <updated>2016-05-06T21:00:00Z</updated>
+ <published>2016-05-06T21:00:00Z</published>
  <category term="Warnings and Watches"/>
  <summary type="html">No watches or warnings in effect.</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_w1:20160416204500</id>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_w1:20160506210000</id>
  </entry>
  <entry>
- <title>Current Conditions: Sunny, -1.2&#xB0;C</title>
+ <title>Current Conditions: Cloudy, 0.2&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Lansdowne House Airport 08:00 AM EDT Sunday 01 May 2016 <br/>
-<b>Condition:</b> Sunny <br/>
-<b>Temperature:</b> -1.2&deg;C <br/>
-<b>Pressure:</b> 102.9 kPa <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Lansdowne House Airport 11:00 AM EDT Sunday 08 May 2016 <br/>
+<b>Condition:</b> Cloudy <br/>
+<b>Temperature:</b> 0.2&deg;C <br/>
+<b>Pressure:</b> 101.7 kPa <br/>
 <b>Visibility:</b> 16.1 km<br/>
-<b>Humidity:</b> 91 %<br/>
-<b>Wind Chill:</b> -3 <br/>
-<b>Dewpoint:</b> -2.4&deg;C <br/>
-<b>Wind:</b> ENE 4 km/h<br/>
+<b>Humidity:</b> 67 %<br/>
+<b>Dewpoint:</b> -5.3&deg;C <br/>
+<b>Wind:</b> NW 13 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_cc:20160501120000</id>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_cc:20160508150000</id>
  </entry>
  <entry>
- <title>Sunday: A mix of sun and cloud. High 11.</title>
+ <title>Sunday: Chance of flurries. High 7. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 11. UV index 5 or moderate. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc1:20160501093000</id>
+ <summary type="html">Mainly cloudy. 40 percent chance of flurries this morning. High 7. UV index 5 or moderate. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc1:20160508093000</id>
  </entry>
  <entry>
- <title>Sunday night: Partly cloudy. Low minus 1.</title>
+ <title>Sunday night: A few clouds. Low minus 4.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Partly cloudy. Low minus 1. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc2:20160501093000</id>
+ <summary type="html">A few clouds. Low minus 4. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc2:20160508093000</id>
  </entry>
  <entry>
- <title>Monday: Chance of showers. High 16. POP 40%</title>
+ <title>Monday: Mainly sunny. High 15.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. Becoming cloudy in the afternoon with 40 percent chance of showers late in the afternoon. Wind becoming southwest 20 km/h late in the morning. High 16. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc3:20160501093000</id>
+ <summary type="html">Mainly sunny. Wind becoming south 20 km/h near noon. High 15. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc3:20160508093000</id>
  </entry>
  <entry>
- <title>Monday night: Cloudy periods. Low plus 3.</title>
+ <title>Monday night: Clear. Low plus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low plus 3. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc4:20160501093000</id>
+ <summary type="html">Clear. Low plus 2. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc4:20160508093000</id>
  </entry>
  <entry>
- <title>Tuesday: Chance of showers. High 9. POP 60%</title>
+ <title>Tuesday: A mix of sun and cloud. High 20.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. High 9. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc5:20160501093000</id>
+ <summary type="html">A mix of sun and cloud. High 20. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc5:20160508093000</id>
  </entry>
  <entry>
- <title>Tuesday night: Chance of rain showers or flurries. Low minus 6. POP 40%</title>
+ <title>Tuesday night: Cloudy periods. Low plus 5.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 40 percent chance of rain showers or flurries. Low minus 6. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc6:20160501093000</id>
+ <summary type="html">Cloudy periods. Low plus 5. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc6:20160508093000</id>
  </entry>
  <entry>
- <title>Wednesday: A mix of sun and cloud. High 7.</title>
+ <title>Wednesday: A mix of sun and cloud. High 20.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 7. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc7:20160501093000</id>
+ <summary type="html">A mix of sun and cloud. High 20. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc7:20160508093000</id>
  </entry>
  <entry>
- <title>Wednesday night: Cloudy periods. Low minus 7.</title>
+ <title>Wednesday night: Cloudy periods. Low 7.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 7. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc8:20160501093000</id>
+ <summary type="html">Cloudy periods. Low 7. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc8:20160508093000</id>
  </entry>
  <entry>
- <title>Thursday: A mix of sun and cloud. High 13.</title>
+ <title>Thursday: Chance of showers. High 21. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 13. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc9:20160501093000</id>
+ <summary type="html">A mix of sun and cloud with 30 percent chance of showers. High 21. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc9:20160508093000</id>
  </entry>
  <entry>
- <title>Thursday night: Cloudy periods. Low plus 2.</title>
+ <title>Thursday night: Chance of showers. Low plus 3. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low plus 2. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc10:20160501093000</id>
+ <summary type="html">Cloudy with 40 percent chance of showers. Low plus 3. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc10:20160508093000</id>
  </entry>
  <entry>
- <title>Friday: A mix of sun and cloud. High 20.</title>
+ <title>Friday: Chance of showers. High 8. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 20. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc11:20160501093000</id>
+ <summary type="html">Cloudy with 40 percent chance of showers. High 8. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc11:20160508093000</id>
  </entry>
  <entry>
- <title>Friday night: Cloudy periods. Low plus 4.</title>
+ <title>Friday night: Chance of showers. Low minus 1. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low plus 4. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc12:20160501093000</id>
+ <summary type="html">Cloudy with 40 percent chance of showers. Low minus 1. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc12:20160508093000</id>
  </entry>
  <entry>
- <title>Saturday: A mix of sun and cloud. High 17.</title>
+ <title>Saturday: Chance of showers. High 10. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-132_metric_e.html"/>
- <updated>2016-05-01T09:30:00Z</updated>
- <published>2016-05-01T09:30:00Z</published>
+ <updated>2016-05-08T09:30:00Z</updated>
+ <published>2016-05-08T09:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 17. Forecast issued 05:30 AM EDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-132_fc13:20160501093000</id>
+ <summary type="html">A mix of sun and cloud with 30 percent chance of showers. High 10. Forecast issued 05:30 AM EDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:on-132_fc13:20160508093000</id>
  </entry>
  </feed>
 

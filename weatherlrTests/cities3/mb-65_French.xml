@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-29T09:42:35Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160429094235</id>
+ <updated>2016-05-02T11:05:44Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160502110544</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,121 +29,136 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:mb-65_w1:20160417113000</id>
  </entry>
  <entry>
- <title>Vendredi: Ensoleillé. Maximum 15.</title>
+ <title>Conditions actuelles: 7,3&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 15. Indice UV de 5 ou modéré. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc1:20160429100000</id>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Carman 06h00 HAC lundi 02 mai 2016 <br/>
+<b>Température:</b> 7,3&deg;C <br/>
+<b>Humidité:</b> 58 %<br/>
+<b>Point de rosée:</b> -0,5&deg;C <br/>
+<b>Vent:</b> SSE 2 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_cc:20160502110000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Dégagé. Minimum zéro.</title>
+ <title>Lundi: Possibilité d'averses. Maximum 22. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Vents du nord-est de 20 km/h devenant légers tard ce soir. Minimum zéro. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc2:20160429100000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses tôt ce matin. Dégagement ce matin. Maximum 22. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc1:20160502100000</id>
  </entry>
  <entry>
- <title>Samedi: Ensoleillé. Maximum 15.</title>
+ <title>Ce soir et cette nuit: Dégagé. Minimum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Vents devenant du nord-est à 20 km/h tôt en après-midi. Maximum 15. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc3:20160429100000</id>
+ <summary type="html">Dégagé. Vents devenant d'ouest à 20 km/h en fin de nuit. Minimum 9. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc2:20160502100000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Dégagé. Minimum zéro.</title>
+ <title>Mardi: Ensoleillé. Maximum 20.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum zéro. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc4:20160429100000</id>
+ <summary type="html">Ensoleillé. Vents d'ouest de 20 km/h devenant du nord à 30 tôt en après-midi. Maximum 20. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc3:20160502100000</id>
  </entry>
  <entry>
- <title>Dimanche: Ensoleillé. Maximum 15.</title>
+ <title>Mardi soir et nuit: Dégagé. Minimum plus 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc5:20160429100000</id>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc4:20160502100000</id>
  </entry>
  <entry>
- <title>Dimanche soir et nuit: Dégagé. Minimum plus 3.</title>
+ <title>Mercredi: Ensoleillé. Maximum 19.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc6:20160429100000</id>
+ <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc5:20160502100000</id>
  </entry>
  <entry>
- <title>Lundi: Ensoleillé. Maximum 19.</title>
+ <title>Mercredi soir et nuit: Dégagé. Minimum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc7:20160429100000</id>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc6:20160502100000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Dégagé. Minimum 6.</title>
+ <title>Jeudi: Ensoleillé. Maximum 29.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 6. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc8:20160429100000</id>
+ <summary type="html">Ensoleillé. Maximum 29. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc7:20160502100000</id>
  </entry>
  <entry>
- <title>Mardi: Ensoleillé. Maximum 19.</title>
+ <title>Jeudi soir et nuit: Dégagé. Minimum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc9:20160429100000</id>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc8:20160502100000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <title>Vendredi: Ensoleillé. Maximum 22.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc10:20160429100000</id>
+ <summary type="html">Ensoleillé. Maximum 22. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc9:20160502100000</id>
  </entry>
  <entry>
- <title>Mercredi: Ensoleillé. Maximum 24.</title>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 24. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc11:20160429100000</id>
+ <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc10:20160502100000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Dégagé. Minimum 7.</title>
+ <title>Samedi: Ensoleillé. Maximum 18.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 7. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc12:20160429100000</id>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc11:20160502100000</id>
  </entry>
  <entry>
- <title>Jeudi: Ensoleillé. Maximum 23.</title>
+ <title>Samedi soir et nuit: Dégagé. Minimum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
- <updated>2016-04-29T10:00:00Z</updated>
- <published>2016-04-29T10:00:00Z</published>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc13:20160429100000</id>
+ <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc12:20160502100000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-65_metric_f.html"/>
+ <updated>2016-05-02T10:00:00Z</updated>
+ <published>2016-05-02T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 05h00 HAC lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-65_fc13:20160502100000</id>
  </entry>
  </feed>
 

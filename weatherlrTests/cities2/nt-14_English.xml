@@ -14,10 +14,29 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-04-28T01:10:02Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160428011002</id>
+ <updated>2016-04-29T11:02:29Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160429110229</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
+ <entry>
+ <title>Current Conditions: Cloudy, -1.0&#xB0;C</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/nt-14_metric_e.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Current Conditions"/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Ekati Airport 05:00 AM MDT Friday 29 April 2016 <br/>
+<b>Condition:</b> Cloudy <br/>
+<b>Temperature:</b> -1.0&deg;C <br/>
+<b>Pressure:</b> 102.2 kPa <br/>
+<b>Visibility:</b> 24.1 km<br/>
+<b>Humidity:</b> 96 %<br/>
+<b>Wind Chill:</b> -8 <br/>
+<b>Dewpoint:</b> -1.6&deg;C <br/>
+<b>Wind:</b> ESE 32 km/h<br/>
+<b>Air Quality Health Index:</b> N/A <br/>
+]]></summary>
+ <id>tag:weather.gc.ca,2013-04-16:nt-14_cc:20160429110000</id>
+ </entry>
  </feed>
 

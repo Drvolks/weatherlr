@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:03:53Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160428100353</id>
+ <updated>2016-04-29T11:05:49Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429110549</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,138 +29,138 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:qc-112_w1:20160426233000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: -0,5&#xB0;C</title>
+ <title>Conditions actuelles: -2,4&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport d'Ivujivik 06h00 HAE jeudi 28 avril 2016 <br/>
-<b>Température:</b> -0,5&deg;C <br/>
-<b>Pression:</b> 102,2 kPa <br/>
-<b>Humidité:</b> 98 %<br/>
-<b>Refroidissement éolien:</b> -4 <br/>
-<b>Point de rosée:</b> -0,8&deg;C <br/>
-<b>Vent:</b> ENE 11 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport d'Ivujivik 07h00 HAE vendredi 29 avril 2016 <br/>
+<b>Température:</b> -2,4&deg;C <br/>
+<b>Pression:</b> 102,6 kPa <br/>
+<b>Humidité:</b> 97 %<br/>
+<b>Refroidissement éolien:</b> -5 <br/>
+<b>Point de rosée:</b> -2,8&deg;C <br/>
+<b>Vent:</b> NE 7 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_cc:20160428100000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Jeudi: Généralement nuageux. Maximum plus 2.</title>
+ <title>Vendredi: Généralement nuageux. Maximum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. Nappes de brouillard se dissipant ce matin. Maximum plus 2. Indice UV de 3 ou modéré. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc1:20160428083000</id>
+ <summary type="html">Alternance de soleil et de nuages. Devenant nuageux en mi-journée. Nappes de brouillard se dissipant ce matin. Vents devenant du nord à 20 km/h cet après-midi. Maximum zéro. Indice UV de 3 ou modéré. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc1:20160429083000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Partiellement nuageux. Minimum moins 2.</title>
+ <title>Ce soir et cette nuit: Généralement nuageux. Minimum moins 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Partiellement nuageux. Devenant nuageux après minuit. Nappes de brouillard se formant ce soir. Minimum moins 2. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc2:20160428083000</id>
+ <summary type="html">Nuageux. Devenant partiellement nuageux au cours de la nuit. Vents du nord de 20 km/h devenant légers vers minuit. Minimum moins 8. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc2:20160429083000</id>
  </entry>
  <entry>
- <title>Vendredi: Nuageux. Maximum zéro.</title>
+ <title>Samedi: Ensoleillé. Maximum moins 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Vents devenant du nord à 20 km/h en mi-journée. Maximum zéro. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc3:20160428083000</id>
+ <summary type="html">Dégagement le matin. Maximum moins 5. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc3:20160429083000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Passages nuageux. Minimum moins 8.</title>
+ <title>Samedi soir et nuit: Passages nuageux. Minimum moins 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum moins 8. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc4:20160428083000</id>
+ <summary type="html">Passages nuageux. Minimum moins 8. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc4:20160429083000</id>
  </entry>
  <entry>
- <title>Samedi: Ensoleillé. Maximum moins 3.</title>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum moins 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum moins 3. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc5:20160428083000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum moins 4. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc5:20160429083000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Passages nuageux. Minimum moins 9.</title>
+ <title>Dimanche soir et nuit: Nuageux. Minimum moins 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 9. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc6:20160428083000</id>
+ <summary type="html">Nuageux. Minimum moins 7. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc6:20160429083000</id>
  </entry>
  <entry>
- <title>Dimanche: Nuageux. Maximum moins 3.</title>
+ <title>Lundi: Possibilité d'averses de neige. Maximum plus 1. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Maximum moins 3. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc7:20160428083000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige. Venteux. Maximum plus 1. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc7:20160429083000</id>
  </entry>
  <entry>
- <title>Dimanche soir et nuit: Possibilité d'averses de neige. Minimum moins 6. PdP 30%</title>
+ <title>Lundi soir et nuit: Possibilité d'averses de pluie ou de neige. Minimum moins 2. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Venteux. Minimum moins 6. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc8:20160428083000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de pluie ou de neige. Venteux. Minimum moins 2. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc8:20160429083000</id>
  </entry>
  <entry>
- <title>Lundi: Possibilité d'averses de neige. Maximum moins 2. PdP 30%</title>
+ <title>Mardi: Possibilité d'averses de neige. Maximum zéro. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Venteux. Maximum moins 2. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc9:20160428083000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Maximum zéro. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc9:20160429083000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Nuageux. Minimum moins 6.</title>
+ <title>Mardi soir et nuit: Possibilité d'averses de neige. Minimum moins 5. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Minimum moins 6. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc10:20160428083000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Minimum moins 5. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc10:20160429083000</id>
  </entry>
  <entry>
- <title>Mardi: Nuageux. Maximum moins 3.</title>
+ <title>Mercredi: Possibilité d'averses de neige. Maximum moins 2. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Maximum moins 3. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc11:20160428083000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Maximum moins 2. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc11:20160429083000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Nuageux. Minimum moins 7.</title>
+ <title>Mercredi soir et nuit: Possibilité d'averses de neige. Minimum moins 5. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Minimum moins 7. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc12:20160428083000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 5. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc12:20160429083000</id>
  </entry>
  <entry>
- <title>Mercredi: Nuageux. Maximum moins 3.</title>
+ <title>Jeudi: Possibilité d'averses de neige. Maximum moins 2. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-112_metric_f.html"/>
- <updated>2016-04-28T08:30:00Z</updated>
- <published>2016-04-28T08:30:00Z</published>
+ <updated>2016-04-29T08:30:00Z</updated>
+ <published>2016-04-29T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Maximum moins 3. Prévisions émises 04h30 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc13:20160428083000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Maximum moins 2. Prévisions émises 04h30 HAE vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-112_fc13:20160429083000</id>
  </entry>
  </feed>
 

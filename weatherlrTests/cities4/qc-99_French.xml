@@ -14,155 +14,153 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-01T12:06:58Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160501120658</id>
+ <updated>2016-05-08T14:05:23Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508140523</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
  <entry>
  <title>Aucune veille ou alerte en vigueur, Lac Raglan</title>
  <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
- <updated>2016-04-27T08:45:00Z</updated>
- <published>2016-04-27T08:45:00Z</published>
+ <updated>2016-05-06T19:45:00Z</updated>
+ <published>2016-05-06T19:45:00Z</published>
  <category term="Veilles et avertissements"/>
  <summary type="html">Aucune veille ou alerte en vigueur.</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_w1:20160427084500</id>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_w1:20160506194500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Nuageux, -3,9&#xB0;C</title>
+ <title>Conditions actuelles: -3,9&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Kangiqsujuaq 08h00 HAE dimanche 01 mai 2016 <br/>
-<b>Condition:</b> Nuageux <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Kangiqsujuaq 10h00 HAE dimanche 08 mai 2016 <br/>
 <b>Température:</b> -3,9&deg;C <br/>
-<b>Pression / Tendance:</b> 102,8 kPa à la hausse<br/>
-<b>Visibilité:</b> 48,3 km<br/>
-<b>Humidité:</b> 70 %<br/>
-<b>Refroidissement éolien:</b> -11 <br/>
-<b>Point de rosée:</b> -8,6&deg;C <br/>
-<b>Vent:</b> N 26 km/h<br/>
+<b>Pression:</b> 101,0 kPa <br/>
+<b>Humidité:</b> 65 %<br/>
+<b>Refroidissement éolien:</b> -8 <br/>
+<b>Point de rosée:</b> -9,6&deg;C <br/>
+<b>Vent:</b> ONO 11 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_cc:20160501120000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_cc:20160508140000</id>
  </entry>
  <entry>
- <title>Dimanche: Généralement nuageux. Maximum moins 1.</title>
+ <title>Dimanche: Possibilité d'averses de neige. Maximum moins 2. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. Vents devenant du sud-ouest à 20 km/h avec rafales à 40 ce matin. Maximum moins 1. Indice UV de 3 ou modéré. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc1:20160501083000</id>
+ <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses de neige ce matin. Nappes de brouillard se dissipant ce matin. Maximum moins 2. Indice UV de 3 ou modéré. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc1:20160508083000</id>
  </entry>
  <entry>
  <title>Ce soir et cette nuit: Partiellement nuageux. Minimum moins 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Partiellement nuageux. Vents du sud-ouest de 40 km/h avec rafales à 60 augmentant à 60 avec rafales à 80 en fin de nuit. Minimum moins 7. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc2:20160501083000</id>
+ <summary type="html">Partiellement nuageux. Minimum moins 7. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc2:20160508083000</id>
  </entry>
  <entry>
- <title>Lundi: Généralement nuageux. Maximum plus 1.</title>
+ <title>Lundi: Généralement ensoleillé. Maximum moins 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. Vents du sud-ouest de 60 km/h avec rafales à 80. Maximum plus 1. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc3:20160501083000</id>
+ <summary type="html">Généralement ensoleillé. Vents devenant du nord à 20 km/h en après-midi. Maximum moins 2. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc3:20160508083000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Nuageux. Minimum moins 2.</title>
+ <title>Lundi soir et nuit: Dégagé. Minimum moins 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Minimum moins 2. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc4:20160501083000</id>
+ <summary type="html">Dégagé. Minimum moins 8. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc4:20160508083000</id>
  </entry>
  <entry>
- <title>Mardi: Alternance de soleil et de nuages. Maximum plus 2.</title>
+ <title>Mardi: Ensoleillé. Maximum plus 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum plus 2. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc5:20160501083000</id>
+ <summary type="html">Ensoleillé. Maximum plus 1. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc5:20160508083000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Possibilité d'averses de neige. Minimum moins 10. PdP 30%</title>
+ <title>Mardi soir et nuit: Possibilité d'averses de neige. Minimum moins 2. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 10. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc6:20160501083000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 2. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc6:20160508083000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses de neige. Maximum moins 10. PdP 30%</title>
+ <title>Mercredi: Possibilité d'averses. Maximum plus 2. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Maximum moins 10. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc7:20160501083000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum plus 2. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc7:20160508083000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Possibilité d'averses de neige. Minimum moins 11. PdP 30%</title>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum moins 6. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Minimum moins 11. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc8:20160501083000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum moins 6. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc8:20160508083000</id>
  </entry>
  <entry>
- <title>Jeudi: Neige intermittente. Maximum moins 5.</title>
+ <title>Jeudi: Nuageux. Maximum moins 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Neige intermittente. Maximum moins 5. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc9:20160501083000</id>
+ <summary type="html">Nuageux. Maximum moins 2. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc9:20160508083000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Neige intermittente. Minimum moins 5.</title>
+ <title>Jeudi soir et nuit: Nuageux. Minimum moins 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Neige intermittente. Minimum moins 5. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc10:20160501083000</id>
+ <summary type="html">Nuageux. Minimum moins 5. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc10:20160508083000</id>
  </entry>
  <entry>
- <title>Vendredi: Possibilité d'averses de neige. Maximum zéro. PdP 30%</title>
+ <title>Vendredi: Nuageux. Maximum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses de neige. Maximum zéro. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc11:20160501083000</id>
+ <summary type="html">Nuageux. Maximum zéro. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc11:20160508083000</id>
  </entry>
  <entry>
  <title>Vendredi soir et nuit: Nuageux. Minimum moins 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Minimum moins 4. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc12:20160501083000</id>
+ <summary type="html">Nuageux. Minimum moins 4. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc12:20160508083000</id>
  </entry>
  <entry>
- <title>Samedi: Nuageux. Maximum plus 1.</title>
+ <title>Samedi: Nuageux. Maximum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-99_metric_f.html"/>
- <updated>2016-05-01T08:30:00Z</updated>
- <published>2016-05-01T08:30:00Z</published>
+ <updated>2016-05-08T08:30:00Z</updated>
+ <published>2016-05-08T08:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Maximum plus 1. Prévisions émises 04h30 HAE dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc13:20160501083000</id>
+ <summary type="html">Nuageux. Maximum zéro. Prévisions émises 04h30 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-99_fc13:20160508083000</id>
  </entry>
  </feed>
 

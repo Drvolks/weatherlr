@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:55:01Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160428105501</id>
+ <updated>2016-04-29T11:00:49Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160429110049</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -31,135 +31,135 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <entry>
  <title>Current Conditions: 8.9&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Creston 03:00 AM MST Thursday 28 April 2016 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Creston 04:00 AM MST Friday 29 April 2016 <br/>
 <b>Temperature:</b> 8.9&deg;C <br/>
-<b>Pressure / Tendency:</b> 101.7 kPa rising<br/>
-<b>Humidity:</b> 54 %<br/>
-<b>Dewpoint:</b> 0.2&deg;C <br/>
-<b>Wind:</b> NE 9 km/h<br/>
+<b>Pressure / Tendency:</b> 101.5 kPa falling<br/>
+<b>Humidity:</b> 67 %<br/>
+<b>Dewpoint:</b> 3.1&deg;C <br/>
+<b>Wind:</b> N 2 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_cc:20160428100000</id>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_cc:20160429110000</id>
  </entry>
  <entry>
- <title>Thursday: Chance of showers. High 17. POP 30%</title>
+ <title>Friday: A few showers. High 12.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Increasing cloudiness. 30 percent chance of showers this afternoon. High 17. UV index 3 or moderate. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc1:20160428110000</id>
+ <summary type="html">Showers. High 12. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc1:20160429110000</id>
  </entry>
  <entry>
- <title>Thursday night: Chance of showers. Low 7. POP 30%</title>
+ <title>Friday night: A few showers. Low 7.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 30 percent chance of showers. Low 7. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc2:20160428110000</id>
+ <summary type="html">Showers. Low 7. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc2:20160429110000</id>
  </entry>
  <entry>
- <title>Friday: Chance of showers. High 12. POP 60%</title>
+ <title>Saturday: Chance of showers. High 19. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. High 12. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc3:20160428110000</id>
- </entry>
- <entry>
- <title>Friday night: Chance of showers. Low 7. POP 60%</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. Low 7. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc4:20160428110000</id>
- </entry>
- <entry>
- <title>Saturday: Cloudy. High 18.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. High 18. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc5:20160428110000</id>
+ <summary type="html">Mainly cloudy with 30 percent chance of showers. Risk of a thunderstorm in the afternoon. High 19. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc3:20160429110000</id>
  </entry>
  <entry>
  <title>Saturday night: Clear. Low 6.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low 6. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc6:20160428110000</id>
+ <summary type="html">Clear. Low 6. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc4:20160429110000</id>
  </entry>
  <entry>
  <title>Sunday: Sunny. High 23.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 23. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc7:20160428110000</id>
+ <summary type="html">Sunny. High 23. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc5:20160429110000</id>
  </entry>
  <entry>
- <title>Sunday night: Clear. Low 8.</title>
+ <title>Sunday night: Clear. Low 9.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low 8. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc8:20160428110000</id>
+ <summary type="html">Clear. Low 9. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc6:20160429110000</id>
  </entry>
  <entry>
- <title>Monday: Sunny. High 24.</title>
+ <title>Monday: Sunny. High 25.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 24. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc9:20160428110000</id>
+ <summary type="html">Sunny. High 25. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc7:20160429110000</id>
  </entry>
  <entry>
- <title>Monday night: Clear. Low plus 5.</title>
+ <title>Monday night: Clear. Low 10.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low plus 5. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc10:20160428110000</id>
+ <summary type="html">Clear. Low 10. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc8:20160429110000</id>
  </entry>
  <entry>
  <title>Tuesday: Sunny. High 25.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 25. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc11:20160428110000</id>
+ <summary type="html">Sunny. High 25. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc9:20160429110000</id>
  </entry>
  <entry>
  <title>Tuesday night: Clear. Low 6.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low 6. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc12:20160428110000</id>
+ <summary type="html">Clear. Low 6. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc10:20160429110000</id>
  </entry>
  <entry>
- <title>Wednesday: Sunny. High 25.</title>
+ <title>Wednesday: A mix of sun and cloud. High 24.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 25. Forecast issued 05:00 AM MST Thursday 28 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-26_fc13:20160428110000</id>
+ <summary type="html">A mix of sun and cloud. High 24. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc11:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Wednesday night: Cloudy periods. Low 7.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy periods. Low 7. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc12:20160429110000</id>
+ </entry>
+ <entry>
+ <title>Thursday: Chance of showers. High 23. POP 30%</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-26_metric_e.html"/>
+ <updated>2016-04-29T11:00:00Z</updated>
+ <published>2016-04-29T11:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy with 30 percent chance of showers. High 23. Forecast issued 05:00 AM MST Friday 29 April 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-26_fc13:20160429110000</id>
  </entry>
  </feed>
 

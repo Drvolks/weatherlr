@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-28T11:01:01Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160428110101</id>
+ <updated>2016-04-29T11:23:19Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160429112319</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,140 +29,140 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nu-27_w1:20160422174500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Neige faible, -19,9&#xB0;C</title>
+ <title>Conditions actuelles: Brume, -21,3&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T11:00:00Z</updated>
- <published>2016-04-28T11:00:00Z</published>
+ <updated>2016-04-29T11:21:00Z</updated>
+ <published>2016-04-29T11:21:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Resolute 06h00 HAC jeudi 28 avril 2016 <br/>
-<b>Condition:</b> Neige faible <br/>
-<b>Température:</b> -19,9&deg;C <br/>
-<b>Pression / Tendance:</b> 103,4 kPa à la hausse<br/>
-<b>Visibilité:</b> 3,6 km<br/>
-<b>Humidité:</b> 82 %<br/>
-<b>Refroidissement éolien:</b> -33 <br/>
-<b>Point de rosée:</b> -22,2&deg;C <br/>
-<b>Vent:</b> SSE 34 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Resolute 06h21 HAC vendredi 29 avril 2016 <br/>
+<b>Condition:</b> Brume <br/>
+<b>Température:</b> -21,3&deg;C <br/>
+<b>Pression / Tendance:</b> 103,2 kPa à la hausse<br/>
+<b>Visibilité:</b> 1,2 km<br/>
+<b>Humidité:</b> 83 %<br/>
+<b>Refroidissement éolien:</b> -28 <br/>
+<b>Point de rosée:</b> -23,5&deg;C <br/>
+<b>Vent:</b> NNO 8 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_cc:20160428110000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_cc:20160429112100</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses de neige. Maximum moins 18. PdP 60%</title>
+ <title>Vendredi: Faible neige intermittente. Maximum moins 16. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux avec 60 pour cent de probabilité d'averses de neige. Vents du sud-est de 30 km/h devenant légers en mi-journée. Maximum moins 18. Refroidissement éolien de moins 33. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc1:20160428090000</id>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité de faible neige ce matin et tôt cet après-midi. Dégagement cet après-midi. Vents devenant du nord à 20 km/h tard cet après-midi. Maximum moins 16. Refroidissement éolien de moins 27. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc1:20160429090000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Possibilité d'averses de neige. Minimum moins 20. PdP 30%</title>
+ <title>Ce soir et cette nuit: Ensoleillé. Minimum moins 19.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux avec 30 pour cent de probabilité d'averses de neige. Vents jusqu'à 15 km/h. Minimum moins 20. Refroidissement éolien de moins 26. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc2:20160428090000</id>
+ <summary type="html">Ensoleillé. Vents du nord de 20 km/h devenant légers après minuit. Minimum moins 19. Refroidissement éolien de moins 28. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc2:20160429090000</id>
  </entry>
  <entry>
- <title>Vendredi: Alternance de soleil et de nuages. Maximum moins 15.</title>
+ <title>Samedi: Faible neige intermittente. Maximum moins 13. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Vents devenant du nord à 20 km/h avec rafales à 40 en après-midi. Maximum moins 15. Refroidissement éolien de moins 27. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc3:20160428090000</id>
+ <summary type="html">Ennuagement. 60 pour cent de probabilité de faible neige en après-midi. Vents devenant du nord-ouest à 30 km/h avec rafales à 50 le matin. Maximum moins 13. Refroidissement éolien de moins 30. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc3:20160429090000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Ensoleillé. Minimum moins 19.</title>
+ <title>Samedi soir et nuit: Alternance de soleil et de nuages. Minimum moins 17.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Minimum moins 19. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc4:20160428090000</id>
- </entry>
- <entry>
- <title>Samedi: Ensoleillé. Maximum moins 14.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum moins 14. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc5:20160428090000</id>
- </entry>
- <entry>
- <title>Samedi soir et nuit: Ensoleillé. Minimum moins 18.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Minimum moins 18. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc6:20160428090000</id>
+ <summary type="html">Ensoleillé. Minimum moins 17. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc4:20160429090000</id>
  </entry>
  <entry>
  <title>Dimanche: Ensoleillé. Maximum moins 11.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum moins 11. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc7:20160428090000</id>
+ <summary type="html">Ensoleillé. Maximum moins 11. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc5:20160429090000</id>
  </entry>
  <entry>
  <title>Dimanche soir et nuit: Ensoleillé. Minimum moins 15.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Minimum moins 15. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc8:20160428090000</id>
+ <summary type="html">Ensoleillé. Minimum moins 15. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc6:20160429090000</id>
  </entry>
  <entry>
  <title>Lundi: Ensoleillé. Maximum moins 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum moins 9. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc9:20160428090000</id>
+ <summary type="html">Ensoleillé. Maximum moins 9. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc7:20160429090000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Ensoleillé. Minimum moins 13.</title>
+ <title>Lundi soir et nuit: Ensoleillé. Minimum moins 12.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Minimum moins 13. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc10:20160428090000</id>
+ <summary type="html">Ensoleillé. Minimum moins 12. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc8:20160429090000</id>
  </entry>
  <entry>
- <title>Mardi: Ensoleillé. Maximum moins 8.</title>
+ <title>Mardi: Ensoleillé. Maximum moins 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum moins 8. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc11:20160428090000</id>
+ <summary type="html">Ensoleillé. Maximum moins 7. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc9:20160429090000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Ensoleillé. Minimum moins 11.</title>
+ <title>Mardi soir et nuit: Ensoleillé. Minimum moins 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Minimum moins 11. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc12:20160428090000</id>
+ <summary type="html">Ensoleillé. Minimum moins 10. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc10:20160429090000</id>
  </entry>
  <entry>
- <title>Mercredi: Ensoleillé. Maximum moins 6.</title>
+ <title>Mercredi: Ensoleillé. Maximum moins 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum moins 6. Prévisions émises 05h00 HAC jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc13:20160428090000</id>
+ <summary type="html">Ensoleillé. Maximum moins 4. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc11:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Ensoleillé. Minimum moins 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Minimum moins 8. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc12:20160429090000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum moins 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
+ <updated>2016-04-29T09:00:00Z</updated>
+ <published>2016-04-29T09:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum moins 3. Prévisions émises 05h00 HAC vendredi 29 avril 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_fc13:20160429090000</id>
  </entry>
  </feed>
 

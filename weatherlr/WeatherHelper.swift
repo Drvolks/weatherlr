@@ -24,11 +24,29 @@ class WeatherHelper {
                 let rssEntries = rssParser.parse()
                 let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
                 let weatherInformations = weatherInformationProcess.perform()
+                let alerts = weatherInformationProcess.getAlerts()
                 
-                let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations)
+                let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts)
                 cache.setObject(weatherInformationWrapper, forKey: city.id)
                 return weatherInformationWrapper
             }
+        }
+        
+        return WeatherInformationWrapper()
+    }
+    
+    static func getOfflineWeather() -> WeatherInformationWrapper {
+        let path = NSBundle.mainBundle().pathForResource("nu-29_English", ofType: "xml")
+        let url = NSURL(fileURLWithPath: path!)
+        
+        if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
+            let rssEntries = rssParser.parse()
+            let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
+            let weatherInformations = weatherInformationProcess.perform()
+            let alerts = weatherInformationProcess.getAlerts()
+            
+            let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts)
+            return weatherInformationWrapper
         }
         
         return WeatherInformationWrapper()
@@ -58,7 +76,8 @@ class WeatherHelper {
              .ChanceOfLightSnow,
              .CloudyWithXPercentChanceOfFlurries:
             return WeatherStatus.ChanceOfSnow
-        case .ChanceOfRainShowersOrFlurries:
+        case .ChanceOfRainShowersOrFlurries,
+             .PeriodsOfLightSnowMixedWithRain:
             return WeatherStatus.AFewRainShowersOrFlurries
         case .RainOrFreezingRain:
             return WeatherStatus.PeriodsOfRainOrFreezingRain
@@ -69,14 +88,16 @@ class WeatherHelper {
              .PeriodsOfDrizzleMixedWithRain,
              .ChanceOfDrizzleOrRain,
              .DrizzleOrRain,
-             .RainAtTimesHeavyOrDrizzle:
+             .RainAtTimesHeavyOrDrizzle,
+             .AFewShowersOrDrizzle:
             return WeatherStatus.PeriodsOfRainOrDrizzle
         case .FreezingDrizzleOrRain:
             return WeatherStatus.PeriodsOfFreezingDrizzleOrRain
         case .DrizzleMixedWithFreezingDrizzle,
              .FreezingDrizzleOrDrizzle,
              .PeriodsOfDrizzleMixedWithFreezingDrizzle,
-             .PeriodsOfFreezingDrizzleOrDrizzle:
+             .PeriodsOfFreezingDrizzleOrDrizzle,
+             .PeriodsOfDrizzleOrFreezingDrizzle:
             return WeatherStatus.ChanceOfDrizzleMixedWithFreezingDrizzle
         case .Flurries:
             return WeatherStatus.Snow
@@ -90,14 +111,19 @@ class WeatherHelper {
              .SnowOrRain,
              .SnowAtTimesHeavyMixedWithRain,
              .PeriodsOfSnowMixedWithRain,
-             .RainMixedWithSnow:
+             .RainMixedWithSnow,
+             .LightSnowMixedWithRain,
+             .LightSnowOrRain:
             return WeatherStatus.PeriodsOfRainOrSnow
         case .FreezingRainOrSnow,
              .PeriodsOfSnowMixedWithFreezingRain,
              .PeriodsOfFreezingRainOrSnow,
-             .FreezingRainMixedWithSnow:
+             .FreezingRainMixedWithSnow,
+             .SnowOrFreezingRain:
             return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
-        case .PeriodsOfLightSnowMixedWithFreezingDrizzle:
+        case .PeriodsOfLightSnowMixedWithFreezingDrizzle,
+             .PeriodsOfSnowOrFreezingDrizzle,
+             .PeriodsOfSnowMixedWithFreezingDrizzle:
             return WeatherStatus.SnowMixedWithFreezingDrizzle
         case .IncreasingCloudiness:
             return WeatherStatus.Clearing
@@ -113,14 +139,22 @@ class WeatherHelper {
              .Haze,
              .FogPatches:
             return WeatherStatus.Mist
-        case .PeriodsOfFreezingDrizzle:
+        case .PeriodsOfFreezingDrizzle,
+             .ChanceOfFreezingDrizzle:
             return WeatherStatus.LightFreezingDrizzle
         case .PeriodsOfFreezingRainMixedWithIcePellets:
             return WeatherStatus.FreezingRainMixedWithIcePellets
-        case .ChanceOfWetFlurriesOrRainShowers:
+        case .ChanceOfWetFlurriesOrRainShowers,
+             .PeriodsOfWetSnowOrRain:
             return WeatherStatus.ChanceOfRainShowersOrWetFlurries
         case .LightWetSnow:
             return WeatherStatus.ChanceOfWetFlurries
+        case .HeavyRainshower:
+            return WeatherStatus.RainAtTimesHeavy
+        case .AFewShowersOrThunderstorms,
+             .Thunderstorm,
+             .ThunderstormWithLightRainshowers:
+            return WeatherStatus.ChanceOfShowersOrThunderstorms
         default:
             return nil
         }

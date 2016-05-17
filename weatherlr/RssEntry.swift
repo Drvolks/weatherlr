@@ -24,6 +24,8 @@ class RssEntry : RssParserBase {
     let updatedElement = "updated"
     let entryElement = "entry"
     let linkElement = "link"
+    let termAttribute = "term"
+    let hrefAttribute = "href"
     
     init(parent: RssParser, language: Language) {
         self.parent = parent
@@ -41,7 +43,7 @@ class RssEntry : RssParserBase {
             self.title = foundCharacters.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
             break
         case categoryElement:
-            if let term = currentAttributes["term"] {
+            if let term = currentAttributes[termAttribute] {
                 self.category = term
             }
             break
@@ -52,7 +54,9 @@ class RssEntry : RssParserBase {
             self.summary = foundCharacters.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
             break
         case linkElement:
-            self.link = foundCharacters.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            if let href = currentAttributes[hrefAttribute] {
+                self.link = href
+            }
             break
         case entryElement:
             parent.parser.delegate = parent

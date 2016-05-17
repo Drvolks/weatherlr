@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vda-Mz-Pqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vda-Mz-Pqn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -29,6 +29,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HvL-JG-mgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-860" y="398"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Uyd-3g-3xd">
+            <objects>
+                <navigationController id="X2C-hK-y0b" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wyz-6z-RCT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kVS-Sh-eeM" kind="relationship" relationship="rootViewController" id="NgB-da-ynM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Qp-vA-NhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624" y="1666"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -451,10 +468,24 @@
                                 <segue destination="1PO-Kc-7hw" kind="presentation" identifier="Settings" id="WrQ-J6-Fyz"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="nxU-3d-Fp4"/>
+                        <barButtonItem image="warning" id="4Bz-ee-TLE">
+                            <connections>
+                                <action selector="showAlert:" destination="BYZ-38-t0r" id="uyR-BP-nBr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="YgH-pi-g8L"/>
+                        <barButtonItem image="radar" id="7SW-Zm-9Eg">
+                            <connections>
+                                <segue destination="vmE-98-jTJ" kind="presentation" identifier="ShowRadar" id="VIv-6D-GFL"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="oQ1-eD-ZCC"/>
                     <connections>
                         <outlet property="gradientView" destination="ok4-Zn-oFQ" id="uhv-NR-e8v"/>
+                        <outlet property="radarButton" destination="7SW-Zm-9Eg" id="mmd-DB-eME"/>
+                        <outlet property="warningBarButton" destination="4Bz-ee-TLE" id="v8H-gH-yo1"/>
                         <outlet property="weatherTable" destination="0UC-87-mQn" id="8dB-z3-7hh"/>
                         <segue destination="Gf6-dD-xkg" kind="presentation" identifier="error" id="7Qi-nV-v9P"/>
                     </connections>
@@ -462,6 +493,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-53" y="406"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="KTg-Dr-wSA">
+            <objects>
+                <viewController storyboardIdentifier="Alert" id="6hJ-Ms-40I" customClass="AlertViewController" customModule="weatherlr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sbu-FY-qc1"/>
+                        <viewControllerLayoutGuide type="bottom" id="vK2-sX-ZLm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OdM-H8-tCP">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYn-IN-Jm2">
+                                <rect key="frame" x="16" y="40" width="268" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbN-fj-ieT">
+                                <rect key="frame" x="112" y="71" width="77" height="30"/>
+                                <state key="normal" title="More detail"/>
+                                <connections>
+                                    <segue destination="X2C-hK-y0b" kind="presentation" identifier="showAlertDetail" id="sbc-hi-XFg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jYn-IN-Jm2" firstAttribute="centerY" secondItem="OdM-H8-tCP" secondAttribute="centerY" id="4HN-Ra-nI0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jYn-IN-Jm2" secondAttribute="leading" id="4LT-nu-78P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jYn-IN-Jm2" secondAttribute="trailing" id="G8H-iA-Nd8"/>
+                            <constraint firstItem="kbN-fj-ieT" firstAttribute="centerX" secondItem="OdM-H8-tCP" secondAttribute="centerX" id="L28-Vb-RZa"/>
+                            <constraint firstItem="jYn-IN-Jm2" firstAttribute="centerX" secondItem="OdM-H8-tCP" secondAttribute="centerX" id="dJd-5D-SIN"/>
+                            <constraint firstItem="jYn-IN-Jm2" firstAttribute="centerX" secondItem="OdM-H8-tCP" secondAttribute="centerX" id="oUs-UM-EoP"/>
+                            <constraint firstItem="kbN-fj-ieT" firstAttribute="top" secondItem="jYn-IN-Jm2" secondAttribute="bottom" constant="10" id="oyJ-7n-9wZ"/>
+                            <constraint firstItem="vK2-sX-ZLm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jYn-IN-Jm2" secondAttribute="bottom" constant="10" id="uqF-k7-iok"/>
+                            <constraint firstItem="jYn-IN-Jm2" firstAttribute="top" secondItem="Sbu-FY-qc1" secondAttribute="bottom" constant="20" id="yyB-1V-Cwt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4HN-Ra-nI0"/>
+                                <exclude reference="dJd-5D-SIN"/>
+                                <exclude reference="oUs-UM-EoP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="100"/>
+                    <connections>
+                        <outlet property="alertLabel" destination="jYn-IN-Jm2" id="ADl-eF-QeG"/>
+                        <outlet property="moreDetailButton" destination="kbN-fj-ieT" id="BaA-16-sFk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MnL-u6-Nwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624" y="884"/>
+        </scene>
+        <!--Alert Detail View Controller-->
+        <scene sceneID="6eL-17-AAg">
+            <objects>
+                <viewController id="kVS-Sh-eeM" customClass="AlertDetailViewController" customModule="weatherlr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A1R-lY-4Bt"/>
+                        <viewControllerLayoutGuide type="bottom" id="iNe-w0-SDs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qru-TB-jOP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkA-1r-g1P">
+                                <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hkA-1r-g1P" secondAttribute="trailing" constant="-20" id="Pcc-P2-JpW"/>
+                            <constraint firstItem="iNe-w0-SDs" firstAttribute="top" secondItem="hkA-1r-g1P" secondAttribute="bottom" id="cdP-wb-s9E"/>
+                            <constraint firstItem="hkA-1r-g1P" firstAttribute="top" secondItem="A1R-lY-4Bt" secondAttribute="bottom" constant="-65" id="ng5-I4-zhN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hkA-1r-g1P" secondAttribute="leading" constant="20" id="vbG-RZ-RdT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="d0m-bY-Xbb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="52b-KT-gbk">
+                            <connections>
+                                <action selector="cancel:" destination="kVS-Sh-eeM" id="MJt-Lu-RxG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="webView" destination="hkA-1r-g1P" id="jyc-D5-gmr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JpY-Ys-0e7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624" y="2567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gmf-Y4-7GZ">
@@ -483,6 +613,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yK-bd-RcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="697" y="802"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wm2-uu-ZyX">
+            <objects>
+                <navigationController id="vmE-98-jTJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QFk-1I-ZEa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HYE-2b-Eta" kind="relationship" relationship="rootViewController" id="jc7-tI-pTb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dl-Zm-xV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="1673"/>
+        </scene>
+        <!--Radar View Controller-->
+        <scene sceneID="Xch-Ae-rKo">
+            <objects>
+                <viewController id="HYE-2b-Eta" customClass="RadarViewController" customModule="weatherlr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S1b-Ou-duL"/>
+                        <viewControllerLayoutGuide type="bottom" id="lzU-se-ROR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wWW-9d-D22">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jR-9S-bQh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4jR-9S-bQh" firstAttribute="leading" secondItem="wWW-9d-D22" secondAttribute="leadingMargin" constant="-20" id="JGq-VU-8dX"/>
+                            <constraint firstItem="lzU-se-ROR" firstAttribute="top" secondItem="4jR-9S-bQh" secondAttribute="bottom" id="UT5-w5-1jE"/>
+                            <constraint firstItem="4jR-9S-bQh" firstAttribute="top" secondItem="S1b-Ou-duL" secondAttribute="bottom" constant="-64" id="X7u-fI-DEv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4jR-9S-bQh" secondAttribute="trailing" constant="-20" id="zFo-oP-wqx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ivu-S9-4Bo">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="pTB-kY-sDZ">
+                            <connections>
+                                <action selector="done:" destination="HYE-2b-Eta" id="BCO-Sw-RRL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="4jR-9S-bQh" id="m4G-h1-uNe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQc-pQ-EeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="2567"/>
         </scene>
         <!--Error View Controller-->
         <scene sceneID="RUX-em-NKm">
@@ -886,7 +1072,9 @@
     <resources>
         <image name="Flag_of_Canada.png" width="213" height="106"/>
         <image name="RainAtTimesHeavy" width="200" height="166"/>
+        <image name="radar" width="28" height="28"/>
         <image name="settings" width="28" height="28"/>
         <image name="up" width="83" height="83"/>
+        <image name="warning" width="28" height="28"/>
     </resources>
 </document>

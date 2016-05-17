@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Winnipeg (La Fourche) - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/mb-36_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/mb-36_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T14:07:26Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516140726</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Winnipeg (La Fourche)</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-04-17T11:30:00Z</updated>
+ <published>2016-04-17T11:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_w1:20160417113000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: 8,5&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T14:00:00Z</updated>
+ <published>2016-05-16T14:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Winnipeg - La Fourche 09h00 HAC lundi 16 mai 2016 <br/>
+<b>Température:</b> 8,5&deg;C <br/>
+<b>Pression / Tendance:</b> 102,1 kPa à la hausse<br/>
+<b>Humidité:</b> 65 %<br/>
+<b>Point de rosée:</b> 2,2&deg;C <br/>
+<b>Vent:</b> NNE 8 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_cc:20160516140000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Généralement ensoleillé. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Maximum 18. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc1:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Dégagé. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc2:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Généralement ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement ensoleillé. Maximum 23. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc3:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum 11.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 11. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc4:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc5:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 12. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc6:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 24.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 24. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc7:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 12. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc8:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc9:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 12.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 12. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc10:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 28.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 28. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc11:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 14.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 14. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc12:20160516100000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 29.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-36_metric_f.html"/>
+ <updated>2016-05-16T10:00:00Z</updated>
+ <published>2016-05-16T10:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 29. Prévisions émises 05h00 HAC lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-36_fc13:20160516100000</id>
+ </entry>
+ </feed>
+

@@ -20,4 +20,10 @@ class UrlHelper {
         
         return url
     }
+    
+    static func getRadarUrl(city: City) -> String {
+        let url = "radarUrl".localized().stringByReplacingOccurrencesOfString("{id}", withString: city.radarId)
+        
+        return url
+    }
 }

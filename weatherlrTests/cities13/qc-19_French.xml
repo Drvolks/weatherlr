@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Pontiac - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/qc-19_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/qc-19_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-16T21:02:41Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160516210241</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVIS DE GEL EN VIGUEUR, Pontiac</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?qc57"/>
+ <updated>2016-05-16T19:18:00Z</updated>
+ <published>2016-05-16T19:18:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 15h18 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_w1:201605161918</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: Généralement nuageux, 11,4&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T21:00:00Z</updated>
+ <published>2016-05-16T21:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Gatineau 17h00 HAE lundi 16 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 11,4&deg;C <br/>
+<b>Pression / Tendance:</b> 101,5 kPa à la hausse<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 41 %<br/>
+<b>Point de rosée:</b> -1,3&deg;C <br/>
+<b>Vent:</b> NO 20 km/h rafale 42 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_cc:20160516210000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 1 avec gel.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Quelques nuages. Vents du nord-ouest de 20 km/h devenant légers ce soir. Minimum moins 1 avec gel. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc1:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 13.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du nord-ouest à 20 km/h le matin. Maximum 13. Indice UV de 6 ou élevé. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc2:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Quelques nuages. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagement tard en soirée. Minimum plus 1. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc3:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 19.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc4:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc5:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc6:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Jeudi soir et nuit: Dégagé. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc7:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Vendredi: Ensoleillé. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc8:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Vendredi soir et nuit: Dégagé. Minimum 8.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 8. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc9:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Samedi: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc10:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Dégagé. Minimum 9.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc11:20160516194500</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Ensoleillé. Maximum 25.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-19_metric_f.html"/>
+ <updated>2016-05-16T19:45:00Z</updated>
+ <published>2016-05-16T19:45:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 15h45 HAE lundi 16 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-19_fc12:20160516194500</id>
+ </entry>
+ </feed>
+

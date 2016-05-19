@@ -113,13 +113,16 @@ class WeatherHelper {
              .PeriodsOfSnowMixedWithRain,
              .RainMixedWithSnow,
              .LightSnowMixedWithRain,
-             .LightSnowOrRain:
+             .LightSnowOrRain,
+             .RainAtTimesHeavyOrSnow,
+             .SnowAtTimesHeavyOrRain:
             return WeatherStatus.PeriodsOfRainOrSnow
         case .FreezingRainOrSnow,
              .PeriodsOfSnowMixedWithFreezingRain,
              .PeriodsOfFreezingRainOrSnow,
              .FreezingRainMixedWithSnow,
-             .SnowOrFreezingRain:
+             .SnowOrFreezingRain,
+             .LightSnowOrFreezingRain:
             return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
         case .PeriodsOfLightSnowMixedWithFreezingDrizzle,
              .PeriodsOfSnowOrFreezingDrizzle,
@@ -145,7 +148,8 @@ class WeatherHelper {
         case .PeriodsOfFreezingRainMixedWithIcePellets:
             return WeatherStatus.FreezingRainMixedWithIcePellets
         case .ChanceOfWetFlurriesOrRainShowers,
-             .PeriodsOfWetSnowOrRain:
+             .PeriodsOfWetSnowOrRain,
+             .WetFlurriesOrRainShowers:
             return WeatherStatus.ChanceOfRainShowersOrWetFlurries
         case .LightWetSnow:
             return WeatherStatus.ChanceOfWetFlurries

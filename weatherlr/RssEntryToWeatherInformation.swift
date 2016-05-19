@@ -381,6 +381,14 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.SnowOrIcePellets
         case "grésil ou neige", "ice pellets or snow":
             return WeatherStatus.IcePelletsOrSnow
+        case "averses de neige fondante ou de pluie", "wet flurries or rain showers":
+            return WeatherStatus.WetFlurriesOrRainShowers
+        case "faible neige ou pluie verglaçante", "light snow or freezing rain":
+            return WeatherStatus.LightSnowOrFreezingRain
+        case "pluie parfois forte ou neige", "rain at times heavy or snow":
+            return WeatherStatus.RainAtTimesHeavyOrSnow
+        case "neige parfois forte ou pluie", "snow at times heavy or rain":
+            return WeatherStatus.SnowAtTimesHeavyOrRain
         default:
             return convertWeatherStatusWithRegex(text)
         }

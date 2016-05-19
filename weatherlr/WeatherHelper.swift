@@ -6,7 +6,7 @@
 //  Copyright © 2016 Jean-Francois Dufour. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class WeatherHelper {
     static func getWeatherInformations(city:City) -> WeatherInformationWrapper {
@@ -160,6 +160,24 @@ class WeatherHelper {
             return WeatherStatus.SnowMixedWithIcePellets
         default:
             return nil
+        }
+    }
+    
+    static func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {
+        var name = "up"
+        
+        if weatherInfo.tendancy == Tendency.Minimum {
+            name = "down"
+        } else if weatherInfo.tendancy == Tendency.Steady {
+            if weatherInfo.night {
+                name = "down"
+            }
+        }
+        
+        if header {
+            return UIImage(named: name + "Header")
+        } else {
+            return UIImage(named: name)
         }
     }
 }

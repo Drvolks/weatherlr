@@ -314,6 +314,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if weatherInformationWrapper.weatherInformations.count > 0 {
+            let weatherInfo = weatherInformationWrapper.weatherInformations[0]
+            
+            if weatherInfo.weatherDay != WeatherDay.Now {
+                return 30
+            }
+        }
+        
         return 130
     }
     

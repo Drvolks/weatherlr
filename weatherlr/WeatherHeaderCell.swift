@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherHeaderCell: UITableViewCell {
 
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityLabel: VerticalTopAlignLabel!
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!

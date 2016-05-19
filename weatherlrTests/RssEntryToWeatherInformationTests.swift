@@ -950,6 +950,30 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Ice pellets or snow")
         XCTAssertEqual(WeatherStatus.IcePelletsOrSnow, result)
         
+        // WetFlurriesOrRainShowers
+        result = performer.convertWeatherStatus("Averses de neige fondante ou de pluie")
+        XCTAssertEqual(WeatherStatus.WetFlurriesOrRainShowers, result)
+        result = performer.convertWeatherStatus("Wet flurries or rain showers")
+        XCTAssertEqual(WeatherStatus.WetFlurriesOrRainShowers, result)
+        
+        // LightSnowOrFreezingRain
+        result = performer.convertWeatherStatus("Faible neige ou pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.LightSnowOrFreezingRain, result)
+        result = performer.convertWeatherStatus("Light snow or freezing rain")
+        XCTAssertEqual(WeatherStatus.LightSnowOrFreezingRain, result)
+        
+        // RainAtTimesHeavyOrSnow
+        result = performer.convertWeatherStatus("Pluie parfois forte ou neige")
+        XCTAssertEqual(WeatherStatus.RainAtTimesHeavyOrSnow, result)
+        result = performer.convertWeatherStatus("Rain at times heavy or snow")
+        XCTAssertEqual(WeatherStatus.RainAtTimesHeavyOrSnow, result)
+        
+        // SnowAtTimesHeavyOrRain
+        result = performer.convertWeatherStatus("Neige parfois forte ou pluie")
+        XCTAssertEqual(WeatherStatus.SnowAtTimesHeavyOrRain, result)
+        result = performer.convertWeatherStatus("Snow at times heavy or rain")
+        XCTAssertEqual(WeatherStatus.SnowAtTimesHeavyOrRain, result)
+        
         
         
         

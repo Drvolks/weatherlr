@@ -974,6 +974,37 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Snow at times heavy or rain")
         XCTAssertEqual(WeatherStatus.SnowAtTimesHeavyOrRain, result)
         
+        // FogDissipating
+        result = performer.convertWeatherStatus("Brouillard se dissipant")
+        XCTAssertEqual(WeatherStatus.FogDissipating, result)
+        result = performer.convertWeatherStatus("Fog dissipating")
+        XCTAssertEqual(WeatherStatus.FogDissipating, result)
+        
+        // ShowersOrThunderstorms
+        result = performer.convertWeatherStatus("Averses ou orages")
+        XCTAssertEqual(WeatherStatus.ShowersOrThunderstorms, result)
+        result = performer.convertWeatherStatus("Showers or thunderstorms")
+        XCTAssertEqual(WeatherStatus.ShowersOrThunderstorms, result)
+        
+        // ThunderstormWithLightRain
+        result = performer.convertWeatherStatus("Orage avec faible pluie")
+        XCTAssertEqual(WeatherStatus.ThunderstormWithLightRain, result)
+        result = performer.convertWeatherStatus("Thunderstorm with light rain")
+        XCTAssertEqual(WeatherStatus.ThunderstormWithLightRain, result)
+        
+        // ChanceOfRainOrDrizzle
+        result = performer.convertWeatherStatus("Possibilité de pluie ou bruine")
+        XCTAssertEqual(WeatherStatus.ChanceOfRainOrDrizzle, result)
+        result = performer.convertWeatherStatus("Chance of rain or drizzle")
+        XCTAssertEqual(WeatherStatus.ChanceOfRainOrDrizzle, result)
+        
+        // ChanceOfSnowMixedWithRain
+        result = performer.convertWeatherStatus("Possibilité de neige mêlée de pluie")
+        XCTAssertEqual(WeatherStatus.ChanceOfSnowMixedWithRain, result)
+        result = performer.convertWeatherStatus("Chance of snow mixed with rain")
+        XCTAssertEqual(WeatherStatus.ChanceOfSnowMixedWithRain, result)
+        
+        
         
         
         

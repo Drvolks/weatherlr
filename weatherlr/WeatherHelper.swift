@@ -77,7 +77,8 @@ class WeatherHelper {
              .CloudyWithXPercentChanceOfFlurries:
             return WeatherStatus.ChanceOfSnow
         case .ChanceOfRainShowersOrFlurries,
-             .PeriodsOfLightSnowMixedWithRain:
+             .PeriodsOfLightSnowMixedWithRain,
+             .ChanceOfSnowMixedWithRain:
             return WeatherStatus.AFewRainShowersOrFlurries
         case .RainOrFreezingRain:
             return WeatherStatus.PeriodsOfRainOrFreezingRain
@@ -89,7 +90,8 @@ class WeatherHelper {
              .ChanceOfDrizzleOrRain,
              .DrizzleOrRain,
              .RainAtTimesHeavyOrDrizzle,
-             .AFewShowersOrDrizzle:
+             .AFewShowersOrDrizzle,
+             .ChanceOfRainOrDrizzle:
             return WeatherStatus.PeriodsOfRainOrDrizzle
         case .FreezingDrizzleOrRain:
             return WeatherStatus.PeriodsOfFreezingDrizzleOrRain
@@ -140,7 +142,8 @@ class WeatherHelper {
             return WeatherStatus.WetSnow
         case .Fog,
              .Haze,
-             .FogPatches:
+             .FogPatches,
+             .FogDissipating:
             return WeatherStatus.Mist
         case .PeriodsOfFreezingDrizzle,
              .ChanceOfFreezingDrizzle:
@@ -157,7 +160,9 @@ class WeatherHelper {
             return WeatherStatus.RainAtTimesHeavy
         case .AFewShowersOrThunderstorms,
              .Thunderstorm,
-             .ThunderstormWithLightRainshowers:
+             .ThunderstormWithLightRainshowers,
+             .ShowersOrThunderstorms,
+             .ThunderstormWithLightRain:
             return WeatherStatus.ChanceOfShowersOrThunderstorms
         case .SnowOrIcePellets,
              .IcePelletsOrSnow:

@@ -389,6 +389,16 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.RainAtTimesHeavyOrSnow
         case "neige parfois forte ou pluie", "snow at times heavy or rain":
             return WeatherStatus.SnowAtTimesHeavyOrRain
+        case "brouillard se dissipant", "fog dissipating":
+            return WeatherStatus.FogDissipating
+        case "averses ou orages", "showers or thunderstorms":
+            return WeatherStatus.ShowersOrThunderstorms
+        case "orage avec faible pluie", "thunderstorm with light rain":
+            return WeatherStatus.ThunderstormWithLightRain
+        case "possibilité de pluie ou bruine", "chance of rain or drizzle":
+            return WeatherStatus.ChanceOfRainOrDrizzle
+        case "possibilité de neige mêlée de pluie", "chance of snow mixed with rain":
+            return WeatherStatus.ChanceOfSnowMixedWithRain
         default:
             return convertWeatherStatusWithRegex(text)
         }

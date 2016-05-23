@@ -160,7 +160,12 @@ class WeatherInformation {
              .WetFlurriesOrRainShowers,
              .LightSnowOrFreezingRain,
              .RainAtTimesHeavyOrSnow,
-             .SnowAtTimesHeavyOrRain:
+             .SnowAtTimesHeavyOrRain,
+             .FogDissipating,
+             .ShowersOrThunderstorms,
+             .ThunderstormWithLightRain,
+             .ChanceOfRainOrDrizzle,
+             .ChanceOfSnowMixedWithRain:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

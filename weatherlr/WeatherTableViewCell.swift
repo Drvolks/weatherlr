@@ -27,7 +27,9 @@ class WeatherTableViewCell: UITableViewCell {
     }
 
     func populate(weatherInformationWrapper: WeatherInformationWrapper, indexPath: NSIndexPath) {
-        let weatherInfo = weatherInformationWrapper.weatherInformations[indexPath.row+1]
+        let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
+        
+        let weatherInfo = weatherInformationWrapper.weatherInformations[indexPath.row+indexAjust]
         weatherImage.image = weatherInfo.image()
         weatherDetailLabel.text = weatherInfo.detail
         backgroundColor = UIColor.clearColor()

@@ -173,7 +173,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weatherInformationWrapper.weatherInformations.count - 2
+        let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
+        
+        return weatherInformationWrapper.weatherInformations.count - indexAjust
     }
     
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {

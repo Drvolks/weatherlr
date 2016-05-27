@@ -189,4 +189,19 @@ class WeatherHelper {
             return UIImage(named: name)
         }
     }
+    
+    static func getIndexAjust(weatherInformations:[WeatherInformation]) -> Int {
+        var indexAjust = 1
+        
+        if weatherInformations.count == 0 {
+            return indexAjust
+        }
+        
+        let weatherInfoBase = weatherInformations[0]
+        if weatherInfoBase.weatherDay != WeatherDay.Now {
+            indexAjust = 0
+        }
+        
+        return indexAjust
+    }
 }

@@ -236,7 +236,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if width > 300 {
             width = 300
         }
-        let height = CGFloat(80 + (21*weatherInformationWrapper.alerts.count))
+        var lines = weatherInformationWrapper.alerts.count
+        for i in 0..<weatherInformationWrapper.alerts.count {
+            let alertText = weatherInformationWrapper.alerts[i].alertText
+            if alertText.characters.count > 30 {
+                lines = lines + 1
+            }
+        }
+        let height = CGFloat(80 + (21*lines))
         
         alertController.modalPresentationStyle = .Popover;
         alertController.preferredContentSize = CGSizeMake(width, height)

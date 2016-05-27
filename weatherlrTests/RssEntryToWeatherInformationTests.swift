@@ -32,6 +32,10 @@ class RssEntryToWeatherInformationTests: XCTestCase {
     let alertFrostEn = "FROST ADVISORY IN EFFECT, Mascouche"
     let alertFrostEndedFr = "AVIS DE BROUILLARD TERMINÉ, Lorraine"
     let alertFrostEndedEn = "FOG ADVISORY ENDED, Mascouche"
+    let alertThunderFr = "ALERTE D'ORAGES VIOLENTS EN VIGUEUR, Lorraine"
+    let alertThunderEn = "SEVERE THUNDERSTORM WARNING IN EFFECT, Mascouche"
+    let alertThunderWatchFr = "VEILLE D'ORAGES VIOLENTS EN VIGUEUR, Lorraine"
+    let alertThunderWatchEn = "SEVERE THUNDERSTORM WATCH IN EFFECT, Mascouche"
     
     func testConstructor() {
         let parser = RssParserStub()!
@@ -1438,6 +1442,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.isAlert(alertFrostEndedEn)
         XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertThunderFr)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertThunderEn)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertThunderWatchFr)
+        XCTAssertTrue(result)
+        
+        result = performer.isAlert(alertThunderWatchEn)
+        XCTAssertTrue(result)
     }
     
     func testExtractAlertText() {
@@ -1489,6 +1505,18 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractAlertText(alertFrostEndedEn)
         XCTAssertEqual("FOG ADVISORY ENDED", result)
+        
+        result = performer.extractAlertText(alertThunderWatchFr)
+        XCTAssertEqual("VEILLE D'ORAGES VIOLENTS EN VIGUEUR", result)
+        
+        result = performer.extractAlertText(alertThunderWatchEn)
+        XCTAssertEqual("SEVERE THUNDERSTORM WATCH IN EFFECT", result)
+        
+        result = performer.extractAlertText(alertThunderFr)
+        XCTAssertEqual("ALERTE D'ORAGES VIOLENTS EN VIGUEUR", result)
+        
+        result = performer.extractAlertText(alertThunderEn)
+        XCTAssertEqual("SEVERE THUNDERSTORM WARNING IN EFFECT", result)
         
         result = performer.extractAlertText(alertTitleFr)
         XCTAssertEqual("", result)

@@ -29,9 +29,11 @@ enum WeatherStatus {
     case ChanceOfRain
     case ChanceOfRainOrDrizzle
     case ChanceOfShowers
+    case ChanceOfShowersAtTimesHeavy
     case ChanceOfShowersOrDrizzle
     case ChanceOfShowersOrThunderstorms
     case ChanceOfSnow
+    case ChanceOfSnowOrRain
     case ChanceOfSnowMixedWithRain
     case ChanceOfWetFlurries
     case ChanceOfWetFlurriesOrRainShowers

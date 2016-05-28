@@ -32,6 +32,10 @@ class WeatherStatusTests: XCTestCase {
         noMissingStatus("/cities5")
     }
 
+    func testNoMissingStatus6() {
+        noMissingStatus("/cities6")
+    }
+
     
     func noMissingStatus(subPath: String) {
         let fileManager = NSFileManager.defaultManager()

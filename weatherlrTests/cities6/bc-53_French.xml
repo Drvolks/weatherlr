@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Tetsa River (Parc provincial) - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/bc-53_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/bc-53_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-28T05:07:22Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160528050722</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>AVERTISSEMENT MÉTÉOROLOGIQUE EN VIGUEUR, Tetsa River (Parc provincial)</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?bc6"/>
+ <updated>2016-05-28T04:59:00Z</updated>
+ <published>2016-05-28T04:59:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émis à: 21h59 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_w1:201605280459</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Pluie. Températures stables près de plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie sauf neige près du sommet. Hauteur prévue de 5 à 10 mm sauf 20 mm sur le secteur est. Températures stables près de plus 3. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc1:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Samedi: Neige ou pluie. Températures à la baisse pour atteindre plus 1 en après-midi.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Pluie se changeant en neige tard le matin. Neige près du sommet le matin. Hauteur de pluie prévue de 10 mm. Accumulation de neige de 10 cm sauf 20 cm en terrains élevés. Températures à la baisse pour atteindre plus 1 en après-midi. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc2:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Neige. Températures stables près de plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Neige. Températures stables près de plus 1. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc3:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Possibilité de neige ou pluie. Maximum 7. PdP 70%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux avec 70 pour cent de probabilité de neige ou pluie. Maximum 7. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc4:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Nuageux. Minimum moins 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum moins 1. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc5:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Lundi: Nuageux. Maximum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 10. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc6:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Nuageux. Minimum plus 1.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Minimum plus 1. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc7:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Mardi: Nuageux. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Maximum 18. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc8:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 5. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc9:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 22.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 22. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc10:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum 7.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 7. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc11:20160528050100</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 23.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-53_metric_f.html"/>
+ <updated>2016-05-28T05:01:00Z</updated>
+ <published>2016-05-28T05:01:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 23. Prévisions émises 22h01 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-53_fc12:20160528050100</id>
+ </entry>
+ </feed>
+

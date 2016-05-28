@@ -399,6 +399,10 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.ChanceOfRainOrDrizzle
         case "possibilité de neige mêlée de pluie", "chance of snow mixed with rain":
             return WeatherStatus.ChanceOfSnowMixedWithRain
+        case "possibilité de neige ou pluie", "chance of snow or rain":
+            return WeatherStatus.ChanceOfSnowOrRain
+        case "possibilité d'averses parfois fortes", "chance of showers at times heavy":
+            return WeatherStatus.ChanceOfShowersAtTimesHeavy
         default:
             return convertWeatherStatusWithRegex(text)
         }

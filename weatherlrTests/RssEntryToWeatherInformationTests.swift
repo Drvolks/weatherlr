@@ -1523,6 +1523,9 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractAlertText(alertTitleEn)
         XCTAssertEqual("", result)
+        
+        result = performer.extractAlertText(" IN EFFECT, Bonaventure")
+        XCTAssertEqual("", result)
     }
     
     func testExtractAlertType() {

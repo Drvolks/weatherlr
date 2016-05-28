@@ -558,7 +558,7 @@ class RssEntryToWeatherInformation {
     }
     
     func isAlert(title: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|" + alerts + ").*?", options: [])
+        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|IN EFFECT|" + alerts + ").*?", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return false
@@ -575,6 +575,8 @@ class RssEntryToWeatherInformation {
         }
 
         regex = try! NSRegularExpression(pattern: "^(.*?)(,|$)", options: [])
-        return performRegex(regex, text: title, index: 1)
+        let alertText = performRegex(regex, text: title, index: 1)
+        
+        return alertText
     }
 }

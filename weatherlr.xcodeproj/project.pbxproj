@@ -78,6 +78,7 @@
 		6E9F335E1CB8588D00A9D6A7 /* AlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */; };
 		6E9F33601CB942C700A9D6A7 /* WeatherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */; };
 		6EAB02E11CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */; };
+		6EDC30141CF9B7D1006325EE /* cities6 in Resources */ = {isa = PBXBuildFile; fileRef = 6EDC30131CF9B7D1006325EE /* cities6 */; };
 		6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */; };
 		6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -212,6 +213,7 @@
 		6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
 		6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHeaderCell.swift; sourceTree = "<group>"; };
 		6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalTopAlignLabel.swift; sourceTree = "<group>"; };
+		6EDC30131CF9B7D1006325EE /* cities6 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities6; sourceTree = "<group>"; };
 		6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxLabel.swift; sourceTree = "<group>"; };
 		6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -321,6 +323,7 @@
 				6E816C181CD76DBB00533684 /* cities3 */,
 				6E9E12B41CDF8DAD00791284 /* cities4 */,
 				6E9E12B81CDFC2F000791284 /* cities5 */,
+				6EDC30131CF9B7D1006325EE /* cities6 */,
 				6E2905421CB2D5550040EB8B /* Info.plist */,
 				6E9F32E71CB4011B00A9D6A7 /* Rss */,
 				6E9F32C71CB30C6D00A9D6A7 /* WeatherInformationTests.swift */,
@@ -573,6 +576,7 @@
 				6E4910C81CC92027006D3C82 /* TestDataEntryCurrentNoObservation.xml in Resources */,
 				6E816C191CD76DBB00533684 /* cities3 in Resources */,
 				6E816C131CD385DC00533684 /* cities2 in Resources */,
+				6EDC30141CF9B7D1006325EE /* cities6 in Resources */,
 				6E9F32DF1CB3F4E700A9D6A7 /* TestDataEntry.xml in Resources */,
 				6E9E12B51CDF8DAD00791284 /* cities4 in Resources */,
 				6E816C0D1CCFF87800533684 /* cities1 in Resources */,

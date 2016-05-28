@@ -78,7 +78,8 @@ class WeatherHelper {
             return WeatherStatus.ChanceOfSnow
         case .ChanceOfRainShowersOrFlurries,
              .PeriodsOfLightSnowMixedWithRain,
-             .ChanceOfSnowMixedWithRain:
+             .ChanceOfSnowMixedWithRain,
+             .ChanceOfSnowOrRain:
             return WeatherStatus.AFewRainShowersOrFlurries
         case .RainOrFreezingRain:
             return WeatherStatus.PeriodsOfRainOrFreezingRain
@@ -156,7 +157,8 @@ class WeatherHelper {
             return WeatherStatus.ChanceOfRainShowersOrWetFlurries
         case .LightWetSnow:
             return WeatherStatus.ChanceOfWetFlurries
-        case .HeavyRainshower:
+        case .HeavyRainshower,
+             .ChanceOfShowersAtTimesHeavy:
             return WeatherStatus.RainAtTimesHeavy
         case .AFewShowersOrThunderstorms,
              .Thunderstorm,

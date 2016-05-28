@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-ca">
+ 
+<!--
+Ce fichier contient des données destinées aux lecteurs ou agrégateurs RSS.
+Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à http://www.ec.gc.ca/meteo-weather/default.asp?lang=Fr&n=11703207-1
+-->
+
+ <title>Haines Junction - Météo - Environnement Canada</title>
+ <link rel="related" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html" type="text/html"/>
+ <link rel="self" href="http://www.meteo.gc.ca/rss/city/yt-5_f.xml" type="application/atom+xml"/>
+ <link rel="alternate" hreflang="en-ca" href="http://www.weather.gc.ca/rss/city/yt-5_e.xml" type="application/atom+xml"/>
+ <author>
+ <name>Environnement Canada</name>
+ <uri>http://www.meteo.gc.ca</uri>
+ </author>
+ <updated>2016-05-28T11:04:19Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160528110419</id>
+ <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
+ <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
+ <rights>Droit d'auteur 2016, Environnement Canada</rights>
+ <entry>
+ <title>Aucune veille ou alerte en vigueur, Haines Junction</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
+ <updated>2016-01-27T00:30:00Z</updated>
+ <published>2016-01-27T00:30:00Z</published>
+ <category term="Veilles et avertissements"/>
+ <summary type="html">Aucune veille ou alerte en vigueur.</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_w1:20160127003000</id>
+ </entry>
+ <entry>
+ <title>Conditions actuelles: -1,7&#xB0;C</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-28T11:00:00Z</updated>
+ <published>2016-05-28T11:00:00Z</published>
+ <category term="Conditions actuelles"/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Haines Junction 04h00 HAP samedi 28 mai 2016 <br/>
+<b>Température:</b> -1,7&deg;C <br/>
+<b>Pression / Tendance:</b> 102,1 kPa à la hausse<br/>
+<b>Humidité:</b> 96 %<br/>
+<b>Refroidissement éolien:</b> -3 <br/>
+<b>Point de rosée:</b> -2,3&deg;C <br/>
+<b>Vent:</b> ENE 4 km/h<br/>
+<b>Cote air santé:</b> N,D. <br/>
+]]></summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_cc:20160528110000</id>
+ </entry>
+ <entry>
+ <title>Ce soir et cette nuit: Généralement nuageux. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Nuageux. Devenant partiellement nuageux vers minuit. Minimum plus 3. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc1:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Samedi: Possibilité d'averses. Maximum 17. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Devenant nuageux en après-midi suivi de 30 pour cent de probabilité d'averses. Maximum 17. Indice UV de 4 ou modéré. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc2:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Samedi soir et nuit: Possibilité d'averses. Minimum plus 4. PdP 30%</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Généralement nuageux. 30 pour cent de probabilité d'averses tôt en soirée. Minimum plus 4. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc3:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum 16.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 16. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc4:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Dimanche soir et nuit: Passages nuageux. Minimum plus 5.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum plus 5. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc5:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Lundi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc6:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Lundi soir et nuit: Dégagé. Minimum plus 3.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc7:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Mardi: Ensoleillé. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc8:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Mardi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc9:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Ensoleillé. Maximum 20.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc10:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Dégagé. Minimum 6.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Dégagé. Minimum 6. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc11:20160527230000</id>
+ </entry>
+ <entry>
+ <title>Jeudi: Ensoleillé. Maximum 21.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/yt-5_metric_f.html"/>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:yt-5_fc12:20160527230000</id>
+ </entry>
+ </feed>
+

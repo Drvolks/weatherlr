@@ -167,7 +167,8 @@ class WeatherInformation {
              .ChanceOfRainOrDrizzle,
              .ChanceOfSnowMixedWithRain,
              .ChanceOfSnowOrRain,
-             .ChanceOfShowersAtTimesHeavy:
+             .ChanceOfShowersAtTimesHeavy,
+             .ShowersAtTimesHeavy:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,

@@ -124,6 +124,7 @@ enum WeatherStatus {
     case RainOrFreezingRain
     case RainShowersOrFlurries
     case Showers
+    case ShowersAtTimesHeavy
     case ShowersOrDrizzle
     case ShowersOrThunderstorms
     case Smoke

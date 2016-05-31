@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:02:15Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150215</id>
+ <updated>2016-05-08T18:06:36Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508180636</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,23 +29,23 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:qc-150_w1:20160411135900</id>
  </entry>
  <entry>
- <title>Current Conditions: Mostly Cloudy, -3.4&#xB0;C</title>
+ <title>Current Conditions: Mostly Cloudy, -3.1&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-150_metric_e.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Kuujjuaq Airport 11:00 AM EDT Sunday 08 May 2016 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Kuujjuaq Airport 2:00 PM EDT Sunday 08 May 2016 <br/>
 <b>Condition:</b> Mostly Cloudy <br/>
-<b>Temperature:</b> -3.4&deg;C <br/>
+<b>Temperature:</b> -3.1&deg;C <br/>
 <b>Pressure / Tendency:</b> 100.9 kPa rising<br/>
 <b>Visibility:</b> 24.1 km<br/>
-<b>Humidity:</b> 71 %<br/>
+<b>Humidity:</b> 70 %<br/>
 <b>Wind Chill:</b> -10 <br/>
-<b>Dewpoint:</b> -7.9&deg;C <br/>
+<b>Dewpoint:</b> -7.8&deg;C <br/>
 <b>Wind:</b> NNE 26 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-150_cc:20160508150000</id>
+ <id>tag:weather.gc.ca,2013-04-16:qc-150_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Sunday: Periods of snow. High minus 1.</title>

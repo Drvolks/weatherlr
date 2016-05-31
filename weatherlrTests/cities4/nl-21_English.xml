@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:06:19Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150619</id>
+ <updated>2016-05-08T18:26:26Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508182626</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,22 +29,22 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:nl-21_w1:20160411130500</id>
  </entry>
  <entry>
- <title>Current Conditions: Mostly Cloudy, 10.5&#xB0;C</title>
+ <title>Current Conditions: Light Rain, 8.7&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-21_metric_e.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:25:00Z</updated>
+ <published>2016-05-08T18:25:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Churchill Falls 12:00 PM ADT Sunday 08 May 2016 <br/>
-<b>Condition:</b> Mostly Cloudy <br/>
-<b>Temperature:</b> 10.5&deg;C <br/>
-<b>Pressure:</b> 100.2 kPa <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Churchill Falls 3:25 PM ADT Sunday 08 May 2016 <br/>
+<b>Condition:</b> Light Rain <br/>
+<b>Temperature:</b> 8.7&deg;C <br/>
+<b>Pressure:</b> 100.1 kPa <br/>
 <b>Visibility:</b> 16.1 km<br/>
-<b>Humidity:</b> 61 %<br/>
-<b>Dewpoint:</b> 3.4&deg;C <br/>
-<b>Wind:</b>  0 km/h<br/>
+<b>Humidity:</b> 85 %<br/>
+<b>Dewpoint:</b> 6.4&deg;C <br/>
+<b>Wind:</b> SE 13 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-21_cc:20160508150000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nl-21_cc:20160508182500</id>
  </entry>
  <entry>
  <title>Sunday: Periods of rain or drizzle. High 9.</title>

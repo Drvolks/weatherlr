@@ -14,151 +14,151 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T18:06:02Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508180602</id>
+ <updated>2016-05-28T11:06:10Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160528110610</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
  <entry>
  <title>No watches or warnings in effect, Témiscamingue</title>
  <link type="text/html" href="http://www.weather.gc.ca/warnings/index_e.html"/>
- <updated>2016-04-22T14:15:00Z</updated>
- <published>2016-04-22T14:15:00Z</published>
+ <updated>2016-05-28T04:07:00Z</updated>
+ <published>2016-05-28T04:07:00Z</published>
  <category term="Warnings and Watches"/>
  <summary type="html">No watches or warnings in effect.</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_w1:20160422141500</id>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_w1:20160528040700</id>
  </entry>
  <entry>
- <title>Current Conditions: 6.1&#xB0;C</title>
+ <title>Current Conditions: 11.8&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-28T11:00:00Z</updated>
+ <published>2016-05-28T11:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Temiskaming Dam 2:00 PM EDT Sunday 08 May 2016 <br/>
-<b>Temperature:</b> 6.1&deg;C <br/>
-<b>Humidity:</b> 55 %<br/>
-<b>Dewpoint:</b> -2.2&deg;C <br/>
-<b>Wind:</b> NNW 10 km/h gust 29 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Temiskaming Dam 07:00 AM EDT Saturday 28 May 2016 <br/>
+<b>Temperature:</b> 11.8&deg;C <br/>
+<b>Humidity:</b> 99 %<br/>
+<b>Dewpoint:</b> 11.5&deg;C <br/>
+<b>Wind:</b>  0 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_cc:20160508180000</id>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_cc:20160528110000</id>
  </entry>
  <entry>
- <title>Sunday: Chance of showers. High plus 5. POP 30%</title>
+ <title>Saturday: A few showers. High 23.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly cloudy. 30 percent chance of showers. Wind northwest 20 km/h gusting to 40. High plus 5. UV index 5 or moderate. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc1:20160508153000</id>
+ <summary type="html">Cloudy. A few showers beginning this morning. Wind becoming southeast 20 km/h this afternoon. High 23. UV index 3 or moderate. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc1:20160528090000</id>
  </entry>
  <entry>
- <title>Sunday night: Chance of rain showers or flurries. Low minus 1. POP 40%</title>
+ <title>Saturday night: A few showers. Low 16.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly cloudy with 40 percent chance of rain showers or flurries this evening. Clearing overnight. Low minus 1. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc2:20160508153000</id>
+ <summary type="html">Showers. Risk of thunderstorms overnight. Wind southeast 20 km/h becoming light this evening. Low 16. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc2:20160528090000</id>
  </entry>
  <entry>
- <title>Monday: Sunny. High 10.</title>
+ <title>Sunday: Showers. High 25.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. Wind becoming northwest 20 km/h gusting to 40 in the morning. High 10. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc3:20160508153000</id>
+ <summary type="html">A few showers ending near noon then mainly cloudy with 40 percent chance of showers. Risk of thunderstorms in the morning and afternoon. Wind becoming southwest 20 km/h near noon. High 25. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc3:20160528090000</id>
  </entry>
  <entry>
- <title>Monday night: Clear. Low minus 3.</title>
+ <title>Sunday night: Chance of showers. Low 15. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low minus 3. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc4:20160508153000</id>
+ <summary type="html">Cloudy with 60 percent chance of showers. Low 15. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc4:20160528090000</id>
  </entry>
  <entry>
- <title>Tuesday: Sunny. High 14.</title>
+ <title>Monday: Chance of showers. High 21. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 14. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc5:20160508153000</id>
+ <summary type="html">Cloudy with 30 percent chance of showers. High 21. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc5:20160528090000</id>
  </entry>
  <entry>
- <title>Tuesday night: Clear. Low minus 1.</title>
+ <title>Monday night: Chance of showers. Low 9. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low minus 1. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc6:20160508153000</id>
+ <summary type="html">Cloudy with 30 percent chance of showers. Low 9. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc6:20160528090000</id>
  </entry>
  <entry>
- <title>Wednesday: Sunny. High 18.</title>
+ <title>Tuesday: A mix of sun and cloud. High 18.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 18. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc7:20160508153000</id>
+ <summary type="html">Clearing. High 18. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc7:20160528090000</id>
  </entry>
  <entry>
- <title>Wednesday night: Clear. Low plus 5.</title>
+ <title>Tuesday night: Clear. Low 7.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low plus 5. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc8:20160508153000</id>
+ <summary type="html">Clear. Low 7. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc8:20160528090000</id>
  </entry>
  <entry>
- <title>Thursday: Sunny. High 20.</title>
+ <title>Wednesday: Chance of showers. High 17. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 20. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc9:20160508153000</id>
+ <summary type="html">A mix of sun and cloud with 40 percent chance of showers. High 17. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc9:20160528090000</id>
  </entry>
  <entry>
- <title>Thursday night: Chance of showers. Low 11. POP 60%</title>
+ <title>Wednesday night: Chance of showers. Low 11. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. Low 11. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc10:20160508153000</id>
+ <summary type="html">Cloudy with 60 percent chance of showers. Low 11. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc10:20160528090000</id>
  </entry>
  <entry>
- <title>Friday: Chance of showers. High 18. POP 60%</title>
+ <title>Thursday: Chance of showers. High 20. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. High 18. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc11:20160508153000</id>
+ <summary type="html">Cloudy with 60 percent chance of showers. High 20. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc11:20160528090000</id>
  </entry>
  <entry>
- <title>Friday night: Chance of showers. Low plus 5. POP 60%</title>
+ <title>Thursday night: Chance of showers. Low 9. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. Low plus 5. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc12:20160508153000</id>
+ <summary type="html">Cloudy with 60 percent chance of showers. Low 9. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc12:20160528090000</id>
  </entry>
  <entry>
- <title>Saturday: Chance of showers. High 11. POP 60%</title>
+ <title>Friday: Chance of showers. High 17. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-139_metric_e.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. High 11. Forecast issued 11:30 AM EDT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-139_fc13:20160508153000</id>
+ <summary type="html">Cloudy with 60 percent chance of showers. High 17. Forecast issued 05:00 AM EDT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-139_fc13:20160528090000</id>
  </entry>
  </feed>
 

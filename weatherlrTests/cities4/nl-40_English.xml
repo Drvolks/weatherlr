@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:01:26Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150126</id>
+ <updated>2016-05-08T18:00:57Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508180057</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -38,22 +38,22 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:nl-40_w2:201605081417</id>
  </entry>
  <entry>
- <title>Current Conditions: Mostly Cloudy, 7.5&#xB0;C</title>
+ <title>Current Conditions: Mostly Cloudy, 3.4&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-40_metric_e.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Nain Airport 12:00 PM ADT Sunday 08 May 2016 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Nain Airport 3:00 PM ADT Sunday 08 May 2016 <br/>
 <b>Condition:</b> Mostly Cloudy <br/>
-<b>Temperature:</b> 7.5&deg;C <br/>
-<b>Pressure / Tendency:</b> 100.3 kPa steady<br/>
+<b>Temperature:</b> 3.4&deg;C <br/>
+<b>Pressure / Tendency:</b> 100.4 kPa rising<br/>
 <b>Visibility:</b> 24.1 km<br/>
-<b>Humidity:</b> 61 %<br/>
-<b>Dewpoint:</b> 0.5&deg;C <br/>
-<b>Wind:</b> NNE 3 km/h<br/>
+<b>Humidity:</b> 76 %<br/>
+<b>Dewpoint:</b> -0.4&deg;C <br/>
+<b>Wind:</b> ENE 32 km/h gust 42 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-40_cc:20160508150000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nl-40_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Sunday: A mix of sun and cloud. High 8.</title>

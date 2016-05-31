@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T18:02:00Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508180200</id>
+ <updated>2016-05-28T11:03:02Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160528110302</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,137 +29,137 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:on-76_w1:20160422114500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: 1,6&#xB0;C</title>
+ <title>Conditions actuelles: 13,7&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-28T11:00:00Z</updated>
+ <published>2016-05-28T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Kirkland Lake 14h00 HAE dimanche 08 mai 2016 <br/>
-<b>Température:</b> 1,6&deg;C <br/>
-<b>Pression / Tendance:</b> 101,2 kPa à la hausse<br/>
-<b>Humidité:</b> 55 %<br/>
-<b>Point de rosée:</b> -6,5&deg;C <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Kirkland Lake 07h00 HAE samedi 28 mai 2016 <br/>
+<b>Température:</b> 13,7&deg;C <br/>
+<b>Pression / Tendance:</b> 101,9 kPa à la hausse<br/>
+<b>Humidité:</b> 85 %<br/>
+<b>Point de rosée:</b> 11,2&deg;C <br/>
 <b>Vent:</b>   km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_cc:20160508180000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_cc:20160528110000</id>
  </entry>
  <entry>
- <title>Dimanche: Possibilité d'averses. Maximum 6. PdP 30%</title>
+ <title>Samedi: Possibilité d'averses. Maximum 22. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. 30 pour cent de probabilité d'averses cet après-midi. Vents devenant du nord-ouest à 20 km/h cet après-midi. Maximum 6. Indice UV de 5 ou modéré. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc1:20160508153000</id>
+ <summary type="html">Averses cessant tard ce matin. Généralement nuageux par la suite avec 60 pour cent de probabilité d'averses. Risque d'un orage. Vents devenant du sud-est à 20 km/h cet après-midi. Maximum 22. Indice UV de 5 ou modéré. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc1:20160528093000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Dégagement. Minimum moins 2.</title>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum 16. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. Dégagement au cours de la nuit. Minimum moins 2. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc2:20160508153000</id>
+ <summary type="html">Généralement nuageux avec 60 pour cent de probabilité d'averses et risque d'un orage. Nappes de brouillard se formant tard ce soir. Vents du sud-est de 20 km/h devenant légers ce soir. Minimum 16. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc2:20160528093000</id>
  </entry>
  <entry>
- <title>Lundi: Ensoleillé. Maximum 12.</title>
+ <title>Dimanche: Possibilité d'averses. Maximum 26. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Vents devenant du nord-ouest à 20 km/h le matin. Maximum 12. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc3:20160508153000</id>
+ <summary type="html">Généralement nuageux avec 40 pour cent de probabilité d'averses et risque d'un orage. Nappes de brouillard se dissipant le matin. Vents devenant du sud-ouest à 20 km/h tard le matin. Maximum 26. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc3:20160528093000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Dégagé. Minimum moins 3.</title>
+ <title>Dimanche soir et nuit: Possibilité d'averses. Minimum 15. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum moins 3. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc4:20160508153000</id>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 15. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc4:20160528093000</id>
  </entry>
  <entry>
- <title>Mardi: Alternance de soleil et de nuages. Maximum 16.</title>
+ <title>Lundi: Possibilité d'averses. Maximum 24. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 16. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc5:20160508153000</id>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 24. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc5:20160528093000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Passages nuageux. Minimum moins 1.</title>
+ <title>Lundi soir et nuit: Passages nuageux. Minimum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 1. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc6:20160508153000</id>
+ <summary type="html">Passages nuageux. Minimum 9. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc6:20160528093000</id>
  </entry>
  <entry>
- <title>Mercredi: Alternance de soleil et de nuages. Maximum 19.</title>
+ <title>Mardi: Alternance de soleil et de nuages. Maximum 19.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 19. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc7:20160508153000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 19. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc7:20160528093000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc8:20160508153000</id>
+ <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc8:20160528093000</id>
+ </entry>
+ <entry>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc9:20160528093000</id>
+ </entry>
+ <entry>
+ <title>Mercredi soir et nuit: Passages nuageux. Minimum 10.</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Passages nuageux. Minimum 10. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc10:20160528093000</id>
  </entry>
  <entry>
  <title>Jeudi: Possibilité d'averses. Maximum 20. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 20. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc9:20160508153000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 20. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc11:20160528093000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 10. PdP 40%</title>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 8. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux avec 40 pour cent de probabilité d'averses. Minimum 10. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc10:20160508153000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum 8. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc12:20160528093000</id>
  </entry>
  <entry>
- <title>Vendredi: Possibilité d'averses. Maximum 18. PdP 40%</title>
+ <title>Vendredi: Possibilité d'averses. Maximum 18. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
+ <updated>2016-05-28T09:30:00Z</updated>
+ <published>2016-05-28T09:30:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 40 pour cent de probabilité d'averses. Maximum 18. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc11:20160508153000</id>
- </entry>
- <entry>
- <title>Vendredi soir et nuit: Possibilité d'averses. Minimum plus 4. PdP 40%</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux avec 40 pour cent de probabilité d'averses. Minimum plus 4. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc12:20160508153000</id>
- </entry>
- <entry>
- <title>Samedi: Alternance de soleil et de nuages. Maximum 12.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-76_metric_f.html"/>
- <updated>2016-05-08T15:30:00Z</updated>
- <published>2016-05-08T15:30:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 12. Prévisions émises 11h30 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-76_fc13:20160508153000</id>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 18. Prévisions émises 05h30 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-76_fc13:20160528093000</id>
  </entry>
  </feed>
 

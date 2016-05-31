@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T18:08:00Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508180800</id>
+ <updated>2016-05-28T08:50:52Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160528085052</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,138 +29,112 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:bc-31_w1:20160202131500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Généralement nuageux, 11,0&#xB0;C</title>
+ <title>Ce soir et cette nuit: Quelques averses. Minimum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
- <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Hope Slide 11h00 HAP dimanche 08 mai 2016 <br/>
-<b>Condition:</b> Généralement nuageux <br/>
-<b>Température:</b> 11,0&deg;C <br/>
-<b>Visibilité:</b> 16,1 km<br/>
-<b>Humidité:</b> 62 %<br/>
-<b>Point de rosée:</b> 4,0&deg;C <br/>
-<b>Vent:</b> NO 50 km/h<br/>
-<b>Cote air santé:</b> N,D. <br/>
-]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_cc:20160508180000</id>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
+ <category term="Prévisions météo"/>
+ <summary type="html">Averses. Minimum 9. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc1:20160527230000</id>
  </entry>
  <entry>
- <title>Dimanche: Possibilité d'averses. Maximum 18. PdP 60%</title>
+ <title>Samedi: Pluie intermittente. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses tard cet après-midi. Venteux. Maximum 18. Indice UV de 5 ou modéré. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc1:20160508180000</id>
+ <summary type="html">Pluie intermittente. Maximum 14. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc2:20160527230000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Possibilité d'averses. Minimum 8. PdP 60%</title>
+ <title>Samedi soir et nuit: Pluie intermittente. Températures stables près de 11.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses ce soir avec risque d'un orage. Venteux tôt ce soir. Minimum 8. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc2:20160508180000</id>
+ <summary type="html">Pluie intermittente. Températures stables près de 11. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc3:20160527230000</id>
  </entry>
  <entry>
- <title>Lundi: Possibilité d'averses. Maximum 20. PdP 30%</title>
+ <title>Samedi: Averses. Maximum 16.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. 30 pour cent de probabilité d'averses en après-midi. Maximum 20. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc3:20160508180000</id>
+ <summary type="html">Averses. Maximum 16. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc4:20160527230000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Dégagé. Minimum 9.</title>
+ <title>Samedi soir et nuit: Possibilité d'averses. Minimum 9. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 9. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc4:20160508180000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 9. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc5:20160527230000</id>
  </entry>
  <entry>
- <title>Mardi: Alternance de soleil et de nuages. Maximum 21.</title>
+ <title>Dimanche: Ensoleillé. Maximum 19.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 21. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc5:20160508180000</id>
+ <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc6:20160527230000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Possibilité d'averses. Minimum 10. PdP 40%</title>
+ <title>Dimanche soir et nuit: Dégagé. Minimum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum 10. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc6:20160508180000</id>
+ <summary type="html">Dégagé. Minimum 9. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc7:20160527230000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses. Maximum 19. PdP 40%</title>
+ <title>Lundi: Ensoleillé. Maximum 25.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 19. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc7:20160508180000</id>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc8:20160527230000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Possibilité d'averses. Minimum 8. PdP 30%</title>
+ <title>Lundi soir et nuit: Dégagé. Minimum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 8. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc8:20160508180000</id>
+ <summary type="html">Dégagé. Minimum 10. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc9:20160527230000</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses. Maximum 19. PdP 30%</title>
+ <title>Mardi: Ensoleillé. Maximum 28.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 19. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc9:20160508180000</id>
+ <summary type="html">Ensoleillé. Maximum 28. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc10:20160527230000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 9. PdP 30%</title>
+ <title>Mardi soir et nuit: Dégagé. Minimum 12.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 9. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc10:20160508180000</id>
+ <summary type="html">Dégagé. Minimum 12. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc11:20160527230000</id>
  </entry>
  <entry>
- <title>Vendredi: Alternance de soleil et de nuages. Maximum 24.</title>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 27.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 24. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc11:20160508180000</id>
- </entry>
- <entry>
- <title>Vendredi soir et nuit: Dégagé. Minimum 10.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 10. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc12:20160508180000</id>
- </entry>
- <entry>
- <title>Samedi: Ensoleillé. Maximum 23.</title>
- <link type="text/html" href="http://www.meteo.gc.ca/city/pages/bc-31_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
- <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 23. Prévisions émises 11h00 HAP dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc13:20160508180000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 27. Prévisions émises 16h00 HAP vendredi 27 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:bc-31_fc12:20160527230000</id>
  </entry>
  </feed>
 

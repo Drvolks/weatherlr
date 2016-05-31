@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:04:56Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150456</id>
+ <updated>2016-05-08T18:26:05Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508182605</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,139 +29,139 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:sk-33_w1:20160405224500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Ensoleillé, 17,0&#xB0;C</title>
+ <title>Conditions actuelles: Ensoleillé, 23,9&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Yorkton 09h00 HNC dimanche 08 mai 2016 <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Yorkton 12h00 HNC dimanche 08 mai 2016 <br/>
 <b>Condition:</b> Ensoleillé <br/>
-<b>Température:</b> 17,0&deg;C <br/>
-<b>Pression:</b> 100,5 kPa <br/>
+<b>Température:</b> 23,9&deg;C <br/>
+<b>Pression:</b> 100,3 kPa <br/>
 <b>Visibilité:</b> 16,1 km<br/>
-<b>Humidité:</b> 36 %<br/>
-<b>Point de rosée:</b> 1,9&deg;C <br/>
-<b>Vent:</b> SSO 22 km/h<br/>
+<b>Humidité:</b> 20 %<br/>
+<b>Point de rosée:</b> -0,3&deg;C <br/>
+<b>Vent:</b> S 32 km/h rafale 52 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_cc:20160508180000</id>
  </entry>
  <entry>
- <title>Dimanche: Ensoleillé. Maximum 26.</title>
+ <title>Dimanche: Fumée. Maximum 26.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Vents du sud de 30 km/h. Maximum 26. Indice UV de 6 ou élevé. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc1:20160508110000</id>
+ <summary type="html">Ensoleillé. Fumée généralisée. Vents du sud de 20 km/h avec rafales à 40. Maximum 26. Indice UV de 6 ou élevé. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc1:20160508182300</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Dégagé. Minimum 12.</title>
+ <title>Ce soir et cette nuit: Fumée. Minimum 12.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Vents du sud de 30 km/h. Minimum 12. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc2:20160508110000</id>
+ <summary type="html">Dégagé. Fumée généralisée. Vents du sud de 20 km/h avec rafales à 40. Minimum 12. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc2:20160508182300</id>
  </entry>
  <entry>
  <title>Lundi: Ennuagement. Maximum 22.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Ennuagement en après-midi. Vents du sud de 30 km/h. Maximum 22. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc3:20160508110000</id>
+ <summary type="html">Ensoleillé. Ennuagement en après-midi. Vents du sud de 30 km/h. Maximum 22. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc3:20160508182300</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Possibilité d'averses. Minimum 11. PdP 60%</title>
+ <title>Lundi soir et nuit: Averses. Minimum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Minimum 11. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc4:20160508110000</id>
+ <summary type="html">Averses. Minimum 10. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc4:20160508182300</id>
  </entry>
  <entry>
  <title>Mardi: Pluie intermittente. Maximum 16.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie intermittente. Maximum 16. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc5:20160508110000</id>
+ <summary type="html">Pluie intermittente. Maximum 16. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc5:20160508182300</id>
  </entry>
  <entry>
  <title>Mardi soir et nuit: Averses. Minimum 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Averses. Venteux. Minimum 7. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc6:20160508110000</id>
+ <summary type="html">Averses. Venteux. Minimum 7. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc6:20160508182300</id>
  </entry>
  <entry>
  <title>Mercredi: Averses. Maximum 11.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Averses. Maximum 11. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc7:20160508110000</id>
+ <summary type="html">Averses. Maximum 11. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc7:20160508182300</id>
  </entry>
  <entry>
  <title>Mercredi soir et nuit: Pluie. Minimum plus 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Pluie. Minimum plus 4. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc8:20160508110000</id>
+ <summary type="html">Pluie. Minimum plus 4. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc8:20160508182300</id>
  </entry>
  <entry>
  <title>Jeudi: Possibilité d'averses. Maximum 7. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 7. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc9:20160508110000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 7. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc9:20160508182300</id>
  </entry>
  <entry>
  <title>Jeudi soir et nuit: Passages nuageux. Minimum plus 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc10:20160508110000</id>
+ <summary type="html">Passages nuageux. Minimum plus 1. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc10:20160508182300</id>
  </entry>
  <entry>
  <title>Vendredi: Alternance de soleil et de nuages. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc11:20160508110000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc11:20160508182300</id>
  </entry>
  <entry>
  <title>Vendredi soir et nuit: Dégagé. Minimum plus 1.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 1. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc12:20160508110000</id>
+ <summary type="html">Dégagé. Minimum plus 1. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc12:20160508182300</id>
  </entry>
  <entry>
  <title>Samedi: Ensoleillé. Maximum 13.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/sk-33_metric_f.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 13. Prévisions émises 05h00 HNC dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc13:20160508110000</id>
+ <summary type="html">Ensoleillé. Maximum 13. Prévisions émises 12h23 HNC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:sk-33_fc13:20160508182300</id>
  </entry>
  </feed>
 

@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:04:38Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150438</id>
+ <updated>2016-05-08T18:01:17Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508180117</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,21 +29,23 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nu-23_w1:20160427203000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: -8,7&#xB0;C</title>
+ <title>Conditions actuelles: Généralement ensoleillé, -6,3&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-23_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport d`Igloolik 11h00 HAE dimanche 08 mai 2016 <br/>
-<b>Température:</b> -8,7&deg;C <br/>
-<b>Pression:</b> 101,4 kPa <br/>
-<b>Humidité:</b> 76 %<br/>
-<b>Refroidissement éolien:</b> -16 <br/>
-<b>Point de rosée:</b> -12,2&deg;C <br/>
-<b>Vent:</b> NNO 18 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport d`Igloolik 14h00 HAE dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Généralement ensoleillé <br/>
+<b>Température:</b> -6,3&deg;C <br/>
+<b>Pression / Tendance:</b> 101,5 kPa à la hausse<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 74 %<br/>
+<b>Refroidissement éolien:</b> -13 <br/>
+<b>Point de rosée:</b> -10,2&deg;C <br/>
+<b>Vent:</b> N 19 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-23_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-23_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Dimanche: Généralement ensoleillé. Maximum moins 4.</title>

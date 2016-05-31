@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:03:31Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150331</id>
+ <updated>2016-05-08T18:03:53Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508180353</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,23 +29,23 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:qc-40_w1:20160506091500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Nuageux, -4,4&#xB0;C</title>
+ <title>Conditions actuelles: Nuageux, -2,6&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/qc-40_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Puvirnituq 11h00 HAE dimanche 08 mai 2016 <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Puvirnituq 14h00 HAE dimanche 08 mai 2016 <br/>
 <b>Condition:</b> Nuageux <br/>
-<b>Température:</b> -4,4&deg;C <br/>
-<b>Pression:</b> 101,2 kPa <br/>
+<b>Température:</b> -2,6&deg;C <br/>
+<b>Pression:</b> 101,3 kPa <br/>
 <b>Visibilité:</b> 16,1 km<br/>
-<b>Humidité:</b> 80 %<br/>
-<b>Refroidissement éolien:</b> -9 <br/>
-<b>Point de rosée:</b> -7,3&deg;C <br/>
-<b>Vent:</b> E 13 km/h<br/>
+<b>Humidité:</b> 73 %<br/>
+<b>Refroidissement éolien:</b> -7 <br/>
+<b>Point de rosée:</b> -6,8&deg;C <br/>
+<b>Vent:</b> E 11 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:qc-40_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:qc-40_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Dimanche: Possibilité d'averses de neige. Maximum moins 2. PdP 30%</title>

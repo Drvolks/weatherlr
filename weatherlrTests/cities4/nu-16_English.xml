@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:04:30Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150430</id>
+ <updated>2016-05-08T18:07:34Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508180734</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,23 +29,23 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:nu-16_w1:20160505234500</id>
  </entry>
  <entry>
- <title>Current Conditions: Light Snow, -1.2&#xB0;C</title>
+ <title>Current Conditions: Light Snow, -1.4&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-16_metric_e.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Kugluktuk Airport 09:00 AM MDT Sunday 08 May 2016 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Kugluktuk Airport 12:00 PM MDT Sunday 08 May 2016 <br/>
 <b>Condition:</b> Light Snow <br/>
-<b>Temperature:</b> -1.2&deg;C <br/>
-<b>Pressure / Tendency:</b> 100.8 kPa rising<br/>
-<b>Visibility:</b> 1.6 km<br/>
-<b>Humidity:</b> 97 %<br/>
-<b>Wind Chill:</b> -7 <br/>
-<b>Dewpoint:</b> -1.6&deg;C <br/>
-<b>Wind:</b> NNE 23 km/h<br/>
+<b>Temperature:</b> -1.4&deg;C <br/>
+<b>Pressure / Tendency:</b> 101.0 kPa rising<br/>
+<b>Visibility:</b> 3.2 km<br/>
+<b>Humidity:</b> 94 %<br/>
+<b>Wind Chill:</b> -9 <br/>
+<b>Dewpoint:</b> -2.2&deg;C <br/>
+<b>Wind:</b> NNE 33 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-16_cc:20160508150000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nu-16_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Sunday: Periods of snow. Temperature falling to minus 3 this afternoon.</title>

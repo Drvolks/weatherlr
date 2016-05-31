@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:03:27Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150327</id>
+ <updated>2016-05-08T18:47:06Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508184706</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,23 +29,23 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nu-5_w1:20160414134500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Neige faible, -5,0&#xB0;C</title>
+ <title>Conditions actuelles: Neige faible, -2,3&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-5_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:46:00Z</updated>
+ <published>2016-05-08T18:46:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Qikiqtarjuaq 11h00 HAE dimanche 08 mai 2016 <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Qikiqtarjuaq 14h46 HAE dimanche 08 mai 2016 <br/>
 <b>Condition:</b> Neige faible <br/>
-<b>Température:</b> -5,0&deg;C <br/>
-<b>Pression / Tendance:</b> 100,9 kPa à la baisse<br/>
-<b>Visibilité:</b> 3,2 km<br/>
-<b>Humidité:</b> 86 %<br/>
-<b>Refroidissement éolien:</b> -12 <br/>
-<b>Point de rosée:</b> -7,0&deg;C <br/>
-<b>Vent:</b> NNE 25 km/h<br/>
+<b>Température:</b> -2,3&deg;C <br/>
+<b>Pression:</b> 100,8 kPa <br/>
+<b>Visibilité:</b> 4,8 km<br/>
+<b>Humidité:</b> 76 %<br/>
+<b>Refroidissement éolien:</b> -8 <br/>
+<b>Point de rosée:</b> -6,0&deg;C <br/>
+<b>Vent:</b> NNO 17 km/h rafale 30 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-5_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-5_cc:20160508184600</id>
  </entry>
  <entry>
  <title>Dimanche: Neige. Maximum moins 4.</title>

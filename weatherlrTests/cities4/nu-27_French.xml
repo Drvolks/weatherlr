@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:04:16Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150416</id>
+ <updated>2016-05-08T18:03:45Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508180345</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,23 +29,23 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nu-27_w1:20160422174500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Partiellement nuageux, -5,6&#xB0;C</title>
+ <title>Conditions actuelles: Partiellement nuageux, -4,3&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-27_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Resolute 10h00 HAC dimanche 08 mai 2016 <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Resolute 13h00 HAC dimanche 08 mai 2016 <br/>
 <b>Condition:</b> Partiellement nuageux <br/>
-<b>Température:</b> -5,6&deg;C <br/>
-<b>Pression / Tendance:</b> 101,8 kPa à la baisse<br/>
+<b>Température:</b> -4,3&deg;C <br/>
+<b>Pression / Tendance:</b> 101,8 kPa stationnaire<br/>
 <b>Visibilité:</b> 24,1 km<br/>
-<b>Humidité:</b> 81 %<br/>
-<b>Refroidissement éolien:</b> -14 <br/>
-<b>Point de rosée:</b> -8,4&deg;C <br/>
-<b>Vent:</b> ESE 31 km/h<br/>
+<b>Humidité:</b> 76 %<br/>
+<b>Refroidissement éolien:</b> -12 <br/>
+<b>Point de rosée:</b> -7,9&deg;C <br/>
+<b>Vent:</b> ESE 30 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-27_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-27_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Dimanche: Généralement ensoleillé. Maximum moins 3.</title>

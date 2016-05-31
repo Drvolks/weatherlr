@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T18:08:46Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508180846</id>
+ <updated>2016-05-28T11:01:06Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160528110106</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,140 +29,140 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nu-16_w1:20160505234500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Neige faible, -1,4&#xB0;C</title>
+ <title>Conditions actuelles: Généralement nuageux, -3,2&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-28T11:00:00Z</updated>
+ <published>2016-05-28T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Kugluktuk 12h00 HAR dimanche 08 mai 2016 <br/>
-<b>Condition:</b> Neige faible <br/>
-<b>Température:</b> -1,4&deg;C <br/>
-<b>Pression / Tendance:</b> 101,0 kPa à la hausse<br/>
-<b>Visibilité:</b> 3,2 km<br/>
-<b>Humidité:</b> 94 %<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Kugluktuk 05h00 HAR samedi 28 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> -3,2&deg;C <br/>
+<b>Pression / Tendance:</b> 102,9 kPa à la hausse<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 86 %<br/>
 <b>Refroidissement éolien:</b> -9 <br/>
-<b>Point de rosée:</b> -2,2&deg;C <br/>
-<b>Vent:</b> NNE 33 km/h<br/>
+<b>Point de rosée:</b> -5,2&deg;C <br/>
+<b>Vent:</b> N 16 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_cc:20160508180000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_cc:20160528110000</id>
  </entry>
  <entry>
- <title>Dimanche: Neige intermittente. Températures à la baisse pour atteindre moins 3 cet après-midi.</title>
+ <title>Samedi: Faible neige intermittente. Maximum zéro. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Neige intermittente. Accumulation de 2 à 4 cm. Vents du nord-est de 20 km/h avec rafales à 40. Températures à la baisse pour atteindre moins 3 cet après-midi. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc1:20160508150000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité de faible neige ce matin. Alternance de soleil et de nuages par la suite. Maximum zéro. Indice UV de 4 ou modéré. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc1:20160528090000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Possibilité d'averses de neige. Minimum moins 6. PdP 60%</title>
+ <title>Ce soir et cette nuit: Alternance de soleil et de nuages. Minimum moins 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses de neige. Vents du nord de 20 km/h. Minimum moins 6. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc2:20160508150000</id>
+ <summary type="html">Alternance de soleil et de nuages. Minimum moins 7. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc2:20160528090000</id>
  </entry>
  <entry>
- <title>Lundi: Possibilité d'averses de neige. Maximum moins 1. PdP 30%</title>
+ <title>Dimanche: Alternance de soleil et de nuages. Maximum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. 30 pour cent de probabilité d'averses de neige le matin. Vents du nord de 20 km/h. Maximum moins 1. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc3:20160508150000</id>
+ <summary type="html">Alternance de soleil et de nuages. Vents devenant du nord-est à 20 km/h en mi-journée. Maximum zéro. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc3:20160528090000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Nuageux. Minimum moins 4.</title>
+ <title>Dimanche soir et nuit: Ensoleillé. Minimum moins 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. Minimum moins 4. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc4:20160508150000</id>
+ <summary type="html">Ensoleillé. Minimum moins 6. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc4:20160528090000</id>
  </entry>
  <entry>
- <title>Mardi: Ensoleillé. Maximum plus 4.</title>
+ <title>Lundi: Ensoleillé. Maximum plus 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum plus 4. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc5:20160508150000</id>
+ <summary type="html">Ensoleillé. Maximum plus 2. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc5:20160528090000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Dégagé. Minimum moins 5.</title>
+ <title>Lundi soir et nuit: Ensoleillé. Minimum moins 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum moins 5. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc6:20160508150000</id>
+ <summary type="html">Ensoleillé. Minimum moins 6. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc6:20160528090000</id>
  </entry>
  <entry>
- <title>Mercredi: Ensoleillé. Maximum plus 1.</title>
+ <title>Mardi: Ensoleillé. Maximum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum plus 1. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc7:20160508150000</id>
+ <summary type="html">Ensoleillé. Maximum 6. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc7:20160528090000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Dégagé. Minimum moins 5.</title>
+ <title>Mardi soir et nuit: Ensoleillé. Minimum moins 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum moins 5. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc8:20160508150000</id>
+ <summary type="html">Ensoleillé. Minimum moins 4. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc8:20160528090000</id>
  </entry>
  <entry>
- <title>Jeudi: Ensoleillé. Maximum 9.</title>
+ <title>Mercredi: Ensoleillé. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 9. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc9:20160508150000</id>
+ <summary type="html">Ensoleillé. Maximum 9. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc9:20160528090000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Passages nuageux. Minimum moins 3.</title>
+ <title>Mercredi soir et nuit: Alternance de soleil et de nuages. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 3. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc10:20160508150000</id>
+ <summary type="html">Alternance de soleil et de nuages. Minimum zéro. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc10:20160528090000</id>
  </entry>
  <entry>
- <title>Vendredi: Alternance de soleil et de nuages. Maximum 8.</title>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 8. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc11:20160508150000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc11:20160528090000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Passages nuageux. Minimum moins 2.</title>
+ <title>Jeudi soir et nuit: Alternance de soleil et de nuages. Minimum plus 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum moins 2. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc12:20160508150000</id>
+ <summary type="html">Alternance de soleil et de nuages. Minimum plus 2. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc12:20160528090000</id>
  </entry>
  <entry>
- <title>Samedi: Alternance de soleil et de nuages. Maximum 6.</title>
+ <title>Vendredi: Ensoleillé. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-16_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 6. Prévisions émises 09h00 HAR dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc13:20160508150000</id>
+ <summary type="html">Ensoleillé. Maximum 9. Prévisions émises 03h00 HAR samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-16_fc13:20160528090000</id>
  </entry>
  </feed>
 

@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-02T11:04:34Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160502110434</id>
+ <updated>2016-05-08T15:04:22Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508150422</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,140 +29,139 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:nl-29_w1:20160411135600</id>
  </entry>
  <entry>
- <title>Current Conditions: Cloudy, -0.3&#xB0;C</title>
+ <title>Current Conditions: Cloudy, 6.4&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Mary's Harbour 08:30 AM NDT Monday 02 May 2016 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Mary's Harbour 12:30 PM NDT Sunday 08 May 2016 <br/>
 <b>Condition:</b> Cloudy <br/>
-<b>Temperature:</b> -0.3&deg;C <br/>
-<b>Pressure:</b> 102.4 kPa <br/>
-<b>Visibility:</b> 14.5 km<br/>
-<b>Humidity:</b> 100 %<br/>
-<b>Wind Chill:</b> -4 <br/>
-<b>Dewpoint:</b> -0.3&deg;C <br/>
-<b>Wind:</b> N 11 km/h<br/>
+<b>Temperature:</b> 6.4&deg;C <br/>
+<b>Pressure:</b> 100.8 kPa <br/>
+<b>Visibility:</b> 16.1 km<br/>
+<b>Humidity:</b> 82 %<br/>
+<b>Dewpoint:</b> 3.6&deg;C <br/>
+<b>Wind:</b> E 17 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_cc:20160502110000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_cc:20160508150000</id>
  </entry>
  <entry>
- <title>Monday: A mix of sun and cloud. High 6.</title>
+ <title>Sunday: Rain. High 6.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. Fog patches dissipating this morning. High 6. UV index 6 or high. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc1:20160502083000</id>
+ <summary type="html">Cloudy. Rain beginning this afternoon. Fog patches. Amount 2 to 4 mm. High 6. UV index 4 or moderate. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc1:20160508140000</id>
  </entry>
  <entry>
- <title>Monday night: Mainly cloudy. Low minus 3.</title>
+ <title>Sunday night: Chance of drizzle or rain. Low zero. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly cloudy. Low minus 3. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc2:20160502083000</id>
+ <summary type="html">Rain ending this evening then mainly cloudy with 40 percent chance of drizzle. Risk of freezing drizzle late this evening and overnight. Fog. Amount 5 mm. Low zero. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc2:20160508140000</id>
  </entry>
  <entry>
- <title>Tuesday: A mix of sun and cloud. High 6.</title>
+ <title>Monday: Showers. High 10.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. Wind becoming southeast 20 km/h in the afternoon. High 6. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc3:20160502083000</id>
+ <summary type="html">A mix of sun and cloud. Becoming cloudy near noon with showers. Fog patches dissipating in the afternoon. Wind becoming southeast 20 km/h gusting to 40 near noon then becoming southwest 20 gusting to 40 late in the afternoon. High 10. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc3:20160508140000</id>
  </entry>
  <entry>
- <title>Tuesday night: Periods of snow. Low minus 1.</title>
+ <title>Monday night: Chance of flurries or rain showers. Low minus 1. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Periods of snow. Low minus 1. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc4:20160502083000</id>
+ <summary type="html">Cloudy with 60 percent chance of flurries or rain showers. Low minus 1. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc4:20160508140000</id>
  </entry>
  <entry>
- <title>Wednesday: Chance of flurries. High plus 3. POP 60%</title>
+ <title>Tuesday: Chance of rain showers or flurries. High 6. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of flurries. High plus 3. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc5:20160502083000</id>
+ <summary type="html">Cloudy with 60 percent chance of rain showers or flurries. High 6. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc5:20160508140000</id>
  </entry>
  <entry>
- <title>Wednesday night: Cloudy periods. Low minus 2.</title>
+ <title>Tuesday night: Chance of flurries. Low minus 2. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 2. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc6:20160502083000</id>
+ <summary type="html">Cloudy with 60 percent chance of flurries. Low minus 2. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc6:20160508140000</id>
  </entry>
  <entry>
- <title>Thursday: A mix of sun and cloud. High 6.</title>
+ <title>Wednesday: Chance of rain showers or flurries. High plus 1. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 6. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc7:20160502083000</id>
+ <summary type="html">A mix of sun and cloud with 40 percent chance of rain showers or flurries. High plus 1. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc7:20160508140000</id>
  </entry>
  <entry>
- <title>Thursday night: Cloudy periods. Low minus 1.</title>
+ <title>Wednesday night: Chance of flurries. Low zero. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 1. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc8:20160502083000</id>
+ <summary type="html">Cloudy with 40 percent chance of flurries. Low zero. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc8:20160508140000</id>
  </entry>
  <entry>
- <title>Friday: Chance of showers. High plus 4. POP 40%</title>
+ <title>Thursday: Chance of flurries or rain showers. High plus 4. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 40 percent chance of showers. High plus 4. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc9:20160502083000</id>
+ <summary type="html">Cloudy with 60 percent chance of flurries or rain showers. High plus 4. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc9:20160508140000</id>
  </entry>
  <entry>
- <title>Friday night: Cloudy periods. Low plus 2.</title>
+ <title>Thursday night: Showers. Low plus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low plus 2. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc10:20160502083000</id>
+ <summary type="html">Showers. Windy. Low plus 1. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc10:20160508140000</id>
  </entry>
  <entry>
- <title>Saturday: Chance of showers. High 7. POP 40%</title>
+ <title>Friday: Cloudy. High plus 5.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud with 40 percent chance of showers. High 7. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc11:20160502083000</id>
+ <summary type="html">Cloudy. High plus 5. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc11:20160508140000</id>
  </entry>
  <entry>
- <title>Saturday night: Chance of showers. Low plus 1. POP 40%</title>
+ <title>Friday night: Cloudy. Low plus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods with 40 percent chance of showers. Low plus 1. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc12:20160502083000</id>
+ <summary type="html">Cloudy. Low plus 2. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc12:20160508140000</id>
  </entry>
  <entry>
- <title>Sunday: A mix of sun and cloud. High 9.</title>
+ <title>Saturday: Cloudy. High 7.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-29_metric_e.html"/>
- <updated>2016-05-02T08:30:00Z</updated>
- <published>2016-05-02T08:30:00Z</published>
+ <updated>2016-05-08T14:00:00Z</updated>
+ <published>2016-05-08T14:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 9. Forecast issued 06:00 AM NDT Monday 02 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-29_fc13:20160502083000</id>
+ <summary type="html">Cloudy. High 7. Forecast issued 11:30 AM NDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-29_fc13:20160508140000</id>
  </entry>
  </feed>
 

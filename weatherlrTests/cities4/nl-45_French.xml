@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:06:09Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150609</id>
+ <updated>2016-05-08T18:07:24Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508180724</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,20 +29,22 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nl-45_w1:20160410013000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: 12,7&#xB0;C</title>
+ <title>Conditions actuelles: Nuageux, 12,3&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-45_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Blanc-Sablon 11h00 HNA dimanche 08 mai 2016 <br/>
-<b>Température:</b> 12,7&deg;C <br/>
-<b>Pression:</b> 100,6 kPa <br/>
-<b>Humidité:</b> 63 %<br/>
-<b>Point de rosée:</b> 5,9&deg;C <br/>
-<b>Vent:</b> SE 17 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Blanc-Sablon 14h00 HNA dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Nuageux <br/>
+<b>Température:</b> 12,3&deg;C <br/>
+<b>Pression / Tendance:</b> 100,4 kPa à la baisse<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 67 %<br/>
+<b>Point de rosée:</b> 6,4&deg;C <br/>
+<b>Vent:</b> E 23 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-45_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-45_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Dimanche: Bruine intermittente ou pluie. Maximum 8. PdP 40%</title>

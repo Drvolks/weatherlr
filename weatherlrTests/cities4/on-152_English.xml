@@ -14,35 +14,35 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T14:51:23Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508145123</id>
+ <updated>2016-05-08T18:50:29Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508185029</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
  <entry>
  <title>No watches or warnings in effect, Cornwall</title>
  <link type="text/html" href="http://www.weather.gc.ca/warnings/index_e.html"/>
- <updated>2016-04-11T12:49:00Z</updated>
- <published>2016-04-11T12:49:00Z</published>
+ <updated>2016-04-11T13:57:00Z</updated>
+ <published>2016-04-11T13:57:00Z</published>
  <category term="Warnings and Watches"/>
  <summary type="html">No watches or warnings in effect.</summary>
- <id>tag:weather.gc.ca,2013-04-16:on-152_w1:20160411124900</id>
+ <id>tag:weather.gc.ca,2013-04-16:on-152_w1:20160411135700</id>
  </entry>
  <entry>
- <title>Current Conditions: 5.1&#xB0;C</title>
+ <title>Current Conditions: 8.1&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-152_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Saint-Anicet 10:00 AM EDT Sunday 08 May 2016 <br/>
-<b>Temperature:</b> 5.1&deg;C <br/>
-<b>Pressure / Tendency:</b> 100.2 kPa rising<br/>
-<b>Humidity:</b> 92 %<br/>
-<b>Dewpoint:</b> 3.8&deg;C <br/>
-<b>Wind:</b> W 21 km/h gust 33 km/h<br/>
-<b>Air Quality Health Index:</b> 1 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Saint-Anicet 2:00 PM EDT Sunday 08 May 2016 <br/>
+<b>Temperature:</b> 8.1&deg;C <br/>
+<b>Pressure / Tendency:</b> 100.5 kPa rising<br/>
+<b>Humidity:</b> 65 %<br/>
+<b>Dewpoint:</b> 1.8&deg;C <br/>
+<b>Wind:</b> W 24 km/h gust 44 km/h<br/>
+<b>Air Quality Health Index:</b> 2 <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:on-152_cc:20160508140000</id>
+ <id>tag:weather.gc.ca,2013-04-16:on-152_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Sunday: Chance of showers. High 13. POP 30%</title>

@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:03:35Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150335</id>
+ <updated>2016-05-08T18:05:48Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508180548</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,20 +29,20 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:on-110_w1:20160411130600</id>
  </entry>
  <entry>
- <title>Current Conditions: 7.9&#xB0;C</title>
+ <title>Current Conditions: 10.1&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/on-110_metric_e.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Mount Forest 11:00 AM EDT Sunday 08 May 2016 <br/>
-<b>Temperature:</b> 7.9&deg;C <br/>
-<b>Pressure / Tendency:</b> 101.1 kPa rising<br/>
-<b>Humidity:</b> 82 %<br/>
-<b>Dewpoint:</b> 5.1&deg;C <br/>
-<b>Wind:</b> SSW 5 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Mount Forest 2:00 PM EDT Sunday 08 May 2016 <br/>
+<b>Temperature:</b> 10.1&deg;C <br/>
+<b>Pressure / Tendency:</b> 101.1 kPa falling<br/>
+<b>Humidity:</b> 51 %<br/>
+<b>Dewpoint:</b> 0.4&deg;C <br/>
+<b>Wind:</b> NW 22 km/h gust 36 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:on-110_cc:20160508150000</id>
+ <id>tag:weather.gc.ca,2013-04-16:on-110_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Sunday: Chance of showers. High 11. POP 40%</title>

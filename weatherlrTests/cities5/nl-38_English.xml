@@ -14,161 +14,152 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T18:10:53Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508181053</id>
+ <updated>2016-05-28T11:09:21Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160528110921</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
  <entry>
- <title>FREEZING RAIN WARNING IN EFFECT, Hopedale</title>
- <link type="text/html" href="http://www.weather.gc.ca/warnings/report_e.html?nl34"/>
- <updated>2016-05-08T14:17:00Z</updated>
- <published>2016-05-08T14:17:00Z</published>
+ <title>No watches or warnings in effect, Hopedale</title>
+ <link type="text/html" href="http://www.weather.gc.ca/warnings/index_e.html"/>
+ <updated>2016-05-28T04:11:00Z</updated>
+ <published>2016-05-28T04:11:00Z</published>
  <category term="Warnings and Watches"/>
- <summary type="html">Persons in or near this area should be on the lookout for adverse weather conditions and take necessary safety precautions. Issued: 11:17 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_w1:201605081417</id>
+ <summary type="html">No watches or warnings in effect.</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_w1:20160528041100</id>
  </entry>
  <entry>
- <title>SPECIAL WEATHER STATEMENT IN EFFECT, Hopedale</title>
- <link type="text/html" href="http://www.weather.gc.ca/warnings/report_e.html?nl34"/>
- <updated>2016-05-08T14:17:00Z</updated>
- <published>2016-05-08T14:17:00Z</published>
- <category term="Warnings and Watches"/>
- <summary type="html">Persons in or near this area should be on the lookout for adverse weather conditions and take necessary safety precautions. Issued: 11:17 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_w2:201605081417</id>
- </entry>
- <entry>
- <title>Current Conditions: 4.4&#xB0;C</title>
+ <title>Current Conditions: 0.4&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-28T11:00:00Z</updated>
+ <published>2016-05-28T11:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Hopedale 3:00 PM ADT Sunday 08 May 2016 <br/>
-<b>Temperature:</b> 4.4&deg;C <br/>
-<b>Pressure / Tendency:</b> 100.3 kPa falling<br/>
-<b>Humidity:</b> 79 %<br/>
-<b>Dewpoint:</b> 1.0&deg;C <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Hopedale 08:00 AM ADT Saturday 28 May 2016 <br/>
+<b>Temperature:</b> 0.4&deg;C <br/>
+<b>Pressure / Tendency:</b> 102.2 kPa rising<br/>
+<b>Humidity:</b> 93 %<br/>
+<b>Dewpoint:</b> -0.6&deg;C <br/>
 <b>Wind:</b>   km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_cc:20160508180000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_cc:20160528110000</id>
  </entry>
  <entry>
- <title>Sunday: A mix of sun and cloud. High 8.</title>
+ <title>Saturday: Chance of rain showers or flurries. High plus 3. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. Wind becoming north 20 km/h this afternoon. High 8. UV index 6 or high. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc1:20160508140000</id>
+ <summary type="html">Mainly cloudy with 60 percent chance of rain showers or flurries. Risk of freezing rain this morning. High plus 3. UV index 5 or moderate. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc1:20160528083000</id>
  </entry>
  <entry>
- <title>Sunday night: Freezing rain mixed with snow. Low minus 1.</title>
+ <title>Saturday night: Partly cloudy. Low zero.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Becoming cloudy this evening then freezing rain. Freezing rain mixed with snow overnight. Wind north 30 km/h gusting to 50. Low minus 1. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc2:20160508140000</id>
+ <summary type="html">Partly cloudy. Low zero. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc2:20160528083000</id>
  </entry>
  <entry>
- <title>Monday: A few rain showers or flurries. High plus 3.</title>
+ <title>Sunday: A mix of sun and cloud. High plus 5.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Freezing rain changing to a few rain showers or flurries in the morning then to snow at times mixed with rain late in the afternoon. Wind north 20 km/h gusting to 40. High plus 3. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc3:20160508140000</id>
+ <summary type="html">A mix of sun and cloud. High plus 5. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc3:20160528083000</id>
  </entry>
  <entry>
- <title>Monday night: Periods of snow. Low minus 2.</title>
+ <title>Sunday night: Cloudy periods. Low minus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Periods of snow. Low minus 2. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc4:20160508140000</id>
+ <summary type="html">Cloudy periods. Low minus 1. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc4:20160528083000</id>
  </entry>
  <entry>
- <title>Tuesday: Periods of snow. High plus 1.</title>
+ <title>Monday: Cloudy. High plus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Periods of snow. High plus 1. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc5:20160508140000</id>
+ <summary type="html">Cloudy. High plus 1. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc5:20160528083000</id>
  </entry>
  <entry>
- <title>Tuesday night: Flurries. Low zero.</title>
+ <title>Monday night: Cloudy periods. Low minus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Flurries. Low zero. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc6:20160508140000</id>
+ <summary type="html">Cloudy periods. Low minus 2. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc6:20160528083000</id>
  </entry>
  <entry>
- <title>Wednesday: Flurries. High plus 3.</title>
+ <title>Tuesday: Chance of flurries or rain showers. High plus 4. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Flurries. High plus 3. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc7:20160508140000</id>
+ <summary type="html">A mix of sun and cloud with 40 percent chance of flurries or rain showers. High plus 4. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc7:20160528083000</id>
  </entry>
  <entry>
- <title>Wednesday night: Chance of flurries. Low minus 4. POP 40%</title>
+ <title>Tuesday night: Cloudy. Low minus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 40 percent chance of flurries. Low minus 4. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc8:20160508140000</id>
+ <summary type="html">Cloudy. Low minus 2. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc8:20160528083000</id>
  </entry>
  <entry>
- <title>Thursday: Cloudy. High plus 4.</title>
+ <title>Wednesday: A mix of sun and cloud. High plus 4.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. High plus 4. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc9:20160508140000</id>
+ <summary type="html">A mix of sun and cloud. High plus 4. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc9:20160528083000</id>
  </entry>
  <entry>
- <title>Thursday night: Cloudy periods. Low minus 2.</title>
+ <title>Wednesday night: Cloudy periods. Low minus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 2. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc10:20160508140000</id>
+ <summary type="html">Cloudy periods. Low minus 2. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc10:20160528083000</id>
  </entry>
  <entry>
- <title>Friday: Cloudy. High plus 2.</title>
+ <title>Thursday: A mix of sun and cloud. High plus 4.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. High plus 2. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc11:20160508140000</id>
+ <summary type="html">A mix of sun and cloud. High plus 4. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc11:20160528083000</id>
  </entry>
  <entry>
- <title>Friday night: Cloudy. Low minus 1.</title>
+ <title>Thursday night: Cloudy periods. Low zero.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. Low minus 1. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc12:20160508140000</id>
+ <summary type="html">Cloudy periods. Low zero. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc12:20160528083000</id>
  </entry>
  <entry>
- <title>Saturday: Cloudy. High plus 3.</title>
+ <title>Friday: Cloudy. High plus 4.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-38_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-28T08:30:00Z</updated>
+ <published>2016-05-28T08:30:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. High plus 3. Forecast issued 11:30 AM ADT Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-38_fc13:20160508140000</id>
+ <summary type="html">Cloudy. High plus 4. Forecast issued 06:00 AM ADT Saturday 28 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nl-38_fc13:20160528083000</id>
  </entry>
  </feed>
 

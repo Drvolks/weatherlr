@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T14:31:42Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508143142</id>
+ <updated>2016-05-08T18:52:06Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508185206</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,23 +29,23 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nu-24_w1:20160423043000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Brouillard givrant, -10,4&#xB0;C</title>
+ <title>Conditions actuelles: Partiellement nuageux, -9,0&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-24_metric_f.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-08T18:48:00Z</updated>
+ <published>2016-05-08T18:48:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Gjoa Haven 08h00 HAR dimanche 08 mai 2016 <br/>
-<b>Condition:</b> Brouillard givrant <br/>
-<b>Température:</b> -10,4&deg;C <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Gjoa Haven 12h48 HAR dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Partiellement nuageux <br/>
+<b>Température:</b> -9,0&deg;C <br/>
 <b>Pression / Tendance:</b> 101,6 kPa à la baisse<br/>
-<b>Visibilité:</b> 0,4 km<br/>
-<b>Humidité:</b> 92 %<br/>
-<b>Refroidissement éolien:</b> -18 <br/>
-<b>Point de rosée:</b> -11,5&deg;C <br/>
-<b>Vent:</b> NE 18 km/h<br/>
+<b>Visibilité:</b> 24,1 km<br/>
+<b>Humidité:</b> 94 %<br/>
+<b>Refroidissement éolien:</b> -17 <br/>
+<b>Point de rosée:</b> -9,8&deg;C <br/>
+<b>Vent:</b> ENE 21 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-24_cc:20160508140000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-24_cc:20160508184800</id>
  </entry>
  <entry>
  <title>Dimanche: Possibilité d'averses de neige. Maximum moins 6. PdP 30%</title>

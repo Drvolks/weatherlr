@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:04:05Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150405</id>
+ <updated>2016-05-08T18:03:52Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508180352</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,20 +29,20 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:on-51_w1:20160411073000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: 7,9&#xB0;C</title>
+ <title>Conditions actuelles: 10,1&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-51_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Mount Forest 11h00 HAE dimanche 08 mai 2016 <br/>
-<b>Température:</b> 7,9&deg;C <br/>
-<b>Pression / Tendance:</b> 101,1 kPa à la hausse<br/>
-<b>Humidité:</b> 82 %<br/>
-<b>Point de rosée:</b> 5,1&deg;C <br/>
-<b>Vent:</b> SSO 5 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Mount Forest 14h00 HAE dimanche 08 mai 2016 <br/>
+<b>Température:</b> 10,1&deg;C <br/>
+<b>Pression / Tendance:</b> 101,1 kPa à la baisse<br/>
+<b>Humidité:</b> 51 %<br/>
+<b>Point de rosée:</b> 0,4&deg;C <br/>
+<b>Vent:</b> NO 22 km/h rafale 36 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-51_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:on-51_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Dimanche: Possibilité d'averses. Maximum 13. PdP 40%</title>

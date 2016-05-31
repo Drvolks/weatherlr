@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T14:05:23Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508140523</id>
+ <updated>2016-05-08T18:06:38Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508180638</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,21 +29,21 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:qc-99_w1:20160506194500</id>
  </entry>
  <entry>
- <title>Current Conditions: -3.9&#xB0;C</title>
+ <title>Current Conditions: -3.0&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-99_metric_e.html"/>
- <updated>2016-05-08T14:00:00Z</updated>
- <published>2016-05-08T14:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Kangiqsujuaq Airport 10:00 AM EDT Sunday 08 May 2016 <br/>
-<b>Temperature:</b> -3.9&deg;C <br/>
-<b>Pressure:</b> 101.0 kPa <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Kangiqsujuaq Airport 2:00 PM EDT Sunday 08 May 2016 <br/>
+<b>Temperature:</b> -3.0&deg;C <br/>
+<b>Pressure:</b> 101.2 kPa <br/>
 <b>Humidity:</b> 65 %<br/>
-<b>Wind Chill:</b> -8 <br/>
-<b>Dewpoint:</b> -9.6&deg;C <br/>
-<b>Wind:</b> WNW 11 km/h<br/>
+<b>Wind Chill:</b> -11 <br/>
+<b>Dewpoint:</b> -8.7&deg;C <br/>
+<b>Wind:</b> N 34 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-99_cc:20160508140000</id>
+ <id>tag:weather.gc.ca,2013-04-16:qc-99_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Sunday: Chance of flurries. High minus 2. POP 60%</title>

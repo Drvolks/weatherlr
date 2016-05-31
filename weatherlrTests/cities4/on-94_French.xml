@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:01:21Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150121</id>
+ <updated>2016-05-08T18:50:31Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508185031</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,22 +29,22 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:on-94_w1:20160410204500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Nuageux, 13,7&#xB0;C</title>
+ <title>Conditions actuelles: Généralement nuageux, 17,0&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-94_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Windsor 11h00 HAE dimanche 08 mai 2016 <br/>
-<b>Condition:</b> Nuageux <br/>
-<b>Température:</b> 13,7&deg;C <br/>
-<b>Pression / Tendance:</b> 101,4 kPa à la hausse<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Windsor 14h00 HAE dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> 17,0&deg;C <br/>
+<b>Pression / Tendance:</b> 101,3 kPa à la baisse<br/>
 <b>Visibilité:</b> 24,1 km<br/>
-<b>Humidité:</b> 36 %<br/>
-<b>Point de rosée:</b> -1,0&deg;C <br/>
-<b>Vent:</b> NO 11 km/h<br/>
-<b>Cote air santé:</b> 2 <br/>
+<b>Humidité:</b> 35 %<br/>
+<b>Point de rosée:</b> 1,5&deg;C <br/>
+<b>Vent:</b> ONO 12 km/h rafale 28 km/h<br/>
+<b>Cote air santé:</b> 3 <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-94_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:on-94_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Dimanche: Possibilité d'averses. Maximum 18. PdP 30%</title>

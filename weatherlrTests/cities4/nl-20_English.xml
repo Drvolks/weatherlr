@@ -14,37 +14,37 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:03:04Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150304</id>
+ <updated>2016-05-08T18:49:56Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508184956</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
  <entry>
  <title>No watches or warnings in effect, Labrador City</title>
  <link type="text/html" href="http://www.weather.gc.ca/warnings/index_e.html"/>
- <updated>2016-04-11T12:49:00Z</updated>
- <published>2016-04-11T12:49:00Z</published>
+ <updated>2016-04-11T13:56:00Z</updated>
+ <published>2016-04-11T13:56:00Z</published>
  <category term="Warnings and Watches"/>
  <summary type="html">No watches or warnings in effect.</summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-20_w1:20160411124900</id>
+ <id>tag:weather.gc.ca,2013-04-16:nl-20_w1:20160411135600</id>
  </entry>
  <entry>
- <title>Current Conditions: Light Rainshower, 5.1&#xB0;C</title>
+ <title>Current Conditions: Cloudy, 7.3&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nl-20_metric_e.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Wabush Airport 12:00 PM ADT Sunday 08 May 2016 <br/>
-<b>Condition:</b> Light Rainshower <br/>
-<b>Temperature:</b> 5.1&deg;C <br/>
-<b>Pressure / Tendency:</b> 100.1 kPa falling<br/>
-<b>Visibility:</b> 19.3 km<br/>
-<b>Humidity:</b> 94 %<br/>
-<b>Dewpoint:</b> 4.2&deg;C <br/>
-<b>Wind:</b> SE 8 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Wabush Airport 3:00 PM ADT Sunday 08 May 2016 <br/>
+<b>Condition:</b> Cloudy <br/>
+<b>Temperature:</b> 7.3&deg;C <br/>
+<b>Pressure / Tendency:</b> 100.0 kPa falling<br/>
+<b>Visibility:</b> 24.1 km<br/>
+<b>Humidity:</b> 90 %<br/>
+<b>Dewpoint:</b> 5.8&deg;C <br/>
+<b>Wind:</b> SSE 4 km/h<br/>
 <b>Air Quality Health Index:</b> 2 <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nl-20_cc:20160508150000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nl-20_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Sunday: Periods of rain or drizzle. High 9.</title>

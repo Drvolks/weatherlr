@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:01:40Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150140</id>
+ <updated>2016-05-08T18:50:06Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508185006</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,139 +29,139 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:sk-32_w1:20160411130200</id>
  </entry>
  <entry>
- <title>Current Conditions: Smoke, 19.9&#xB0;C</title>
+ <title>Current Conditions: Smoke, 24.4&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Regina Int'l Airport 09:00 AM CST Sunday 08 May 2016 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Regina Int'l Airport 12:00 PM CST Sunday 08 May 2016 <br/>
 <b>Condition:</b> Smoke <br/>
-<b>Temperature:</b> 19.9&deg;C <br/>
-<b>Pressure / Tendency:</b> 100.4 kPa falling<br/>
+<b>Temperature:</b> 24.4&deg;C <br/>
+<b>Pressure / Tendency:</b> 100.1 kPa falling<br/>
 <b>Visibility:</b> 9.7 km<br/>
-<b>Humidity:</b> 32 %<br/>
-<b>Dewpoint:</b> 2.9&deg;C <br/>
-<b>Wind:</b> S 30 km/h gust 40 km/h<br/>
-<b>Air Quality Health Index:</b> 3 <br/>
+<b>Humidity:</b> 23 %<br/>
+<b>Dewpoint:</b> 2.2&deg;C <br/>
+<b>Wind:</b> S 42 km/h gust 61 km/h<br/>
+<b>Air Quality Health Index:</b> 6 <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_cc:20160508150000</id>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_cc:20160508180000</id>
  </entry>
  <entry>
- <title>Sunday: Sunny. High 27.</title>
+ <title>Sunday: Smoke. High 27.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. Wind south 20 km/h increasing to 40 gusting to 60 this morning. High 27. UV index 6 or high. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc1:20160508110000</id>
+ <summary type="html">Sunny. Widespread smoke. Wind south 40 km/h gusting to 60. High 27. UV index 6 or high. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc1:20160508182300</id>
  </entry>
  <entry>
- <title>Sunday night: Clear. Low 10.</title>
+ <title>Sunday night: Smoke. Low 10.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Wind southeast 30 km/h becoming light overnight. Low 10. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc2:20160508110000</id>
+ <summary type="html">Clear. Widespread smoke. Wind southeast 30 km/h becoming light overnight. Low 10. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc2:20160508182300</id>
  </entry>
  <entry>
  <title>Monday: Showers. High 22.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. Increasing cloudiness in the afternoon then showers. Risk of thunderstorms late in the afternoon. Wind becoming northwest 20 km/h in the afternoon. High 22. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc3:20160508110000</id>
+ <summary type="html">Sunny. Increasing cloudiness in the afternoon then showers. Risk of thunderstorms late in the afternoon. Wind becoming northwest 20 km/h in the afternoon. High 22. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc3:20160508182300</id>
  </entry>
  <entry>
- <title>Monday night: Showers. Low 10.</title>
+ <title>Monday night: Chance of showers. Low 9. POP 70%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Showers. Low 10. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc4:20160508110000</id>
+ <summary type="html">Cloudy with 70 percent chance of showers. Low 9. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc4:20160508182300</id>
  </entry>
  <entry>
  <title>Tuesday: Showers. High 13.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Showers. High 13. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc5:20160508110000</id>
+ <summary type="html">Showers. High 13. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc5:20160508182300</id>
  </entry>
  <entry>
  <title>Tuesday night: Rain. Low 7.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Rain. Low 7. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc6:20160508110000</id>
+ <summary type="html">Rain. Low 7. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc6:20160508182300</id>
  </entry>
  <entry>
  <title>Wednesday: Rain. High 10.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Rain. Windy. High 10. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc7:20160508110000</id>
+ <summary type="html">Rain. Windy. High 10. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc7:20160508182300</id>
  </entry>
  <entry>
  <title>Wednesday night: Periods of rain. Low plus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Periods of rain. Windy. Low plus 1. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc8:20160508110000</id>
+ <summary type="html">Periods of rain. Windy. Low plus 1. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc8:20160508182300</id>
  </entry>
  <entry>
  <title>Thursday: Cloudy. High 9.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. High 9. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc9:20160508110000</id>
+ <summary type="html">Cloudy. High 9. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc9:20160508182300</id>
  </entry>
  <entry>
  <title>Thursday night: Cloudy periods. Low plus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low plus 1. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc10:20160508110000</id>
+ <summary type="html">Cloudy periods. Low plus 1. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc10:20160508182300</id>
  </entry>
  <entry>
  <title>Friday: A mix of sun and cloud. High 9.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 9. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc11:20160508110000</id>
+ <summary type="html">A mix of sun and cloud. High 9. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc11:20160508182300</id>
  </entry>
  <entry>
  <title>Friday night: Clear. Low plus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low plus 1. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc12:20160508110000</id>
+ <summary type="html">Clear. Low plus 1. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc12:20160508182300</id>
  </entry>
  <entry>
  <title>Saturday: Sunny. High 13.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/sk-32_metric_e.html"/>
- <updated>2016-05-08T11:00:00Z</updated>
- <published>2016-05-08T11:00:00Z</published>
+ <updated>2016-05-08T18:23:00Z</updated>
+ <published>2016-05-08T18:23:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 13. Forecast issued 05:00 AM CST Sunday 08 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:sk-32_fc13:20160508110000</id>
+ <summary type="html">Sunny. High 13. Forecast issued 12:23 PM CST Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:sk-32_fc13:20160508182300</id>
  </entry>
  </feed>
 

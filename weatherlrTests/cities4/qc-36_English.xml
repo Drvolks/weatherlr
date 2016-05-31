@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:00:59Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150059</id>
+ <updated>2016-05-08T18:07:56Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508180756</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -27,6 +27,22 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <category term="Warnings and Watches"/>
  <summary type="html">No watches or warnings in effect.</summary>
  <id>tag:weather.gc.ca,2013-04-16:qc-36_w1:20160506091500</id>
+ </entry>
+ <entry>
+ <title>Current Conditions: -2.5&#xB0;C</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-36_metric_e.html"/>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
+ <category term="Current Conditions"/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Akulivik Airport 2:00 PM EDT Sunday 08 May 2016 <br/>
+<b>Temperature:</b> -2.5&deg;C <br/>
+<b>Pressure:</b> 101.3 kPa <br/>
+<b>Humidity:</b> 77 %<br/>
+<b>Dewpoint:</b> -6.0&deg;C <br/>
+<b>Wind:</b>   km/h<br/>
+<b>Air Quality Health Index:</b> N/A <br/>
+]]></summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-36_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Sunday: A few flurries. High minus 3.</title>

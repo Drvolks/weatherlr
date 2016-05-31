@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:03:09Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508150309</id>
+ <updated>2016-05-08T18:03:51Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508180351</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,23 +29,23 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nu-15_w1:20160331023000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Poudrerie basse, -8,8&#xB0;C</title>
+ <title>Conditions actuelles: Généralement nuageux, -7,9&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nu-15_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Cambridge Bay 09h00 HAR dimanche 08 mai 2016 <br/>
-<b>Condition:</b> Poudrerie basse <br/>
-<b>Température:</b> -8,8&deg;C <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Cambridge Bay 12h00 HAR dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Généralement nuageux <br/>
+<b>Température:</b> -7,9&deg;C <br/>
 <b>Pression / Tendance:</b> 101,4 kPa à la hausse<br/>
-<b>Visibilité:</b> 12,9 km<br/>
-<b>Humidité:</b> 84 %<br/>
-<b>Refroidissement éolien:</b> -17 <br/>
-<b>Point de rosée:</b> -11,0&deg;C <br/>
-<b>Vent:</b> E 25 km/h<br/>
+<b>Visibilité:</b> 16,1 km<br/>
+<b>Humidité:</b> 82 %<br/>
+<b>Refroidissement éolien:</b> -16 <br/>
+<b>Point de rosée:</b> -10,5&deg;C <br/>
+<b>Vent:</b> E 24 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nu-15_cc:20160508150000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nu-15_cc:20160508180000</id>
  </entry>
  <entry>
  <title>Dimanche: Quelques averses de neige. Maximum moins 4.</title>

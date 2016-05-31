@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-08T15:03:17Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160508150317</id>
+ <updated>2016-05-08T18:47:18Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508184718</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,23 +29,23 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:nu-5_w1:20160414134500</id>
  </entry>
  <entry>
- <title>Current Conditions: Light Snow, -5.0&#xB0;C</title>
+ <title>Current Conditions: Light Snow, -2.3&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-5_metric_e.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-08T18:46:00Z</updated>
+ <published>2016-05-08T18:46:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Qikiqtarjuaq Airport 11:00 AM EDT Sunday 08 May 2016 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Qikiqtarjuaq Airport 2:46 PM EDT Sunday 08 May 2016 <br/>
 <b>Condition:</b> Light Snow <br/>
-<b>Temperature:</b> -5.0&deg;C <br/>
-<b>Pressure / Tendency:</b> 100.9 kPa falling<br/>
-<b>Visibility:</b> 3.2 km<br/>
-<b>Humidity:</b> 86 %<br/>
-<b>Wind Chill:</b> -12 <br/>
-<b>Dewpoint:</b> -7.0&deg;C <br/>
-<b>Wind:</b> NNE 25 km/h<br/>
+<b>Temperature:</b> -2.3&deg;C <br/>
+<b>Pressure:</b> 100.8 kPa <br/>
+<b>Visibility:</b> 4.8 km<br/>
+<b>Humidity:</b> 76 %<br/>
+<b>Wind Chill:</b> -8 <br/>
+<b>Dewpoint:</b> -6.0&deg;C <br/>
+<b>Wind:</b> NNW 17 km/h gust 30 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-5_cc:20160508150000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nu-5_cc:20160508184600</id>
  </entry>
  <entry>
  <title>Sunday: Snow. High minus 4.</title>

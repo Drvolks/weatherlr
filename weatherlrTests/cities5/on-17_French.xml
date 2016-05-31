@@ -14,152 +14,152 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-08T18:03:53Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160508180353</id>
+ <updated>2016-05-28T11:03:44Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160528110344</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
  <entry>
- <title>Aucune veille ou alerte en vigueur, Tillsonburg</title>
- <link type="text/html" href="http://www.meteo.gc.ca/warnings/index_f.html"/>
- <updated>2016-04-11T05:15:00Z</updated>
- <published>2016-04-11T05:15:00Z</published>
+ <title>BULLETIN MÉTÉOROLOGIQUE SPÉCIAL EN VIGUEUR, Tillsonburg</title>
+ <link type="text/html" href="http://www.meteo.gc.ca/warnings/report_f.html?on19"/>
+ <updated>2016-05-28T09:13:00Z</updated>
+ <published>2016-05-28T09:13:00Z</published>
  <category term="Veilles et avertissements"/>
- <summary type="html">Aucune veille ou alerte en vigueur.</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_w1:20160411051500</id>
+ <summary type="html">Le public de la région concernée doit porter une attention particulière aux conditions météorologiques potentiellement dangereuses et prendre les mesures de sécurité qui s'imposent. Émise à: 05h13 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_w1:201605280913</id>
  </entry>
  <entry>
- <title>Conditions actuelles: 14,6&#xB0;C</title>
+ <title>Conditions actuelles: 17,7&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T18:00:00Z</updated>
- <published>2016-05-08T18:00:00Z</published>
+ <updated>2016-05-28T11:00:00Z</updated>
+ <published>2016-05-28T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Delhi 14h00 HAE dimanche 08 mai 2016 <br/>
-<b>Température:</b> 14,6&deg;C <br/>
-<b>Pression / Tendance:</b> 101,1 kPa à la hausse<br/>
-<b>Humidité:</b> 35 %<br/>
-<b>Point de rosée:</b> -0,7&deg;C <br/>
-<b>Vent:</b> NO 28 km/h rafale 40 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Delhi 07h00 HAE samedi 28 mai 2016 <br/>
+<b>Température:</b> 17,7&deg;C <br/>
+<b>Pression / Tendance:</b> 101,7 kPa à la hausse<br/>
+<b>Humidité:</b> 91 %<br/>
+<b>Point de rosée:</b> 16,2&deg;C <br/>
+<b>Vent:</b> SSE 1 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_cc:20160508180000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_cc:20160528110000</id>
  </entry>
  <entry>
- <title>Dimanche: Possibilité d'averses. Maximum 15. PdP 30%</title>
+ <title>Samedi: Possibilité d'averses. Maximum 31. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. 30 pour cent de probabilité d'averses cet après-midi. Vents devenant du nord-ouest à 30 km/h avec rafales à 50 tôt cet après-midi. Maximum 15. Indice UV de 6 ou élevé. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc1:20160508150000</id>
+ <summary type="html">Alternance de soleil et de nuages. 40 pour cent de probabilité d'averses cet après-midi avec risque d'un orage. Vents devenant du sud-ouest à 20 km/h tard ce matin. Maximum 31. Indice UV de 8 ou très élevé. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc1:20160528090000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Quelques nuages. Minimum plus 2.</title>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum 18. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Quelques nuages. Vents du nord-ouest de 30 km/h avec rafales à 50 devenant légers ce soir. Minimum plus 2. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc2:20160508150000</id>
+ <summary type="html">Partiellement nuageux. 40 pour cent de probabilité d'averses ce soir. Risque d'un orage tôt ce soir. Vents du sud-ouest de 20 km/h devenant légers ce soir. Minimum 18. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc2:20160528090000</id>
  </entry>
  <entry>
- <title>Lundi: Généralement ensoleillé. Maximum 16.</title>
+ <title>Dimanche: Possibilité d'averses. Maximum 28. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement ensoleillé. Maximum 16. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc3:20160508150000</id>
+ <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses tard en après-midi avec risque d'un orage. Vents devenant du sud-ouest à 20 km/h en après-midi. Maximum 28. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc3:20160528090000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <title>Dimanche soir et nuit: Possibilité d'averses. Minimum 16. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc4:20160508150000</id>
+ <summary type="html">Passages nuageux avec 40 pour cent de probabilité d'averses. Minimum 16. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc4:20160528090000</id>
  </entry>
  <entry>
- <title>Mardi: Alternance de soleil et de nuages. Maximum 17.</title>
+ <title>Lundi: Ensoleillé. Maximum 27.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 17. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc5:20160508150000</id>
+ <summary type="html">Ensoleillé. Maximum 27. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc5:20160528090000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Possibilité d'averses. Minimum 7. PdP 30%</title>
+ <title>Lundi soir et nuit: Dégagé. Minimum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum 7. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc6:20160508150000</id>
+ <summary type="html">Dégagé. Minimum 14. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc6:20160528090000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses. Maximum 19. PdP 30%</title>
+ <title>Mardi: Ensoleillé. Maximum 25.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 19. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc7:20160508150000</id>
+ <summary type="html">Ensoleillé. Maximum 25. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc7:20160528090000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Possibilité d'averses. Minimum 9. PdP 60%</title>
+ <title>Mardi soir et nuit: Dégagé. Minimum 13.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux avec 60 pour cent de probabilité d'averses. Minimum 9. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc8:20160508150000</id>
+ <summary type="html">Dégagé. Minimum 13. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc8:20160528090000</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses. Maximum 22. PdP 30%</title>
+ <title>Mercredi: Ensoleillé. Maximum 29.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 22. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc9:20160508150000</id>
+ <summary type="html">Ensoleillé. Maximum 29. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc9:20160528090000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Passages nuageux. Minimum 13.</title>
+ <title>Mercredi soir et nuit: Dégagé. Minimum 16.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum 13. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc10:20160508150000</id>
+ <summary type="html">Dégagé. Minimum 16. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc10:20160528090000</id>
  </entry>
  <entry>
- <title>Vendredi: Alternance de soleil et de nuages. Maximum 18.</title>
+ <title>Jeudi: Possibilité d'averses. Maximum 25. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 18. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc11:20160508150000</id>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 25. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc11:20160528090000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 9. PdP 40%</title>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 14. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum 9. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc12:20160508150000</id>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 14. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc12:20160528090000</id>
  </entry>
  <entry>
- <title>Samedi: Possibilité d'averses. Maximum 12. PdP 40%</title>
+ <title>Vendredi: Possibilité d'averses. Maximum 22. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-17_metric_f.html"/>
- <updated>2016-05-08T15:00:00Z</updated>
- <published>2016-05-08T15:00:00Z</published>
+ <updated>2016-05-28T09:00:00Z</updated>
+ <published>2016-05-28T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 12. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-17_fc13:20160508150000</id>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 22. Prévisions émises 05h00 HAE samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-17_fc13:20160528090000</id>
  </entry>
  </feed>
 

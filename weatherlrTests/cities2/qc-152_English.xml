@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-04-29T11:06:41Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160429110641</id>
+ <updated>2016-05-02T11:03:58Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160502110358</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,138 +29,137 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:qc-152_w1:20160413161500</id>
  </entry>
  <entry>
- <title>Current Conditions: -2.0&#xB0;C</title>
+ <title>Current Conditions: 4.5&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T11:00:00Z</updated>
- <published>2016-04-29T11:00:00Z</published>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Chevery 07:00 AM AST Friday 29 April 2016 <br/>
-<b>Temperature:</b> -2.0&deg;C <br/>
-<b>Pressure / Tendency:</b> 100.8 kPa falling<br/>
-<b>Humidity:</b> 60 %<br/>
-<b>Wind Chill:</b> -9 <br/>
-<b>Dewpoint:</b> -8.8&deg;C <br/>
-<b>Wind:</b> WSW 28 km/h gust 38 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Chevery 07:00 AM AST Monday 02 May 2016 <br/>
+<b>Temperature:</b> 4.5&deg;C <br/>
+<b>Pressure / Tendency:</b> 102.4 kPa rising<br/>
+<b>Humidity:</b> 80 %<br/>
+<b>Dewpoint:</b> 1.4&deg;C <br/>
+<b>Wind:</b> SSE 2 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_cc:20160429110000</id>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_cc:20160502110000</id>
  </entry>
  <entry>
- <title>Friday: A mix of sun and cloud. High plus 3.</title>
+ <title>Monday: Mainly sunny. High 6.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly sunny. Increasing cloudiness this afternoon. Wind west 20 km/h gusting to 40 increasing to 40 gusting to 70 this morning. High plus 3. UV index 4 or moderate. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc1:20160429090000</id>
+ <summary type="html">Mainly sunny. High 6. UV index 5 or moderate. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc1:20160502090000</id>
  </entry>
  <entry>
- <title>Friday night: Chance of rain showers or flurries. Low zero. POP 60%</title>
+ <title>Monday night: A few clouds. Low minus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly cloudy with 60 percent chance of rain showers or flurries this evening. Clearing overnight. Wind west 40 km/h gusting to 70 diminishing to 20 gusting to 40 this evening. Low zero. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc2:20160429090000</id>
+ <summary type="html">A few clouds. Low minus 1. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc2:20160502090000</id>
  </entry>
  <entry>
- <title>Saturday: Mainly sunny. High 7.</title>
+ <title>Tuesday: Rain. High plus 3.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly sunny. Wind northwest 20 km/h gusting to 40. High 7. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc3:20160429090000</id>
+ <summary type="html">Increasing cloudiness. Rain beginning near noon. High plus 3. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc3:20160502090000</id>
  </entry>
  <entry>
- <title>Saturday night: Clear. Low minus 3.</title>
+ <title>Tuesday night: Periods of rain. Low plus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low minus 3. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc4:20160429090000</id>
+ <summary type="html">Periods of rain. Low plus 1. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc4:20160502090000</id>
  </entry>
  <entry>
- <title>Sunday: A mix of sun and cloud. High 6.</title>
+ <title>Wednesday: A mix of sun and cloud. High 6.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 6. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc5:20160429090000</id>
+ <summary type="html">Sunny. High 6. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc5:20160502090000</id>
  </entry>
  <entry>
- <title>Sunday night: Cloudy periods. Low minus 1.</title>
+ <title>Wednesday night: Clear. Low minus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 1. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc6:20160429090000</id>
+ <summary type="html">Clear. Low minus 1. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc6:20160502090000</id>
  </entry>
  <entry>
- <title>Monday: A mix of sun and cloud. High 6.</title>
+ <title>Thursday: Chance of showers. High plus 4. POP 70%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 6. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc7:20160429090000</id>
+ <summary type="html">Cloudy with 70 percent chance of showers. High plus 4. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc7:20160502090000</id>
  </entry>
  <entry>
- <title>Monday night: Cloudy. Low minus 1.</title>
+ <title>Thursday night: Periods of rain. Low zero.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Increasing cloudiness. Low minus 1. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc8:20160429090000</id>
+ <summary type="html">Periods of rain. Low zero. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc8:20160502090000</id>
  </entry>
  <entry>
- <title>Tuesday: Rain. High plus 4.</title>
+ <title>Friday: Periods of rain. High 8.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Rain. Windy. High plus 4. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc9:20160429090000</id>
+ <summary type="html">Periods of rain. High 8. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc9:20160502090000</id>
  </entry>
  <entry>
- <title>Tuesday night: Rain or snow. Low plus 1.</title>
+ <title>Friday night: Cloudy periods. Low plus 3.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Rain or snow. Low plus 1. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc10:20160429090000</id>
+ <summary type="html">Cloudy periods. Low plus 3. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc10:20160502090000</id>
  </entry>
  <entry>
- <title>Wednesday: Rain or snow. High plus 4.</title>
+ <title>Saturday: Chance of showers. High 7. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Rain or snow. High plus 4. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc11:20160429090000</id>
+ <summary type="html">A mix of sun and cloud with 30 percent chance of showers. High 7. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc11:20160502090000</id>
  </entry>
  <entry>
- <title>Wednesday night: Chance of showers. Low zero. POP 30%</title>
+ <title>Saturday night: Chance of showers. Low plus 1. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods with 30 percent chance of showers. Low zero. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc12:20160429090000</id>
+ <summary type="html">Cloudy periods with 30 percent chance of showers. Low plus 1. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc12:20160502090000</id>
  </entry>
  <entry>
- <title>Thursday: A mix of sun and cloud. High 6.</title>
+ <title>Sunday: A mix of sun and cloud. High 8.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/qc-152_metric_e.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 6. Forecast issued 05:00 AM AST Friday 29 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:qc-152_fc13:20160429090000</id>
+ <summary type="html">A mix of sun and cloud. High 8. Forecast issued 05:00 AM AST Monday 02 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:qc-152_fc13:20160502090000</id>
  </entry>
  </feed>
 

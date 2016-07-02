@@ -25,6 +25,7 @@ class PreferenceHelper {
     }
     
     static func getFavoriteCities() -> [City] {
+        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Constants.favotiteCitiesKey) as? NSData {
             if let savedfavorites = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [City] {
                 return savedfavorites
@@ -49,6 +50,7 @@ class PreferenceHelper {
     }
     
     static func getSelectedCity() -> City? {
+        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Constants.selectedCityKey) as? NSData {
             if let selectedCity = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? City {
                 if selectedCity.radarId.isEmpty {

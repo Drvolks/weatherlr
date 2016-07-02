@@ -209,4 +209,43 @@ class WeatherHelper {
         
         return indexAjust
     }
+    
+    static func getWeatherDayWhenText(weatherInfo: WeatherInformation) -> String {
+        if weatherInfo.weatherDay == WeatherDay.Today {
+            if weatherInfo.night {
+                return weatherInfo.when
+            } else {
+                return "Today".localized()
+            }
+        } else {
+            if weatherInfo.night {
+                return weatherInfo.when
+            } else {
+                let today = NSDate()
+                let theDate = addDaystoGivenDate(today, NumberOfDaysToAdd: weatherInfo.weatherDay.rawValue)
+                let dateFormatter = NSDateFormatter()
+                let lang = PreferenceHelper.getLanguage()
+                dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
+                if(lang == Language.French) {
+                    dateFormatter.dateFormat = "d MMMM"
+                } else {
+                    dateFormatter.dateFormat = "MMMM d"
+                }
+                
+                return weatherInfo.when + " " + dateFormatter.stringFromDate(theDate)
+            }
+        }
+    }
+    
+    static func addDaystoGivenDate(baseDate:NSDate,NumberOfDaysToAdd:Int)->NSDate
+    {
+        let dateComponents = NSDateComponents()
+        let CurrentCalendar = NSCalendar.currentCalendar()
+        let CalendarOption = NSCalendarOptions()
+        
+        dateComponents.day = NumberOfDaysToAdd
+        
+        let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
+        return newDate!
+    }
 }

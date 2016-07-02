@@ -36,6 +36,10 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         allCities = buildCityIndex(allCityList)
         allSections = buildSections(allCities)
 
+        // TODO remove
+        //let parser = CityParser()
+        //parser.perform()
+        
         resetSearch()
         
         cityTable.delegate = self

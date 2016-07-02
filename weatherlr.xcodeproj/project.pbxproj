@@ -70,13 +70,41 @@
 		6E9F32FB1CB6C95200A9D6A7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32FA1CB6C95200A9D6A7 /* City.swift */; };
 		6E9F334C1CB6F32E00A9D6A7 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F334B1CB6F32E00A9D6A7 /* AddCityViewController.swift */; };
 		6E9F33501CB6FF7800A9D6A7 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F334F1CB6FF7800A9D6A7 /* CityParser.swift */; };
-		6E9F33561CB70D6300A9D6A7 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E9F33551CB70D6300A9D6A7 /* Cities.plist */; };
 		6E9F33581CB7FB0600A9D6A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F33571CB7FB0600A9D6A7 /* Constants.swift */; };
 		6E9F335A1CB7FCFE00A9D6A7 /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F33591CB7FCFE00A9D6A7 /* PreferenceHelper.swift */; };
 		6E9F335C1CB8011B00A9D6A7 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */; };
 		6E9F335E1CB8588D00A9D6A7 /* AlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */; };
 		6E9F33601CB942C700A9D6A7 /* WeatherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */; };
 		6EAB02E11CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */; };
+		6EB154711D282B0D0005B02A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB1546F1D282B0D0005B02A /* Interface.storyboard */; };
+		6EB154731D282B0D0005B02A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154721D282B0D0005B02A /* Assets.xcassets */; };
+		6EB1547A1D282B0E0005B02A /* watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6EB154791D282B0D0005B02A /* watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6EB1547F1D282B0E0005B02A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1547E1D282B0E0005B02A /* InterfaceController.swift */; };
+		6EB154811D282B0E0005B02A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154801D282B0E0005B02A /* ExtensionDelegate.swift */; };
+		6EB154851D282B0E0005B02A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154841D282B0E0005B02A /* Assets.xcassets */; };
+		6EB154891D282B0E0005B02A /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6EB1546D1D282B0D0005B02A /* watch.app */; };
+		6EB154951D2854B40005B02A /* WatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154941D2854B40005B02A /* WatchData.swift */; };
+		6EB154961D2858FE0005B02A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32FA1CB6C95200A9D6A7 /* City.swift */; };
+		6EB154971D28590B0005B02A /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F33591CB7FCFE00A9D6A7 /* PreferenceHelper.swift */; };
+		6EB154981D2859140005B02A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F33571CB7FB0600A9D6A7 /* Constants.swift */; };
+		6EB154991D28591B0005B02A /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
+		6EB1549A1D28591D0005B02A /* WeatherInformationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E816C161CD63BCF00533684 /* WeatherInformationWrapper.swift */; };
+		6EB1549B1D2859260005B02A /* AlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */; };
+		6EB1549C1D285A350005B02A /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */; };
+		6EB1549D1D285A370005B02A /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910CB1CCBEFCE006D3C82 /* WeatherHelper.swift */; };
+		6EB1549E1D285A570005B02A /* RssParserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32DC1CB3F30D00A9D6A7 /* RssParserBase.swift */; };
+		6EB1549F1D285A590005B02A /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
+		6EB154A01D285A5C0005B02A /* RssEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32D61CB3E91D00A9D6A7 /* RssEntry.swift */; };
+		6EB154A11D285A5E0005B02A /* RssEntryToWeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32E51CB4009900A9D6A7 /* RssEntryToWeatherInformation.swift */; };
+		6EB154A21D285A630005B02A /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */; };
+		6EB154A31D285A6A0005B02A /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E816BD21CCE473E00533684 /* ExpiringCache.swift */; };
+		6EB154A41D285A730005B02A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B63501CC593DE00B27334 /* StringExtension.swift */; };
+		6EB154A61D2860680005B02A /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154A51D2860680005B02A /* Cities.plist */; };
+		6EB154A71D2867930005B02A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910A41CC59629006D3C82 /* Localizable.strings */; };
+		6EB154A91D2869200005B02A /* WeatherRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154A81D2869200005B02A /* WeatherRowController.swift */; };
+		6EB154AB1D286EA50005B02A /* CurrentWeatherRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154AA1D286EA50005B02A /* CurrentWeatherRowController.swift */; };
+		6EB154AC1D28766F0005B02A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2905321CB2D5550040EB8B /* Assets.xcassets */; };
+		6EB154FD1D287B1A0005B02A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154FC1D287B1A0005B02A /* ComplicationController.swift */; };
 		6EDC30141CF9B7D1006325EE /* cities5 in Resources */ = {isa = PBXBuildFile; fileRef = 6EDC30131CF9B7D1006325EE /* cities5 */; };
 		6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */; };
 		6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */; };
@@ -97,18 +125,23 @@
 			remoteGlobalIDString = 6E2905271CB2D5550040EB8B;
 			remoteInfo = weatherlr;
 		};
+		6EB1547B1D282B0E0005B02A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EB154781D282B0D0005B02A;
+			remoteInfo = "watch Extension";
+		};
+		6EB154871D282B0E0005B02A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EB1546C1D282B0D0005B02A;
+			remoteInfo = watch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6E9F32FE1CB6D27000A9D6A7 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		6E9F33321CB6DBCD00A9D6A7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,13 +152,26 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E9F33421CB6E1E200A9D6A7 /* CopyFiles */ = {
+		6EB1548F1D282B0E0005B02A /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 7;
+			dstSubfolderSpec = 13;
 			files = (
+				6EB1547A1D282B0E0005B02A /* watch Extension.appex in Embed App Extensions */,
 			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EB154911D282B0E0005B02A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				6EB154891D282B0E0005B02A /* watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -201,16 +247,30 @@
 		6E9F32F61CB6C26C00A9D6A7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6E9F32F81CB6C5AB00A9D6A7 /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		6E9F32FA1CB6C95200A9D6A7 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		6E9F33001CB6D27100A9D6A7 /* CityParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CityParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E9F334B1CB6F32E00A9D6A7 /* AddCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		6E9F334F1CB6FF7800A9D6A7 /* CityParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityParser.swift; sourceTree = "<group>"; };
-		6E9F33551CB70D6300A9D6A7 /* Cities.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cities.plist; sourceTree = "<group>"; };
 		6E9F33571CB7FB0600A9D6A7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6E9F33591CB7FCFE00A9D6A7 /* PreferenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelper.swift; sourceTree = "<group>"; };
 		6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
 		6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHeaderCell.swift; sourceTree = "<group>"; };
 		6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalTopAlignLabel.swift; sourceTree = "<group>"; };
+		6EB1546D1D282B0D0005B02A /* watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EB154701D282B0D0005B02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		6EB154721D282B0D0005B02A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6EB154741D282B0D0005B02A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EB154791D282B0D0005B02A /* watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EB1547E1D282B0E0005B02A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		6EB154801D282B0E0005B02A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		6EB154841D282B0E0005B02A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6EB154861D282B0E0005B02A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EB154921D284E6C0005B02A /* weatherlr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = weatherlr.entitlements; sourceTree = "<group>"; };
+		6EB154931D2853FE0005B02A /* watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = watch.entitlements; sourceTree = "<group>"; };
+		6EB154941D2854B40005B02A /* WatchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchData.swift; sourceTree = "<group>"; };
+		6EB154A51D2860680005B02A /* Cities.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cities.plist; sourceTree = "<group>"; };
+		6EB154A81D2869200005B02A /* WeatherRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRowController.swift; sourceTree = "<group>"; };
+		6EB154AA1D286EA50005B02A /* CurrentWeatherRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherRowController.swift; sourceTree = "<group>"; };
+		6EB154FC1D287B1A0005B02A /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		6EDC30131CF9B7D1006325EE /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
 		6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxLabel.swift; sourceTree = "<group>"; };
 		6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangTableViewCell.swift; sourceTree = "<group>"; };
@@ -238,7 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E9F32FD1CB6D27000A9D6A7 /* Frameworks */ = {
+		6EB154761D282B0D0005B02A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,6 +314,8 @@
 				6E29052A1CB2D5550040EB8B /* weatherlr */,
 				6E29053F1CB2D5550040EB8B /* weatherlrTests */,
 				6E29054A1CB2D5550040EB8B /* weatherlrUITests */,
+				6EB1546E1D282B0D0005B02A /* watch */,
+				6EB1547D1D282B0E0005B02A /* watch Extension */,
 				6E2905291CB2D5550040EB8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -264,7 +326,8 @@
 				6E2905281CB2D5550040EB8B /* weatherlr.app */,
 				6E29053C1CB2D5550040EB8B /* weatherlrTests.xctest */,
 				6E2905471CB2D5550040EB8B /* weatherlrUITests.xctest */,
-				6E9F33001CB6D27100A9D6A7 /* CityParser */,
+				6EB1546D1D282B0D0005B02A /* watch.app */,
+				6EB154791D282B0D0005B02A /* watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,12 +335,13 @@
 		6E29052A1CB2D5550040EB8B /* weatherlr */ = {
 			isa = PBXGroup;
 			children = (
+				6EB154921D284E6C0005B02A /* weatherlr.entitlements */,
 				6E816BC51CCD795800533684 /* Images */,
 				6E29052B1CB2D5550040EB8B /* AppDelegate.swift */,
 				6E2905321CB2D5550040EB8B /* Assets.xcassets */,
 				6E29052F1CB2D5550040EB8B /* Main.storyboard */,
 				6E2905341CB2D5550040EB8B /* LaunchScreen.storyboard */,
-				6E9F33551CB70D6300A9D6A7 /* Cities.plist */,
+				6EB154A51D2860680005B02A /* Cities.plist */,
 				6E9E12BC1CE9223D00791284 /* nl-19_French.xml */,
 				6E9E12CC1CEA1ED800791284 /* nu-2_French.xml */,
 				6E9E12C81CEA10D200791284 /* nu-29_English.xml */,
@@ -298,6 +362,7 @@
 				6E816C161CD63BCF00533684 /* WeatherInformationWrapper.swift */,
 				6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */,
 				6E9F33591CB7FCFE00A9D6A7 /* PreferenceHelper.swift */,
+				6EB154941D2854B40005B02A /* WatchData.swift */,
 				6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */,
 				6E4910CB1CCBEFCE006D3C82 /* WeatherHelper.swift */,
 				6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */,
@@ -414,6 +479,31 @@
 			name = Rss;
 			sourceTree = "<group>";
 		};
+		6EB1546E1D282B0D0005B02A /* watch */ = {
+			isa = PBXGroup;
+			children = (
+				6EB154931D2853FE0005B02A /* watch.entitlements */,
+				6EB1546F1D282B0D0005B02A /* Interface.storyboard */,
+				6EB154721D282B0D0005B02A /* Assets.xcassets */,
+				6EB154741D282B0D0005B02A /* Info.plist */,
+			);
+			path = watch;
+			sourceTree = "<group>";
+		};
+		6EB1547D1D282B0E0005B02A /* watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6EB1547E1D282B0E0005B02A /* InterfaceController.swift */,
+				6EB154A81D2869200005B02A /* WeatherRowController.swift */,
+				6EB154AA1D286EA50005B02A /* CurrentWeatherRowController.swift */,
+				6EB154801D282B0E0005B02A /* ExtensionDelegate.swift */,
+				6EB154FC1D287B1A0005B02A /* ComplicationController.swift */,
+				6EB154841D282B0E0005B02A /* Assets.xcassets */,
+				6EB154861D282B0E0005B02A /* Info.plist */,
+			);
+			path = "watch Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,10 +515,12 @@
 				6E2905251CB2D5550040EB8B /* Frameworks */,
 				6E2905261CB2D5550040EB8B /* Resources */,
 				6E9F33321CB6DBCD00A9D6A7 /* Embed Frameworks */,
+				6EB154911D282B0E0005B02A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6EB154881D282B0E0005B02A /* PBXTargetDependency */,
 			);
 			name = weatherlr;
 			productName = weatherlr;
@@ -471,23 +563,39 @@
 			productReference = 6E2905471CB2D5550040EB8B /* weatherlrUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		6E9F32FF1CB6D27000A9D6A7 /* CityParser */ = {
+		6EB1546C1D282B0D0005B02A /* watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E9F33041CB6D27100A9D6A7 /* Build configuration list for PBXNativeTarget "CityParser" */;
+			buildConfigurationList = 6EB154901D282B0E0005B02A /* Build configuration list for PBXNativeTarget "watch" */;
 			buildPhases = (
-				6E9F32FC1CB6D27000A9D6A7 /* Sources */,
-				6E9F32FD1CB6D27000A9D6A7 /* Frameworks */,
-				6E9F32FE1CB6D27000A9D6A7 /* CopyFiles */,
-				6E9F33421CB6E1E200A9D6A7 /* CopyFiles */,
+				6EB1546B1D282B0D0005B02A /* Resources */,
+				6EB1548F1D282B0E0005B02A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EB1547C1D282B0E0005B02A /* PBXTargetDependency */,
+			);
+			name = watch;
+			productName = watch;
+			productReference = 6EB1546D1D282B0D0005B02A /* watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		6EB154781D282B0D0005B02A /* watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EB1548E1D282B0E0005B02A /* Build configuration list for PBXNativeTarget "watch Extension" */;
+			buildPhases = (
+				6EB154751D282B0D0005B02A /* Sources */,
+				6EB154761D282B0D0005B02A /* Frameworks */,
+				6EB154771D282B0D0005B02A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CityParser;
-			productName = CityParser;
-			productReference = 6E9F33001CB6D27100A9D6A7 /* CityParser */;
-			productType = "com.apple.product-type.tool";
+			name = "watch Extension";
+			productName = "watch Extension";
+			productReference = 6EB154791D282B0D0005B02A /* watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -503,6 +611,9 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 654X66AK24;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 0;
 							};
@@ -516,8 +627,17 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = 6E2905271CB2D5550040EB8B;
 					};
-					6E9F32FF1CB6D27000A9D6A7 = {
-						CreatedOnToolsVersion = 7.3;
+					6EB1546C1D282B0D0005B02A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 654X66AK24;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					6EB154781D282B0D0005B02A = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -538,7 +658,8 @@
 				6E2905271CB2D5550040EB8B /* weatherlr */,
 				6E29053B1CB2D5550040EB8B /* weatherlrTests */,
 				6E2905461CB2D5550040EB8B /* weatherlrUITests */,
-				6E9F32FF1CB6D27000A9D6A7 /* CityParser */,
+				6EB1546C1D282B0D0005B02A /* watch */,
+				6EB154781D282B0D0005B02A /* watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -549,6 +670,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E816C0F1CD10E9100533684 /* launch.png in Resources */,
+				6EB154A61D2860680005B02A /* Cities.plist in Resources */,
 				6E4910A21CC59629006D3C82 /* Localizable.strings in Resources */,
 				6E816BDB1CCF9D9400533684 /* launch@3x.png in Resources */,
 				6E2905361CB2D5550040EB8B /* LaunchScreen.storyboard in Resources */,
@@ -559,7 +681,6 @@
 				6E9E12C91CEA10D200791284 /* nu-29_English.xml in Resources */,
 				6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */,
 				6E816BCF1CCD7A0100533684 /* Flag_of_Canada.png in Resources */,
-				6E9F33561CB70D6300A9D6A7 /* Cities.plist in Resources */,
 				6E816BDA1CCF9D9400533684 /* launch@2x.png in Resources */,
 				6E9E12CD1CEA1ED800791284 /* nu-2_French.xml in Resources */,
 			);
@@ -592,6 +713,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EB1546B1D282B0D0005B02A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EB154731D282B0D0005B02A /* Assets.xcassets in Resources */,
+				6EB154711D282B0D0005B02A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EB154771D282B0D0005B02A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EB154851D282B0E0005B02A /* Assets.xcassets in Resources */,
+				6EB154AC1D28766F0005B02A /* Assets.xcassets in Resources */,
+				6EB154A71D2867930005B02A /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -618,6 +758,7 @@
 				6E9F32E61CB4009900A9D6A7 /* RssEntryToWeatherInformation.swift in Sources */,
 				6E4910D21CCD1F81006D3C82 /* DataProviderTableViewCell.swift in Sources */,
 				6E9F33601CB942C700A9D6A7 /* WeatherHeaderCell.swift in Sources */,
+				6EB154951D2854B40005B02A /* WatchData.swift in Sources */,
 				6EAB02E11CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift in Sources */,
 				6E4910CC1CCBEFCE006D3C82 /* WeatherHelper.swift in Sources */,
 				6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */,
@@ -662,10 +803,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E9F32FC1CB6D27000A9D6A7 /* Sources */ = {
+		6EB154751D282B0D0005B02A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB154971D28590B0005B02A /* PreferenceHelper.swift in Sources */,
+				6EB1549C1D285A350005B02A /* WeatherEnums.swift in Sources */,
+				6EB1549A1D28591D0005B02A /* WeatherInformationWrapper.swift in Sources */,
+				6EB154A11D285A5E0005B02A /* RssEntryToWeatherInformation.swift in Sources */,
+				6EB154811D282B0E0005B02A /* ExtensionDelegate.swift in Sources */,
+				6EB154991D28591B0005B02A /* WeatherInformation.swift in Sources */,
+				6EB1549F1D285A590005B02A /* RssParser.swift in Sources */,
+				6EB1547F1D282B0E0005B02A /* InterfaceController.swift in Sources */,
+				6EB154961D2858FE0005B02A /* City.swift in Sources */,
+				6EB154AB1D286EA50005B02A /* CurrentWeatherRowController.swift in Sources */,
+				6EB154A91D2869200005B02A /* WeatherRowController.swift in Sources */,
+				6EB154FD1D287B1A0005B02A /* ComplicationController.swift in Sources */,
+				6EB1549B1D2859260005B02A /* AlertInformation.swift in Sources */,
+				6EB154981D2859140005B02A /* Constants.swift in Sources */,
+				6EB1549E1D285A570005B02A /* RssParserBase.swift in Sources */,
+				6EB154A21D285A630005B02A /* UrlHelper.swift in Sources */,
+				6EB154A41D285A730005B02A /* StringExtension.swift in Sources */,
+				6EB1549D1D285A370005B02A /* WeatherHelper.swift in Sources */,
+				6EB154A01D285A5C0005B02A /* RssEntry.swift in Sources */,
+				6EB154A31D285A6A0005B02A /* ExpiringCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +842,16 @@
 			isa = PBXTargetDependency;
 			target = 6E2905271CB2D5550040EB8B /* weatherlr */;
 			targetProxy = 6E2905481CB2D5550040EB8B /* PBXContainerItemProxy */;
+		};
+		6EB1547C1D282B0E0005B02A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EB154781D282B0D0005B02A /* watch Extension */;
+			targetProxy = 6EB1547B1D282B0E0005B02A /* PBXContainerItemProxy */;
+		};
+		6EB154881D282B0E0005B02A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EB1546C1D282B0D0005B02A /* watch */;
+			targetProxy = 6EB154871D282B0E0005B02A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -710,6 +881,14 @@
 				6E4910A71CC59672006D3C82 /* fr */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		6EB1546F1D282B0D0005B02A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EB154701D282B0D0005B02A /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -804,6 +983,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = weatherlr/Info.plist;
@@ -817,6 +997,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = weatherlr/Info.plist;
@@ -872,23 +1053,67 @@
 			};
 			name = Release;
 		};
-		6E9F33051CB6D27100A9D6A7 /* Debug */ = {
+		6EB1548A1D282B0E0005B02A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = watch_Extension;
+				INFOPLIST_FILE = watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
-		6E9F33061CB6D27100A9D6A7 /* Release */ = {
+		6EB1548B1D282B0E0005B02A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = watch_Extension;
+				INFOPLIST_FILE = watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		6EB1548C1D282B0E0005B02A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		6EB1548D1D282B0E0005B02A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -931,14 +1156,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E9F33041CB6D27100A9D6A7 /* Build configuration list for PBXNativeTarget "CityParser" */ = {
+		6EB1548E1D282B0E0005B02A /* Build configuration list for PBXNativeTarget "watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6E9F33051CB6D27100A9D6A7 /* Debug */,
-				6E9F33061CB6D27100A9D6A7 /* Release */,
+				6EB1548C1D282B0E0005B02A /* Debug */,
+				6EB1548D1D282B0E0005B02A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		6EB154901D282B0E0005B02A /* Build configuration list for PBXNativeTarget "watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EB1548A1D282B0E0005B02A /* Debug */,
+				6EB1548B1D282B0E0005B02A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

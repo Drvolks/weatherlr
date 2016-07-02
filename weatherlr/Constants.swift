@@ -10,6 +10,7 @@ import Foundation
 
 class Constants {
     static let selectedCityKey = "selectedCity"
+    static let selectedWatchCityKey = "selectedWatchCity"
     static let favotiteCitiesKey = "favoriteCities"
     static let languageKey = "lang"
 }

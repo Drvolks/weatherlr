@@ -40,9 +40,6 @@ class SettingsViewController: UITableViewController {
         setEditing(false, animated: false)
         
         // TODO: remove
-        //let parser = CityParser()
-        //parser.perform()
-        
         //let downloader = CityDownloader(outputPath: "/Users/jfdufour/Desktop/cities")
         //downloader.process()
 

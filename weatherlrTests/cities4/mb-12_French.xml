@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-01T12:05:41Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160501120541</id>
+ <updated>2016-05-08T18:03:10Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508180310</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,139 +29,139 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:mb-12_w1:20160410101500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Généralement nuageux, 2,5&#xB0;C</title>
+ <title>Conditions actuelles: Partiellement nuageux, 16,2&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Flin Flon 07h00 HAC dimanche 01 mai 2016 <br/>
-<b>Condition:</b> Généralement nuageux <br/>
-<b>Température:</b> 2,5&deg;C <br/>
-<b>Pression / Tendance:</b> 102,3 kPa à la baisse<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de Flin Flon 13h00 HAC dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Partiellement nuageux <br/>
+<b>Température:</b> 16,2&deg;C <br/>
+<b>Pression / Tendance:</b> 100,1 kPa à la baisse<br/>
 <b>Visibilité:</b> 24,1 km<br/>
-<b>Humidité:</b> 77 %<br/>
-<b>Point de rosée:</b> -1,1&deg;C <br/>
-<b>Vent:</b> S 5 km/h<br/>
+<b>Humidité:</b> 41 %<br/>
+<b>Point de rosée:</b> 3,0&deg;C <br/>
+<b>Vent:</b> SSE 14 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_cc:20160501120000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_cc:20160508180000</id>
  </entry>
  <entry>
- <title>Dimanche: Possibilité d'averses. Maximum 17. PdP 30%</title>
+ <title>Dimanche: Ensoleillé. Maximum 22.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ennuagement. 30 pour cent de probabilité d'averses tard cet après-midi. Maximum 17. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc1:20160501100000</id>
+ <summary type="html">Ensoleillé. Vents du sud-est de 30 km/h avec rafales à 50. Maximum 22. Indice UV de 5 ou modéré. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc1:20160508160000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Dégagement. Minimum 6.</title>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum 12. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagement ce soir. Minimum 6. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc2:20160501100000</id>
+ <summary type="html">Dégagé ce soir. Devenant partiellement nuageux avec 30 pour cent de probabilité d'averses au cours de la nuit. Vents du sud-est de 30 km/h avec rafales à 50 devenant légers après minuit. Minimum 12. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc2:20160508160000</id>
  </entry>
  <entry>
- <title>Lundi: Généralement ensoleillé. Maximum 22.</title>
+ <title>Lundi: Possibilité d'averses. Maximum 20. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement ensoleillé. Maximum 22. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc3:20160501100000</id>
+ <summary type="html">Généralement nuageux avec 30 pour cent de probabilité d'averses. Maximum 20. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc3:20160508160000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Dégagé. Minimum 6.</title>
+ <title>Lundi soir et nuit: Nuageux. Minimum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 6. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc4:20160501100000</id>
+ <summary type="html">Nuageux. Minimum 9. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc4:20160508160000</id>
  </entry>
  <entry>
- <title>Mardi: Ensoleillé. Maximum 14.</title>
+ <title>Mardi: Possibilité d'averses. Maximum 16. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc5:20160501100000</id>
+ <summary type="html">Nuageux avec 60 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc5:20160508160000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Dégagé. Minimum plus 4.</title>
+ <title>Mardi soir et nuit: Pluie. Minimum plus 5.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc6:20160501100000</id>
+ <summary type="html">Pluie. Minimum plus 5. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc6:20160508160000</id>
  </entry>
  <entry>
- <title>Mercredi: Ensoleillé. Maximum 19.</title>
+ <title>Mercredi: Pluie intermittente. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 19. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc7:20160501100000</id>
+ <summary type="html">Pluie intermittente. Maximum 9. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc7:20160508160000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Dégagé. Minimum 10.</title>
+ <title>Mercredi soir et nuit: Pluie intermittente. Minimum plus 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 10. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc8:20160501100000</id>
+ <summary type="html">Pluie intermittente. Minimum plus 2. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc8:20160508160000</id>
  </entry>
  <entry>
- <title>Jeudi: Ensoleillé. Maximum 21.</title>
+ <title>Jeudi: Neige. Maximum 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 21. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc9:20160501100000</id>
+ <summary type="html">Neige. Maximum 7. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc9:20160508160000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Dégagé. Minimum 9.</title>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 9. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc10:20160501100000</id>
+ <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc10:20160508160000</id>
  </entry>
  <entry>
- <title>Vendredi: Ensoleillé. Maximum 24.</title>
+ <title>Vendredi: Ensoleillé. Maximum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 24. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc11:20160501100000</id>
+ <summary type="html">Ensoleillé. Maximum 10. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc11:20160508160000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Dégagé. Minimum 6.</title>
+ <title>Vendredi soir et nuit: Dégagé. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum 6. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc12:20160501100000</id>
+ <summary type="html">Dégagé. Minimum zéro. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc12:20160508160000</id>
  </entry>
  <entry>
- <title>Samedi: Ensoleillé. Maximum 20.</title>
+ <title>Samedi: Ensoleillé. Maximum 14.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/mb-12_metric_f.html"/>
- <updated>2016-05-01T10:00:00Z</updated>
- <published>2016-05-01T10:00:00Z</published>
+ <updated>2016-05-08T16:00:00Z</updated>
+ <published>2016-05-08T16:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 05h00 HAC dimanche 01 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc13:20160501100000</id>
+ <summary type="html">Ensoleillé. Maximum 14. Prévisions émises 11h00 HAC dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:mb-12_fc13:20160508160000</id>
  </entry>
  </feed>
 

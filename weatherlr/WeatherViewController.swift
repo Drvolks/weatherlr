@@ -163,7 +163,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             warningBarButton.tintColor = UIColor.clearColor()
         }
         
-        if !selectedCity!.radarId.isEmpty {
+        if selectedCity != nil && !selectedCity!.radarId.isEmpty {
             radarButton.enabled = true
             radarButton.tintColor = nil
         } else {
@@ -173,82 +173,17 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weatherInformationWrapper.weatherInformations.count - 2
+        let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
+        
+        return weatherInformationWrapper.weatherInformations.count - indexAjust
     }
     
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("weatherCell", forIndexPath: indexPath) as! WeatherTableViewCell
         
-        let weatherInfo = weatherInformationWrapper.weatherInformations[indexPath.row+1]
-        cell.weatherImage.image = weatherInfo.image()
-        cell.weatherDetailLabel.text = weatherInfo.detail
-        cell.backgroundColor = UIColor.clearColor()
-
-        if weatherInfo.weatherDay == WeatherDay.Today {
-            cell.minMaxLabel.hidden = true
-            cell.minMaxImage.hidden = true
-            
-            if weatherInfo.night {
-                cell.whenLabel.text = weatherInfo.when
-            } else {
-                cell.whenLabel.text = "Today".localized()
-            }
-        } else {
-            cell.minMaxLabel.text = String(weatherInfo.temperature)
-            cell.minMaxImage.image = getMinMaxImage(weatherInfo, header: false)
-            
-            cell.minMaxLabel.hidden = false
-            cell.minMaxImage.hidden = false
-            
-            if weatherInfo.night {
-                cell.whenLabel.text = weatherInfo.when
-            } else {
-                let today = NSDate()
-                let theDate = addDaystoGivenDate(today, NumberOfDaysToAdd: weatherInfo.weatherDay.rawValue - 1)
-                let dateFormatter = NSDateFormatter()
-                let lang = PreferenceHelper.getLanguage()
-                dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
-                if(lang == Language.French) {
-                    dateFormatter.dateFormat = "d MMMM"
-                } else {
-                    dateFormatter.dateFormat = "MMMM d"
-                }
-                
-                cell.whenLabel.text = weatherInfo.when + " " + dateFormatter.stringFromDate(theDate)
-            }
-        }
+        cell.populate(weatherInformationWrapper, indexPath: indexPath)
         
         return cell
-    }
-    
-    func addDaystoGivenDate(baseDate:NSDate,NumberOfDaysToAdd:Int)->NSDate
-    {
-        let dateComponents = NSDateComponents()
-        let CurrentCalendar = NSCalendar.currentCalendar()
-        let CalendarOption = NSCalendarOptions()
-        
-        dateComponents.day = NumberOfDaysToAdd
-        
-        let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
-        return newDate!
-    }
-
-    func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {
-        var name = "up"
-        
-        if weatherInfo.tendancy == Tendency.Minimum {
-            name = "down"
-        } else if weatherInfo.tendancy == Tendency.Steady {
-            if weatherInfo.night {
-                name = "down"
-            }
-        }
-        
-        if header {
-            return UIImage(named: name + "Header")
-        } else {
-            return UIImage(named: name)
-        }
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
@@ -259,52 +194,25 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let header = tableView.dequeueReusableCellWithIdentifier("header")! as! WeatherHeaderCell
         
         if let city = selectedCity {
-            var name = city.englishName
-            if PreferenceHelper.isFrench() {
-                name = city.frenchName
-            }
-            header.cityLabel.text = name
-            
-            if weatherInformationWrapper.weatherInformations.count > 0 {
-                var weatherInfo = weatherInformationWrapper.weatherInformations[0]
-                header.currentTemperatureLabel.text = String(weatherInfo.temperature)
-                
-                if(weatherInfo.weatherStatus == .Blank) {
-                    header.weatherImage.hidden = true
-                } else {
-                    header.weatherImage.image = weatherInfo.image()
-                    header.weatherImage.hidden = false
-                }
-                
-                if weatherInformationWrapper.weatherInformations.count > 1 {
-                    weatherInfo = weatherInformationWrapper.weatherInformations[1]
-                    
-                    header.temperatureLabel.hidden = false
-                    header.temperatureImage.hidden = false
-                    header.temperatureLabel.text = String(weatherInfo.temperature)
-                    header.temperatureImage.image = getMinMaxImage(weatherInfo, header: true)
-                } else {
-                    header.temperatureLabel.text = ""
-                    header.temperatureLabel.hidden = true
-                    header.temperatureImage.hidden = true
-                }
-            }
+            header.populate(city, weatherInformationWrapper: weatherInformationWrapper)
         }
         
         header.bounds.size.width = weatherTable.bounds.size.width
         
-        let color = self.view.backgroundColor!
-        let gradientMaskLayer:CAGradientLayer = CAGradientLayer()
-        gradientMaskLayer.frame = header.bounds
-        gradientMaskLayer.colors = [color.colorWithAlphaComponent(0.95).CGColor, color.colorWithAlphaComponent(0)]
-        gradientMaskLayer.locations = [0.70, 1.0]
-        header.layer.mask = gradientMaskLayer
-        header.backgroundColor = color.colorWithAlphaComponent(0.95)
+        header.gradientBackground(self.view.backgroundColor!)
         
         return header
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if weatherInformationWrapper.weatherInformations.count > 0 {
+            let weatherInfo = weatherInformationWrapper.weatherInformations[0]
+            
+            if weatherInfo.weatherDay != WeatherDay.Now {
+                return 30
+            }
+        }
+        
         return 130
     }
     
@@ -328,7 +236,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if width > 300 {
             width = 300
         }
-        let height = CGFloat(80 + (21*weatherInformationWrapper.alerts.count))
+        var lines = weatherInformationWrapper.alerts.count
+        for i in 0..<weatherInformationWrapper.alerts.count {
+            let alertText = weatherInformationWrapper.alerts[i].alertText
+            if alertText.characters.count > 30 {
+                lines = lines + 1
+            }
+        }
+        let height = CGFloat(80 + (21*lines))
         
         alertController.modalPresentationStyle = .Popover;
         alertController.preferredContentSize = CGSizeMake(width, height)

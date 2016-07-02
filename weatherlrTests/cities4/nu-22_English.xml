@@ -14,27 +14,29 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-01T12:07:12Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160501120712</id>
+ <updated>2016-05-08T18:10:25Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508181025</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
  <entry>
- <title>Current Conditions: -16.1&#xB0;C</title>
+ <title>Current Conditions: Partly Cloudy, -18.3&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nu-22_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> CFS Alert 08:00 AM EDT Sunday 01 May 2016 <br/>
-<b>Temperature:</b> -16.1&deg;C <br/>
-<b>Pressure / Tendency:</b> 102.6 kPa falling<br/>
-<b>Humidity:</b> 81 %<br/>
-<b>Wind Chill:</b> -19 <br/>
-<b>Dewpoint:</b> -18.5&deg;C <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> CFS Alert 2:00 PM EDT Sunday 08 May 2016 <br/>
+<b>Condition:</b> Partly Cloudy <br/>
+<b>Temperature:</b> -18.3&deg;C <br/>
+<b>Pressure / Tendency:</b> 101.8 kPa falling<br/>
+<b>Visibility:</b> 24.1 km<br/>
+<b>Humidity:</b> 79 %<br/>
+<b>Wind Chill:</b> -22 <br/>
+<b>Dewpoint:</b> -21.1&deg;C <br/>
 <b>Wind:</b> WNW 4 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nu-22_cc:20160501120000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nu-22_cc:20160508180000</id>
  </entry>
  </feed>
 

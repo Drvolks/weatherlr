@@ -156,7 +156,21 @@ class WeatherInformation {
              .HeavyRainshower,
              .AFewShowersOrThunderstorms,
              .Thunderstorm,
-             .ThunderstormWithLightRainshowers:
+             .ThunderstormWithLightRainshowers,
+             .WetFlurriesOrRainShowers,
+             .LightSnowOrFreezingRain,
+             .RainAtTimesHeavyOrSnow,
+             .SnowAtTimesHeavyOrRain,
+             .FogDissipating,
+             .ShowersOrThunderstorms,
+             .ThunderstormWithLightRain,
+             .ChanceOfRainOrDrizzle,
+             .ChanceOfSnowMixedWithRain,
+             .ChanceOfSnowOrRain,
+             .ChanceOfShowersAtTimesHeavy,
+             .ShowersAtTimesHeavy,
+             .ChanceOfThunderstorms,
+             .ShowersAtTimesHeavyOrThundershowers:
             return WeatherColor.CloudyDay
         case .Snow,
              .PeriodsOfSnowAndBlowingSnow,
@@ -177,7 +191,9 @@ class WeatherInformation {
              .ChanceOfLightSnow,
              .SnowAtTimesHeavy,
              .SnowGrains,
-             .SnowMixedWithIcePellets:
+             .SnowMixedWithIcePellets,
+             .IcePelletsOrSnow,
+             .SnowOrIcePellets:
             return WeatherColor.SnowDay
         case .Sunny,
              .PartlyCloudy,

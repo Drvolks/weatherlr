@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-04-27T23:03:35Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160427230335</id>
+ <updated>2016-05-01T22:50:30Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160501225030</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,112 +29,112 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:yt-4_w1:20160423123000</id>
  </entry>
  <entry>
- <title>Wednesday night: Mainly cloudy. Low plus 1.</title>
+ <title>Sunday night: Partly cloudy. Low plus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly cloudy. Clearing before morning. Low plus 1. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc1:20160427230000</id>
+ <summary type="html">Partly cloudy. Low plus 2. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc1:20160501230000</id>
  </entry>
  <entry>
- <title>Thursday: Mainly sunny. High plus 5.</title>
+ <title>Monday: Showers. Temperature steady near plus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly sunny. Wind becoming east 20 km/h near noon. High plus 5. UV index 3 or moderate. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc2:20160427230000</id>
+ <summary type="html">Increasing cloudiness. Showers beginning near noon. Showers over southern sections in the morning. Wind becoming east 30 km/h in the morning except 70 near the Richardson mountains in the afternoon. Temperature steady near plus 2. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc2:20160501230000</id>
  </entry>
  <entry>
- <title>Thursday night: Mainly cloudy. Low minus 2.</title>
+ <title>Monday night: Chance of showers. Temperature steady near plus 1. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Increasing cloudiness early in the evening. Wind east 20 km/h becoming light in the evening. Low minus 2. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc3:20160427230000</id>
+ <summary type="html">Cloudy with 40 percent chance of showers. Wind east 30 km/h except 70 near the Richardson mountains in the evening. Wind becoming light after midnight. Temperature steady near plus 1. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc3:20160501230000</id>
  </entry>
  <entry>
- <title>Friday: A mix of sun and cloud. High plus 3.</title>
+ <title>Tuesday: Cloudy. High 6.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High plus 3. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc4:20160427230000</id>
+ <summary type="html">Cloudy. High 6. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc4:20160501230000</id>
+ </entry>
+ <entry>
+ <title>Tuesday night: Cloudy. Low minus 2.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy. Low minus 2. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc5:20160501230000</id>
+ </entry>
+ <entry>
+ <title>Wednesday: Cloudy. High plus 2.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy. High plus 2. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc6:20160501230000</id>
+ </entry>
+ <entry>
+ <title>Wednesday night: Cloudy. Low minus 4.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy. Low minus 4. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc7:20160501230000</id>
+ </entry>
+ <entry>
+ <title>Thursday: A mix of sun and cloud. High plus 5.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. High plus 5. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc8:20160501230000</id>
+ </entry>
+ <entry>
+ <title>Thursday night: Cloudy periods. Low minus 4.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">Cloudy periods. Low minus 4. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc9:20160501230000</id>
+ </entry>
+ <entry>
+ <title>Friday: A mix of sun and cloud. High plus 5.</title>
+ <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
+ <category term="Weather Forecasts"/>
+ <summary type="html">A mix of sun and cloud. High plus 5. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc10:20160501230000</id>
  </entry>
  <entry>
  <title>Friday night: Cloudy periods. Low minus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 2. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc5:20160427230000</id>
+ <summary type="html">Cloudy periods. Low minus 2. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc11:20160501230000</id>
  </entry>
  <entry>
- <title>Saturday: A mix of sun and cloud. High plus 4.</title>
+ <title>Saturday: A mix of sun and cloud. High 8.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
+ <updated>2016-05-01T23:00:00Z</updated>
+ <published>2016-05-01T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High plus 4. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc6:20160427230000</id>
- </entry>
- <entry>
- <title>Saturday night: Clear. Low minus 2.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low minus 2. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc7:20160427230000</id>
- </entry>
- <entry>
- <title>Sunday: Cloudy. High 6.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. Windy. High 6. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc8:20160427230000</id>
- </entry>
- <entry>
- <title>Sunday night: Cloudy periods. Low minus 2.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 2. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc9:20160427230000</id>
- </entry>
- <entry>
- <title>Monday: A mix of sun and cloud. High plus 5.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High plus 5. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc10:20160427230000</id>
- </entry>
- <entry>
- <title>Monday night: Cloudy periods. Low minus 1.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 1. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc11:20160427230000</id>
- </entry>
- <entry>
- <title>Tuesday: A mix of sun and cloud. High plus 5.</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-4_metric_e.html"/>
- <updated>2016-04-27T23:00:00Z</updated>
- <published>2016-04-27T23:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High plus 5. Forecast issued 4:00 PM PDT Wednesday 27 April 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-4_fc12:20160427230000</id>
+ <summary type="html">A mix of sun and cloud. High 8. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-4_fc12:20160501230000</id>
  </entry>
  </feed>
 

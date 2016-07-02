@@ -165,7 +165,9 @@ class WeatherHelper {
              .Thunderstorm,
              .ThunderstormWithLightRainshowers,
              .ShowersOrThunderstorms,
-             .ThunderstormWithLightRain:
+             .ThunderstormWithLightRain,
+             .ChanceOfThunderstorms,
+             .ShowersAtTimesHeavyOrThundershowers:
             return WeatherStatus.ChanceOfShowersOrThunderstorms
         case .SnowOrIcePellets,
              .IcePelletsOrSnow:

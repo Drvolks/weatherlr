@@ -120,6 +120,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             self.weatherTable.reloadData()
         }
+        
+        if let city = self.selectedCity {
+            // TODO ne pas envoyer des message à la montre si c'est déjà la bonne ville
+            WatchData.instance.updateCity(city)
+        }
     }
     
     func decorate() {

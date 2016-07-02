@@ -405,6 +405,10 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.ChanceOfShowersAtTimesHeavy
         case "averses parfois fortes", "showers at times heavy":
             return WeatherStatus.ShowersAtTimesHeavy
+        case "possibilité d'orages", "chance of thunderstorms":
+            return WeatherStatus.ChanceOfThunderstorms
+        case "averses parfois fortes ou orages", "showers at times heavy or thundershowers":
+            return WeatherStatus.ShowersAtTimesHeavyOrThundershowers
         default:
             return convertWeatherStatusWithRegex(text)
         }

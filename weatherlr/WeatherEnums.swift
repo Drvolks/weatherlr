@@ -35,6 +35,7 @@ enum WeatherStatus {
     case ChanceOfSnow
     case ChanceOfSnowOrRain
     case ChanceOfSnowMixedWithRain
+    case ChanceOfThunderstorms
     case ChanceOfWetFlurries
     case ChanceOfWetFlurriesOrRainShowers
     case Clear
@@ -125,6 +126,7 @@ enum WeatherStatus {
     case RainShowersOrFlurries
     case Showers
     case ShowersAtTimesHeavy
+    case ShowersAtTimesHeavyOrThundershowers
     case ShowersOrDrizzle
     case ShowersOrThunderstorms
     case Smoke

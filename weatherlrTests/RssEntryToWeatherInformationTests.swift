@@ -1026,7 +1026,17 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Showers at times heavy")
         XCTAssertEqual(WeatherStatus.ShowersAtTimesHeavy, result)
         
+        // ChanceOfThunderstorms
+        result = performer.convertWeatherStatus("Possibilité d'orages")
+        XCTAssertEqual(WeatherStatus.ChanceOfThunderstorms, result)
+        result = performer.convertWeatherStatus("Chance of thunderstorms")
+        XCTAssertEqual(WeatherStatus.ChanceOfThunderstorms, result)
         
+        // ShowersAtTimesHeavyOrThundershowers
+        result = performer.convertWeatherStatus("Averses parfois fortes ou orages")
+        XCTAssertEqual(WeatherStatus.ShowersAtTimesHeavyOrThundershowers, result)
+        result = performer.convertWeatherStatus("Showers at times heavy or thundershowers")
+        XCTAssertEqual(WeatherStatus.ShowersAtTimesHeavyOrThundershowers, result)
         
         
         

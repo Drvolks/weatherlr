@@ -27,10 +27,15 @@ enum WeatherStatus {
     case ChanceOfRainShowersOrFlurries
     case ChanceOfRainShowersOrWetFlurries
     case ChanceOfRain
+    case ChanceOfRainOrDrizzle
     case ChanceOfShowers
+    case ChanceOfShowersAtTimesHeavy
     case ChanceOfShowersOrDrizzle
     case ChanceOfShowersOrThunderstorms
     case ChanceOfSnow
+    case ChanceOfSnowOrRain
+    case ChanceOfSnowMixedWithRain
+    case ChanceOfThunderstorms
     case ChanceOfWetFlurries
     case ChanceOfWetFlurriesOrRainShowers
     case Clear
@@ -46,6 +51,7 @@ enum WeatherStatus {
     case FlurriesAtTimesHeavy
     case FlurriesOrRainShowers
     case Fog
+    case FogDissipating
     case FogPatches
     case FreezingDrizzle
     case FreezingDrizzleOrDrizzle
@@ -59,6 +65,7 @@ enum WeatherStatus {
     case HeavyRainshower
     case HeavySnow
     case IceCrystals
+    case IcePelletsOrSnow
     case IncreasingCloudiness
     case LightDrizzleAndFog
     case LightFreezingDrizzle
@@ -69,6 +76,7 @@ enum WeatherStatus {
     case LightSnow
     case LightSnowAndBlowingSnow
     case LightSnowMixedWithRain
+    case LightSnowOrFreezingRain
     case LightSnowOrRain
     case LightSnowshower
     case LightWetSnow
@@ -111,27 +119,35 @@ enum WeatherStatus {
     case Rain
     case RainAtTimesHeavy
     case RainAtTimesHeavyOrDrizzle
+    case RainAtTimesHeavyOrSnow
     case RainMixedWithSnow
     case RainOrDrizzle
     case RainOrFreezingRain
     case RainShowersOrFlurries
     case Showers
+    case ShowersAtTimesHeavy
+    case ShowersAtTimesHeavyOrThundershowers
     case ShowersOrDrizzle
+    case ShowersOrThunderstorms
     case Smoke
     case Snow
     case SnowAndBlowingSnow
     case SnowAtTimesHeavy
+    case SnowAtTimesHeavyOrRain
     case SnowAtTimesHeavyMixedWithRain
     case SnowGrains
     case SnowMixedWithFreezingDrizzle
     case SnowMixedWithIcePellets
     case SnowMixedWithRain
     case SnowOrFreezingRain
+    case SnowOrIcePellets
     case SnowOrRain
     case Sunny
     case Thunderstorm
+    case ThunderstormWithLightRain
     case ThunderstormWithLightRainshowers
     case WetFlurries
+    case WetFlurriesOrRainShowers
     case WetSnow
     case Blank
     case NA
@@ -149,28 +165,28 @@ enum WeatherColor : Int {
 }
 
 enum WeatherDay : Int {
-    case Now = 0
-    case Today = 1
-    case Tomorow = 2
-    case Day2 = 3
-    case Day3 = 4
-    case Day4 = 5
-    case Day5 = 6
-    case Day6 = 7
-    case Day7 = 8
-    case Day8 = 9
-    case Day9 = 10
-    case Day10 = 11
-    case Day11 = 12
-    case Day12 = 13
-    case Day13 = 14
-    case Day14 = 15
-    case Day15 = 16
-    case Day16 = 17
-    case Day17 = 18
-    case Day18 = 19
-    case Day19 = 20
-    case Day20 = 21
+    case Now = -1
+    case Today = 0
+    case Tomorow = 1
+    case Day2 = 2
+    case Day3 = 3
+    case Day4 = 4
+    case Day5 = 5
+    case Day6 = 6
+    case Day7 = 7
+    case Day8 = 8
+    case Day9 = 9
+    case Day10 = 10
+    case Day11 = 11
+    case Day12 = 12
+    case Day13 = 13
+    case Day14 = 14
+    case Day15 = 15
+    case Day16 = 16
+    case Day17 = 17
+    case Day18 = 18
+    case Day19 = 19
+    case Day20 = 20
     case NA = -99
 }
 

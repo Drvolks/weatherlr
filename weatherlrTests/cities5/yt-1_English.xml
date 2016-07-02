@@ -14,145 +14,145 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-02T11:04:24Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160502110424</id>
+ <updated>2016-05-28T11:02:43Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160528110243</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
  <entry>
  <title>No watches or warnings in effect, Kluane Lake</title>
  <link type="text/html" href="http://www.weather.gc.ca/warnings/index_e.html"/>
- <updated>2016-04-11T13:01:00Z</updated>
- <published>2016-04-11T13:01:00Z</published>
+ <updated>2016-05-28T04:03:00Z</updated>
+ <published>2016-05-28T04:03:00Z</published>
  <category term="Warnings and Watches"/>
  <summary type="html">No watches or warnings in effect.</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_w1:20160411130100</id>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_w1:20160528040300</id>
  </entry>
  <entry>
- <title>Current Conditions: Cloudy, 3.1&#xB0;C</title>
+ <title>Current Conditions: Cloudy, 2.1&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-28T11:00:00Z</updated>
+ <published>2016-05-28T11:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Burwash Airport 04:00 AM PDT Monday 02 May 2016 <br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Burwash Airport 04:00 AM PDT Saturday 28 May 2016 <br/>
 <b>Condition:</b> Cloudy <br/>
-<b>Temperature:</b> 3.1&deg;C <br/>
-<b>Pressure:</b> 100.5 kPa <br/>
+<b>Temperature:</b> 2.1&deg;C <br/>
+<b>Pressure:</b> 102.2 kPa <br/>
 <b>Visibility:</b> 16.1 km<br/>
-<b>Humidity:</b> 82 %<br/>
-<b>Dewpoint:</b> 0.3&deg;C <br/>
-<b>Wind:</b> ESE 8 km/h<br/>
+<b>Humidity:</b> 86 %<br/>
+<b>Dewpoint:</b> 0.0&deg;C <br/>
+<b>Wind:</b>  0 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_cc:20160502110000</id>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_cc:20160528110000</id>
  </entry>
  <entry>
- <title>Sunday night: Chance of flurries. Low minus 3. POP 30%</title>
+ <title>Friday night: Chance of rain showers or flurries. Low minus 1. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Partly cloudy. Becoming cloudy late this evening. 30 percent chance of flurries before morning. Wind southeast 30 km/h gusting to 50 becoming light late this evening. Low minus 3. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc1:20160501230000</id>
+ <summary type="html">Mainly cloudy. 30 percent chance of rain showers changing to 30 percent chance of flurries overnight. Wind northwest 20 km/h becoming light late this evening. Low minus 1. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc1:20160527230000</id>
  </entry>
  <entry>
- <title>Monday: Chance of flurries. High 12. POP 30%</title>
+ <title>Saturday: Chance of showers. High 15. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 30 percent chance of flurries early in the morning then a mix of sun and cloud. Wind becoming southeast 40 km/h gusting to 60 in the morning. High 12. UV index 3 or moderate. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc2:20160501230000</id>
+ <summary type="html">A mix of sun and cloud. 40 percent chance of showers in the afternoon. High 15. UV index 5 or moderate. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc2:20160527230000</id>
  </entry>
  <entry>
- <title>Monday night: Chance of flurries. Low minus 6. POP 30%</title>
+ <title>Saturday night: Chance of showers. Low plus 1. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Increasing cloudiness. 30 percent chance of flurries overnight. Wind southeast 40 km/h gusting to 60 becoming light in the evening. Low minus 6. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc3:20160501230000</id>
+ <summary type="html">Cloudy. 40 percent chance of showers early in the evening. Low plus 1. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc3:20160527230000</id>
  </entry>
  <entry>
- <title>Tuesday: A mix of sun and cloud. High 10.</title>
+ <title>Sunday: A mix of sun and cloud. High 15.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud. High 10. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc4:20160501230000</id>
+ <summary type="html">A mix of sun and cloud. High 15. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc4:20160527230000</id>
  </entry>
  <entry>
- <title>Tuesday night: Cloudy periods. Low minus 4.</title>
+ <title>Sunday night: Cloudy periods. Low plus 3.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low minus 4. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc5:20160501230000</id>
+ <summary type="html">Cloudy periods. Low plus 3. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc5:20160527230000</id>
  </entry>
  <entry>
- <title>Wednesday: Sunny. High 9.</title>
+ <title>Monday: A mix of sun and cloud. High 16.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 9. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc6:20160501230000</id>
+ <summary type="html">A mix of sun and cloud. High 16. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc6:20160527230000</id>
  </entry>
  <entry>
- <title>Wednesday night: Clear. Low minus 9.</title>
+ <title>Monday night: Clear. Low plus 3.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low minus 9. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc7:20160501230000</id>
+ <summary type="html">Clear. Low plus 3. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc7:20160527230000</id>
  </entry>
  <entry>
- <title>Thursday: Sunny. High 11.</title>
+ <title>Tuesday: Sunny. High 18.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 11. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc8:20160501230000</id>
+ <summary type="html">Sunny. High 18. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc8:20160527230000</id>
  </entry>
  <entry>
- <title>Thursday night: Clear. Low plus 1.</title>
+ <title>Tuesday night: Clear. Low plus 5.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low plus 1. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc9:20160501230000</id>
+ <summary type="html">Clear. Low plus 5. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc9:20160527230000</id>
  </entry>
  <entry>
- <title>Friday: Sunny. High 13.</title>
+ <title>Wednesday: Sunny. High 19.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 13. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc10:20160501230000</id>
+ <summary type="html">Sunny. High 19. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc10:20160527230000</id>
  </entry>
  <entry>
- <title>Friday night: Clear. Low plus 3.</title>
+ <title>Wednesday night: Clear. Low 6.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low plus 3. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc11:20160501230000</id>
+ <summary type="html">Clear. Low 6. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc11:20160527230000</id>
  </entry>
  <entry>
- <title>Saturday: Sunny. High 14.</title>
+ <title>Thursday: Sunny. High 20.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/yt-1_metric_e.html"/>
- <updated>2016-05-01T23:00:00Z</updated>
- <published>2016-05-01T23:00:00Z</published>
+ <updated>2016-05-27T23:00:00Z</updated>
+ <published>2016-05-27T23:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 14. Forecast issued 4:00 PM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:yt-1_fc12:20160501230000</id>
+ <summary type="html">Sunny. High 20. Forecast issued 4:00 PM PDT Friday 27 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:yt-1_fc12:20160527230000</id>
  </entry>
  </feed>
 

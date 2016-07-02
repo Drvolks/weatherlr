@@ -6,7 +6,7 @@
 //  Copyright © 2016 Jean-Francois Dufour. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class WeatherHelper {
     static func getWeatherInformations(city:City) -> WeatherInformationWrapper {
@@ -77,7 +77,9 @@ class WeatherHelper {
              .CloudyWithXPercentChanceOfFlurries:
             return WeatherStatus.ChanceOfSnow
         case .ChanceOfRainShowersOrFlurries,
-             .PeriodsOfLightSnowMixedWithRain:
+             .PeriodsOfLightSnowMixedWithRain,
+             .ChanceOfSnowMixedWithRain,
+             .ChanceOfSnowOrRain:
             return WeatherStatus.AFewRainShowersOrFlurries
         case .RainOrFreezingRain:
             return WeatherStatus.PeriodsOfRainOrFreezingRain
@@ -89,7 +91,8 @@ class WeatherHelper {
              .ChanceOfDrizzleOrRain,
              .DrizzleOrRain,
              .RainAtTimesHeavyOrDrizzle,
-             .AFewShowersOrDrizzle:
+             .AFewShowersOrDrizzle,
+             .ChanceOfRainOrDrizzle:
             return WeatherStatus.PeriodsOfRainOrDrizzle
         case .FreezingDrizzleOrRain:
             return WeatherStatus.PeriodsOfFreezingDrizzleOrRain
@@ -113,13 +116,16 @@ class WeatherHelper {
              .PeriodsOfSnowMixedWithRain,
              .RainMixedWithSnow,
              .LightSnowMixedWithRain,
-             .LightSnowOrRain:
+             .LightSnowOrRain,
+             .RainAtTimesHeavyOrSnow,
+             .SnowAtTimesHeavyOrRain:
             return WeatherStatus.PeriodsOfRainOrSnow
         case .FreezingRainOrSnow,
              .PeriodsOfSnowMixedWithFreezingRain,
              .PeriodsOfFreezingRainOrSnow,
              .FreezingRainMixedWithSnow,
-             .SnowOrFreezingRain:
+             .SnowOrFreezingRain,
+             .LightSnowOrFreezingRain:
             return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
         case .PeriodsOfLightSnowMixedWithFreezingDrizzle,
              .PeriodsOfSnowOrFreezingDrizzle,
@@ -137,7 +143,8 @@ class WeatherHelper {
             return WeatherStatus.WetSnow
         case .Fog,
              .Haze,
-             .FogPatches:
+             .FogPatches,
+             .FogDissipating:
             return WeatherStatus.Mist
         case .PeriodsOfFreezingDrizzle,
              .ChanceOfFreezingDrizzle:
@@ -145,18 +152,61 @@ class WeatherHelper {
         case .PeriodsOfFreezingRainMixedWithIcePellets:
             return WeatherStatus.FreezingRainMixedWithIcePellets
         case .ChanceOfWetFlurriesOrRainShowers,
-             .PeriodsOfWetSnowOrRain:
+             .PeriodsOfWetSnowOrRain,
+             .WetFlurriesOrRainShowers:
             return WeatherStatus.ChanceOfRainShowersOrWetFlurries
         case .LightWetSnow:
             return WeatherStatus.ChanceOfWetFlurries
-        case .HeavyRainshower:
+        case .HeavyRainshower,
+             .ChanceOfShowersAtTimesHeavy,
+             .ShowersAtTimesHeavy:
             return WeatherStatus.RainAtTimesHeavy
         case .AFewShowersOrThunderstorms,
              .Thunderstorm,
-             .ThunderstormWithLightRainshowers:
+             .ThunderstormWithLightRainshowers,
+             .ShowersOrThunderstorms,
+             .ThunderstormWithLightRain,
+             .ChanceOfThunderstorms,
+             .ShowersAtTimesHeavyOrThundershowers:
             return WeatherStatus.ChanceOfShowersOrThunderstorms
+        case .SnowOrIcePellets,
+             .IcePelletsOrSnow:
+            return WeatherStatus.SnowMixedWithIcePellets
         default:
             return nil
         }
+    }
+    
+    static func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {
+        var name = "up"
+        
+        if weatherInfo.tendancy == Tendency.Minimum {
+            name = "down"
+        } else if weatherInfo.tendancy == Tendency.Steady {
+            if weatherInfo.night {
+                name = "down"
+            }
+        }
+        
+        if header {
+            return UIImage(named: name + "Header")
+        } else {
+            return UIImage(named: name)
+        }
+    }
+    
+    static func getIndexAjust(weatherInformations:[WeatherInformation]) -> Int {
+        var indexAjust = 1
+        
+        if weatherInformations.count == 0 {
+            return indexAjust
+        }
+        
+        let weatherInfoBase = weatherInformations[0]
+        if weatherInfoBase.weatherDay != WeatherDay.Now {
+            indexAjust = 0
+        }
+        
+        return indexAjust
     }
 }

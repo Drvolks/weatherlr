@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-29T11:01:57Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160429110157</id>
+ <updated>2016-05-08T15:02:13Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160508150213</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,139 +29,139 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:on-131_w1:20160411094500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Ensoleillé, -2,7&#xB0;C</title>
+ <title>Conditions actuelles: Nuageux, 4,1&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T11:00:00Z</updated>
- <published>2016-04-29T11:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Garnison Petawawa 07h00 HAE vendredi 29 avril 2016 <br/>
-<b>Condition:</b> Ensoleillé <br/>
-<b>Température:</b> -2,7&deg;C <br/>
-<b>Pression / Tendance:</b> 102,3 kPa à la hausse<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Garnison Petawawa 11h00 HAE dimanche 08 mai 2016 <br/>
+<b>Condition:</b> Nuageux <br/>
+<b>Température:</b> 4,1&deg;C <br/>
+<b>Pression / Tendance:</b> 100,9 kPa à la hausse<br/>
 <b>Visibilité:</b> 14,5 km<br/>
-<b>Humidité:</b> 82 %<br/>
-<b>Point de rosée:</b> -5,3&deg;C <br/>
-<b>Vent:</b>  0 km/h<br/>
+<b>Humidité:</b> 62 %<br/>
+<b>Point de rosée:</b> -2,5&deg;C <br/>
+<b>Vent:</b> NO 17 km/h rafale 33 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_cc:20160429110000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_cc:20160508150000</id>
  </entry>
  <entry>
- <title>Vendredi: Généralement ensoleillé. Maximum 12.</title>
+ <title>Dimanche: Possibilité d'averses. Maximum 9. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement ensoleillé. Maximum 12. Indice UV de 6 ou élevé. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc1:20160429090000</id>
+ <summary type="html">Généralement nuageux avec 30 pour cent de probabilité d'averses. Vents du nord-ouest de 20 km/h. Maximum 9. Indice UV de 5 ou modéré. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc1:20160508150000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Quelques nuages. Minimum moins 4.</title>
+ <title>Ce soir et cette nuit: Possibilité d'averses. Minimum zéro. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagement ce soir. Minimum moins 4. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc2:20160429090000</id>
+ <summary type="html">Partiellement nuageux. 30 pour cent de probabilité d'averses ce soir. Vents du nord-ouest de 20 km/h devenant légers ce soir. Minimum zéro. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc2:20160508150000</id>
  </entry>
  <entry>
- <title>Samedi: Ensoleillé. Maximum 15.</title>
+ <title>Lundi: Généralement ensoleillé. Maximum 13.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Ensoleillé. Maximum 15. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc3:20160429090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Devenant ensoleillé le matin. Vents devenant du nord-ouest à 20 km/h avec rafales à 40 le matin. Maximum 13. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc3:20160508150000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Dégagé. Minimum plus 3.</title>
+ <title>Lundi soir et nuit: Dégagé. Minimum moins 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Dégagé. Minimum plus 3. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc4:20160429090000</id>
+ <summary type="html">Dégagé. Minimum moins 2. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc4:20160508150000</id>
  </entry>
  <entry>
- <title>Dimanche: Alternance de soleil et de nuages. Maximum 7.</title>
+ <title>Mardi: Ensoleillé. Maximum 18.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 7. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc5:20160429090000</id>
+ <summary type="html">Ensoleillé. Maximum 18. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc5:20160508150000</id>
  </entry>
  <entry>
- <title>Dimanche soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <title>Mardi soir et nuit: Dégagé. Minimum zéro.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc6:20160429090000</id>
+ <summary type="html">Dégagé. Minimum zéro. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc6:20160508150000</id>
  </entry>
  <entry>
- <title>Lundi: Alternance de soleil et de nuages. Maximum 11.</title>
+ <title>Mercredi: Ensoleillé. Maximum 20.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 11. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc7:20160429090000</id>
+ <summary type="html">Ensoleillé. Maximum 20. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc7:20160508150000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Passages nuageux. Minimum plus 2.</title>
+ <title>Mercredi soir et nuit: Dégagé. Minimum plus 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 2. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc8:20160429090000</id>
+ <summary type="html">Dégagé. Minimum plus 4. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc8:20160508150000</id>
  </entry>
  <entry>
- <title>Mardi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <title>Jeudi: Alternance de soleil et de nuages. Maximum 20.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 15. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc9:20160429090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 20. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc9:20160508150000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
+ <title>Jeudi soir et nuit: Possibilité d'averses. Minimum 12. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc10:20160429090000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum 12. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc10:20160508150000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses. Maximum 14. PdP 30%</title>
+ <title>Vendredi: Possibilité d'averses. Maximum 19. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 14. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc11:20160429090000</id>
+ <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 19. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc11:20160508150000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Possibilité d'averses. Minimum plus 4. PdP 30%</title>
+ <title>Vendredi soir et nuit: Possibilité d'averses. Minimum 8. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 4. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc12:20160429090000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum 8. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc12:20160508150000</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses. Maximum 16. PdP 30%</title>
+ <title>Samedi: Possibilité d'averses. Maximum 13. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-131_metric_f.html"/>
- <updated>2016-04-29T09:00:00Z</updated>
- <published>2016-04-29T09:00:00Z</published>
+ <updated>2016-05-08T15:00:00Z</updated>
+ <published>2016-05-08T15:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 05h00 HAE vendredi 29 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-131_fc13:20160429090000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 13. Prévisions émises 11h00 HAE dimanche 08 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-131_fc13:20160508150000</id>
  </entry>
  </feed>
 

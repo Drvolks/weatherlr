@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-01T12:03:16Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160501120316</id>
+ <updated>2016-05-08T18:45:19Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508184519</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,137 +29,128 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:nb-21_w1:20160413073000</id>
  </entry>
  <entry>
- <title>Current Conditions: 4.4&#xB0;C</title>
+ <title>Current Conditions: 15.8&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Woodstock 09:00 AM ADT Sunday 01 May 2016 <br/>
-<b>Temperature:</b> 4.4&deg;C <br/>
-<b>Pressure / Tendency:</b> 102.6 kPa rising<br/>
-<b>Humidity:</b> 56 %<br/>
-<b>Dewpoint:</b> -3.6&deg;C <br/>
-<b>Wind:</b> WSW 4 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Woodstock 3:00 PM ADT Sunday 08 May 2016 <br/>
+<b>Temperature:</b> 15.8&deg;C <br/>
+<b>Pressure / Tendency:</b> 99.9 kPa falling<br/>
+<b>Humidity:</b> 66 %<br/>
+<b>Dewpoint:</b> 9.5&deg;C <br/>
+<b>Wind:</b> SSE 16 km/h gust 28 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_cc:20160501120000</id>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_cc:20160508180000</id>
  </entry>
  <entry>
- <title>Sunday: Mainly sunny. High 15.</title>
+ <title>Sunday night: Rain. Low plus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. Becoming a mix of sun and cloud this afternoon. High 15. UV index 5 or moderate. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc1:20160501080000</id>
+ <summary type="html">Cloudy. Rain beginning this evening then changing to periods of wet snow after midnight and ending before morning. Rainfall amount 5 mm. Wind south 20 km/h becoming west 30 gusting to 50 overnight. Low plus 2. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc1:20160508190000</id>
  </entry>
  <entry>
- <title>Sunday night: Partly cloudy. Low plus 4.</title>
+ <title>Monday: Mainly cloudy. High 9.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Partly cloudy. Becoming cloudy overnight. Low plus 4. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc2:20160501080000</id>
+ <summary type="html">A mix of sun and cloud. Becoming cloudy in the afternoon. Wind west 30 km/h gusting to 50. High 9. UV index 5 or moderate. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc2:20160508190000</id>
  </entry>
  <entry>
- <title>Monday: A few showers. High 8.</title>
+ <title>Monday night: Chance of rain showers or flurries. Low plus 4. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. A few showers beginning in the morning. High 8. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc3:20160501080000</id>
+ <summary type="html">Cloudy. 60 percent chance of rain showers or flurries in the evening and after midnight. Wind west 20 km/h gusting to 40. Low plus 4. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc3:20160508190000</id>
  </entry>
  <entry>
- <title>Monday night: Periods of rain. Low plus 5.</title>
+ <title>Tuesday: Cloudy. High 11.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Periods of rain. Low plus 5. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc4:20160501080000</id>
+ <summary type="html">Cloudy. High 11. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc4:20160508190000</id>
  </entry>
  <entry>
- <title>Tuesday: Chance of showers. High 14. POP 60%</title>
+ <title>Tuesday night: Cloudy periods. Low plus 2.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy with 60 percent chance of showers. High 14. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc5:20160501080000</id>
+ <summary type="html">Clearing. Low plus 2. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc5:20160508190000</id>
  </entry>
  <entry>
- <title>Tuesday night: Cloudy periods. Low plus 5.</title>
+ <title>Wednesday: Sunny. High 13.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low plus 5. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc6:20160501080000</id>
+ <summary type="html">Sunny. High 13. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc6:20160508190000</id>
  </entry>
  <entry>
- <title>Wednesday: Chance of showers. High 13. POP 40%</title>
+ <title>Wednesday night: Clear. Low plus 1.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud with 40 percent chance of showers. High 13. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc7:20160501080000</id>
+ <summary type="html">Clear. Low plus 1. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc7:20160508190000</id>
  </entry>
  <entry>
- <title>Wednesday night: Periods of rain. Low 6.</title>
+ <title>Thursday: Sunny. High 16.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Periods of rain. Low 6. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc8:20160501080000</id>
+ <summary type="html">Sunny. High 16. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc8:20160508190000</id>
  </entry>
  <entry>
- <title>Thursday: Periods of rain. High 16.</title>
+ <title>Thursday night: Clear. Low 7.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Periods of rain. High 16. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc9:20160501080000</id>
+ <summary type="html">Clear. Low 7. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc9:20160508190000</id>
  </entry>
  <entry>
- <title>Thursday night: Cloudy periods. Low 7.</title>
+ <title>Friday: Chance of showers. High 21. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low 7. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc10:20160501080000</id>
+ <summary type="html">A mix of sun and cloud with 40 percent chance of showers. High 21. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc10:20160508190000</id>
  </entry>
  <entry>
- <title>Friday: Chance of showers. High 17. POP 40%</title>
+ <title>Friday night: Chance of showers. Low 9. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud with 40 percent chance of showers. High 17. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc11:20160501080000</id>
+ <summary type="html">Cloudy periods with 40 percent chance of showers. Low 9. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc11:20160508190000</id>
  </entry>
  <entry>
- <title>Friday night: Chance of showers. Low 7. POP 40%</title>
+ <title>Saturday: Chance of showers. High 19. POP 40%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
+ <updated>2016-05-08T19:00:00Z</updated>
+ <published>2016-05-08T19:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods with 40 percent chance of showers. Low 7. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc12:20160501080000</id>
- </entry>
- <entry>
- <title>Saturday: Chance of showers. High 16. POP 40%</title>
- <link type="text/html" href="http://www.weather.gc.ca/city/pages/nb-21_metric_e.html"/>
- <updated>2016-05-01T08:00:00Z</updated>
- <published>2016-05-01T08:00:00Z</published>
- <category term="Weather Forecasts"/>
- <summary type="html">A mix of sun and cloud with 40 percent chance of showers. High 16. Forecast issued 05:00 AM ADT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:nb-21_fc13:20160501080000</id>
+ <summary type="html">A mix of sun and cloud with 40 percent chance of showers. High 19. Forecast issued 4:00 PM ADT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:nb-21_fc12:20160508190000</id>
  </entry>
  </feed>
 

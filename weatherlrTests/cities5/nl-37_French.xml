@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-05-02T11:02:33Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160502110233</id>
+ <updated>2016-05-28T11:01:32Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160528110132</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,139 +29,139 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:nl-37_w1:20160430030000</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Ensoleillé, 2,9&#xB0;C</title>
+ <title>Conditions actuelles: Nuageux, 2,9&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T11:00:00Z</updated>
- <published>2016-05-02T11:00:00Z</published>
+ <updated>2016-05-28T11:00:00Z</updated>
+ <published>2016-05-28T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de St. Anthony 08h30 HAT lundi 02 mai 2016 <br/>
-<b>Condition:</b> Ensoleillé <br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport de St. Anthony 08h30 HAT samedi 28 mai 2016 <br/>
+<b>Condition:</b> Nuageux <br/>
 <b>Température:</b> 2,9&deg;C <br/>
-<b>Pression:</b> 102,3 kPa <br/>
+<b>Pression:</b> 102,0 kPa <br/>
 <b>Visibilité:</b> 16,1 km<br/>
-<b>Humidité:</b> 84 %<br/>
-<b>Point de rosée:</b> 0,4&deg;C <br/>
-<b>Vent:</b> O 11 km/h<br/>
+<b>Humidité:</b> 88 %<br/>
+<b>Point de rosée:</b> 1,1&deg;C <br/>
+<b>Vent:</b> ESE 11 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_cc:20160502110000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_cc:20160528110000</id>
  </entry>
  <entry>
- <title>Lundi: Possibilité d'averses. Maximum 6. PdP 40%</title>
+ <title>Samedi: Pluie intermittente. Maximum plus 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. 40 pour cent de probabilité d'averses cet après-midi. Maximum 6. Indice UV de 6 ou élevé. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc1:20160502080000</id>
+ <summary type="html">Pluie intermittente cessant cet après-midi. Nuageux par la suite. Nappes de brouillard. Hauteur prévue de 5 mm. Vents devenant du sud-est à 20 km/h ce matin. Maximum plus 4. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc1:20160528080000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Partiellement nuageux. Minimum moins 2 sauf plus 2 dans certain secteurs le long de la côte.</title>
+ <title>Ce soir et cette nuit: Possibilité d'averses de pluie ou de neige. Minimum plus 2. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Partiellement nuageux. Minimum moins 2 sauf plus 2 dans certain secteurs le long de la côte. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc2:20160502080000</id>
+ <summary type="html">Généralement nuageux avec 40 pour cent de probabilité d'averses de pluie ou de neige. Nappes de brouillard. Vents du sud-est de 20 km/h devenant légers ce soir. Minimum plus 2. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc2:20160528080000</id>
  </entry>
  <entry>
- <title>Mardi: Possibilité d'averses. Maximum 6. PdP 60%</title>
+ <title>Dimanche: Possibilité d'averses de pluie ou de neige. Maximum 8. PdP 60%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Devenant nuageux en après-midi suivi de 60 pour cent de probabilité d'averses. Vents devenant d'est à 20 km/h en après-midi. Maximum 6. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc3:20160502080000</id>
+ <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses de neige ou de pluie se changeant en 60 pour cent de probabilité d'averses de pluie le matin. Nappes de brouillard se dissipant le matin. Vents devenant du sud-ouest à 20 km/h en mi-journée. Maximum 8. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc3:20160528080000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Neige intermittente ou pluie. Minimum zéro.</title>
+ <title>Dimanche soir et nuit: Possibilité d'averses. Minimum plus 3. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Neige intermittente ou pluie. Minimum zéro. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc4:20160502080000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum plus 3. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc4:20160528080000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses de neige ou de pluie. Maximum plus 4. PdP 40%</title>
+ <title>Lundi: Pluie intermittente. Maximum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de neige ou de pluie. Maximum plus 4. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc5:20160502080000</id>
+ <summary type="html">Pluie intermittente. Maximum 10. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc5:20160528080000</id>
  </entry>
  <entry>
- <title>Mercredi soir et nuit: Passages nuageux. Minimum zéro.</title>
+ <title>Lundi soir et nuit: Pluie intermittente. Minimum 7.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum zéro. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc6:20160502080000</id>
+ <summary type="html">Pluie intermittente. Minimum 7. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc6:20160528080000</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses de pluie ou de neige. Maximum plus 4. PdP 40%</title>
+ <title>Mardi: Averses. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de pluie ou de neige. Maximum plus 4. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc7:20160502080000</id>
+ <summary type="html">Averses. Maximum 9. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc7:20160528080000</id>
  </entry>
  <entry>
- <title>Jeudi soir et nuit: Possibilité d'averses de pluie ou de neige. Minimum plus 2. PdP 40%</title>
+ <title>Mardi soir et nuit: Averses. Minimum plus 4.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses de pluie ou de neige. Minimum plus 2. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc8:20160502080000</id>
+ <summary type="html">Averses. Minimum plus 4. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc8:20160528080000</id>
  </entry>
  <entry>
- <title>Vendredi: Possibilité d'averses. Maximum 7. PdP 40%</title>
+ <title>Mercredi: Alternance de soleil et de nuages. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 7. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc9:20160502080000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc9:20160528080000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <title>Mercredi soir et nuit: Dégagé. Minimum plus 2.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc10:20160502080000</id>
+ <summary type="html">Dégagé. Minimum plus 2. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc10:20160528080000</id>
  </entry>
  <entry>
- <title>Samedi: Alternance de soleil et de nuages. Maximum 10.</title>
+ <title>Jeudi: Ensoleillé. Maximum 9.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 10. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc11:20160502080000</id>
+ <summary type="html">Ensoleillé. Maximum 9. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc11:20160528080000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Passages nuageux. Minimum plus 3.</title>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc12:20160502080000</id>
+ <summary type="html">Passages nuageux. Minimum plus 3. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc12:20160528080000</id>
  </entry>
  <entry>
- <title>Dimanche: Alternance de soleil et de nuages. Maximum 9.</title>
+ <title>Vendredi: Nuageux. Maximum 10.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/nl-37_metric_f.html"/>
- <updated>2016-05-02T08:00:00Z</updated>
- <published>2016-05-02T08:00:00Z</published>
+ <updated>2016-05-28T08:00:00Z</updated>
+ <published>2016-05-28T08:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 9. Prévisions émises 05h30 HAT lundi 02 mai 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc13:20160502080000</id>
+ <summary type="html">Nuageux. Maximum 10. Prévisions émises 05h30 HAT samedi 28 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:nl-37_fc13:20160528080000</id>
  </entry>
  </feed>
 

@@ -14,8 +14,8 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <name>Environnement Canada</name>
  <uri>http://www.meteo.gc.ca</uri>
  </author>
- <updated>2016-04-28T10:01:51Z</updated>
- <id>tag:meteo.gc.ca,2013-04-16:20160428100151</id>
+ <updated>2016-05-02T11:06:26Z</updated>
+ <id>tag:meteo.gc.ca,2013-04-16:20160502110626</id>
  <logo>http://www.meteo.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.meteo.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Droit d'auteur 2016, Environnement Canada</rights>
@@ -29,139 +29,139 @@ Pour en apprendre davantage au sujet du service RSS, veuillez vous rendre à htt
  <id>tag:meteo.gc.ca,2013-04-16:on-98_w1:20160411051500</id>
  </entry>
  <entry>
- <title>Conditions actuelles: Généralement nuageux, 2,6&#xB0;C</title>
+ <title>Conditions actuelles: Faible averse de pluie, 6,2&#xB0;C</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T10:00:00Z</updated>
- <published>2016-04-28T10:00:00Z</published>
+ <updated>2016-05-02T11:00:00Z</updated>
+ <published>2016-05-02T11:00:00Z</published>
  <category term="Conditions actuelles"/>
- <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport int. de London 06h00 HAE jeudi 28 avril 2016 <br/>
-<b>Condition:</b> Généralement nuageux <br/>
-<b>Température:</b> 2,6&deg;C <br/>
-<b>Pression / Tendance:</b> 101,7 kPa à la hausse<br/>
-<b>Visibilité:</b> 24,1 km<br/>
-<b>Humidité:</b> 52 %<br/>
-<b>Point de rosée:</b> -6,3&deg;C <br/>
-<b>Vent:</b> ENE 19 km/h<br/>
+ <summary type="html"><![CDATA[<b>Enregistrées à:</b> Aéroport int. de London 07h00 HAE lundi 02 mai 2016 <br/>
+<b>Condition:</b> Faible averse de pluie <br/>
+<b>Température:</b> 6,2&deg;C <br/>
+<b>Pression / Tendance:</b> 101,4 kPa à la hausse<br/>
+<b>Visibilité:</b> 8,1 km<br/>
+<b>Humidité:</b> 96 %<br/>
+<b>Point de rosée:</b> 5,6&deg;C <br/>
+<b>Vent:</b> ENE 13 km/h<br/>
 <b>Cote air santé:</b> N,D. <br/>
 ]]></summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_cc:20160428100000</id>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_cc:20160502110000</id>
  </entry>
  <entry>
- <title>Jeudi: Possibilité d'averses. Maximum 8. PdP 60%</title>
+ <title>Lundi: Averses. Maximum 13.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux. 60 pour cent de probabilité d'averses tard ce matin et cet après-midi. Vents du nord-est de 30 km/h avec rafales à 50. Maximum 8. Indice UV de 4 ou modéré. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc1:20160428090000</id>
+ <summary type="html">Averses cessant ce matin. Alternance de soleil et de nuages par la suite. Nappes de brouillard se dissipant tôt ce matin. Maximum 13. Indice UV de 5 ou modéré. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc1:20160502090000</id>
  </entry>
  <entry>
- <title>Ce soir et cette nuit: Possibilité d'averses. Minimum plus 4. PdP 60%</title>
+ <title>Ce soir et cette nuit: Partiellement nuageux. Minimum plus 3.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Généralement nuageux avec 60 pour cent de probabilité d'averses. Vents du nord-est de 30 km/h avec rafales à 50. Minimum plus 4. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc2:20160428090000</id>
+ <summary type="html">Partiellement nuageux. Nappes de brouillard se formant au cours de la nuit. Minimum plus 3. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc2:20160502090000</id>
  </entry>
  <entry>
- <title>Vendredi: Possibilité d'averses. Maximum 12. PdP 60%</title>
+ <title>Mardi: Possibilité d'averses. Maximum 15 sauf 11 près du lac Érié. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux. 60 pour cent de probabilité d'averses le matin. Devenant alternance de soleil et de nuages en après-midi. Maximum 12. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc3:20160428090000</id>
+ <summary type="html">Alternance de soleil et de nuages. 30 pour cent de probabilité d'averses en après-midi. Nappes de brouillard se dissipant le matin. Maximum 15 sauf 11 près du lac Érié. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc3:20160502090000</id>
  </entry>
  <entry>
- <title>Vendredi soir et nuit: Passages nuageux. Minimum plus 4.</title>
+ <title>Mardi soir et nuit: Passages nuageux. Minimum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum plus 4. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc4:20160428090000</id>
+ <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc4:20160502090000</id>
  </entry>
  <entry>
- <title>Samedi: Alternance de soleil et de nuages. Maximum 14.</title>
+ <title>Mercredi: Possibilité d'averses. Maximum 15. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 14. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc5:20160428090000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 15. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc5:20160502090000</id>
  </entry>
  <entry>
- <title>Samedi soir et nuit: Possibilité d'averses. Minimum 9. PdP 40%</title>
+ <title>Mercredi soir et nuit: Possibilité d'averses. Minimum 7. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Venteux. Minimum 9. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc6:20160428090000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Minimum 7. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc6:20160502090000</id>
  </entry>
  <entry>
- <title>Dimanche: Possibilité d'averses. Maximum 16. PdP 30%</title>
+ <title>Jeudi: Possibilité d'averses. Maximum 16. PdP 40%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc7:20160428090000</id>
+ <summary type="html">Nuageux avec 40 pour cent de probabilité d'averses. Maximum 16. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc7:20160502090000</id>
  </entry>
  <entry>
- <title>Dimanche soir et nuit: Possibilité d'averses. Minimum plus 5. PdP 30%</title>
+ <title>Jeudi soir et nuit: Passages nuageux. Minimum 6.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Minimum plus 5. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc8:20160428090000</id>
+ <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc8:20160502090000</id>
  </entry>
  <entry>
- <title>Lundi: Possibilité d'averses. Maximum 10. PdP 30%</title>
+ <title>Vendredi: Alternance de soleil et de nuages. Maximum 19.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Nuageux avec 30 pour cent de probabilité d'averses. Maximum 10. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc9:20160428090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 19. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc9:20160502090000</id>
  </entry>
  <entry>
- <title>Lundi soir et nuit: Passages nuageux. Minimum 6.</title>
+ <title>Vendredi soir et nuit: Passages nuageux. Minimum 8.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum 6. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc10:20160428090000</id>
+ <summary type="html">Passages nuageux. Minimum 8. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc10:20160502090000</id>
  </entry>
  <entry>
- <title>Mardi: Alternance de soleil et de nuages. Maximum 15.</title>
+ <title>Samedi: Alternance de soleil et de nuages. Maximum 21.</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages. Maximum 15. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc11:20160428090000</id>
+ <summary type="html">Alternance de soleil et de nuages. Maximum 21. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc11:20160502090000</id>
  </entry>
  <entry>
- <title>Mardi soir et nuit: Passages nuageux. Minimum 7.</title>
+ <title>Samedi soir et nuit: Possibilité d'averses. Minimum 11. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Passages nuageux. Minimum 7. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc12:20160428090000</id>
+ <summary type="html">Passages nuageux avec 30 pour cent de probabilité d'averses. Minimum 11. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc12:20160502090000</id>
  </entry>
  <entry>
- <title>Mercredi: Possibilité d'averses. Maximum 14. PdP 30%</title>
+ <title>Dimanche: Possibilité d'averses. Maximum 17. PdP 30%</title>
  <link type="text/html" href="http://www.meteo.gc.ca/city/pages/on-98_metric_f.html"/>
- <updated>2016-04-28T09:00:00Z</updated>
- <published>2016-04-28T09:00:00Z</published>
+ <updated>2016-05-02T09:00:00Z</updated>
+ <published>2016-05-02T09:00:00Z</published>
  <category term="Prévisions météo"/>
- <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 14. Prévisions émises 05h00 HAE jeudi 28 avril 2016</summary>
- <id>tag:meteo.gc.ca,2013-04-16:on-98_fc13:20160428090000</id>
+ <summary type="html">Alternance de soleil et de nuages avec 30 pour cent de probabilité d'averses. Maximum 17. Prévisions émises 05h00 HAE lundi 02 mai 2016</summary>
+ <id>tag:meteo.gc.ca,2013-04-16:on-98_fc13:20160502090000</id>
  </entry>
  </feed>
 

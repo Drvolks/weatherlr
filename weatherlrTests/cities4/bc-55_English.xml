@@ -14,8 +14,8 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <name>Environment Canada</name>
  <uri>http://www.weather.gc.ca</uri>
  </author>
- <updated>2016-05-01T12:02:11Z</updated>
- <id>tag:weather.gc.ca,2013-04-16:20160501120211</id>
+ <updated>2016-05-08T18:22:31Z</updated>
+ <id>tag:weather.gc.ca,2013-04-16:20160508182231</id>
  <logo>http://www.weather.gc.ca/template/gcweb/assets/wmms-alt.png</logo>
  <icon>http://www.weather.gc.ca/template/gcweb/assets/favicon.ico</icon>
  <rights>Copyright 2016, Environment Canada</rights>
@@ -29,136 +29,136 @@ See http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=11703207-1 to learn 
  <id>tag:weather.gc.ca,2013-04-16:bc-55_w1:20160411130100</id>
  </entry>
  <entry>
- <title>Current Conditions: 5.5&#xB0;C</title>
+ <title>Current Conditions: 14.1&#xB0;C</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Current Conditions"/>
- <summary type="html"><![CDATA[<b>Observed at:</b> Ashcroft 05:00 AM PDT Sunday 01 May 2016 <br/>
-<b>Temperature:</b> 5.5&deg;C <br/>
-<b>Humidity:</b> 66 %<br/>
-<b>Dewpoint:</b> -0.3&deg;C <br/>
-<b>Wind:</b> SSW 2 km/h<br/>
+ <summary type="html"><![CDATA[<b>Observed at:</b> Ashcroft 11:00 AM PDT Sunday 08 May 2016 <br/>
+<b>Temperature:</b> 14.1&deg;C <br/>
+<b>Humidity:</b> 24 %<br/>
+<b>Dewpoint:</b> -6.2&deg;C <br/>
+<b>Wind:</b> NNE 5 km/h<br/>
 <b>Air Quality Health Index:</b> N/A <br/>
 ]]></summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_cc:20160501120000</id>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_cc:20160508180000</id>
  </entry>
  <entry>
- <title>Sunday: Sunny. High 26.</title>
+ <title>Sunday: Chance of showers. High 18. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. Wind becoming east 20 km/h this afternoon. High 26. UV index 6 or high. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc1:20160501120000</id>
+ <summary type="html">Mainly cloudy. 30 percent chance of showers this afternoon. Wind northwest 30 km/h. High 18. UV index 5 or moderate. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc1:20160508180000</id>
  </entry>
  <entry>
- <title>Sunday night: Clear. Low 10.</title>
+ <title>Sunday night: Chance of showers. Low 10. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Wind east 20 km/h becoming light near midnight. Low 10. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc2:20160501120000</id>
+ <summary type="html">Partly cloudy. 30 percent chance of showers early this evening. Wind northwest 30 km/h. Low 10. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc2:20160508180000</id>
  </entry>
  <entry>
- <title>Monday: Mainly sunny. High 29.</title>
+ <title>Monday: A mix of sun and cloud. High 21.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Mainly sunny. Wind becoming east 20 km/h near noon. High 29. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc3:20160501120000</id>
+ <summary type="html">A mix of sun and cloud. Wind northwest 30 km/h. High 21. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc3:20160508180000</id>
  </entry>
  <entry>
- <title>Monday night: Clear. Low 13.</title>
+ <title>Monday night: Clear. Low 8.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low 13. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc4:20160501120000</id>
+ <summary type="html">Clear. Low 8. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc4:20160508180000</id>
  </entry>
  <entry>
- <title>Tuesday: Sunny. High 27.</title>
+ <title>Tuesday: A mix of sun and cloud. High 22.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 27. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc5:20160501120000</id>
+ <summary type="html">A mix of sun and cloud. High 22. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc5:20160508180000</id>
  </entry>
  <entry>
- <title>Tuesday night: Cloudy. Low 13.</title>
+ <title>Tuesday night: Chance of showers. Low 11. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. Low 13. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc6:20160501120000</id>
+ <summary type="html">Cloudy with 30 percent chance of showers. Low 11. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc6:20160508180000</id>
  </entry>
  <entry>
- <title>Wednesday: Cloudy. High 24.</title>
+ <title>Wednesday: Chance of showers. High 16. POP 70%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. High 24. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc7:20160501120000</id>
+ <summary type="html">Cloudy with 70 percent chance of showers. High 16. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc7:20160508180000</id>
  </entry>
  <entry>
- <title>Wednesday night: Cloudy. Low 13.</title>
+ <title>Wednesday night: Chance of showers. Low 10. POP 70%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. Low 13. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc8:20160501120000</id>
+ <summary type="html">Cloudy with 70 percent chance of showers. Low 10. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc8:20160508180000</id>
  </entry>
  <entry>
- <title>Thursday: Cloudy. High 24.</title>
+ <title>Thursday: Chance of showers. High 21. POP 60%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy. High 24. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc9:20160501120000</id>
+ <summary type="html">Cloudy with 60 percent chance of showers. High 21. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc9:20160508180000</id>
  </entry>
  <entry>
- <title>Thursday night: Cloudy periods. Low 13.</title>
+ <title>Thursday night: Chance of showers. Low 10. POP 30%</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Cloudy periods. Low 13. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc10:20160501120000</id>
+ <summary type="html">Cloudy periods with 30 percent chance of showers. Low 10. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc10:20160508180000</id>
  </entry>
  <entry>
- <title>Friday: Sunny. High 26.</title>
+ <title>Friday: A mix of sun and cloud. High 23.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 26. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc11:20160501120000</id>
+ <summary type="html">A mix of sun and cloud. High 23. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc11:20160508180000</id>
  </entry>
  <entry>
- <title>Friday night: Clear. Low 12.</title>
+ <title>Friday night: Cloudy periods. Low 11.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Clear. Low 12. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc12:20160501120000</id>
+ <summary type="html">Cloudy periods. Low 11. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc12:20160508180000</id>
  </entry>
  <entry>
- <title>Saturday: Sunny. High 30.</title>
+ <title>Saturday: A mix of sun and cloud. High 25.</title>
  <link type="text/html" href="http://www.weather.gc.ca/city/pages/bc-55_metric_e.html"/>
- <updated>2016-05-01T12:00:00Z</updated>
- <published>2016-05-01T12:00:00Z</published>
+ <updated>2016-05-08T18:00:00Z</updated>
+ <published>2016-05-08T18:00:00Z</published>
  <category term="Weather Forecasts"/>
- <summary type="html">Sunny. High 30. Forecast issued 05:00 AM PDT Sunday 01 May 2016</summary>
- <id>tag:weather.gc.ca,2013-04-16:bc-55_fc13:20160501120000</id>
+ <summary type="html">A mix of sun and cloud. High 25. Forecast issued 11:00 AM PDT Sunday 08 May 2016</summary>
+ <id>tag:weather.gc.ca,2013-04-16:bc-55_fc13:20160508180000</id>
  </entry>
  </feed>
 

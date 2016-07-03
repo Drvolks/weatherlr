@@ -25,13 +25,8 @@ class WatchData: NSObject, WCSessionDelegate {
     
     func updateCity(city:City) {
         if session != nil && session!.paired && session!.watchAppInstalled {
-            do {
-                let data = NSKeyedArchiver.archivedDataWithRootObject(city)
-                try session!.updateApplicationContext([Constants.selectedCityKey: data])
-            } catch let error as NSError {
-                // TODO remove
-                print(error.description)
-            }
+            let data = NSKeyedArchiver.archivedDataWithRootObject(city)
+            session!.transferUserInfo([Constants.selectedCityKey: data])
         }
     }
 }

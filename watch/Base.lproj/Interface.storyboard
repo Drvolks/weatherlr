@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watch" customModuleProvider="target">
                     <items>
-                        <label width="136" alignment="left" text="Label" id="u5m-K4-Lrm"/>
+                        <label width="136" alignment="left" text="Label" numberOfLines="0" id="u5m-K4-Lrm"/>
                         <table alignment="left" id="TYl-Sm-JJI">
                             <items>
                                 <tableRow identifier="currentWeatherRow" id="kQR-pv-c0v" customClass="CurrentWeatherRowController" customModule="watch_Extension">

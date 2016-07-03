@@ -3,7 +3,7 @@
     {
       "size" : "24x24",
       "idiom" : "watch",
-      "filename" : "Weatherlr AppIcon 48.jpg",
+      "filename" : "watch-notificationCenter-38mm@2x.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "38mm"
@@ -11,7 +11,7 @@
     {
       "size" : "27.5x27.5",
       "idiom" : "watch",
-      "filename" : "Weatherlr AppIcon 55.jpg",
+      "filename" : "watch-notificationCenter-42mm@2x.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "42mm"
@@ -19,29 +19,37 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "Weatherlr AppIcon 58.jpg",
+      "filename" : "watch-companionSettings-@2x.png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "Weatherlr AppIcon 87.jpg",
+      "filename" : "watch-companionSettings-@3x.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "watch",
-      "filename" : "Weatherlr AppIcon 80.jpg",
+      "filename" : "watch-longLook-42mm@2x.png",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"
     },
     {
+      "size" : "44x44",
+      "idiom" : "watch",
+      "filename" : "watch-longLook-42mm@2x-1.png",
+      "scale" : "2x",
+      "role" : "longLook",
+      "subtype" : "42mm"
+    },
+    {
       "size" : "86x86",
       "idiom" : "watch",
-      "filename" : "Weatherlr AppIcon 172.jpg",
+      "filename" : "watch-quickLook-38mm@2x.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "38mm"
@@ -49,7 +57,7 @@
     {
       "size" : "98x98",
       "idiom" : "watch",
-      "filename" : "Weatherlr AppIcon 196.jpg",
+      "filename" : "watch-quickLook-42mm@2x.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"

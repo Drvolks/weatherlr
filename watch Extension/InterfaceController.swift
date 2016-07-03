@@ -18,6 +18,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var weatherInformationWrapper = WeatherInformationWrapper()
     var selectedCity:City?
 
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -28,15 +29,23 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         if let city = PreferenceHelper.getSelectedCity() {
             selectedCity = city
             
-            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-            dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.refresh()
-                }
-            }
+            let url = UrlHelper.getUrl(city)
             
+            if let url = NSURL(string: url) {
+                let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
+                    dispatch_async(dispatch_get_main_queue(), {
+                        if (data != nil && error == nil) {
+                            let rssParser = RssParser(xmlData: data!, language: PreferenceHelper.getLanguage())
+                            self.weatherInformationWrapper = WeatherHelper.generateWeatherInformation(rssParser)
+                            
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.refresh()
+                            }
+                        }
+                    })
+                }
+                task.resume()
+            }
         }
     }
 

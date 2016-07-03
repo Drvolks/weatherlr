@@ -17,22 +17,33 @@ class WeatherHelper {
             return cachedWeather!
         }
         
+        let weatherInformationWrapper = getWeatherInformationsNoCache(city)
+        cache.setObject(weatherInformationWrapper, forKey: city.id)
+        
+        return weatherInformationWrapper
+    }
+    
+    static func getWeatherInformationsNoCache(city:City) -> WeatherInformationWrapper {
+        
         let url = UrlHelper.getUrl(city)
         
         if let url = NSURL(string: url) {
             if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
-                let rssEntries = rssParser.parse()
-                let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
-                let weatherInformations = weatherInformationProcess.perform()
-                let alerts = weatherInformationProcess.getAlerts()
-                
-                let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts)
-                cache.setObject(weatherInformationWrapper, forKey: city.id)
-                return weatherInformationWrapper
+                return generateWeatherInformation(rssParser)
             }
         }
         
         return WeatherInformationWrapper()
+    }
+    
+    static func generateWeatherInformation(rssParser: RssParser) -> WeatherInformationWrapper {
+        let rssEntries = rssParser.parse()
+        let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
+        let weatherInformations = weatherInformationProcess.perform()
+        let alerts = weatherInformationProcess.getAlerts()
+        
+        let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts)
+        return weatherInformationWrapper
     }
     
     static func getOfflineWeather() -> WeatherInformationWrapper {
@@ -178,6 +189,16 @@ class WeatherHelper {
     }
     
     static func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {
+        let name = getMinMaxImageName(weatherInfo)
+        
+        if header {
+            return UIImage(named: name + "Header")
+        } else {
+            return UIImage(named: name)
+        }
+    }
+    
+    static func getMinMaxImageName(weatherInfo: WeatherInformation) -> String {
         var name = "up"
         
         if weatherInfo.tendancy == Tendency.Minimum {
@@ -188,11 +209,7 @@ class WeatherHelper {
             }
         }
         
-        if header {
-            return UIImage(named: name + "Header")
-        } else {
-            return UIImage(named: name)
-        }
+        return name
     }
     
     static func getIndexAjust(weatherInformations:[WeatherInformation]) -> Int {

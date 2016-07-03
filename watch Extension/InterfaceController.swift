@@ -85,6 +85,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             let weather = weatherInformationWrapper.weatherInformations[index]
             if weather.weatherDay == WeatherDay.Now {
                 rowTypes.append("currentWeatherRow")
+            }
+            else if weather.weatherDay == WeatherDay.Today {
+                rowTypes.append("nextWeatherRow")
             } else {
                 rowTypes.append("weatherRow")
             }
@@ -103,6 +106,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                         controller.nextWeather = nextWeather
                     }
                     
+                    controller.weather = weather
+                }
+                break
+            case "nextWeatherRow":
+                if let controller = weatherTable.rowControllerAtIndex(index) as? NextWeatherRowController {
+                    controller.rowIndex = index
                     controller.weather = weather
                 }
                 break

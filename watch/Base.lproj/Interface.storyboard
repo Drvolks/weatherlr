@@ -19,7 +19,7 @@
                                             <group width="1" alignment="left" id="TDr-32-oMF">
                                                 <items>
                                                     <imageView width="60" height="50" alignment="center" id="O1i-kg-6zN"/>
-                                                    <label width="30" alignment="right" text="Label" textAlignment="center" id="O4p-ca-Anl"/>
+                                                    <label alignment="right" text="Label" textAlignment="center" id="O4p-ca-Anl"/>
                                                 </items>
                                                 <variation key="default">
                                                     <mask key="items">
@@ -34,9 +34,9 @@
                                                     </mask>
                                                 </variation>
                                             </group>
-                                            <group width="1" alignment="left" id="0LW-SX-pOa">
+                                            <group alignment="center" id="0LW-SX-pOa">
                                                 <items>
-                                                    <label width="1" alignment="left" text="Label" textAlignment="center" id="aOw-eV-6L7"/>
+                                                    <label alignment="left" text="Currently" textAlignment="center" id="aOw-eV-6L7"/>
                                                 </items>
                                                 <variation key="default">
                                                     <mask key="items">
@@ -69,17 +69,63 @@
                                         <outlet property="weatherImage" destination="O1i-kg-6zN" id="SNY-fo-IVf"/>
                                     </connections>
                                 </tableRow>
+                                <tableRow identifier="nextWeatherRow" id="us4-lQ-Z5s" customClass="NextWeatherRowController" customModule="watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="5H9-hx-MTY">
+                                        <items>
+                                            <label alignment="left" text="Label" id="LZT-Vg-6E8"/>
+                                            <group width="1" alignment="left" id="hv0-g4-iks">
+                                                <items>
+                                                    <imageView width="30" height="25" alignment="left" id="mvZ-uS-s6f"/>
+                                                    <label alignment="right" text="Label" id="MdL-TM-RzU"/>
+                                                </items>
+                                                <variation key="default">
+                                                    <mask key="items">
+                                                        <exclude reference="mvZ-uS-s6f"/>
+                                                        <exclude reference="MdL-TM-RzU"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="device=watch38mm">
+                                                    <mask key="items">
+                                                        <include reference="mvZ-uS-s6f"/>
+                                                        <include reference="MdL-TM-RzU"/>
+                                                    </mask>
+                                                </variation>
+                                            </group>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="mPg-t5-e2F"/>
+                                        </items>
+                                        <variation key="default">
+                                            <mask key="items">
+                                                <exclude reference="LZT-Vg-6E8"/>
+                                                <exclude reference="hv0-g4-iks"/>
+                                                <exclude reference="mPg-t5-e2F"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="device=watch38mm">
+                                            <mask key="items">
+                                                <include reference="LZT-Vg-6E8"/>
+                                                <include reference="hv0-g4-iks"/>
+                                                <include reference="mPg-t5-e2F"/>
+                                            </mask>
+                                        </variation>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailLabel" destination="mPg-t5-e2F" id="7ls-rj-rLa"/>
+                                        <outlet property="minMaxLabel" destination="MdL-TM-RzU" id="7bC-37-gq2"/>
+                                        <outlet property="weatherImage" destination="mvZ-uS-s6f" id="8XY-Qi-vuH"/>
+                                        <outlet property="weatherLabel" destination="LZT-Vg-6E8" id="DEl-Jf-j8d"/>
+                                    </connections>
+                                </tableRow>
                                 <tableRow identifier="weatherRow" id="1dw-7p-5MP" customClass="WeatherRowController" customModule="watch_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="vri-XI-FMR">
                                         <items>
-                                            <label width="136" alignment="left" text="Label" id="Wfe-as-Flu"/>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="Wfe-as-Flu"/>
                                             <group width="1" alignment="left" id="JT3-XM-pOC">
                                                 <items>
                                                     <imageView width="30" height="25" alignment="left" verticalAlignment="center" id="QbT-w0-50s"/>
                                                     <label width="20" alignment="left" id="p3e-JF-M5d"/>
                                                     <group width="30" alignment="right" id="rhA-2u-UNz">
                                                         <items>
-                                                            <label width="30" alignment="right" text="Label" textAlignment="right" id="9wt-tg-SNc"/>
+                                                            <label alignment="right" text="Label" textAlignment="right" id="9wt-tg-SNc"/>
                                                         </items>
                                                         <variation key="default">
                                                             <mask key="items">

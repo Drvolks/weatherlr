@@ -56,8 +56,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 if let template = template {
                     let timelineEntry = CLKComplicationTimelineEntry(date: NSDate(), complicationTemplate: template)
                     handler(timelineEntry)
-                } else {
-                    handler(nil)
+                    return
                 }
             }
         }
@@ -136,16 +135,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func requestedUpdateDidBegin() {
-        print("Complication update is starting")
-        
         loadData()
-        
-        let server=CLKComplicationServer.sharedInstance()
-        
-        for comp in (server.activeComplications)! {
-            server.reloadTimelineForComplication(comp)
-        }
-        
     }
     
     
@@ -161,6 +151,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                         if (data != nil && error == nil) {
                             let rssParser = RssParser(xmlData: data!, language: PreferenceHelper.getLanguage())
                             self.weatherInformationWrapper = WeatherHelper.generateWeatherInformation(rssParser)
+                            
+                            let server=CLKComplicationServer.sharedInstance()
+                            
+                            for comp in (server.activeComplications)! {
+                                server.reloadTimelineForComplication(comp)
+                            }
                         }
                     })
                 }
@@ -202,7 +198,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             let modularTemplate = CLKComplicationTemplateModularLargeTable()
             
             modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
-            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "")
+            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "Loading".localized())
             modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
             modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "")
             modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")

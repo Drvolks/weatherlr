@@ -17,12 +17,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var weatherInformationWrapper = WeatherInformationWrapper()
     var selectedCity:City?
-
+    private let watchSession: WCSession = WCSession.defaultSession()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        let watchSession = WCSession.defaultSession()
         watchSession.delegate = self
         watchSession.activateSession()
     }
@@ -30,10 +29,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func willActivate() {
         super.willActivate()
     
-        cityLabel.setText("Loading".localized())
-        weatherTable.setNumberOfRows(0, withRowType: "currentWeatherRow")
-        weatherTable.setNumberOfRows(0, withRowType: "nextWeatherRow")
-        weatherTable.setNumberOfRows(0, withRowType: "weatherRow")
+        loadData()
+    }
+    
+    func loadData() {
+        initDisplay()
         
         if let city = PreferenceHelper.getSelectedCity() {
             selectedCity = city
@@ -57,21 +57,40 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             }
         }
     }
+    
+    func initDisplay() {
+        if PreferenceHelper.getSelectedCity() != nil {
+            cityLabel.setText("Loading".localized())
+        } else {
+            cityLabel.setText("Open iPhone app".localized())
+        }
+        
+        weatherTable.setNumberOfRows(0, withRowType: "currentWeatherRow")
+        weatherTable.setNumberOfRows(0, withRowType: "nextWeatherRow")
+        weatherTable.setNumberOfRows(0, withRowType: "weatherRow")
+    }
 
     override func didDeactivate() {
         super.didDeactivate()
     }
 
-    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        if let nsData = applicationContext[Constants.selectedCityKey] as? NSData {
+    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+        if let nsData = userInfo[Constants.selectedCityKey] as? NSData {
             let data = NSKeyedUnarchiver.unarchiveObjectWithData(nsData)
             if let city = data as? City {
-                PreferenceHelper.saveSelectedCity(city)
-                selectedCity = city
+                var doRefresh = true
+                if let oldCity = PreferenceHelper.getSelectedCity() {
+                    if oldCity.id == city.id {
+                        doRefresh = false
+                    }
+                }
                 
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.refresh()
-                })
+                if doRefresh {
+                    PreferenceHelper.saveSelectedCity(city)
+                    selectedCity = city
+                
+                    loadData()
+                }
             }
         }
     }

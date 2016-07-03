@@ -25,6 +25,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         let watchSession = WCSession.defaultSession()
         watchSession.delegate = self
         watchSession.activateSession()
+    }
+
+    override func willActivate() {
+        super.willActivate()
+    
+        cityLabel.setText("Loading".localized())
+        weatherTable.setNumberOfRows(0, withRowType: "currentWeatherRow")
+        weatherTable.setNumberOfRows(0, withRowType: "nextWeatherRow")
+        weatherTable.setNumberOfRows(0, withRowType: "weatherRow")
         
         if let city = PreferenceHelper.getSelectedCity() {
             selectedCity = city
@@ -47,10 +56,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 task.resume()
             }
         }
-    }
-
-    override func willActivate() {
-        super.willActivate()
     }
 
     override func didDeactivate() {

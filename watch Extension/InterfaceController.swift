@@ -11,7 +11,7 @@ import Foundation
 import WatchConnectivity
 
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
+class InterfaceController: WKInterfaceController, CityChangeDelegate {
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     
@@ -22,13 +22,16 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        watchSession.delegate = self
-        watchSession.activateSession()
+       SessionManager.instance.addDelegate(self)
     }
 
     override func willActivate() {
         super.willActivate()
     
+        loadData()
+    }
+    
+    func cityDidUpdate(city: City) {
         loadData()
     }
     
@@ -72,27 +75,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     override func didDeactivate() {
         super.didDeactivate()
-    }
-
-    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
-        if let nsData = userInfo[Constants.selectedCityKey] as? NSData {
-            let data = NSKeyedUnarchiver.unarchiveObjectWithData(nsData)
-            if let city = data as? City {
-                var doRefresh = true
-                if let oldCity = PreferenceHelper.getSelectedCity() {
-                    if oldCity.id == city.id {
-                        doRefresh = false
-                    }
-                }
-                
-                if doRefresh {
-                    PreferenceHelper.saveSelectedCity(city)
-                    selectedCity = city
-                
-                    loadData()
-                }
-            }
-        }
     }
     
     func refresh() {

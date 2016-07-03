@@ -8,8 +8,14 @@
 
 import ClockKit
 
-class ComplicationController: NSObject, CLKComplicationDataSource {
+class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDelegate {
     var weatherInformationWrapper:WeatherInformationWrapper?
+    
+    override init() {
+        super.init()
+        
+        SessionManager.instance.addDelegate(self)
+    }
     
     // MARK: - Timeline Configuration
     
@@ -123,7 +129,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getMinMaxTemperature(weather: WeatherInformation, nextWeather: WeatherInformation?) -> String {
         var minMaxTemperature = ""
         if let nextWeather = nextWeather {
-            let minMaxName = WeatherHelper.getMinMaxImageName(weather)
+            let minMaxName = WeatherHelper.getMinMaxImageName(nextWeather)
             var minMaxLabel = "Minimum".localized()
             if minMaxName == "up" {
                 minMaxLabel = "Maximum".localized()
@@ -167,6 +173,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     }
 
+    func cityDidUpdate(city: City) {
+        loadData()
+    }
 
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries prior to the given date

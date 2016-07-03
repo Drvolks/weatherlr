@@ -14,12 +14,54 @@
                         <table alignment="left" id="TYl-Sm-JJI">
                             <items>
                                 <tableRow identifier="currentWeatherRow" id="kQR-pv-c0v" customClass="CurrentWeatherRowController" customModule="watch_Extension">
-                                    <group key="rootItem" width="1" alignment="left" spacing="20" id="had-ae-hxC">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="had-ae-hxC">
                                         <items>
-                                            <imageView width="30" height="25" alignment="left" id="O1i-kg-6zN"/>
-                                            <label width="30" alignment="left" text="Label" textAlignment="center" id="aOw-eV-6L7"/>
-                                            <label width="30" alignment="left" text="Label" textAlignment="center" id="O4p-ca-Anl"/>
+                                            <group width="1" alignment="left" id="TDr-32-oMF">
+                                                <items>
+                                                    <imageView width="60" height="50" alignment="center" id="O1i-kg-6zN"/>
+                                                    <label width="30" alignment="right" text="Label" textAlignment="center" id="O4p-ca-Anl"/>
+                                                </items>
+                                                <variation key="default">
+                                                    <mask key="items">
+                                                        <exclude reference="O1i-kg-6zN"/>
+                                                        <exclude reference="O4p-ca-Anl"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="device=watch38mm">
+                                                    <mask key="items">
+                                                        <include reference="O1i-kg-6zN"/>
+                                                        <include reference="O4p-ca-Anl"/>
+                                                    </mask>
+                                                </variation>
+                                            </group>
+                                            <group width="1" alignment="left" id="0LW-SX-pOa">
+                                                <items>
+                                                    <label width="1" alignment="left" text="Label" textAlignment="center" id="aOw-eV-6L7"/>
+                                                </items>
+                                                <variation key="default">
+                                                    <mask key="items">
+                                                        <exclude reference="aOw-eV-6L7"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="device=watch38mm">
+                                                    <mask key="items">
+                                                        <include reference="aOw-eV-6L7"/>
+                                                    </mask>
+                                                </variation>
+                                            </group>
                                         </items>
+                                        <variation key="default">
+                                            <mask key="items">
+                                                <exclude reference="TDr-32-oMF"/>
+                                                <exclude reference="0LW-SX-pOa"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="device=watch38mm">
+                                            <mask key="items">
+                                                <include reference="TDr-32-oMF"/>
+                                                <include reference="0LW-SX-pOa"/>
+                                            </mask>
+                                        </variation>
                                     </group>
                                     <connections>
                                         <outlet property="currentTemperatureLabel" destination="aOw-eV-6L7" id="LSl-0n-WhQ"/>
@@ -28,27 +70,24 @@
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="weatherRow" id="1dw-7p-5MP" customClass="WeatherRowController" customModule="watch_Extension">
-                                    <group key="rootItem" width="1" height="52" alignment="left" layout="vertical" id="vri-XI-FMR">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="vri-XI-FMR">
                                         <items>
                                             <label width="136" alignment="left" text="Label" id="Wfe-as-Flu"/>
-                                            <group width="1" alignment="left" spacing="20" id="JT3-XM-pOC">
+                                            <group width="1" alignment="left" id="JT3-XM-pOC">
                                                 <items>
                                                     <imageView width="30" height="25" alignment="left" verticalAlignment="center" id="QbT-w0-50s"/>
                                                     <label width="20" alignment="left" id="p3e-JF-M5d"/>
-                                                    <group width="30" alignment="left" id="rhA-2u-UNz">
+                                                    <group width="30" alignment="right" id="rhA-2u-UNz">
                                                         <items>
-                                                            <imageView alignment="left" id="rzw-lV-Fwi"/>
-                                                            <label width="30" alignment="left" text="Label" textAlignment="right" id="9wt-tg-SNc"/>
+                                                            <label width="30" alignment="right" text="Label" textAlignment="right" id="9wt-tg-SNc"/>
                                                         </items>
                                                         <variation key="default">
                                                             <mask key="items">
-                                                                <exclude reference="rzw-lV-Fwi"/>
                                                                 <exclude reference="9wt-tg-SNc"/>
                                                             </mask>
                                                         </variation>
                                                         <variation key="device=watch38mm">
                                                             <mask key="items">
-                                                                <include reference="rzw-lV-Fwi"/>
                                                                 <include reference="9wt-tg-SNc"/>
                                                             </mask>
                                                         </variation>
@@ -70,7 +109,6 @@
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="minMaxImage" destination="rzw-lV-Fwi" id="zoc-DJ-xuW"/>
                                         <outlet property="minMaxLabel" destination="9wt-tg-SNc" id="bmg-OI-aiI"/>
                                         <outlet property="weatherImage" destination="QbT-w0-50s" id="3Pa-rX-enB"/>
                                         <outlet property="weatherLabel" destination="Wfe-as-Flu" id="0RC-W0-deJ"/>

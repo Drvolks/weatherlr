@@ -18,14 +18,16 @@ class CurrentWeatherRowController : NSObject {
     var weather:WeatherInformation? {
         didSet {
             if let weather = weather {
+                let currentTemperature = "Currently".localized() + " " + String(weather.temperature) + "°"
+                
                 if weather.weatherDay == WeatherDay.Now {
-                    currentTemperatureLabel.setText(String(weather.temperature))
+                    currentTemperatureLabel.setText(currentTemperature)
                 } else {
                     currentTemperatureLabel.setText("")
                 }
                 
                 if let nextWeather = nextWeather {
-                    minMaxLabel.setText(String(nextWeather.temperature))
+                    minMaxLabel.setText(String(nextWeather.temperature) + "°")
                 } else {
                     minMaxLabel.setText("")
                 }

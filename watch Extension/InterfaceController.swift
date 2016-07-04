@@ -19,6 +19,12 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
     var selectedCity:City?
     private let watchSession: WCSession = WCSession.defaultSession()
     
+    override func didDeactivate() {
+        super.didDeactivate()
+        
+        SessionManager.instance.removeDelegate(self)
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -71,10 +77,6 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
         weatherTable.setNumberOfRows(0, withRowType: "currentWeatherRow")
         weatherTable.setNumberOfRows(0, withRowType: "nextWeatherRow")
         weatherTable.setNumberOfRows(0, withRowType: "weatherRow")
-    }
-
-    override func didDeactivate() {
-        super.didDeactivate()
     }
     
     func refresh() {

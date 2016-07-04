@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CityChangeDelegate {
+protocol CityChangeDelegate : class {
     func cityDidUpdate(city: City)
 }

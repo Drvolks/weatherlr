@@ -30,6 +30,15 @@ class SessionManager : NSObject, WCSessionDelegate{
         cityChangeDelegates.append(delegate)
     }
     
+    func removeDelegate(delegate: CityChangeDelegate) {
+        for (index, cityDelegate) in cityChangeDelegates.enumerate() {
+            if cityDelegate === delegate {
+                cityChangeDelegates.removeAtIndex(index)
+                break
+            }
+        }
+    }
+    
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
         if let nsData = userInfo[Constants.selectedCityKey] as? NSData {
             let data = NSKeyedUnarchiver.unarchiveObjectWithData(nsData)

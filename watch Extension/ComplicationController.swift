@@ -17,6 +17,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
         SessionManager.instance.addDelegate(self)
     }
     
+    deinit {
+        SessionManager.instance.removeDelegate(self)
+    }
+    
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {

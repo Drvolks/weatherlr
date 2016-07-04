@@ -65,4 +65,10 @@ class SessionManager : NSObject, WCSessionDelegate{
             }
         }
     }
+    
+    func requestCity() {
+        if let session = watchSession {
+            try! session.updateApplicationContext([Constants.requestCityMessage:"true"])
+        }
+    }
 }

@@ -209,6 +209,7 @@ class SettingsViewController: UITableViewController {
             let city = savedCities[indexPath.row]
             
             PreferenceHelper.saveSelectedCity(city)
+            WatchData.instance.updateCity(city)
             
             dismissViewControllerAnimated(true, completion: nil)
         } else {

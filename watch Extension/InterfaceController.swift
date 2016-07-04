@@ -17,7 +17,6 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
     
     var weatherInformationWrapper = WeatherInformationWrapper()
     var selectedCity:City?
-    private let watchSession: WCSession = WCSession.defaultSession()
     
     override func didDeactivate() {
         super.didDeactivate()

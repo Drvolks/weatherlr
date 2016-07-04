@@ -13,4 +13,6 @@ class Constants {
     static let selectedWatchCityKey = "selectedWatchCity"
     static let favotiteCitiesKey = "favoriteCities"
     static let languageKey = "lang"
+    static let watchCityKey = "watchCity"
+    static let requestCityMessage = "requestCityMessage"
 }

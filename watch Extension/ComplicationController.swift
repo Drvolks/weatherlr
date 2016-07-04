@@ -42,33 +42,51 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
-        if let wrapper = weatherInformationWrapper, let city = PreferenceHelper.getSelectedCity() {
-            if wrapper.weatherInformations.count > 0 {
-                let weather = wrapper.weatherInformations[0]
-                var nextWeather:WeatherInformation? = nil
-                if wrapper.weatherInformations.count > 1 {
-                    nextWeather = wrapper.weatherInformations[1]
-                }
-                
-                var template:CLKComplicationTemplate? = nil
-                if complication.family == .ModularLarge {
-                    template = self.generateLargeModularTemplate(weather, nextWeather: nextWeather, city: city)
-                } else if complication.family == .ModularSmall {
-                    template = self.generateSmallModularTemplate(weather, nextWeather: nextWeather, city: city)
-                } else if complication.family == .CircularSmall {
-                    template = self.generateSmallCircularTemplate(weather, nextWeather: nextWeather, city: city)
-                } else if complication.family == .UtilitarianSmall {
-                    template = self.generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
-                } else if complication.family == .UtilitarianLarge {
-                    template = self.generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
-                }
-                
-                if let template = template {
-                    let timelineEntry = CLKComplicationTimelineEntry(date: NSDate(), complicationTemplate: template)
-                    handler(timelineEntry)
-                    return
+        var template:CLKComplicationTemplate? = nil
+        
+        if let city = PreferenceHelper.getSelectedCity() {
+            if let wrapper = weatherInformationWrapper {
+                if wrapper.weatherInformations.count > 0 {
+                    let weather = wrapper.weatherInformations[0]
+                    var nextWeather:WeatherInformation? = nil
+                    if wrapper.weatherInformations.count > 1 {
+                        nextWeather = wrapper.weatherInformations[1]
+                    }
+                    
+                    if complication.family == .ModularLarge {
+                        template = generateLargeModularTemplate(weather, nextWeather: nextWeather, city: city)
+                    } else if complication.family == .ModularSmall {
+                        template = generateSmallModularTemplate(weather, nextWeather: nextWeather, city: city)
+                    } else if complication.family == .CircularSmall {
+                        template = generateSmallCircularTemplate(weather, nextWeather: nextWeather, city: city)
+                    } else if complication.family == .UtilitarianSmall {
+                        template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
+                    } else if complication.family == .UtilitarianLarge {
+                        template = generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
+                    }
                 }
             }
+        } else {
+            // empty city fallback
+            if complication.family == .ModularLarge {
+                template = generateEmptyLargeModularTemplate()
+            } else if complication.family == .ModularSmall {
+                template = generateEmptySmallModularTemplate()
+            } else if complication.family == .CircularSmall {
+                template = generateEmptySmallCircularTemplate()
+            } else if complication.family == .UtilitarianSmall {
+                template = generateEmptySmallUtilitarianTemplate()
+            } else if complication.family == .UtilitarianLarge {
+                template = generateEmptyLargeUtilitarianTemplate()
+            }
+            
+            SessionManager.instance.requestCity()
+        }
+        
+        if let template = template {
+            let timelineEntry = CLKComplicationTimelineEntry(date: NSDate(), complicationTemplate: template)
+            handler(timelineEntry)
+            return
         }
         
         handler(nil)
@@ -87,6 +105,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
         return modularTemplate
     }
     
+    func generateEmptyLargeModularTemplate() -> CLKComplicationTemplateModularLargeTable {
+        let modularTemplate = CLKComplicationTemplateModularLargeTable()
+        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
+        modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "Open iPhone app Complication1".localized())
+        modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
+        modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "Open iPhone app Complication2".localized())
+        modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
+        
+        return modularTemplate
+    }
+    
     func generateSmallModularTemplate(weather: WeatherInformation, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateModularSmallSimpleText {
         let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
         modularTemplate.textProvider = CLKSimpleTextProvider(text: String(weather.temperature) + "°")
@@ -94,9 +123,23 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
         return modularTemplate
     }
     
+    func generateEmptySmallModularTemplate() -> CLKComplicationTemplateModularSmallSimpleText {
+        let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
+        modularTemplate.textProvider = CLKSimpleTextProvider(text: "iPhone".localized())
+        
+        return modularTemplate
+    }
+    
     func generateSmallCircularTemplate(weather: WeatherInformation, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateCircularSmallSimpleText {
         let modularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
         modularTemplate.textProvider = CLKSimpleTextProvider(text: String(weather.temperature) + "°")
+        
+        return modularTemplate
+    }
+    
+    func generateEmptySmallCircularTemplate() -> CLKComplicationTemplateCircularSmallSimpleText {
+        let modularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
+        modularTemplate.textProvider = CLKSimpleTextProvider(text: "iPhone".localized())
         
         return modularTemplate
     }
@@ -109,10 +152,24 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
         return modularTemplate
     }
     
+    func generateEmptySmallUtilitarianTemplate() -> CLKComplicationTemplateUtilitarianSmallFlat {
+        let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+        modularTemplate.textProvider = CLKSimpleTextProvider(text: "iPhone".localized())
+        
+        return modularTemplate
+    }
+    
     func generateLargeUtilitarianTemplate(weather: WeatherInformation, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateUtilitarianLargeFlat {
         let modularTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
         modularTemplate.textProvider = CLKSimpleTextProvider(text: String(weather.temperature) + "°")
         modularTemplate.imageProvider = CLKImageProvider(onePieceImage: weather.image())
+        
+        return modularTemplate
+    }
+    
+    func generateEmptyLargeUtilitarianTemplate() -> CLKComplicationTemplateUtilitarianLargeFlat {
+        let modularTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+        modularTemplate.textProvider = CLKSimpleTextProvider(text: "iPhone".localized())
         
         return modularTemplate
     }
@@ -206,30 +263,37 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
         case .ModularSmall:
             let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
             modularTemplate.textProvider = CLKSimpleTextProvider(text: "0°")
+            
+            template = modularTemplate
             break;
         case .ModularLarge:
             let modularTemplate = CLKComplicationTemplateModularLargeTable()
             
             modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
-            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "Loading".localized())
+            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "")
             modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
             modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "")
             modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
-            
             
             template = modularTemplate
             break;
         case .UtilitarianSmall:
             let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
             modularTemplate.textProvider = CLKSimpleTextProvider(text: "0°")
+            
+            template = modularTemplate
             break;
         case .UtilitarianLarge:
             let modularTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
             modularTemplate.textProvider = CLKSimpleTextProvider(text: "0°")
+            
+            template = modularTemplate
             break;
         case .CircularSmall:
             let modularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
             modularTemplate.textProvider = CLKSimpleTextProvider(text: "0°")
+            
+            template = modularTemplate
             break;
         }
         

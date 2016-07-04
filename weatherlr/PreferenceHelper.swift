@@ -49,15 +49,40 @@ class PreferenceHelper {
         defaults.synchronize()
     }
     
+    static func saveWatchCity(city: City) {
+        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(city)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(archivedObject, forKey: Constants.watchCityKey)
+        defaults.synchronize()
+    }
+    
+    static func removeWatchCity() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.removeObjectForKey(Constants.watchCityKey)
+        defaults.synchronize()
+    }
+    
     static func getSelectedCity() -> City? {
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Constants.selectedCityKey) as? NSData {
             if let selectedCity = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? City {
+                // for legacy City object < 1.1 release
                 if selectedCity.radarId.isEmpty {
                     return refreshCity(selectedCity)
                 }
                 
                 return selectedCity
+            }
+        }
+        
+        return nil
+    }
+    
+    static func getWatchCity() -> City? {
+        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
+        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Constants.watchCityKey) as? NSData {
+            if let watchCity = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? City {
+                return watchCity
             }
         }
         

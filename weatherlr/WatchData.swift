@@ -24,9 +24,31 @@ class WatchData: NSObject, WCSessionDelegate {
     }
     
     func updateCity(city:City) {
-        if session != nil && session!.paired && session!.watchAppInstalled {
-            let data = NSKeyedArchiver.archivedDataWithRootObject(city)
-            session!.transferUserInfo([Constants.selectedCityKey: data])
+        if let session = session {
+            if session.paired && session.watchAppInstalled {
+                var refreshWatch = false
+                if let watchCity = PreferenceHelper.getWatchCity() {
+                    if watchCity.id != city.id {
+                        refreshWatch = true
+                    }
+                } else {
+                    refreshWatch = true
+                }
+                
+                if refreshWatch {
+                    let data = NSKeyedArchiver.archivedDataWithRootObject(city)
+                    session.transferUserInfo([Constants.selectedCityKey: data])
+                    
+                    PreferenceHelper.saveWatchCity(city)
+                }
+            }
+        }
+    }
+    
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        if let city = PreferenceHelper.getSelectedCity() {
+            PreferenceHelper.removeWatchCity()
+            updateCity(city)
         }
     }
 }

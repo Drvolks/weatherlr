@@ -188,13 +188,13 @@ class WeatherHelper {
         }
     }
     
-    static func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage? {
+    static func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage {
         let name = getMinMaxImageName(weatherInfo)
         
         if header {
-            return UIImage(named: name + "Header")
+            return UIImage(named: name + "Header")!
         } else {
-            return UIImage(named: name)
+            return UIImage(named: name)!
         }
     }
     
@@ -264,5 +264,47 @@ class WeatherHelper {
         
         let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
         return newDate!
+    }
+    
+    static func textToImageMinMax(weather: WeatherInformation)->UIImage{
+        let baseImage = getMinMaxImage(weather, header: false)
+        let text = String(weather.temperature)
+        
+        var offsetLeft = 14
+        var offsetTop = 6
+        var textFont = UIFont.systemFontOfSize(55)
+        if text.characters.count == 1 {
+            offsetLeft = 28
+        } else if text.characters.count == 3 {
+            offsetLeft = 8
+            offsetTop = 14
+            textFont = UIFont.systemFontOfSize(45)
+        }
+        
+        let textColor = UIColor.whiteColor()
+        
+        //Setup the image context using the passed image.
+        UIGraphicsBeginImageContext(baseImage.size)
+        
+        let textFontAttributes = [
+            NSFontAttributeName: textFont,
+            NSForegroundColorAttributeName: textColor,
+            ]
+        
+        //Put the image into a rectangle as large as the original image.
+        baseImage.drawInRect(CGRectMake(0, 0, baseImage.size.width, baseImage.size.height))
+        
+        // Creating a point within the space that is as bit as the image.
+        let rect: CGRect = CGRectMake(CGFloat(offsetLeft), CGFloat(offsetTop), baseImage.size.width, baseImage.size.height)
+        
+        text.drawInRect(rect, withAttributes: textFontAttributes)
+        
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        // End the context now that we have the image we need
+        UIGraphicsEndImageContext()
+        
+        return newImage
+        
     }
 }

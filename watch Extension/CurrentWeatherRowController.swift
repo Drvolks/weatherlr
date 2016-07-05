@@ -12,7 +12,7 @@ import WatchKit
 class CurrentWeatherRowController : NSObject {
     @IBOutlet var weatherImage: WKInterfaceImage!
     @IBOutlet var currentTemperatureLabel: WKInterfaceLabel!
-    @IBOutlet var minMaxLabel: WKInterfaceLabel!
+    @IBOutlet var minMaxImage: WKInterfaceImage!
     
     var nextWeather:WeatherInformation?
     var weather:WeatherInformation? {
@@ -27,9 +27,9 @@ class CurrentWeatherRowController : NSObject {
                 }
                 
                 if let nextWeather = nextWeather {
-                    minMaxLabel.setText(String(nextWeather.temperature) + "°")
+                    minMaxImage.setImage(WeatherHelper.textToImageMinMax(nextWeather))
                 } else {
-                    minMaxLabel.setText("")
+                    minMaxImage.setImage(nil)
                 }
                 
                 weatherImage.setImage(weather.image())

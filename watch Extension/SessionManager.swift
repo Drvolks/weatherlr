@@ -40,6 +40,10 @@ class SessionManager : NSObject, WCSessionDelegate{
     }
     
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+        if let lang = userInfo[Constants.languageKey] as? String {
+            PreferenceHelper.saveLanguage(Language(rawValue: lang)!)
+        }
+        
         if let nsData = userInfo[Constants.selectedCityKey] as? NSData {
             let data = NSKeyedUnarchiver.unarchiveObjectWithData(nsData)
             if let city = data as? City {

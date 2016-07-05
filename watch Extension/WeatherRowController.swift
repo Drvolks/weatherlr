@@ -12,14 +12,14 @@ import WatchKit
 class WeatherRowController : NSObject {
     @IBOutlet var weatherLabel: WKInterfaceLabel!
     @IBOutlet var weatherImage: WKInterfaceImage!
-    @IBOutlet var minMaxLabel: WKInterfaceLabel!
+    @IBOutlet var minMaxImage: WKInterfaceImage!
     
     var rowIndex:Int?
     var weather:WeatherInformation? {
         didSet {
             if let weather = weather {
                 weatherLabel.setText(WeatherHelper.getWeatherDayWhenText(weather))
-                minMaxLabel.setText(String(weather.temperature) + "°")
+                minMaxImage.setImage(WeatherHelper.textToImageMinMax(weather))
                 weatherImage.setImage(weather.image())
             }
         }

@@ -37,7 +37,8 @@ class WatchData: NSObject, WCSessionDelegate {
                 
                 if refreshWatch {
                     let data = NSKeyedArchiver.archivedDataWithRootObject(city)
-                    session.transferUserInfo([Constants.selectedCityKey: data])
+                    let lang = PreferenceHelper.getLanguage().rawValue
+                    session.transferUserInfo([Constants.selectedCityKey: data, Constants.languageKey: lang])
                     
                     PreferenceHelper.saveWatchCity(city)
                 }

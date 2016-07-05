@@ -118,7 +118,6 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
                 break
             case "nextWeatherRow":
                 if let controller = weatherTable.rowControllerAtIndex(index) as? NextWeatherRowController {
-                    controller.rowIndex = index
                     controller.weather = weather
                 }
                 break
@@ -133,4 +132,6 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
             }
         }
     }
+    
+    
 }

@@ -13,17 +13,28 @@ class NextWeatherRowController : NSObject {
     @IBOutlet var weatherLabel: WKInterfaceLabel!
     @IBOutlet var detailLabel: WKInterfaceLabel!
     @IBOutlet var weatherImage: WKInterfaceImage!
-    @IBOutlet var minMaxLabel: WKInterfaceLabel!
+    @IBOutlet var detailLine2Label: WKInterfaceLabel!
     
-    var rowIndex:Int?
     var weather:WeatherInformation? {
         didSet {
             if let weather = weather {
                 weatherLabel.setText(WeatherHelper.getWeatherDayWhenText(weather))
-                minMaxLabel.setText(String(weather.temperature) + "°")
                 weatherImage.setImage(weather.image())
                 detailLabel.setText(weather.detail)
+                
+                if let range = weather.detail.rangeOfString(".") {
+                    let line1 = String(weather.detail.characters.prefixUpTo(range.startIndex)).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                    let line2 = String(weather.detail.characters.suffixFrom(range.endIndex)).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                    
+                    detailLabel.setText(line1)
+                    detailLine2Label.setText(line2)
+                } else {
+                    detailLabel.setText(weather.detail)
+                    detailLine2Label.setText("")
+                }
             }
         }
     }
+    
+    
 }

@@ -46,6 +46,19 @@ class WatchData: NSObject, WCSessionDelegate {
         }
     }
     
+    func updateLanguage() {
+        if let session = session {
+            if session.paired && session.watchAppInstalled {
+                let city = PreferenceHelper.getSelectedCity()!
+                let data = NSKeyedArchiver.archivedDataWithRootObject(city)
+                let lang = PreferenceHelper.getLanguage().rawValue
+                session.transferUserInfo([Constants.selectedCityKey: data, Constants.languageKey: lang])
+                
+                PreferenceHelper.saveWatchCity(city)
+            }
+        }
+    }
+    
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         if let city = PreferenceHelper.getSelectedCity() {
             PreferenceHelper.removeWatchCity()

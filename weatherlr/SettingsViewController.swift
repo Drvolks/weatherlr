@@ -219,6 +219,8 @@ class SettingsViewController: UITableViewController {
                 PreferenceHelper.saveLanguage(Language.English)
             }
             
+            WatchData.instance.updateLanguage()
+            
             ExpiringCache.instance.removeAllObjects()
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)

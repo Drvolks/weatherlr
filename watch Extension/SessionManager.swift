@@ -47,24 +47,15 @@ class SessionManager : NSObject, WCSessionDelegate{
         if let nsData = userInfo[Constants.selectedCityKey] as? NSData {
             let data = NSKeyedUnarchiver.unarchiveObjectWithData(nsData)
             if let city = data as? City {
-                var doRefresh = true
-                if let oldCity = PreferenceHelper.getSelectedCity() {
-                    if oldCity.id == city.id {
-                        doRefresh = false
-                    }
-                }
+                PreferenceHelper.saveSelectedCity(city)
                 
-                if doRefresh {
-                    PreferenceHelper.saveSelectedCity(city)
-                    
-                    cityChangeDelegates.forEach({
-                        $0.cityDidUpdate(city)
-                    })
-                    
-                    let complicationServer = CLKComplicationServer.sharedInstance()
-                    for complication in complicationServer.activeComplications! {
-                        complicationServer.reloadTimelineForComplication(complication)
-                    }
+                cityChangeDelegates.forEach({
+                    $0.cityDidUpdate(city)
+                })
+                
+                let complicationServer = CLKComplicationServer.sharedInstance()
+                for complication in complicationServer.activeComplications! {
+                    complicationServer.reloadTimelineForComplication(complication)
                 }
             }
         }

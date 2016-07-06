@@ -71,6 +71,7 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
             cityLabel.setText("Loading".localized())
         } else {
             cityLabel.setText("Open iPhone app".localized())
+            SessionManager.instance.requestCity()
         }
         
         weatherTable.setNumberOfRows(0, withRowType: "currentWeatherRow")

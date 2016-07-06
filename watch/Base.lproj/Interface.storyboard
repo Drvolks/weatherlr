@@ -45,6 +45,7 @@
                                                     <label alignment="left" text="Label" numberOfLines="0" id="mPg-t5-e2F">
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
+                                                    <imageView width="20" height="20" alignment="right" id="cba-yY-kJt"/>
                                                 </items>
                                             </group>
                                             <group width="1" alignment="left" id="3ki-82-zCq">
@@ -60,6 +61,7 @@
                                     <connections>
                                         <outlet property="detailLabel" destination="mPg-t5-e2F" id="7ls-rj-rLa"/>
                                         <outlet property="detailLine2Label" destination="Sha-Ip-RyK" id="UdI-hP-r2c"/>
+                                        <outlet property="minMaxImage" destination="cba-yY-kJt" id="Ubr-eV-oRE"/>
                                         <outlet property="weatherImage" destination="mvZ-uS-s6f" id="8XY-Qi-vuH"/>
                                         <outlet property="weatherLabel" destination="LZT-Vg-6E8" id="DEl-Jf-j8d"/>
                                     </connections>

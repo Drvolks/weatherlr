@@ -35,7 +35,7 @@ class WeatherTableViewCell: UITableViewCell {
         whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo)
         backgroundColor = UIColor.clearColor()
         
-        if weatherInfo.weatherDay == WeatherDay.Today {
+        if weatherInfo.weatherDay == WeatherDay.Today && weatherInformationWrapper.weatherInformations[0].weatherDay == .Now {
             minMaxLabel.hidden = true
             minMaxImage.hidden = true
         } else {

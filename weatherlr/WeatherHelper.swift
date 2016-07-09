@@ -307,4 +307,13 @@ class WeatherHelper {
         return newImage
         
     }
+    
+    static func getRefreshTime(wrapper: WeatherInformationWrapper) -> String {
+        let lang = PreferenceHelper.getLanguage()
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
+        dateFormatter.timeStyle = .ShortStyle
+        return "Last refresh".localized() + " " + dateFormatter.stringFromDate(wrapper.lastRefresh)
+    }
 }

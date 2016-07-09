@@ -9,7 +9,6 @@
 import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
-    var weatherInformationWrapper:WeatherInformationWrapper?
     
     override init() {
         super.init()
@@ -39,29 +38,29 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         var template:CLKComplicationTemplate? = nil
         
         if let city = PreferenceHelper.getSelectedCity() {
-            if let wrapper = weatherInformationWrapper {
-                if wrapper.weatherInformations.count > 0 {
-                    var weather:WeatherInformation? = nil
-                    if wrapper.weatherInformations[0].weatherDay == WeatherDay.Now {
-                        weather = wrapper.weatherInformations[0]
-                    }
-                    
-                    var nextWeather:WeatherInformation? = nil
-                    if wrapper.weatherInformations.count > 1 {
-                        nextWeather = wrapper.weatherInformations[1]
-                    }
-                    
-                    if complication.family == .ModularLarge {
-                        template = generateLargeModularTemplate(weather, nextWeather: nextWeather, city: city)
-                    } else if complication.family == .ModularSmall {
-                        template = generateSmallModularTemplate(weather, nextWeather: nextWeather, city: city)
-                    } else if complication.family == .CircularSmall {
-                        template = generateSmallCircularTemplate(weather, nextWeather: nextWeather, city: city)
-                    } else if complication.family == .UtilitarianSmall {
-                        template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
-                    } else if complication.family == .UtilitarianLarge {
-                        template = generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
-                    }
+            let wrapper = SharedWeather.instance.wrapper
+            
+            if wrapper.weatherInformations.count > 0 {
+                var weather:WeatherInformation? = nil
+                if wrapper.weatherInformations[0].weatherDay == WeatherDay.Now {
+                    weather = wrapper.weatherInformations[0]
+                }
+                
+                var nextWeather:WeatherInformation? = nil
+                if wrapper.weatherInformations.count > 1 {
+                    nextWeather = wrapper.weatherInformations[1]
+                }
+                
+                if complication.family == .ModularLarge {
+                    template = generateLargeModularTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .ModularSmall {
+                    template = generateSmallModularTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .CircularSmall {
+                    template = generateSmallCircularTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .UtilitarianSmall {
+                    template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .UtilitarianLarge {
+                    template = generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
                 }
             }
         } else {
@@ -213,31 +212,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     
     func loadData() {
-        weatherInformationWrapper = nil
-        
         if let city = PreferenceHelper.getSelectedCity() {
-            let url = UrlHelper.getUrl(city)
-            
-            if let url = NSURL(string: url) {
-                let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-                    dispatch_async(dispatch_get_main_queue(), {
-                        if (data != nil && error == nil) {
-                            let rssParser = RssParser(xmlData: data!, language: PreferenceHelper.getLanguage())
-                            self.weatherInformationWrapper = WeatherHelper.generateWeatherInformation(rssParser)
-                            
-                            let server=CLKComplicationServer.sharedInstance()
-                            
-                            for comp in (server.activeComplications)! {
-                                server.reloadTimelineForComplication(comp)
-                            }
-                        }
-                    })
-                }
-                task.resume()
-                return
-            }
+            SharedWeather.instance.getWeather(city, callback: {self.refresh()})
         }
 
+    }
+    
+    func refresh() {
+        let server=CLKComplicationServer.sharedInstance()
+        
+        for comp in (server.activeComplications)! {
+            server.reloadTimelineForComplication(comp)
+        }
     }
 
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {

@@ -109,6 +109,7 @@
 		6EB155341D315AEC0005B02A /* CityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155321D3159FF0005B02A /* CityHelper.swift */; };
 		6EB155351D315D040005B02A /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154A51D2860680005B02A /* Cities.plist */; };
 		6EB155371D3162AD0005B02A /* CityRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155361D3162AD0005B02A /* CityRowController.swift */; };
+		6EB1553B1D31967C0005B02A /* SharedWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1553A1D31967C0005B02A /* SharedWeather.swift */; };
 		6EDC30141CF9B7D1006325EE /* cities5 in Resources */ = {isa = PBXBuildFile; fileRef = 6EDC30131CF9B7D1006325EE /* cities5 */; };
 		6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */; };
 		6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */; };
@@ -277,6 +278,7 @@
 		6EB155301D31531C0005B02A /* SelectCityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCityController.swift; sourceTree = "<group>"; };
 		6EB155321D3159FF0005B02A /* CityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHelper.swift; sourceTree = "<group>"; };
 		6EB155361D3162AD0005B02A /* CityRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityRowController.swift; sourceTree = "<group>"; };
+		6EB1553A1D31967C0005B02A /* SharedWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedWeather.swift; sourceTree = "<group>"; };
 		6EDC30131CF9B7D1006325EE /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
 		6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxLabel.swift; sourceTree = "<group>"; };
 		6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangTableViewCell.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB1547E1D282B0E0005B02A /* InterfaceController.swift */,
+				6EB1553A1D31967C0005B02A /* SharedWeather.swift */,
 				6EB155301D31531C0005B02A /* SelectCityController.swift */,
 				6EB154A81D2869200005B02A /* WeatherRowController.swift */,
 				6EB1552A1D2970EB0005B02A /* NextWeatherRowController.swift */,
@@ -825,6 +828,7 @@
 				6EB1549F1D285A590005B02A /* RssParser.swift in Sources */,
 				6EB1547F1D282B0E0005B02A /* InterfaceController.swift in Sources */,
 				6EB154961D2858FE0005B02A /* City.swift in Sources */,
+				6EB1553B1D31967C0005B02A /* SharedWeather.swift in Sources */,
 				6EB1552B1D2970EB0005B02A /* NextWeatherRowController.swift in Sources */,
 				6EB155341D315AEC0005B02A /* CityHelper.swift in Sources */,
 				6EB154AB1D286EA50005B02A /* CurrentWeatherRowController.swift in Sources */,

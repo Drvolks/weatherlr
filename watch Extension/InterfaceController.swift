@@ -15,8 +15,8 @@ class InterfaceController: WKInterfaceController{
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
+    @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     
-    var weatherInformationWrapper = WeatherInformationWrapper()
     var selectedCity:City?
 
     
@@ -40,27 +40,13 @@ class InterfaceController: WKInterfaceController{
         if let city = PreferenceHelper.getSelectedCity() {
             selectedCity = city
             
-            let url = UrlHelper.getUrl(city)
-            
-            if let url = NSURL(string: url) {
-                let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-                    dispatch_async(dispatch_get_main_queue(), {
-                        if (data != nil && error == nil) {
-                            let rssParser = RssParser(xmlData: data!, language: PreferenceHelper.getLanguage())
-                            self.weatherInformationWrapper = WeatherHelper.generateWeatherInformation(rssParser)
-                            
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.refresh()
-                            }
-                        }
-                    })
-                }
-                task.resume()
-            }
+            SharedWeather.instance.getWeather(city, callback: {self.refresh()})
         }
     }
     
     func initDisplay() {
+        lastRefreshLabel.setHidden(true)
+        
         if PreferenceHelper.getSelectedCity() != nil {
             cityLabel.setHidden(false)
             cityLabel.setText("Loading".localized())
@@ -69,10 +55,6 @@ class InterfaceController: WKInterfaceController{
             cityLabel.setHidden(true)
             selectCityButton.setHidden(false)
         }
-        
-        weatherTable.setNumberOfRows(0, withRowType: "currentWeatherRow")
-        weatherTable.setNumberOfRows(0, withRowType: "nextWeatherRow")
-        weatherTable.setNumberOfRows(0, withRowType: "weatherRow")
     }
     
     func refresh() {
@@ -80,9 +62,12 @@ class InterfaceController: WKInterfaceController{
             self.cityLabel.setText(CityHelper.cityName(city))
         }
         
+        lastRefreshLabel.setHidden(false)
+        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(SharedWeather.instance.wrapper))
+        
         var rowTypes = [String]()
-        for index in 0..<weatherInformationWrapper.weatherInformations.count {
-            let weather = weatherInformationWrapper.weatherInformations[index]
+        for index in 0..<SharedWeather.instance.wrapper.weatherInformations.count {
+            let weather = SharedWeather.instance.wrapper.weatherInformations[index]
             if weather.weatherDay == WeatherDay.Now {
                 rowTypes.append("currentWeatherRow")
             }
@@ -96,13 +81,13 @@ class InterfaceController: WKInterfaceController{
 
         
         for index in 0..<rowTypes.count {
-            let weather = weatherInformationWrapper.weatherInformations[index]
+            let weather = SharedWeather.instance.wrapper.weatherInformations[index]
             
             switch(rowTypes[index]) {
             case "currentWeatherRow":
                 if let controller = weatherTable.rowControllerAtIndex(index) as? CurrentWeatherRowController {
-                    if weatherInformationWrapper.weatherInformations.count > index+1 {
-                        let nextWeather = weatherInformationWrapper.weatherInformations[index+1]
+                    if SharedWeather.instance.wrapper.weatherInformations.count > index+1 {
+                        let nextWeather = SharedWeather.instance.wrapper.weatherInformations[index+1]
                         controller.nextWeather = nextWeather
                     }
                     
@@ -144,12 +129,12 @@ class InterfaceController: WKInterfaceController{
     
     @IBAction func francaisSelected() {
         PreferenceHelper.saveLanguage(Language.French)
-        refresh()
+        loadData()
     }
     
     @IBAction func englishSelected() {
         PreferenceHelper.saveLanguage(Language.English)
-        refresh()
+        loadData()
     }
     
     

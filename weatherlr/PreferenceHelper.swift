@@ -172,6 +172,8 @@ class PreferenceHelper {
     static func saveLanguage(language: Language) {
         NSUserDefaults.standardUserDefaults().setObject(language.rawValue, forKey: Constants.languageKey)
         NSUserDefaults.standardUserDefaults().synchronize()
+        
+        ExpiringCache.instance.removeAllObjects()
     }
     
     static func isFrench() -> Bool {

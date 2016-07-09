@@ -58,11 +58,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func refreshLabel() {
         let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
         let refreshLabel:String
-        let dateFormatter = NSDateFormatter()
-        let lang = PreferenceHelper.getLanguage()
-        dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
-        dateFormatter.timeStyle = .ShortStyle
-        refreshLabel = "Last refresh".localized() + " " + dateFormatter.stringFromDate(weatherInformationWrapper.lastRefresh)
+        refreshLabel = WeatherHelper.getRefreshTime(weatherInformationWrapper)
 
         refreshControl.attributedTitle = NSAttributedString(string: refreshLabel, attributes: refreshControlFont)
         

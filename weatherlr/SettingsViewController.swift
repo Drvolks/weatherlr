@@ -213,8 +213,6 @@ class SettingsViewController: UITableViewController {
                 PreferenceHelper.saveLanguage(Language.English)
             }
             
-            ExpiringCache.instance.removeAllObjects()
-            
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
             tableView.reloadSectionIndexTitles()

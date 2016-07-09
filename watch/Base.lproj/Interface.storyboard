@@ -94,6 +94,9 @@
                                 <action selector="selectCity" destination="AgC-eL-Hgc" id="H2V-l0-hss"/>
                             </connections>
                         </button>
+                        <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
                     </items>
                     <menu key="menu" id="iB8-eH-vfl">
                         <items>
@@ -121,6 +124,7 @@
                     </menu>
                     <connections>
                         <outlet property="cityLabel" destination="u5m-K4-Lrm" id="ZAO-E9-rya"/>
+                        <outlet property="lastRefreshLabel" destination="6me-SD-2jn" id="ITo-E0-gbf"/>
                         <outlet property="selectCityButton" destination="ai4-HS-V5P" id="899-k6-Olf"/>
                         <outlet property="weatherTable" destination="TYl-Sm-JJI" id="ulS-d7-dXp"/>
                     </connections>

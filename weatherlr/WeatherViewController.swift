@@ -120,10 +120,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             self.weatherTable.reloadData()
         }
-        
-        if let city = self.selectedCity {
-            WatchData.instance.updateCity(city)
-        }
     }
     
     func decorate() {

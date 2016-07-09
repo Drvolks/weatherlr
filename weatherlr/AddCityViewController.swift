@@ -56,24 +56,12 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cityTable.sectionIndexBackgroundColor = UIColor.clearColor()
     }
     
-    func sortCityList(cityListToSort: [City]) -> [City] {
-        var newCityList = cityListToSort
-        
-        if PreferenceHelper.isFrench() {
-            newCityList.sortInPlace({ $0.frenchName < $1.frenchName })
-        } else {
-            newCityList.sortInPlace({ $0.englishName < $1.englishName })
-        }
-        
-        return newCityList
-    }
-    
     func buildCityIndex(cityListToProcess: [City]) -> [String:[City]] {
         var cityDictionary = [String:[City]]()
         
         for i in 0..<cityListToProcess.count {
             let city = cityListToProcess[i]
-            let name = cityName(city)
+            let name = CityHelper.cityName(city)
             let letter = (name.uppercaseString as NSString).substringToIndex(1)
             
             var cityListForLettre = cityDictionary[letter]
@@ -107,7 +95,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
             let key = sortedKeys[i]
             
             let cityListForLettre = cityDictionary[key]!
-            sortedCityDictionary[key] = sortCityList(cityListForLettre)
+            sortedCityDictionary[key] = CityHelper.sortCityList(cityListForLettre)
         }
 
         return sortedCityDictionary
@@ -125,17 +113,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         if searchText.isEmpty {
             resetSearch()
         } else {
-            for i in 0..<allCityList.count {
-                let city = allCityList[i]
-
-                let name = cityName(city)
-                
-                let searched = searchText.uppercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
-                
-                if name.containsString(searched) {
-                    newFilteredList.append(city)
-                }
-            }
+            newFilteredList = CityHelper.searchCity(searchText, allCityList: allCityList)
             
             filteredCities = buildCityIndex(newFilteredList)
             sections = buildSections(filteredCities)
@@ -201,25 +179,12 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let city = cityRow(indexPath)
         
-        var name = city.englishName
-        if(PreferenceHelper.isFrench()) {
-            name = city.frenchName
-        }
-        cell.cityLabel.text = name + ", " + city.province.uppercaseString
+        cell.cityLabel.text = CityHelper.cityName(city) + ", " + city.province.uppercaseString
 
         return cell
     }
     
-    func cityName(city: City) -> String {
-        var name = city.englishName
-        if(PreferenceHelper.isFrench()) {
-            name = city.frenchName
-        }
-        
-        name = name.uppercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
     
-        return name
-    }
     
     func cityRow(indexPath: NSIndexPath) -> City {
         return filteredCities[sections[indexPath.section]!]![indexPath.row]

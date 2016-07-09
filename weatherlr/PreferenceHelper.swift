@@ -12,6 +12,8 @@ class PreferenceHelper {
     static func addFavorite(city: City) {
         var favorites = getFavoriteCities()
         
+        saveSelectedCity(city)
+        
         for i in 0..<favorites.count {
             if city.id == favorites[i].id {
                 return
@@ -19,9 +21,7 @@ class PreferenceHelper {
         }
         
         favorites.append(city)
-        
         saveFavoriteCities(favorites)
-        saveSelectedCity(city)
     }
     
     static func getFavoriteCities() -> [City] {
@@ -136,6 +136,21 @@ class PreferenceHelper {
                 saveSelectedCity(newFavorites[0])
             }
         }
+    }
+    
+    static func removeFavorites() {
+        let favorites = getFavoriteCities()
+        
+        if favorites.count == 0 {
+            return
+        }
+        
+        var newFavorites = [City]()
+        if let city = getSelectedCity() {
+            newFavorites.append(city)
+        }
+        
+        saveFavoriteCities(newFavorites)
     }
     
     static func getLanguage() -> Language {

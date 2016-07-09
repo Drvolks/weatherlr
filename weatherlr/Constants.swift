@@ -15,4 +15,6 @@ class Constants {
     static let languageKey = "lang"
     static let watchCityKey = "watchCity"
     static let requestCityMessage = "requestCityMessage"
+    static let cityListKey = "cityList"
+    static let searchTextKey = "searchText"
 }

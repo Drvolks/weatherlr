@@ -8,17 +8,11 @@
 
 import ClockKit
 
-class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDelegate {
+class ComplicationController: NSObject, CLKComplicationDataSource {
     var weatherInformationWrapper:WeatherInformationWrapper?
     
     override init() {
         super.init()
-        
-        SessionManager.instance.addDelegate(self)
-    }
-    
-    deinit {
-        SessionManager.instance.removeDelegate(self)
     }
     
     // MARK: - Timeline Configuration
@@ -83,8 +77,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
             } else if complication.family == .UtilitarianLarge {
                 template = generateEmptyLargeUtilitarianTemplate()
             }
-            
-            SessionManager.instance.requestCity()
         }
         
         if let template = template {
@@ -99,7 +91,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
     
     func generateLargeModularTemplate(weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateModularLargeTable {
         let modularTemplate = CLKComplicationTemplateModularLargeTable()
-        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: getCityName(city))
+        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: CityHelper.cityName(city))
         modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
         modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
         
@@ -200,15 +192,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
         }
     }
     
-    func getCityName(city: City) -> String {
-        var name = city.englishName
-        if PreferenceHelper.isFrench() {
-            name = city.frenchName
-        }
-        
-        return name
-    }
-    
     func getMinMaxTemperature(nextWeather: WeatherInformation?) -> CLKSimpleTextProvider {
         if let nextWeather = nextWeather {
             let minMaxName = WeatherHelper.getMinMaxImageName(nextWeather)
@@ -255,10 +238,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, CityChangeDel
             }
         }
 
-    }
-
-    func cityDidUpdate(city: City) {
-        loadData()
     }
 
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {

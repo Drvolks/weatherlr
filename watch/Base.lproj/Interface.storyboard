@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Main-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watch" customModuleProvider="target">
+                <controller identifier="Main" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watch" customModuleProvider="target">
                     <items>
                         <label width="136" alignment="left" text="Label" numberOfLines="0" id="u5m-K4-Lrm"/>
                         <table alignment="left" id="TYl-Sm-JJI">
@@ -89,14 +89,79 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <button width="1" alignment="left" hidden="YES" title="Select city" id="ai4-HS-V5P">
+                            <connections>
+                                <action selector="selectCity" destination="AgC-eL-Hgc" id="H2V-l0-hss"/>
+                            </connections>
+                        </button>
                     </items>
+                    <menu key="menu" id="iB8-eH-vfl">
+                        <items>
+                            <menuItem title="Français" icon="accept" id="fwB-Hx-PWD">
+                                <connections>
+                                    <action selector="francaisSelected" destination="AgC-eL-Hgc" id="jbA-vX-BhP"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="English" icon="accept" id="oWH-ca-i0u">
+                                <connections>
+                                    <action selector="englishSelected" destination="AgC-eL-Hgc" id="lbM-JB-Dyp"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="City" icon="add" id="tvr-g2-WdF">
+                                <connections>
+                                    <action selector="addCitySelected" destination="AgC-eL-Hgc" id="PFa-fC-z0l"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Clear cities" icon="trash" id="03l-wb-QhU">
+                                <connections>
+                                    <action selector="clearCitySelected" destination="AgC-eL-Hgc" id="DSO-Eu-2Za"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="cityLabel" destination="u5m-K4-Lrm" id="ZAO-E9-rya"/>
+                        <outlet property="selectCityButton" destination="ai4-HS-V5P" id="899-k6-Olf"/>
                         <outlet property="weatherTable" destination="TYl-Sm-JJI" id="ulS-d7-dXp"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="164" y="216.5"/>
+        </scene>
+        <!--SelectCity-->
+        <scene sceneID="NqG-b5-eso">
+            <objects>
+                <controller identifier="SelectCity" id="LgY-22-iiV" customClass="SelectCityController" customModule="watch_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="tPA-3Y-a4o"/>
+                        <table alignment="left" id="GgL-0m-q9r">
+                            <items>
+                                <tableRow identifier="CityRow" id="D7c-h4-eQe" customClass="CityRowController" customModule="watch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="ruJ-SU-M3L">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" id="OD9-eG-HQL"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="cityLabel" destination="OD9-eG-HQL" id="hQR-WI-LWj"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Button" id="Naw-e1-0Jo">
+                            <connections>
+                                <action selector="cancel" destination="LgY-22-iiV" id="i68-yM-PnG"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="cancelButton" destination="Naw-e1-0Jo" id="uV9-bw-nLE"/>
+                        <outlet property="cityTable" destination="GgL-0m-q9r" id="abb-hl-MaB"/>
+                        <outlet property="searchLabel" destination="tPA-3Y-a4o" id="sKw-AY-ZQL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="164" y="584"/>
         </scene>
     </scenes>
 </document>

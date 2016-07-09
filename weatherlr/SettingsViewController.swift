@@ -94,12 +94,7 @@ class SettingsViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! CityTableViewCell
             
             let city = savedCities[indexPath.row]
-            
-            var name = city.englishName
-            if(PreferenceHelper.isFrench()) {
-                name = city.frenchName
-            }
-            cell.cityLabel.text = name
+            cell.cityLabel.text = CityHelper.cityName(city)
             
             if selectedCity != nil && city.id == selectedCity!.id {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
@@ -209,7 +204,6 @@ class SettingsViewController: UITableViewController {
             let city = savedCities[indexPath.row]
             
             PreferenceHelper.saveSelectedCity(city)
-            WatchData.instance.updateCity(city)
             
             dismissViewControllerAnimated(true, completion: nil)
         } else {
@@ -218,8 +212,6 @@ class SettingsViewController: UITableViewController {
             } else {
                 PreferenceHelper.saveLanguage(Language.English)
             }
-            
-            WatchData.instance.updateLanguage()
             
             ExpiringCache.instance.removeAllObjects()
             

@@ -28,11 +28,7 @@ class WeatherHeaderCell: UITableViewCell {
     }
     
     func populate(city:City, weatherInformationWrapper: WeatherInformationWrapper) {
-        var name = city.englishName
-        if PreferenceHelper.isFrench() {
-            name = city.frenchName
-        }
-        cityLabel.text = name
+        cityLabel.text = CityHelper.cityName(city)
         
         if weatherInformationWrapper.weatherInformations.count > 0 {
             var weatherInfo = weatherInformationWrapper.weatherInformations[0]

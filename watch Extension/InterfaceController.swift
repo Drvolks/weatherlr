@@ -11,32 +11,26 @@ import Foundation
 import WatchConnectivity
 
 
-class InterfaceController: WKInterfaceController, CityChangeDelegate {
+class InterfaceController: WKInterfaceController{
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
+    @IBOutlet var selectCityButton: WKInterfaceButton!
     
     var weatherInformationWrapper = WeatherInformationWrapper()
     var selectedCity:City?
+
     
     override func didDeactivate() {
         super.didDeactivate()
-        
-        SessionManager.instance.removeDelegate(self)
     }
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-       SessionManager.instance.addDelegate(self)
     }
 
     override func willActivate() {
         super.willActivate()
-    
-        loadData()
-    }
-    
-    func cityDidUpdate(city: City) {
+        
         loadData()
     }
     
@@ -68,10 +62,12 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
     
     func initDisplay() {
         if PreferenceHelper.getSelectedCity() != nil {
+            cityLabel.setHidden(false)
             cityLabel.setText("Loading".localized())
+            selectCityButton.setHidden(true)
         } else {
-            cityLabel.setText("Open iPhone app".localized())
-            SessionManager.instance.requestCity()
+            cityLabel.setHidden(true)
+            selectCityButton.setHidden(false)
         }
         
         weatherTable.setNumberOfRows(0, withRowType: "currentWeatherRow")
@@ -81,11 +77,7 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
     
     func refresh() {
         if let city = selectedCity {
-            var name = city.englishName
-            if PreferenceHelper.isFrench() {
-                name = city.frenchName
-            }
-            self.cityLabel.setText(name)
+            self.cityLabel.setText(CityHelper.cityName(city))
         }
         
         var rowTypes = [String]()
@@ -137,5 +129,82 @@ class InterfaceController: WKInterfaceController, CityChangeDelegate {
         }
     }
     
+    @IBAction func selectCity() {
+        var citieNames = [String]()
+        PreferenceHelper.getFavoriteCities().forEach({
+            citieNames.append(CityHelper.cityName($0))
+        })
+        
+        citieNames.appendContentsOf("abcdefghijklmnopqrstuvwxyz".uppercaseString.characters.map { String($0) })
+        
+        presentTextInputControllerWithSuggestions(citieNames, allowedInputMode: .Plain, completion: { (result) -> Void in
+            self.didSayCityName(result)
+        })
+    }
     
+    @IBAction func francaisSelected() {
+        PreferenceHelper.saveLanguage(Language.French)
+        refresh()
+    }
+    
+    @IBAction func englishSelected() {
+        PreferenceHelper.saveLanguage(Language.English)
+        refresh()
+    }
+    
+    
+    @IBAction func addCitySelected() {
+        selectCity()
+    }
+    
+    @IBAction func clearCitySelected() {
+        PreferenceHelper.removeFavorites()
+    }
+    
+    func didSayCityName(result: AnyObject?) {
+        if let result = result, let choice = result[0] as? String {
+            print(choice)
+            
+            var match = false;
+            PreferenceHelper.getFavoriteCities().forEach({
+                let name = CityHelper.cityName($0)
+                if name == choice {
+                    var refresh = true
+                    if let selectedCity = PreferenceHelper.getSelectedCity() {
+                        if selectedCity.id == $0.id {
+                            refresh = false
+                        }
+                    }
+                    if refresh {
+                        PreferenceHelper.saveSelectedCity($0)
+                        loadData()
+                    }
+                    match = true
+                    return
+                }
+            })
+            
+            if match {
+                return
+            }
+     
+            let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
+            let allCityList = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+            let cities:[City]
+            
+            if choice.characters.count == 1 {
+                cities = CityHelper.searchCityStartingWith(choice, allCityList: allCityList)
+            } else {
+                cities = CityHelper.searchCity(choice, allCityList: allCityList)
+            }
+            
+            if cities.count == 1 {
+                PreferenceHelper.addFavorite(cities[0])
+                
+                loadData()
+            } else {
+                pushControllerWithName("SelectCity", context: [Constants.cityListKey : cities, Constants.searchTextKey: choice])
+            }
+        }
+    }
 }

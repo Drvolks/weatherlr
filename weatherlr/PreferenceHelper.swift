@@ -11,17 +11,18 @@ import Foundation
 class PreferenceHelper {
     static func addFavorite(city: City) {
         var favorites = getFavoriteCities()
+        var newFavorites = [City]()
         
         saveSelectedCity(city)
+        newFavorites.append(city)
         
         for i in 0..<favorites.count {
-            if city.id == favorites[i].id {
-                return
+            if city.id != favorites[i].id {
+                newFavorites.append(favorites[i])
             }
         }
         
-        favorites.append(city)
-        saveFavoriteCities(favorites)
+        saveFavoriteCities(newFavorites)
     }
     
     static func getFavoriteCities() -> [City] {
@@ -35,14 +36,14 @@ class PreferenceHelper {
         return [City]()
     }
     
-    static func saveFavoriteCities(cities: [City]) {
+    private static func saveFavoriteCities(cities: [City]) {
         let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(cities as NSArray)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(archivedObject, forKey: Constants.favotiteCitiesKey)
         defaults.synchronize()
     }
     
-    static func saveSelectedCity(city: City) {
+    private static func saveSelectedCity(city: City) {
         let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(city)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(archivedObject, forKey: Constants.selectedCityKey)

@@ -203,7 +203,7 @@ class SettingsViewController: UITableViewController {
         if indexPath.section == citySection {
             let city = savedCities[indexPath.row]
             
-            PreferenceHelper.saveSelectedCity(city)
+            PreferenceHelper.addFavorite(city)
             
             dismissViewControllerAnimated(true, completion: nil)
         } else {

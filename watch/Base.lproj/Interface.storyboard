@@ -98,30 +98,7 @@
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
                     </items>
-                    <menu key="menu" id="iB8-eH-vfl">
-                        <items>
-                            <menuItem title="Français" icon="accept" id="fwB-Hx-PWD">
-                                <connections>
-                                    <action selector="francaisSelected" destination="AgC-eL-Hgc" id="jbA-vX-BhP"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="English" icon="accept" id="oWH-ca-i0u">
-                                <connections>
-                                    <action selector="englishSelected" destination="AgC-eL-Hgc" id="lbM-JB-Dyp"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="City" icon="add" id="tvr-g2-WdF">
-                                <connections>
-                                    <action selector="addCitySelected" destination="AgC-eL-Hgc" id="PFa-fC-z0l"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Clear cities" icon="trash" id="03l-wb-QhU">
-                                <connections>
-                                    <action selector="clearCitySelected" destination="AgC-eL-Hgc" id="DSO-Eu-2Za"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
+                    <menu key="menu" id="iB8-eH-vfl"/>
                     <connections>
                         <outlet property="cityLabel" destination="u5m-K4-Lrm" id="ZAO-E9-rya"/>
                         <outlet property="lastRefreshLabel" destination="6me-SD-2jn" id="ITo-E0-gbf"/>

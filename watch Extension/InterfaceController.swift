@@ -55,6 +55,11 @@ class InterfaceController: WKInterfaceController{
             cityLabel.setHidden(true)
             selectCityButton.setHidden(false)
         }
+        
+        clearAllMenuItems()
+        addMenuItemWithItemIcon(WKMenuItemIcon.Info, title: "Français", action: #selector(InterfaceController.francaisSelected))
+        addMenuItemWithItemIcon(WKMenuItemIcon.Info, title: "English", action: #selector(InterfaceController.englishSelected))
+        addMenuItemWithItemIcon(WKMenuItemIcon.More, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
     }
     
     func refresh() {
@@ -114,7 +119,7 @@ class InterfaceController: WKInterfaceController{
         }
     }
     
-    @IBAction func selectCity() {
+    func selectCity() {
         var citieNames = [String]()
         PreferenceHelper.getFavoriteCities().forEach({
             citieNames.append(CityHelper.cityName($0))
@@ -127,29 +132,23 @@ class InterfaceController: WKInterfaceController{
         })
     }
     
-    @IBAction func francaisSelected() {
+    func francaisSelected() {
         PreferenceHelper.saveLanguage(Language.French)
         loadData()
     }
     
-    @IBAction func englishSelected() {
+    func englishSelected() {
         PreferenceHelper.saveLanguage(Language.English)
         loadData()
     }
     
     
-    @IBAction func addCitySelected() {
+    func addCitySelected() {
         selectCity()
-    }
-    
-    @IBAction func clearCitySelected() {
-        PreferenceHelper.removeFavorites()
     }
     
     func didSayCityName(result: AnyObject?) {
         if let result = result, let choice = result[0] as? String {
-            print(choice)
-            
             var match = false;
             PreferenceHelper.getFavoriteCities().forEach({
                 let name = CityHelper.cityName($0)
@@ -161,7 +160,7 @@ class InterfaceController: WKInterfaceController{
                         }
                     }
                     if refresh {
-                        PreferenceHelper.saveSelectedCity($0)
+                        PreferenceHelper.addFavorite($0)
                         loadData()
                     }
                     match = true

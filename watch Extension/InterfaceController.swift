@@ -17,9 +17,6 @@ class InterfaceController: WKInterfaceController{
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     
-    var selectedCity:City?
-
-    
     override func didDeactivate() {
         super.didDeactivate()
     }
@@ -38,8 +35,6 @@ class InterfaceController: WKInterfaceController{
         initDisplay()
         
         if let city = PreferenceHelper.getSelectedCity() {
-            selectedCity = city
-            
             SharedWeather.instance.getWeather(city, callback: {self.refresh()})
         }
     }
@@ -63,7 +58,7 @@ class InterfaceController: WKInterfaceController{
     }
     
     func refresh() {
-        if let city = selectedCity {
+        if let city = PreferenceHelper.getSelectedCity() {
             self.cityLabel.setText(CityHelper.cityName(city))
         }
         

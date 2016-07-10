@@ -15,14 +15,11 @@ class SharedWeather {
     var wrapper = WeatherInformationWrapper()
     private var delegates = [WeatherUpdateDelegate]()
     
-    func getWeather(city: City) {
-        delegates.forEach({
-            $0.beforeUpdate()
-        })
-        
+    func getWeather(city: City, callback: () -> Void) {
         let cachedWeather = ExpiringCache.instance.objectForKey(city.id) as? WeatherInformationWrapper
         
         if cachedWeather != nil {
+            callback()
             return
         }
         
@@ -35,8 +32,10 @@ class SharedWeather {
                         let rssParser = RssParser(xmlData: data!, language: PreferenceHelper.getLanguage())
                         self.wrapper = WeatherHelper.generateWeatherInformation(rssParser)
                         
+                        ExpiringCache.instance.setObject(self.wrapper, forKey: city.id)
+                        
                         dispatch_async(dispatch_get_main_queue()) {
-                            self.broadcastUpdate()
+                            callback()
                         }
                     }
                 })
@@ -45,15 +44,21 @@ class SharedWeather {
         }
     }
     
-    func broadcastUpdate() {
+    func flushWrapper() {
+        wrapper = WeatherInformationWrapper()
+    }
+    
+    func broadcastUpdate(delegate: WeatherUpdateDelegate) {
         delegates.forEach({
-            $0.weatherDidUpdate()
+            if $0 !== delegate {
+                $0.weatherDidUpdate()
+            }
         })
         
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        for complication in complicationServer.activeComplications! {
-            complicationServer.reloadTimelineForComplication(complication)
-        }
+        //let complicationServer = CLKComplicationServer.sharedInstance()
+        //for complication in complicationServer.activeComplications! {
+        //    complicationServer.reloadTimelineForComplication(complication)
+        //}
     }
     
     func register(delegate: WeatherUpdateDelegate) {

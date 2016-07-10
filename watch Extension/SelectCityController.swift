@@ -33,7 +33,8 @@ class SelectCityController: WKInterfaceController {
             
             for index in 0..<cityTable.numberOfRows {
                 if let controller = cityTable.rowControllerAtIndex(index) as? CityRowController {
-                    controller.cityLabel.setText(CityHelper.cityName(cities[index]))
+                    let city = cities[index];
+                    controller.cityLabel.setText(CityHelper.cityName(city) + ", " + city.province.uppercaseString)
                 }
             }
         }

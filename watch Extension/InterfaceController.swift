@@ -26,12 +26,12 @@ class InterfaceController: WKInterfaceController{
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        loadData()
     }
 
     override func willActivate() {
         super.willActivate()
-        
-        loadData()
     }
     
     func loadData() {

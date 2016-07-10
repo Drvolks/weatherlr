@@ -11,7 +11,7 @@ import Foundation
 import WatchConnectivity
 
 
-class InterfaceController: WKInterfaceController{
+class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
@@ -21,8 +21,14 @@ class InterfaceController: WKInterfaceController{
         super.didDeactivate()
     }
     
+    deinit {
+        SharedWeather.instance.unregister(self)
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        SharedWeather.instance.register(self)
         
         loadData()
     }
@@ -32,14 +38,12 @@ class InterfaceController: WKInterfaceController{
     }
     
     func loadData() {
-        initDisplay()
-        
         if let city = PreferenceHelper.getSelectedCity() {
-            SharedWeather.instance.getWeather(city, callback: {self.refresh()})
+            SharedWeather.instance.getWeather(city)
         }
     }
     
-    func initDisplay() {
+    func beforeUpdate() {
         lastRefreshLabel.setHidden(true)
         
         if PreferenceHelper.getSelectedCity() != nil {
@@ -57,7 +61,7 @@ class InterfaceController: WKInterfaceController{
         addMenuItemWithItemIcon(WKMenuItemIcon.More, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
     }
     
-    func refresh() {
+    func weatherDidUpdate() {
         if let city = PreferenceHelper.getSelectedCity() {
             self.cityLabel.setText(CityHelper.cityName(city))
         }
@@ -156,7 +160,7 @@ class InterfaceController: WKInterfaceController{
                     }
                     if refresh {
                         PreferenceHelper.addFavorite($0)
-                        loadData()
+                        SharedWeather.instance.broadcastUpdate()
                     }
                     match = true
                     return

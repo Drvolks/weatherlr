@@ -8,10 +8,16 @@
 
 import ClockKit
 
-class ComplicationController: NSObject, CLKComplicationDataSource {
+class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdateDelegate {
     
     override init() {
         super.init()
+        
+        SharedWeather.instance.register(self)
+    }
+    
+    deinit {
+        SharedWeather.instance.unregister(self)
     }
     
     // MARK: - Timeline Configuration
@@ -213,12 +219,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
-            SharedWeather.instance.getWeather(city, callback: {self.refresh()})
+            SharedWeather.instance.getWeather(city)
         }
-
     }
     
-    func refresh() {
+    func beforeUpdate() {
+        
+    }
+    
+    func weatherDidUpdate() {
         let server=CLKComplicationServer.sharedInstance()
         
         for comp in (server.activeComplications)! {

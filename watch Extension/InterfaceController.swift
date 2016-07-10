@@ -36,9 +36,14 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     override func willActivate() {
         super.willActivate()
         
-        print(SharedWeather.instance.wrapper.weatherInformations.count)
         if SharedWeather.instance.wrapper.weatherInformations.count == 0 {
             loadData()
+        } else {
+            if let city = PreferenceHelper.getSelectedCity() {
+                if ExpiringCache.instance.objectForKey(city.id) == nil {
+                    loadData()
+                }
+            }
         }
     }
     

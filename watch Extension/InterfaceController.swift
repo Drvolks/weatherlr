@@ -127,7 +127,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     func selectCity() {
         var citieNames = [String]()
         PreferenceHelper.getFavoriteCities().forEach({
-            citieNames.append(CityHelper.cityName($0))
+            citieNames.append(CityHelper.cityName($0) + ", " + $0.province.uppercaseString)
         })
         
         citieNames.appendContentsOf("abcdefghijklmnopqrstuvwxyz".uppercaseString.characters.map { String($0) })
@@ -156,7 +156,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         if let result = result, let choice = result[0] as? String {
             var match = false;
             PreferenceHelper.getFavoriteCities().forEach({
-                let name = CityHelper.cityName($0)
+                let name = CityHelper.cityName($0) + ", " + $0.province.uppercaseString
                 if name == choice {
                     var refresh = true
                     if let selectedCity = PreferenceHelper.getSelectedCity() {
@@ -190,8 +190,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
             
             if cities.count == 1 {
                 PreferenceHelper.addFavorite(cities[0])
-                
                 loadData()
+                SharedWeather.instance.broadcastUpdate(self)
             } else {
                 pushControllerWithName("SelectCity", context: [Constants.cityListKey : cities, Constants.searchTextKey: choice, "delegate": self])
             }

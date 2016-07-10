@@ -7,13 +7,19 @@
 //
 
 import Foundation
+import ClockKit
 
 class SharedWeather {
     static let instance = SharedWeather()
     
     var wrapper = WeatherInformationWrapper()
+    private var delegates = [WeatherUpdateDelegate]()
     
-    func getWeather(city: City, callback: (() -> Void)!) {
+    func getWeather(city: City) {
+        delegates.forEach({
+            $0.beforeUpdate()
+        })
+        
         let cachedWeather = ExpiringCache.instance.objectForKey(city.id) as? WeatherInformationWrapper
         
         if cachedWeather != nil {
@@ -30,12 +36,36 @@ class SharedWeather {
                         self.wrapper = WeatherHelper.generateWeatherInformation(rssParser)
                         
                         dispatch_async(dispatch_get_main_queue()) {
-                            callback()
+                            self.broadcastUpdate()
                         }
                     }
                 })
             }
             task.resume()
+        }
+    }
+    
+    func broadcastUpdate() {
+        delegates.forEach({
+            $0.weatherDidUpdate()
+        })
+        
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        for complication in complicationServer.activeComplications! {
+            complicationServer.reloadTimelineForComplication(complication)
+        }
+    }
+    
+    func register(delegate: WeatherUpdateDelegate) {
+        delegates.append(delegate)
+    }
+    
+    func unregister(delegate: WeatherUpdateDelegate) {
+        for (index, currentDelegate) in delegates.enumerate() {
+            if currentDelegate === delegate {
+                delegates.removeAtIndex(index)
+                break
+            }
         }
     }
 }

@@ -29,20 +29,20 @@ class WeatherHelper {
         
         if let url = NSURL(string: url) {
             if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
-                return generateWeatherInformation(rssParser)
+                return generateWeatherInformation(rssParser, city: city)
             }
         }
         
         return WeatherInformationWrapper()
     }
     
-    static func generateWeatherInformation(rssParser: RssParser) -> WeatherInformationWrapper {
+    static func generateWeatherInformation(rssParser: RssParser, city: City) -> WeatherInformationWrapper {
         let rssEntries = rssParser.parse()
         let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
         let weatherInformations = weatherInformationProcess.perform()
         let alerts = weatherInformationProcess.getAlerts()
         
-        let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts)
+        let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts, city: city)
         return weatherInformationWrapper
     }
     
@@ -55,8 +55,15 @@ class WeatherHelper {
             let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
             let weatherInformations = weatherInformationProcess.perform()
             let alerts = weatherInformationProcess.getAlerts()
+
+            let city = City()
+            city.englishName = "Offline city en"
+            city.frenchName = "Offline city fr"
+            city.id = "0"
+            city.radarId = "0"
+            city.province = "qc"
             
-            let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts)
+            let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts, city: city)
             return weatherInformationWrapper
         }
         

@@ -29,21 +29,13 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         super.awakeWithContext(context)
         
         SharedWeather.instance.register(self)
-        
-        loadData()
     }
 
     override func willActivate() {
         super.willActivate()
         
-        if SharedWeather.instance.wrapper.weatherInformations.count == 0 {
+        if SharedWeather.instance.refreshNeeded() {
             loadData()
-        } else {
-            if let city = PreferenceHelper.getSelectedCity() {
-                if ExpiringCache.instance.objectForKey(city.id) == nil {
-                    loadData()
-                }
-            }
         }
     }
     
@@ -170,9 +162,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
                         }
                     }
                     if refresh {
-                        PreferenceHelper.addFavorite($0)
+                        cityDidChange($0)
                         loadData()
-                        SharedWeather.instance.broadcastUpdate(self)
                     }
                     match = true
                     return
@@ -194,12 +185,15 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
             }
             
             if cities.count == 1 {
-                PreferenceHelper.addFavorite(cities[0])
-                loadData()
-                SharedWeather.instance.broadcastUpdate(self)
+                cityDidChange(cities[0])
             } else {
                 pushControllerWithName("SelectCity", context: [Constants.cityListKey : cities, Constants.searchTextKey: choice, "delegate": self])
             }
         }
+    }
+    
+    func cityDidChange(city: City) {
+        PreferenceHelper.addFavorite(city)
+        SharedWeather.instance.broadcastUpdate(self)
     }
 }

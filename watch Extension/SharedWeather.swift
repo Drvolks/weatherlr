@@ -18,7 +18,8 @@ class SharedWeather {
     func getWeather(city: City, callback: () -> Void) {
         let cachedWeather = ExpiringCache.instance.objectForKey(city.id) as? WeatherInformationWrapper
         
-        if cachedWeather != nil {
+        if let newWrapper = cachedWeather {
+            self.wrapper = newWrapper
             callback()
             return
         }
@@ -30,7 +31,7 @@ class SharedWeather {
                 dispatch_async(dispatch_get_main_queue(), {
                     if (data != nil && error == nil) {
                         let rssParser = RssParser(xmlData: data!, language: PreferenceHelper.getLanguage())
-                        self.wrapper = WeatherHelper.generateWeatherInformation(rssParser)
+                        self.wrapper = WeatherHelper.generateWeatherInformation(rssParser, city: city)
                         
                         ExpiringCache.instance.setObject(self.wrapper, forKey: city.id)
                         
@@ -42,6 +43,24 @@ class SharedWeather {
             }
             task.resume()
         }
+    }
+    
+    func refreshNeeded() -> Bool {
+        if let oldCity = wrapper.city {
+            if let currentCity = PreferenceHelper.getSelectedCity() {
+                let cachedWeather = ExpiringCache.instance.objectForKey(currentCity.id) as? WeatherInformationWrapper
+                
+                if cachedWeather != nil {
+                    if oldCity.id != currentCity.id {
+                        return true
+                    }
+                    
+                    return false
+                }
+            }
+        }
+        
+        return true
     }
     
     func flushWrapper() {

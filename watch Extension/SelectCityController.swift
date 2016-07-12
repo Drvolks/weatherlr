@@ -54,7 +54,6 @@ class SelectCityController: WKInterfaceController {
         let city = cities[rowIndex]
         
         PreferenceHelper.addFavorite(city)
-        SharedWeather.instance.flushWrapper()
         
         if let delegate = delegate {
             SharedWeather.instance.broadcastUpdate(delegate)

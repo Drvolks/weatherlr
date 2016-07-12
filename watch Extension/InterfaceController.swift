@@ -34,15 +34,12 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     override func willActivate() {
         super.willActivate()
         
-        if SharedWeather.instance.refreshNeeded() {
-            loadData()
-        }
+        loadData()
     }
     
     func loadData() {
-        beforeUpdate()
         if let city = PreferenceHelper.getSelectedCity() {
-            SharedWeather.instance.getWeather(city, callback: {self.weatherDidUpdate()})
+            SharedWeather.instance.getWeather(city, delegate: self)
         }
     }
     

@@ -29,6 +29,13 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         super.awakeWithContext(context)
         
         SharedWeather.instance.register(self)
+        
+        selectCityButton.setTitle("Select city".localized())
+        
+        clearAllMenuItems()
+        addMenuItemWithItemIcon(WKMenuItemIcon.Info, title: "Français", action: #selector(InterfaceController.francaisSelected))
+        addMenuItemWithItemIcon(WKMenuItemIcon.Info, title: "English", action: #selector(InterfaceController.englishSelected))
+        addMenuItemWithItemIcon(WKMenuItemIcon.More, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
     }
 
     override func willActivate() {
@@ -42,25 +49,18 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
             SharedWeather.instance.getWeather(city, delegate: self)
+        } else {
+            cityLabel.setHidden(true)
+            selectCityButton.setHidden(false)
         }
     }
     
     func beforeUpdate() {
         lastRefreshLabel.setHidden(true)
         
-        if PreferenceHelper.getSelectedCity() != nil {
-            cityLabel.setHidden(false)
-            cityLabel.setText("Loading".localized())
-            selectCityButton.setHidden(true)
-        } else {
-            cityLabel.setHidden(true)
-            selectCityButton.setHidden(false)
-        }
-        
-        clearAllMenuItems()
-        addMenuItemWithItemIcon(WKMenuItemIcon.Info, title: "Français", action: #selector(InterfaceController.francaisSelected))
-        addMenuItemWithItemIcon(WKMenuItemIcon.Info, title: "English", action: #selector(InterfaceController.englishSelected))
-        addMenuItemWithItemIcon(WKMenuItemIcon.More, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
+        cityLabel.setHidden(false)
+        cityLabel.setText("Loading".localized())
+        selectCityButton.setHidden(true)
     }
     
     func weatherDidUpdate() {
@@ -162,7 +162,6 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
                     }
                     if refresh {
                         cityDidChange($0)
-                        loadData()
                     }
                     match = true
                     return
@@ -194,5 +193,6 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     func cityDidChange(city: City) {
         PreferenceHelper.addFavorite(city)
         SharedWeather.instance.broadcastUpdate(self)
+        loadData()
     }
 }

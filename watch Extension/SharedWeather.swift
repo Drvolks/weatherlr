@@ -20,7 +20,7 @@ class SharedWeather {
         
         if let newWrapper = cachedWeather {
             let elapsedTime = minutesFrom(newWrapper.lastRefresh)
-            if elapsedTime < 30 {
+            if elapsedTime < Constants.WeatherCacheInMinutes {
                 self.wrapper = newWrapper
                 delegate.weatherDidUpdate()
                 return

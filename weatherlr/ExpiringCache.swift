@@ -12,7 +12,7 @@ class ExpiringCache : NSCache {
     static let instance = ExpiringCache()
     
     private let ExpiringCacheObjectKey = "expireObjectKey"
-    private let ExpiringCacheDefaultTimeout: NSTimeInterval = 60 * 5
+    private let ExpiringCacheDefaultTimeout: NSTimeInterval = 60 * Double(Constants.WeatherCacheInMinutes)
     
     override init() {
         super.init()

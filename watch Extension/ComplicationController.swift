@@ -219,7 +219,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
-            SharedWeather.instance.getWeather(city, callback: {self.weatherDidUpdate()})
+            SharedWeather.instance.getWeather(city, delegate: self)
         }
     }
     

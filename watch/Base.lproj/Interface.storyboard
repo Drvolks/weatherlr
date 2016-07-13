@@ -10,7 +10,7 @@
             <objects>
                 <controller identifier="Main" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watch" customModuleProvider="target">
                     <items>
-                        <label width="136" alignment="left" text="Label" numberOfLines="0" id="u5m-K4-Lrm"/>
+                        <label width="136" alignment="left" numberOfLines="0" id="u5m-K4-Lrm"/>
                         <table alignment="left" id="TYl-Sm-JJI">
                             <items>
                                 <tableRow identifier="currentWeatherRow" id="kQR-pv-c0v" customClass="CurrentWeatherRowController" customModule="watch_Extension">
@@ -23,7 +23,7 @@
                                                 </items>
                                                 <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                             </group>
-                                            <label alignment="center" text="Currently" textAlignment="center" id="aOw-eV-6L7"/>
+                                            <label alignment="center" textAlignment="center" id="aOw-eV-6L7"/>
                                         </items>
                                         <edgeInsets key="margins" left="5" right="5" top="5" bottom="5"/>
                                     </group>
@@ -36,13 +36,13 @@
                                 <tableRow identifier="nextWeatherRow" id="us4-lQ-Z5s" customClass="NextWeatherRowController" customModule="watch_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="5H9-hx-MTY">
                                         <items>
-                                            <label alignment="left" text="Label" id="LZT-Vg-6E8">
+                                            <label alignment="left" id="LZT-Vg-6E8">
                                                 <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                             </label>
                                             <group width="1" alignment="left" id="hv0-g4-iks">
                                                 <items>
                                                     <imageView width="30" height="25" alignment="left" id="mvZ-uS-s6f"/>
-                                                    <label alignment="left" text="Label" numberOfLines="0" id="mPg-t5-e2F">
+                                                    <label alignment="left" numberOfLines="0" id="mPg-t5-e2F">
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                     <imageView width="20" height="20" alignment="right" id="cba-yY-kJt"/>
@@ -50,7 +50,7 @@
                                             </group>
                                             <group width="1" alignment="left" id="3ki-82-zCq">
                                                 <items>
-                                                    <label alignment="left" text="Label" numberOfLines="0" id="Sha-Ip-RyK">
+                                                    <label alignment="left" numberOfLines="0" id="Sha-Ip-RyK">
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                 </items>
@@ -69,7 +69,7 @@
                                 <tableRow identifier="weatherRow" id="1dw-7p-5MP" customClass="WeatherRowController" customModule="watch_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="vri-XI-FMR">
                                         <items>
-                                            <label alignment="left" text="Label" id="Wfe-as-Flu">
+                                            <label alignment="left" id="Wfe-as-Flu">
                                                 <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                             </label>
                                             <group width="1" alignment="left" id="JT3-XM-pOC">
@@ -114,13 +114,13 @@
             <objects>
                 <controller identifier="SelectCity" id="LgY-22-iiV" customClass="SelectCityController" customModule="watch_Extension">
                     <items>
-                        <label alignment="left" text="Label" id="tPA-3Y-a4o"/>
+                        <label alignment="left" id="tPA-3Y-a4o"/>
                         <table alignment="left" id="GgL-0m-q9r">
                             <items>
                                 <tableRow identifier="CityRow" id="D7c-h4-eQe" customClass="CityRowController" customModule="watch_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="ruJ-SU-M3L">
                                         <items>
-                                            <label width="1" height="1" alignment="left" text="Label" id="OD9-eG-HQL"/>
+                                            <label width="1" height="1" alignment="left" id="OD9-eG-HQL"/>
                                         </items>
                                     </group>
                                     <connections>
@@ -129,7 +129,7 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <button width="1" alignment="left" title="Button" id="Naw-e1-0Jo">
+                        <button width="1" alignment="left" id="Naw-e1-0Jo">
                             <connections>
                                 <action selector="cancel" destination="LgY-22-iiV" id="i68-yM-PnG"/>
                             </connections>

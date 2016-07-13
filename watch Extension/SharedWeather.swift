@@ -15,14 +15,19 @@ class SharedWeather {
     var wrapper = WeatherInformationWrapper()
     private var delegates = [WeatherUpdateDelegate]()
     
-    func getWeather(city: City, callback: () -> Void) {
+    func getWeather(city: City, delegate: WeatherUpdateDelegate) {
         let cachedWeather = ExpiringCache.instance.objectForKey(city.id) as? WeatherInformationWrapper
         
         if let newWrapper = cachedWeather {
-            self.wrapper = newWrapper
-            callback()
-            return
+            let elapsedTime = minutesFrom(newWrapper.lastRefresh)
+            if elapsedTime < 30 {
+                self.wrapper = newWrapper
+                delegate.weatherDidUpdate()
+                return
+            }
         }
+        
+        delegate.beforeUpdate()
         
         let url = UrlHelper.getUrl(city)
         
@@ -36,13 +41,17 @@ class SharedWeather {
                         ExpiringCache.instance.setObject(self.wrapper, forKey: city.id)
                         
                         dispatch_async(dispatch_get_main_queue()) {
-                            callback()
+                            delegate.weatherDidUpdate()
                         }
                     }
                 })
             }
             task.resume()
         }
+    }
+    
+    func minutesFrom(date: NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Minute, fromDate: date, toDate: NSDate(), options: []).minute
     }
     
     func refreshNeeded() -> Bool {
@@ -63,21 +72,14 @@ class SharedWeather {
         return true
     }
     
-    func flushWrapper() {
-        wrapper = WeatherInformationWrapper()
-    }
-    
     func broadcastUpdate(delegate: WeatherUpdateDelegate) {
+        wrapper = WeatherInformationWrapper()
+        
         delegates.forEach({
             if $0 !== delegate {
                 $0.weatherDidUpdate()
             }
         })
-        
-        //let complicationServer = CLKComplicationServer.sharedInstance()
-        //for complication in complicationServer.activeComplications! {
-        //    complicationServer.reloadTimelineForComplication(complication)
-        //}
     }
     
     func register(delegate: WeatherUpdateDelegate) {

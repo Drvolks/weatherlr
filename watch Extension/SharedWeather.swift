@@ -19,8 +19,7 @@ class SharedWeather {
         let cachedWeather = ExpiringCache.instance.objectForKey(city.id) as? WeatherInformationWrapper
         
         if let newWrapper = cachedWeather {
-            let elapsedTime = minutesFrom(newWrapper.lastRefresh)
-            if elapsedTime < Constants.WeatherCacheInMinutes {
+            if cacheValid(newWrapper) {
                 self.wrapper = newWrapper
                 delegate.weatherDidUpdate()
                 return
@@ -50,17 +49,23 @@ class SharedWeather {
         }
     }
     
-    func minutesFrom(date: NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(.Minute, fromDate: date, toDate: NSDate(), options: []).minute
+    func cacheValid(cache: WeatherInformationWrapper) -> Bool {
+        let elapsedTime = NSCalendar.currentCalendar().components(.Minute, fromDate: cache.lastRefresh, toDate: NSDate(), options: []).minute
+        if elapsedTime < Constants.WeatherCacheInMinutes {
+            return true
+        } else {
+            return false
+        }
     }
     
     func refreshNeeded() -> Bool {
         if let oldCity = wrapper.city {
             if let currentCity = PreferenceHelper.getSelectedCity() {
-                let cachedWeather = ExpiringCache.instance.objectForKey(currentCity.id) as? WeatherInformationWrapper
-                
-                if cachedWeather != nil {
-                    if oldCity.id != currentCity.id {
+                if let cachedWeather = ExpiringCache.instance.objectForKey(currentCity.id) as? WeatherInformationWrapper {
+                    if !cacheValid(cachedWeather) {
+                        return true
+                    }
+                    else if oldCity.id != currentCity.id {
                         return true
                     }
                     

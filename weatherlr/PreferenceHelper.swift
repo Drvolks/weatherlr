@@ -9,7 +9,7 @@
 import Foundation
 
 class PreferenceHelper {
-    static func addFavorite(city: City) {
+    static func addFavorite(_ city: City) {
         var favorites = getFavoriteCities()
         var newFavorites = [City]()
         
@@ -27,8 +27,8 @@ class PreferenceHelper {
     
     static func getFavoriteCities() -> [City] {
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Constants.favotiteCitiesKey) as? NSData {
-            if let savedfavorites = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [City] {
+        if let unarchivedObject = UserDefaults.standard.object(forKey: Constants.favotiteCitiesKey) as? Data {
+            if let savedfavorites = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject) as? [City] {
                 return savedfavorites
             }
         }
@@ -36,37 +36,37 @@ class PreferenceHelper {
         return [City]()
     }
     
-    private static func saveFavoriteCities(cities: [City]) {
-        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(cities as NSArray)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: Constants.favotiteCitiesKey)
+    private static func saveFavoriteCities(_ cities: [City]) {
+        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: cities as NSArray)
+        let defaults = UserDefaults.standard
+        defaults.set(archivedObject, forKey: Constants.favotiteCitiesKey)
         defaults.synchronize()
     }
     
-    private static func saveSelectedCity(city: City) {
-        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(city)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: Constants.selectedCityKey)
+    private static func saveSelectedCity(_ city: City) {
+        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
+        let defaults = UserDefaults.standard
+        defaults.set(archivedObject, forKey: Constants.selectedCityKey)
         defaults.synchronize()
     }
     
-    static func saveWatchCity(city: City) {
-        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(city)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: Constants.watchCityKey)
+    static func saveWatchCity(_ city: City) {
+        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
+        let defaults = UserDefaults.standard
+        defaults.set(archivedObject, forKey: Constants.watchCityKey)
         defaults.synchronize()
     }
     
     static func removeWatchCity() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.removeObjectForKey(Constants.watchCityKey)
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: Constants.watchCityKey)
         defaults.synchronize()
     }
     
     static func getSelectedCity() -> City? {
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Constants.selectedCityKey) as? NSData {
-            if let selectedCity = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? City {
+        if let unarchivedObject = UserDefaults.standard.object(forKey: Constants.selectedCityKey) as? Data {
+            if let selectedCity = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject) as? City {
                 // for legacy City object < 1.1 release
                 if selectedCity.radarId.isEmpty {
                     return refreshCity(selectedCity)
@@ -81,8 +81,8 @@ class PreferenceHelper {
     
     static func getWatchCity() -> City? {
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Constants.watchCityKey) as? NSData {
-            if let watchCity = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? City {
+        if let unarchivedObject = UserDefaults.standard.object(forKey: Constants.watchCityKey) as? Data {
+            if let watchCity = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject) as? City {
                 return watchCity
             }
         }
@@ -90,9 +90,9 @@ class PreferenceHelper {
         return nil
     }
     
-    static func refreshCity(city:City) -> City {
-        let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
-        let cities = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+    static func refreshCity(_ city:City) -> City {
+        let path = Bundle.main.pathForResource("Cities", ofType: "plist")
+        let cities = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         
         for i in 0..<cities.count {
             let currentCity = cities[i]
@@ -115,7 +115,7 @@ class PreferenceHelper {
         return city
     }
     
-    static func removeFavorite(city: City) {
+    static func removeFavorite(_ city: City) {
         let favorites = getFavoriteCities()
         
         if favorites.count == 0 {
@@ -155,12 +155,12 @@ class PreferenceHelper {
     }
     
     static func getLanguage() -> Language {
-        if let lang = NSUserDefaults.standardUserDefaults().objectForKey(Constants.languageKey) as? String {
+        if let lang = UserDefaults.standard.object(forKey: Constants.languageKey) as? String {
             if let langEnum = Language(rawValue: lang) {
                 return langEnum
             }
         } else {
-            let preferredLanguage = extractLang(NSLocale.preferredLanguages()[0])
+            let preferredLanguage = extractLang(Locale.preferredLanguages[0])
             if let lang = Language(rawValue: preferredLanguage) {
                 saveLanguage(lang)
                 return lang
@@ -170,9 +170,9 @@ class PreferenceHelper {
          return Language.English
     }
     
-    static func saveLanguage(language: Language) {
-        NSUserDefaults.standardUserDefaults().setObject(language.rawValue, forKey: Constants.languageKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
+    static func saveLanguage(_ language: Language) {
+        UserDefaults.standard.set(language.rawValue, forKey: Constants.languageKey)
+        UserDefaults.standard.synchronize()
         
         ExpiringCache.instance.removeAllObjects()
     }
@@ -185,9 +185,9 @@ class PreferenceHelper {
         return false
     }
     
-    static func extractLang(locale:String) -> String {
-        if let index = locale.rangeOfString("-") {
-            return locale.substringToIndex(index.startIndex)
+    static func extractLang(_ locale:String) -> String {
+        if let index = locale.range(of: "-") {
+            return locale.substring(to: index.lowerBound)
         }
                 
         return locale

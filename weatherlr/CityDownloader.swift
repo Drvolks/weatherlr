@@ -16,8 +16,8 @@ class CityDownloader {
     }
     
     func process() {
-        let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
-        let cities = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+        let path = Bundle.main.pathForResource("Cities", ofType: "plist")
+        let cities = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         
         for i in 0..<cities.count {
             let city = cities[i]
@@ -25,19 +25,19 @@ class CityDownloader {
             for lang in Language.all {
                 let url = UrlHelper.getUrl(city, lang: lang)
                 
-                if let url = NSURL(string: url) {
+                if let url = URL(string: url) {
                     load(url, city: city, lang: lang)
                 }
             }
         }
     }
     
-    func load(url: NSURL, city:City, lang: Language) {
+    func load(_ url: URL, city:City, lang: Language) {
         print("Downloading \(city.frenchName) \(city.province)")
         
-        if let data = NSData(contentsOfURL: url) {
+        if let data = try? Data(contentsOf: url) {
             let path = outputPath + "/" + city.id + "_" + String(lang) + ".xml"
-            try! data.writeToFile(path, options: NSDataWritingOptions.AtomicWrite)
+            try! data.write(to: URL(fileURLWithPath: path), options: NSData.WritingOptions.atomicWrite)
         }
     }
 }

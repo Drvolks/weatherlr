@@ -11,16 +11,16 @@ import Foundation
 extension String {
     func localized() ->String {
         
-        let path = NSBundle.mainBundle().pathForResource(PreferenceHelper.getLanguage().rawValue, ofType: "lproj")
-        let bundle = NSBundle(path: path!)
+        let path = Bundle.main.pathForResource(PreferenceHelper.getLanguage().rawValue, ofType: "lproj")
+        let bundle = Bundle(path: path!)
         
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
     }
 
-    func localized(lang: Language) ->String {
+    func localized(_ lang: Language) ->String {
         
-        let path = NSBundle.mainBundle().pathForResource(lang.rawValue, ofType: "lproj")
-        let bundle = NSBundle(path: path!)
+        let path = Bundle.main.pathForResource(lang.rawValue, ofType: "lproj")
+        let bundle = Bundle(path: path!)
         
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
     }

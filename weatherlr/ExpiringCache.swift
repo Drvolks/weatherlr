@@ -8,27 +8,27 @@
 
 import Foundation
 
-class ExpiringCache : NSCache {
+class ExpiringCache : Cache<AnyObject, AnyObject> {
     static let instance = ExpiringCache()
     
     private let ExpiringCacheObjectKey = "expireObjectKey"
-    private let ExpiringCacheDefaultTimeout: NSTimeInterval = 60 * Double(Constants.WeatherCacheInMinutes)
+    private let ExpiringCacheDefaultTimeout: TimeInterval = 60 * Double(Constants.WeatherCacheInMinutes)
     
     override init() {
         super.init()
         countLimit = 10
     }
     
-    func setObject(obj: AnyObject, forKey key: AnyObject, timeout: NSTimeInterval) {
+    func setObject(_ obj: AnyObject, forKey key: AnyObject, timeout: TimeInterval) {
         super.setObject(obj, forKey: key)
-        NSTimer.scheduledTimerWithTimeInterval(timeout, target: self, selector: #selector(ExpiringCache.timerExpires(_:)), userInfo: [ExpiringCacheObjectKey : key], repeats: false)
+        Timer.scheduledTimer(timeInterval: timeout, target: self, selector: #selector(ExpiringCache.timerExpires(_:)), userInfo: [ExpiringCacheObjectKey : key], repeats: false)
     }
     
-    override func setObject(obj: AnyObject, forKey key: AnyObject) {
-        self.setObject(obj, forKey: key, timeout: ExpiringCacheDefaultTimeout)
+    override func setObject(_ obj: AnyObject, forKey key: AnyObject) {
+         self.setObject(obj, forKey: key, timeout: ExpiringCacheDefaultTimeout)
     }
     
-    func timerExpires(timer: NSTimer) {
-        removeObjectForKey(timer.userInfo![ExpiringCacheObjectKey] as! String)
+    func timerExpires(_ timer: Timer) {
+        removeObject(forKey: timer.userInfo![ExpiringCacheObjectKey] as! String)
     }
 }

@@ -15,8 +15,8 @@ class SharedWeather {
     var wrapper = WeatherInformationWrapper()
     private var delegates = [WeatherUpdateDelegate]()
     
-    func getWeather(city: City, delegate: WeatherUpdateDelegate) {
-        let cachedWeather = ExpiringCache.instance.objectForKey(city.id) as? WeatherInformationWrapper
+    func getWeather(_ city: City, delegate: WeatherUpdateDelegate) {
+        let cachedWeather = ExpiringCache.instance.object(forKey: city.id) as? WeatherInformationWrapper
         
         if let newWrapper = cachedWeather {
             if cacheValid(newWrapper) {
@@ -30,16 +30,16 @@ class SharedWeather {
         
         let url = UrlHelper.getUrl(city)
         
-        if let url = NSURL(string: url) {
-            let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-                dispatch_async(dispatch_get_main_queue(), {
+        if let url = URL(string: url) {
+            let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+                DispatchQueue.main.async(execute: {
                     if (data != nil && error == nil) {
                         let rssParser = RssParser(xmlData: data!, language: PreferenceHelper.getLanguage())
                         self.wrapper = WeatherHelper.generateWeatherInformation(rssParser, city: city)
                         
                         ExpiringCache.instance.setObject(self.wrapper, forKey: city.id)
                         
-                        dispatch_async(dispatch_get_main_queue()) {
+                        DispatchQueue.main.async {
                             delegate.weatherDidUpdate()
                         }
                     }
@@ -49,8 +49,8 @@ class SharedWeather {
         }
     }
     
-    func cacheValid(cache: WeatherInformationWrapper) -> Bool {
-        let elapsedTime = NSCalendar.currentCalendar().components(.Minute, fromDate: cache.lastRefresh, toDate: NSDate(), options: []).minute
+    func cacheValid(_ cache: WeatherInformationWrapper) -> Bool {
+        let elapsedTime = Calendar.current.components(.minute, from: cache.lastRefresh as Date, to: Date(), options: []).minute
         if elapsedTime < Constants.WeatherCacheInMinutes {
             return true
         } else {
@@ -61,7 +61,7 @@ class SharedWeather {
     func refreshNeeded() -> Bool {
         if let oldCity = wrapper.city {
             if let currentCity = PreferenceHelper.getSelectedCity() {
-                if let cachedWeather = ExpiringCache.instance.objectForKey(currentCity.id) as? WeatherInformationWrapper {
+                if let cachedWeather = ExpiringCache.instance.object(forKey: currentCity.id) as? WeatherInformationWrapper {
                     if !cacheValid(cachedWeather) {
                         return true
                     }
@@ -77,7 +77,7 @@ class SharedWeather {
         return true
     }
     
-    func broadcastUpdate(delegate: WeatherUpdateDelegate) {
+    func broadcastUpdate(_ delegate: WeatherUpdateDelegate) {
         wrapper = WeatherInformationWrapper()
         
         delegates.forEach({
@@ -87,14 +87,14 @@ class SharedWeather {
         })
     }
     
-    func register(delegate: WeatherUpdateDelegate) {
+    func register(_ delegate: WeatherUpdateDelegate) {
         delegates.append(delegate)
     }
     
-    func unregister(delegate: WeatherUpdateDelegate) {
-        for (index, currentDelegate) in delegates.enumerate() {
+    func unregister(_ delegate: WeatherUpdateDelegate) {
+        for (index, currentDelegate) in delegates.enumerated() {
             if currentDelegate === delegate {
-                delegates.removeAtIndex(index)
+                delegates.remove(at: index)
                 break
             }
         }

@@ -10,29 +10,29 @@ import XCTest
 @testable import weatherlr
 
 class AlertTests: XCTestCase {
-    let testBundle = NSBundle(forClass: AlertTests.self)
+    let testBundle = Bundle(for: AlertTests.self)
     /*
     func testFindAlerts1() {
         findAlert("/cities")
     }
     */
-    func findAlert(subPath: String) {
-        let fileManager = NSFileManager.defaultManager()
+    func findAlert(_ subPath: String) {
+        let fileManager = FileManager.default
         let path = testBundle.resourcePath!
-        let items = try! fileManager.contentsOfDirectoryAtPath(path + subPath)
+        let items = try! fileManager.contentsOfDirectory(atPath: path + subPath)
         
         for item in items {
-            let url = NSURL(fileURLWithPath: item)
-            let baseName = url.URLByDeletingPathExtension?.lastPathComponent!
+            let url = URL(fileURLWithPath: item)
+            let baseName = try! url.deletingPathExtension().lastPathComponent!
             
-            if let file = testBundle.pathForResource(subPath + "/" + baseName!, ofType: "xml")
+            if let file = testBundle.pathForResource(subPath + "/" + baseName, ofType: "xml")
             {
                 var lang = Language.French
-                if file.containsString(String(Language.English)) {
+                if file.contains(String(Language.English)) {
                     lang = Language.English
                 }
                 
-                let xmlData = NSData(contentsOfFile: file)!
+                let xmlData = try! Data(contentsOf: URL(fileURLWithPath: file))
                 let parser = RssParser(xmlData: xmlData, language: lang)
                 
                 let rssEntries = parser.parse()

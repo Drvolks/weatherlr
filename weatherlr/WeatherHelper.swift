@@ -9,9 +9,9 @@
 import UIKit
 
 class WeatherHelper {
-    static func getWeatherInformations(city:City) -> WeatherInformationWrapper {
+    static func getWeatherInformations(_ city:City) -> WeatherInformationWrapper {
         let cache = ExpiringCache.instance
-        let cachedWeather = cache.objectForKey(city.id) as? WeatherInformationWrapper
+        let cachedWeather = cache.object(forKey: city.id) as? WeatherInformationWrapper
         
         if cachedWeather != nil {
             return cachedWeather!
@@ -23,11 +23,11 @@ class WeatherHelper {
         return weatherInformationWrapper
     }
     
-    static func getWeatherInformationsNoCache(city:City) -> WeatherInformationWrapper {
+    static func getWeatherInformationsNoCache(_ city:City) -> WeatherInformationWrapper {
         
         let url = UrlHelper.getUrl(city)
         
-        if let url = NSURL(string: url) {
+        if let url = URL(string: url) {
             if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
                 return generateWeatherInformation(rssParser, city: city)
             }
@@ -36,7 +36,7 @@ class WeatherHelper {
         return WeatherInformationWrapper()
     }
     
-    static func generateWeatherInformation(rssParser: RssParser, city: City) -> WeatherInformationWrapper {
+    static func generateWeatherInformation(_ rssParser: RssParser, city: City) -> WeatherInformationWrapper {
         let rssEntries = rssParser.parse()
         let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)
         let weatherInformations = weatherInformationProcess.perform()
@@ -47,8 +47,8 @@ class WeatherHelper {
     }
     
     static func getOfflineWeather() -> WeatherInformationWrapper {
-        let path = NSBundle.mainBundle().pathForResource("nu-29_English", ofType: "xml")
-        let url = NSURL(fileURLWithPath: path!)
+        let path = Bundle.main.pathForResource("nu-29_English", ofType: "xml")
+        let url = URL(fileURLWithPath: path!)
         
         if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
             let rssEntries = rssParser.parse()
@@ -70,132 +70,132 @@ class WeatherHelper {
         return WeatherInformationWrapper()
     }
     
-    static func getImageSubstitute(weatherStatus: WeatherStatus) -> WeatherStatus? {
+    static func getImageSubstitute(_ weatherStatus: WeatherStatus) -> WeatherStatus? {
         switch(weatherStatus) {
-        case .MainlyClear:
-            return WeatherStatus.MainlySunny
-        case .AFewFlurries,
-             .LightSnowshower,
-             .PeriodsOfLightSnow,
-             .PeriodsOfSnow:
-            return WeatherStatus.LightSnow
-        case .AFewShowers,
-             .LightRainshower,
-             .PeriodsOfRain,
-             .Showers,
-             .ChanceOfRain,
-             .Precipitation:
-            return WeatherStatus.LightRain
-        case .AMixOfSunAndCloud,
-             .CloudyPeriods,
-             .PartlyCloudy:
-            return WeatherStatus.AFewClouds
-        case .ChanceOfFlurries,
-             .ChanceOfLightSnow,
-             .CloudyWithXPercentChanceOfFlurries:
-            return WeatherStatus.ChanceOfSnow
-        case .ChanceOfRainShowersOrFlurries,
-             .PeriodsOfLightSnowMixedWithRain,
-             .ChanceOfSnowMixedWithRain,
-             .ChanceOfSnowOrRain:
-            return WeatherStatus.AFewRainShowersOrFlurries
-        case .RainOrFreezingRain:
-            return WeatherStatus.PeriodsOfRainOrFreezingRain
-        case .ChanceOfShowersOrDrizzle,
-             .ShowersOrDrizzle,
-             .RainOrDrizzle,
-             .PeriodsOfDrizzleOrRain,
-             .PeriodsOfDrizzleMixedWithRain,
-             .ChanceOfDrizzleOrRain,
-             .DrizzleOrRain,
-             .RainAtTimesHeavyOrDrizzle,
-             .AFewShowersOrDrizzle,
-             .ChanceOfRainOrDrizzle:
-            return WeatherStatus.PeriodsOfRainOrDrizzle
-        case .FreezingDrizzleOrRain:
-            return WeatherStatus.PeriodsOfFreezingDrizzleOrRain
-        case .DrizzleMixedWithFreezingDrizzle,
-             .FreezingDrizzleOrDrizzle,
-             .PeriodsOfDrizzleMixedWithFreezingDrizzle,
-             .PeriodsOfFreezingDrizzleOrDrizzle,
-             .PeriodsOfDrizzleOrFreezingDrizzle:
-            return WeatherStatus.ChanceOfDrizzleMixedWithFreezingDrizzle
-        case .Flurries:
-            return WeatherStatus.Snow
-        case .FlurriesAtTimesHeavy:
-            return WeatherStatus.SnowAtTimesHeavy
-        case .FlurriesOrRainShowers,
-             .PeriodsOfRainMixedWithSnow,
-             .PeriodsOfSnowOrRain,
-             .RainShowersOrFlurries,
-             .SnowMixedWithRain,
-             .SnowOrRain,
-             .SnowAtTimesHeavyMixedWithRain,
-             .PeriodsOfSnowMixedWithRain,
-             .RainMixedWithSnow,
-             .LightSnowMixedWithRain,
-             .LightSnowOrRain,
-             .RainAtTimesHeavyOrSnow,
-             .SnowAtTimesHeavyOrRain:
-            return WeatherStatus.PeriodsOfRainOrSnow
-        case .FreezingRainOrSnow,
-             .PeriodsOfSnowMixedWithFreezingRain,
-             .PeriodsOfFreezingRainOrSnow,
-             .FreezingRainMixedWithSnow,
-             .SnowOrFreezingRain,
-             .LightSnowOrFreezingRain:
-            return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
-        case .PeriodsOfLightSnowMixedWithFreezingDrizzle,
-             .PeriodsOfSnowOrFreezingDrizzle,
-             .PeriodsOfSnowMixedWithFreezingDrizzle:
-            return WeatherStatus.SnowMixedWithFreezingDrizzle
-        case .IncreasingCloudiness:
-            return WeatherStatus.Clearing
-        case .Overcast:
-            return WeatherStatus.Cloudy
-        case .PeriodsOfDrizzle:
-            return WeatherStatus.ChanceOfDrizzle
-        case .SnowAndBlowingSnow:
-            return WeatherStatus.LightSnowAndBlowingSnow
-        case .WetFlurries:
-            return WeatherStatus.WetSnow
-        case .Fog,
-             .Haze,
-             .FogPatches,
-             .FogDissipating:
-            return WeatherStatus.Mist
-        case .PeriodsOfFreezingDrizzle,
-             .ChanceOfFreezingDrizzle:
-            return WeatherStatus.LightFreezingDrizzle
-        case .PeriodsOfFreezingRainMixedWithIcePellets:
-            return WeatherStatus.FreezingRainMixedWithIcePellets
-        case .ChanceOfWetFlurriesOrRainShowers,
-             .PeriodsOfWetSnowOrRain,
-             .WetFlurriesOrRainShowers:
-            return WeatherStatus.ChanceOfRainShowersOrWetFlurries
-        case .LightWetSnow:
-            return WeatherStatus.ChanceOfWetFlurries
-        case .HeavyRainshower,
-             .ChanceOfShowersAtTimesHeavy,
-             .ShowersAtTimesHeavy:
-            return WeatherStatus.RainAtTimesHeavy
-        case .AFewShowersOrThunderstorms,
-             .Thunderstorm,
-             .ThunderstormWithLightRainshowers,
-             .ShowersOrThunderstorms,
-             .ThunderstormWithLightRain,
-             .ChanceOfThunderstorms,
-             .ShowersAtTimesHeavyOrThundershowers:
-            return WeatherStatus.ChanceOfShowersOrThunderstorms
-        case .SnowOrIcePellets,
-             .IcePelletsOrSnow:
-            return WeatherStatus.SnowMixedWithIcePellets
+        case .mainlyClear:
+            return WeatherStatus.mainlySunny
+        case .aFewFlurries,
+             .lightSnowshower,
+             .periodsOfLightSnow,
+             .periodsOfSnow:
+            return WeatherStatus.lightSnow
+        case .aFewShowers,
+             .lightRainshower,
+             .periodsOfRain,
+             .showers,
+             .chanceOfRain,
+             .precipitation:
+            return WeatherStatus.lightRain
+        case .aMixOfSunAndCloud,
+             .cloudyPeriods,
+             .partlyCloudy:
+            return WeatherStatus.aFewClouds
+        case .chanceOfFlurries,
+             .chanceOfLightSnow,
+             .cloudyWithXPercentChanceOfFlurries:
+            return WeatherStatus.chanceOfSnow
+        case .chanceOfRainShowersOrFlurries,
+             .periodsOfLightSnowMixedWithRain,
+             .chanceOfSnowMixedWithRain,
+             .chanceOfSnowOrRain:
+            return WeatherStatus.aFewRainShowersOrFlurries
+        case .rainOrFreezingRain:
+            return WeatherStatus.periodsOfRainOrFreezingRain
+        case .chanceOfShowersOrDrizzle,
+             .showersOrDrizzle,
+             .rainOrDrizzle,
+             .periodsOfDrizzleOrRain,
+             .periodsOfDrizzleMixedWithRain,
+             .chanceOfDrizzleOrRain,
+             .drizzleOrRain,
+             .rainAtTimesHeavyOrDrizzle,
+             .aFewShowersOrDrizzle,
+             .chanceOfRainOrDrizzle:
+            return WeatherStatus.periodsOfRainOrDrizzle
+        case .freezingDrizzleOrRain:
+            return WeatherStatus.periodsOfFreezingDrizzleOrRain
+        case .drizzleMixedWithFreezingDrizzle,
+             .freezingDrizzleOrDrizzle,
+             .periodsOfDrizzleMixedWithFreezingDrizzle,
+             .periodsOfFreezingDrizzleOrDrizzle,
+             .periodsOfDrizzleOrFreezingDrizzle:
+            return WeatherStatus.chanceOfDrizzleMixedWithFreezingDrizzle
+        case .flurries:
+            return WeatherStatus.snow
+        case .flurriesAtTimesHeavy:
+            return WeatherStatus.snowAtTimesHeavy
+        case .flurriesOrRainShowers,
+             .periodsOfRainMixedWithSnow,
+             .periodsOfSnowOrRain,
+             .rainShowersOrFlurries,
+             .snowMixedWithRain,
+             .snowOrRain,
+             .snowAtTimesHeavyMixedWithRain,
+             .periodsOfSnowMixedWithRain,
+             .rainMixedWithSnow,
+             .lightSnowMixedWithRain,
+             .lightSnowOrRain,
+             .rainAtTimesHeavyOrSnow,
+             .snowAtTimesHeavyOrRain:
+            return WeatherStatus.periodsOfRainOrSnow
+        case .freezingRainOrSnow,
+             .periodsOfSnowMixedWithFreezingRain,
+             .periodsOfFreezingRainOrSnow,
+             .freezingRainMixedWithSnow,
+             .snowOrFreezingRain,
+             .lightSnowOrFreezingRain:
+            return WeatherStatus.periodsOfLightSnowOrFreezingRain
+        case .periodsOfLightSnowMixedWithFreezingDrizzle,
+             .periodsOfSnowOrFreezingDrizzle,
+             .periodsOfSnowMixedWithFreezingDrizzle:
+            return WeatherStatus.snowMixedWithFreezingDrizzle
+        case .increasingCloudiness:
+            return WeatherStatus.clearing
+        case .overcast:
+            return WeatherStatus.cloudy
+        case .periodsOfDrizzle:
+            return WeatherStatus.chanceOfDrizzle
+        case .snowAndBlowingSnow:
+            return WeatherStatus.lightSnowAndBlowingSnow
+        case .wetFlurries:
+            return WeatherStatus.wetSnow
+        case .fog,
+             .haze,
+             .fogPatches,
+             .fogDissipating:
+            return WeatherStatus.mist
+        case .periodsOfFreezingDrizzle,
+             .chanceOfFreezingDrizzle:
+            return WeatherStatus.lightFreezingDrizzle
+        case .periodsOfFreezingRainMixedWithIcePellets:
+            return WeatherStatus.freezingRainMixedWithIcePellets
+        case .chanceOfWetFlurriesOrRainShowers,
+             .periodsOfWetSnowOrRain,
+             .wetFlurriesOrRainShowers:
+            return WeatherStatus.chanceOfRainShowersOrWetFlurries
+        case .lightWetSnow:
+            return WeatherStatus.chanceOfWetFlurries
+        case .heavyRainshower,
+             .chanceOfShowersAtTimesHeavy,
+             .showersAtTimesHeavy:
+            return WeatherStatus.rainAtTimesHeavy
+        case .aFewShowersOrThunderstorms,
+             .thunderstorm,
+             .thunderstormWithLightRainshowers,
+             .showersOrThunderstorms,
+             .thunderstormWithLightRain,
+             .chanceOfThunderstorms,
+             .showersAtTimesHeavyOrThundershowers:
+            return WeatherStatus.chanceOfShowersOrThunderstorms
+        case .snowOrIcePellets,
+             .icePelletsOrSnow:
+            return WeatherStatus.snowMixedWithIcePellets
         default:
             return nil
         }
     }
     
-    static func getMinMaxImage(weatherInfo: WeatherInformation, header: Bool) -> UIImage {
+    static func getMinMaxImage(_ weatherInfo: WeatherInformation, header: Bool) -> UIImage {
         let name = getMinMaxImageName(weatherInfo)
         
         if header {
@@ -205,12 +205,12 @@ class WeatherHelper {
         }
     }
     
-    static func getMinMaxImageName(weatherInfo: WeatherInformation) -> String {
+    static func getMinMaxImageName(_ weatherInfo: WeatherInformation) -> String {
         var name = "up"
         
-        if weatherInfo.tendancy == Tendency.Minimum {
+        if weatherInfo.tendancy == Tendency.minimum {
             name = "down"
-        } else if weatherInfo.tendancy == Tendency.Steady {
+        } else if weatherInfo.tendancy == Tendency.steady {
             if weatherInfo.night {
                 name = "down"
             }
@@ -219,7 +219,7 @@ class WeatherHelper {
         return name
     }
     
-    static func getIndexAjust(weatherInformations:[WeatherInformation]) -> Int {
+    static func getIndexAjust(_ weatherInformations:[WeatherInformation]) -> Int {
         var indexAjust = 1
         
         if weatherInformations.count == 0 {
@@ -227,15 +227,15 @@ class WeatherHelper {
         }
         
         let weatherInfoBase = weatherInformations[0]
-        if weatherInfoBase.weatherDay != WeatherDay.Now {
+        if weatherInfoBase.weatherDay != WeatherDay.now {
             indexAjust = 0
         }
         
         return indexAjust
     }
     
-    static func getWeatherDayWhenText(weatherInfo: WeatherInformation) -> String {
-        if weatherInfo.weatherDay == WeatherDay.Today {
+    static func getWeatherDayWhenText(_ weatherInfo: WeatherInformation) -> String {
+        if weatherInfo.weatherDay == WeatherDay.today {
             if weatherInfo.night {
                 return weatherInfo.when
             } else {
@@ -245,50 +245,50 @@ class WeatherHelper {
             if weatherInfo.night {
                 return weatherInfo.when
             } else {
-                let today = NSDate()
+                let today = Date()
                 let theDate = addDaystoGivenDate(today, NumberOfDaysToAdd: weatherInfo.weatherDay.rawValue)
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 let lang = PreferenceHelper.getLanguage()
-                dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
+                dateFormatter.locale = Locale(localeIdentifier: String(lang))
                 if(lang == Language.French) {
                     dateFormatter.dateFormat = "d MMMM"
                 } else {
                     dateFormatter.dateFormat = "MMMM d"
                 }
                 
-                return weatherInfo.when + " " + dateFormatter.stringFromDate(theDate)
+                return weatherInfo.when + " " + dateFormatter.string(from: theDate)
             }
         }
     }
     
-    static func addDaystoGivenDate(baseDate:NSDate,NumberOfDaysToAdd:Int)->NSDate
+    static func addDaystoGivenDate(_ baseDate:Date,NumberOfDaysToAdd:Int)->Date
     {
-        let dateComponents = NSDateComponents()
-        let CurrentCalendar = NSCalendar.currentCalendar()
-        let CalendarOption = NSCalendarOptions()
+        var dateComponents = DateComponents()
+        let CurrentCalendar = Calendar.current
+        let CalendarOption = Calendar.Options()
         
         dateComponents.day = NumberOfDaysToAdd
         
-        let newDate = CurrentCalendar.dateByAddingComponents(dateComponents, toDate: baseDate, options: CalendarOption)
+        let newDate = CurrentCalendar.date(byAdding: dateComponents, to: baseDate, options: CalendarOption)
         return newDate!
     }
     
-    static func textToImageMinMax(weather: WeatherInformation)->UIImage{
+    static func textToImageMinMax(_ weather: WeatherInformation)->UIImage{
         let baseImage = getMinMaxImage(weather, header: false)
         let text = String(weather.temperature)
         
         var offsetLeft = 14
         var offsetTop = 6
-        var textFont = UIFont.systemFontOfSize(55)
+        var textFont = UIFont.systemFont(ofSize: 55)
         if text.characters.count == 1 {
             offsetLeft = 28
         } else if text.characters.count == 3 {
             offsetLeft = 8
             offsetTop = 14
-            textFont = UIFont.systemFontOfSize(45)
+            textFont = UIFont.systemFont(ofSize: 45)
         }
         
-        let textColor = UIColor.whiteColor()
+        let textColor = UIColor.white()
         
         //Setup the image context using the passed image.
         UIGraphicsBeginImageContext(baseImage.size)
@@ -299,14 +299,14 @@ class WeatherHelper {
             ]
         
         //Put the image into a rectangle as large as the original image.
-        baseImage.drawInRect(CGRectMake(0, 0, baseImage.size.width, baseImage.size.height))
+        baseImage.draw(in: CGRect(x: 0, y: 0, width: baseImage.size.width, height: baseImage.size.height))
         
         // Creating a point within the space that is as bit as the image.
-        let rect: CGRect = CGRectMake(CGFloat(offsetLeft), CGFloat(offsetTop), baseImage.size.width, baseImage.size.height)
+        let rect: CGRect = CGRect(x: CGFloat(offsetLeft), y: CGFloat(offsetTop), width: baseImage.size.width, height: baseImage.size.height)
         
-        text.drawInRect(rect, withAttributes: textFontAttributes)
+        text.draw(in: rect, withAttributes: textFontAttributes)
         
-        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         
         // End the context now that we have the image we need
         UIGraphicsEndImageContext()
@@ -315,12 +315,12 @@ class WeatherHelper {
         
     }
     
-    static func getRefreshTime(wrapper: WeatherInformationWrapper) -> String {
+    static func getRefreshTime(_ wrapper: WeatherInformationWrapper) -> String {
         let lang = PreferenceHelper.getLanguage()
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: String(lang))
-        dateFormatter.timeStyle = .ShortStyle
-        return "Last refresh".localized() + " " + dateFormatter.stringFromDate(wrapper.lastRefresh)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(localeIdentifier: String(lang))
+        dateFormatter.timeStyle = .short
+        return "Last refresh".localized() + " " + dateFormatter.string(from: wrapper.lastRefresh as Date)
     }
 }

@@ -16,7 +16,7 @@ class AlertInformation{
     init() {
         alertText = ""
         url = ""
-        type = AlertType.None
+        type = AlertType.none
     }
     
     init(alertText: String, url: String, type:AlertType) {

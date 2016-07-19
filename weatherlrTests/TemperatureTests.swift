@@ -11,7 +11,7 @@ import XCTest
 
 
 class TemperatureTests: XCTestCase {
-    let testBundle = NSBundle(forClass: TemperatureTests.self)
+    let testBundle = Bundle(for: TemperatureTests.self)
 
     func testNoMissingTemperature1() {
         noMissingTemperature("/cities1")
@@ -34,23 +34,23 @@ class TemperatureTests: XCTestCase {
     }
     
     
-    func noMissingTemperature(subPath: String) {
-        let fileManager = NSFileManager.defaultManager()
+    func noMissingTemperature(_ subPath: String) {
+        let fileManager = FileManager.default
         let path = testBundle.resourcePath!
-        let items = try! fileManager.contentsOfDirectoryAtPath(path + subPath)
+        let items = try! fileManager.contentsOfDirectory(atPath: path + subPath)
         
         for item in items {
-            let url = NSURL(fileURLWithPath: item)
-            let baseName = url.URLByDeletingPathExtension?.lastPathComponent!
+            let url = URL(fileURLWithPath: item)
+            let baseName = try! url.deletingPathExtension().lastPathComponent!
             
-            if let file = testBundle.pathForResource(subPath + "/" + baseName!, ofType: "xml")
+            if let file = testBundle.pathForResource(subPath + "/" + baseName, ofType: "xml")
             {
                 var lang = Language.French
-                if file.containsString(String(Language.English)) {
+                if file.contains(String(Language.English)) {
                     lang = Language.English
                 }
                 
-                let xmlData = NSData(contentsOfFile: file)!
+                let xmlData = try! Data(contentsOf: URL(fileURLWithPath: file))
                 let parser = RssParser(xmlData: xmlData, language: lang)
                 
                 let rssEntries = parser.parse()
@@ -66,7 +66,7 @@ class TemperatureTests: XCTestCase {
                     
                     var temperatureText:String
                     var result:Int
-                    if weatherDay == WeatherDay.Now {
+                    if weatherDay == WeatherDay.now {
                         temperatureText = performer.extractTemperatureNowFromTitle(rssEntry.title)
                         result = performer.convertTemperature(temperatureText)
                     } else {
@@ -74,13 +74,13 @@ class TemperatureTests: XCTestCase {
                         result = performer.convertTemperatureWithTextSign(temperatureText)
                     }
                     
-                    let firstT = temperatureText.startIndex.advancedBy(0)
+                    let firstT = temperatureText.index(temperatureText.startIndex, offsetBy: 0)
                     var zero = temperatureText == "zero" || temperatureText == "zéro"
                     if temperatureText != "" && temperatureText[firstT] == "0" {
                         zero = true
                     } else if temperatureText.characters.count > 1 {
-                        let secondT = temperatureText.startIndex.advancedBy(2)
-                        if temperatureText.substringToIndex(secondT) == "-0" {
+                        let secondT = temperatureText.index(temperatureText.startIndex, offsetBy: 2)
+                        if temperatureText.substring(to: secondT) == "-0" {
                             zero = true
                         }
                     }

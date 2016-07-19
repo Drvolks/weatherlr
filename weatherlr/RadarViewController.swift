@@ -17,17 +17,17 @@ class RadarViewController: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         
         let url = UrlHelper.getRadarUrl(city!)
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
+        webView.loadRequest(URLRequest(url: URL(string: url)!))
         
         super.viewDidLoad()
 
         self.title = "Radar".localized()
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         // wb-sm
         let js = "document.getElementById('wb-bc').remove(); document.getElementById('wb-glb-mn').remove(); document.getElementsByClassName('container hidden-print')[0].remove(); document.getElementById('links').remove(); document.getElementById('weather-topics').remove(); document.getElementsByClassName('row pagedetails')[0].remove(); document.getElementsByClassName('gc-nttvs container')[0].remove(); document.getElementById('wb-info').remove(); document.getElementById('wb-sm').remove(); document.getElementsByClassName('well')[0].remove(); document.getElementById('wb-srch').remove();"
-        webView.stringByEvaluatingJavaScriptFromString(js)
+        webView.stringByEvaluatingJavaScript(from: js)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,8 +36,8 @@ class RadarViewController: UIViewController, UIWebViewDelegate {
     }
     
 
-    @IBAction func done(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 
 }

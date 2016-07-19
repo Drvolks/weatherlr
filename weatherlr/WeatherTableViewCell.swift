@@ -20,30 +20,30 @@ class WeatherTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
-    func populate(weatherInformationWrapper: WeatherInformationWrapper, indexPath: NSIndexPath) {
+    func populate(_ weatherInformationWrapper: WeatherInformationWrapper, indexPath: IndexPath) {
         let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
         
-        let weatherInfo = weatherInformationWrapper.weatherInformations[indexPath.row+indexAjust]
+        let weatherInfo = weatherInformationWrapper.weatherInformations[(indexPath as NSIndexPath).row+indexAjust]
         weatherImage.image = weatherInfo.image()
         weatherDetailLabel.text = weatherInfo.detail
         whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear()
         
-        if weatherInfo.weatherDay == WeatherDay.Today && weatherInformationWrapper.weatherInformations[0].weatherDay == .Now {
-            minMaxLabel.hidden = true
-            minMaxImage.hidden = true
+        if weatherInfo.weatherDay == WeatherDay.today && weatherInformationWrapper.weatherInformations[0].weatherDay == .now {
+            minMaxLabel.isHidden = true
+            minMaxImage.isHidden = true
         } else {
             minMaxLabel.text = String(weatherInfo.temperature)
             minMaxImage.image = WeatherHelper.getMinMaxImage(weatherInfo, header: false)
             
-            minMaxLabel.hidden = false
-            minMaxImage.hidden = false
+            minMaxLabel.isHidden = false
+            minMaxImage.isHidden = false
         }
     }
 }

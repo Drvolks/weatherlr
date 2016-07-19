@@ -30,7 +30,7 @@ class SettingsViewController: UITableViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         savedCities = PreferenceHelper.getFavoriteCities()
@@ -55,15 +55,15 @@ class SettingsViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-    @IBAction func done(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == citySection {
             return savedCities.count
         } else if section == langSection {
@@ -73,110 +73,110 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section == citySection {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if (indexPath as NSIndexPath).section == citySection {
             return true
         } else {
             return false
         }
     }
     
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        if indexPath.section == citySection {
-            return UITableViewCellEditingStyle.Delete
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if (indexPath as NSIndexPath).section == citySection {
+            return UITableViewCellEditingStyle.delete
         } else {
-            return UITableViewCellEditingStyle.None
+            return UITableViewCellEditingStyle.none
         }
     }
     
-    override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        if indexPath.section == citySection {
-            let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! CityTableViewCell
+    override func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        if (indexPath as NSIndexPath).section == citySection {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
             
-            let city = savedCities[indexPath.row]
+            let city = savedCities[(indexPath as NSIndexPath).row]
             cell.cityLabel.text = CityHelper.cityName(city)
             
             if selectedCity != nil && city.id == selectedCity!.id {
-                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 
                 if let currentWeatherInformation = selectedCityWeatherInformation {
-                    cell.weatherImage.hidden = false
-                    cell.activityIndicator.hidden = true
+                    cell.weatherImage.isHidden = false
+                    cell.activityIndicator.isHidden = true
                     cell.weatherImage.image = currentWeatherInformation.image()
                 } else {
                     fetchWeather(cell, city: city)
                 }
             } else {
-                cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
                 
                 fetchWeather(cell, city: city)
             }
             
             return cell;
-        } else if indexPath.section == langSection {
-            let cell = tableView.dequeueReusableCellWithIdentifier("langCell", forIndexPath: indexPath) as! LangTableViewCell
+        } else if (indexPath as NSIndexPath).section == langSection {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "langCell", for: indexPath) as! LangTableViewCell
             
-            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.accessoryType = UITableViewCellAccessoryType.none
             
-            if indexPath.row == francaisRow {
+            if (indexPath as NSIndexPath).row == francaisRow {
                 cell.langLabel.text = "Français"
                 
                 if Language.French == PreferenceHelper.getLanguage() {
-                    cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                    cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 }
             } else {
                 cell.langLabel.text = "English"
                 
                 if Language.English == PreferenceHelper.getLanguage() {
-                    cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                    cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 }
             }
             
             return cell
-        } else if indexPath.section == contactSection {
-            let cell = tableView.dequeueReusableCellWithIdentifier("contactCell", forIndexPath: indexPath) as! ContactTableViewCell
+        } else if (indexPath as NSIndexPath).section == contactSection {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
             
             cell.contactText.text = "Contact".localized()
-            cell.backgroundColor = UIColor.clearColor()
+            cell.backgroundColor = UIColor.clear()
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("dataProviderCell", forIndexPath: indexPath) as! DataProviderTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dataProviderCell", for: indexPath) as! DataProviderTableViewCell
             
             cell.dataProviderLabel.text = "Provider".localized()
-            cell.backgroundColor = UIColor.clearColor()
+            cell.backgroundColor = UIColor.clear()
             
             return cell
 
         }
     }
     
-    func fetchWeather(cell: CityTableViewCell, city: City) {
-        cell.weatherImage.hidden = true
-        cell.activityIndicator.hidden = false
+    func fetchWeather(_ cell: CityTableViewCell, city: City) {
+        cell.weatherImage.isHidden = true
+        cell.activityIndicator.isHidden = false
         cell.activityIndicator.startAnimating()
         
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+        let priority = DispatchQueue.GlobalAttributes.qosDefault
+        DispatchQueue.global(attributes: priority).async {
             let weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 cell.activityIndicator.stopAnimating()
                 
-                cell.activityIndicator.hidden = true
-                cell.weatherImage.hidden = false
+                cell.activityIndicator.isHidden = true
+                cell.weatherImage.isHidden = false
                 
                 if weatherInformationWrapper.weatherInformations.count > 0 {
                     let weatherInfo = weatherInformationWrapper.weatherInformations[0]
                     cell.weatherImage.image = weatherInfo.image()
                 } else {
-                    cell.weatherImage.image = UIImage(named: String(WeatherStatus.Blank))
+                    cell.weatherImage.image = UIImage(named: String(WeatherStatus.blank))
                 }
             }
         }
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == citySection {
             return "City".localized()
         } else if section == langSection {
@@ -186,52 +186,52 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == citySection {
-            if editingStyle == .Delete {
-                let city = savedCities[indexPath.row]
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).section == citySection {
+            if editingStyle == .delete {
+                let city = savedCities[(indexPath as NSIndexPath).row]
                 
-                savedCities.removeAtIndex(indexPath.row)
+                savedCities.remove(at: (indexPath as NSIndexPath).row)
                 PreferenceHelper.removeFavorite(city)
                 
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == citySection {
-            let city = savedCities[indexPath.row]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).section == citySection {
+            let city = savedCities[(indexPath as NSIndexPath).row]
             
             PreferenceHelper.addFavorite(city)
             
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         } else {
-            if indexPath.row == francaisRow {
+            if (indexPath as NSIndexPath).row == francaisRow {
                 PreferenceHelper.saveLanguage(Language.French)
             } else {
                 PreferenceHelper.saveLanguage(Language.English)
             }
             
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
             
             tableView.reloadSectionIndexTitles()
             tableView.reloadData()
         }
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
         // Toggles the edit button state
         super.setEditing(editing, animated: animated)
         
         if editing {
             navigationItem.leftBarButtonItem!.title = "Done".localized()
-            addButton.enabled = false
-            doneButton.enabled = false
+            addButton.isEnabled = false
+            doneButton.isEnabled = false
         } else {
             navigationItem.leftBarButtonItem!.title = "Edit".localized()
-            addButton.enabled = true
-            doneButton.enabled = true
+            addButton.isEnabled = true
+            doneButton.isEnabled = true
             
             libelles()
         }
@@ -244,13 +244,13 @@ class SettingsViewController: UITableViewController {
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addCity" {
             selectedCityWeatherInformation = nil
         }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .Default
+        return .default
     }
 }

@@ -9,19 +9,19 @@
 import UIKit
 
 class RssParser : RssParserBase {
-    var parser:NSXMLParser
+    var parser:XMLParser
     var rssEntries = [RssEntry]()
     var language:Language
     
     let entryElement = "entry"
     
-    init(xmlData: NSData, language: Language) {
-        parser = NSXMLParser(data: xmlData)
+    init(xmlData: Data, language: Language) {
+        parser = XMLParser(data: xmlData)
         self.language = language
     }
     
-    init?(url: NSURL, language: Language) {
-        if let tryParser = NSXMLParser(contentsOfURL: url) {
+    init?(url: URL, language: Language) {
+        if let tryParser = XMLParser(contentsOf: url) {
             parser = tryParser
         } else {
             return nil
@@ -37,7 +37,7 @@ class RssParser : RssParserBase {
         return rssEntries
     }
     
-    @objc override func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    @objc override func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         super.parser(parser, didStartElement: elementName, namespaceURI: namespaceURI, qualifiedName: qName, attributes: attributeDict)
         switch elementName {
         case entryElement:
@@ -48,7 +48,7 @@ class RssParser : RssParserBase {
         }
     }
     
-    @objc func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    @objc func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
     }
     

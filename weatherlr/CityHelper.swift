@@ -9,7 +9,7 @@
 import Foundation
 
 class CityHelper {
-    static func searchCity(searchText: String, allCityList: [City]) -> [City] {
+    static func searchCity(_ searchText: String, allCityList: [City]) -> [City] {
         var newFilteredList = [City]()
         
         for i in 0..<allCityList.count {
@@ -17,9 +17,9 @@ class CityHelper {
             
             let name = cityNameForSearch(city)
             
-            let searched = searchText.uppercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
+            let searched = searchText.uppercased().folding(locale: Locale(localeIdentifier: "en"))
             
-            if name.containsString(searched) {
+            if name.contains(searched) {
                 newFilteredList.append(city)
             }
         }
@@ -27,7 +27,7 @@ class CityHelper {
         return newFilteredList
     }
     
-    static func searchCityStartingWith(searchText: String, allCityList: [City]) -> [City] {
+    static func searchCityStartingWith(_ searchText: String, allCityList: [City]) -> [City] {
         var newFilteredList = [City]()
         
         for i in 0..<allCityList.count {
@@ -35,7 +35,7 @@ class CityHelper {
             
             let name = cityNameForSearch(city)
             
-            if name.uppercaseString.hasPrefix(searchText) {
+            if name.uppercased().hasPrefix(searchText) {
                 newFilteredList.append(city)
             }
         }
@@ -43,7 +43,7 @@ class CityHelper {
         return newFilteredList
     }
     
-    static func searchSingleCity(searchText: String, allCityList: [City]) -> City? {
+    static func searchSingleCity(_ searchText: String, allCityList: [City]) -> City? {
         let result = searchCity(searchText, allCityList: allCityList)
         if result.count > 0 {
             return result[0]
@@ -53,18 +53,18 @@ class CityHelper {
     }
     
     
-    static func cityNameForSearch(city: City) -> String {
+    static func cityNameForSearch(_ city: City) -> String {
         var name = city.englishName
         if(PreferenceHelper.isFrench()) {
             name = city.frenchName
         }
         
-        name = name.uppercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale(localeIdentifier: "en"))
+        name = name.uppercased().folding(locale: Locale(localeIdentifier: "en"))
         
         return name
     }
     
-    static func cityName(city:City) -> String {
+    static func cityName(_ city:City) -> String {
         var name = city.englishName
         if(PreferenceHelper.isFrench()) {
             name = city.frenchName
@@ -73,13 +73,13 @@ class CityHelper {
         return name;
     }
     
-    static func sortCityList(cityListToSort: [City]) -> [City] {
+    static func sortCityList(_ cityListToSort: [City]) -> [City] {
         var newCityList = cityListToSort
         
         if PreferenceHelper.isFrench() {
-            newCityList.sortInPlace({ $0.frenchName < $1.frenchName })
+            newCityList.sort(isOrderedBefore: { $0.frenchName < $1.frenchName })
         } else {
-            newCityList.sortInPlace({ $0.englishName < $1.englishName })
+            newCityList.sort(isOrderedBefore: { $0.englishName < $1.englishName })
         }
         
         return newCityList

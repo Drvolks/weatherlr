@@ -25,17 +25,17 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         SharedWeather.instance.unregister(self)
     }
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: AnyObject?) {
+        super.awake(withContext: context)
         
         SharedWeather.instance.register(self)
         
         selectCityButton.setTitle("Select city".localized())
         
         clearAllMenuItems()
-        addMenuItemWithItemIcon(WKMenuItemIcon.Info, title: "Français", action: #selector(InterfaceController.francaisSelected))
-        addMenuItemWithItemIcon(WKMenuItemIcon.Info, title: "English", action: #selector(InterfaceController.englishSelected))
-        addMenuItemWithItemIcon(WKMenuItemIcon.More, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
+        addMenuItem(with: WKMenuItemIcon.info, title: "Français", action: #selector(InterfaceController.francaisSelected))
+        addMenuItem(with: WKMenuItemIcon.info, title: "English", action: #selector(InterfaceController.englishSelected))
+        addMenuItem(with: WKMenuItemIcon.more, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
     }
 
     override func willActivate() {
@@ -74,10 +74,10 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         var rowTypes = [String]()
         for index in 0..<SharedWeather.instance.wrapper.weatherInformations.count {
             let weather = SharedWeather.instance.wrapper.weatherInformations[index]
-            if weather.weatherDay == WeatherDay.Now {
+            if weather.weatherDay == WeatherDay.now {
                 rowTypes.append("currentWeatherRow")
             }
-            else if weather.weatherDay == WeatherDay.Today {
+            else if weather.weatherDay == WeatherDay.today {
                 rowTypes.append("nextWeatherRow")
             } else {
                 rowTypes.append("weatherRow")
@@ -91,7 +91,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
             
             switch(rowTypes[index]) {
             case "currentWeatherRow":
-                if let controller = weatherTable.rowControllerAtIndex(index) as? CurrentWeatherRowController {
+                if let controller = weatherTable.rowController(at: index) as? CurrentWeatherRowController {
                     if SharedWeather.instance.wrapper.weatherInformations.count > index+1 {
                         let nextWeather = SharedWeather.instance.wrapper.weatherInformations[index+1]
                         controller.nextWeather = nextWeather
@@ -101,7 +101,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
                 }
                 break
             case "nextWeatherRow":
-                if let controller = weatherTable.rowControllerAtIndex(index) as? NextWeatherRowController {
+                if let controller = weatherTable.rowController(at: index) as? NextWeatherRowController {
                     if index == 0 {
                         controller.previousWeatherPresent = false
                     }
@@ -109,7 +109,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
                 }
                 break
             case "weatherRow":
-                if let controller = weatherTable.rowControllerAtIndex(index) as? WeatherRowController {
+                if let controller = weatherTable.rowController(at: index) as? WeatherRowController {
                     controller.rowIndex = index
                     controller.weather = weather
                 }
@@ -123,12 +123,12 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     func selectCity() {
         var citieNames = [String]()
         PreferenceHelper.getFavoriteCities().forEach({
-            citieNames.append(CityHelper.cityName($0) + ", " + $0.province.uppercaseString)
+            citieNames.append(CityHelper.cityName($0) + ", " + $0.province.uppercased())
         })
         
-        citieNames.appendContentsOf("abcdefghijklmnopqrstuvwxyz".uppercaseString.characters.map { String($0) })
+        citieNames.append(contentsOf: "abcdefghijklmnopqrstuvwxyz".uppercased().characters.map { String($0) })
         
-        presentTextInputControllerWithSuggestions(citieNames, allowedInputMode: .Plain, completion: { (result) -> Void in
+        presentTextInputController(withSuggestions: citieNames, allowedInputMode: .plain, completion: { (result) -> Void in
             self.didSayCityName(result)
         })
     }
@@ -148,11 +148,11 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         selectCity()
     }
     
-    func didSayCityName(result: AnyObject?) {
+    func didSayCityName(_ result: AnyObject?) {
         if let result = result, let choice = result[0] as? String {
             var match = false;
             PreferenceHelper.getFavoriteCities().forEach({
-                let name = CityHelper.cityName($0) + ", " + $0.province.uppercaseString
+                let name = CityHelper.cityName($0) + ", " + $0.province.uppercased()
                 if name == choice {
                     var refresh = true
                     if let selectedCity = PreferenceHelper.getSelectedCity() {
@@ -172,8 +172,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
                 return
             }
      
-            let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
-            let allCityList = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+            let path = Bundle.main.pathForResource("Cities", ofType: "plist")
+            let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
             let cities:[City]
             
             if choice.characters.count == 1 {
@@ -185,12 +185,12 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
             if cities.count == 1 {
                 cityDidChange(cities[0])
             } else {
-                pushControllerWithName("SelectCity", context: [Constants.cityListKey : cities, Constants.searchTextKey: choice, "delegate": self])
+                pushController(withName: "SelectCity", context: [Constants.cityListKey : cities, Constants.searchTextKey: choice, "delegate": self])
             }
         }
     }
     
-    func cityDidChange(city: City) {
+    func cityDidChange(_ city: City) {
         PreferenceHelper.addFavorite(city)
         SharedWeather.instance.broadcastUpdate(self)
         loadData()

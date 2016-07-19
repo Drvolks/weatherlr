@@ -21,8 +21,8 @@ class SelectCityController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: AnyObject?) {
+        super.awake(withContext: context)
         
         if let context = context {
             cities = context[Constants.cityListKey] as! [City]
@@ -32,16 +32,16 @@ class SelectCityController: WKInterfaceController {
             cityTable.setNumberOfRows(cities.count, withRowType: "CityRow")
             
             for index in 0..<cityTable.numberOfRows {
-                if let controller = cityTable.rowControllerAtIndex(index) as? CityRowController {
+                if let controller = cityTable.rowController(at: index) as? CityRowController {
                     let city = cities[index];
-                    controller.cityLabel.setText(CityHelper.cityName(city) + ", " + city.province.uppercaseString)
+                    controller.cityLabel.setText(CityHelper.cityName(city) + ", " + city.province.uppercased())
                 }
             }
         }
     }
     
     @IBAction func cancel() {
-        popController()
+        pop()
     }
     
     override func willActivate() {
@@ -50,7 +50,7 @@ class SelectCityController: WKInterfaceController {
         searchLabel.setText("Results".localized())
     }
     
-    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         let city = cities[rowIndex]
         
         PreferenceHelper.addFavorite(city)
@@ -59,6 +59,6 @@ class SelectCityController: WKInterfaceController {
             SharedWeather.instance.broadcastUpdate(delegate)
         }
         
-        popController()
+        pop()
     }
 }

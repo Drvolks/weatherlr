@@ -10,7 +10,7 @@ import XCTest
 @testable import weatherlr
 
 class WeatherStatusTests: XCTestCase {
-    let testBundle = NSBundle(forClass: WeatherStatusTests.self)
+    let testBundle = Bundle(for: WeatherStatusTests.self)
     
     func testNoMissingStatus1() {
         noMissingStatus("/cities1")
@@ -33,22 +33,22 @@ class WeatherStatusTests: XCTestCase {
     }
 
     
-    func noMissingStatus(subPath: String) {
-        let fileManager = NSFileManager.defaultManager()
+    func noMissingStatus(_ subPath: String) {
+        let fileManager = FileManager.default
         let path = testBundle.resourcePath!
-        let items = try! fileManager.contentsOfDirectoryAtPath(path + subPath)
+        let items = try! fileManager.contentsOfDirectory(atPath: path + subPath)
         for item in items {
-            let url = NSURL(fileURLWithPath: item)
-            let baseName = url.URLByDeletingPathExtension?.lastPathComponent!
+            let url = URL(fileURLWithPath: item)
+            let baseName = try! url.deletingPathExtension().lastPathComponent!
             
-            if let file = testBundle.pathForResource(subPath + "/" + baseName!, ofType: "xml")
+            if let file = testBundle.pathForResource(subPath + "/" + baseName, ofType: "xml")
             {
                 var lang = Language.French
-                if file.containsString(String(Language.English)) {
+                if file.contains(String(Language.English)) {
                     lang = Language.English
                 }
                 
-                let xmlData = NSData(contentsOfFile: file)!
+                let xmlData = try! Data(contentsOf: URL(fileURLWithPath: file))
                 let parser = RssParser(xmlData: xmlData, language: lang)
                 
                 let rssEntries = parser.parse()
@@ -56,15 +56,15 @@ class WeatherStatusTests: XCTestCase {
                 let weatherInfos = converter.perform()
                 
                 for weatherInfo in weatherInfos {
-                    if WeatherStatus.NA == weatherInfo.weatherStatus {
-                        if weatherInfo.weatherDay == WeatherDay.Now {
+                    if WeatherStatus.na == weatherInfo.weatherStatus {
+                        if weatherInfo.weatherDay == WeatherDay.now {
                             print("Detail: " + weatherInfo.detail)
                         } else {
                             print("Summary: " + weatherInfo.summary)
                         }
                     }
                     
-                    XCTAssertNotEqual(WeatherStatus.NA, weatherInfo.weatherStatus)
+                    XCTAssertNotEqual(WeatherStatus.na, weatherInfo.weatherStatus)
                 }
             }
         }

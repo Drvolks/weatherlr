@@ -19,10 +19,10 @@ class RssParserStub : RssParser {
     }
     
     init?(xmlName: String, language: Language) {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: self.dynamicType)
         if let path = bundle.pathForResource(xmlName, ofType: "xml")
         {
-            let xmlData = NSData(contentsOfFile: path)!
+            let xmlData = try! Data(contentsOf: URL(fileURLWithPath: path))
             super.init(xmlData: xmlData, language: language)
         } else {
             return nil

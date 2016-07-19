@@ -14,15 +14,15 @@ class GradientView: UIView {
         return CAGradientLayer.self
     }
     
-    func gradientWithColors(firstColor : UIColor, _ secondColor : UIColor) {
+    func gradientWithColors(_ firstColor : UIColor, _ secondColor : UIColor) {
         
-        let deviceScale = UIScreen.mainScreen().scale
+        let deviceScale = UIScreen.main().scale
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRectMake(0.0, 300, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
-        gradientLayer.colors = [ firstColor.CGColor, secondColor.CGColor ]
+        gradientLayer.frame = CGRect(x: 0.0, y: 300, width: self.frame.size.width * deviceScale, height: self.frame.size.height * deviceScale)
+        gradientLayer.colors = [ firstColor.cgColor, secondColor.cgColor ]
         
         self.layer.sublayers = nil
-        self.layer.insertSublayer(gradientLayer, atIndex: 0)
+        self.layer.insertSublayer(gradientLayer, at: 0)
     }
     
 }

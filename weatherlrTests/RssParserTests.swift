@@ -11,10 +11,10 @@ import XCTest
 
 class RssParserTests: XCTestCase {
     func testRssParserConstructor() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: self.dynamicType)
         if let path = bundle.pathForResource("TestData", ofType: "xml")
         {
-            let xmlData = NSData(contentsOfFile: path)!
+            let xmlData = try! Data(contentsOf: URL(fileURLWithPath: path))
         
             let result = RssParser(xmlData: xmlData, language: Language.French)
             XCTAssertNotNil(result)
@@ -24,7 +24,7 @@ class RssParserTests: XCTestCase {
     }
     
     func testRssParserConstructorWithUrl() {
-        if let url = NSURL(string: "https://meteo.gc.ca/rss/city/qc-147_f.xml") {
+        if let url = URL(string: "https://meteo.gc.ca/rss/city/qc-147_f.xml") {
             let result = RssParser(url: url, language: Language.French)
             XCTAssertNotNil(result)
         } else {
@@ -33,10 +33,10 @@ class RssParserTests: XCTestCase {
     }
     
     func testParse() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: self.dynamicType)
         if let path = bundle.pathForResource("TestData", ofType: "xml")
         {
-            let xmlData = NSData(contentsOfFile: path)!
+            let xmlData = try! Data(contentsOf: URL(fileURLWithPath: path))
             
             let parser = RssParser(xmlData: xmlData, language: Language.French)
             let result = parser.parse()
@@ -54,7 +54,7 @@ class RssParserTests: XCTestCase {
     }
     
     func testParseFromUrl() {
-        if let url = NSURL(string: "https://meteo.gc.ca/rss/city/qc-147_f.xml") {
+        if let url = URL(string: "https://meteo.gc.ca/rss/city/qc-147_f.xml") {
             if let parser = RssParser(url: url, language: Language.French) {
                 let result = parser.parse()
                 XCTAssertNotNil(result)
@@ -74,11 +74,11 @@ class RssParserTests: XCTestCase {
     }
     
     func testParsePerformance() {
-        self.measureBlock {
-            let bundle = NSBundle(forClass: self.dynamicType)
+        self.measure {
+            let bundle = Bundle(for: self.dynamicType)
             if let path = bundle.pathForResource("TestData", ofType: "xml")
             {
-                let xmlData = NSData(contentsOfFile: path)!
+                let xmlData = try! Data(contentsOf: URL(fileURLWithPath: path))
                 
                 let parser = RssParser(xmlData: xmlData, language: Language.French)
                 let result = parser.parse()

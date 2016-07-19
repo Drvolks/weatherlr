@@ -20,7 +20,7 @@ class CurrentWeatherRowController : NSObject {
             if let weather = weather {
                 let currentTemperature = "Currently".localized() + " " + String(weather.temperature) + "°"
                 
-                if weather.weatherDay == WeatherDay.Now {
+                if weather.weatherDay == WeatherDay.now {
                     currentTemperatureLabel.setText(currentTemperature)
                 } else {
                     currentTemperatureLabel.setText("")

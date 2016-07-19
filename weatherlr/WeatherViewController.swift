@@ -23,18 +23,18 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         
         weatherTable.delegate = self
         weatherTable.dataSource = self
         weatherTable.rowHeight = UITableViewAutomaticDimension
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.tableHeaderView = nil
-        weatherTable.backgroundColor = UIColor.clearColor()
+        weatherTable.backgroundColor = UIColor.clear()
         
         refreshControl = UIRefreshControl()
         refreshLabel()
-        refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), for: UIControlEvents.valueChanged)
         weatherTable.addSubview(refreshControl)
     }
 
@@ -42,35 +42,35 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.didReceiveMemoryWarning()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         if PreferenceHelper.getSelectedCity() != nil {
             refresh(false)
         } else {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addCityNavigation") as! UINavigationController
-                self.presentViewController(viewController, animated: false, completion: nil)
+            DispatchQueue.main.async(execute: { () -> Void in
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as! UINavigationController
+                self.present(viewController, animated: false, completion: nil)
             })
         }
     }
     
     func refreshLabel() {
-        let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
+        let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.white() ]
         let refreshLabel:String
         refreshLabel = WeatherHelper.getRefreshTime(weatherInformationWrapper)
 
-        refreshControl.attributedTitle = NSAttributedString(string: refreshLabel, attributes: refreshControlFont)
+        refreshControl.attributedTitle = AttributedString(string: refreshLabel, attributes: refreshControlFont)
         
         refreshControl.beginRefreshing()
         refreshControl.endRefreshing()
     }
     
-    func refreshFromScroll(sender:AnyObject) {
+    func refreshFromScroll(_ sender:AnyObject) {
         refresh(true)
     }
     
-    func applicationWillEnterForeground(notification: NSNotification) {
+    func applicationWillEnterForeground(_ notification: Notification) {
         refresh(true)
     }
     
@@ -79,16 +79,16 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     
-    func refresh(thread: Bool) {
+    func refresh(_ thread: Bool) {
         if let city = PreferenceHelper.getSelectedCity() {
             self.selectedCity = city
             
             if thread {
-                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                let priority = DispatchQueue.GlobalAttributes.qosDefault
+                DispatchQueue.global(attributes: priority).async {
                     self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
                     
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         self.displayWeather(false)
                     }
                 }
@@ -99,12 +99,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func displayWeather(foreground: Bool) {
+    func displayWeather(_ foreground: Bool) {
         if weatherInformationWrapper.weatherInformations.count == 0 {
             if(foreground) {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("errorNav") as! UINavigationController
-                    self.presentViewController(viewController, animated: false, completion: nil)
+                DispatchQueue.main.async(execute: { () -> Void in
+                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "errorNav") as! UINavigationController
+                    self.present(viewController, animated: false, completion: nil)
                 })
             }
         } else {
@@ -119,8 +119,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func decorate() {
-        var colorDay = UIColor(weatherColor: WeatherColor.ClearDay)
-        var colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
+        var colorDay = UIColor(weatherColor: WeatherColor.clearDay)
+        var colorNight = UIColor(weatherColor: WeatherColor.clearNight)
         
         if weatherInformationWrapper.weatherInformations.count > 0 {
             let weatherInfo = weatherInformationWrapper.weatherInformations[0]
@@ -128,17 +128,17 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             colorDay = UIColor(weatherColor: weatherInfo.color())
             
             switch weatherInfo.color() {
-            case .ClearDay:
-                colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
+            case .clearDay:
+                colorNight = UIColor(weatherColor: WeatherColor.clearNight)
                 break
-            case .SnowDay:
-                colorNight = UIColor(weatherColor: WeatherColor.SnowNight)
+            case .snowDay:
+                colorNight = UIColor(weatherColor: WeatherColor.snowNight)
                 break
-            case .CloudyDay:
-                colorNight = UIColor(weatherColor: WeatherColor.CloudyNight)
+            case .cloudyDay:
+                colorNight = UIColor(weatherColor: WeatherColor.cloudyNight)
                 break
             default:
-                colorNight = UIColor(weatherColor: WeatherColor.DefaultColor)
+                colorNight = UIColor(weatherColor: WeatherColor.defaultColor)
             }
         }
         
@@ -152,42 +152,42 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         if weatherInformationWrapper.alerts.count > 0 {
-            warningBarButton.enabled = true
-            warningBarButton.tintColor = UIColor.redColor()
+            warningBarButton.isEnabled = true
+            warningBarButton.tintColor = UIColor.red()
         } else {
-            warningBarButton.enabled = false
-            warningBarButton.tintColor = UIColor.clearColor()
+            warningBarButton.isEnabled = false
+            warningBarButton.tintColor = UIColor.clear()
         }
         
         if selectedCity != nil && !selectedCity!.radarId.isEmpty {
-            radarButton.enabled = true
+            radarButton.isEnabled = true
             radarButton.tintColor = nil
         } else {
-            radarButton.enabled = false
-            radarButton.tintColor = UIColor.clearColor()
+            radarButton.isEnabled = false
+            radarButton.tintColor = UIColor.clear()
         }
     }
 
-    func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
         
         return weatherInformationWrapper.weatherInformations.count - indexAjust
     }
     
-    func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("weatherCell", forIndexPath: indexPath) as! WeatherTableViewCell
+    func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherTableViewCell
         
         cell.populate(weatherInformationWrapper, indexPath: indexPath)
         
         return cell
     }
     
-    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         weatherTable.reloadData()
     }
 
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableCellWithIdentifier("header")! as! WeatherHeaderCell
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCell(withIdentifier: "header")! as! WeatherHeaderCell
         
         if let city = selectedCity {
             header.populate(city, weatherInformationWrapper: weatherInformationWrapper)
@@ -200,11 +200,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         return header
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if weatherInformationWrapper.weatherInformations.count > 0 {
             let weatherInfo = weatherInformationWrapper.weatherInformations[0]
             
-            if weatherInfo.weatherDay != WeatherDay.Now {
+            if weatherInfo.weatherDay != WeatherDay.now {
                 return 30
             }
         }
@@ -212,7 +212,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 130
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier  == "Settings" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let targetController = navigationController.topViewController as! SettingsViewController
@@ -224,9 +224,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
-    @IBAction func showAlert(sender: UIBarButtonItem) {
+    @IBAction func showAlert(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let alertController = storyboard.instantiateViewControllerWithIdentifier("Alert") as! AlertViewController
+        let alertController = storyboard.instantiateViewController(withIdentifier: "Alert") as! AlertViewController
         
         var width = weatherTable.bounds.size.width - 40
         if width > 300 {
@@ -241,26 +241,26 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         let height = CGFloat(80 + (21*lines))
         
-        alertController.modalPresentationStyle = .Popover;
-        alertController.preferredContentSize = CGSizeMake(width, height)
+        alertController.modalPresentationStyle = .popover;
+        alertController.preferredContentSize = CGSize(width: width, height: height)
         
         let popoverPresentation = alertController.popoverPresentationController!
-        popoverPresentation.permittedArrowDirections = .Any
+        popoverPresentation.permittedArrowDirections = .any
         popoverPresentation.barButtonItem = sender
         popoverPresentation.delegate = self
-        popoverPresentation.backgroundColor = UIColor.whiteColor()
+        popoverPresentation.backgroundColor = UIColor.white()
         
         alertController.alerts = weatherInformationWrapper.alerts
         
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .None
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        return .lightContent
     }
 }
 

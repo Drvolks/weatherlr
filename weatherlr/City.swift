@@ -38,20 +38,20 @@ class City : NSObject, NSCoding {
     }
     
     // MARK: NSCoding
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(frenchName, forKey: PropertyKey.frenchNameKey)
-        aCoder.encodeObject(englishName, forKey: PropertyKey.englishNameKey)
-        aCoder.encodeObject(id, forKey: PropertyKey.idKey)
-        aCoder.encodeObject(province, forKey: PropertyKey.provinceKey)
-        aCoder.encodeObject(radarId, forKey: PropertyKey.radarKey)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(frenchName, forKey: PropertyKey.frenchNameKey)
+        aCoder.encode(englishName, forKey: PropertyKey.englishNameKey)
+        aCoder.encode(id, forKey: PropertyKey.idKey)
+        aCoder.encode(province, forKey: PropertyKey.provinceKey)
+        aCoder.encode(radarId, forKey: PropertyKey.radarKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let frenchName = aDecoder.decodeObjectForKey(PropertyKey.frenchNameKey) as! String
-        let englishName = aDecoder.decodeObjectForKey(PropertyKey.englishNameKey) as! String
-        let province = aDecoder.decodeObjectForKey(PropertyKey.provinceKey) as! String
-        let id = aDecoder.decodeObjectForKey(PropertyKey.idKey) as! String
-        var radarId = aDecoder.decodeObjectForKey(PropertyKey.radarKey) as? String
+        let frenchName = aDecoder.decodeObject(forKey: PropertyKey.frenchNameKey) as! String
+        let englishName = aDecoder.decodeObject(forKey: PropertyKey.englishNameKey) as! String
+        let province = aDecoder.decodeObject(forKey: PropertyKey.provinceKey) as! String
+        let id = aDecoder.decodeObject(forKey: PropertyKey.idKey) as! String
+        var radarId = aDecoder.decodeObject(forKey: PropertyKey.radarKey) as? String
         
         if radarId == nil {
             radarId = ""

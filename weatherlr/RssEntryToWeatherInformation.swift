@@ -38,8 +38,8 @@ class RssEntryToWeatherInformation {
         for i in debut..<rssEntries.count {
             let weatherInformation = convert(rssEntries[i])
             
-            if weatherInformation.weatherDay == WeatherDay.Today && weatherInformation.night {
-                if result.count > 0 && result[result.count-1].weatherDay == WeatherDay.Now {
+            if weatherInformation.weatherDay == WeatherDay.today && weatherInformation.night {
+                if result.count > 0 && result[result.count-1].weatherDay == WeatherDay.now {
                     result[result.count-1].night = true
                 }
             }
@@ -57,7 +57,7 @@ class RssEntryToWeatherInformation {
             if(isAlert(rssEntries[i].title)) {
                 let alert = convertAlert(rssEntries[i])
                 
-                if alert.type != AlertType.None && alert.type != AlertType.Ended {
+                if alert.type != AlertType.none && alert.type != AlertType.ended {
                     result.append(alert)
                 }
             }
@@ -66,12 +66,12 @@ class RssEntryToWeatherInformation {
         return result
     }
     
-    func convert(rssEntry: RssEntry) -> WeatherInformation {
+    func convert(_ rssEntry: RssEntry) -> WeatherInformation {
         let night = isNight(rssEntry.title)
         let weatherDay = convertWeatherDay(rssEntry.category, currentDay: day)
         
         let statusText:String;
-        if weatherDay == .Now {
+        if weatherDay == .now {
             statusText = extractWeatherConditionNowFromTitle(rssEntry.title)
         } else {
             statusText = extractWeatherCondition(rssEntry.title)
@@ -79,12 +79,12 @@ class RssEntryToWeatherInformation {
 
         let temperature:Int
         let weatherStatus:WeatherStatus
-        if weatherDay == .Now {
+        if weatherDay == .now {
             let temperatureText = extractTemperatureNowFromTitle(rssEntry.title)
             temperature = convertTemperature(temperatureText)
             
             if statusText == "" {
-                weatherStatus = WeatherStatus.Blank
+                weatherStatus = WeatherStatus.blank
             } else {
                 weatherStatus = convertWeatherStatus(statusText)
             }
@@ -100,14 +100,14 @@ class RssEntryToWeatherInformation {
 
         let result = WeatherInformation(temperature: temperature, weatherStatus: weatherStatus, weatherDay: weatherDay, summary: rssEntry.title, detail: detail, tendancy: tendendy, when: when, night: night)
         
-        if(weatherDay != WeatherDay.Now && (!night || weatherDay == WeatherDay.Today)) {
+        if(weatherDay != WeatherDay.now && (!night || weatherDay == WeatherDay.today)) {
             day = day + 1
         }
         
         return result
     }
     
-    func convertAlert(rssEntry: RssEntry) -> AlertInformation {
+    func convertAlert(_ rssEntry: RssEntry) -> AlertInformation {
         let alertText = extractAlertText(rssEntry.title)
         if !alertText.isEmpty {
             let alertType = extractAlertType(alertText)
@@ -118,337 +118,337 @@ class RssEntryToWeatherInformation {
         return AlertInformation()
     }
     
-    func extractAlertType(alertText:String) -> AlertType {
-        let regex = try! NSRegularExpression(pattern: "(TERMINÉ|ENDED)$", options: [.CaseInsensitive])
+    func extractAlertType(_ alertText:String) -> AlertType {
+        let regex = try! RegularExpression(pattern: "(TERMINÉ|ENDED)$", options: [.caseInsensitive])
         let ended = performRegex(regex, text: alertText, index: 1)
         
         if !ended.isEmpty {
-            return AlertType.Ended
+            return AlertType.ended
         }
         
-        return AlertType.Warning
+        return AlertType.warning
     }
     
-    func convertWeatherStatus(text: String) -> WeatherStatus {
-        switch text.lowercaseString {
+    func convertWeatherStatus(_ text: String) -> WeatherStatus {
+        switch text.lowercased() {
         case "partiellement nuageux", "partly cloudy":
-            return WeatherStatus.PartlyCloudy
+            return WeatherStatus.partlyCloudy
         case "généralement ensoleillé", "mainly sunny":
-            return WeatherStatus.MainlySunny
+            return WeatherStatus.mainlySunny
         case "dégagé", "clear":
-            return WeatherStatus.Clear
+            return WeatherStatus.clear
         case "faible neige", "neige faible", "light snow":
-            return WeatherStatus.LightSnow
+            return WeatherStatus.lightSnow
         case "neige ou pluie", "snow or rain", "pluie ou neige", "rain or snow":
-            return WeatherStatus.SnowOrRain
+            return WeatherStatus.snowOrRain
         case "pluie intermittente", "periods of rain":
-            return WeatherStatus.PeriodsOfRain
+            return WeatherStatus.periodsOfRain
         case "possibilité d'averses de pluie ou de neige", "chance of rain showers or flurries", "possibilité d'averses de neige ou de pluie", "chance of flurries or rain showers":
-            return WeatherStatus.ChanceOfRainShowersOrFlurries
+            return WeatherStatus.chanceOfRainShowersOrFlurries
         case "possibilité d'averses de neige", "chance of flurries":
-            return WeatherStatus.ChanceOfFlurries
+            return WeatherStatus.chanceOfFlurries
         case "passages nuageux", "cloudy periods":
-            return WeatherStatus.CloudyPeriods
+            return WeatherStatus.cloudyPeriods
         case "ensoleillé", "sunny":
-            return WeatherStatus.Sunny
+            return WeatherStatus.sunny
         case "possibilité d'averses", "chance of showers":
-            return WeatherStatus.ChanceOfShowers
+            return WeatherStatus.chanceOfShowers
         case "généralement nuageux", "mostly cloudy", "mainly cloudy":
-            return WeatherStatus.MostlyCloudy
+            return WeatherStatus.mostlyCloudy
         case "nuageux", "cloudy":
-            return WeatherStatus.Cloudy
+            return WeatherStatus.cloudy
         case "pluie faible", "light rain":
-            return WeatherStatus.LightRain
+            return WeatherStatus.lightRain
         case "pluie", "rain":
-            return WeatherStatus.Rain
+            return WeatherStatus.rain
         case "averses de pluie ou de neige", "rain showers or flurries":
-            return WeatherStatus.RainShowersOrFlurries
+            return WeatherStatus.rainShowersOrFlurries
         case "pluie intermittente ou neige", "periods of rain or snow":
-            return WeatherStatus.PeriodsOfRainOrSnow
+            return WeatherStatus.periodsOfRainOrSnow
         case "neige intermittente", "periods of snow":
-            return WeatherStatus.PeriodsOfSnow
+            return WeatherStatus.periodsOfSnow
         case "quelques averses de pluie ou de neige", "a few rain showers or flurries":
-            return WeatherStatus.AFewRainShowersOrFlurries
+            return WeatherStatus.aFewRainShowersOrFlurries
         case "alternance de soleil et de nuages", "a mix of sun and cloud":
-            return WeatherStatus.AMixOfSunAndCloud
+            return WeatherStatus.aMixOfSunAndCloud
         case "pluie parfois forte", "rain at times heavy":
-            return WeatherStatus.RainAtTimesHeavy
+            return WeatherStatus.rainAtTimesHeavy
         case "quelques averses de neige","a few flurries":
-            return WeatherStatus.AFewFlurries
+            return WeatherStatus.aFewFlurries
         case "quelques nuages","a few clouds":
-            return WeatherStatus.AFewClouds
+            return WeatherStatus.aFewClouds
         case "dégagement","clearing":
-            return WeatherStatus.Clearing
+            return WeatherStatus.clearing
         case "brume", "mist":
-            return WeatherStatus.Mist
+            return WeatherStatus.mist
         case "faible averse de pluie", "light rainshower":
-            return WeatherStatus.LightRainshower
+            return WeatherStatus.lightRainshower
         case "neige", "snow":
-            return WeatherStatus.Snow
+            return WeatherStatus.snow
         case "averses", "showers":
-            return WeatherStatus.Showers
+            return WeatherStatus.showers
         case "quelques averses", "a few showers":
-            return WeatherStatus.AFewShowers
+            return WeatherStatus.aFewShowers
         case "averses ou bruine", "showers or drizzle":
-            return WeatherStatus.ShowersOrDrizzle
+            return WeatherStatus.showersOrDrizzle
         case "pluie intermittente ou bruine", "periods of rain or drizzle":
-            return WeatherStatus.PeriodsOfRainOrDrizzle
+            return WeatherStatus.periodsOfRainOrDrizzle
         case "ennuagement", "increasing cloudiness":
-            return WeatherStatus.IncreasingCloudiness
+            return WeatherStatus.increasingCloudiness
         case "averses de neige", "flurries":
-            return WeatherStatus.Flurries
+            return WeatherStatus.flurries
         case "possibilité de bruine", "chance of drizzle":
-            return WeatherStatus.ChanceOfDrizzle
+            return WeatherStatus.chanceOfDrizzle
         case "bruine", "drizzle":
-            return WeatherStatus.Drizzle
+            return WeatherStatus.drizzle
         case "neige intermittente ou pluie", "periods of snow or rain", "pluie et neige faibles", "light rain and snow", "faible neige intermittente ou pluie", "periods of light snow or rain", "quelques averses de neige ou de pluie", "a few flurries or rain showers":
-            return WeatherStatus.PeriodsOfSnowOrRain
+            return WeatherStatus.periodsOfSnowOrRain
         case "faible bruine verglaçante", "light freezing drizzle":
-            return WeatherStatus.LightFreezingDrizzle
+            return WeatherStatus.lightFreezingDrizzle
         case "pluie verglaçante intermittente", "periods of freezing rain":
-            return WeatherStatus.PeriodsOfFreezingRain
+            return WeatherStatus.periodsOfFreezingRain
         case "pluie intermittente ou pluie verglaçante", "periods of rain or freezing rain":
-            return WeatherStatus.PeriodsOfRainOrFreezingRain
+            return WeatherStatus.periodsOfRainOrFreezingRain
         case "bruine intermittente", "periods of drizzle", "bruine faible", "light drizzle":
-            return WeatherStatus.PeriodsOfDrizzle
+            return WeatherStatus.periodsOfDrizzle
         case "averses de neige ou de pluie", "flurries or rain showers":
-            return WeatherStatus.FlurriesOrRainShowers
+            return WeatherStatus.flurriesOrRainShowers
         case "faible neige intermittente", "periods of light snow":
-            return WeatherStatus.PeriodsOfLightSnow
+            return WeatherStatus.periodsOfLightSnow
         case "blizzard":
-            return WeatherStatus.Blizzard
+            return WeatherStatus.blizzard
         case "neige faible et poudrerie élevée", "light snow and blowing snow":
-            return WeatherStatus.LightSnowAndBlowingSnow
+            return WeatherStatus.lightSnowAndBlowingSnow
         case "poudrerie basse", "drifting snow":
-            return WeatherStatus.DriftingSnow
+            return WeatherStatus.driftingSnow
         case "couvert", "overcast":
-            return WeatherStatus.Overcast
+            return WeatherStatus.overcast
         case "poudrerie élevée", "poudrerie  élevée", "poudrerie", "blowing snow":
-            return WeatherStatus.BlowingSnow
+            return WeatherStatus.blowingSnow
         case "généralement dégagé", "mainly clear":
-            return WeatherStatus.MainlyClear
+            return WeatherStatus.mainlyClear
         case "neige intermittente ou pluie verglaçante", "faible neige intermittente ou pluie verglaçante", "periods of light snow or freezing rain", "periods of snow or freezing rain":
-            return WeatherStatus.PeriodsOfLightSnowOrFreezingRain
+            return WeatherStatus.periodsOfLightSnowOrFreezingRain
         case "pluie ou pluie verglaçante", "rain or freezing rain":
-            return WeatherStatus.RainOrFreezingRain
+            return WeatherStatus.rainOrFreezingRain
         case "pluie intermittente mêlée de neige", "periods of rain mixed with snow":
-            return WeatherStatus.PeriodsOfRainMixedWithSnow
+            return WeatherStatus.periodsOfRainMixedWithSnow
         case "neige intermittente et poudrerie", "periods of snow and blowing snow":
-            return WeatherStatus.PeriodsOfSnowAndBlowingSnow
+            return WeatherStatus.periodsOfSnowAndBlowingSnow
         case "possibilité d'averses ou bruine", "chance of showers or drizzle":
-            return WeatherStatus.ChanceOfShowersOrDrizzle
+            return WeatherStatus.chanceOfShowersOrDrizzle
         case "bruine mêlée de bruine verglaçante", "drizzle mixed with freezing drizzle":
-            return WeatherStatus.DrizzleMixedWithFreezingDrizzle
+            return WeatherStatus.drizzleMixedWithFreezingDrizzle
         case "possibilité de bruine mêlée de bruine verglaçante", "chance of drizzle mixed with freezing drizzle":
-            return WeatherStatus.ChanceOfDrizzleMixedWithFreezingDrizzle
+            return WeatherStatus.chanceOfDrizzleMixedWithFreezingDrizzle
         case "faible averse de neige", "light snowshower":
-            return WeatherStatus.LightSnowshower
+            return WeatherStatus.lightSnowshower
         case "bruine intermittente mêlée de bruine verglaçante", "periods of drizzle mixed with freezing drizzle":
-            return WeatherStatus.PeriodsOfDrizzleMixedWithFreezingDrizzle
+            return WeatherStatus.periodsOfDrizzleMixedWithFreezingDrizzle
         case "bruine verglaçante ou bruine", "freezing drizzle or drizzle":
-            return WeatherStatus.FreezingDrizzleOrDrizzle
+            return WeatherStatus.freezingDrizzleOrDrizzle
         case "possibilité d'averses de pluie ou de neige fondante", "chance of rain showers or wet flurries":
-            return WeatherStatus.ChanceOfRainShowersOrWetFlurries
+            return WeatherStatus.chanceOfRainShowersOrWetFlurries
         case "neige et poudrerie", "snow and blowing snow", "neige et poudrerie élevée", "neige parfois forte et poudrerie", "snow at times heavy and blowing snow":
-            return WeatherStatus.SnowAndBlowingSnow
+            return WeatherStatus.snowAndBlowingSnow
         case "neige forte", "heavy snow":
-            return WeatherStatus.HeavySnow
+            return WeatherStatus.heavySnow
         case "averses de neige parfois fortes", "flurries at times heavy":
-            return WeatherStatus.FlurriesAtTimesHeavy
+            return WeatherStatus.flurriesAtTimesHeavy
         case "neige mêlée de pluie", "snow mixed with rain":
-            return WeatherStatus.SnowMixedWithRain
+            return WeatherStatus.snowMixedWithRain
         case "possibilité de neige", "chance of snow":
-            return WeatherStatus.ChanceOfSnow
+            return WeatherStatus.chanceOfSnow
         case "possibilité de faible neige", "chance of light snow":
-            return WeatherStatus.ChanceOfLightSnow
+            return WeatherStatus.chanceOfLightSnow
         case "neige parfois forte", "snow at times heavy":
-            return WeatherStatus.SnowAtTimesHeavy
+            return WeatherStatus.snowAtTimesHeavy
         case "pluie verglaçante ou neige", "freezing rain or snow":
-            return WeatherStatus.FreezingRainOrSnow
+            return WeatherStatus.freezingRainOrSnow
         case "faible pluie verglaçante", "light freezing rain":
-            return WeatherStatus.LightFreezingRain
+            return WeatherStatus.lightFreezingRain
         case "cristaux de glace", "ice crystals":
-            return WeatherStatus.IceCrystals
+            return WeatherStatus.iceCrystals
         case "neige en grains", "snow grains":
-            return WeatherStatus.SnowGrains
+            return WeatherStatus.snowGrains
         case "neige fondante", "wet snow":
-            return WeatherStatus.WetSnow
+            return WeatherStatus.wetSnow
         case "averses de neige fondante", "wet flurries":
-            return WeatherStatus.WetFlurries
+            return WeatherStatus.wetFlurries
         case "brouillard givrant", "freezing fog":
-            return WeatherStatus.FreezingFog
+            return WeatherStatus.freezingFog
         case "brouillard", "fog":
-            return WeatherStatus.Fog
+            return WeatherStatus.fog
         case "brume sèche", "haze":
-            return WeatherStatus.Haze
+            return WeatherStatus.haze
         case "neige parfois forte mêlée de pluie", "snow at times heavy mixed with rain":
-            return WeatherStatus.SnowAtTimesHeavyMixedWithRain
+            return WeatherStatus.snowAtTimesHeavyMixedWithRain
         case "neige intermittente mêlée de pluie", "periods of snow mixed with rain":
-            return WeatherStatus.PeriodsOfSnowMixedWithRain
+            return WeatherStatus.periodsOfSnowMixedWithRain
         case "pluie ou bruine", "rain or drizzle":
-            return WeatherStatus.RainOrDrizzle
+            return WeatherStatus.rainOrDrizzle
         case "bruine intermittente ou pluie", "periods of drizzle or rain":
-            return WeatherStatus.PeriodsOfDrizzleOrRain
+            return WeatherStatus.periodsOfDrizzleOrRain
         case "bruine faible et brouillard", "light drizzle and fog":
-            return WeatherStatus.LightDrizzleAndFog
+            return WeatherStatus.lightDrizzleAndFog
         case "pluie faible et brouillard", "light rain and fog":
-            return WeatherStatus.LightRainAndFog
+            return WeatherStatus.lightRainAndFog
         case "bruine intermittente mêlée de pluie", "periods of drizzle mixed with rain":
-            return WeatherStatus.PeriodsOfDrizzleMixedWithRain
+            return WeatherStatus.periodsOfDrizzleMixedWithRain
         case "neige intermittente mêlée de pluie verglaçante", "periods of snow mixed with freezing rain":
-            return WeatherStatus.PeriodsOfSnowMixedWithFreezingRain
+            return WeatherStatus.periodsOfSnowMixedWithFreezingRain
         case "bancs de brouillard", "fog patches":
-            return WeatherStatus.FogPatches
+            return WeatherStatus.fogPatches
         case "pluie mêlée de neige", "rain mixed with snow":
-            return WeatherStatus.RainMixedWithSnow
+            return WeatherStatus.rainMixedWithSnow
         case "neige mêlée de grésil", "snow mixed with ice pellets":
-            return WeatherStatus.SnowMixedWithIcePellets
+            return WeatherStatus.snowMixedWithIcePellets
         case "faible neige intermittente mêlée de bruine verglaçante", "periods of light snow mixed with freezing drizzle":
-            return WeatherStatus.PeriodsOfLightSnowMixedWithFreezingDrizzle
+            return WeatherStatus.periodsOfLightSnowMixedWithFreezingDrizzle
         case "fumée", "smoke":
-            return WeatherStatus.Smoke
+            return WeatherStatus.smoke
         case "neige mêlée de bruine verglaçante", "snow mixed with freezing drizzle":
-            return WeatherStatus.SnowMixedWithFreezingDrizzle
+            return WeatherStatus.snowMixedWithFreezingDrizzle
         case "bruine verglaçante intermittente ou bruine", "periods of freezing drizzle or drizzle":
-            return WeatherStatus.PeriodsOfFreezingDrizzleOrDrizzle
+            return WeatherStatus.periodsOfFreezingDrizzleOrDrizzle
         case "possibilité de bruine ou pluie", "chance of drizzle or rain":
-            return WeatherStatus.ChanceOfDrizzleOrRain
+            return WeatherStatus.chanceOfDrizzleOrRain
         case "possibilité d'averses de neige fondante", "chance of wet flurries":
-            return WeatherStatus.ChanceOfWetFlurries
+            return WeatherStatus.chanceOfWetFlurries
         case "bruine verglaçante intermittente ou pluie", "periods of freezing drizzle or rain":
-            return WeatherStatus.PeriodsOfFreezingDrizzleOrRain
+            return WeatherStatus.periodsOfFreezingDrizzleOrRain
         case "bruine verglaçante intermittente", "periods of freezing drizzle":
-            return WeatherStatus.PeriodsOfFreezingDrizzle
+            return WeatherStatus.periodsOfFreezingDrizzle
         case "pluie verglaçante intermittente ou neige", "periods of freezing rain or snow":
-            return WeatherStatus.PeriodsOfFreezingRainOrSnow
+            return WeatherStatus.periodsOfFreezingRainOrSnow
         case "pluie verglaçante mêlée de grésil", "freezing rain mixed with ice pellets":
-            return WeatherStatus.FreezingRainMixedWithIcePellets
+            return WeatherStatus.freezingRainMixedWithIcePellets
         case "pluie verglaçante intermittente mêlée de grésil", "periods of freezing rain mixed with ice pellets":
-            return WeatherStatus.PeriodsOfFreezingRainMixedWithIcePellets
+            return WeatherStatus.periodsOfFreezingRainMixedWithIcePellets
         case "possibilité d'averses ou orages", "chance of showers or thunderstorms", "chance of showers or thundershowers":
-            return WeatherStatus.ChanceOfShowersOrThunderstorms
+            return WeatherStatus.chanceOfShowersOrThunderstorms
         case "possibilité d'averses de neige fondante ou de pluie", "chance of wet flurries or rain showers":
-            return WeatherStatus.ChanceOfWetFlurriesOrRainShowers
+            return WeatherStatus.chanceOfWetFlurriesOrRainShowers
         case "possibilité de pluie", "chance of rain":
-            return WeatherStatus.ChanceOfRain
+            return WeatherStatus.chanceOfRain
         case "faible neige fondante", "light wet snow":
-            return WeatherStatus.LightWetSnow
+            return WeatherStatus.lightWetSnow
         case "précipitations", "precipitation":
-            return WeatherStatus.Precipitation
+            return WeatherStatus.precipitation
         case "bruine ou pluie", "drizzle or rain":
-            return WeatherStatus.DrizzleOrRain
+            return WeatherStatus.drizzleOrRain
         case "pluie verglaçante mêlée de neige", "freezing rain mixed with snow":
-            return WeatherStatus.FreezingRainMixedWithSnow
+            return WeatherStatus.freezingRainMixedWithSnow
         case "bruine verglaçante ou pluie", "freezing drizzle or rain":
-            return WeatherStatus.FreezingDrizzleOrRain
+            return WeatherStatus.freezingDrizzleOrRain
         case "pluie parfois forte ou bruine", "rain at times heavy or drizzle":
-            return WeatherStatus.RainAtTimesHeavyOrDrizzle
+            return WeatherStatus.rainAtTimesHeavyOrDrizzle
         case "faible neige intermittente mêlée de pluie", "periods of light snow mixed with rain":
-            return WeatherStatus.PeriodsOfLightSnowMixedWithRain
+            return WeatherStatus.periodsOfLightSnowMixedWithRain
         case "quelques averses ou bruine", "a few showers or drizzle":
-            return WeatherStatus.AFewShowersOrDrizzle
+            return WeatherStatus.aFewShowersOrDrizzle
         case "neige fondante intermittente ou pluie", "periods of wet snow or rain":
-            return WeatherStatus.PeriodsOfWetSnowOrRain
+            return WeatherStatus.periodsOfWetSnowOrRain
         case "faible neige mêlée de pluie", "light snow mixed with rain":
-            return WeatherStatus.LightSnowMixedWithRain
+            return WeatherStatus.lightSnowMixedWithRain
         case "bruine intermittente ou bruine verglaçante", "periods of drizzle or freezing drizzle":
-            return WeatherStatus.PeriodsOfDrizzleOrFreezingDrizzle
+            return WeatherStatus.periodsOfDrizzleOrFreezingDrizzle
         case "neige fondante intermittente", "periods of wet snow":
-            return WeatherStatus.PeriodsOfWetSnow
+            return WeatherStatus.periodsOfWetSnow
         case "neige intermittente ou bruine verglaçante", "periods of snow or freezing drizzle":
-            return WeatherStatus.PeriodsOfSnowOrFreezingDrizzle
+            return WeatherStatus.periodsOfSnowOrFreezingDrizzle
         case "possibilité de bruine verglaçante", "chance of freezing drizzle":
-            return WeatherStatus.ChanceOfFreezingDrizzle
+            return WeatherStatus.chanceOfFreezingDrizzle
         case "bruine verglaçante", "freezing drizzle":
-            return WeatherStatus.FreezingDrizzle
+            return WeatherStatus.freezingDrizzle
         case "neige intermittente mêlée de bruine verglaçante", "periods of snow mixed with freezing drizzle":
-            return WeatherStatus.PeriodsOfSnowMixedWithFreezingDrizzle
+            return WeatherStatus.periodsOfSnowMixedWithFreezingDrizzle
         case "faible neige ou pluie", "light snow or rain":
-            return WeatherStatus.LightSnowOrRain
+            return WeatherStatus.lightSnowOrRain
         case "pluie verglaçante", "freezing rain":
-            return WeatherStatus.FreezingRain
+            return WeatherStatus.freezingRain
         case "neige ou pluie verglaçante", "snow or freezing rain":
-            return WeatherStatus.SnowOrFreezingRain
+            return WeatherStatus.snowOrFreezingRain
         case "forte averse de pluie", "heavy rainshower":
-            return WeatherStatus.HeavyRainshower
+            return WeatherStatus.heavyRainshower
         case "quelques averses ou orages", "a few showers or thunderstorms":
-            return WeatherStatus.AFewShowersOrThunderstorms
+            return WeatherStatus.aFewShowersOrThunderstorms
         case "orage", "thunderstorm":
-            return WeatherStatus.Thunderstorm
+            return WeatherStatus.thunderstorm
         case "orage avec averse de pluie", "thunderstorm with light rainshowers":
-            return WeatherStatus.ThunderstormWithLightRainshowers
+            return WeatherStatus.thunderstormWithLightRainshowers
         case "neige ou grésil", "snow or ice pellets":
-            return WeatherStatus.SnowOrIcePellets
+            return WeatherStatus.snowOrIcePellets
         case "grésil ou neige", "ice pellets or snow":
-            return WeatherStatus.IcePelletsOrSnow
+            return WeatherStatus.icePelletsOrSnow
         case "averses de neige fondante ou de pluie", "wet flurries or rain showers":
-            return WeatherStatus.WetFlurriesOrRainShowers
+            return WeatherStatus.wetFlurriesOrRainShowers
         case "faible neige ou pluie verglaçante", "light snow or freezing rain":
-            return WeatherStatus.LightSnowOrFreezingRain
+            return WeatherStatus.lightSnowOrFreezingRain
         case "pluie parfois forte ou neige", "rain at times heavy or snow":
-            return WeatherStatus.RainAtTimesHeavyOrSnow
+            return WeatherStatus.rainAtTimesHeavyOrSnow
         case "neige parfois forte ou pluie", "snow at times heavy or rain":
-            return WeatherStatus.SnowAtTimesHeavyOrRain
+            return WeatherStatus.snowAtTimesHeavyOrRain
         case "brouillard se dissipant", "fog dissipating":
-            return WeatherStatus.FogDissipating
+            return WeatherStatus.fogDissipating
         case "averses ou orages", "showers or thunderstorms":
-            return WeatherStatus.ShowersOrThunderstorms
+            return WeatherStatus.showersOrThunderstorms
         case "orage avec faible pluie", "thunderstorm with light rain":
-            return WeatherStatus.ThunderstormWithLightRain
+            return WeatherStatus.thunderstormWithLightRain
         case "possibilité de pluie ou bruine", "chance of rain or drizzle":
-            return WeatherStatus.ChanceOfRainOrDrizzle
+            return WeatherStatus.chanceOfRainOrDrizzle
         case "possibilité de neige mêlée de pluie", "chance of snow mixed with rain":
-            return WeatherStatus.ChanceOfSnowMixedWithRain
+            return WeatherStatus.chanceOfSnowMixedWithRain
         case "possibilité de neige ou pluie", "chance of snow or rain":
-            return WeatherStatus.ChanceOfSnowOrRain
+            return WeatherStatus.chanceOfSnowOrRain
         case "possibilité d'averses parfois fortes", "chance of showers at times heavy":
-            return WeatherStatus.ChanceOfShowersAtTimesHeavy
+            return WeatherStatus.chanceOfShowersAtTimesHeavy
         case "averses parfois fortes", "showers at times heavy":
-            return WeatherStatus.ShowersAtTimesHeavy
+            return WeatherStatus.showersAtTimesHeavy
         case "possibilité d'orages", "chance of thunderstorms":
-            return WeatherStatus.ChanceOfThunderstorms
+            return WeatherStatus.chanceOfThunderstorms
         case "averses parfois fortes ou orages", "showers at times heavy or thundershowers":
-            return WeatherStatus.ShowersAtTimesHeavyOrThundershowers
+            return WeatherStatus.showersAtTimesHeavyOrThundershowers
         default:
             return convertWeatherStatusWithRegex(text)
         }
     }
     
-    func convertWeatherStatusWithRegex(text: String) -> WeatherStatus {
-        var regex = try! NSRegularExpression(pattern: "Nuageux avec \\d* pour cent de probabilité d'averses de neige", options: [.CaseInsensitive])
-        var match = regex.matchesInString(text, options: [], range: NSMakeRange(0, text.startIndex.distanceTo(text.endIndex)))
+    func convertWeatherStatusWithRegex(_ text: String) -> WeatherStatus {
+        var regex = try! RegularExpression(pattern: "Nuageux avec \\d* pour cent de probabilité d'averses de neige", options: [.caseInsensitive])
+        var match = regex.matches(in: text, options: [], range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)))
         if match.count > 0 {
-            return WeatherStatus.CloudyWithXPercentChanceOfFlurries
+            return WeatherStatus.cloudyWithXPercentChanceOfFlurries
         }
         
-        regex = try! NSRegularExpression(pattern: "Cloudy with \\d* percent chance of flurries", options: [.CaseInsensitive])
-        match = regex.matchesInString(text, options: [], range: NSMakeRange(0, text.startIndex.distanceTo(text.endIndex)))
+        regex = try! RegularExpression(pattern: "Cloudy with \\d* percent chance of flurries", options: [.caseInsensitive])
+        match = regex.matches(in: text, options: [], range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)))
         if match.count > 0 {
-            return WeatherStatus.CloudyWithXPercentChanceOfFlurries
+            return WeatherStatus.cloudyWithXPercentChanceOfFlurries
         }
         
-        return WeatherStatus.NA
+        return WeatherStatus.na
     }
     
-    func convertWeatherDay(text: String, currentDay: Int) -> WeatherDay {
+    func convertWeatherDay(_ text: String, currentDay: Int) -> WeatherDay {
         switch text {
         case "Conditions actuelles", "Current Conditions":
-            return WeatherDay.Now
+            return WeatherDay.now
         case "Prévisions météo", "Weather Forecasts":
             if let day = WeatherDay(rawValue: currentDay) {
                 return day
             }
-            return WeatherDay.NA
+            return WeatherDay.na
         default:
-            return WeatherDay.NA
+            return WeatherDay.na
         }
     }
     
-    func performRegex(regex: NSRegularExpression, text: String, index: Int) -> String {
-        let results = regex.matchesInString(text, options: [], range: NSMakeRange(0, text.startIndex.distanceTo(text.endIndex)))
+    func performRegex(_ regex: RegularExpression, text: String, index: Int) -> String {
+        let results = regex.matches(in: text, options: [], range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)))
         if let result = results.first {
-            var condition = (text as NSString).substringWithRange(result.rangeAtIndex(index))
-            condition = condition.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            var condition = (text as NSString).substring(with: result.range(at: index))
+            condition = condition.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             return condition
         }
         
@@ -456,38 +456,38 @@ class RssEntryToWeatherInformation {
     }
     
     
-    func extractWeatherConditionNowFromSummary(summary: String) -> String {
-        let regex = try! NSRegularExpression(pattern: "<b>Condition:</b>(.*?)<br/>", options: [.CaseInsensitive])
+    func extractWeatherConditionNowFromSummary(_ summary: String) -> String {
+        let regex = try! RegularExpression(pattern: "<b>Condition:</b>(.*?)<br/>", options: [.caseInsensitive])
         return performRegex(regex, text: summary, index: 1)
     }
     
-    func extractTemperatureNowFromSummary(summary: String) -> String {
-        let regex = try! NSRegularExpression(pattern: "<b>(Temperature|Température):</b>(.*?)&deg;", options: [.CaseInsensitive])
+    func extractTemperatureNowFromSummary(_ summary: String) -> String {
+        let regex = try! RegularExpression(pattern: "<b>(Temperature|Température):</b>(.*?)&deg;", options: [.caseInsensitive])
         return performRegex(regex, text: summary, index: 2)
     }
     
-    func extractWeatherConditionNowFromTitle(title: String) -> String {
-        let regex = try! NSRegularExpression(pattern: "^.*?:([^0-9]*?),", options: [.CaseInsensitive])
+    func extractWeatherConditionNowFromTitle(_ title: String) -> String {
+        let regex = try! RegularExpression(pattern: "^.*?:([^0-9]*?),", options: [.caseInsensitive])
         return performRegex(regex, text: title, index: 1)
     }
     
-    func extractTemperatureNowFromTitle(title: String) -> String {
-        let regex = try! NSRegularExpression(pattern: ".*?[,:]? ([-\\d,\\.]*?)(°|&#xB0;)", options: [.CaseInsensitive])
+    func extractTemperatureNowFromTitle(_ title: String) -> String {
+        let regex = try! RegularExpression(pattern: ".*?[,:]? ([-\\d,\\.]*?)(°|&#xB0;)", options: [.caseInsensitive])
         return performRegex(regex, text: title, index: 1)
     }
     
-    func extractWeatherCondition(summary: String) -> String {
-        let regex = try! NSRegularExpression(pattern: "^.*?:(.*?)\\.", options: [.CaseInsensitive])
+    func extractWeatherCondition(_ summary: String) -> String {
+        let regex = try! RegularExpression(pattern: "^.*?:(.*?)\\.", options: [.caseInsensitive])
         return performRegex(regex, text: summary, index: 1)
     }
     
-    func extractTemperature(summary: String) -> String {
-        let regex = try! NSRegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables près de|steady near|à la baisse pour atteindre|falling to|à la hausse pour atteindre|rising to) (.*?)(\\.|with|avec|sauf|except|en après-midi|in the afternoon|au cours de la nuit|by morning|cet après-midi|this afternoon|ce matin puis à la hausse|this morning then rising)", options: [.CaseInsensitive])
+    func extractTemperature(_ summary: String) -> String {
+        let regex = try! RegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables près de|steady near|à la baisse pour atteindre|falling to|à la hausse pour atteindre|rising to) (.*?)(\\.|with|avec|sauf|except|en après-midi|in the afternoon|au cours de la nuit|by morning|cet après-midi|this afternoon|ce matin puis à la hausse|this morning then rising)", options: [.caseInsensitive])
         return performRegex(regex, text: summary, index: 2)
     }
     
-    func convertTemperature(temperature: String) -> Int {
-        let data = temperature.stringByReplacingOccurrencesOfString(",", withString: ".")
+    func convertTemperature(_ temperature: String) -> Int {
+        let data = temperature.replacingOccurrences(of: ",", with: ".")
         
         if data == "zéro" || data == "zero" {
             return 0
@@ -500,12 +500,12 @@ class RssEntryToWeatherInformation {
         return 0
     }
     
-    func convertTemperatureWithTextSign(temperature: String) -> Int {
-        let text = temperature.lowercaseString
+    func convertTemperatureWithTextSign(_ temperature: String) -> Int {
+        let text = temperature.lowercased()
         
-        var regex = try! NSRegularExpression(pattern: "^(plus|minus|moins)", options: [.CaseInsensitive])
+        var regex = try! RegularExpression(pattern: "^(plus|minus|moins)", options: [.caseInsensitive])
         let sign = performRegex(regex, text: text, index: 1)
-        regex = try! NSRegularExpression(pattern: ".*?([\\d\\.,]*)$", options: [.CaseInsensitive])
+        regex = try! RegularExpression(pattern: ".*?([\\d\\.,]*)$", options: [.caseInsensitive])
         let temp = performRegex(regex, text: text, index: 1)
         
         var tempDouble = convertTemperature(temp)
@@ -517,17 +517,17 @@ class RssEntryToWeatherInformation {
         return tempDouble
     }
     
-    func nettoyerDetail(text: String) -> String {
-        let regex = try! NSRegularExpression(pattern: "(Prévisions émises|Forecast issued).*$", options: [.CaseInsensitive])
+    func nettoyerDetail(_ text: String) -> String {
+        let regex = try! RegularExpression(pattern: "(Prévisions émises|Forecast issued).*$", options: [.caseInsensitive])
         let textRegex = NSMutableString(string: text)
-        regex.replaceMatchesInString(textRegex, options: .WithTransparentBounds, range: NSMakeRange(0, text.startIndex.distanceTo(text.endIndex)), withTemplate: "")
-        let result = textRegex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        regex.replaceMatches(in: textRegex, options: .withTransparentBounds, range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)), withTemplate: "")
+        let result = textRegex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         return result
     }
     
-    func isMaximumTemperature(summary: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "(High|Maximum)", options: [.CaseInsensitive])
+    func isMaximumTemperature(_ summary: String) -> Bool {
+        let regex = try! RegularExpression(pattern: "(High|Maximum)", options: [.caseInsensitive])
         let highLow = performRegex(regex, text: summary, index: 1)
         if !highLow.isEmpty {
             return true
@@ -536,8 +536,8 @@ class RssEntryToWeatherInformation {
         return false
     }
     
-    func isNight(title: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "(Ce soir|Soir et nuit|Night)", options: [.CaseInsensitive])
+    func isNight(_ title: String) -> Bool {
+        let regex = try! RegularExpression(pattern: "(Ce soir|Soir et nuit|Night)", options: [.caseInsensitive])
         let night = performRegex(regex, text: title, index: 1)
         if night.isEmpty {
             return false
@@ -546,29 +546,29 @@ class RssEntryToWeatherInformation {
         return true
     }
     
-    func extractWhen(title: String) -> String {
-        let regex = try! NSRegularExpression(pattern: "^(.*?):", options: [.CaseInsensitive])
+    func extractWhen(_ title: String) -> String {
+        let regex = try! RegularExpression(pattern: "^(.*?):", options: [.caseInsensitive])
         return performRegex(regex, text: title, index: 1)
     }
     
-    func extractTendency(title: String) -> Tendency {
-        let regex = try! NSRegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables|steady)", options: [.CaseInsensitive])
+    func extractTendency(_ title: String) -> Tendency {
+        let regex = try! RegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables|steady)", options: [.caseInsensitive])
         let tendency = performRegex(regex, text: title, index: 1)
         
         switch tendency {
         case "Maximum", "High":
-            return Tendency.Maximum
+            return Tendency.maximum
         case "Minimum", "Low":
-            return Tendency.Minimum
+            return Tendency.minimum
         case "stables", "steady":
-            return Tendency.Steady
+            return Tendency.steady
         default:
-            return Tendency.NA
+            return Tendency.na
         }
     }
     
-    func isAlert(title: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|IN EFFECT|" + alerts + ").*?", options: [])
+    func isAlert(_ title: String) -> Bool {
+        let regex = try! RegularExpression(pattern: ".*?(Aucune veille ou alerte en vigueur|No watches or warnings in effect|IN EFFECT|" + alerts + ").*?", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return false
@@ -577,14 +577,14 @@ class RssEntryToWeatherInformation {
         return true
     }
     
-    func extractAlertText(title: String) -> String {
-        var regex = try! NSRegularExpression(pattern: "(" + alerts + ")", options: [])
+    func extractAlertText(_ title: String) -> String {
+        var regex = try! RegularExpression(pattern: "(" + alerts + ")", options: [])
         let alert = performRegex(regex, text: title, index: 1)
         if alert.isEmpty {
             return ""
         }
 
-        regex = try! NSRegularExpression(pattern: "^(.*?)(,|$)", options: [])
+        regex = try! RegularExpression(pattern: "^(.*?)(,|$)", options: [])
         let alertText = performRegex(regex, text: title, index: 1)
         
         return alertText

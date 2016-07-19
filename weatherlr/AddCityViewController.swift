@@ -31,8 +31,8 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cancelButton.title = "Cancel".localized()
         searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
         
-        let path = NSBundle.mainBundle().pathForResource("Cities", ofType: "plist")
-        allCityList = (NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as? [City])!
+        let path = Bundle.main.pathForResource("Cities", ofType: "plist")
+        allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         allCities = buildCityIndex(allCityList)
         allSections = buildSections(allCities)
 
@@ -46,23 +46,23 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cityTable.dataSource = self
         searchText.delegate = self
         
-        let selectedCity = NSUserDefaults.standardUserDefaults().objectForKey(Constants.selectedCityKey)
+        let selectedCity = UserDefaults.standard.object(forKey: Constants.selectedCityKey)
         if selectedCity == nil {
-            cancelButton.enabled = false
+            cancelButton.isEnabled = false
         } else {
-            cancelButton.enabled = true
+            cancelButton.isEnabled = true
         }
         
-        cityTable.sectionIndexBackgroundColor = UIColor.clearColor()
+        cityTable.sectionIndexBackgroundColor = UIColor.clear()
     }
     
-    func buildCityIndex(cityListToProcess: [City]) -> [String:[City]] {
+    func buildCityIndex(_ cityListToProcess: [City]) -> [String:[City]] {
         var cityDictionary = [String:[City]]()
         
         for i in 0..<cityListToProcess.count {
             let city = cityListToProcess[i]
             let name = CityHelper.cityName(city)
-            let letter = (name.uppercaseString as NSString).substringToIndex(1)
+            let letter = (name.uppercased() as NSString).substring(to: 1)
             
             var cityListForLettre = cityDictionary[letter]
             if cityListForLettre == nil {
@@ -76,8 +76,8 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         return sortCityIndex(cityDictionary)
     }
     
-    func buildSections(cityDictionary : [String:[City]]) -> [Int:String] {
-        let sortedKeys = cityDictionary.keys.sort()
+    func buildSections(_ cityDictionary : [String:[City]]) -> [Int:String] {
+        let sortedKeys = cityDictionary.keys.sorted()
         var newSections = [Int:String]()
         for i in 0..<sortedKeys.count {
             let key = sortedKeys[i]
@@ -87,9 +87,9 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         return newSections
     }
     
-    func sortCityIndex(cityDictionary : [String:[City]]) -> [String:[City]] {
+    func sortCityIndex(_ cityDictionary : [String:[City]]) -> [String:[City]] {
         var sortedCityDictionary = [String:[City]]()
-        let sortedKeys = cityDictionary.keys.sort()
+        let sortedKeys = cityDictionary.keys.sorted()
         
         for i in 0..<sortedKeys.count {
             let key = sortedKeys[i]
@@ -107,7 +107,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var newFilteredList = [City]()
         
         if searchText.isEmpty {
@@ -129,7 +129,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     // MARK: serch bar
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         resetSearch()
         
         searchBar.text = ""
@@ -139,28 +139,28 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     // MARK: - Navigation
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         
     }
 
     // MARK: table
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-        return filteredCities.keys.sort()
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return filteredCities.keys.sorted()
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
     
-    func tableView(tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         let key = sections[section]!
         if let sectionValues = filteredCities[key] {
             return sectionValues.count
@@ -169,40 +169,40 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 0
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
     
-    func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as! CityTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
         
         let city = cityRow(indexPath)
         
-        cell.cityLabel.text = CityHelper.cityName(city) + ", " + city.province.uppercaseString
+        cell.cityLabel.text = CityHelper.cityName(city) + ", " + city.province.uppercased()
 
         return cell
     }
     
     
     
-    func cityRow(indexPath: NSIndexPath) -> City {
-        return filteredCities[sections[indexPath.section]!]![indexPath.row]
+    func cityRow(_ indexPath: IndexPath) -> City {
+        return filteredCities[sections[(indexPath as NSIndexPath).section]!]![(indexPath as NSIndexPath).row]
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = cityRow(indexPath)
         
         PreferenceHelper.addFavorite(city)
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .Default
+        return .default
     }
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchText.resignFirstResponder()
     }
 }

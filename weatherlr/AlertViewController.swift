@@ -30,10 +30,10 @@ class AlertViewController: UIViewController {
         }
 
         alertLabel.text = alertTexts
-        moreDetailButton.setTitle("More details".localized(), forState: .Normal)
+        moreDetailButton.setTitle("More details".localized(), for: UIControlState())
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showAlertDetail" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let targetController = navigationController.topViewController as! AlertDetailViewController
@@ -44,9 +44,9 @@ class AlertViewController: UIViewController {
         }
     }
     
-    func getTextCapitalized(alert: String) -> String {
-        var text = alert.lowercaseString
-        text.replaceRange(text.startIndex...text.startIndex, with: String(text[text.startIndex]).uppercaseString)
+    func getTextCapitalized(_ alert: String) -> String {
+        var text = alert.lowercased()
+        text.replaceSubrange(text.startIndex...text.startIndex, with: String(text[text.startIndex]).uppercased())
 
         return text
     }

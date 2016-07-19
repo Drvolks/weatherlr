@@ -20,8 +20,8 @@ class CityParser {
             for j in 0..<lang.count {
                 print("Parsing " + lang[j] + provinces[i])
                 
-                if let url = NSURL(string: lang[j] + provinces[i]) {
-                    let content = try! NSString(contentsOfURL: url, usedEncoding: nil)
+                if let url = URL(string: lang[j] + provinces[i]) {
+                    let content = try! NSString(contentsOf: url, usedEncoding: nil)
                     
                     parse(content as String)
                 } else {
@@ -46,14 +46,14 @@ class CityParser {
         }
     }
     
-    func parse(data:String) {
-        let regex = try! NSRegularExpression(pattern: "/city/pages/(\\w*)-(\\w\\d*)_metric_(f|e).html\">(.*?)<", options: [.CaseInsensitive])
-        let results = regex.matchesInString(data, options: [], range: NSMakeRange(0, data.startIndex.distanceTo(data.endIndex)))
+    func parse(_ data:String) {
+        let regex = try! RegularExpression(pattern: "/city/pages/(\\w*)-(\\w\\d*)_metric_(f|e).html\">(.*?)<", options: [.caseInsensitive])
+        let results = regex.matches(in: data, options: [], range: NSMakeRange(0, data.characters.distance(from: data.startIndex, to: data.endIndex)))
         for i in 0..<results.count {
-            let province = (data as NSString).substringWithRange(results[i].rangeAtIndex(1))
-            var cityId = (data as NSString).substringWithRange(results[i].rangeAtIndex(2))
-            let lang = (data as NSString).substringWithRange(results[i].rangeAtIndex(3))
-            let cityName = (data as NSString).substringWithRange(results[i].rangeAtIndex(4))
+            let province = (data as NSString).substring(with: results[i].range(at: 1))
+            var cityId = (data as NSString).substring(with: results[i].range(at: 2))
+            let lang = (data as NSString).substring(with: results[i].range(at: 3))
+            let cityName = (data as NSString).substring(with: results[i].range(at: 4))
             
             cityId = province + "-" + cityId
             
@@ -79,17 +79,17 @@ class CityParser {
         }
     }
     
-    func getRadarId(cityId:String) -> String {
+    func getRadarId(_ cityId:String) -> String {
         // TODO caching resultat car le même pour français et anglais
         let urlStr = weatherUrl1 + cityId + weatherUrl2
-        if let url = NSURL(string: urlStr) {
-            let content = try! NSString(contentsOfURL: url, usedEncoding: nil) as String
+        if let url = URL(string: urlStr) {
+            let content = try! NSString(contentsOf: url, usedEncoding: nil) as String
             
-            let regex = try! NSRegularExpression(pattern: "\"/radar/index_f.html\\?id=(.*?)\"", options: [.CaseInsensitive])
-            let results = regex.matchesInString(content, options: [], range: NSMakeRange(0, content.startIndex.distanceTo(content.endIndex)))
+            let regex = try! RegularExpression(pattern: "\"/radar/index_f.html\\?id=(.*?)\"", options: [.caseInsensitive])
+            let results = regex.matches(in: content, options: [], range: NSMakeRange(0, content.characters.distance(from: content.startIndex, to: content.endIndex)))
             
             if results.count > 0 {
-                let radarId = (content as NSString).substringWithRange(results[0].rangeAtIndex(1))
+                let radarId = (content as NSString).substring(with: results[0].range(at: 1))
                 
                 return radarId
             }

@@ -9,20 +9,20 @@
 import Foundation
 
 class UrlHelper {
-    static func getUrl(city: City) -> String {
-        let url = "url".localized().stringByReplacingOccurrencesOfString("{id}", withString: city.id)
+    static func getUrl(_ city: City) -> String {
+        let url = "url".localized().replacingOccurrences(of: "{id}", with: city.id)
         
         return url
     }
     
-    static func getUrl(city: City, lang: Language) -> String {
-        let url = "url".localized(lang).stringByReplacingOccurrencesOfString("{id}", withString: city.id)
+    static func getUrl(_ city: City, lang: Language) -> String {
+        let url = "url".localized(lang).replacingOccurrences(of: "{id}", with: city.id)
         
         return url
     }
     
-    static func getRadarUrl(city: City) -> String {
-        let url = "radarUrl".localized().stringByReplacingOccurrencesOfString("{id}", withString: city.radarId)
+    static func getRadarUrl(_ city: City) -> String {
+        let url = "radarUrl".localized().replacingOccurrences(of: "{id}", with: city.radarId)
         
         return url
     }

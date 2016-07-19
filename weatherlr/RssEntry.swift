@@ -37,10 +37,10 @@ class RssEntry : RssParserBase {
         self.language = Language.French
     }
     
-    @objc func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    @objc func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         switch elementName {
         case titleElement:
-            self.title = foundCharacters.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            self.title = foundCharacters.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             break
         case categoryElement:
             if let term = currentAttributes[termAttribute] {
@@ -48,10 +48,10 @@ class RssEntry : RssParserBase {
             }
             break
         case updatedElement:
-            self.updated = foundCharacters.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            self.updated = foundCharacters.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             break
         case summaryElement:
-            self.summary = foundCharacters.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            self.summary = foundCharacters.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             break
         case linkElement:
             if let href = currentAttributes[hrefAttribute] {

@@ -19,8 +19,8 @@ class ErrorViewController: UIViewController {
         errorLabel.text = "Error".localized()
         tryAgainButton.title = "Try Again".localized()
 
-        let colorDay = UIColor(weatherColor: WeatherColor.ClearDay)
-        let colorNight = UIColor(weatherColor: WeatherColor.ClearNight)
+        let colorDay = UIColor(weatherColor: WeatherColor.clearDay)
+        let colorNight = UIColor(weatherColor: WeatherColor.clearNight)
         
         view.backgroundColor = colorDay
         gradientView.backgroundColor = colorDay
@@ -36,12 +36,12 @@ class ErrorViewController: UIViewController {
 
     
     // MARK: - Navigation
-    @IBAction func tryAgainClicked(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func tryAgainClicked(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        return .lightContent
     }
 
     /*

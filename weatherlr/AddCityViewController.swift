@@ -46,7 +46,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cityTable.dataSource = self
         searchText.delegate = self
         
-        let selectedCity = UserDefaults.standard.object(forKey: Constants.selectedCityKey)
+        let selectedCity = PreferenceHelper.getSelectedCity()
         if selectedCity == nil {
             cancelButton.isEnabled = false
         } else {

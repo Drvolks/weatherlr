@@ -17,7 +17,7 @@ class CityHelper {
             
             let name = cityNameForSearch(city)
             
-            let searched = searchText.uppercased().folding(locale: Locale(localeIdentifier: "en"))
+            let searched = searchText.uppercased().folding(options: .diacriticInsensitive, locale: Locale(localeIdentifier: "en"))
             
             if name.contains(searched) {
                 newFilteredList.append(city)
@@ -59,7 +59,7 @@ class CityHelper {
             name = city.frenchName
         }
         
-        name = name.uppercased().folding(locale: Locale(localeIdentifier: "en"))
+        name = name.uppercased().folding(options: .diacriticInsensitive, locale: Locale(localeIdentifier: "en"))
         
         return name
     }

@@ -12,20 +12,9 @@ import ClockKit
 class SharedWeather {
     static let instance = SharedWeather()
     
-    var wrapper = WeatherInformationWrapper()
     private var delegates = [WeatherUpdateDelegate]()
     
     func getWeather(_ city: City, delegate: WeatherUpdateDelegate) {
-        let cachedWeather = ExpiringCache.instance.object(forKey: city.id) as? WeatherInformationWrapper
-        
-        if let newWrapper = cachedWeather {
-            if cacheValid(newWrapper) {
-                self.wrapper = newWrapper
-                delegate.weatherDidUpdate()
-                return
-            }
-        }
-        
         delegate.beforeUpdate()
         
         let url = UrlHelper.getUrl(city)
@@ -35,12 +24,10 @@ class SharedWeather {
                 DispatchQueue.main.async(execute: {
                     if (data != nil && error == nil) {
                         let rssParser = RssParser(xmlData: data!, language: PreferenceHelper.getLanguage())
-                        self.wrapper = WeatherHelper.generateWeatherInformation(rssParser, city: city)
-                        
-                        ExpiringCache.instance.setObject(self.wrapper, forKey: city.id)
+                        let wrapper = WeatherHelper.generateWeatherInformation(rssParser, city: city)
                         
                         DispatchQueue.main.async {
-                            delegate.weatherDidUpdate()
+                            delegate.weatherDidUpdate(wrapper: wrapper)
                         }
                     }
                 })
@@ -49,40 +36,10 @@ class SharedWeather {
         }
     }
     
-    func cacheValid(_ cache: WeatherInformationWrapper) -> Bool {
-        let elapsedTime = Calendar.current.components(.minute, from: cache.lastRefresh as Date, to: Date(), options: []).minute
-        if elapsedTime < Constants.WeatherCacheInMinutes {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func refreshNeeded() -> Bool {
-        if let oldCity = wrapper.city {
-            if let currentCity = PreferenceHelper.getSelectedCity() {
-                if let cachedWeather = ExpiringCache.instance.object(forKey: currentCity.id) as? WeatherInformationWrapper {
-                    if !cacheValid(cachedWeather) {
-                        return true
-                    }
-                    else if oldCity.id != currentCity.id {
-                        return true
-                    }
-                    
-                    return false
-                }
-            }
-        }
-        
-        return true
-    }
-    
     func broadcastUpdate(_ delegate: WeatherUpdateDelegate) {
-        wrapper = WeatherInformationWrapper()
-        
         delegates.forEach({
             if $0 !== delegate {
-                $0.weatherDidUpdate()
+                $0.weatherShouldUpdate()
             }
         })
     }

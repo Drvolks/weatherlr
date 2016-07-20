@@ -17,6 +17,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     
+    var wrapper = WeatherInformationWrapper()
+    
     override func didDeactivate() {
         super.didDeactivate()
     }
@@ -41,13 +43,16 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     override func willActivate() {
         super.willActivate()
         
-        if SharedWeather.instance.refreshNeeded() {
+        print("willActivate")
+        
+        if wrapper.refreshNeeded() {
             loadData()
         }
     }
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
+            print("refresh weather in app")
             SharedWeather.instance.getWeather(city, delegate: self)
         } else {
             cityLabel.setHidden(true)
@@ -63,17 +68,23 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         selectCityButton.setHidden(true)
     }
     
-    func weatherDidUpdate() {
+    func weatherShouldUpdate() {
+        // nothing to do
+    }
+    
+    func weatherDidUpdate(wrapper: WeatherInformationWrapper) {
+        self.wrapper = wrapper
+        
         if let city = PreferenceHelper.getSelectedCity() {
             self.cityLabel.setText(CityHelper.cityName(city))
         }
         
         lastRefreshLabel.setHidden(false)
-        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(SharedWeather.instance.wrapper))
+        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(wrapper))
         
         var rowTypes = [String]()
-        for index in 0..<SharedWeather.instance.wrapper.weatherInformations.count {
-            let weather = SharedWeather.instance.wrapper.weatherInformations[index]
+        for index in 0..<wrapper.weatherInformations.count {
+            let weather = wrapper.weatherInformations[index]
             if weather.weatherDay == WeatherDay.now {
                 rowTypes.append("currentWeatherRow")
             }
@@ -87,13 +98,13 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
 
         
         for index in 0..<rowTypes.count {
-            let weather = SharedWeather.instance.wrapper.weatherInformations[index]
+            let weather = wrapper.weatherInformations[index]
             
             switch(rowTypes[index]) {
             case "currentWeatherRow":
                 if let controller = weatherTable.rowController(at: index) as? CurrentWeatherRowController {
-                    if SharedWeather.instance.wrapper.weatherInformations.count > index+1 {
-                        let nextWeather = SharedWeather.instance.wrapper.weatherInformations[index+1]
+                    if wrapper.weatherInformations.count > index+1 {
+                        let nextWeather = wrapper.weatherInformations[index+1]
                         controller.nextWeather = nextWeather
                     }
                     

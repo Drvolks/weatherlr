@@ -254,7 +254,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     // MARK: - Update Scheduling
     
     func getNextRequestedUpdateDate(handler: (Date?) -> Void) {
-        handler(Date(timeIntervalSinceNow: 60*60))
+        handler(Date(timeIntervalSinceNow: 60*Double(Constants.WeatherCacheInMinutes)))
     }
     
     // MARK: - Placeholder Templates

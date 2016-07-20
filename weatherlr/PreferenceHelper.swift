@@ -50,19 +50,6 @@ class PreferenceHelper {
         defaults.synchronize()
     }
     
-    static func saveWatchCity(_ city: City) {
-        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
-        let defaults = UserDefaults.standard
-        defaults.set(archivedObject, forKey: Constants.watchCityKey)
-        defaults.synchronize()
-    }
-    
-    static func removeWatchCity() {
-        let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: Constants.watchCityKey)
-        defaults.synchronize()
-    }
-    
     static func getSelectedCity() -> City? {
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         if let unarchivedObject = UserDefaults.standard.object(forKey: Constants.selectedCityKey) as? Data {
@@ -73,17 +60,6 @@ class PreferenceHelper {
                 }
                 
                 return selectedCity
-            }
-        }
-        
-        return nil
-    }
-    
-    static func getWatchCity() -> City? {
-        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
-        if let unarchivedObject = UserDefaults.standard.object(forKey: Constants.watchCityKey) as? Data {
-            if let watchCity = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject) as? City {
-                return watchCity
             }
         }
         

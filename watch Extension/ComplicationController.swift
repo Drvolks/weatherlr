@@ -9,6 +9,7 @@
 import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdateDelegate {
+    var wrapper = WeatherInformationWrapper()
     
     override init() {
         super.init()
@@ -44,8 +45,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
         var template:CLKComplicationTemplate? = nil
         
         if let city = PreferenceHelper.getSelectedCity() {
-            let wrapper = SharedWeather.instance.wrapper
-            
             if wrapper.weatherInformations.count > 0 {
                 var weather:WeatherInformation? = nil
                 if wrapper.weatherInformations[0].weatherDay == WeatherDay.now {
@@ -219,20 +218,27 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
+            print("refresh weather in complication")
             SharedWeather.instance.getWeather(city, delegate: self)
         }
     }
     
     func beforeUpdate() {
-        
+        // nothing to do
     }
     
-    func weatherDidUpdate() {
+    func weatherShouldUpdate() {
         let server=CLKComplicationServer.sharedInstance()
         
         for comp in (server.activeComplications)! {
             server.reloadTimeline(for: comp)
         }
+    }
+    
+    func weatherDidUpdate(wrapper: WeatherInformationWrapper) {
+        self.wrapper = wrapper
+        
+        weatherShouldUpdate()
     }
 
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {

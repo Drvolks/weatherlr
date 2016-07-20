@@ -209,6 +209,7 @@
 		6E4910CD1CCC3335006D3C82 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		6E4910CF1CCD08A6006D3C82 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		6E4910D11CCD1F81006D3C82 /* DataProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderTableViewCell.swift; sourceTree = "<group>"; };
+		6E7C78B11D4031EE00005D7A /* watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watch Extension.entitlements"; sourceTree = "<group>"; };
 		6E816BCC1CCD7A0100533684 /* Flag_of_Canada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flag_of_Canada.png; sourceTree = "<group>"; };
 		6E816BCD1CCD7A0100533684 /* Flag_of_Canada@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flag_of_Canada@2x.png"; sourceTree = "<group>"; };
 		6E816BCE1CCD7A0100533684 /* Flag_of_Canada@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flag_of_Canada@3x.png"; sourceTree = "<group>"; };
@@ -503,6 +504,7 @@
 		6EB1547D1D282B0E0005B02A /* watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6E7C78B11D4031EE00005D7A /* watch Extension.entitlements */,
 				6EB1547E1D282B0E0005B02A /* InterfaceController.swift */,
 				6EB1553A1D31967C0005B02A /* SharedWeather.swift */,
 				6EB1553C1D327B180005B02A /* WeatherUpdateDelegate.swift */,
@@ -658,6 +660,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 654X66AK24;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1131,6 +1138,7 @@
 		6EB1548C1D282B0E0005B02A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "watch Extension/Info.plist";
@@ -1149,6 +1157,7 @@
 		6EB1548D1D282B0E0005B02A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "watch Extension/Info.plist";

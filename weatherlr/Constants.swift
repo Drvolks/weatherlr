@@ -17,4 +17,5 @@ class Constants {
     static let cityListKey = "cityList"
     static let searchTextKey = "searchText"
     static let WeatherCacheInMinutes = 5
+    static let SettingGroup = "group.com.massawippi.weatherlr"
 }

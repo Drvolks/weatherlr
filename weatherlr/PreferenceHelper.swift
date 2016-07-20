@@ -26,8 +26,9 @@ class PreferenceHelper {
     }
     
     static func getFavoriteCities() -> [City] {
+        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
-        if let unarchivedObject = UserDefaults.standard.object(forKey: Constants.favotiteCitiesKey) as? Data {
+        if let unarchivedObject = defaults.object(forKey: Constants.favotiteCitiesKey) as? Data {
             if let savedfavorites = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject) as? [City] {
                 return savedfavorites
             }
@@ -37,22 +38,23 @@ class PreferenceHelper {
     }
     
     private static func saveFavoriteCities(_ cities: [City]) {
+        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: cities as NSArray)
-        let defaults = UserDefaults.standard
         defaults.set(archivedObject, forKey: Constants.favotiteCitiesKey)
         defaults.synchronize()
     }
     
     private static func saveSelectedCity(_ city: City) {
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
-        let defaults = UserDefaults.standard
+        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
         defaults.set(archivedObject, forKey: Constants.selectedCityKey)
         defaults.synchronize()
     }
     
     static func getSelectedCity() -> City? {
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
-        if let unarchivedObject = UserDefaults.standard.object(forKey: Constants.selectedCityKey) as? Data {
+        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
+        if let unarchivedObject = defaults.object(forKey: Constants.selectedCityKey) as? Data {
             if let selectedCity = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject) as? City {
                 // for legacy City object < 1.1 release
                 if selectedCity.radarId.isEmpty {
@@ -131,7 +133,8 @@ class PreferenceHelper {
     }
     
     static func getLanguage() -> Language {
-        if let lang = UserDefaults.standard.object(forKey: Constants.languageKey) as? String {
+        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
+        if let lang = defaults.object(forKey: Constants.languageKey) as? String {
             if let langEnum = Language(rawValue: lang) {
                 return langEnum
             }
@@ -147,8 +150,9 @@ class PreferenceHelper {
     }
     
     static func saveLanguage(_ language: Language) {
-        UserDefaults.standard.set(language.rawValue, forKey: Constants.languageKey)
-        UserDefaults.standard.synchronize()
+        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
+        defaults.set(language.rawValue, forKey: Constants.languageKey)
+        defaults.synchronize()
         
         ExpiringCache.instance.removeAllObjects()
     }

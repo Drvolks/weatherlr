@@ -15,6 +15,7 @@ class SharedWeather {
     private var delegates = [WeatherUpdateDelegate]()
     
     func getWeather(_ city: City, delegate: WeatherUpdateDelegate) {
+        print("beforeUpdate")
         delegate.beforeUpdate()
         
         let url = UrlHelper.getUrl(city)
@@ -27,8 +28,11 @@ class SharedWeather {
                         let wrapper = WeatherHelper.generateWeatherInformation(rssParser, city: city)
                         
                         DispatchQueue.main.async {
+                            print("weatherDidUpdate")
                             delegate.weatherDidUpdate(wrapper: wrapper)
                         }
+                    } else {
+                        print("ERROR " + error.debugDescription)
                     }
                 })
             }

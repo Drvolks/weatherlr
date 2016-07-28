@@ -41,9 +41,11 @@ class WeatherInformationWrapper {
         if let oldCity = city {
             if let currentCity = PreferenceHelper.getSelectedCity() {
                 if expired() {
+                    print("refreshNeeded -> expired " + String(lastRefresh))
                     return true
                 }
                 else if oldCity.id != currentCity.id {
+                    print("refreshNeeded -> different city")
                     return true
                 }
                 
@@ -51,6 +53,7 @@ class WeatherInformationWrapper {
             }
         }
         
+        print("refreshNeeded -> default true")
         return true
     }
 }

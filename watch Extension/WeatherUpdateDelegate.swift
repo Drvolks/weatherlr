@@ -9,7 +9,7 @@
 import Foundation
 
 protocol WeatherUpdateDelegate : class {
-    func weatherDidUpdate(wrapper: WeatherInformationWrapper)
+    func weatherDidUpdate(_ wrapper: WeatherInformationWrapper)
     func beforeUpdate()
     func weatherShouldUpdate()
 }

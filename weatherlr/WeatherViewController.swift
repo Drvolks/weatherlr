@@ -30,7 +30,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.rowHeight = UITableViewAutomaticDimension
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.tableHeaderView = nil
-        weatherTable.backgroundColor = UIColor.clear()
+        weatherTable.backgroundColor = UIColor.clear
         
         refreshControl = UIRefreshControl()
         refreshLabel()
@@ -56,11 +56,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func refreshLabel() {
-        let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.white() ]
+        let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.white ]
         let refreshLabel:String
         refreshLabel = WeatherHelper.getRefreshTime(weatherInformationWrapper)
 
-        refreshControl.attributedTitle = AttributedString(string: refreshLabel, attributes: refreshControlFont)
+        refreshControl.attributedTitle = NSAttributedString(string: refreshLabel, attributes: refreshControlFont)
         
         refreshControl.beginRefreshing()
         refreshControl.endRefreshing()
@@ -84,8 +84,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.selectedCity = city
             
             if thread {
-                let priority = DispatchQueue.GlobalAttributes.qosDefault
-                DispatchQueue.global(attributes: priority).async {
+                DispatchQueue.global().async {
                     self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
                     
                     DispatchQueue.main.async {
@@ -153,10 +152,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if weatherInformationWrapper.alerts.count > 0 {
             warningBarButton.isEnabled = true
-            warningBarButton.tintColor = UIColor.red()
+            warningBarButton.tintColor = UIColor.red
         } else {
             warningBarButton.isEnabled = false
-            warningBarButton.tintColor = UIColor.clear()
+            warningBarButton.tintColor = UIColor.clear
         }
         
         if selectedCity != nil && !selectedCity!.radarId.isEmpty {
@@ -164,7 +163,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             radarButton.tintColor = nil
         } else {
             radarButton.isEnabled = false
-            radarButton.tintColor = UIColor.clear()
+            radarButton.tintColor = UIColor.clear
         }
     }
 
@@ -212,13 +211,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 130
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "Settings" {
-            let navigationController = segue.destinationViewController as! UINavigationController
+            let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! SettingsViewController
             targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
         } else if segue.identifier  == "ShowRadar" {
-            let navigationController = segue.destinationViewController as! UINavigationController
+            let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! RadarViewController
             targetController.city = selectedCity
         }
@@ -248,7 +247,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         popoverPresentation.permittedArrowDirections = .any
         popoverPresentation.barButtonItem = sender
         popoverPresentation.delegate = self
-        popoverPresentation.backgroundColor = UIColor.white()
+        popoverPresentation.backgroundColor = UIColor.white
         
         alertController.alerts = weatherInformationWrapper.alerts
         
@@ -259,7 +258,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         return .none
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 }

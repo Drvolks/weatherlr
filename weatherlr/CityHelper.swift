@@ -17,7 +17,7 @@ class CityHelper {
             
             let name = cityNameForSearch(city)
             
-            let searched = searchText.uppercased().folding(options: .diacriticInsensitive, locale: Locale(localeIdentifier: "en"))
+            let searched = searchText.uppercased().folding(options: .diacriticInsensitive, locale: Locale(identifier: "en"))
             
             if name.contains(searched) {
                 newFilteredList.append(city)
@@ -59,7 +59,7 @@ class CityHelper {
             name = city.frenchName
         }
         
-        name = name.uppercased().folding(options: .diacriticInsensitive, locale: Locale(localeIdentifier: "en"))
+        name = name.uppercased().folding(options: .diacriticInsensitive, locale: Locale(identifier: "en"))
         
         return name
     }
@@ -77,9 +77,9 @@ class CityHelper {
         var newCityList = cityListToSort
         
         if PreferenceHelper.isFrench() {
-            newCityList.sort(isOrderedBefore: { $0.frenchName < $1.frenchName })
+            newCityList.sort(by: { $0.frenchName < $1.frenchName })
         } else {
-            newCityList.sort(isOrderedBefore: { $0.englishName < $1.englishName })
+            newCityList.sort(by: { $0.englishName < $1.englishName })
         }
         
         return newCityList

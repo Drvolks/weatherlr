@@ -41,12 +41,12 @@ class TemperatureTests: XCTestCase {
         
         for item in items {
             let url = URL(fileURLWithPath: item)
-            let baseName = try! url.deletingPathExtension().lastPathComponent!
+            let baseName = url.deletingPathExtension().lastPathComponent
             
-            if let file = testBundle.pathForResource(subPath + "/" + baseName, ofType: "xml")
+            if let file = testBundle.path(forResource: subPath + "/" + baseName, ofType: "xml")
             {
                 var lang = Language.French
-                if file.contains(String(Language.English)) {
+                if file.contains(String(describing: Language.English)) {
                     lang = Language.English
                 }
                 
@@ -87,7 +87,7 @@ class TemperatureTests: XCTestCase {
                     
                     if zero == false {
                         if result == 0 {
-                            print("Day: " + String(weatherDay))
+                            print("Day: " + String(describing: weatherDay))
                             print("Title: " + rssEntry.title)
                             print("Temperature text: " + temperatureText)
                         }

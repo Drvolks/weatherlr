@@ -11,8 +11,8 @@ import XCTest
 
 class RssParserTests: XCTestCase {
     func testRssParserConstructor() {
-        let bundle = Bundle(for: self.dynamicType)
-        if let path = bundle.pathForResource("TestData", ofType: "xml")
+        let bundle = Bundle(for: type(of: self))
+        if let path = bundle.path(forResource: "TestData", ofType: "xml")
         {
             let xmlData = try! Data(contentsOf: URL(fileURLWithPath: path))
         
@@ -33,8 +33,8 @@ class RssParserTests: XCTestCase {
     }
     
     func testParse() {
-        let bundle = Bundle(for: self.dynamicType)
-        if let path = bundle.pathForResource("TestData", ofType: "xml")
+        let bundle = Bundle(for: type(of: self))
+        if let path = bundle.path(forResource: "TestData", ofType: "xml")
         {
             let xmlData = try! Data(contentsOf: URL(fileURLWithPath: path))
             
@@ -75,8 +75,8 @@ class RssParserTests: XCTestCase {
     
     func testParsePerformance() {
         self.measure {
-            let bundle = Bundle(for: self.dynamicType)
-            if let path = bundle.pathForResource("TestData", ofType: "xml")
+            let bundle = Bundle(for: type(of: self))
+            if let path = bundle.path(forResource: "TestData", ofType: "xml")
             {
                 let xmlData = try! Data(contentsOf: URL(fileURLWithPath: path))
                 

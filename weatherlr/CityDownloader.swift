@@ -16,7 +16,7 @@ class CityDownloader {
     }
     
     func process() {
-        let path = Bundle.main.pathForResource("Cities", ofType: "plist")
+        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         let cities = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         
         for i in 0..<cities.count {
@@ -36,8 +36,8 @@ class CityDownloader {
         print("Downloading \(city.frenchName) \(city.province)")
         
         if let data = try? Data(contentsOf: url) {
-            let path = outputPath + "/" + city.id + "_" + String(lang) + ".xml"
-            try! data.write(to: URL(fileURLWithPath: path), options: NSData.WritingOptions.atomicWrite)
+            let path = outputPath + "/" + city.id + "_" + String(describing: lang) + ".xml"
+            try! data.write(to: URL(fileURLWithPath: path), options: Data.WritingOptions.atomicWrite)
         }
     }
 }

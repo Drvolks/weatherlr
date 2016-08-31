@@ -23,19 +23,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     
     // MARK: - Timeline Configuration
     
-    func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
+    func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Swift.Void) {
         handler(CLKComplicationTimeTravelDirections())
     }
     
-    func getTimelineStartDate(for complication: CLKComplication, withHandler handler: (Date?) -> Void) {
+    func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Swift.Void) {
         handler(nil)
     }
     
-    func getTimelineEndDate(for complication: CLKComplication, withHandler handler: (Date?) -> Void) {
+    func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Swift.Void) {
         handler(nil)
     }
     
-    func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
+    func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Swift.Void) {
         handler(.showOnLockScreen)
     }
     
@@ -211,6 +211,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
         return CLKSimpleTextProvider(text: "")
     }
     
+    // TODO: retiver avec background fetch
     func requestedUpdateDidBegin() {
         loadData()
     }
@@ -235,7 +236,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
         }
     }
     
-    func weatherDidUpdate(wrapper: WeatherInformationWrapper) {
+    func weatherDidUpdate(_ wrapper: WeatherInformationWrapper) {
         self.wrapper = wrapper
         
         weatherShouldUpdate()
@@ -252,14 +253,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     }
     
     // MARK: - Update Scheduling
-    
-    func getNextRequestedUpdateDate(handler: (Date?) -> Void) {
+    // TODO: retiver avec background fetch
+    func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Swift.Void) {
         handler(Date(timeIntervalSinceNow: 60*Double(Constants.WeatherCacheInMinutes)))
     }
     
     // MARK: - Placeholder Templates
     
-    func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
+    func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Swift.Void) {
         var template: CLKComplicationTemplate? = nil
         
         switch complication.family {

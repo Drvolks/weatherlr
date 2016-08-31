@@ -47,13 +47,13 @@ class CityParser {
     }
     
     func parse(_ data:String) {
-        let regex = try! RegularExpression(pattern: "/city/pages/(\\w*)-(\\w\\d*)_metric_(f|e).html\">(.*?)<", options: [.caseInsensitive])
+        let regex = try! NSRegularExpression(pattern: "/city/pages/(\\w*)-(\\w\\d*)_metric_(f|e).html\">(.*?)<", options: [.caseInsensitive])
         let results = regex.matches(in: data, options: [], range: NSMakeRange(0, data.characters.distance(from: data.startIndex, to: data.endIndex)))
         for i in 0..<results.count {
-            let province = (data as NSString).substring(with: results[i].range(at: 1))
-            var cityId = (data as NSString).substring(with: results[i].range(at: 2))
-            let lang = (data as NSString).substring(with: results[i].range(at: 3))
-            let cityName = (data as NSString).substring(with: results[i].range(at: 4))
+            let province = (data as NSString).substring(with: results[i].rangeAt(1))
+            var cityId = (data as NSString).substring(with: results[i].rangeAt(2))
+            let lang = (data as NSString).substring(with: results[i].rangeAt(3))
+            let cityName = (data as NSString).substring(with: results[i].rangeAt(4))
             
             cityId = province + "-" + cityId
             
@@ -85,11 +85,11 @@ class CityParser {
         if let url = URL(string: urlStr) {
             let content = try! NSString(contentsOf: url, usedEncoding: nil) as String
             
-            let regex = try! RegularExpression(pattern: "\"/radar/index_f.html\\?id=(.*?)\"", options: [.caseInsensitive])
+            let regex = try! NSRegularExpression(pattern: "\"/radar/index_f.html\\?id=(.*?)\"", options: [.caseInsensitive])
             let results = regex.matches(in: content, options: [], range: NSMakeRange(0, content.characters.distance(from: content.startIndex, to: content.endIndex)))
             
             if results.count > 0 {
-                let radarId = (content as NSString).substring(with: results[0].range(at: 1))
+                let radarId = (content as NSString).substring(with: results[0].rangeAt(1))
                 
                 return radarId
             }

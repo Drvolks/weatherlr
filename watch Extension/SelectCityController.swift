@@ -21,21 +21,20 @@ class SelectCityController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    override func awake(withContext context: AnyObject?) {
+    override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        if let context = context {
-            cities = context[Constants.cityListKey] as! [City]
-            cities = CityHelper.sortCityList(cities)
-            delegate = context["delegate"] as? WeatherUpdateDelegate
+        let dictionary = context as! Dictionary<String, AnyObject>
+        cities = dictionary[Constants.cityListKey] as! [City]
+        cities = CityHelper.sortCityList(cities)
+        delegate = dictionary["delegate"] as? WeatherUpdateDelegate
             
-            cityTable.setNumberOfRows(cities.count, withRowType: "CityRow")
+        cityTable.setNumberOfRows(cities.count, withRowType: "CityRow")
             
-            for index in 0..<cityTable.numberOfRows {
-                if let controller = cityTable.rowController(at: index) as? CityRowController {
-                    let city = cities[index];
-                    controller.cityLabel.setText(CityHelper.cityName(city) + ", " + city.province.uppercased())
-                }
+        for index in 0..<cityTable.numberOfRows {
+            if let controller = cityTable.rowController(at: index) as? CityRowController {
+                let city = cities[index];
+                controller.cityLabel.setText(CityHelper.cityName(city) + ", " + city.province.uppercased())
             }
         }
     }

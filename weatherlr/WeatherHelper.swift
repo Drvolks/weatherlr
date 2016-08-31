@@ -11,14 +11,14 @@ import UIKit
 class WeatherHelper {
     static func getWeatherInformations(_ city:City) -> WeatherInformationWrapper {
         let cache = ExpiringCache.instance
-        let cachedWeather = cache.object(forKey: city.id) as? WeatherInformationWrapper
+        let cachedWeather = cache.object(forKey: city.id as NSString) as? WeatherInformationWrapper
         
         if cachedWeather != nil {
             return cachedWeather!
         }
         
         let weatherInformationWrapper = getWeatherInformationsNoCache(city)
-        cache.setObject(weatherInformationWrapper, forKey: city.id)
+        cache.setObject(weatherInformationWrapper, forKey: city.id as NSString)
         
         return weatherInformationWrapper
     }
@@ -47,7 +47,7 @@ class WeatherHelper {
     }
     
     static func getOfflineWeather() -> WeatherInformationWrapper {
-        let path = Bundle.main.pathForResource("nu-29_English", ofType: "xml")
+        let path = Bundle.main.path(forResource: "nu-29_English", ofType: "xml")
         let url = URL(fileURLWithPath: path!)
         
         if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
@@ -249,7 +249,7 @@ class WeatherHelper {
                 let theDate = addDaystoGivenDate(today, NumberOfDaysToAdd: weatherInfo.weatherDay.rawValue)
                 let dateFormatter = DateFormatter()
                 let lang = PreferenceHelper.getLanguage()
-                dateFormatter.locale = Locale(localeIdentifier: String(lang))
+                dateFormatter.locale = Locale(identifier: String(describing: lang))
                 if(lang == Language.French) {
                     dateFormatter.dateFormat = "d MMMM"
                 } else {
@@ -265,11 +265,10 @@ class WeatherHelper {
     {
         var dateComponents = DateComponents()
         let CurrentCalendar = Calendar.current
-        let CalendarOption = Calendar.Options()
         
         dateComponents.day = NumberOfDaysToAdd
         
-        let newDate = CurrentCalendar.date(byAdding: dateComponents, to: baseDate, options: CalendarOption)
+        let newDate = CurrentCalendar.date(byAdding: dateComponents, to: baseDate)
         return newDate!
     }
     
@@ -288,7 +287,7 @@ class WeatherHelper {
             textFont = UIFont.systemFont(ofSize: 45)
         }
         
-        let textColor = UIColor.white()
+        let textColor = UIColor.white
         
         //Setup the image context using the passed image.
         UIGraphicsBeginImageContext(baseImage.size)
@@ -296,7 +295,7 @@ class WeatherHelper {
         let textFontAttributes = [
             NSFontAttributeName: textFont,
             NSForegroundColorAttributeName: textColor,
-            ]
+            ] as [String : Any]
         
         //Put the image into a rectangle as large as the original image.
         baseImage.draw(in: CGRect(x: 0, y: 0, width: baseImage.size.width, height: baseImage.size.height))
@@ -319,7 +318,7 @@ class WeatherHelper {
         let lang = PreferenceHelper.getLanguage()
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(localeIdentifier: String(lang))
+        dateFormatter.locale = Locale(identifier: String(describing: lang))
         dateFormatter.timeStyle = .short
         return "Last refresh".localized() + " " + dateFormatter.string(from: wrapper.lastRefresh as Date)
     }

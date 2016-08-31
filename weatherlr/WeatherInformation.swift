@@ -47,21 +47,21 @@ class WeatherInformation {
         }
         
         if night {
-            let nameNight = String(status) + "Night"
+            let nameNight = String(describing: status) + "Night"
             if let image = UIImage(named: nameNight) {
                 return image
             } else {
-                if let image = UIImage(named: String(status)) {
+                if let image = UIImage(named: String(describing: status)) {
                     return image
                 }
             }
         } else {
-            if let image = UIImage(named: String(status)) {
+            if let image = UIImage(named: String(describing: status)) {
                 return image
             }
         }
         
-        return UIImage(named: "NA")!
+        return UIImage(named: "na")!
     }
     
     func color() -> WeatherColor {

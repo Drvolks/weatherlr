@@ -33,9 +33,9 @@ class AlertViewController: UIViewController {
         moreDetailButton.setTitle("More details".localized(), for: UIControlState())
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAlertDetail" {
-            let navigationController = segue.destinationViewController as! UINavigationController
+            let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! AlertDetailViewController
             
             // pour le URL c'est toujours le même peut importe l'alerte

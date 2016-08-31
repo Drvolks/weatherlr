@@ -40,7 +40,7 @@ class ErrorViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 

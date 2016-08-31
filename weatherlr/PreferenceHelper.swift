@@ -37,14 +37,14 @@ class PreferenceHelper {
         return [City]()
     }
     
-    private static func saveFavoriteCities(_ cities: [City]) {
+    fileprivate static func saveFavoriteCities(_ cities: [City]) {
         let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: cities as NSArray)
         defaults.set(archivedObject, forKey: Constants.favotiteCitiesKey)
         defaults.synchronize()
     }
     
-    private static func saveSelectedCity(_ city: City) {
+    fileprivate static func saveSelectedCity(_ city: City) {
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
         let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
         defaults.set(archivedObject, forKey: Constants.selectedCityKey)
@@ -69,7 +69,7 @@ class PreferenceHelper {
     }
     
     static func refreshCity(_ city:City) -> City {
-        let path = Bundle.main.pathForResource("Cities", ofType: "plist")
+        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         let cities = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         
         for i in 0..<cities.count {

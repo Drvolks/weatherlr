@@ -12,7 +12,7 @@ import ClockKit
 class SharedWeather {
     static let instance = SharedWeather()
     
-    private var delegates = [WeatherUpdateDelegate]()
+    fileprivate var delegates = [WeatherUpdateDelegate]()
     
     func getWeather(_ city: City, delegate: WeatherUpdateDelegate) {
         print("beforeUpdate")
@@ -29,7 +29,7 @@ class SharedWeather {
                         
                         DispatchQueue.main.async {
                             print("weatherDidUpdate")
-                            delegate.weatherDidUpdate(wrapper: wrapper)
+                            delegate.weatherDidUpdate(wrapper)
                         }
                     } else {
                         print("ERROR " + error.debugDescription)

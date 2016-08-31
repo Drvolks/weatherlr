@@ -33,7 +33,7 @@ class WeatherTableViewCell: UITableViewCell {
         weatherImage.image = weatherInfo.image()
         weatherDetailLabel.text = weatherInfo.detail
         whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo)
-        backgroundColor = UIColor.clear()
+        backgroundColor = UIColor.clear
         
         if weatherInfo.weatherDay == WeatherDay.today && weatherInformationWrapper.weatherInformations[0].weatherDay == .now {
             minMaxLabel.isHidden = true

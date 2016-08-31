@@ -36,7 +36,7 @@ class AlertDetailViewController: UIViewController, UIWebViewDelegate {
             })
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override var preferredStatusBarStyle:UIStatusBarStyle {
         return .default
     }
 }

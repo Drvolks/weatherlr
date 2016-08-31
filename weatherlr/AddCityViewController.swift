@@ -31,7 +31,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cancelButton.title = "Cancel".localized()
         searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
         
-        let path = Bundle.main.pathForResource("Cities", ofType: "plist")
+        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         allCities = buildCityIndex(allCityList)
         allSections = buildSections(allCities)
@@ -53,7 +53,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
             cancelButton.isEnabled = true
         }
         
-        cityTable.sectionIndexBackgroundColor = UIColor.clear()
+        cityTable.sectionIndexBackgroundColor = UIColor.clear
     }
     
     func buildCityIndex(_ cityListToProcess: [City]) -> [String:[City]] {
@@ -143,7 +143,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
 
@@ -198,7 +198,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         dismiss(animated: true, completion: nil)
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
     

@@ -18,8 +18,12 @@ class MinMaxLabel: UILabel {
         super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
         
     }
-    override func intrinsicContentSize() -> CGSize {
-        var intrinsicSuperViewContentSize = super.intrinsicContentSize()
+    override var intrinsicContentSize: CGSize {
+        return calculerTasille()
+    }
+    
+    func calculerTasille() -> CGSize {
+        var intrinsicSuperViewContentSize = super.intrinsicContentSize
         intrinsicSuperViewContentSize.height += topInset + bottomInset
         intrinsicSuperViewContentSize.width += leftInset + rightInset
         return intrinsicSuperViewContentSize

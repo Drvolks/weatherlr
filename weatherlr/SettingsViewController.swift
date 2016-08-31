@@ -36,7 +36,7 @@ class SettingsViewController: UITableViewController {
         savedCities = PreferenceHelper.getFavoriteCities()
         selectedCity = PreferenceHelper.getSelectedCity()
         
-        navigationItem.leftBarButtonItem = editButtonItem()
+        navigationItem.leftBarButtonItem = editButtonItem
         setEditing(false, animated: false)
         
         // TODO: remove
@@ -137,14 +137,14 @@ class SettingsViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
             
             cell.contactText.text = "Contact".localized()
-            cell.backgroundColor = UIColor.clear()
+            cell.backgroundColor = UIColor.clear
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "dataProviderCell", for: indexPath) as! DataProviderTableViewCell
             
             cell.dataProviderLabel.text = "Provider".localized()
-            cell.backgroundColor = UIColor.clear()
+            cell.backgroundColor = UIColor.clear
             
             return cell
 
@@ -156,8 +156,7 @@ class SettingsViewController: UITableViewController {
         cell.activityIndicator.isHidden = false
         cell.activityIndicator.startAnimating()
         
-        let priority = DispatchQueue.GlobalAttributes.qosDefault
-        DispatchQueue.global(attributes: priority).async {
+        DispatchQueue.global().async {
             let weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
             
             DispatchQueue.main.async {
@@ -170,7 +169,7 @@ class SettingsViewController: UITableViewController {
                     let weatherInfo = weatherInformationWrapper.weatherInformations[0]
                     cell.weatherImage.image = weatherInfo.image()
                 } else {
-                    cell.weatherImage.image = UIImage(named: String(WeatherStatus.blank))
+                    cell.weatherImage.image = UIImage(named: String(describing: WeatherStatus.blank))
                 }
             }
         }
@@ -244,13 +243,13 @@ class SettingsViewController: UITableViewController {
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addCity" {
             selectedCityWeatherInformation = nil
         }
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
 }

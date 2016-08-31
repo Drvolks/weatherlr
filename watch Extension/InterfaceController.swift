@@ -27,7 +27,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         SharedWeather.instance.unregister(self)
     }
     
-    override func awake(withContext context: AnyObject?) {
+    override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         SharedWeather.instance.register(self)
@@ -72,7 +72,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         // nothing to do
     }
     
-    func weatherDidUpdate(wrapper: WeatherInformationWrapper) {
+    func weatherDidUpdate(_ wrapper: WeatherInformationWrapper) {
         self.wrapper = wrapper
         
         if let city = PreferenceHelper.getSelectedCity() {
@@ -140,7 +140,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         citieNames.append(contentsOf: "abcdefghijklmnopqrstuvwxyz".uppercased().characters.map { String($0) })
         
         presentTextInputController(withSuggestions: citieNames, allowedInputMode: .plain, completion: { (result) -> Void in
-            self.didSayCityName(result)
+            self.didSayCityName(result as AnyObject?)
         })
     }
     
@@ -183,7 +183,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
                 return
             }
      
-            let path = Bundle.main.pathForResource("Cities", ofType: "plist")
+            let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
             let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
             let cities:[City]
             

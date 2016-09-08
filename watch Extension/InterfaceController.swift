@@ -43,8 +43,6 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     override func willActivate() {
         super.willActivate()
         
-        print("willActivate")
-        
         if wrapper.refreshNeeded() {
             loadData()
         }
@@ -52,7 +50,6 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
-            print("refresh weather in app")
             SharedWeather.instance.getWeather(city, delegate: self)
         } else {
             cityLabel.setHidden(true)

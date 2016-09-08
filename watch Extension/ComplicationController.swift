@@ -41,7 +41,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     
     // MARK: - Timeline Population
     
-    func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
+    func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Swift.Void) {
         var template:CLKComplicationTemplate? = nil
         
         if let city = PreferenceHelper.getSelectedCity() {
@@ -219,7 +219,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
-            print("refresh weather in complication")
             SharedWeather.instance.getWeather(city, delegate: self)
         }
     }
@@ -242,12 +241,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
         weatherShouldUpdate()
     }
 
-    func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
+    func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Swift.Void) {
         // Call the handler with the timeline entries prior to the given date
         handler(nil)
     }
     
-    func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
+    func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Swift.Void) {
         // Call the handler with the timeline entries after to the given date
         handler(nil)
     }

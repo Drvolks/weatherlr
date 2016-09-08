@@ -45,10 +45,6 @@ class AlertTests: XCTestCase {
                         alerts = alerts + 1
                     }
                 }
-                
-                if alerts > 1 {
-                    print(baseName)
-                }
             }
         }
     }

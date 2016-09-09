@@ -66,6 +66,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
                     template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .utilitarianLarge {
                     template = generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .extraLarge {
+                    template = generateExtraLargeTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .utilitarianSmallFlat {
+                    template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
                 }
             }
         } else {
@@ -80,6 +84,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
                 template = generateEmptySmallUtilitarianTemplate()
             } else if complication.family == .utilitarianLarge {
                 template = generateEmptyLargeUtilitarianTemplate()
+            } else if complication.family == .extraLarge {
+                template = generateEmptyExtraLargeTemplate()
+            } else if complication.family == .extraLarge {
+                template = generateEmptySmallUtilitarianTemplate()
             }
         }
         
@@ -125,6 +133,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     func generateSmallModularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateModularSmallSimpleText {
         let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
         modularTemplate.textProvider = getCurrentTemperature(weather)
+        
+        return modularTemplate
+    }
+    
+    func generateExtraLargeTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateExtraLargeColumnsText {
+        let modularTemplate = CLKComplicationTemplateExtraLargeColumnsText()
+        if let weather = weather {
+            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: String(weather.temperature) + "°")
+        } else {
+            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "")
+        }
+        modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
+        modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "")
+        modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
+        
+        return modularTemplate
+    }
+    
+    func generateEmptyExtraLargeTemplate() -> CLKComplicationTemplateExtraLargeColumnsText {
+        let modularTemplate = CLKComplicationTemplateExtraLargeColumnsText()
+        modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "iPhone".localized())
+        modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
+        modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "")
+        modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
         
         return modularTemplate
     }
@@ -258,9 +290,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     }
     
     // MARK: - Placeholder Templates
-    
+    // TODO fusion avec getLocalizableSampleTemplate?
     func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Swift.Void) {
         var template: CLKComplicationTemplate? = nil
+        
+        let image = CLKImageProvider(onePieceImage: UIImage(named: String(describing:WeatherStatus.sunny))!)
+
+        let provideTemperature = CLKSimpleTextProvider(text: "Currently".localized() + " 25°")
+        provideTemperature.shortText = "25°"
+        
+        let providerMax = CLKSimpleTextProvider(text: "Maximum".localized() + " 28°")
+        providerMax.shortText = "28°"
         
         switch complication.family {
         case .modularSmall:
@@ -268,41 +308,114 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
             modularTemplate.textProvider = CLKSimpleTextProvider(text: "0°")
             
             template = modularTemplate
-            break;
+            break
         case .modularLarge:
             let modularTemplate = CLKComplicationTemplateModularLargeTable()
-            
+            modularTemplate.headerImageProvider = image
             modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
-            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "")
+            modularTemplate.row1Column1TextProvider = provideTemperature
             modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
             modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "")
             modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
             
             template = modularTemplate
-            break;
+            break
         case .utilitarianSmall:
             let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "0°")
+            modularTemplate.textProvider = provideTemperature
             
             template = modularTemplate
-            break;
+            break
         case .utilitarianLarge:
             let modularTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "0°")
+            modularTemplate.textProvider = provideTemperature
             
             template = modularTemplate
-            break;
+            break
         case .circularSmall:
             let modularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "0°")
+            modularTemplate.textProvider = provideTemperature
             
             template = modularTemplate
-            break;
-        default:
-            break;
+            break
+        case .extraLarge:
+            let modularTemplate = CLKComplicationTemplateExtraLargeColumnsText()
+            modularTemplate.row1Column1TextProvider = provideTemperature
+            break
+        case .utilitarianSmallFlat:
+            let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+            modularTemplate.textProvider = provideTemperature
+            
+            template = modularTemplate
+            break
         }
         
         handler(template)
     }
     
+    func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
+        var template: CLKComplicationTemplate? = nil
+        
+        let city = CLKSimpleTextProvider(text: "Montreal")
+        
+        let image = CLKImageProvider(onePieceImage: UIImage(named: String(describing:WeatherStatus.sunny))!)
+        
+        let provideTemperature = CLKSimpleTextProvider(text: "Currently".localized() + " 25°")
+        provideTemperature.shortText = "25°"
+        
+        let providerMax = CLKSimpleTextProvider(text: "Maximum".localized() + " 28°")
+        providerMax.shortText = "28°"
+        
+        switch complication.family {
+        case .modularSmall:
+            let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
+            modularTemplate.textProvider = provideTemperature
+            
+            template = modularTemplate
+            break
+        case .modularLarge:
+            let modularTemplate = CLKComplicationTemplateModularLargeTable()
+            
+            modularTemplate.headerTextProvider = city
+            modularTemplate.headerImageProvider = image
+            modularTemplate.row1Column1TextProvider = provideTemperature
+            modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
+            modularTemplate.row2Column1TextProvider = providerMax
+            modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
+
+            
+            template = modularTemplate
+            break
+        case .utilitarianSmall:
+            let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+            modularTemplate.textProvider = provideTemperature
+            
+            template = modularTemplate
+            break
+        case .utilitarianLarge:
+            let modularTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+            modularTemplate.textProvider = provideTemperature
+            
+            template = modularTemplate
+            break
+        case .circularSmall:
+            let modularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
+            modularTemplate.textProvider = provideTemperature
+            
+            template = modularTemplate
+            break
+        case .extraLarge:
+            let modularTemplate = CLKComplicationTemplateExtraLargeColumnsText()
+            modularTemplate.row1Column1TextProvider = provideTemperature
+            break
+        case .utilitarianSmallFlat:
+            let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+            modularTemplate.textProvider = provideTemperature
+            
+            template = modularTemplate
+            break
+        }
+        
+        handler(template)
+    }
 }

@@ -286,7 +286,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     // MARK: - Update Scheduling
     // TODO: retiver avec background fetch
     func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Swift.Void) {
-        handler(Date(timeIntervalSinceNow: 60*Double(Constants.WeatherCacheInMinutes)))
+        handler(Date(timeIntervalSinceNow: 60*Double(Constants.weatherCacheInMinutes)))
     }
     
     // MARK: - Placeholder Templates

@@ -47,14 +47,14 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
 
         if InterfaceController.wrapper.refreshNeeded() {
             loadData()
-            
-            scheduleRefresh()
         }
     }
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
             SharedWeather.instance.getWeather(city, delegate: self)
+            
+            scheduleRefresh()
         } else {
             cityLabel.setHidden(true)
             selectCityButton.setHidden(false)

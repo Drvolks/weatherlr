@@ -36,6 +36,11 @@ class WeatherHelper {
         return WeatherInformationWrapper()
     }
     
+    static func getWeatherInformationsNoCache(_ data:Data, city:City) -> WeatherInformationWrapper {
+        let rssParser = RssParser(xmlData: data, language: PreferenceHelper.getLanguage())
+        return generateWeatherInformation(rssParser, city: city)
+    }
+    
     static func generateWeatherInformation(_ rssParser: RssParser, city: City) -> WeatherInformationWrapper {
         let rssEntries = rssParser.parse()
         let weatherInformationProcess = RssEntryToWeatherInformation(rssEntries: rssEntries)

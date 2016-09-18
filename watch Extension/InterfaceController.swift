@@ -11,13 +11,13 @@ import Foundation
 import WatchConnectivity
 
 
-class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
+class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExtensionDelegate, URLSessionDownloadDelegate {
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     
-    var wrapper = WeatherInformationWrapper()
+    static var wrapper = WeatherInformationWrapper()
     
     override func didDeactivate() {
         super.didDeactivate()
@@ -32,6 +32,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         
         SharedWeather.instance.register(self)
         
+        WKExtension.shared().delegate = self
+        
         selectCityButton.setTitle("Select city".localized())
         
         clearAllMenuItems()
@@ -42,9 +44,11 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
 
     override func willActivate() {
         super.willActivate()
-        
-        if wrapper.refreshNeeded() {
+
+        if InterfaceController.wrapper.refreshNeeded() {
             loadData()
+            
+            scheduleRefresh()
         }
     }
     
@@ -70,18 +74,22 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     }
     
     func weatherDidUpdate(_ wrapper: WeatherInformationWrapper) {
-        self.wrapper = wrapper
+        InterfaceController.wrapper = wrapper
         
+        refreshDisplay()
+    }
+    
+    func refreshDisplay() {
         if let city = PreferenceHelper.getSelectedCity() {
             self.cityLabel.setText(CityHelper.cityName(city))
         }
         
         lastRefreshLabel.setHidden(false)
-        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(wrapper))
+        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(InterfaceController.wrapper))
         
         var rowTypes = [String]()
-        for index in 0..<wrapper.weatherInformations.count {
-            let weather = wrapper.weatherInformations[index]
+        for index in 0..<InterfaceController.wrapper.weatherInformations.count {
+            let weather = InterfaceController.wrapper.weatherInformations[index]
             if weather.weatherDay == WeatherDay.now {
                 rowTypes.append("currentWeatherRow")
             }
@@ -95,13 +103,13 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
 
         
         for index in 0..<rowTypes.count {
-            let weather = wrapper.weatherInformations[index]
+            let weather = InterfaceController.wrapper.weatherInformations[index]
             
             switch(rowTypes[index]) {
             case "currentWeatherRow":
                 if let controller = weatherTable.rowController(at: index) as? CurrentWeatherRowController {
-                    if wrapper.weatherInformations.count > index+1 {
-                        let nextWeather = wrapper.weatherInformations[index+1]
+                    if InterfaceController.wrapper.weatherInformations.count > index+1 {
+                        let nextWeather = InterfaceController.wrapper.weatherInformations[index+1]
                         controller.nextWeather = nextWeather
                     }
                     
@@ -198,9 +206,93 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         }
     }
     
+    @IBAction func refreshPressed() {
+        loadData()
+    }
+    
+    func scheduleRefresh() {
+        let fireDate = Date(timeIntervalSinceNow: 60*25)
+        let userInfo = ["reason" : "background update"] as NSDictionary
+        
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
+            if (error == nil) {
+                print("successfully scheduled background task, use the crown to send the app to the background and wait for handle:BackgroundTasks to fire.")
+            }
+        }
+    }
+    
+    
     func cityDidChange(_ city: City) {
         PreferenceHelper.addFavorite(city)
         SharedWeather.instance.broadcastUpdate(self)
         loadData()
+    }
+    
+    func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
+        for task : WKRefreshBackgroundTask in backgroundTasks {
+            print("received background task: ", task)
+            // only handle these while running in the background
+            if (WKExtension.shared().applicationState == .background) {
+                if task is WKApplicationRefreshBackgroundTask {
+                    // this task is completed below, our app will then suspend while the download session runs
+                    print("application task received, start URL session")
+                    scheduleURLSession()
+                }
+            }
+            else if let urlTask = task as? WKURLSessionRefreshBackgroundTask {
+                let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: urlTask.sessionIdentifier)
+                let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue: nil)
+                
+                print("Rejoining session ", backgroundSession)
+            }
+            // make sure to complete all tasks, even ones you don't handle
+            task.setTaskCompleted()
+        }
+    }
+    
+    func scheduleSnapshot() {
+        // fire now, we're ready
+        let fireDate = Date()
+        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: fireDate, userInfo: nil) { error in
+            if (error == nil) {
+                print("successfully scheduled snapshot.  All background work completed.")
+            }
+        }
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        print("NSURLSession finished to url: ", location)
+        
+        //var urlContents = NSString(contentsOfURL: location, encoding: NSUTF8StringEncoding, error: nil)
+        // print(urlContents)
+        if let city = PreferenceHelper.getSelectedCity() {
+            let xmlData = try! Data(contentsOf: location)
+            print(xmlData)
+            InterfaceController.wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
+            
+            refreshDisplay()
+            scheduleSnapshot()
+            scheduleRefresh()
+        }
+    }
+    
+    func scheduleURLSession() {
+        if let city = PreferenceHelper.getSelectedCity() {
+            print("scheduleURLSession")
+            
+            let url = URL(string:UrlHelper.getUrl(city))!
+        
+            let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: NSUUID().uuidString)
+            backgroundConfigObject.sessionSendsLaunchEvents = true
+            let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue:nil)
+            
+            print("Download url " + UrlHelper.getUrl(city))
+            
+            let downloadTask = backgroundSession.downloadTask(with: url)
+            downloadTask.resume()
+            
+            print("downloadTask.resume")
+
+        }
     }
 }

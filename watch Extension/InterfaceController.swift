@@ -47,14 +47,16 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
 
         if InterfaceController.wrapper.refreshNeeded() {
             loadData()
+        } else {
+            scheduleRefresh()
         }
     }
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
-            SharedWeather.instance.getWeather(city, delegate: self)
-            
             scheduleRefresh()
+            
+            SharedWeather.instance.getWeather(city, delegate: self)
         } else {
             cityLabel.setHidden(true)
             selectCityButton.setHidden(false)
@@ -134,6 +136,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
                 break
             }
         }
+        
+        scheduleSnapshot()
     }
     
     func selectCity() {
@@ -211,7 +215,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
     }
     
     func scheduleRefresh() {
-        let fireDate = Date(timeIntervalSinceNow: 60*25)
+        let fireDate = Date(timeIntervalSinceNow: 25)
         let userInfo = ["reason" : "background update"] as NSDictionary
         
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
@@ -263,16 +267,14 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("NSURLSession finished to url: ", location)
         
-        //var urlContents = NSString(contentsOfURL: location, encoding: NSUTF8StringEncoding, error: nil)
-        // print(urlContents)
+        scheduleRefresh()
+        
         if let city = PreferenceHelper.getSelectedCity() {
             let xmlData = try! Data(contentsOf: location)
             print(xmlData)
             InterfaceController.wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
             
             refreshDisplay()
-            scheduleSnapshot()
-            scheduleRefresh()
         }
     }
     

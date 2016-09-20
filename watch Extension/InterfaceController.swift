@@ -11,7 +11,7 @@ import Foundation
 import WatchConnectivity
 
 
-class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExtensionDelegate, URLSessionDataDelegate, URLSessionDownloadDelegate {
+class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExtensionDelegate, URLSessionDownloadDelegate {
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
@@ -28,6 +28,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
     }
     
     override func awake(withContext context: Any?) {
+        print("awake")
         super.awake(withContext: context)
         
         SharedWeather.instance.register(self)
@@ -41,8 +42,15 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         addMenuItem(with: WKMenuItemIcon.info, title: "English", action: #selector(InterfaceController.englishSelected))
         addMenuItem(with: WKMenuItemIcon.more, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
     }
+    
+    override func didAppear() {
+        print("didAppear")
+        super.didAppear()
+    }
 
     override func willActivate() {
+        print("willActivate")
+        
         super.willActivate()
 
         if InterfaceController.wrapper.refreshNeeded() {
@@ -134,6 +142,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
                 break
             }
         }
+        
+        scheduleSnapshot()
     }
     
     func selectCity() {
@@ -211,12 +221,22 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
     }
     
     func scheduleRefresh() {
+        print("scheduleRefresh")
+        
         let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
-        let userInfo = ["reason" : "background update"] as NSDictionary
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: String(describing: Language.French))
+        dateFormatter.timeStyle = .short
+        let fireDateStr = dateFormatter.string(from: fireDate)
+        
+        let userInfo = ["reason" : "background update " + fireDateStr] as NSDictionary
         
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
             if (error == nil) {
-                print("successfully scheduled background task, use the crown to send the app to the background and wait for handle:BackgroundTasks to fire.")
+                print("successfully scheduled background task at ", fireDateStr)
+            } else {
+                print("scheduleRefresh error ", error)
             }
         }
     }
@@ -229,48 +249,59 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
     }
     
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
+        print("handle background tasks")
+        
         for task : WKRefreshBackgroundTask in backgroundTasks {
             print("received background task: ", task)
-            // only handle these while running in the background
+
             if (WKExtension.shared().applicationState == .background) {
                 if task is WKApplicationRefreshBackgroundTask {
                     // this task is completed below, our app will then suspend while the download session runs
                     print("application task received, start URL session")
                     scheduleURLSession()
                 }
-            } else {
-                print("not in background")
+            }
+            else if let urlTask = task as? WKURLSessionRefreshBackgroundTask {
+                let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: urlTask.sessionIdentifier)
+                let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue: nil)
+                
+                print("Rejoining session ", backgroundSession)
+            } else if let snapshotTask = task as? WKSnapshotRefreshBackgroundTask {
+                completeSnapshotTask(task: snapshotTask)
             }
             
-            // make sure to complete all tasks, even ones you don't handle
             task.setTaskCompleted()
         }
     }
     
     func scheduleSnapshot() {
-        // fire now, we're ready
+        print("scheduleSnapshot")
+        
         let fireDate = Date()
         WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: fireDate, userInfo: nil) { error in
             if (error == nil) {
-                print("successfully scheduled snapshot.  All background work completed.")
+                print("successfully scheduled snapshot.")
+            } else {
+                print("scheduleSnapshot error ", error)
             }
         }
     }
     
     
     func scheduleURLSession() {
+        print("scheduleURLSession")
+        
         if let city = PreferenceHelper.getSelectedCity() {
-            print("scheduleURLSession")
+            scheduleRefresh()
             
             let url = URL(string:UrlHelper.getUrl(city))!
             
-            let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: NSUUID().uuidString)
-            backgroundConfigObject.sessionSendsLaunchEvents = true
+            let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
+            //backgroundConfigObject.sessionSendsLaunchEvents = true
             let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue:nil)
             
             print("Download url " + UrlHelper.getUrl(city))
             
-            //let downloadTask = backgroundSession.dataTask(with: url)
             let downloadTask = backgroundSession.downloadTask(with: url)
             downloadTask.resume()
             
@@ -279,20 +310,6 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         }
     }
     
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-        print("didReceive data: ", data)
-        
-        scheduleRefresh()
-        
-        if let city = PreferenceHelper.getSelectedCity() {
-            InterfaceController.wrapper = WeatherHelper.getWeatherInformationsNoCache(data, city: city)
-            
-            print("will now refresh display")
-            refreshDisplay()
-            scheduleSnapshot()
-        }
-        
-    }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("NSURLSession finished to url: ", location)
@@ -300,23 +317,41 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         scheduleRefresh()
         
         if let city = PreferenceHelper.getSelectedCity() {
-            let xmlData = try! Data(contentsOf: location)
-            print(xmlData)
-            InterfaceController.wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
+            do {
+                let xmlData = try Data(contentsOf: location)
+                print(xmlData)
+                InterfaceController.wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
             
-            print("will now refresh display")
-            refreshDisplay()
-            scheduleSnapshot()
+                print("will now refresh display")
+                refreshDisplay()
+            } catch {
+                print("error urlSession when loading data at ", location)
+            }
         }
 
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print("error", error)
+        if(error != nil) {
+            print("urlSession error", error)
+        }
     }
     
     func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
         print("urlSessionDidFinishEvents")
+    }
+    
+    func completeSnapshotTask(task: WKSnapshotRefreshBackgroundTask) {
+        let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: String(describing: Language.French))
+        dateFormatter.timeStyle = .short
+        let fireDateStr = dateFormatter.string(from: fireDate)
+        
+        let userInfo = ["reason" : "snapshot update " + fireDateStr] as NSDictionary
+        
+        task.setTaskCompleted(restoredDefaultState: false, estimatedSnapshotExpiration: fireDate, userInfo: userInfo)
     }
     
 }

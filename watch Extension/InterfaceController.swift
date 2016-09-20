@@ -10,13 +10,13 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExtensionDelegate, URLSessionDownloadDelegate {
+class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     
-    static var wrapper = WeatherInformationWrapper()
+    var initialState = true
     
     override func didDeactivate() {
         super.didDeactivate()
@@ -31,8 +31,6 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         super.awake(withContext: context)
         
         SharedWeather.instance.register(self)
-        
-        WKExtension.shared().delegate = self
         
         selectCityButton.setTitle("Select city".localized())
         
@@ -52,14 +50,19 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         
         super.willActivate()
 
-        if InterfaceController.wrapper.refreshNeeded() {
+        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        if watchDelegate.wrapper.refreshNeeded() {
             loadData()
+        } else if initialState {
+            refreshDisplay()
+            initialState = false
         }
     }
     
     func loadData() {
         if let city = PreferenceHelper.getSelectedCity() {
-            scheduleRefresh()
+            let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+            watchDelegate.scheduleRefresh()
             
             SharedWeather.instance.getWeather(city, delegate: self)
         } else {
@@ -81,7 +84,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
     }
     
     func weatherDidUpdate(_ wrapper: WeatherInformationWrapper) {
-        InterfaceController.wrapper = wrapper
+        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        watchDelegate.wrapper = wrapper
         
         refreshDisplay()
     }
@@ -92,11 +96,12 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         }
         
         lastRefreshLabel.setHidden(false)
-        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(InterfaceController.wrapper))
+        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
         
         var rowTypes = [String]()
-        for index in 0..<InterfaceController.wrapper.weatherInformations.count {
-            let weather = InterfaceController.wrapper.weatherInformations[index]
+        for index in 0..<watchDelegate.wrapper.weatherInformations.count {
+            let weather = watchDelegate.wrapper.weatherInformations[index]
             if weather.weatherDay == WeatherDay.now {
                 rowTypes.append("currentWeatherRow")
             }
@@ -110,13 +115,13 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
 
         
         for index in 0..<rowTypes.count {
-            let weather = InterfaceController.wrapper.weatherInformations[index]
+            let weather = watchDelegate.wrapper.weatherInformations[index]
             
             switch(rowTypes[index]) {
             case "currentWeatherRow":
                 if let controller = weatherTable.rowController(at: index) as? CurrentWeatherRowController {
-                    if InterfaceController.wrapper.weatherInformations.count > index+1 {
-                        let nextWeather = InterfaceController.wrapper.weatherInformations[index+1]
+                    if watchDelegate.wrapper.weatherInformations.count > index+1 {
+                        let nextWeather = watchDelegate.wrapper.weatherInformations[index+1]
                         controller.nextWeather = nextWeather
                     }
                     
@@ -142,8 +147,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
             }
         }
         
-        scheduleSnapshot()
-        updateComplication()
+        watchDelegate.scheduleSnapshot()
+        watchDelegate.updateComplication()
     }
     
     func selectCity() {
@@ -220,26 +225,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         loadData()
     }
     
-    func scheduleRefresh() {
-        print("scheduleRefresh")
-        
-        let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: String(describing: Language.French))
-        dateFormatter.timeStyle = .short
-        let fireDateStr = dateFormatter.string(from: fireDate)
-        
-        let userInfo = ["reason" : "background update " + fireDateStr] as NSDictionary
-        
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
-            if (error == nil) {
-                print("successfully scheduled background task at ", fireDateStr)
-            } else {
-                print("scheduleRefresh error ", error)
-            }
-        }
-    }
+    
     
     
     func cityDidChange(_ city: City) {
@@ -248,120 +234,5 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         loadData()
     }
     
-    func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        print("handle background tasks")
-        
-        for task : WKRefreshBackgroundTask in backgroundTasks {
-            print("received background task: ", task)
-
-            if (WKExtension.shared().applicationState == .background) {
-                if task is WKApplicationRefreshBackgroundTask {
-                    // this task is completed below, our app will then suspend while the download session runs
-                    print("application task received, start URL session")
-                    scheduleURLSession()
-                }
-            }
-            else if let urlTask = task as? WKURLSessionRefreshBackgroundTask {
-                let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: urlTask.sessionIdentifier)
-                let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue: nil)
-                
-                print("Rejoining session ", backgroundSession)
-            } else if let snapshotTask = task as? WKSnapshotRefreshBackgroundTask {
-                completeSnapshotTask(task: snapshotTask)
-            }
-            
-            task.setTaskCompleted()
-        }
-    }
     
-    func scheduleSnapshot() {
-        print("scheduleSnapshot")
-        
-        let fireDate = Date()
-        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: fireDate, userInfo: nil) { error in
-            if (error == nil) {
-                print("successfully scheduled snapshot.")
-            } else {
-                print("scheduleSnapshot error ", error)
-            }
-        }
-    }
-    
-    
-    func scheduleURLSession() {
-        print("scheduleURLSession")
-        
-        if let city = PreferenceHelper.getSelectedCity() {
-            scheduleRefresh()
-            
-            let url = URL(string:UrlHelper.getUrl(city))!
-            
-            let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
-            //backgroundConfigObject.sessionSendsLaunchEvents = true
-            let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue:nil)
-            
-            print("Download url " + UrlHelper.getUrl(city))
-            
-            let downloadTask = backgroundSession.downloadTask(with: url)
-            downloadTask.resume()
-            
-            print("downloadTask.resume")
-            
-        }
-    }
-    
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("NSURLSession finished to url: ", location)
-        
-        scheduleRefresh()
-        
-        if let city = PreferenceHelper.getSelectedCity() {
-            do {
-                let xmlData = try Data(contentsOf: location)
-                print(xmlData)
-                InterfaceController.wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
-            
-                print("will now refresh display")
-                refreshDisplay()
-            } catch {
-                print("error urlSession when loading data at ", location)
-            }
-        }
-
-    }
-    
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        if(error != nil) {
-            print("urlSession error", error)
-        }
-    }
-    
-    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        print("urlSessionDidFinishEvents")
-    }
-    
-    func completeSnapshotTask(task: WKSnapshotRefreshBackgroundTask) {
-        let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: String(describing: Language.French))
-        dateFormatter.timeStyle = .short
-        let fireDateStr = dateFormatter.string(from: fireDate)
-        
-        let userInfo = ["reason" : "snapshot update " + fireDateStr] as NSDictionary
-        
-        task.setTaskCompleted(restoredDefaultState: false, estimatedSnapshotExpiration: fireDate, userInfo: userInfo)
-    }
- 
-    func updateComplication() {
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        if let complications = complicationServer.activeComplications {
-            for complication in complications {
-                print("updating complication", complication)
-                
-                complicationServer.reloadTimeline(for: complication)
-            }
-        }
-    }
 }

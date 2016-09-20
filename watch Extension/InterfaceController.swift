@@ -8,7 +8,6 @@
 
 import WatchKit
 import Foundation
-import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExtensionDelegate, URLSessionDownloadDelegate {
@@ -144,6 +143,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         }
         
         scheduleSnapshot()
+        updateComplication()
     }
     
     func selectCity() {
@@ -353,5 +353,15 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate, WKExten
         
         task.setTaskCompleted(restoredDefaultState: false, estimatedSnapshotExpiration: fireDate, userInfo: userInfo)
     }
-    
+ 
+    func updateComplication() {
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        if let complications = complicationServer.activeComplications {
+            for complication in complications {
+                print("updating complication", complication)
+                
+                complicationServer.reloadTimeline(for: complication)
+            }
+        }
+    }
 }

@@ -13,9 +13,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     override init() {
         super.init()
         
-        if let city = PreferenceHelper.getSelectedCity() {
-            SharedWeather.instance.getWeather(city, delegate: self)
-        }
+        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        watchDelegate.scheduleURLSession()
     }
     
     // MARK: - Timeline Configuration
@@ -42,21 +41,22 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
         
         print("complication getCurrentTimelineEntry")
 
+        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         
         var template:CLKComplicationTemplate? = nil
         
         if let city = PreferenceHelper.getSelectedCity() {
-            if InterfaceController.wrapper.weatherInformations.count > 0 {
+            if watchDelegate.wrapper.weatherInformations.count > 0 {
                 print("complication has weather info")
                 
                 var weather:WeatherInformation? = nil
-                if InterfaceController.wrapper.weatherInformations[0].weatherDay == WeatherDay.now {
-                    weather = InterfaceController.wrapper.weatherInformations[0]
+                if watchDelegate.wrapper.weatherInformations[0].weatherDay == WeatherDay.now {
+                    weather = watchDelegate.wrapper.weatherInformations[0]
                 }
                 
                 var nextWeather:WeatherInformation? = nil
-                if InterfaceController.wrapper.weatherInformations.count > 1 {
-                    nextWeather = InterfaceController.wrapper.weatherInformations[1]
+                if watchDelegate.wrapper.weatherInformations.count > 1 {
+                    nextWeather = watchDelegate.wrapper.weatherInformations[1]
                 }
                 
                 if complication.family == .modularLarge {
@@ -392,7 +392,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
     }
     
     func weatherDidUpdate(_ wrapper: WeatherInformationWrapper) {
-        InterfaceController.wrapper = wrapper
+        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        watchDelegate.wrapper = wrapper
         
         updateComplication()
     }

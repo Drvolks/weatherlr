@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
+class InterfaceController: WKInterfaceController {
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
@@ -22,15 +22,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         super.didDeactivate()
     }
     
-    deinit {
-        SharedWeather.instance.unregister(self)
-    }
-    
     override func awake(withContext context: Any?) {
-        print("awake")
         super.awake(withContext: context)
-        
-        SharedWeather.instance.register(self)
         
         selectCityButton.setTitle("Select city".localized())
         
@@ -39,55 +32,31 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         addMenuItem(with: WKMenuItemIcon.info, title: "English", action: #selector(InterfaceController.englishSelected))
         addMenuItem(with: WKMenuItemIcon.more, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
     }
-    
-    override func didAppear() {
-        print("didAppear")
-        super.didAppear()
-    }
 
     override func willActivate() {
-        print("willActivate")
-        
         super.willActivate()
 
-        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        if watchDelegate.wrapper.refreshNeeded() {
-            loadData()
-        } else if initialState {
-            refreshDisplay()
-            initialState = false
-        }
+        loadData()
     }
     
     func loadData() {
-        if let city = PreferenceHelper.getSelectedCity() {
-            let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-            watchDelegate.scheduleRefresh()
-            
-            SharedWeather.instance.getWeather(city, delegate: self)
+        if PreferenceHelper.getSelectedCity() != nil {
+            if ExtensionDelegateHelper.refreshNeeded() {
+                lastRefreshLabel.setHidden(true)
+                
+                cityLabel.setHidden(false)
+                cityLabel.setText("Loading".localized())
+                selectCityButton.setHidden(true)
+                
+                ExtensionDelegateHelper.launchURLSession()
+            } else if initialState {
+                refreshDisplay()
+                initialState = false
+            }
         } else {
             cityLabel.setHidden(true)
             selectCityButton.setHidden(false)
         }
-    }
-    
-    func beforeUpdate() {
-        lastRefreshLabel.setHidden(true)
-        
-        cityLabel.setHidden(false)
-        cityLabel.setText("Loading".localized())
-        selectCityButton.setHidden(true)
-    }
-    
-    func weatherShouldUpdate() {
-        // nothing to do
-    }
-    
-    func weatherDidUpdate(_ wrapper: WeatherInformationWrapper) {
-        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        watchDelegate.wrapper = wrapper
-        
-        refreshDisplay()
     }
     
     func refreshDisplay() {
@@ -216,7 +185,7 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
             if cities.count == 1 {
                 cityDidChange(cities[0])
             } else {
-                pushController(withName: "SelectCity", context: [Constants.cityListKey : cities, Constants.searchTextKey: choice, "delegate": self])
+                pushController(withName: "SelectCity", context: [Constants.cityListKey : cities, Constants.searchTextKey: choice])
             }
         }
     }
@@ -225,14 +194,8 @@ class InterfaceController: WKInterfaceController, WeatherUpdateDelegate {
         loadData()
     }
     
-    
-    
-    
     func cityDidChange(_ city: City) {
         PreferenceHelper.addFavorite(city)
-        SharedWeather.instance.broadcastUpdate(self)
         loadData()
     }
-    
-    
 }

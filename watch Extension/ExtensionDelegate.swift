@@ -73,7 +73,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
             let url = URL(string:UrlHelper.getUrl(city))!
             
             let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
-            //backgroundConfigObject.sessionSendsLaunchEvents = true
             let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue:nil)
             
             print("Download url " + UrlHelper.getUrl(city))
@@ -86,6 +85,28 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         }
     }
     
+    
+    func launchURLSession() {
+        print("launchURLSession")
+        
+        if let city = PreferenceHelper.getSelectedCity() {
+            scheduleRefresh()
+            
+            let urlStr = UrlHelper.getUrl(city)
+            let url = URL(string:urlStr)!
+            
+            print("Download url " + urlStr)
+            
+            let configObject = URLSessionConfiguration.default
+            let session = URLSession(configuration: configObject, delegate: self, delegateQueue:nil)
+
+            let downloadTask = session.downloadTask(with: url)
+            downloadTask.resume()
+            
+            print("downloadTask.resume")
+            
+        }
+    }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("NSURLSession finished to url: ", location)

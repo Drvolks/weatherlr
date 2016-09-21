@@ -9,12 +9,13 @@
 import ClockKit
 import WatchKit
 
-class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdateDelegate {
+class ComplicationController: NSObject, CLKComplicationDataSource {
     override init() {
         super.init()
         
-        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        watchDelegate.scheduleURLSession()
+        if ExtensionDelegateHelper.refreshNeeded() {
+            ExtensionDelegateHelper.launchURLSession()
+        }
     }
     
     // MARK: - Timeline Configuration
@@ -42,21 +43,22 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
         print("complication getCurrentTimelineEntry")
 
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        let wrapper = watchDelegate.wrapper
         
         var template:CLKComplicationTemplate? = nil
         
         if let city = PreferenceHelper.getSelectedCity() {
-            if watchDelegate.wrapper.weatherInformations.count > 0 {
+            if wrapper.weatherInformations.count > 0 {
                 print("complication has weather info")
                 
                 var weather:WeatherInformation? = nil
-                if watchDelegate.wrapper.weatherInformations[0].weatherDay == WeatherDay.now {
-                    weather = watchDelegate.wrapper.weatherInformations[0]
+                if wrapper.weatherInformations[0].weatherDay == WeatherDay.now {
+                    weather = wrapper.weatherInformations[0]
                 }
                 
                 var nextWeather:WeatherInformation? = nil
-                if watchDelegate.wrapper.weatherInformations.count > 1 {
-                    nextWeather = watchDelegate.wrapper.weatherInformations[1]
+                if wrapper.weatherInformations.count > 1 {
+                    nextWeather = wrapper.weatherInformations[1]
                 }
                 
                 if complication.family == .modularLarge {
@@ -245,11 +247,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
         
         return CLKSimpleTextProvider(text: "")
     }
-
-    
-    func beforeUpdate() {
-        // nothing to do
-    }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Swift.Void) {
         // Call the handler with the timeline entries prior to the given date
@@ -389,25 +386,5 @@ class ComplicationController: NSObject, CLKComplicationDataSource, WeatherUpdate
         }
         
         handler(template)
-    }
-    
-    func weatherDidUpdate(_ wrapper: WeatherInformationWrapper) {
-        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        watchDelegate.wrapper = wrapper
-        
-        updateComplication()
-    }
-    
-    func weatherShouldUpdate() {}
-    
-    func updateComplication() {
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        if let complications = complicationServer.activeComplications {
-            for complication in complications {
-                print("updating complication", complication)
-                
-                complicationServer.reloadTimeline(for: complication)
-            }
-        }
     }
 }

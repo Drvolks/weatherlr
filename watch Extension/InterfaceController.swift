@@ -17,6 +17,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     
     var initialState = true
+    var rowTypes = [String]()
     
     override func didDeactivate() {
         super.didDeactivate()
@@ -68,20 +69,21 @@ class InterfaceController: WKInterfaceController {
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
         
-        var rowTypes = [String]()
-        for index in 0..<watchDelegate.wrapper.weatherInformations.count {
-            let weather = watchDelegate.wrapper.weatherInformations[index]
-            if weather.weatherDay == WeatherDay.now {
-                rowTypes.append("currentWeatherRow")
+        if !rowTypesValid() {
+            rowTypes = [String]()
+            for index in 0..<watchDelegate.wrapper.weatherInformations.count {
+                let weather = watchDelegate.wrapper.weatherInformations[index]
+                if weather.weatherDay == WeatherDay.now {
+                    rowTypes.append("currentWeatherRow")
+                }
+                else if weather.weatherDay == WeatherDay.today {
+                    rowTypes.append("nextWeatherRow")
+                } else {
+                    rowTypes.append("weatherRow")
+                }
             }
-            else if weather.weatherDay == WeatherDay.today {
-                rowTypes.append("nextWeatherRow")
-            } else {
-                rowTypes.append("weatherRow")
-            }
+            weatherTable.setRowTypes(rowTypes)
         }
-        weatherTable.setRowTypes(rowTypes)
-
         
         for index in 0..<rowTypes.count {
             let weather = watchDelegate.wrapper.weatherInformations[index]
@@ -118,6 +120,28 @@ class InterfaceController: WKInterfaceController {
         
         watchDelegate.scheduleSnapshot()
         watchDelegate.updateComplication()
+    }
+    
+    func rowTypesValid() -> Bool {
+        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        let wrapper = watchDelegate.wrapper
+        
+        if rowTypes.count != wrapper.weatherInformations.count {
+            return false
+        }
+        
+        let type = rowTypes[0]
+        var typeWeatherDay = WeatherDay.now
+        if type !=  "currentWeatherRow" {
+            typeWeatherDay = WeatherDay.na
+        }
+        let weatherDay = wrapper.weatherInformations[0].weatherDay
+        
+        if weatherDay != typeWeatherDay {
+            return false
+        }
+        
+        return true
     }
     
     func selectCity() {

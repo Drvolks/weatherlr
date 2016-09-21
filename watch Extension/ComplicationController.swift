@@ -39,9 +39,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Swift.Void) {
-        
-        print("complication getCurrentTimelineEntry")
-
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         let wrapper = watchDelegate.wrapper
         
@@ -49,8 +46,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         if let city = PreferenceHelper.getSelectedCity() {
             if wrapper.weatherInformations.count > 0 {
-                print("complication has weather info")
-                
                 var weather:WeatherInformation? = nil
                 if wrapper.weatherInformations[0].weatherDay == WeatherDay.now {
                     weather = wrapper.weatherInformations[0]

@@ -15,7 +15,6 @@ class SelectCityController: WKInterfaceController {
     @IBOutlet var searchLabel: WKInterfaceLabel!
     
     var cities = [City]()
-    var delegate:WeatherUpdateDelegate?
     
     override func didDeactivate() {
         super.didDeactivate()
@@ -27,7 +26,6 @@ class SelectCityController: WKInterfaceController {
         let dictionary = context as! Dictionary<String, AnyObject>
         cities = dictionary[Constants.cityListKey] as! [City]
         cities = CityHelper.sortCityList(cities)
-        delegate = dictionary["delegate"] as? WeatherUpdateDelegate
             
         cityTable.setNumberOfRows(cities.count, withRowType: "CityRow")
             
@@ -53,10 +51,6 @@ class SelectCityController: WKInterfaceController {
         let city = cities[rowIndex]
         
         PreferenceHelper.addFavorite(city)
-        
-        if let delegate = delegate {
-            SharedWeather.instance.broadcastUpdate(delegate)
-        }
         
         pop()
     }

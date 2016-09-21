@@ -25,24 +25,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        print("handle background tasks")
-        
         for task : WKRefreshBackgroundTask in backgroundTasks {
-            print("received background task: ", task)
-            
             if (WKExtension.shared().applicationState == .background) {
                 if task is WKApplicationRefreshBackgroundTask {
-                    // this task is completed below, our app will then suspend while the download session runs
-                    print("application task received, start URL session")
                     scheduleURLSession()
                 }
             }
-            else if let urlTask = task as? WKURLSessionRefreshBackgroundTask {
-                let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: urlTask.sessionIdentifier)
-                let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue: nil)
-                
-                print("Rejoining session ", backgroundSession)
-            } else if let snapshotTask = task as? WKSnapshotRefreshBackgroundTask {
+            else if let snapshotTask = task as? WKSnapshotRefreshBackgroundTask {
                 completeSnapshotTask(task: snapshotTask)
             }
             
@@ -51,13 +40,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
     
     func scheduleSnapshot() {
-        print("scheduleSnapshot")
-        
         let fireDate = Date()
         WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: fireDate, userInfo: nil) { error in
-            if (error == nil) {
-                print("successfully scheduled snapshot.")
-            } else {
+            if (error != nil) {
                 print("scheduleSnapshot error ", error)
             }
         }
@@ -65,8 +50,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     
     
     func scheduleURLSession() {
-        print("scheduleURLSession")
-        
         if let city = PreferenceHelper.getSelectedCity() {
             scheduleRefresh()
             
@@ -75,52 +58,35 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
             let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
             let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue:nil)
             
-            print("Download url " + UrlHelper.getUrl(city))
-            
             let downloadTask = backgroundSession.downloadTask(with: url)
             downloadTask.resume()
-            
-            print("downloadTask.resume")
-            
         }
     }
     
     
     func launchURLSession() {
-        print("launchURLSession")
-        
         if let city = PreferenceHelper.getSelectedCity() {
             scheduleRefresh()
             
-            let urlStr = UrlHelper.getUrl(city)
-            let url = URL(string:urlStr)!
-            
-            print("Download url " + urlStr)
+            let url = URL(string:UrlHelper.getUrl(city))!
             
             let configObject = URLSessionConfiguration.default
             let session = URLSession(configuration: configObject, delegate: self, delegateQueue:nil)
 
             let downloadTask = session.downloadTask(with: url)
             downloadTask.resume()
-            
-            print("downloadTask.resume")
-            
         }
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("NSURLSession finished to url: ", location)
-        
         scheduleRefresh()
         
         if let city = PreferenceHelper.getSelectedCity() {
             do {
                 let xmlData = try Data(contentsOf: location)
-                print(xmlData)
                 wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
                 
                 if let controller = WKExtension.shared().rootInterfaceController as? InterfaceController {
-                    print("will now refresh display")
                     controller.refreshDisplay()
                 }
             } catch {
@@ -134,10 +100,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         if(error != nil) {
             print("urlSession error", error)
         }
-    }
-    
-    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        print("urlSessionDidFinishEvents")
     }
     
     func completeSnapshotTask(task: WKSnapshotRefreshBackgroundTask) {
@@ -157,16 +119,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         let complicationServer = CLKComplicationServer.sharedInstance()
         if let complications = complicationServer.activeComplications {
             for complication in complications {
-                print("updating complication", complication)
-                
                 complicationServer.reloadTimeline(for: complication)
             }
         }
     }
     
     func scheduleRefresh() {
-        print("scheduleRefresh")
-        
         let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
         
         let dateFormatter = DateFormatter()
@@ -177,9 +135,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         let userInfo = ["reason" : "background update " + fireDateStr] as NSDictionary
         
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
-            if (error == nil) {
-                print("successfully scheduled background task at ", fireDateStr)
-            } else {
+            if (error != nil) {
                 print("scheduleRefresh error ", error)
             }
         }

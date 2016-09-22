@@ -40,6 +40,12 @@ class InterfaceController: WKInterfaceController {
         loadData()
     }
     
+    override func willDisappear() {
+        if weatherTable.numberOfRows > 0 {
+            weatherTable.scrollToRow(at: 0)
+        }
+    }
+    
     func loadData() {
         if PreferenceHelper.getSelectedCity() != nil {
             if ExtensionDelegateHelper.refreshNeeded() {

@@ -61,9 +61,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     func refreshDisplay() {
-        if let city = PreferenceHelper.getSelectedCity() {
-            self.cityLabel.setText(CityHelper.cityName(city))
-        }
+        cityLabel.setText("Loading".localized())
         
         lastRefreshLabel.setHidden(false)
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
@@ -116,6 +114,10 @@ class InterfaceController: WKInterfaceController {
             default:
                 break
             }
+        }
+        
+        if let city = PreferenceHelper.getSelectedCity() {
+            self.cityLabel.setText(CityHelper.cityName(city))
         }
         
         watchDelegate.scheduleSnapshot()
@@ -216,10 +218,6 @@ class InterfaceController: WKInterfaceController {
                 pushController(withName: "SelectCity", context: [Constants.cityListKey : cities, Constants.searchTextKey: choice])
             }
         }
-    }
-    
-    @IBAction func refreshPressed() {
-        loadData()
     }
     
     func cityDidChange(_ city: City) {

@@ -126,6 +126,10 @@ class InterfaceController: WKInterfaceController {
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
         let wrapper = watchDelegate.wrapper
         
+        if rowTypes.count == 0 || wrapper.weatherInformations.count == 0 {
+            return false
+        }
+        
         if rowTypes.count != wrapper.weatherInformations.count {
             return false
         }

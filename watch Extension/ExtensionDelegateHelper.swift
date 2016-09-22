@@ -11,14 +11,21 @@ import WatchKit
 
 class ExtensionDelegateHelper {
     static func launchURLSession() {
-        delegate().launchURLSession()
+        print(WKExtension.shared().delegate)
+        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+            print("launchURLSession: no delegate!")
+            return
+        }
+        
+        delegate.launchURLSession()
     }
     
     static func refreshNeeded() -> Bool {
-        return delegate().wrapper.refreshNeeded()
-    }
-    
-    private static func delegate() -> ExtensionDelegate {
-        return WKExtension.shared().delegate as! ExtensionDelegate
+        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+            print("refreshNeeded: no delegate!")
+            return true
+        }
+        
+        return delegate.wrapper.refreshNeeded()
     }
 }

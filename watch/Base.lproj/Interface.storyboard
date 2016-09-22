@@ -94,11 +94,6 @@
                                 <action selector="selectCity" destination="AgC-eL-Hgc" id="H2V-l0-hss"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Refresh" id="ynW-1p-A30">
-                            <connections>
-                                <action selector="refreshPressed" destination="AgC-eL-Hgc" id="dmP-Qx-iHO"/>
-                            </connections>
-                        </button>
                         <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>

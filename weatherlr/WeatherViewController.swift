@@ -36,6 +36,16 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshLabel()
         refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), for: UIControlEvents.valueChanged)
         weatherTable.addSubview(refreshControl)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(WeatherViewController.willGoToBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        
+    }
+    
+    func willGoToBackground() {
+        if weatherTable.numberOfRows(inSection: 0) > 0 {
+            let indexPath = IndexPath(row: 0, section: 0)
+            weatherTable.scrollToRow(at: indexPath, at: .top, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {

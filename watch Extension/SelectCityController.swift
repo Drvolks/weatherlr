@@ -52,6 +52,8 @@ class SelectCityController: WKInterfaceController {
         
         PreferenceHelper.addFavorite(city)
         
+        ExtensionDelegateHelper.resetWeather()
+        
         pop()
     }
 }

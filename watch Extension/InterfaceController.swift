@@ -173,11 +173,13 @@ class InterfaceController: WKInterfaceController {
     
     func francaisSelected() {
         PreferenceHelper.saveLanguage(Language.French)
+        ExtensionDelegateHelper.resetWeather()
         loadData()
     }
     
     func englishSelected() {
         PreferenceHelper.saveLanguage(Language.English)
+        ExtensionDelegateHelper.resetWeather()
         loadData()
     }
     

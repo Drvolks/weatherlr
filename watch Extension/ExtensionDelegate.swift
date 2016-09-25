@@ -18,7 +18,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
     
     func applicationDidFinishLaunching() {
-        launchURLSession()
+
     }
 
     func applicationDidBecomeActive() {

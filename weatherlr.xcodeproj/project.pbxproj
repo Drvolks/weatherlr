@@ -510,9 +510,9 @@
 				6EB154AA1D286EA50005B02A /* CurrentWeatherRowController.swift */,
 				6EB155361D3162AD0005B02A /* CityRowController.swift */,
 				6EB154801D282B0E0005B02A /* ExtensionDelegate.swift */,
+				6E3AC1981D93380D00E99C7D /* ExtensionDelegateHelper.swift */,
 				6EB154FC1D287B1A0005B02A /* ComplicationController.swift */,
 				6EB154861D282B0E0005B02A /* Info.plist */,
-				6E3AC1981D93380D00E99C7D /* ExtensionDelegateHelper.swift */,
 			);
 			path = "watch Extension";
 			sourceTree = "<group>";

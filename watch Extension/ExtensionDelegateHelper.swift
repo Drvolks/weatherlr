@@ -28,4 +28,13 @@ class ExtensionDelegateHelper {
         
         return delegate.wrapper.refreshNeeded()
     }
+    
+    static func resetWeather() {
+        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+            print("resetWeather: no delegate!")
+            return
+        }
+        
+        delegate.wrapper = WeatherInformationWrapper()
+    }
 }

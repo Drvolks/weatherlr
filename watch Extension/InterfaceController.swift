@@ -74,6 +74,7 @@ class InterfaceController: WKInterfaceController {
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
         
         if !rowTypesValid() {
+            objc_sync_enter(rowTypes)
             rowTypes = [String]()
             for index in 0..<watchDelegate.wrapper.weatherInformations.count {
                 let weather = watchDelegate.wrapper.weatherInformations[index]
@@ -86,6 +87,7 @@ class InterfaceController: WKInterfaceController {
                     rowTypes.append("weatherRow")
                 }
             }
+            objc_sync_exit(rowTypes)
             weatherTable.setRowTypes(rowTypes)
         }
         

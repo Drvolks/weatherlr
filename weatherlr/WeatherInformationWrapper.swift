@@ -33,9 +33,10 @@ class WeatherInformationWrapper {
     
     func expired() -> Bool {
         let elapsedTime = Calendar.current.dateComponents([.minute], from: lastRefresh as Date, to: Date()).minute
-        if elapsedTime! < Constants.weatherCacheInMinutes {
+        if elapsedTime! < Constants.watchExpirationInMinutes {
             return false
         } else {
+            print("wow, weather expired")
             return true
         }
     }
@@ -47,11 +48,10 @@ class WeatherInformationWrapper {
         
         if let oldCity = city {
             if let currentCity = PreferenceHelper.getSelectedCity() {
-                //if expired() {
-               //     return true
-               // }
-               // else 
-                if oldCity.id != currentCity.id {
+                if expired() {
+                    return true
+                }
+                else if oldCity.id != currentCity.id {
                     return true
                 }
                 

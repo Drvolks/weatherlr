@@ -61,7 +61,6 @@
 		6E04C8091DB277FF002CB067 /* Flag_of_Canada.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BCC1CCD7A0100533684 /* Flag_of_Canada.png */; };
 		6E04C80A1DB277FF002CB067 /* launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BD71CCF9D9400533684 /* launch@2x.png */; };
 		6E04C80B1DB277FF002CB067 /* nu-2_French.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12CC1CEA1ED800791284 /* nu-2_French.xml */; };
-		6E04C80E1DB277FF002CB067 /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6EB1546D1D282B0D0005B02A /* watch.app */; };
 		6E29052C1CB2D5550040EB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052B1CB2D5550040EB8B /* AppDelegate.swift */; };
 		6E29052E1CB2D5550040EB8B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */; };
 		6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E29052F1CB2D5550040EB8B /* Main.storyboard */; };
@@ -131,6 +130,40 @@
 		6E9F335C1CB8011B00A9D6A7 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */; };
 		6E9F335E1CB8588D00A9D6A7 /* AlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */; };
 		6E9F33601CB942C700A9D6A7 /* WeatherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */; };
+		6EA210AE1DB2A9E100BC8B1C /* AssetsWatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154721D282B0D0005B02A /* AssetsWatch.xcassets */; };
+		6EA210AF1DB2A9E100BC8B1C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB1546F1D282B0D0005B02A /* Interface.storyboard */; };
+		6EA210B31DB2A9E100BC8B1C /* Pods_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5D38C06BDDDE78A55F5B5D /* Pods_watch.framework */; };
+		6EA210BD1DB2AA1100BC8B1C /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F33591CB7FCFE00A9D6A7 /* PreferenceHelper.swift */; };
+		6EA210BE1DB2AA1100BC8B1C /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32C11CB305BE00A9D6A7 /* WeatherEnums.swift */; };
+		6EA210BF1DB2AA1100BC8B1C /* WeatherInformationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E816C161CD63BCF00533684 /* WeatherInformationWrapper.swift */; };
+		6EA210C01DB2AA1100BC8B1C /* RssEntryToWeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32E51CB4009900A9D6A7 /* RssEntryToWeatherInformation.swift */; };
+		6EA210C11DB2AA1100BC8B1C /* ExtensionDelegateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AC1981D93380D00E99C7D /* ExtensionDelegateHelper.swift */; };
+		6EA210C21DB2AA1100BC8B1C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154801D282B0E0005B02A /* ExtensionDelegate.swift */; };
+		6EA210C31DB2AA1100BC8B1C /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BF1CB3056A00A9D6A7 /* WeatherInformation.swift */; };
+		6EA210C41DB2AA1100BC8B1C /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
+		6EA210C51DB2AA1100BC8B1C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1547E1D282B0E0005B02A /* InterfaceController.swift */; };
+		6EA210C61DB2AA1100BC8B1C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32FA1CB6C95200A9D6A7 /* City.swift */; };
+		6EA210C71DB2AA1100BC8B1C /* NextWeatherRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1552A1D2970EB0005B02A /* NextWeatherRowController.swift */; };
+		6EA210C81DB2AA1100BC8B1C /* CityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155321D3159FF0005B02A /* CityHelper.swift */; };
+		6EA210C91DB2AA1100BC8B1C /* CurrentWeatherRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154AA1D286EA50005B02A /* CurrentWeatherRowController.swift */; };
+		6EA210CA1DB2AA1100BC8B1C /* WeatherRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154A81D2869200005B02A /* WeatherRowController.swift */; };
+		6EA210CB1DB2AA1100BC8B1C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154FC1D287B1A0005B02A /* ComplicationController.swift */; };
+		6EA210CC1DB2AA1100BC8B1C /* AlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */; };
+		6EA210CD1DB2AA1100BC8B1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F33571CB7FB0600A9D6A7 /* Constants.swift */; };
+		6EA210CE1DB2AA1100BC8B1C /* RssParserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32DC1CB3F30D00A9D6A7 /* RssParserBase.swift */; };
+		6EA210CF1DB2AA1100BC8B1C /* SelectCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155301D31531C0005B02A /* SelectCityController.swift */; };
+		6EA210D01DB2AA1100BC8B1C /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */; };
+		6EA210D11DB2AA1100BC8B1C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B63501CC593DE00B27334 /* StringExtension.swift */; };
+		6EA210D21DB2AA1100BC8B1C /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910CB1CCBEFCE006D3C82 /* WeatherHelper.swift */; };
+		6EA210D31DB2AA1100BC8B1C /* RssEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32D61CB3E91D00A9D6A7 /* RssEntry.swift */; };
+		6EA210D41DB2AA1100BC8B1C /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E816BD21CCE473E00533684 /* ExpiringCache.swift */; };
+		6EA210D51DB2AA1100BC8B1C /* CityRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155361D3162AD0005B02A /* CityRowController.swift */; };
+		6EA210D71DB2AA1100BC8B1C /* Pods_watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C871F0F9E99A6AE9B978B19 /* Pods_watch_Extension.framework */; };
+		6EA210D91DB2AA1100BC8B1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2905321CB2D5550040EB8B /* Assets.xcassets */; };
+		6EA210DA1DB2AA1100BC8B1C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910A41CC59629006D3C82 /* Localizable.strings */; };
+		6EA210DB1DB2AA1100BC8B1C /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154A51D2860680005B02A /* Cities.plist */; };
+		6EA210E31DB2AA8400BC8B1C /* watchFree.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6EA210B81DB2A9E100BC8B1C /* watchFree.app */; };
+		6EA210E41DB2AB0800BC8B1C /* watchFree Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6EA210E11DB2AA1100BC8B1C /* watchFree Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6EAB02E11CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */; };
 		6EB154711D282B0D0005B02A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB1546F1D282B0D0005B02A /* Interface.storyboard */; };
 		6EB154731D282B0D0005B02A /* AssetsWatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154721D282B0D0005B02A /* AssetsWatch.xcassets */; };
@@ -177,13 +210,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6E04C7D51DB277FF002CB067 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6EB1546C1D282B0D0005B02A;
-			remoteInfo = watch;
-		};
 		6E29053D1CB2D5550040EB8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
@@ -197,6 +223,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6E2905271CB2D5550040EB8B;
 			remoteInfo = weatherlr;
+		};
+		6EA210E51DB2AB0800BC8B1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EA210BA1DB2AA1100BC8B1C;
+			remoteInfo = "watchFree Extension";
+		};
+		6EA210E71DB2AC4800BC8B1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EA210A91DB2A9E100BC8B1C;
+			remoteInfo = watchFree;
 		};
 		6EB1547B1D282B0E0005B02A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -231,7 +271,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				6E04C80E1DB277FF002CB067 /* watch.app in Embed Watch Content */,
+				6EA210E31DB2AA8400BC8B1C /* watchFree.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +284,17 @@
 			files = (
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA210B01DB2A9E100BC8B1C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6EA210E41DB2AB0800BC8B1C /* watchFree Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6EB1548F1D282B0E0005B02A /* Embed App Extensions */ = {
@@ -360,6 +411,10 @@
 		6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
 		6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHeaderCell.swift; sourceTree = "<group>"; };
+		6EA210B81DB2A9E100BC8B1C /* watchFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA210B91DB2A9E200BC8B1C /* watchFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "watchFree-Info.plist"; path = "/Users/jfdufour/Documents/Programmation/weatherlr/watchFree-Info.plist"; sourceTree = "<absolute>"; };
+		6EA210E11DB2AA1100BC8B1C /* watchFree Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchFree Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA210E21DB2AA1100BC8B1C /* watchFree Extension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "watchFree Extension-Info.plist"; path = "/Users/jfdufour/Documents/Programmation/weatherlr/watchFree Extension-Info.plist"; sourceTree = "<absolute>"; };
 		6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalTopAlignLabel.swift; sourceTree = "<group>"; };
 		6EB1546D1D282B0D0005B02A /* watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB154701D282B0D0005B02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -437,6 +492,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EA210B21DB2A9E100BC8B1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA210B31DB2A9E100BC8B1C /* Pods_watch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA210D61DB2AA1100BC8B1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA210D71DB2AA1100BC8B1C /* Pods_watch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6EB154761D282B0D0005B02A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,6 +531,8 @@
 				6E04C8131DB27800002CB067 /* weatherlrFree-Info.plist */,
 				CE111271EA3861238BBDDDF7 /* Pods */,
 				C67B0E8F235C54C5A550F0D4 /* Frameworks */,
+				6EA210B91DB2A9E200BC8B1C /* watchFree-Info.plist */,
+				6EA210E21DB2AA1100BC8B1C /* watchFree Extension-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -472,6 +545,8 @@
 				6EB1546D1D282B0D0005B02A /* watch.app */,
 				6EB154791D282B0D0005B02A /* watch Extension.appex */,
 				6E04C8121DB277FF002CB067 /* weatherlrFree.app */,
+				6EA210B81DB2A9E100BC8B1C /* watchFree.app */,
+				6EA210E11DB2AA1100BC8B1C /* watchFree Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -705,7 +780,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				6E04C7D41DB277FF002CB067 /* PBXTargetDependency */,
+				6EA210E81DB2AC4800BC8B1C /* PBXTargetDependency */,
 			);
 			name = weatherlrFree;
 			productName = weatherlr;
@@ -776,6 +851,46 @@
 			productReference = 6E2905471CB2D5550040EB8B /* weatherlrUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		6EA210A91DB2A9E100BC8B1C /* watchFree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EA210B51DB2A9E100BC8B1C /* Build configuration list for PBXNativeTarget "watchFree" */;
+			buildPhases = (
+				6EA210AC1DB2A9E100BC8B1C /* [CP] Check Pods Manifest.lock */,
+				6EA210AD1DB2A9E100BC8B1C /* Resources */,
+				6EA210B01DB2A9E100BC8B1C /* Embed App Extensions */,
+				6EA210B21DB2A9E100BC8B1C /* Frameworks */,
+				6EA210B41DB2A9E100BC8B1C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EA210E61DB2AB0800BC8B1C /* PBXTargetDependency */,
+			);
+			name = watchFree;
+			productName = watch;
+			productReference = 6EA210B81DB2A9E100BC8B1C /* watchFree.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		6EA210BA1DB2AA1100BC8B1C /* watchFree Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EA210DE1DB2AA1100BC8B1C /* Build configuration list for PBXNativeTarget "watchFree Extension" */;
+			buildPhases = (
+				6EA210BB1DB2AA1100BC8B1C /* [CP] Check Pods Manifest.lock */,
+				6EA210BC1DB2AA1100BC8B1C /* Sources */,
+				6EA210D61DB2AA1100BC8B1C /* Frameworks */,
+				6EA210D81DB2AA1100BC8B1C /* Resources */,
+				6EA210DC1DB2AA1100BC8B1C /* [CP] Embed Pods Frameworks */,
+				6EA210DD1DB2AA1100BC8B1C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "watchFree Extension";
+			productName = "watch Extension";
+			productReference = 6EA210E11DB2AA1100BC8B1C /* watchFree Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		6EB1546C1D282B0D0005B02A /* watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6EB154901D282B0E0005B02A /* Build configuration list for PBXNativeTarget "watch" */;
@@ -830,7 +945,7 @@
 						DevelopmentTeam = 654X66AK24;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -861,6 +976,12 @@
 						DevelopmentTeam = 654X66AK24;
 						LastSwiftMigration = 0800;
 						TestTargetID = 6E2905271CB2D5550040EB8B;
+					};
+					6EA210A91DB2A9E100BC8B1C = {
+						DevelopmentTeam = 654X66AK24;
+					};
+					6EA210BA1DB2AA1100BC8B1C = {
+						DevelopmentTeam = 654X66AK24;
 					};
 					6EB1546C1D282B0D0005B02A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -904,6 +1025,8 @@
 				6EB154781D282B0D0005B02A /* watch Extension */,
 				6E29053B1CB2D5550040EB8B /* weatherlrTests */,
 				6E2905461CB2D5550040EB8B /* weatherlrUITests */,
+				6EA210A91DB2A9E100BC8B1C /* watchFree */,
+				6EA210BA1DB2AA1100BC8B1C /* watchFree Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -977,6 +1100,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA210AD1DB2A9E100BC8B1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA210AE1DB2A9E100BC8B1C /* AssetsWatch.xcassets in Resources */,
+				6EA210AF1DB2A9E100BC8B1C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA210D81DB2AA1100BC8B1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA210D91DB2AA1100BC8B1C /* Assets.xcassets in Resources */,
+				6EA210DA1DB2AA1100BC8B1C /* Localizable.strings in Resources */,
+				6EA210DB1DB2AA1100BC8B1C /* Cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,6 +1247,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6EA210AC1DB2A9E100BC8B1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6EA210B41DB2A9E100BC8B1C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-watch/Pods-watch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EA210BB1DB2AA1100BC8B1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6EA210DC1DB2AA1100BC8B1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-watch Extension/Pods-watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EA210DD1DB2AA1100BC8B1C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-watch Extension/Pods-watch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7E7BEFA0C2329B6230D4F047 /* [CP] Embed Pods Frameworks */ = {
@@ -1358,6 +1575,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EA210BC1DB2AA1100BC8B1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA210BD1DB2AA1100BC8B1C /* PreferenceHelper.swift in Sources */,
+				6EA210BE1DB2AA1100BC8B1C /* WeatherEnums.swift in Sources */,
+				6EA210BF1DB2AA1100BC8B1C /* WeatherInformationWrapper.swift in Sources */,
+				6EA210C01DB2AA1100BC8B1C /* RssEntryToWeatherInformation.swift in Sources */,
+				6EA210C11DB2AA1100BC8B1C /* ExtensionDelegateHelper.swift in Sources */,
+				6EA210C21DB2AA1100BC8B1C /* ExtensionDelegate.swift in Sources */,
+				6EA210C31DB2AA1100BC8B1C /* WeatherInformation.swift in Sources */,
+				6EA210C41DB2AA1100BC8B1C /* RssParser.swift in Sources */,
+				6EA210C51DB2AA1100BC8B1C /* InterfaceController.swift in Sources */,
+				6EA210C61DB2AA1100BC8B1C /* City.swift in Sources */,
+				6EA210C71DB2AA1100BC8B1C /* NextWeatherRowController.swift in Sources */,
+				6EA210C81DB2AA1100BC8B1C /* CityHelper.swift in Sources */,
+				6EA210C91DB2AA1100BC8B1C /* CurrentWeatherRowController.swift in Sources */,
+				6EA210CA1DB2AA1100BC8B1C /* WeatherRowController.swift in Sources */,
+				6EA210CB1DB2AA1100BC8B1C /* ComplicationController.swift in Sources */,
+				6EA210CC1DB2AA1100BC8B1C /* AlertInformation.swift in Sources */,
+				6EA210CD1DB2AA1100BC8B1C /* Constants.swift in Sources */,
+				6EA210CE1DB2AA1100BC8B1C /* RssParserBase.swift in Sources */,
+				6EA210CF1DB2AA1100BC8B1C /* SelectCityController.swift in Sources */,
+				6EA210D01DB2AA1100BC8B1C /* UrlHelper.swift in Sources */,
+				6EA210D11DB2AA1100BC8B1C /* StringExtension.swift in Sources */,
+				6EA210D21DB2AA1100BC8B1C /* WeatherHelper.swift in Sources */,
+				6EA210D31DB2AA1100BC8B1C /* RssEntry.swift in Sources */,
+				6EA210D41DB2AA1100BC8B1C /* ExpiringCache.swift in Sources */,
+				6EA210D51DB2AA1100BC8B1C /* CityRowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6EB154751D282B0D0005B02A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1393,11 +1642,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6E04C7D41DB277FF002CB067 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6EB1546C1D282B0D0005B02A /* watch */;
-			targetProxy = 6E04C7D51DB277FF002CB067 /* PBXContainerItemProxy */;
-		};
 		6E29053E1CB2D5550040EB8B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6E2905271CB2D5550040EB8B /* weatherlr */;
@@ -1407,6 +1651,16 @@
 			isa = PBXTargetDependency;
 			target = 6E2905271CB2D5550040EB8B /* weatherlr */;
 			targetProxy = 6E2905481CB2D5550040EB8B /* PBXContainerItemProxy */;
+		};
+		6EA210E61DB2AB0800BC8B1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EA210BA1DB2AA1100BC8B1C /* watchFree Extension */;
+			targetProxy = 6EA210E51DB2AB0800BC8B1C /* PBXContainerItemProxy */;
+		};
+		6EA210E81DB2AC4800BC8B1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EA210A91DB2A9E100BC8B1C /* watchFree */;
+			targetProxy = 6EA210E71DB2AC4800BC8B1C /* PBXContainerItemProxy */;
 		};
 		6EB1547C1D282B0E0005B02A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1477,7 +1731,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DFREE -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1500,7 +1754,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DFREE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -1702,6 +1956,91 @@
 			};
 			name = Release;
 		};
+		6EA210B61DB2A9E100BC8B1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E84BBFD1CADB853A2F6582 /* Pods-watch.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 654X66AK24;
+				IBSC_MODULE = watch_Extension;
+				INFOPLIST_FILE = "$(SRCROOT)/watchFree-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		6EA210B71DB2A9E100BC8B1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE97D22D3CCEAFF5AA96F760 /* Pods-watch.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 654X66AK24;
+				IBSC_MODULE = watch_Extension;
+				INFOPLIST_FILE = "$(SRCROOT)/watchFree-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		6EA210DF1DB2AA1100BC8B1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C2ADC2EBBAAADA631C70368 /* Pods-watch Extension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 654X66AK24;
+				INFOPLIST_FILE = "$(SRCROOT)/watchFree Extension-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		6EA210E01DB2AA1100BC8B1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B5A1DC16CF7C2121F666003 /* Pods-watch Extension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 654X66AK24;
+				INFOPLIST_FILE = "$(SRCROOT)/watchFree Extension-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
 		6EB1548A1D282B0E0005B02A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3E84BBFD1CADB853A2F6582 /* Pods-watch.debug.xcconfig */;
@@ -1831,6 +2170,24 @@
 			buildConfigurations = (
 				6E2905571CB2D5550040EB8B /* Debug */,
 				6E2905581CB2D5550040EB8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EA210B51DB2A9E100BC8B1C /* Build configuration list for PBXNativeTarget "watchFree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EA210B61DB2A9E100BC8B1C /* Debug */,
+				6EA210B71DB2A9E100BC8B1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EA210DE1DB2AA1100BC8B1C /* Build configuration list for PBXNativeTarget "watchFree Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EA210DF1DB2AA1100BC8B1C /* Debug */,
+				6EA210E01DB2AA1100BC8B1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #if FREE
             FIRApp.configure()
+            GADMobileAds.configure(withApplicationID: Constants.googleAddId);
         #endif
         
         return true

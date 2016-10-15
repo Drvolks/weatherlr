@@ -18,6 +18,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var warningBarButton: UIBarButtonItem!
     @IBOutlet weak var radarButton: UIBarButtonItem!
+    #if FREE
+        @IBOutlet weak var googleBannerView: GADBannerView!
+    #else
+        @IBOutlet weak var googleBannerView: UIView!
+    #endif
+    @IBOutlet weak var googleBannerHeightConstraint: NSLayoutConstraint!
     
     var refreshControl: UIRefreshControl!
     var weatherInformationWrapper = WeatherInformationWrapper()
@@ -28,6 +34,18 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        
+        #if FREE
+            googleBannerView.adUnitID = Constants.googleAddId
+            googleBannerView.rootViewController = self
+            let googleRequest = GADRequest()
+            #if DEBUG
+                googleRequest.testDevices = [kGADSimulatorID, "9daac87965735d59a75181ae69755337"]
+            #endif
+            googleBannerView.load(googleRequest)
+            googleBannerView.isHidden = false
+            googleBannerHeightConstraint.constant = 50
+        #endif
         
         weatherTable.delegate = self
         weatherTable.dataSource = self
@@ -40,7 +58,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshLabel()
         refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), for: UIControlEvents.valueChanged)
         weatherTable.addSubview(refreshControl)
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(WeatherViewController.willGoToBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
         
     }

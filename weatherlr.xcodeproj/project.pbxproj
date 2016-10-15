@@ -62,8 +62,6 @@
 		6E04C80A1DB277FF002CB067 /* launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BD71CCF9D9400533684 /* launch@2x.png */; };
 		6E04C80B1DB277FF002CB067 /* nu-2_French.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12CC1CEA1ED800791284 /* nu-2_French.xml */; };
 		6E04C80E1DB277FF002CB067 /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6EB1546D1D282B0D0005B02A /* watch.app */; };
-		6E04C8171DB2871F002CB067 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */; };
-		6E04C8181DB289DE002CB067 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */; };
 		6E29052C1CB2D5550040EB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052B1CB2D5550040EB8B /* AppDelegate.swift */; };
 		6E29052E1CB2D5550040EB8B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */; };
 		6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E29052F1CB2D5550040EB8B /* Main.storyboard */; };
@@ -170,6 +168,8 @@
 		6EDC30141CF9B7D1006325EE /* cities5 in Resources */ = {isa = PBXBuildFile; fileRef = 6EDC30131CF9B7D1006325EE /* cities5 */; };
 		6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */; };
 		6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */; };
+		6EF6D0BE1DB2972800AE3252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6D0BD1DB2972800AE3252 /* GoogleService-Info.plist */; };
+		6EF6D0BF1DB2978D00AE3252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6D0BD1DB2972800AE3252 /* GoogleService-Info.plist */; };
 		C07A0EEAC6660300C2C85C89 /* Pods_watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C871F0F9E99A6AE9B978B19 /* Pods_watch_Extension.framework */; };
 		DC5929C5F5B9C485D59DAECC /* Pods_weatherlrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA5B5C90363235148F19372 /* Pods_weatherlrTests.framework */; };
 		E12A0332A24C2C40CE87E54E /* Pods_weatherlrFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C06C476675FE600372F04BC /* Pods_weatherlrFree.framework */; };
@@ -281,7 +281,6 @@
 		6E04C7D11DB26B73002CB067 /* VersionProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionProviderTableViewCell.swift; sourceTree = "<group>"; };
 		6E04C8121DB277FF002CB067 /* weatherlrFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlrFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E04C8131DB27800002CB067 /* weatherlrFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "weatherlrFree-Info.plist"; path = "/Users/jfdufour/Documents/Programmation/weatherlr/weatherlrFree-Info.plist"; sourceTree = "<absolute>"; };
-		6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E2905281CB2D5550040EB8B /* weatherlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E29052B1CB2D5550040EB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -383,6 +382,7 @@
 		6EDC30131CF9B7D1006325EE /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
 		6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxLabel.swift; sourceTree = "<group>"; };
 		6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangTableViewCell.swift; sourceTree = "<group>"; };
+		6EF6D0BD1DB2972800AE3252 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C64EF8C1658D512F40BF9B2 /* Pods_weatherlr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherlr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971E0BA28FB97AA4C321C487 /* Pods-weatherlrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherlrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherlrTests/Pods-weatherlrTests.release.xcconfig"; sourceTree = "<group>"; };
 		A452C68BE84059E30E522942 /* Pods_weatherlrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherlrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -517,7 +517,7 @@
 				6E4910CD1CCC3335006D3C82 /* GradientView.swift */,
 				6E816BD21CCE473E00533684 /* ExpiringCache.swift */,
 				6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */,
-				6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */,
+				6EF6D0BD1DB2972800AE3252 /* GoogleService-Info.plist */,
 				6E4910A41CC59629006D3C82 /* Localizable.strings */,
 			);
 			path = weatherlr;
@@ -913,7 +913,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E04C8181DB289DE002CB067 /* GoogleService-Info.plist in Resources */,
+				6EF6D0BF1DB2978D00AE3252 /* GoogleService-Info.plist in Resources */,
 				6E04C7FE1DB277FF002CB067 /* launch.png in Resources */,
 				6E04C7FF1DB277FF002CB067 /* Cities.plist in Resources */,
 				6E04C8001DB277FF002CB067 /* Localizable.strings in Resources */,
@@ -937,13 +937,13 @@
 			files = (
 				6E816C0F1CD10E9100533684 /* launch.png in Resources */,
 				6EB154A61D2860680005B02A /* Cities.plist in Resources */,
-				6E04C8171DB2871F002CB067 /* GoogleService-Info.plist in Resources */,
 				6E4910A21CC59629006D3C82 /* Localizable.strings in Resources */,
 				6E816BDB1CCF9D9400533684 /* launch@3x.png in Resources */,
 				6E2905361CB2D5550040EB8B /* LaunchScreen.storyboard in Resources */,
 				6E2905331CB2D5550040EB8B /* Assets.xcassets in Resources */,
 				6E9E12BD1CE9223D00791284 /* nl-19_French.xml in Resources */,
 				6E816BD01CCD7A0100533684 /* Flag_of_Canada@2x.png in Resources */,
+				6EF6D0BE1DB2972800AE3252 /* GoogleService-Info.plist in Resources */,
 				6E816BD11CCD7A0100533684 /* Flag_of_Canada@3x.png in Resources */,
 				6E9E12C91CEA10D200791284 /* nu-29_English.xml in Resources */,
 				6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */,
@@ -1476,7 +1476,7 @@
 				INFOPLIST_FILE = "weatherlrFree-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-DFREE";
+				OTHER_SWIFT_FLAGS = "-DFREE -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1615,6 +1615,7 @@
 				INFOPLIST_FILE = weatherlr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

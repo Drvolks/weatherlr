@@ -21,5 +21,6 @@ class Constants {
     static let backgroundRefreshInSeconds = 30.0 * 60.0
     static let backgroundDownloadTaskName = "massawippi.weatherlr.download"
     static let SettingGroup = "group.com.massawippi.weatherlr"
+    static let googleAddId = "ca-app-pub-2793046476751764/6255610730"
     
 }

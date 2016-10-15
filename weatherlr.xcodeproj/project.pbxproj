@@ -63,6 +63,7 @@
 		6E04C80B1DB277FF002CB067 /* nu-2_French.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12CC1CEA1ED800791284 /* nu-2_French.xml */; };
 		6E04C80E1DB277FF002CB067 /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6EB1546D1D282B0D0005B02A /* watch.app */; };
 		6E04C8171DB2871F002CB067 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */; };
+		6E04C8181DB289DE002CB067 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */; };
 		6E29052C1CB2D5550040EB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052B1CB2D5550040EB8B /* AppDelegate.swift */; };
 		6E29052E1CB2D5550040EB8B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */; };
 		6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E29052F1CB2D5550040EB8B /* Main.storyboard */; };
@@ -280,7 +281,7 @@
 		6E04C7D11DB26B73002CB067 /* VersionProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionProviderTableViewCell.swift; sourceTree = "<group>"; };
 		6E04C8121DB277FF002CB067 /* weatherlrFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlrFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E04C8131DB27800002CB067 /* weatherlrFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "weatherlrFree-Info.plist"; path = "/Users/jfdufour/Documents/Programmation/weatherlr/weatherlrFree-Info.plist"; sourceTree = "<absolute>"; };
-		6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E2905281CB2D5550040EB8B /* weatherlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E29052B1CB2D5550040EB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -457,7 +458,6 @@
 				6EB1547D1D282B0E0005B02A /* watch Extension */,
 				6E2905291CB2D5550040EB8B /* Products */,
 				6E04C8131DB27800002CB067 /* weatherlrFree-Info.plist */,
-				6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */,
 				CE111271EA3861238BBDDDF7 /* Pods */,
 				C67B0E8F235C54C5A550F0D4 /* Frameworks */,
 			);
@@ -517,6 +517,7 @@
 				6E4910CD1CCC3335006D3C82 /* GradientView.swift */,
 				6E816BD21CCE473E00533684 /* ExpiringCache.swift */,
 				6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */,
+				6E04C8161DB2871F002CB067 /* GoogleService-Info.plist */,
 				6E4910A41CC59629006D3C82 /* Localizable.strings */,
 			);
 			path = weatherlr;
@@ -827,6 +828,11 @@
 				TargetAttributes = {
 					6E04C7D31DB277FF002CB067 = {
 						DevelopmentTeam = 654X66AK24;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					6E2905271CB2D5550040EB8B = {
 						CreatedOnToolsVersion = 7.3;
@@ -837,6 +843,9 @@
 								enabled = 1;
 							};
 							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
 								enabled = 0;
 							};
 						};
@@ -904,6 +913,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E04C8181DB289DE002CB067 /* GoogleService-Info.plist in Resources */,
 				6E04C7FE1DB277FF002CB067 /* launch.png in Resources */,
 				6E04C7FF1DB277FF002CB067 /* Cities.plist in Resources */,
 				6E04C8001DB277FF002CB067 /* Localizable.strings in Resources */,

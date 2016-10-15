@@ -8,6 +8,10 @@
 
 import UIKit
 
+#if FREE
+    import GoogleMobileAds
+#endif
+
 class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!

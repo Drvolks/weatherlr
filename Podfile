@@ -41,4 +41,5 @@ target 'weatherlrFree' do
 
   # Pods for weatherlrFree
   pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
 end

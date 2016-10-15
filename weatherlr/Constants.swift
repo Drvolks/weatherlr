@@ -19,7 +19,11 @@ class Constants {
     static let weatherCacheInMinutes = 30
     static let watchExpirationInMinutes = 240
     static let backgroundRefreshInSeconds = 30.0 * 60.0
-    static let backgroundDownloadTaskName = "BUNDLE_ID_PREFIX.weatherlr.download"
+    #if FREE
+        static let backgroundDownloadTaskName = "BUNDLE_ID_PREFIX.weatherlr.free.download"
+    #else
+        static let backgroundDownloadTaskName = "BUNDLE_ID_PREFIX.weatherlr.download"
+    #endif
     static let SettingGroup = "APP_GROUP_ID"
     static let googleAddId = "ca-app-pub-2793046476751764/6255610730"
     

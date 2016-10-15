@@ -1965,7 +1965,7 @@
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 654X66AK24;
-				IBSC_MODULE = watch_Extension;
+				IBSC_MODULE = watchFree_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/watchFree-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1986,7 +1986,7 @@
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 654X66AK24;
-				IBSC_MODULE = watch_Extension;
+				IBSC_MODULE = watchFree_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/watchFree-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

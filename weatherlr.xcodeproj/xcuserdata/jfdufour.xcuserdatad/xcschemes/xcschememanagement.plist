@@ -7,7 +7,7 @@
 		<key>watch (Complication).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 		<key>watch Extension.xcscheme</key>
 		<dict>
@@ -24,9 +24,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>weatherlrFree.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>6E04C7D31DB277FF002CB067</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6E2905271CB2D5550040EB8B</key>
 		<dict>
 			<key>primary</key>

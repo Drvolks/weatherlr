@@ -147,7 +147,11 @@ class SettingsViewController: UITableViewController {
             cell.backgroundColor = UIColor.clear
             
             if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                cell.versionLabel.text = "Version".localized() + " " + version
+                #if FREE
+                    cell.versionLabel.text = "VersionFree".localized() + " " + version
+                #else
+                    cell.versionLabel.text = "Version".localized() + " " + version
+                #endif
             } else {
                 cell.versionLabel.text = ""
             }

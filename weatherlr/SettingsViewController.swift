@@ -22,6 +22,7 @@ class SettingsViewController: UITableViewController {
     let langSection = 1
     let contactSection = 2
     let dataProviderSection = 3
+    let versionSection = 4
     let francaisRow = 1
     
     override func viewDidLoad() {
@@ -60,7 +61,7 @@ class SettingsViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -138,6 +139,18 @@ class SettingsViewController: UITableViewController {
             
             cell.contactText.text = "Contact".localized()
             cell.backgroundColor = UIColor.clear
+            
+            return cell
+        } else if (indexPath as NSIndexPath).section == versionSection {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "versionProviderCell", for: indexPath) as! VersionProviderTableViewCell
+            
+            cell.backgroundColor = UIColor.clear
+            
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                cell.versionLabel.text = "Version".localized() + " " + version
+            } else {
+                cell.versionLabel.text = ""
+            }
             
             return cell
         } else {

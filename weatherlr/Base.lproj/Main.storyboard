@@ -881,6 +881,30 @@
                                     <outlet property="dataProviderLabel" destination="DJm-Ix-Cop" id="uTU-4u-YIr"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="versionProviderCell" id="KVV-ob-NXt" customClass="VersionProviderTableViewCell" customModule="weatherlr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="296" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KVV-ob-NXt" id="98e-ka-foc">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q2-Ql-waq">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7Q2-Ql-waq" secondAttribute="bottom" constant="6" id="AF7-Ys-oPK"/>
+                                        <constraint firstItem="7Q2-Ql-waq" firstAttribute="leading" secondItem="98e-ka-foc" secondAttribute="leadingMargin" id="O05-UX-6hq"/>
+                                        <constraint firstAttribute="topMargin" secondItem="7Q2-Ql-waq" secondAttribute="top" id="Rcg-j0-thx"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7Q2-Ql-waq" secondAttribute="trailing" id="gFr-nC-csI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="versionLabel" destination="7Q2-Ql-waq" id="7uz-3M-lBO"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <toolbarItems>

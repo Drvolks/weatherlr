@@ -434,7 +434,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.61960784313725492" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="IOA-ci-JnR" secondAttribute="leading" constant="20" id="Amd-fY-vbi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="IOA-ci-JnR" secondAttribute="leading" id="Amd-fY-vbi"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0UC-87-mQn" secondAttribute="leading" id="Ppz-Yv-rEV"/>
                             <constraint firstItem="IOA-ci-JnR" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="S3a-dN-H5M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0UC-87-mQn" secondAttribute="trailing" id="YwF-t0-axs"/>
@@ -443,7 +443,7 @@
                             <constraint firstItem="ok4-Zn-oFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="jAa-zQ-cYK"/>
                             <constraint firstItem="0UC-87-mQn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jvP-IK-N4M"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IOA-ci-JnR" secondAttribute="bottom" id="n6Z-z9-cHS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IOA-ci-JnR" secondAttribute="trailing" constant="-20" id="oYT-jC-OCO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IOA-ci-JnR" secondAttribute="trailing" id="oYT-jC-OCO"/>
                             <constraint firstItem="ok4-Zn-oFQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ocU-YG-kNU"/>
                         </constraints>
                     </view>

@@ -46,7 +46,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cityTable.dataSource = self
         searchText.delegate = self
         
-        let selectedCity = PreferenceHelper.getSelectedCity()
+        let selectedCity = PhonePreferenceHelper.getSelectedCity()
         if selectedCity == nil {
             cancelButton.isEnabled = false
         } else {
@@ -193,7 +193,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = cityRow(indexPath)
         
-        PreferenceHelper.addFavorite(city)
+        PhonePreferenceHelper.instance.addFavorite(city)
         
         dismiss(animated: true, completion: nil)
     }

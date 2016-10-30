@@ -61,6 +61,8 @@
 		6E04C8091DB277FF002CB067 /* Flag_of_Canada.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BCC1CCD7A0100533684 /* Flag_of_Canada.png */; };
 		6E04C80A1DB277FF002CB067 /* launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816BD71CCF9D9400533684 /* launch@2x.png */; };
 		6E04C80B1DB277FF002CB067 /* nu-2_French.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12CC1CEA1ED800791284 /* nu-2_French.xml */; };
+		6E1F1F841DC64A56008FB970 /* PhonePreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F1F831DC64A56008FB970 /* PhonePreferenceHelper.swift */; };
+		6E1F1F851DC69D81008FB970 /* PhonePreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F1F831DC64A56008FB970 /* PhonePreferenceHelper.swift */; };
 		6E29052C1CB2D5550040EB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052B1CB2D5550040EB8B /* AppDelegate.swift */; };
 		6E29052E1CB2D5550040EB8B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */; };
 		6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E29052F1CB2D5550040EB8B /* Main.storyboard */; };
@@ -332,6 +334,7 @@
 		6E04C7D11DB26B73002CB067 /* VersionProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionProviderTableViewCell.swift; sourceTree = "<group>"; };
 		6E04C8121DB277FF002CB067 /* weatherlrFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlrFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E04C8131DB27800002CB067 /* weatherlrFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "weatherlrFree-Info.plist"; path = "/Users/jfdufour/Documents/Programmation/weatherlr/weatherlrFree-Info.plist"; sourceTree = "<absolute>"; };
+		6E1F1F831DC64A56008FB970 /* PhonePreferenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhonePreferenceHelper.swift; sourceTree = "<group>"; };
 		6E2905281CB2D5550040EB8B /* weatherlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E29052B1CB2D5550040EB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -581,6 +584,7 @@
 				6E816C161CD63BCF00533684 /* WeatherInformationWrapper.swift */,
 				6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */,
 				6E9F33591CB7FCFE00A9D6A7 /* PreferenceHelper.swift */,
+				6E1F1F831DC64A56008FB970 /* PhonePreferenceHelper.swift */,
 				6E9F335B1CB8011B00A9D6A7 /* UrlHelper.swift */,
 				6E4910CB1CCBEFCE006D3C82 /* WeatherHelper.swift */,
 				6EB155321D3159FF0005B02A /* CityHelper.swift */,
@@ -1490,6 +1494,7 @@
 				6E04C7E91DB277FF002CB067 /* WeatherHeaderCell.swift in Sources */,
 				6E04C7EA1DB277FF002CB067 /* VerticalTopAlignLabel.swift in Sources */,
 				6E04C7EB1DB277FF002CB067 /* WeatherHelper.swift in Sources */,
+				6E1F1F851DC69D81008FB970 /* PhonePreferenceHelper.swift in Sources */,
 				6E04C7EC1DB277FF002CB067 /* LangTableViewCell.swift in Sources */,
 				6E04C7ED1DB277FF002CB067 /* WeatherEnums.swift in Sources */,
 				6E04C7EE1DB277FF002CB067 /* AppDelegate.swift in Sources */,
@@ -1528,6 +1533,7 @@
 				6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */,
 				6E9F33581CB7FB0600A9D6A7 /* Constants.swift in Sources */,
 				6E816C171CD63BCF00533684 /* WeatherInformationWrapper.swift in Sources */,
+				6E1F1F841DC64A56008FB970 /* PhonePreferenceHelper.swift in Sources */,
 				6E4910D01CCD08A6006D3C82 /* ErrorViewController.swift in Sources */,
 				6E9F32E61CB4009900A9D6A7 /* RssEntryToWeatherInformation.swift in Sources */,
 				6E4910D21CCD1F81006D3C82 /* DataProviderTableViewCell.swift in Sources */,

@@ -9,11 +9,13 @@
 import Foundation
 
 class PreferenceHelper {
-    static func addFavorite(_ city: City) {
-        var favorites = getFavoriteCities()
+    static let instance = PreferenceHelper()
+    
+    func addFavorite(_ city: City) {
+        var favorites = PreferenceHelper.getFavoriteCities()
         var newFavorites = [City]()
         
-        saveSelectedCity(city)
+        PreferenceHelper.saveSelectedCity(city)
         newFavorites.append(city)
         
         for i in 0..<favorites.count {
@@ -22,7 +24,7 @@ class PreferenceHelper {
             }
         }
         
-        saveFavoriteCities(newFavorites)
+        PreferenceHelper.saveFavoriteCities(newFavorites)
     }
     
     static func getFavoriteCities() -> [City] {
@@ -165,7 +167,7 @@ class PreferenceHelper {
         return false
     }
     
-    static func extractLang(_ locale:String) -> String {
+    fileprivate static func extractLang(_ locale:String) -> String {
         if let index = locale.range(of: "-") {
             return locale.substring(to: index.lowerBound)
         }

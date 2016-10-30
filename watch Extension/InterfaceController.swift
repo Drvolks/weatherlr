@@ -231,7 +231,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     func cityDidChange(_ city: City) {
-        PreferenceHelper.addFavorite(city)
+        PreferenceHelper.instance.addFavorite(city)
         loadData()
     }
 }

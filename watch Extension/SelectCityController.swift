@@ -50,7 +50,7 @@ class SelectCityController: WKInterfaceController {
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         let city = cities[rowIndex]
         
-        PreferenceHelper.instance.addFavorite(city)
+        PreferenceHelper.addFavorite(city)
         
         ExtensionDelegateHelper.resetWeather()
         

@@ -34,8 +34,8 @@ class SettingsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        savedCities = PhonePreferenceHelper.getFavoriteCities()
-        selectedCity = PhonePreferenceHelper.getSelectedCity()
+        savedCities = PreferenceHelper.getFavoriteCities()
+        selectedCity = PreferenceHelper.getSelectedCity()
         
         navigationItem.leftBarButtonItem = editButtonItem
         setEditing(false, animated: false)
@@ -122,13 +122,13 @@ class SettingsViewController: UITableViewController {
             if (indexPath as NSIndexPath).row == francaisRow {
                 cell.langLabel.text = "Français"
                 
-                if Language.French == PhonePreferenceHelper.getLanguage() {
+                if Language.French == PreferenceHelper.getLanguage() {
                     cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 }
             } else {
                 cell.langLabel.text = "English"
                 
-                if Language.English == PhonePreferenceHelper.getLanguage() {
+                if Language.English == PreferenceHelper.getLanguage() {
                     cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 }
             }
@@ -208,7 +208,7 @@ class SettingsViewController: UITableViewController {
                 let city = savedCities[(indexPath as NSIndexPath).row]
                 
                 savedCities.remove(at: (indexPath as NSIndexPath).row)
-                PhonePreferenceHelper.removeFavorite(city)
+                PreferenceHelper.removeFavorite(city)
                 
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
@@ -219,14 +219,14 @@ class SettingsViewController: UITableViewController {
         if (indexPath as NSIndexPath).section == citySection {
             let city = savedCities[(indexPath as NSIndexPath).row]
             
-            PhonePreferenceHelper.instance.addFavorite(city)
+            PreferenceHelper.addFavorite(city)
             
             dismiss(animated: true, completion: nil)
         } else {
             if (indexPath as NSIndexPath).row == francaisRow {
-                PhonePreferenceHelper.saveLanguage(Language.French)
+                PreferenceHelper.saveLanguage(Language.French)
             } else {
-                PhonePreferenceHelper.saveLanguage(Language.English)
+                PreferenceHelper.saveLanguage(Language.English)
             }
             
             tableView.deselectRow(at: indexPath, animated: true)

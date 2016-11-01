@@ -58,6 +58,17 @@ class PreferenceHelper {
         return [City]()
     }
     
+    static func switchFavoriteCity(cityId: String) {
+        let cities = getFavoriteCities()
+        
+        for city in cities {
+            if city.id == cityId {
+                saveSelectedCity(city)
+                break;
+            }
+        }
+    }
+    
     fileprivate static func saveFavoriteCities(_ cities: [City]) {
         let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: cities as NSArray)

@@ -176,7 +176,8 @@ class WeatherHelper {
             return WeatherStatus.freezingRainMixedWithIcePellets
         case .chanceOfWetFlurriesOrRainShowers,
              .periodsOfWetSnowOrRain,
-             .wetFlurriesOrRainShowers:
+             .wetFlurriesOrRainShowers,
+             .rainShowersOrWetFlurries:
             return WeatherStatus.chanceOfRainShowersOrWetFlurries
         case .lightWetSnow:
             return WeatherStatus.chanceOfWetFlurries

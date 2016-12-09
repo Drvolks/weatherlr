@@ -409,6 +409,8 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.chanceOfThunderstorms
         case "averses parfois fortes ou orages", "showers at times heavy or thundershowers":
             return WeatherStatus.showersAtTimesHeavyOrThundershowers
+        case "averses de pluie ou de neige fondante", "rain showers or wet flurries":
+            return WeatherStatus.rainShowersOrWetFlurries
         default:
             return convertWeatherStatusWithRegex(text)
         }
@@ -482,7 +484,7 @@ class RssEntryToWeatherInformation {
     }
     
     func extractTemperature(_ summary: String) -> String {
-        let regex = try! NSRegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables près de|steady near|à la baisse pour atteindre|falling to|à la hausse pour atteindre|rising to) (.*?)(\\.|with|avec|sauf|except|en après-midi|in the afternoon|au cours de la nuit|by morning|cet après-midi|this afternoon|ce matin puis à la hausse|this morning then rising)", options: [.caseInsensitive])
+        let regex = try! NSRegularExpression(pattern: ".*?(High|Low|Maximum|Minimum|stables près de|steady near|à la baisse pour atteindre|falling to|à la hausse pour atteindre|rising to) (.*?)(\\.|with|avec|sauf|except|en après-midi|in the afternoon|au cours de la nuit|by morning|cet après-midi|this afternoon|ce matin puis à la hausse|this morning then rising|en soirée puis à la baisse|in the evening then falling)", options: [.caseInsensitive])
         return performRegex(regex, text: summary, index: 2)
     }
     

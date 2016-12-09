@@ -40,7 +40,7 @@ class RssEntry : RssParserBase {
     @objc func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         switch elementName {
         case titleElement:
-            self.title = foundCharacters.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            self.title = removeLiveBreaks(foundCharacters)
             break
         case categoryElement:
             if let term = currentAttributes[termAttribute] {
@@ -48,10 +48,10 @@ class RssEntry : RssParserBase {
             }
             break
         case updatedElement:
-            self.updated = foundCharacters.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            self.updated = removeLiveBreaks(foundCharacters)
             break
         case summaryElement:
-            self.summary = foundCharacters.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            self.summary = removeLiveBreaks(foundCharacters)
             break
         case linkElement:
             if let href = currentAttributes[hrefAttribute] {
@@ -65,5 +65,11 @@ class RssEntry : RssParserBase {
         }
         
         foundCharacters = ""
+    }
+    
+    func removeLiveBreaks(_ line:String) -> String {
+        var newLine = line.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        newLine = newLine.replacingOccurrences(of: "\n", with: " ")
+        return newLine
     }
 }

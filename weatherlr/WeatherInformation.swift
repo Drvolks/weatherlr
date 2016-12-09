@@ -170,7 +170,8 @@ class WeatherInformation {
              .chanceOfShowersAtTimesHeavy,
              .showersAtTimesHeavy,
              .chanceOfThunderstorms,
-             .showersAtTimesHeavyOrThundershowers:
+             .showersAtTimesHeavyOrThundershowers,
+             .rainShowersOrWetFlurries:
             return WeatherColor.cloudyDay
         case .snow,
              .periodsOfSnowAndBlowingSnow,

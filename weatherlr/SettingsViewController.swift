@@ -41,7 +41,7 @@ class SettingsViewController: UITableViewController {
         setEditing(false, animated: false)
         
         // TODO: remove
-        //let downloader = CityDownloader(outputPath: "/Users/drvolks/Desktop/cities")
+        //let downloader = CityDownloader(outputPath: "/Users/drvolks/Downloads/cities")
         //downloader.process()
 
         cityTable.estimatedRowHeight = 21

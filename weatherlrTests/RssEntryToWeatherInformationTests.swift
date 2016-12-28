@@ -1209,6 +1209,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractTemperature("Friday night: Flurries. Temperature rising to minus 1 in the evening then falling.")
         XCTAssertEqual("minus 1", result)
+        
+        result = performer.extractTemperature("Mercredi: Possibilité d'averses de neige. Températures à la baisse pour atteindre moins 7 ce matin puis stables. PdP 40%")
+        XCTAssertEqual("moins 7", result)
+        
+        result = performer.extractTemperature("Wednesday: Chance of flurries. Temperature falling to minus 7 this morning then steady. POP 40%")
+        XCTAssertEqual("minus 7", result)
     }
     
     func testConvertWeatherDay() {

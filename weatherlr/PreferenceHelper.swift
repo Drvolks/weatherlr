@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if os(iOS)
+    import UIKit
+#endif
 
 class PreferenceHelper {
     static func addFavorite(_ city: City) {
@@ -23,6 +26,24 @@ class PreferenceHelper {
         }
         
         saveFavoriteCities(newFavorites)
+        
+        #if os(iOS)
+            var shortcutItems = [UIApplicationShortcutItem]()
+            let cities = PreferenceHelper.getFavoriteCities()
+        
+            var i = 0
+            for city in cities {
+                let shortcutItem = UIApplicationShortcutItem(type: "City:" + city.id, localizedTitle: CityHelper.cityName(city))
+                shortcutItems.append(shortcutItem)
+            
+                i = i+1
+                if(i>3) {
+                    break
+                }
+            }
+            
+            UIApplication.shared.shortcutItems = shortcutItems
+        #endif
     }
     
     static func getFavoriteCities() -> [City] {
@@ -35,6 +56,17 @@ class PreferenceHelper {
         }
         
         return [City]()
+    }
+    
+    static func switchFavoriteCity(cityId: String) {
+        let cities = getFavoriteCities()
+        
+        for city in cities {
+            if city.id == cityId {
+                saveSelectedCity(city)
+                break;
+            }
+        }
     }
     
     fileprivate static func saveFavoriteCities(_ cities: [City]) {

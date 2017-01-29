@@ -70,7 +70,7 @@ class RssEntryToWeatherInformation {
         let night = isNight(rssEntry.title)
         let weatherDay = convertWeatherDay(rssEntry.category, currentDay: day)
         
-        let statusText:String;
+        let statusText:String
         if weatherDay == .now {
             statusText = extractWeatherConditionNowFromTitle(rssEntry.title)
         } else {
@@ -411,6 +411,24 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.showersAtTimesHeavyOrThundershowers
         case "averses de pluie ou de neige fondante", "rain showers or wet flurries":
             return WeatherStatus.rainShowersOrWetFlurries
+        case "neige parfois forte mêlée de grésil", "snow at times heavy mixed with ice pellets":
+            return WeatherStatus.snowAtTimesHeavyMixedWithIcePellets
+        case "grésil mêlé de neige", "ice pellets mixed with snow":
+            return WeatherStatus.icePelletsMixedWithSnow
+        case "pluie verglaçante ou pluie", "freezing rain or rain":
+            return WeatherStatus.freezingRainOrRain
+        case "possibilité de pluie verglaçante", "chance of freezing rain":
+            return WeatherStatus.chanceOfFreezingRain
+        case "neige intermittente mêlée de grésil", "periods of snow mixed with ice pellets":
+            return WeatherStatus.periodsOfSnowMixedWithIcePellets
+        case "pluie parfois forte ou pluie verglaçante", "rain at times heavy or freezing rain":
+            return WeatherStatus.rainAtTimesHeavyOrFreezingRain
+        case "grésil mêlé de pluie verglaçante", "ice pellets mixed with freezing rain":
+            return WeatherStatus.icePelletsMixedWithFreezingRain
+        case "pluie verglaçante ou grésil", "freezing rain or ice pellets":
+            return WeatherStatus.freezingRainOrIcePellets
+        case "grésil", "ice pellets":
+            return WeatherStatus.icePellets
         default:
             return convertWeatherStatusWithRegex(text)
         }

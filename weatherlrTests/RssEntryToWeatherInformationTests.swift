@@ -1038,6 +1038,61 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Showers at times heavy or thundershowers")
         XCTAssertEqual(WeatherStatus.showersAtTimesHeavyOrThundershowers, result)
         
+        // icePelletsMixedWithSnow
+        result = performer.convertWeatherStatus("Grésil mêlé de neige")
+        XCTAssertEqual(WeatherStatus.icePelletsMixedWithSnow, result)
+        result = performer.convertWeatherStatus("Ice pellets mixed with snow")
+        XCTAssertEqual(WeatherStatus.icePelletsMixedWithSnow, result)
+        
+        // snowAtTimesHeavyMixedWithIcePellets
+        result = performer.convertWeatherStatus("Neige parfois forte mêlée de grésil")
+        XCTAssertEqual(WeatherStatus.snowAtTimesHeavyMixedWithIcePellets, result)
+        result = performer.convertWeatherStatus("Snow at times heavy mixed with ice pellets")
+        XCTAssertEqual(WeatherStatus.snowAtTimesHeavyMixedWithIcePellets, result)
+        
+        // freezingRainOrRain
+        result = performer.convertWeatherStatus("Pluie verglaçante ou pluie")
+        XCTAssertEqual(WeatherStatus.freezingRainOrRain, result)
+        result = performer.convertWeatherStatus("Freezing rain or rain")
+        XCTAssertEqual(WeatherStatus.freezingRainOrRain, result)
+        
+        // chanceOfFreezingRain
+        result = performer.convertWeatherStatus("Possibilité de pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.chanceOfFreezingRain, result)
+        result = performer.convertWeatherStatus("Chance of freezing rain")
+        XCTAssertEqual(WeatherStatus.chanceOfFreezingRain, result)
+    
+        // periodsOfSnowMixedWithIcePellets
+        result = performer.convertWeatherStatus("Neige intermittente mêlée de grésil")
+        XCTAssertEqual(WeatherStatus.periodsOfSnowMixedWithIcePellets, result)
+        result = performer.convertWeatherStatus("Periods of snow mixed with ice pellets")
+        XCTAssertEqual(WeatherStatus.periodsOfSnowMixedWithIcePellets, result)
+        
+        // periodsOfSnowMixedWithIcePellets
+        result = performer.convertWeatherStatus("Pluie parfois forte ou pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.rainAtTimesHeavyOrFreezingRain, result)
+        result = performer.convertWeatherStatus("Rain at times heavy or freezing rain")
+        XCTAssertEqual(WeatherStatus.rainAtTimesHeavyOrFreezingRain, result)
+        
+        // icePelletsMixedWithFreezingRain
+        result = performer.convertWeatherStatus("Grésil mêlé de pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.icePelletsMixedWithFreezingRain, result)
+        result = performer.convertWeatherStatus("Ice pellets mixed with freezing rain")
+        XCTAssertEqual(WeatherStatus.icePelletsMixedWithFreezingRain, result)
+        
+        // freezingRainOrIcePellets
+        result = performer.convertWeatherStatus("Pluie verglaçante ou grésil")
+        XCTAssertEqual(WeatherStatus.freezingRainOrIcePellets, result)
+        result = performer.convertWeatherStatus("Freezing rain or ice pellets")
+        XCTAssertEqual(WeatherStatus.freezingRainOrIcePellets, result)
+        
+        // icePellets
+        result = performer.convertWeatherStatus("Grésil")
+        XCTAssertEqual(WeatherStatus.icePellets, result)
+        result = performer.convertWeatherStatus("Ice Pellets")
+        XCTAssertEqual(WeatherStatus.icePellets, result)
+        
+        
         
         
         
@@ -1088,6 +1143,9 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractWeatherConditionNowFromTitle("Conditions actuelles: 8,7")
         XCTAssertEqual("", result)
+        
+        result = performer.extractWeatherConditionNowFromTitle("Current Conditions: Ice Pellets, 0.4&#xB0;C")
+        XCTAssertEqual("Ice Pellets", result)
     }
     
     func testExtractTemperatureNowFromTitle() {

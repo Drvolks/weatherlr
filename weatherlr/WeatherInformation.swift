@@ -171,7 +171,12 @@ class WeatherInformation {
              .showersAtTimesHeavy,
              .chanceOfThunderstorms,
              .showersAtTimesHeavyOrThundershowers,
-             .rainShowersOrWetFlurries:
+             .rainShowersOrWetFlurries,
+             .chanceOfFreezingRain,
+             .freezingRainOrRain,
+             .freezingRainOrIcePellets,
+             .icePelletsMixedWithFreezingRain,
+             .rainAtTimesHeavyOrFreezingRain:
             return WeatherColor.cloudyDay
         case .snow,
              .periodsOfSnowAndBlowingSnow,
@@ -194,7 +199,11 @@ class WeatherInformation {
              .snowGrains,
              .snowMixedWithIcePellets,
              .icePelletsOrSnow,
-             .snowOrIcePellets:
+             .snowOrIcePellets,
+             .icePellets,
+             .icePelletsMixedWithSnow,
+             .periodsOfSnowMixedWithIcePellets,
+             .snowAtTimesHeavyMixedWithIcePellets:
             return WeatherColor.snowDay
         case .sunny,
              .partlyCloudy,

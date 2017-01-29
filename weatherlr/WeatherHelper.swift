@@ -104,7 +104,9 @@ class WeatherHelper {
              .chanceOfSnowMixedWithRain,
              .chanceOfSnowOrRain:
             return WeatherStatus.aFewRainShowersOrFlurries
-        case .rainOrFreezingRain:
+        case .rainOrFreezingRain,
+             .freezingRainOrRain,
+             .rainAtTimesHeavyOrFreezingRain:
             return WeatherStatus.periodsOfRainOrFreezingRain
         case .chanceOfShowersOrDrizzle,
              .showersOrDrizzle,
@@ -172,7 +174,9 @@ class WeatherHelper {
         case .periodsOfFreezingDrizzle,
              .chanceOfFreezingDrizzle:
             return WeatherStatus.lightFreezingDrizzle
-        case .periodsOfFreezingRainMixedWithIcePellets:
+        case .periodsOfFreezingRainMixedWithIcePellets,
+             .icePelletsMixedWithFreezingRain,
+             .freezingRainOrIcePellets:
             return WeatherStatus.freezingRainMixedWithIcePellets
         case .chanceOfWetFlurriesOrRainShowers,
              .periodsOfWetSnowOrRain,
@@ -194,8 +198,14 @@ class WeatherHelper {
              .showersAtTimesHeavyOrThundershowers:
             return WeatherStatus.chanceOfShowersOrThunderstorms
         case .snowOrIcePellets,
-             .icePelletsOrSnow:
+             .icePelletsOrSnow,
+             .snowAtTimesHeavyMixedWithIcePellets,
+             .icePelletsMixedWithSnow,
+             .periodsOfSnowMixedWithIcePellets:
             return WeatherStatus.snowMixedWithIcePellets
+        case .chanceOfFreezingRain,
+             .lightFreezingRain:
+            return WeatherStatus.lightFreezingRain
         default:
             return nil
         }

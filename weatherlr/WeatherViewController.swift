@@ -103,7 +103,17 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func applicationWillEnterForeground(_ notification: Notification) {
-        refresh(true)
+        var backgroundRefresh = true
+        
+        if let city = PreferenceHelper.getSelectedCity() {
+            if let selectedCity = selectedCity {
+                if selectedCity.id != city.id {
+                    backgroundRefresh = false
+                }
+            }
+        }
+        
+        refresh(backgroundRefresh)
     }
     
     override func viewDidLayoutSubviews() {

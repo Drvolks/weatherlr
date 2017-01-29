@@ -32,10 +32,6 @@ class WeatherStatusTests: XCTestCase {
         noMissingStatus("/cities5")
     }
     
-    func testNoMissingStatus6() {
-        noMissingStatus("/cities6")
-    }
-    
     func noMissingStatus(_ subPath: String) {
         let fileManager = FileManager.default
         let path = testBundle.resourcePath!
@@ -69,6 +65,37 @@ class WeatherStatusTests: XCTestCase {
                     
                     XCTAssertNotEqual(WeatherStatus.na, weatherInfo.weatherStatus)
                 }
+            }
+        }
+    }
+    
+    func testNoMissingStatusOneFile() {
+        let baseName = "test"
+            
+        if let file = testBundle.path(forResource: baseName, ofType: "xml")
+        {
+            var lang = Language.French
+            if file.contains(String(describing: Language.English)) {
+                lang = Language.English
+            }
+                
+            let xmlData = try! Data(contentsOf: URL(fileURLWithPath: file))
+            let parser = RssParser(xmlData: xmlData, language: lang)
+                
+            let rssEntries = parser.parse()
+            let converter = RssEntryToWeatherInformation(rssEntries: rssEntries)
+            let weatherInfos = converter.perform()
+                
+            for weatherInfo in weatherInfos {
+                if WeatherStatus.na == weatherInfo.weatherStatus {
+                    if weatherInfo.weatherDay == WeatherDay.now {
+                        print("Detail: " + weatherInfo.detail)
+                    } else {
+                        print("Summary: " + weatherInfo.summary)
+                    }
+                }
+                    
+                XCTAssertNotEqual(WeatherStatus.na, weatherInfo.weatherStatus)
             }
         }
     }

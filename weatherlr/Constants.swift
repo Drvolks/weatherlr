@@ -26,5 +26,5 @@ class Constants {
     #endif
     static let SettingGroup = "group.com.massawippi.weatherlr"
     static let googleAddId = "ca-app-pub-2793046476751764/6255610730"
-    
+    static let versionKey = "version"
 }

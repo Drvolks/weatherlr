@@ -26,16 +26,19 @@ class PreferenceHelper {
         }
         
         saveFavoriteCities(newFavorites)
-        
+        updateQuickActions()
+    }
+    
+    static func updateQuickActions() {
         #if os(iOS)
             var shortcutItems = [UIApplicationShortcutItem]()
             let cities = PreferenceHelper.getFavoriteCities()
-        
+            
             var i = 0
             for city in cities {
                 let shortcutItem = UIApplicationShortcutItem(type: "City:" + city.id, localizedTitle: CityHelper.cityName(city))
                 shortcutItems.append(shortcutItem)
-            
+                
                 i = i+1
                 if(i>3) {
                     break
@@ -63,7 +66,7 @@ class PreferenceHelper {
         
         for city in cities {
             if city.id == cityId {
-                saveSelectedCity(city)
+                addFavorite(city)
                 break;
             }
         }
@@ -203,5 +206,34 @@ class PreferenceHelper {
         }
                 
         return locale
+    }
+    
+    static func upgrade() {
+        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
+        var shouldUpdateQuickActions = false
+        var previousVersion = Double(0)
+        
+        if let version = defaults.object(forKey: Constants.versionKey) as? Double {
+            previousVersion = version
+            
+            if version < 2.5 {
+                shouldUpdateQuickActions = true
+            }
+        } else {
+            shouldUpdateQuickActions = true
+        }
+        
+        if shouldUpdateQuickActions {
+            updateQuickActions()
+        }
+        
+        if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            let currentVersionDouble = Double(currentVersion)
+            
+            if previousVersion != currentVersionDouble {
+                defaults.set(currentVersionDouble, forKey: Constants.versionKey)
+                defaults.synchronize()
+            }
+        }
     }
 }

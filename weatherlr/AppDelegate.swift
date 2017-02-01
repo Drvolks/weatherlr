@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
-        print("Application did finish launching with options")
+        PreferenceHelper.upgrade()
         
         #if FREE
             FIRApp.configure()
@@ -38,11 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Swift.Void) {
-        print("Application performActionForShortcutItem")
-        
         completionHandler(handleQuickAction(application: application, shortcutItem: shortcutItem))
     }
     
+    @discardableResult
     func handleQuickAction(application: UIApplication, shortcutItem: UIApplicationShortcutItem) -> Bool {
         print("Handling shortcut")
         
@@ -76,11 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        print("Application did become active")
-        
         guard let shortcut = shortcutItem else { return }
-        
-        print("- Shortcut property has been set")
         
         handleQuickAction(application: application, shortcutItem: shortcut)
         

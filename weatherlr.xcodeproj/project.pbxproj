@@ -328,7 +328,7 @@
 		6C06C476675FE600372F04BC /* Pods_weatherlrFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherlrFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E04C7D11DB26B73002CB067 /* VersionProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionProviderTableViewCell.swift; sourceTree = "<group>"; };
 		6E04C8121DB277FF002CB067 /* weatherlrFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlrFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E04C8131DB27800002CB067 /* weatherlrFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "weatherlrFree-Info.plist"; path = "/Users/jfdufour/Documents/Programmation/weatherlr/weatherlrFree-Info.plist"; sourceTree = "<absolute>"; };
+		6E04C8131DB27800002CB067 /* weatherlrFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "weatherlrFree-Info.plist"; sourceTree = "<group>"; };
 		6E2905281CB2D5550040EB8B /* weatherlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E29052B1CB2D5550040EB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -409,9 +409,9 @@
 		6E9F335D1CB8588D00A9D6A7 /* AlertInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
 		6E9F335F1CB942C700A9D6A7 /* WeatherHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHeaderCell.swift; sourceTree = "<group>"; };
 		6EA210B81DB2A9E100BC8B1C /* watchFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EA210B91DB2A9E200BC8B1C /* watchFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "watchFree-Info.plist"; path = "/Users/jfdufour/Documents/Programmation/weatherlr/watchFree-Info.plist"; sourceTree = "<absolute>"; };
+		6EA210B91DB2A9E200BC8B1C /* watchFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "watchFree-Info.plist"; sourceTree = "<group>"; };
 		6EA210E11DB2AA1100BC8B1C /* watchFree Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchFree Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EA210E21DB2AA1100BC8B1C /* watchFree Extension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "watchFree Extension-Info.plist"; path = "/Users/jfdufour/Documents/Programmation/weatherlr/watchFree Extension-Info.plist"; sourceTree = "<absolute>"; };
+		6EA210E21DB2AA1100BC8B1C /* watchFree Extension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "watchFree Extension-Info.plist"; sourceTree = "<group>"; };
 		6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalTopAlignLabel.swift; sourceTree = "<group>"; };
 		6EB1546D1D282B0D0005B02A /* watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB154701D282B0D0005B02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };

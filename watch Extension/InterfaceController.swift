@@ -112,6 +112,11 @@ class InterfaceController: WKInterfaceController {
                     }
                     controller.weather = weather
                 }
+                
+                if let city = PreferenceHelper.getSelectedCity() {
+                    self.cityLabel.setText(CityHelper.cityName(city))
+                }
+                
                 break
             case "weatherRow":
                 if let controller = weatherTable.rowController(at: index) as? WeatherRowController {
@@ -122,10 +127,6 @@ class InterfaceController: WKInterfaceController {
             default:
                 break
             }
-        }
-        
-        if let city = PreferenceHelper.getSelectedCity() {
-            self.cityLabel.setText(CityHelper.cityName(city))
         }
         
         watchDelegate.scheduleSnapshot()

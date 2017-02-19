@@ -109,11 +109,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         if let weather = weather {
             modularTemplate.headerImageProvider = CLKImageProvider(onePieceImage: weather.image())
-            modularTemplate.row1Column1TextProvider = getCurrentTemperature(weather)
+            modularTemplate.row1Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
             modularTemplate.row2Column1TextProvider = getMinMaxTemperature(nextWeather)
         } else {
             modularTemplate.row1Column1TextProvider = getMinMaxTemperature(nextWeather)
-            modularTemplate.row2Column1TextProvider = getCurrentTemperature(weather)
+            modularTemplate.row2Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
         }
         
         return modularTemplate
@@ -132,7 +132,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func generateSmallModularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateModularSmallSimpleText {
         let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
-        modularTemplate.textProvider = getCurrentTemperature(weather)
+        modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
         
         return modularTemplate
     }
@@ -141,7 +141,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         let modularTemplate = CLKComplicationTemplateExtraLargeStackImage()
         if let weather = weather {
             modularTemplate.line1ImageProvider = CLKImageProvider(onePieceImage: weather.image())
-            modularTemplate.line2TextProvider = getCurrentTemperature(weather)
+            
+            if(weather.weatherStatus == WeatherStatus.sunny) {
+                modularTemplate.line1ImageProvider.tintColor = UIColor.yellow
+            } else {
+                modularTemplate.line1ImageProvider.tintColor = UIColor.lightGray
+            }
+            
+            modularTemplate.line2TextProvider = getCurrentTemperature(weather, showCurrently: false)
         } else {
             modularTemplate.line2TextProvider = CLKSimpleTextProvider(text: "iPhone".localized())
         }
@@ -168,7 +175,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func generateSmallCircularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateCircularSmallSimpleText {
         let modularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-        modularTemplate.textProvider = getCurrentTemperature(weather)
+        modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
         
         return modularTemplate
     }
@@ -182,7 +189,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func generateSmallUtilitarianTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateUtilitarianSmallFlat {
         let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-        modularTemplate.textProvider = getCurrentTemperature(weather)
+        modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
         
         if let weather = weather {
             modularTemplate.imageProvider = CLKImageProvider(onePieceImage: weather.image())
@@ -200,7 +207,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func generateLargeUtilitarianTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateUtilitarianLargeFlat {
         let modularTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-        modularTemplate.textProvider = getCurrentTemperature(weather)
+        modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
         
         if let weather = weather {
             modularTemplate.imageProvider = CLKImageProvider(onePieceImage: weather.image())
@@ -216,9 +223,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return modularTemplate
     }
     
-    func getCurrentTemperature(_ weather: WeatherInformation?) -> CLKSimpleTextProvider {
+    func getCurrentTemperature(_ weather: WeatherInformation?, showCurrently: Bool) -> CLKSimpleTextProvider {
         if let weather = weather {
-            let provider = CLKSimpleTextProvider(text: "Currently".localized() + " " + String(weather.temperature) + "°")
+            var text = String(weather.temperature) + "°"
+            if(showCurrently) {
+                text = "Currently".localized() + " " + text
+            }
+            let provider = CLKSimpleTextProvider(text: text)
             provider.shortText = String(weather.temperature) + "°"
             return provider
         } else {
@@ -303,7 +314,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .extraLarge:
             let modularTemplate = CLKComplicationTemplateExtraLargeStackImage()
             modularTemplate.line1ImageProvider = image
-            modularTemplate.line2TextProvider = provideTemperature
+            modularTemplate.line2TextProvider = CLKSimpleTextProvider(text: "25°")
             
             template = modularTemplate
             break
@@ -370,8 +381,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template = modularTemplate
             break
         case .extraLarge:
-            let modularTemplate = CLKComplicationTemplateExtraLargeColumnsText()
-            modularTemplate.row1Column1TextProvider = provideTemperature
+            let modularTemplate = CLKComplicationTemplateExtraLargeStackImage()
+            modularTemplate.line1ImageProvider = image
+            modularTemplate.line2TextProvider = CLKSimpleTextProvider(text: "25°")
+            
+            template = modularTemplate
             break
         case .utilitarianSmallFlat:
             let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()

@@ -137,16 +137,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return modularTemplate
     }
     
-    func generateExtraLargeTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateExtraLargeColumnsText {
-        let modularTemplate = CLKComplicationTemplateExtraLargeColumnsText()
+    func generateExtraLargeTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateExtraLargeStackImage {
+        let modularTemplate = CLKComplicationTemplateExtraLargeStackImage()
         if let weather = weather {
-            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: String(weather.temperature) + "°")
+            modularTemplate.line1ImageProvider = CLKImageProvider(onePieceImage: weather.image())
+            modularTemplate.line2TextProvider = getCurrentTemperature(weather)
         } else {
-            modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "")
+            modularTemplate.line2TextProvider = CLKSimpleTextProvider(text: "iPhone".localized())
         }
-        modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
-        modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "")
-        modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
         
         return modularTemplate
     }
@@ -303,8 +301,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template = modularTemplate
             break
         case .extraLarge:
-            let modularTemplate = CLKComplicationTemplateExtraLargeColumnsText()
-            modularTemplate.row1Column1TextProvider = provideTemperature
+            let modularTemplate = CLKComplicationTemplateExtraLargeStackImage()
+            modularTemplate.line1ImageProvider = image
+            modularTemplate.line2TextProvider = provideTemperature
+            
+            template = modularTemplate
             break
         case .utilitarianSmallFlat:
             let modularTemplate = CLKComplicationTemplateUtilitarianSmallFlat()

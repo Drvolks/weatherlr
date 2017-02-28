@@ -108,7 +108,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
         
         if let weather = weather {
-            modularTemplate.headerImageProvider = CLKImageProvider(onePieceImage: weather.image())
+            modularTemplate.headerImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
             modularTemplate.row1Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
             modularTemplate.row2Column1TextProvider = getMinMaxTemperature(nextWeather)
         } else {
@@ -140,14 +140,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func generateExtraLargeTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateExtraLargeStackImage {
         let modularTemplate = CLKComplicationTemplateExtraLargeStackImage()
         if let weather = weather {
-            modularTemplate.line1ImageProvider = CLKImageProvider(onePieceImage: weather.image())
-            
-            if(weather.weatherStatus == WeatherStatus.sunny) {
-                modularTemplate.line1ImageProvider.tintColor = UIColor.yellow
-            } else {
-                modularTemplate.line1ImageProvider.tintColor = UIColor.lightGray
-            }
-            
+            modularTemplate.line1ImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
             modularTemplate.line2TextProvider = getCurrentTemperature(weather, showCurrently: false)
         } else {
             modularTemplate.line2TextProvider = CLKSimpleTextProvider(text: "iPhone".localized())
@@ -192,7 +185,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
         
         if let weather = weather {
-            modularTemplate.imageProvider = CLKImageProvider(onePieceImage: weather.image())
+            modularTemplate.imageProvider = WatchImageHelper.getImage(weatherInformation: weather)
         }
         
         return modularTemplate
@@ -210,7 +203,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
         
         if let weather = weather {
-            modularTemplate.imageProvider = CLKImageProvider(onePieceImage: weather.image())
+            modularTemplate.imageProvider = WatchImageHelper.getImage(weatherInformation: weather)
         }
         
         return modularTemplate

@@ -172,6 +172,7 @@ enum WeatherColor : Int {
     case snowDay = 0xb4b7b7
     case snowNight = 0x7d7f7f
     case defaultColor = 0x009ec1
+    case rain = 0x1fbfff
 }
 
 enum WeatherDay : Int {

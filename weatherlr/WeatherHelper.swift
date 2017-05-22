@@ -106,7 +106,8 @@ class WeatherHelper {
             return WeatherStatus.aFewRainShowersOrFlurries
         case .rainOrFreezingRain,
              .freezingRainOrRain,
-             .rainAtTimesHeavyOrFreezingRain:
+             .rainAtTimesHeavyOrFreezingRain,
+             .rainMixedWithFreezingRain:
             return WeatherStatus.periodsOfRainOrFreezingRain
         case .chanceOfShowersOrDrizzle,
              .showersOrDrizzle,

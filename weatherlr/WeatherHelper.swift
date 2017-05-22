@@ -292,13 +292,13 @@ class WeatherHelper {
         let baseImage = getMinMaxImage(weather, header: false)
         let text = String(weather.temperature)
         
-        var offsetLeft = 14
-        var offsetTop = 6
+        var offsetLeft = 20
+        var offsetTop = 10
         var textFont = UIFont.systemFont(ofSize: 55)
         if text.characters.count == 1 {
-            offsetLeft = 28
+            offsetLeft = 34
         } else if text.characters.count == 3 {
-            offsetLeft = 8
+            offsetLeft = 14
             offsetTop = 14
             textFont = UIFont.systemFont(ofSize: 45)
         }

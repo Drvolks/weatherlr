@@ -429,6 +429,8 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.freezingRainOrIcePellets
         case "grésil", "ice pellets":
             return WeatherStatus.icePellets
+        case "pluie mêlée de pluie verglaçante", "rain mixed with freezing rain":
+            return WeatherStatus.rainMixedWithFreezingRain
         default:
             return convertWeatherStatusWithRegex(text)
         }

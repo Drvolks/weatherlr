@@ -128,6 +128,7 @@ enum WeatherStatus {
     case rainAtTimesHeavyOrDrizzle
     case rainAtTimesHeavyOrSnow
     case rainAtTimesHeavyOrFreezingRain
+    case rainMixedWithFreezingRain
     case rainMixedWithSnow
     case rainOrDrizzle
     case rainOrFreezingRain

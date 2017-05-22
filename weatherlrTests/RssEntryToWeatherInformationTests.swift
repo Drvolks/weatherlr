@@ -1092,7 +1092,11 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Ice Pellets")
         XCTAssertEqual(WeatherStatus.icePellets, result)
         
-        
+        // rainMixedWithFreezingRain
+        result = performer.convertWeatherStatus("Pluie mêlée de pluie verglaçante")
+        XCTAssertEqual(WeatherStatus.rainMixedWithFreezingRain, result)
+        result = performer.convertWeatherStatus("Rain mixed with freezing rain")
+        XCTAssertEqual(WeatherStatus.rainMixedWithFreezingRain, result)
         
         
         

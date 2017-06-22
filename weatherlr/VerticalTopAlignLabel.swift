@@ -15,7 +15,7 @@ class VerticalTopAlignLabel: UILabel {
             return super.drawText(in: rect)
         }
         
-        let attributedText = NSAttributedString.init(string: self.text!, attributes: [NSFontAttributeName : self.font])
+        let attributedText = NSAttributedString.init(string: self.text!, attributes: [NSAttributedStringKey.font : self.font])
         var newRect = rect
         newRect.size.height = attributedText.boundingRect(with: rect.size, options: .usesLineFragmentOrigin, context: nil).size.height
         

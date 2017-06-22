@@ -469,7 +469,7 @@ class RssEntryToWeatherInformation {
     func performRegex(_ regex: NSRegularExpression, text: String, index: Int) -> String {
         let results = regex.matches(in: text, options: [], range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)))
         if let result = results.first {
-            var condition = (text as NSString).substring(with: result.rangeAt(index))
+            var condition = (text as NSString).substring(with: result.range(at: index))
             condition = condition.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             return condition
         }

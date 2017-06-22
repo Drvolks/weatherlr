@@ -63,7 +63,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    func willGoToBackground() {
+    // TODO voir pourquoi @objc
+    @objc func willGoToBackground() {
         if weatherTable.numberOfRows(inSection: 0) > 0 {
             let indexPath = IndexPath(row: 0, section: 0)
             weatherTable.scrollToRow(at: indexPath, at: .top, animated: false)
@@ -88,7 +89,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func refreshLabel() {
-        let refreshControlFont = [ NSForegroundColorAttributeName: UIColor.white ]
+        let refreshControlFont = [ NSAttributedStringKey.foregroundColor: UIColor.white ]
         let refreshLabel:String
         refreshLabel = WeatherHelper.getRefreshTime(weatherInformationWrapper)
 
@@ -98,7 +99,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl.endRefreshing()
     }
     
-    func refreshFromScroll(_ sender:AnyObject) {
+    // TODO voir pourquoi @objc
+    @objc func refreshFromScroll(_ sender:AnyObject) {
         refresh(true)
     }
     

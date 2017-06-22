@@ -28,7 +28,8 @@ class ExpiringCache : NSCache<NSString, AnyObject> {
          self.setObject(obj, forKey: key, timeout: ExpiringCacheDefaultTimeout)
     }
     
-    func timerExpires(_ timer: Timer) {
+    // TODO revoir si autre méthode au lieu de celle ci avec @objc
+    @objc func timerExpires(_ timer: Timer) {
         let userinfo = timer.userInfo as! Dictionary<String,NSString>
         if let key = userinfo[ExpiringCacheObjectKey] {
             removeObject(forKey: key)

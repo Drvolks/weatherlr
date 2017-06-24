@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_watch_ExtensionVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_watch_ExtensionVersionString[];
+FOUNDATION_EXPORT double Pods_weatherlrFreeVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_weatherlrFreeVersionString[];
 

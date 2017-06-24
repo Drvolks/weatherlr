@@ -310,8 +310,8 @@ class WeatherHelper {
         UIGraphicsBeginImageContext(baseImage.size)
         
         let textFontAttributes = [
-            NSAttributedStringKey.font.rawValue: textFont,
-            NSAttributedStringKey.foregroundColor: textColor,
+            NSFontAttributeName: textFont,
+            NSForegroundColorAttributeName: textColor,
             ] as! [String : Any]
         
         //Put the image into a rectangle as large as the original image.

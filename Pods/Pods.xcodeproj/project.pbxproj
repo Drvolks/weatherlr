@@ -7,28 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B1F02560378D28FEBD4E8F6D293216 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		0BD060FD264A201C47748359E5055138 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		1ED64F2B31196AD7BF335FC404938E01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		1EFBA65CE77AF963D89437B42C75FE2C /* Pods-weatherlr-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B659F55DD1CFE9E373FB2C43C012792 /* Pods-weatherlr-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23873440D8F0D4583F11361C26A84D94 /* Pods-weatherlrTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FEAB11750553935CF9D2AD9257281 /* Pods-weatherlrTests-dummy.m */; };
-		27CE096D2C12C3DD762328078BA642F2 /* Pods-weatherlrFree-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9A9733332E7A0437FC6F20DA13496E /* Pods-weatherlrFree-dummy.m */; };
-		2F839E9C46713AD5CAB3893FBAD1C5E9 /* Pods-weatherlrFree-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FA20BF6A76C6BD9F80A0A9BAA3F66A1A /* Pods-weatherlrFree-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 87BF24AB94BFBA0C24772200C091F590 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5544EF5C9CF84EEFEBFD94B08469CB8C /* Pods-weatherlrUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B45CDD0ED57A4FAB28EEFBA816E496D /* Pods-weatherlrUITests-dummy.m */; };
+		1EFBA65CE77AF963D89437B42C75FE2C /* Pods-weatherlr-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 634000A1AC45439C4907448F288DBB43 /* Pods-weatherlr-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23873440D8F0D4583F11361C26A84D94 /* Pods-weatherlrTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AD28468D0BA29CA22AEB262B29890 /* Pods-weatherlrTests-dummy.m */; };
+		29FEADDF2086FDEA7D5BA87DD23B08C6 /* pb_decode.h in Headers */ = {isa = PBXBuildFile; fileRef = 3849A0C4A1815F089DBE8A4E1A6908D3 /* pb_decode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		392F2CF142BAA751AC1BB61D8B757D98 /* pb.h in Headers */ = {isa = PBXBuildFile; fileRef = A5F9160CE2DA43A7CBB5D9FD1797EE71 /* pb.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A50F5C8ECED9627F2EBD97F61BD376D /* pb_common.c in Sources */ = {isa = PBXBuildFile; fileRef = D39E3649D5372A316083E485F58752B4 /* pb_common.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc -fno-objc-arc"; }; };
+		468DFD90B6C4DA2F7CFA0C1C89F1B615 /* nanopb-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3552FBB40D26A8EF7DF8C47AFDB41FAF /* nanopb-dummy.m */; };
+		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = B1BFFDC36B8E2667012D7DF43012233C /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54F580BF4588159D6A61F21D15591805 /* pb_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC2833EFC2B592F8989A00E9A495D /* pb_decode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
+		5544EF5C9CF84EEFEBFD94B08469CB8C /* Pods-weatherlrUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F4F0D840E25EEBF9FBD125AD91BBE /* Pods-weatherlrUITests-dummy.m */; };
+		55D8D5D912CFD2F3584E4553C2EAD734 /* pb_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = BBD5199F6EE7620A57584415FA3A2A09 /* pb_encode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
 		7F8BD26418B64D48D631B647CF55EC52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC93C213517463FAD1F5A00FC979978A /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		806BAA4E00218D70995697C4400BE7A0 /* pb_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AB8851B4A123E07E4B51695C5E1632 /* pb_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C9B1DC209DA20827D4404C846B68849 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8529AE923DB1ED13CABD339869C27DC3 /* Pods-watch Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DB1A2BBEA39E8B4ADAD2D79FBD89BF /* Pods-watch Extension-dummy.m */; };
 		8EFBD0199380CC96AC111DA2E10B7BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		93D51748565CFEB9490FBA7DA993C5C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		9FAD38EFD4DE59B00D45A27257E2B0D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A7985877EFDCA26CF3048A71AA2832F3 /* Pods-weatherlr-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF41730262F166ADCC73843283FB39C0 /* Pods-weatherlr-dummy.m */; };
-		DAA6263D78C97E34FCBCB6C2B99908EF /* Pods-weatherlrUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F75080C2D4AC947E3DF20558583F91A0 /* Pods-weatherlrUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 4233F04721BB2C9F4A9AD812E8E818BE /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6410F75D3F239E8C74217894E3C1E09 /* Pods-weatherlrTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 864754387BDE710FD92C60B674D21215 /* Pods-weatherlrTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D8FE409A493D94933F182D1C8C331E /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B9293BAC8B7616842A40426FC495B2 /* GoogleToolboxForMac-dummy.m */; };
+		95D231B8B77EF8F2B74DBDE65AE69451 /* Pods-watch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0306FB10C5112FB30B9C20F9E313D94 /* Pods-watch-dummy.m */; };
+		97DD1EB1A8E44A3EA30AEB7EB70A3DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A7985877EFDCA26CF3048A71AA2832F3 /* Pods-weatherlr-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C6B39EC71EC2C53684BE332F55304A /* Pods-weatherlr-dummy.m */; };
+		C2B4E69AF3F6880A43E8A2F4CAB00724 /* Pods-watch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2970E7E912843832D1D86D019EA7A8A /* Pods-watch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAA6263D78C97E34FCBCB6C2B99908EF /* Pods-weatherlrUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DED4837BA8D01B03A07877F7E61D3CEF /* Pods-weatherlrUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = C39B2243D94B0E1447A3793EB8D5D105 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC89A7F3B7FA621DB1581E6E59DE4C4A /* Pods-weatherlrFree-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57558C89A231573514C2C3F1A9ACD922 /* Pods-weatherlrFree-dummy.m */; };
+		E181395E73163EB702FCE9A21403D67B /* pb_encode.h in Headers */ = {isa = PBXBuildFile; fileRef = 633DC7D411FB0E4AB19F04D71CAEC9BA /* pb_encode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6410F75D3F239E8C74217894E3C1E09 /* Pods-weatherlrTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D17AED2C3B6E5D6874F672B133CD0 /* Pods-weatherlrTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7F41BEED7E40401FB73ADDDC3AE3F87 /* Pods-weatherlrFree-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6B00332CC857339B10041C568B61FB6 /* Pods-weatherlrFree-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C31E078C9236307B668489D2454C525 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F9D92BA503505CB48EF4ECF0DDF57686 /* nanopb-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 589B9F2BD1ED09D0E9E60777C4F3062B /* nanopb-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DD889A56DB2BC0D96B8EB014DC656A /* GoogleToolboxForMac-dummy.m */; };
+		FBA40F4F1372D163863DAAFDE5CF54F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		FD7B4C6B1B758B884B4B2A66184FDB59 /* Pods-watch Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A5C52343F8B9806C1B74A4E2D32CFBF /* Pods-watch Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CD10E908FB75370185B2DEBD7AF4A8D3 /* PBXContainerItemProxy */ = {
+		031CA26537B1083AF7C0F7814A71D5BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4DD95323C54A78F879DAB0F1508B8E7;
+			remoteInfo = nanopb;
+		};
+		67C25C999C48FD474B85197AB7977160 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -38,80 +61,108 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08D660378B145DDF2D2C2123E60788FB /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		189A3195202133DA4314140F18BCD658 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
-		19DB55567CD26D8950671D405666EF35 /* Pods-weatherlrFree.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-weatherlrFree.modulemap"; sourceTree = "<group>"; };
-		290B168696CB1CCA4DE940F849AC309B /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
-		31979573C48E77C725DD63DE11438C23 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		342D8E890822B907D2CE703E0D557947 /* Pods-weatherlrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrUITests.release.xcconfig"; sourceTree = "<group>"; };
-		3599CD87D91B45C26FFDAEB683748D53 /* Pods-weatherlr-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherlr-acknowledgements.plist"; sourceTree = "<group>"; };
-		386FEAB11750553935CF9D2AD9257281 /* Pods-weatherlrTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherlrTests-dummy.m"; sourceTree = "<group>"; };
-		3B49C41F705A39F64E561699F4DCDD2A /* Pods-weatherlrFree-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrFree-frameworks.sh"; sourceTree = "<group>"; };
-		3CD7780DA4007F880F4858273567CB00 /* Pods-weatherlrTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-weatherlrTests.modulemap"; sourceTree = "<group>"; };
-		3D4D8ADA4D83751412AB0789CC427D67 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		4233F04721BB2C9F4A9AD812E8E818BE /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
-		43B40E0214190ADD11A5EBA8706EB289 /* Pods-weatherlr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlr.debug.xcconfig"; sourceTree = "<group>"; };
-		4EECE9B956968BE3D06D9D6AD792F248 /* Pods-weatherlrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5142B846E6203A59D8BBD703308593B8 /* Pods-weatherlrFree-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrFree-resources.sh"; sourceTree = "<group>"; };
-		591E467FC228F2B6CB65789181FA873F /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		59BDF12251B904F43EBF5C83D868DBCE /* Pods-weatherlr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlr.release.xcconfig"; sourceTree = "<group>"; };
-		5DB22B2AB4FDDC8633A006B4A87A0E5B /* Pods_weatherlrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weatherlrTests.framework; path = "Pods-weatherlrTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		626095A98C9E8AF128CC010A21DC2647 /* Pods-weatherlrTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherlrTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		02A028161B7A57962FAE66CBE53F25C6 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		06411A3C3D3ACB171AE3BD022F335EC5 /* Pods-weatherlrTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-weatherlrTests.modulemap"; sourceTree = "<group>"; };
+		09526117651303F574947F97F9F255CB /* Pods-weatherlrFree-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrFree-frameworks.sh"; sourceTree = "<group>"; };
+		0A98F1429340EB3C1859D29B650AF44B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AEC21329BA7B3B729DD29E6CBE967B2 /* Pods-weatherlr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlr.debug.xcconfig"; sourceTree = "<group>"; };
+		0D2D72D73E8F66DDF0433F37CB54EECD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1035CDE8C935F2B665289272E43B10FB /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
+		11C200055FD4F035B0AD69B754D1F9E0 /* Pods-weatherlrUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-weatherlrUITests.modulemap"; sourceTree = "<group>"; };
+		166830E576EECBFFC7FD596DE6AA6922 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		18E9C09885DBB0FC89A1B93C5751F1DC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A11AD1F14D2832A109419671592C6E0 /* Pods-watch Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-watch Extension.modulemap"; sourceTree = "<group>"; };
+		1C9B1DC209DA20827D4404C846B68849 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		1C9E70B67BEA4BAB150DF4270008076B /* Pods-weatherlrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D0931E350FBA305EB73FABB1472E693 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C31E078C9236307B668489D2454C525 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		307A502BC373603D637BEB64B9DCE264 /* Pods-weatherlrUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrUITests-resources.sh"; sourceTree = "<group>"; };
+		30EBA011ED42D857A1BD17520BA6F544 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		328C0076DEF8B9C0A2FD391D3A4B22B3 /* Pods-weatherlr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlr.release.xcconfig"; sourceTree = "<group>"; };
+		3313D0D9E352A0856BEE1210798F13FF /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = nanopb.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		349D17AED2C3B6E5D6874F672B133CD0 /* Pods-weatherlrTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherlrTests-umbrella.h"; sourceTree = "<group>"; };
+		3552FBB40D26A8EF7DF8C47AFDB41FAF /* nanopb-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "nanopb-dummy.m"; sourceTree = "<group>"; };
+		3849A0C4A1815F089DBE8A4E1A6908D3 /* pb_decode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
+		386CF7DE02AB8C32CCB1AD6FC420BBB8 /* Pods-weatherlrTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrTests-frameworks.sh"; sourceTree = "<group>"; };
+		3B80875DF292A9AA3C0E3942FB8F5888 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		3BF800B75EC98F09D799F2C0E9AA1E55 /* Pods-weatherlr-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherlr-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3BFCE6CF19123C22104EBB57463B9681 /* Pods-weatherlrTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrTests-resources.sh"; sourceTree = "<group>"; };
+		3F7042F4B13044E736424A4AB618DFF8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41989D1A03FA32C069F1DF62933C3904 /* Pods-weatherlrTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherlrTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4B763104F3576BB8E8970AAF2E617D97 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		533323F4F84F7942766563D6D88A1800 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		56DD889A56DB2BC0D96B8EB014DC656A /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
+		570910FE6C888B035CB4B7A4DD6CAF25 /* Pods-watch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-watch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		57558C89A231573514C2C3F1A9ACD922 /* Pods-weatherlrFree-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherlrFree-dummy.m"; sourceTree = "<group>"; };
+		589B9F2BD1ED09D0E9E60777C4F3062B /* nanopb-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-umbrella.h"; sourceTree = "<group>"; };
+		58DDC2833EFC2B592F8989A00E9A495D /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
+		599F12EAA9291A81CDD042AD65C452D0 /* Pods-weatherlr.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-weatherlr.modulemap"; sourceTree = "<group>"; };
+		5C982C1A43811C25301D696F2C8C7858 /* Pods-weatherlrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		60C6B39EC71EC2C53684BE332F55304A /* Pods-weatherlr-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherlr-dummy.m"; sourceTree = "<group>"; };
+		6242B9E4047B1E4C9F6A1192279A8239 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6288DD541BC36A8B316DA966377AF474 /* nanopb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = nanopb.modulemap; sourceTree = "<group>"; };
+		62BF680877866A063A77FD6F05A5A2AE /* Pods-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watch.debug.xcconfig"; sourceTree = "<group>"; };
+		633DC7D411FB0E4AB19F04D71CAEC9BA /* pb_encode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_encode.h; sourceTree = "<group>"; };
+		634000A1AC45439C4907448F288DBB43 /* Pods-weatherlr-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherlr-umbrella.h"; sourceTree = "<group>"; };
+		63E48E28640DFEB040E7D6B53FF6F9C5 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		65AE59BE83459E47A2A15F9203A01D86 /* Pods-watch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-watch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6D4116943D1F721D30B32B7D4FC82F9C /* Pods-weatherlr-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlr-resources.sh"; sourceTree = "<group>"; };
-		6FA3EBE2E930506A51B09C3E7DDF625D /* Pods-weatherlrTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrTests-resources.sh"; sourceTree = "<group>"; };
-		77B7D53B1121999BCB996AA234B24E58 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
-		7B45CDD0ED57A4FAB28EEFBA816E496D /* Pods-weatherlrUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherlrUITests-dummy.m"; sourceTree = "<group>"; };
-		7BD2C45577D84C805A2C1C0A021626E7 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
-		7F56B162F7503FECD22FF5C8A5D0EAF7 /* Pods_weatherlr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weatherlr.framework; path = "Pods-weatherlr.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		82FE00D4C12221086A43F3D18A2992D6 /* Pods-weatherlrUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrUITests-resources.sh"; sourceTree = "<group>"; };
-		854E4D0071EA3DDD2F5DCA7B12509A99 /* Pods-weatherlr.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-weatherlr.modulemap"; sourceTree = "<group>"; };
-		864754387BDE710FD92C60B674D21215 /* Pods-weatherlrTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherlrTests-umbrella.h"; sourceTree = "<group>"; };
-		87BF24AB94BFBA0C24772200C091F590 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		8E40FA4C74CF9832E39747400DFEDD7F /* Pods-weatherlrTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrTests-frameworks.sh"; sourceTree = "<group>"; };
+		6B2A3F1403FA73D5B00C9C169BF832ED /* Pods-weatherlr-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlr-frameworks.sh"; sourceTree = "<group>"; };
+		6E2D22BA134D118856E272D18D7C9053 /* Pods_weatherlrFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weatherlrFree.framework; path = "Pods-weatherlrFree.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		72AB8851B4A123E07E4B51695C5E1632 /* pb_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_common.h; sourceTree = "<group>"; };
+		72EE80B81432D5BAD422287F0CB4E8B8 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		744B71D9A4B286D40E8F9AE1EEBC9041 /* Pods-weatherlrUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherlrUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		74523F58EACCDAB0D3A2B5C2394075AA /* Pods-weatherlrFree.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-weatherlrFree.modulemap"; sourceTree = "<group>"; };
+		7A5C52343F8B9806C1B74A4E2D32CFBF /* Pods-watch Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-watch Extension-umbrella.h"; sourceTree = "<group>"; };
+		7BDD7A9F95CC998B340CF8E4B5F2F850 /* Pods-watch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watch-resources.sh"; sourceTree = "<group>"; };
+		7D9577F764C63191866F0450CA76356B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82E345A61404412C6459E43FE1DE8C0E /* Pods-weatherlrFree-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherlrFree-acknowledgements.markdown"; sourceTree = "<group>"; };
+		837FF769A8DB98BB4C42319480DE6C71 /* Pods-watch Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watch Extension-resources.sh"; sourceTree = "<group>"; };
+		840513E9573C89EBBFF50D4F1F74DB8F /* Pods-watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		86980F7F69EA255F87FC95095236B736 /* Pods-watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		878BB0C6F0D4319B0639FE50D6019F76 /* Pods-weatherlrUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherlrUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8F58F742BF1D36E8F3F5610A33A6DB11 /* Pods-weatherlr-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlr-resources.sh"; sourceTree = "<group>"; };
+		905F453BE51F817147E6FFE632353D23 /* Pods_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_watch_Extension.framework; path = "Pods-watch Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92971F01CF4F485E7E03D845C5416075 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9B659F55DD1CFE9E373FB2C43C012792 /* Pods-weatherlr-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherlr-umbrella.h"; sourceTree = "<group>"; };
-		9D65A14FC422392A0B5C4FB4B00C76C5 /* Pods-weatherlrUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherlrUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A0F74C7C897731C7F5B66B35144C71A4 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		A4A24F44CE0752663EE64EEA0255F23A /* Pods-weatherlrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrTests.release.xcconfig"; sourceTree = "<group>"; };
-		A4B9293BAC8B7616842A40426FC495B2 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
-		AC93C213517463FAD1F5A00FC979978A /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
-		AE2FE38609963C0B4AC67BE5447C7D9D /* Pods-weatherlrFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrFree.debug.xcconfig"; sourceTree = "<group>"; };
-		AED4C87CA0D945648804C8513E710BB3 /* Pods-weatherlrFree-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherlrFree-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AF41730262F166ADCC73843283FB39C0 /* Pods-weatherlr-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherlr-dummy.m"; sourceTree = "<group>"; };
-		B2ED004173F427C4D5B4D3799A706828 /* Pods-weatherlrFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrFree.release.xcconfig"; sourceTree = "<group>"; };
-		B35142A1AD55AD80915AF201413F1052 /* Pods-weatherlrUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherlrUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B4B65F426BC9825757AC4E5352367167 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4ECDECAC6683519321130FF938FDD66 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8A4403C852663A88CF69622725A434C /* Pods-weatherlr-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherlr-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BD6DD3F89004D174A16246DD80B95636 /* Pods-weatherlrUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrUITests-frameworks.sh"; sourceTree = "<group>"; };
-		BDF344E942C97D2915323BDFD4FAA587 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4946CF29EC88EB52498CD2318D167E3 /* Pods_weatherlrFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weatherlrFree.framework; path = "Pods-weatherlrFree.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C76B11EA836E20ABC1284F616DF69112 /* Pods-weatherlrFree-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherlrFree-acknowledgements.plist"; sourceTree = "<group>"; };
-		CF31BD2F26982D5053594FFF80E7A0CB /* Pods-weatherlrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D6D8FE409A493D94933F182D1C8C331E /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
-		D8859A1AEF91DD3CA54C47172B41A687 /* Pods-weatherlrUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-weatherlrUITests.modulemap"; sourceTree = "<group>"; };
-		D8B5E951BB27F1A26A28B6632273C54B /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
-		DA65249CD274DB9665BCF6B4206DF62C /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
-		E217A4609977103BC81C33314D2CD13E /* Pods_weatherlrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weatherlrUITests.framework; path = "Pods-weatherlrUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E473CF024468BDA807C2E5CD86E59939 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE423EC495CE880998BE69578346B39D /* Pods-weatherlrTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherlrTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EFA72CD51A4B8C33B47E0F26BEB1B2AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F75080C2D4AC947E3DF20558583F91A0 /* Pods-weatherlrUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherlrUITests-umbrella.h"; sourceTree = "<group>"; };
-		FA20BF6A76C6BD9F80A0A9BAA3F66A1A /* Pods-weatherlrFree-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherlrFree-umbrella.h"; sourceTree = "<group>"; };
-		FB76755EE4BE8C4D995F893464346281 /* Pods-weatherlr-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlr-frameworks.sh"; sourceTree = "<group>"; };
-		FE9A9733332E7A0437FC6F20DA13496E /* Pods-weatherlrFree-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherlrFree-dummy.m"; sourceTree = "<group>"; };
+		94F10BA256E1E1A301BAA5468AC76C99 /* Pods-weatherlrFree-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrFree-resources.sh"; sourceTree = "<group>"; };
+		97883AB800146FDB599AF98FE8560A00 /* Pods-watch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-watch-acknowledgements.plist"; sourceTree = "<group>"; };
+		985634426648F0AE980557D3281CA839 /* Pods-weatherlrFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrFree.debug.xcconfig"; sourceTree = "<group>"; };
+		998095804D382B5EC2D6E03485C20ED5 /* nanopb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = nanopb.xcconfig; sourceTree = "<group>"; };
+		A5F9160CE2DA43A7CBB5D9FD1797EE71 /* pb.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb.h; sourceTree = "<group>"; };
+		A63F5B40E08B5C577A1798BA42FD7919 /* nanopb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-prefix.pch"; sourceTree = "<group>"; };
+		AE32EF2C250BA4CB5FA969948E1C25FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1A5DA087D4B8754464AF528BB734303 /* Pods_weatherlr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weatherlr.framework; path = "Pods-weatherlr.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1BFFDC36B8E2667012D7DF43012233C /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		B3BA7CA720498D143EBB2CCFE87337F0 /* Pods-watch Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watch Extension-frameworks.sh"; sourceTree = "<group>"; };
+		B44F93DB57FA97F19FF302F40F96B379 /* Pods-weatherlrFree-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherlrFree-acknowledgements.plist"; sourceTree = "<group>"; };
+		B7441C3E24277604E06E6B8D7333D223 /* Pods-weatherlrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B92F4F0D840E25EEBF9FBD125AD91BBE /* Pods-weatherlrUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherlrUITests-dummy.m"; sourceTree = "<group>"; };
+		BBD5199F6EE7620A57584415FA3A2A09 /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_encode.c; sourceTree = "<group>"; };
+		BBF08BF20D6CE873EA2B405B01CE5312 /* Pods_weatherlrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weatherlrUITests.framework; path = "Pods-weatherlrUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD7650A7FC7FCA238B7F0D981DC79A7 /* Pods-weatherlrTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherlrTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C39B2243D94B0E1447A3793EB8D5D105 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		C3DB1A2BBEA39E8B4ADAD2D79FBD89BF /* Pods-watch Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-watch Extension-dummy.m"; sourceTree = "<group>"; };
+		C983DBA148A594157C53A6A374A194E9 /* Pods-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watch.release.xcconfig"; sourceTree = "<group>"; };
+		CDE61CE05D27D0EC18F00BD39BAB2CAD /* Pods-watch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-watch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D0306FB10C5112FB30B9C20F9E313D94 /* Pods-watch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-watch-dummy.m"; sourceTree = "<group>"; };
+		D07F5F71F12A749E0656A075ED3E3F03 /* Pods_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_watch.framework; path = "Pods-watch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2970E7E912843832D1D86D019EA7A8A /* Pods-watch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-watch-umbrella.h"; sourceTree = "<group>"; };
+		D2F9F8F3627331E33BCCDD2610406E51 /* Pods-weatherlrUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherlrUITests-frameworks.sh"; sourceTree = "<group>"; };
+		D39E3649D5372A316083E485F58752B4 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_common.c; sourceTree = "<group>"; };
+		DD374B5977428F57A550FBCE7CC53095 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DED4837BA8D01B03A07877F7E61D3CEF /* Pods-weatherlrUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherlrUITests-umbrella.h"; sourceTree = "<group>"; };
+		E023A5DB401F72E82FDD16ECC323D575 /* Pods-weatherlrFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrFree.release.xcconfig"; sourceTree = "<group>"; };
+		E65AD28468D0BA29CA22AEB262B29890 /* Pods-weatherlrTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherlrTests-dummy.m"; sourceTree = "<group>"; };
+		E6B00332CC857339B10041C568B61FB6 /* Pods-weatherlrFree-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherlrFree-umbrella.h"; sourceTree = "<group>"; };
+		E93366DFD5C0B67DEFDB455B3F79699B /* Pods-weatherlr-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherlr-acknowledgements.plist"; sourceTree = "<group>"; };
+		EEFAC0C4D78050C69143C620C418470D /* Pods-weatherlrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherlrTests.release.xcconfig"; sourceTree = "<group>"; };
+		F40DAE31C8E3670EFBC945BF3E94D124 /* Pods_weatherlrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weatherlrTests.framework; path = "Pods-weatherlrTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59F67B552E6D3CFA1EE9018975105E7 /* Pods-watch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watch-frameworks.sh"; sourceTree = "<group>"; };
+		FA690C1C7DAA6D17C894519B63367542 /* Pods-watch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-watch.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		549CBFAF3DC9D10A87298264C65BC387 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FAD38EFD4DE59B00D45A27257E2B0D5 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7847303F7EDD8AAF4867217D13763893 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,11 +179,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83C98F9D9C64B8A2BEB3B7DE1F712408 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97DD1EB1A8E44A3EA30AEB7EB70A3DD7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94EBF65D4F17B9F13EBBFC8056054891 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1ED64F2B31196AD7BF335FC404938E01 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		971041836592E28ADEEDA495A96A62A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05B1F02560378D28FEBD4E8F6D293216 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B201D5988299DCB55B2C41D97325DF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA40F4F1372D163863DAAFDE5CF54F7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C1602E9BC0E7288D5499216242C47D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BD060FD264A201C47748359E5055138 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,244 +230,254 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09B5FC2BC4D8E40E67708286342A69BC /* Defines */ = {
+		11B9B5D1E01AF738109DFFB6E8796B4B /* NSData+zlib */ = {
 			isa = PBXGroup;
 			children = (
-				87BF24AB94BFBA0C24772200C091F590 /* GTMDefines.h */,
+				C39B2243D94B0E1447A3793EB8D5D105 /* GTMNSData+zlib.h */,
+				2C31E078C9236307B668489D2454C525 /* GTMNSData+zlib.m */,
 			);
-			name = Defines;
+			name = "NSData+zlib";
 			sourceTree = "<group>";
 		};
-		0D3D52240AE5894F1D8236CA984866A5 /* Core */ = {
+		15459AF763958C3B10DCEE2E6B618348 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DA65249CD274DB9665BCF6B4206DF62C /* Firebase.h */,
+				02A028161B7A57962FAE66CBE53F25C6 /* FirebaseAnalytics.framework */,
 			);
-			name = Core;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		183697714D15B99AFC74B3589D941F4C /* Firebase */ = {
+		19F7CEA18900A1174FBF966271462696 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0D3D52240AE5894F1D8236CA984866A5 /* Core */,
+				30EBA011ED42D857A1BD17520BA6F544 /* GoogleMobileAds.framework */,
 			);
-			name = Firebase;
-			path = Firebase;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		260FB38184B463ED57D2CF930C52586A /* Pods-weatherlrFree */ = {
+		1CF172AF87C3B087307463126975FEF2 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				BDF344E942C97D2915323BDFD4FAA587 /* Info.plist */,
-				19DB55567CD26D8950671D405666EF35 /* Pods-weatherlrFree.modulemap */,
-				AED4C87CA0D945648804C8513E710BB3 /* Pods-weatherlrFree-acknowledgements.markdown */,
-				C76B11EA836E20ABC1284F616DF69112 /* Pods-weatherlrFree-acknowledgements.plist */,
-				FE9A9733332E7A0437FC6F20DA13496E /* Pods-weatherlrFree-dummy.m */,
-				3B49C41F705A39F64E561699F4DCDD2A /* Pods-weatherlrFree-frameworks.sh */,
-				5142B846E6203A59D8BBD703308593B8 /* Pods-weatherlrFree-resources.sh */,
-				FA20BF6A76C6BD9F80A0A9BAA3F66A1A /* Pods-weatherlrFree-umbrella.h */,
-				AE2FE38609963C0B4AC67BE5447C7D9D /* Pods-weatherlrFree.debug.xcconfig */,
-				B2ED004173F427C4D5B4D3799A706828 /* Pods-weatherlrFree.release.xcconfig */,
+				A4F8ED3D08EEBC657565732E9568194D /* Frameworks */,
+			);
+			name = FirebaseInstanceID;
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		31569D0BF9DD7EA38DEC7C3E56C2B98C /* Pods-weatherlrFree */ = {
+			isa = PBXGroup;
+			children = (
+				18E9C09885DBB0FC89A1B93C5751F1DC /* Info.plist */,
+				74523F58EACCDAB0D3A2B5C2394075AA /* Pods-weatherlrFree.modulemap */,
+				82E345A61404412C6459E43FE1DE8C0E /* Pods-weatherlrFree-acknowledgements.markdown */,
+				B44F93DB57FA97F19FF302F40F96B379 /* Pods-weatherlrFree-acknowledgements.plist */,
+				57558C89A231573514C2C3F1A9ACD922 /* Pods-weatherlrFree-dummy.m */,
+				09526117651303F574947F97F9F255CB /* Pods-weatherlrFree-frameworks.sh */,
+				94F10BA256E1E1A301BAA5468AC76C99 /* Pods-weatherlrFree-resources.sh */,
+				E6B00332CC857339B10041C568B61FB6 /* Pods-weatherlrFree-umbrella.h */,
+				985634426648F0AE980557D3281CA839 /* Pods-weatherlrFree.debug.xcconfig */,
+				E023A5DB401F72E82FDD16ECC323D575 /* Pods-weatherlrFree.release.xcconfig */,
 			);
 			name = "Pods-weatherlrFree";
 			path = "Target Support Files/Pods-weatherlrFree";
 			sourceTree = "<group>";
 		};
-		339A74AD95670A85D14AA9B4FD0447E8 /* Support Files */ = {
+		368650D52EF4BD5A5F581116F1F72224 /* Pods-weatherlrTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8B5E951BB27F1A26A28B6632273C54B /* GoogleToolboxForMac.modulemap */,
-				189A3195202133DA4314140F18BCD658 /* GoogleToolboxForMac.xcconfig */,
-				A4B9293BAC8B7616842A40426FC495B2 /* GoogleToolboxForMac-dummy.m */,
-				77B7D53B1121999BCB996AA234B24E58 /* GoogleToolboxForMac-prefix.pch */,
-				AC93C213517463FAD1F5A00FC979978A /* GoogleToolboxForMac-umbrella.h */,
-				B4B65F426BC9825757AC4E5352367167 /* Info.plist */,
+				3F7042F4B13044E736424A4AB618DFF8 /* Info.plist */,
+				06411A3C3D3ACB171AE3BD022F335EC5 /* Pods-weatherlrTests.modulemap */,
+				41989D1A03FA32C069F1DF62933C3904 /* Pods-weatherlrTests-acknowledgements.markdown */,
+				BCD7650A7FC7FCA238B7F0D981DC79A7 /* Pods-weatherlrTests-acknowledgements.plist */,
+				E65AD28468D0BA29CA22AEB262B29890 /* Pods-weatherlrTests-dummy.m */,
+				386CF7DE02AB8C32CCB1AD6FC420BBB8 /* Pods-weatherlrTests-frameworks.sh */,
+				3BFCE6CF19123C22104EBB57463B9681 /* Pods-weatherlrTests-resources.sh */,
+				349D17AED2C3B6E5D6874F672B133CD0 /* Pods-weatherlrTests-umbrella.h */,
+				5C982C1A43811C25301D696F2C8C7858 /* Pods-weatherlrTests.debug.xcconfig */,
+				EEFAC0C4D78050C69143C620C418470D /* Pods-weatherlrTests.release.xcconfig */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleToolboxForMac";
+			name = "Pods-weatherlrTests";
+			path = "Target Support Files/Pods-weatherlrTests";
 			sourceTree = "<group>";
 		};
-		3EA72213A53C34CF78A1AEA1844DCCF9 /* Frameworks */ = {
+		37BCD666052597EF80C5685A81D5D66C /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				08D660378B145DDF2D2C2123E60788FB /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3EEF69CB8CAACA79B6B2258174E0E1AB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A0F74C7C897731C7F5B66B35144C71A4 /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		46C51FA36716999E33210D249215040C /* Google-Mobile-Ads-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				DD483EDC222058D162F7E67F52D59376 /* Frameworks */,
+				19F7CEA18900A1174FBF966271462696 /* Frameworks */,
 			);
 			name = "Google-Mobile-Ads-SDK";
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
-		4A0A3E4E2229D87834087E832846A78F /* Pods-weatherlr */ = {
+		49546B3C0430F24EB46EA6EBF5AC2C0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				31979573C48E77C725DD63DE11438C23 /* Info.plist */,
-				854E4D0071EA3DDD2F5DCA7B12509A99 /* Pods-weatherlr.modulemap */,
-				B8A4403C852663A88CF69622725A434C /* Pods-weatherlr-acknowledgements.markdown */,
-				3599CD87D91B45C26FFDAEB683748D53 /* Pods-weatherlr-acknowledgements.plist */,
-				AF41730262F166ADCC73843283FB39C0 /* Pods-weatherlr-dummy.m */,
-				FB76755EE4BE8C4D995F893464346281 /* Pods-weatherlr-frameworks.sh */,
-				6D4116943D1F721D30B32B7D4FC82F9C /* Pods-weatherlr-resources.sh */,
-				9B659F55DD1CFE9E373FB2C43C012792 /* Pods-weatherlr-umbrella.h */,
-				43B40E0214190ADD11A5EBA8706EB289 /* Pods-weatherlr.debug.xcconfig */,
-				59BDF12251B904F43EBF5C83D868DBCE /* Pods-weatherlr.release.xcconfig */,
+				3B80875DF292A9AA3C0E3942FB8F5888 /* FirebaseCore.framework */,
+				533323F4F84F7942766563D6D88A1800 /* FirebaseCoreDiagnostics.framework */,
+				1035CDE8C935F2B665289272E43B10FB /* FirebaseNanoPB.framework */,
 			);
-			name = "Pods-weatherlr";
-			path = "Target Support Files/Pods-weatherlr";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		699E1C75C9BEC4A94A2526E67B0C8737 /* Targets Support Files */ = {
+		4E194A74A36FDD9DF2D3F4E658396D0D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4A0A3E4E2229D87834087E832846A78F /* Pods-weatherlr */,
-				260FB38184B463ED57D2CF930C52586A /* Pods-weatherlrFree */,
-				A7A8CE12CA81C6ED487B22BCA0652CB8 /* Pods-weatherlrTests */,
-				9E6E092FACC25CEF1D4BA0A81D77673D /* Pods-weatherlrUITests */,
+				D3D7C4D7B8F70EF3BF2A84FEBB4BF917 /* WeatherFramework */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		51F1670B2D31FA5E7CE75B301B6EE4DD /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFFDC36B8E2667012D7DF43012233C /* GTMDefines.h */,
+			);
+			name = Defines;
+			sourceTree = "<group>";
+		};
+		54EF411BB0F383575C41726BF5952780 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4B763104F3576BB8E8970AAF2E617D97 /* Firebase.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		5A2F7698FD983559E059CB7308D543EB /* encode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = encode;
+			sourceTree = "<group>";
+		};
+		6C760C6513D3F051CF036C505194A4B0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C2A1AE3A0B3354D1BB845855CFA0A /* Pods-watch */,
+				B95BA709F9A15BCA39BD2ACDEAE824C1 /* Pods-watch Extension */,
+				C01ADD642447AA0AC888703C83BBE2DB /* Pods-weatherlr */,
+				31569D0BF9DD7EA38DEC7C3E56C2B98C /* Pods-weatherlrFree */,
+				368650D52EF4BD5A5F581116F1F72224 /* Pods-weatherlrTests */,
+				EBE5B33ECE1C75E004BC806BC8D4B5A2 /* Pods-weatherlrUITests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		77C306D46607E39F5645FB23193F61AA /* nanopb */ = {
+			isa = PBXGroup;
+			children = (
+				A5F9160CE2DA43A7CBB5D9FD1797EE71 /* pb.h */,
+				D39E3649D5372A316083E485F58752B4 /* pb_common.c */,
+				72AB8851B4A123E07E4B51695C5E1632 /* pb_common.h */,
+				58DDC2833EFC2B592F8989A00E9A495D /* pb_decode.c */,
+				3849A0C4A1815F089DBE8A4E1A6908D3 /* pb_decode.h */,
+				BBD5199F6EE7620A57584415FA3A2A09 /* pb_encode.c */,
+				633DC7D411FB0E4AB19F04D71CAEC9BA /* pb_encode.h */,
+				C526FD3ED314F01CD9B27B06661FCB3B /* decode */,
+				5A2F7698FD983559E059CB7308D543EB /* encode */,
+				B8E233591C418A7FDCF6FE39738EC2CC /* Support Files */,
+			);
+			name = nanopb;
+			path = nanopb;
+			sourceTree = "<group>";
+		};
+		7B5D918F376D8549C629B27C4771BDE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6242B9E4047B1E4C9F6A1192279A8239 /* GoogleToolboxForMac.framework */,
+				3313D0D9E352A0856BEE1210798F13FF /* nanopb.framework */,
+				D07F5F71F12A749E0656A075ED3E3F03 /* Pods_watch.framework */,
+				905F453BE51F817147E6FFE632353D23 /* Pods_watch_Extension.framework */,
+				B1A5DA087D4B8754464AF528BB734303 /* Pods_weatherlr.framework */,
+				6E2D22BA134D118856E272D18D7C9053 /* Pods_weatherlrFree.framework */,
+				F40DAE31C8E3670EFBC945BF3E94D124 /* Pods_weatherlrTests.framework */,
+				BBF08BF20D6CE873EA2B405B01CE5312 /* Pods_weatherlrUITests.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				4E194A74A36FDD9DF2D3F4E658396D0D /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				A7687F95F83530A6DB138C50240162F0 /* Pods */,
-				B29F8C6FA1E43DC0A293E8E3C351A7F5 /* Products */,
-				699E1C75C9BEC4A94A2526E67B0C8737 /* Targets Support Files */,
+				F8BFBAD4B621A4FD10F39A0106589698 /* Pods */,
+				7B5D918F376D8549C629B27C4771BDE1 /* Products */,
+				6C760C6513D3F051CF036C505194A4B0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		851D26DDCCD4933B725E9FED5DF771CA /* FirebaseAnalytics */ = {
+		A1E2D4BD4513A786E4A36E1E88D81F41 /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				3EEF69CB8CAACA79B6B2258174E0E1AB /* Frameworks */,
+				15459AF763958C3B10DCEE2E6B618348 /* Frameworks */,
 			);
 			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		95450AFCFC162224D7B5F3507305E147 /* FirebaseCore */ = {
+		A4F8ED3D08EEBC657565732E9568194D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9CAA89E947B515B17B78D9763FEBC639 /* Frameworks */,
-			);
-			name = FirebaseCore;
-			path = FirebaseCore;
-			sourceTree = "<group>";
-		};
-		9CAA89E947B515B17B78D9763FEBC639 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3D4D8ADA4D83751412AB0789CC427D67 /* FirebaseCore.framework */,
-				7BD2C45577D84C805A2C1C0A021626E7 /* FirebaseCoreDiagnostics.framework */,
-				290B168696CB1CCA4DE940F849AC309B /* FirebaseNanoPB.framework */,
+				63E48E28640DFEB040E7D6B53FF6F9C5 /* FirebaseInstanceID.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9E6E092FACC25CEF1D4BA0A81D77673D /* Pods-weatherlrUITests */ = {
+		A63AA7D721A7A99185795FC1B6CECDD6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E473CF024468BDA807C2E5CD86E59939 /* Info.plist */,
-				D8859A1AEF91DD3CA54C47172B41A687 /* Pods-weatherlrUITests.modulemap */,
-				B35142A1AD55AD80915AF201413F1052 /* Pods-weatherlrUITests-acknowledgements.markdown */,
-				9D65A14FC422392A0B5C4FB4B00C76C5 /* Pods-weatherlrUITests-acknowledgements.plist */,
-				7B45CDD0ED57A4FAB28EEFBA816E496D /* Pods-weatherlrUITests-dummy.m */,
-				BD6DD3F89004D174A16246DD80B95636 /* Pods-weatherlrUITests-frameworks.sh */,
-				82FE00D4C12221086A43F3D18A2992D6 /* Pods-weatherlrUITests-resources.sh */,
-				F75080C2D4AC947E3DF20558583F91A0 /* Pods-weatherlrUITests-umbrella.h */,
-				CF31BD2F26982D5053594FFF80E7A0CB /* Pods-weatherlrUITests.debug.xcconfig */,
-				342D8E890822B907D2CE703E0D557947 /* Pods-weatherlrUITests.release.xcconfig */,
+				166830E576EECBFFC7FD596DE6AA6922 /* GoogleToolboxForMac.modulemap */,
+				72EE80B81432D5BAD422287F0CB4E8B8 /* GoogleToolboxForMac.xcconfig */,
+				56DD889A56DB2BC0D96B8EB014DC656A /* GoogleToolboxForMac-dummy.m */,
+				92971F01CF4F485E7E03D845C5416075 /* GoogleToolboxForMac-prefix.pch */,
+				1C9B1DC209DA20827D4404C846B68849 /* GoogleToolboxForMac-umbrella.h */,
+				0A98F1429340EB3C1859D29B650AF44B /* Info.plist */,
 			);
-			name = "Pods-weatherlrUITests";
-			path = "Target Support Files/Pods-weatherlrUITests";
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
 			sourceTree = "<group>";
 		};
-		A7687F95F83530A6DB138C50240162F0 /* Pods */ = {
+		AE5BA8B17F56629FA35D0CD2F0A86237 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				183697714D15B99AFC74B3589D941F4C /* Firebase */,
-				851D26DDCCD4933B725E9FED5DF771CA /* FirebaseAnalytics */,
-				95450AFCFC162224D7B5F3507305E147 /* FirebaseCore */,
-				B0F2950803F54A71C0193D36AD1F6328 /* FirebaseInstanceID */,
-				46C51FA36716999E33210D249215040C /* Google-Mobile-Ads-SDK */,
-				AFBBFCC8385F69557F2D67504D6D3C76 /* GoogleToolboxForMac */,
+				54EF411BB0F383575C41726BF5952780 /* Core */,
 			);
-			name = Pods;
+			name = Firebase;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
-		A7A8CE12CA81C6ED487B22BCA0652CB8 /* Pods-weatherlrTests */ = {
+		B8E233591C418A7FDCF6FE39738EC2CC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				EFA72CD51A4B8C33B47E0F26BEB1B2AE /* Info.plist */,
-				3CD7780DA4007F880F4858273567CB00 /* Pods-weatherlrTests.modulemap */,
-				EE423EC495CE880998BE69578346B39D /* Pods-weatherlrTests-acknowledgements.markdown */,
-				626095A98C9E8AF128CC010A21DC2647 /* Pods-weatherlrTests-acknowledgements.plist */,
-				386FEAB11750553935CF9D2AD9257281 /* Pods-weatherlrTests-dummy.m */,
-				8E40FA4C74CF9832E39747400DFEDD7F /* Pods-weatherlrTests-frameworks.sh */,
-				6FA3EBE2E930506A51B09C3E7DDF625D /* Pods-weatherlrTests-resources.sh */,
-				864754387BDE710FD92C60B674D21215 /* Pods-weatherlrTests-umbrella.h */,
-				4EECE9B956968BE3D06D9D6AD792F248 /* Pods-weatherlrTests.debug.xcconfig */,
-				A4A24F44CE0752663EE64EEA0255F23A /* Pods-weatherlrTests.release.xcconfig */,
+				AE32EF2C250BA4CB5FA969948E1C25FE /* Info.plist */,
+				6288DD541BC36A8B316DA966377AF474 /* nanopb.modulemap */,
+				998095804D382B5EC2D6E03485C20ED5 /* nanopb.xcconfig */,
+				3552FBB40D26A8EF7DF8C47AFDB41FAF /* nanopb-dummy.m */,
+				A63F5B40E08B5C577A1798BA42FD7919 /* nanopb-prefix.pch */,
+				589B9F2BD1ED09D0E9E60777C4F3062B /* nanopb-umbrella.h */,
 			);
-			name = "Pods-weatherlrTests";
-			path = "Target Support Files/Pods-weatherlrTests";
+			name = "Support Files";
+			path = "../Target Support Files/nanopb";
 			sourceTree = "<group>";
 		};
-		A8A5EBB450D7AD4A68B30912A441E6F8 /* NSData+zlib */ = {
+		B95BA709F9A15BCA39BD2ACDEAE824C1 /* Pods-watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4233F04721BB2C9F4A9AD812E8E818BE /* GTMNSData+zlib.h */,
-				D6D8FE409A493D94933F182D1C8C331E /* GTMNSData+zlib.m */,
+				0D2D72D73E8F66DDF0433F37CB54EECD /* Info.plist */,
+				1A11AD1F14D2832A109419671592C6E0 /* Pods-watch Extension.modulemap */,
+				CDE61CE05D27D0EC18F00BD39BAB2CAD /* Pods-watch Extension-acknowledgements.markdown */,
+				65AE59BE83459E47A2A15F9203A01D86 /* Pods-watch Extension-acknowledgements.plist */,
+				C3DB1A2BBEA39E8B4ADAD2D79FBD89BF /* Pods-watch Extension-dummy.m */,
+				B3BA7CA720498D143EBB2CCFE87337F0 /* Pods-watch Extension-frameworks.sh */,
+				837FF769A8DB98BB4C42319480DE6C71 /* Pods-watch Extension-resources.sh */,
+				7A5C52343F8B9806C1B74A4E2D32CFBF /* Pods-watch Extension-umbrella.h */,
+				86980F7F69EA255F87FC95095236B736 /* Pods-watch Extension.debug.xcconfig */,
+				840513E9573C89EBBFF50D4F1F74DB8F /* Pods-watch Extension.release.xcconfig */,
 			);
-			name = "NSData+zlib";
-			sourceTree = "<group>";
-		};
-		AFBBFCC8385F69557F2D67504D6D3C76 /* GoogleToolboxForMac */ = {
-			isa = PBXGroup;
-			children = (
-				09B5FC2BC4D8E40E67708286342A69BC /* Defines */,
-				A8A5EBB450D7AD4A68B30912A441E6F8 /* NSData+zlib */,
-				339A74AD95670A85D14AA9B4FD0447E8 /* Support Files */,
-			);
-			name = GoogleToolboxForMac;
-			path = GoogleToolboxForMac;
-			sourceTree = "<group>";
-		};
-		B0F2950803F54A71C0193D36AD1F6328 /* FirebaseInstanceID */ = {
-			isa = PBXGroup;
-			children = (
-				3EA72213A53C34CF78A1AEA1844DCCF9 /* Frameworks */,
-			);
-			name = FirebaseInstanceID;
-			path = FirebaseInstanceID;
-			sourceTree = "<group>";
-		};
-		B29F8C6FA1E43DC0A293E8E3C351A7F5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B4ECDECAC6683519321130FF938FDD66 /* GoogleToolboxForMac.framework */,
-				7F56B162F7503FECD22FF5C8A5D0EAF7 /* Pods_weatherlr.framework */,
-				C4946CF29EC88EB52498CD2318D167E3 /* Pods_weatherlrFree.framework */,
-				5DB22B2AB4FDDC8633A006B4A87A0E5B /* Pods_weatherlrTests.framework */,
-				E217A4609977103BC81C33314D2CD13E /* Pods_weatherlrUITests.framework */,
-			);
-			name = Products;
+			name = "Pods-watch Extension";
+			path = "Target Support Files/Pods-watch Extension";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -395,6 +488,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C01ADD642447AA0AC888703C83BBE2DB /* Pods-weatherlr */ = {
+			isa = PBXGroup;
+			children = (
+				1D0931E350FBA305EB73FABB1472E693 /* Info.plist */,
+				599F12EAA9291A81CDD042AD65C452D0 /* Pods-weatherlr.modulemap */,
+				3BF800B75EC98F09D799F2C0E9AA1E55 /* Pods-weatherlr-acknowledgements.markdown */,
+				E93366DFD5C0B67DEFDB455B3F79699B /* Pods-weatherlr-acknowledgements.plist */,
+				60C6B39EC71EC2C53684BE332F55304A /* Pods-weatherlr-dummy.m */,
+				6B2A3F1403FA73D5B00C9C169BF832ED /* Pods-weatherlr-frameworks.sh */,
+				8F58F742BF1D36E8F3F5610A33A6DB11 /* Pods-weatherlr-resources.sh */,
+				634000A1AC45439C4907448F288DBB43 /* Pods-weatherlr-umbrella.h */,
+				0AEC21329BA7B3B729DD29E6CBE967B2 /* Pods-weatherlr.debug.xcconfig */,
+				328C0076DEF8B9C0A2FD391D3A4B22B3 /* Pods-weatherlr.release.xcconfig */,
+			);
+			name = "Pods-weatherlr";
+			path = "Target Support Files/Pods-weatherlr";
+			sourceTree = "<group>";
+		};
+		C526FD3ED314F01CD9B27B06661FCB3B /* decode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = decode;
+			sourceTree = "<group>";
+		};
+		C6CF1E36AFBC8218BC196B7C5044B6E1 /* GoogleToolboxForMac */ = {
+			isa = PBXGroup;
+			children = (
+				51F1670B2D31FA5E7CE75B301B6EE4DD /* Defines */,
+				11B9B5D1E01AF738109DFFB6E8796B4B /* NSData+zlib */,
+				A63AA7D721A7A99185795FC1B6CECDD6 /* Support Files */,
+			);
+			name = GoogleToolboxForMac;
+			path = GoogleToolboxForMac;
+			sourceTree = "<group>";
+		};
+		CAD1CC701FF572DC793FC854ED47AE77 /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				49546B3C0430F24EB46EA6EBF5AC2C0D /* Frameworks */,
+			);
+			name = FirebaseCore;
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,22 +541,92 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		DD483EDC222058D162F7E67F52D59376 /* Frameworks */ = {
+		D3D7C4D7B8F70EF3BF2A84FEBB4BF917 /* WeatherFramework */ = {
 			isa = PBXGroup;
 			children = (
-				591E467FC228F2B6CB65789181FA873F /* GoogleMobileAds.framework */,
 			);
-			name = Frameworks;
+			name = WeatherFramework;
+			path = ../WeatherFramework;
+			sourceTree = "<group>";
+		};
+		EBE5B33ECE1C75E004BC806BC8D4B5A2 /* Pods-weatherlrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD374B5977428F57A550FBCE7CC53095 /* Info.plist */,
+				11C200055FD4F035B0AD69B754D1F9E0 /* Pods-weatherlrUITests.modulemap */,
+				744B71D9A4B286D40E8F9AE1EEBC9041 /* Pods-weatherlrUITests-acknowledgements.markdown */,
+				878BB0C6F0D4319B0639FE50D6019F76 /* Pods-weatherlrUITests-acknowledgements.plist */,
+				B92F4F0D840E25EEBF9FBD125AD91BBE /* Pods-weatherlrUITests-dummy.m */,
+				D2F9F8F3627331E33BCCDD2610406E51 /* Pods-weatherlrUITests-frameworks.sh */,
+				307A502BC373603D637BEB64B9DCE264 /* Pods-weatherlrUITests-resources.sh */,
+				DED4837BA8D01B03A07877F7E61D3CEF /* Pods-weatherlrUITests-umbrella.h */,
+				1C9E70B67BEA4BAB150DF4270008076B /* Pods-weatherlrUITests.debug.xcconfig */,
+				B7441C3E24277604E06E6B8D7333D223 /* Pods-weatherlrUITests.release.xcconfig */,
+			);
+			name = "Pods-weatherlrUITests";
+			path = "Target Support Files/Pods-weatherlrUITests";
+			sourceTree = "<group>";
+		};
+		EC9C2A1AE3A0B3354D1BB845855CFA0A /* Pods-watch */ = {
+			isa = PBXGroup;
+			children = (
+				7D9577F764C63191866F0450CA76356B /* Info.plist */,
+				FA690C1C7DAA6D17C894519B63367542 /* Pods-watch.modulemap */,
+				570910FE6C888B035CB4B7A4DD6CAF25 /* Pods-watch-acknowledgements.markdown */,
+				97883AB800146FDB599AF98FE8560A00 /* Pods-watch-acknowledgements.plist */,
+				D0306FB10C5112FB30B9C20F9E313D94 /* Pods-watch-dummy.m */,
+				F59F67B552E6D3CFA1EE9018975105E7 /* Pods-watch-frameworks.sh */,
+				7BDD7A9F95CC998B340CF8E4B5F2F850 /* Pods-watch-resources.sh */,
+				D2970E7E912843832D1D86D019EA7A8A /* Pods-watch-umbrella.h */,
+				62BF680877866A063A77FD6F05A5A2AE /* Pods-watch.debug.xcconfig */,
+				C983DBA148A594157C53A6A374A194E9 /* Pods-watch.release.xcconfig */,
+			);
+			name = "Pods-watch";
+			path = "Target Support Files/Pods-watch";
+			sourceTree = "<group>";
+		};
+		F8BFBAD4B621A4FD10F39A0106589698 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE5BA8B17F56629FA35D0CD2F0A86237 /* Firebase */,
+				A1E2D4BD4513A786E4A36E1E88D81F41 /* FirebaseAnalytics */,
+				CAD1CC701FF572DC793FC854ED47AE77 /* FirebaseCore */,
+				1CF172AF87C3B087307463126975FEF2 /* FirebaseInstanceID */,
+				37BCD666052597EF80C5685A81D5D66C /* Google-Mobile-Ads-SDK */,
+				C6CF1E36AFBC8218BC196B7C5044B6E1 /* GoogleToolboxForMac */,
+				77C306D46607E39F5645FB23193F61AA /* nanopb */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4CBE3F9C017942BF82B3E14C2ED85790 /* Headers */ = {
+		14F15240711EFC59906422F0AB925B31 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F839E9C46713AD5CAB3893FBAD1C5E9 /* Pods-weatherlrFree-umbrella.h in Headers */,
+				C2B4E69AF3F6880A43E8A2F4CAB00724 /* Pods-watch-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25614E4F49A4371CB4B6604D4ED77B15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD7B4C6B1B758B884B4B2A66184FDB59 /* Pods-watch Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4547B9AF8085A499AA35614798F8F9E4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D92BA503505CB48EF4ECF0DDF57686 /* nanopb-umbrella.h in Headers */,
+				392F2CF142BAA751AC1BB61D8B757D98 /* pb.h in Headers */,
+				806BAA4E00218D70995697C4400BE7A0 /* pb_common.h in Headers */,
+				29FEADDF2086FDEA7D5BA87DD23B08C6 /* pb_decode.h in Headers */,
+				E181395E73163EB702FCE9A21403D67B /* pb_encode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +651,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA6263D78C97E34FCBCB6C2B99908EF /* Pods-weatherlrUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEE29A0ADD5305D11AEC585039E6A0FE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F41BEED7E40401FB73ADDDC3AE3F87 /* Pods-weatherlrFree-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,25 +689,60 @@
 			);
 			name = GoogleToolboxForMac;
 			productName = GoogleToolboxForMac;
-			productReference = B4ECDECAC6683519321130FF938FDD66 /* GoogleToolboxForMac.framework */;
+			productReference = 6242B9E4047B1E4C9F6A1192279A8239 /* GoogleToolboxForMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		42D66262BE4039CAE0D5BBC531B92BA1 /* Pods-weatherlrFree */ = {
+		48154C671DC677C8A9A86220D38C8555 /* Pods-watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0A338DA83777C4619091025C9E18D69 /* Build configuration list for PBXNativeTarget "Pods-weatherlrFree" */;
+			buildConfigurationList = 6E189D3BCF281C1B3404367E481781B6 /* Build configuration list for PBXNativeTarget "Pods-watch" */;
 			buildPhases = (
-				DBD4A0B1DB7001DB9F1B0CF8FAB7B125 /* Sources */,
-				549CBFAF3DC9D10A87298264C65BC387 /* Frameworks */,
-				4CBE3F9C017942BF82B3E14C2ED85790 /* Headers */,
+				F96922E83B2134D2A7EC6BB343F69068 /* Sources */,
+				9B201D5988299DCB55B2C41D97325DF2 /* Frameworks */,
+				14F15240711EFC59906422F0AB925B31 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				84D0C96BE5824C0D9B5360FCE2E1E628 /* PBXTargetDependency */,
+			);
+			name = "Pods-watch";
+			productName = "Pods-watch";
+			productReference = D07F5F71F12A749E0656A075ED3E3F03 /* Pods_watch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7DFC7B4BF13044E25A6FC3EF8BF96524 /* Pods-weatherlrFree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E44BC0ABFBB329E6EEE80156A02520C1 /* Build configuration list for PBXNativeTarget "Pods-weatherlrFree" */;
+			buildPhases = (
+				3B12E31FCF6EF110B6793FB4ED1844B3 /* Sources */,
+				D5C1602E9BC0E7288D5499216242C47D /* Frameworks */,
+				CEE29A0ADD5305D11AEC585039E6A0FE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D399AD0357C46BD469D5B4F6700C5D38 /* PBXTargetDependency */,
+				BA9F773EC2C60676C503AFAC95A6DFDF /* PBXTargetDependency */,
 			);
 			name = "Pods-weatherlrFree";
 			productName = "Pods-weatherlrFree";
-			productReference = C4946CF29EC88EB52498CD2318D167E3 /* Pods_weatherlrFree.framework */;
+			productReference = 6E2D22BA134D118856E272D18D7C9053 /* Pods_weatherlrFree.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A2C3BFC26CCF6ABE12964B8D276AECB0 /* Pods-watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0DC2C1D50773FACF9A2F7E513182F78 /* Build configuration list for PBXNativeTarget "Pods-watch Extension" */;
+			buildPhases = (
+				BEB4D1E3B5F65DB28191C21FB6346E5A /* Sources */,
+				83C98F9D9C64B8A2BEB3B7DE1F712408 /* Frameworks */,
+				25614E4F49A4371CB4B6604D4ED77B15 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-watch Extension";
+			productName = "Pods-watch Extension";
+			productReference = 905F453BE51F817147E6FFE632353D23 /* Pods_watch_Extension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A7A1034B40D60B81DC967A58C61B9340 /* Pods-weatherlrUITests */ = {
@@ -508,7 +759,7 @@
 			);
 			name = "Pods-weatherlrUITests";
 			productName = "Pods-weatherlrUITests";
-			productReference = E217A4609977103BC81C33314D2CD13E /* Pods_weatherlrUITests.framework */;
+			productReference = BBF08BF20D6CE873EA2B405B01CE5312 /* Pods_weatherlrUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DC3BABF704476F37A3F48B64FB114F2A /* Pods-weatherlrTests */ = {
@@ -525,7 +776,7 @@
 			);
 			name = "Pods-weatherlrTests";
 			productName = "Pods-weatherlrTests";
-			productReference = 5DB22B2AB4FDDC8633A006B4A87A0E5B /* Pods_weatherlrTests.framework */;
+			productReference = F40DAE31C8E3670EFBC945BF3E94D124 /* Pods_weatherlrTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E3C57477452DC5389DBEE89621BD3BDF /* Pods-weatherlr */ = {
@@ -542,7 +793,24 @@
 			);
 			name = "Pods-weatherlr";
 			productName = "Pods-weatherlr";
-			productReference = 7F56B162F7503FECD22FF5C8A5D0EAF7 /* Pods_weatherlr.framework */;
+			productReference = B1A5DA087D4B8754464AF528BB734303 /* Pods_weatherlr.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F118B0FA84AC9116AB2E480C302C3999 /* Build configuration list for PBXNativeTarget "nanopb" */;
+			buildPhases = (
+				238527BE8D494586023F2A2B8A60D242 /* Sources */,
+				971041836592E28ADEEDA495A96A62A2 /* Frameworks */,
+				4547B9AF8085A499AA35614798F8F9E4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nanopb;
+			productName = nanopb;
+			productReference = 3313D0D9E352A0856BEE1210798F13FF /* nanopb.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -562,13 +830,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B29F8C6FA1E43DC0A293E8E3C351A7F5 /* Products */;
+			productRefGroup = 7B5D918F376D8549C629B27C4771BDE1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
+				E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */,
+				48154C671DC677C8A9A86220D38C8555 /* Pods-watch */,
+				A2C3BFC26CCF6ABE12964B8D276AECB0 /* Pods-watch Extension */,
 				E3C57477452DC5389DBEE89621BD3BDF /* Pods-weatherlr */,
-				42D66262BE4039CAE0D5BBC531B92BA1 /* Pods-weatherlrFree */,
+				7DFC7B4BF13044E25A6FC3EF8BF96524 /* Pods-weatherlrFree */,
 				DC3BABF704476F37A3F48B64FB114F2A /* Pods-weatherlrTests */,
 				A7A1034B40D60B81DC967A58C61B9340 /* Pods-weatherlrUITests */,
 			);
@@ -581,6 +852,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				5544EF5C9CF84EEFEBFD94B08469CB8C /* Pods-weatherlrUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		238527BE8D494586023F2A2B8A60D242 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				468DFD90B6C4DA2F7CFA0C1C89F1B615 /* nanopb-dummy.m in Sources */,
+				3A50F5C8ECED9627F2EBD97F61BD376D /* pb_common.c in Sources */,
+				54F580BF4588159D6A61F21D15591805 /* pb_decode.c in Sources */,
+				55D8D5D912CFD2F3584E4553C2EAD734 /* pb_encode.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B12E31FCF6EF110B6793FB4ED1844B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC89A7F3B7FA621DB1581E6E59DE4C4A /* Pods-weatherlrFree-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,11 +891,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBD4A0B1DB7001DB9F1B0CF8FAB7B125 /* Sources */ = {
+		BEB4D1E3B5F65DB28191C21FB6346E5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27CE096D2C12C3DD762328078BA642F2 /* Pods-weatherlrFree-dummy.m in Sources */,
+				8529AE923DB1ED13CABD339869C27DC3 /* Pods-watch Extension-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,21 +907,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F96922E83B2134D2A7EC6BB343F69068 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95D231B8B77EF8F2B74DBDE65AE69451 /* Pods-watch-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		84D0C96BE5824C0D9B5360FCE2E1E628 /* PBXTargetDependency */ = {
+		BA9F773EC2C60676C503AFAC95A6DFDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = nanopb;
+			target = E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */;
+			targetProxy = 031CA26537B1083AF7C0F7814A71D5BF /* PBXContainerItemProxy */;
+		};
+		D399AD0357C46BD469D5B4F6700C5D38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleToolboxForMac;
 			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
-			targetProxy = CD10E908FB75370185B2DEBD7AF4A8D3 /* PBXContainerItemProxy */;
+			targetProxy = 67C25C999C48FD474B85197AB7977160 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0F2988E68C7944F28AF58854A8969275 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 189A3195202133DA4314140F18BCD658 /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = 72EE80B81432D5BAD422287F0CB4E8B8 /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -663,9 +967,9 @@
 			};
 			name = Debug;
 		};
-		0FE54ECE578844B37ADD95FE7207CC9E /* Release */ = {
+		14B4428C2385635BE0C06AE130F9B9D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2ED004173F427C4D5B4D3799A706828 /* Pods-weatherlrFree.release.xcconfig */;
+			baseConfigurationReference = E023A5DB401F72E82FDD16ECC323D575 /* Pods-weatherlrFree.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -693,6 +997,40 @@
 				PRODUCT_NAME = Pods_weatherlrFree;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		19421072E1193CFA35FB6EAC2493E739 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998095804D382B5EC2D6E03485C20ED5 /* nanopb.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/nanopb/nanopb-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/nanopb/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/nanopb/nanopb.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = nanopb;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -745,7 +1083,7 @@
 		};
 		200D7A85061DF02AA1C6C45265E53169 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 342D8E890822B907D2CE703E0D557947 /* Pods-weatherlrUITests.release.xcconfig */;
+			baseConfigurationReference = B7441C3E24277604E06E6B8D7333D223 /* Pods-weatherlrUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -779,9 +1117,82 @@
 			};
 			name = Release;
 		};
+		48862B7D42489B828815F453D762E98C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 985634426648F0AE980557D3281CA839 /* Pods-weatherlrFree.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-weatherlrFree/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-weatherlrFree/Pods-weatherlrFree.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_weatherlrFree;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4EC986ACF1A9B8E2B16035C7025DA4C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 840513E9573C89EBBFF50D4F1F74DB8F /* Pods-watch Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-watch Extension/Pods-watch Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_watch_Extension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		64962A0A9AD504F5466FCA76D7D65D84 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF31BD2F26982D5053594FFF80E7A0CB /* Pods-weatherlrUITests.debug.xcconfig */;
+			baseConfigurationReference = 1C9E70B67BEA4BAB150DF4270008076B /* Pods-weatherlrUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -817,7 +1228,7 @@
 		};
 		794E0B1A9CE06C1218863915E560D3E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4A24F44CE0752663EE64EEA0255F23A /* Pods-weatherlrTests.release.xcconfig */;
+			baseConfigurationReference = EEFAC0C4D78050C69143C620C418470D /* Pods-weatherlrTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -851,45 +1262,45 @@
 			};
 			name = Release;
 		};
-		8C346C1CBC25B11F95C19CBAB0E72126 /* Debug */ = {
+		8F7FC09B1BE22862B8CF10E5C056C203 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE2FE38609963C0B4AC67BE5447C7D9D /* Pods-weatherlrFree.debug.xcconfig */;
+			baseConfigurationReference = C983DBA148A594157C53A6A374A194E9 /* Pods-watch.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-weatherlrFree/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-watch/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-weatherlrFree/Pods-weatherlrFree.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MODULEMAP_FILE = "Target Support Files/Pods-watch/Pods-watch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_weatherlrFree;
+				PRODUCT_NAME = Pods_watch;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		9992B240E6BB9F338012E076B2EFCB25 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EECE9B956968BE3D06D9D6AD792F248 /* Pods-weatherlrTests.debug.xcconfig */;
+			baseConfigurationReference = 5C982C1A43811C25301D696F2C8C7858 /* Pods-weatherlrTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -925,7 +1336,7 @@
 		};
 		9F8E98CD6CA36749808E6A8902EDEB55 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 189A3195202133DA4314140F18BCD658 /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = 72EE80B81432D5BAD422287F0CB4E8B8 /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -956,6 +1367,40 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		A6DB860CAC6B6D0D01837A5B2A9D6415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998095804D382B5EC2D6E03485C20ED5 /* nanopb.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/nanopb/nanopb-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/nanopb/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/nanopb/nanopb.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = nanopb;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		BC80BBB5C066539FFFC0B2127CA5D3C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1006,9 +1451,45 @@
 			};
 			name = Debug;
 		};
+		BED578CE82D8CE6E759FB6C42676AC52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62BF680877866A063A77FD6F05A5A2AE /* Pods-watch.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-watch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-watch/Pods-watch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_watch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		E7CAD208DDD963210CEDEFC86E4B3F54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59BDF12251B904F43EBF5C83D868DBCE /* Pods-weatherlr.release.xcconfig */;
+			baseConfigurationReference = 328C0076DEF8B9C0A2FD391D3A4B22B3 /* Pods-weatherlr.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1044,7 +1525,7 @@
 		};
 		E8214E505D881CD96B08C078EC16D048 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43B40E0214190ADD11A5EBA8706EB289 /* Pods-weatherlr.debug.xcconfig */;
+			baseConfigurationReference = 0AEC21329BA7B3B729DD29E6CBE967B2 /* Pods-weatherlr.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1070,6 +1551,43 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_weatherlr;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FA4D49F6E98A1F522A86F8E95ACBADC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86980F7F69EA255F87FC95095236B736 /* Pods-watch Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-watch Extension/Pods-watch Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_watch_Extension;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1108,11 +1626,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0A338DA83777C4619091025C9E18D69 /* Build configuration list for PBXNativeTarget "Pods-weatherlrFree" */ = {
+		6E189D3BCF281C1B3404367E481781B6 /* Build configuration list for PBXNativeTarget "Pods-watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C346C1CBC25B11F95C19CBAB0E72126 /* Debug */,
-				0FE54ECE578844B37ADD95FE7207CC9E /* Release */,
+				BED578CE82D8CE6E759FB6C42676AC52 /* Debug */,
+				8F7FC09B1BE22862B8CF10E5C056C203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0DC2C1D50773FACF9A2F7E513182F78 /* Build configuration list for PBXNativeTarget "Pods-watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA4D49F6E98A1F522A86F8E95ACBADC4 /* Debug */,
+				4EC986ACF1A9B8E2B16035C7025DA4C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1131,6 +1658,24 @@
 			buildConfigurations = (
 				E8214E505D881CD96B08C078EC16D048 /* Debug */,
 				E7CAD208DDD963210CEDEFC86E4B3F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E44BC0ABFBB329E6EEE80156A02520C1 /* Build configuration list for PBXNativeTarget "Pods-weatherlrFree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48862B7D42489B828815F453D762E98C /* Debug */,
+				14B4428C2385635BE0C06AE130F9B9D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F118B0FA84AC9116AB2E480C302C3999 /* Build configuration list for PBXNativeTarget "nanopb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6DB860CAC6B6D0D01837A5B2A9D6415 /* Debug */,
+				19421072E1193CFA35FB6EAC2493E739 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

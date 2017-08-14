@@ -278,6 +278,9 @@ class SettingsViewController: UITableViewController {
         #if DEBUG
             let downloader = CityDownloader(outputPath: "/Users/drvolks/Downloads/cities")
             downloader.process()
+            
+            let cityParser = CityParser(outputPath: "/Users/drvolks/Downloads/")
+            cityParser.perform()
         #endif
     }
 }

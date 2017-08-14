@@ -172,21 +172,20 @@ class InterfaceController: WKInterfaceController {
         })
     }
     
-    // TODO voir pourquoi @objc
-    @objc func francaisSelected() {
+    func francaisSelected() {
         PreferenceHelper.saveLanguage(Language.French)
         ExtensionDelegateHelper.resetWeather()
         loadData()
     }
     
-    @objc func englishSelected() {
+    func englishSelected() {
         PreferenceHelper.saveLanguage(Language.English)
         ExtensionDelegateHelper.resetWeather()
         loadData()
     }
     
     
-    @objc func addCitySelected() {
+    func addCitySelected() {
         selectCity()
     }
     

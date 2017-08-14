@@ -13,12 +13,12 @@ class RssParserBase : NSObject, XMLParserDelegate {
     var foundCharacters = "";
     var currentAttributes:[String:String] = [:]
     
-    @objc func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         self.currentElement = elementName
         self.currentAttributes = attributeDict
     }
     
-    @objc func parser(_ parser: XMLParser, foundCharacters string: String) {
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
         self.foundCharacters += string
     }
 }

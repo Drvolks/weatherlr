@@ -57,6 +57,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6E3252B81F41E7E4004A1867"
+               BuildableName = "WeatherFrameworkTests.xctest"
+               BlueprintName = "WeatherFrameworkTests"
+               ReferencedContainer = "container:weatherlr.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

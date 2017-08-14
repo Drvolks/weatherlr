@@ -37,7 +37,7 @@ class SettingsViewController: UITableViewController {
         
         #if DEBUG
             if downloadButton == nil {
-                downloadButton = UIBarButtonItem(title: "Download", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("download")))
+                downloadButton = UIBarButtonItem(title: "Download", style: UIBarButtonItemStyle.plain, target: self, action: #selector(download(_:)))
                 navigationItem.rightBarButtonItems?.append(downloadButton)
             }
         #endif

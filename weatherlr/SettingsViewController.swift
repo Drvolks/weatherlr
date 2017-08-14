@@ -13,6 +13,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var cityTable: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var doneButton: UIBarButtonItem!
+    var downloadButton: UIBarButtonItem!
     
     var savedCities = [City]()
     var selectedCity:City?
@@ -34,15 +35,18 @@ class SettingsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        #if DEBUG
+            if downloadButton == nil {
+                downloadButton = UIBarButtonItem(title: "Download", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("download")))
+                navigationItem.rightBarButtonItems?.append(downloadButton)
+            }
+        #endif
+        
         savedCities = PreferenceHelper.getFavoriteCities()
         selectedCity = PreferenceHelper.getSelectedCity()
         
         navigationItem.leftBarButtonItem = editButtonItem
         setEditing(false, animated: false)
-        
-        // TODO: remove
-        //let downloader = CityDownloader(outputPath: "/Users/jfdufour/Downloads/cities")
-        //downloader.process()
 
         cityTable.estimatedRowHeight = 21
         cityTable.rowHeight = UITableViewAutomaticDimension
@@ -268,5 +272,12 @@ class SettingsViewController: UITableViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
+    }
+    
+    @IBAction func download(_ sender: UIBarButtonItem) {
+        #if DEBUG
+            let downloader = CityDownloader(outputPath: "/Users/jfdufour/Downloads/cities")
+            downloader.process()
+        #endif
     }
 }

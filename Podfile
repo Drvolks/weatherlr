@@ -1,21 +1,21 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '11.0'
 
-target 'watch' do
+#target 'watch' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for watch
 
-end
+#end
 
-target 'watch Extension' do
+#target 'watch Extension' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for watch Extension
 
-end
+#end
 
 target 'weatherlr' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks

@@ -30,6 +30,8 @@ class CityDownloader {
                 }
             }
         }
+        
+        print("Done!")
     }
     
     func load(_ url: URL, city:City, lang: Language) {

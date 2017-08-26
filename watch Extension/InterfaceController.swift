@@ -172,7 +172,6 @@ class InterfaceController: WKInterfaceController {
         })
     }
     
-    // TODO voir pourquoi @objc
     @objc func francaisSelected() {
         PreferenceHelper.saveLanguage(Language.French)
         ExtensionDelegateHelper.resetWeather()

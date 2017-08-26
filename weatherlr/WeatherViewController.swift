@@ -63,7 +63,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    // TODO voir pourquoi @objc
     @objc func willGoToBackground() {
         if weatherTable.numberOfRows(inSection: 0) > 0 {
             let indexPath = IndexPath(row: 0, section: 0)
@@ -99,7 +98,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl.endRefreshing()
     }
     
-    // TODO voir pourquoi @objc
     @objc func refreshFromScroll(_ sender:AnyObject) {
         refresh(true)
     }

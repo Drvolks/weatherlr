@@ -10,17 +10,21 @@ import UIKit
 
 class WeatherHelper {
     static func getWeatherInformations(_ city:City) -> WeatherInformationWrapper {
-        let cache = ExpiringCache.instance
-        let cachedWeather = cache.object(forKey: city.id as NSString) as? WeatherInformationWrapper
-        
-        if cachedWeather != nil {
-            return cachedWeather!
-        }
-        
-        let weatherInformationWrapper = getWeatherInformationsNoCache(city)
-        cache.setObject(weatherInformationWrapper, forKey: city.id as NSString)
-        
-        return weatherInformationWrapper
+        #if DEBUG
+            return getOfflineWeather()
+        #else
+            let cache = ExpiringCache.instance
+            let cachedWeather = cache.object(forKey: city.id as NSString) as? WeatherInformationWrapper
+            
+            if cachedWeather != nil {
+                return cachedWeather!
+            }
+            
+            let weatherInformationWrapper = getWeatherInformationsNoCache(city)
+            cache.setObject(weatherInformationWrapper, forKey: city.id as NSString)
+            
+            return weatherInformationWrapper
+        #endif
     }
     
     static func getWeatherInformationsNoCache(_ city:City) -> WeatherInformationWrapper {

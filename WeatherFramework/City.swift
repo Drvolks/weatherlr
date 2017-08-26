@@ -8,7 +8,6 @@
 
 import Foundation
 
-@objc(City)
 class City : NSObject, NSCoding {
     var id = ""
     var frenchName = ""

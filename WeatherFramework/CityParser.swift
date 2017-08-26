@@ -9,11 +9,17 @@
 import Foundation
 
 class CityParser {
+    var outputPath:String
+
     var cities = [String:City]()
     let provinces = ["AB","BC","PE","MB","NB","NS","NU","ON","QC","SK","NL","NT","YT"]
     let lang = ["https://meteo.gc.ca/forecast/canada/index_f.html?id=", "https://weather.gc.ca/forecast/canada/index_e.html?id="]
     let weatherUrl1 = "https://meteo.gc.ca/city/pages/"
     let weatherUrl2 = "_metric_f.html"
+    
+    init(outputPath:String) {
+        self.outputPath = outputPath
+    }
     
     func perform() {
         for i in 0..<provinces.count {
@@ -37,7 +43,7 @@ class CityParser {
             cityArray.append(city)
         }
         
-        let path = "/Users/jfdufour/Desktop/cities.plist"
+        let path = outputPath + "/cities.plist"
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cityArray, toFile: path)
         
         

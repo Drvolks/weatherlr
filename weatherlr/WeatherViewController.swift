@@ -33,7 +33,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         
         #if FREE
             googleBannerView.adUnitID = Constants.googleAddId
@@ -56,10 +56,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         refreshControl = UIRefreshControl()
         refreshLabel()
-        refreshControl.addTarget(self, action: #selector(WeatherViewController.refreshFromScroll(_:)), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshFromScroll(_:)), for: UIControlEvents.valueChanged)
         weatherTable.addSubview(refreshControl)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(WeatherViewController.willGoToBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
         
     }
     
@@ -102,7 +102,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refresh(true)
     }
     
-    func applicationWillEnterForeground(_ notification: Notification) {
+    @objc func applicationWillEnterForeground(_ notification: Notification) {
         var backgroundRefresh = true
         
         if let city = PreferenceHelper.getSelectedCity() {

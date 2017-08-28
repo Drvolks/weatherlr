@@ -159,7 +159,7 @@ class InterfaceController: WKInterfaceController {
         return true
     }
     
-    func selectCity() {
+    @IBAction func selectCity() {
         var citieNames = [String]()
         PreferenceHelper.getFavoriteCities().forEach({
             citieNames.append(CityHelper.cityName($0) + ", " + $0.province.uppercased())

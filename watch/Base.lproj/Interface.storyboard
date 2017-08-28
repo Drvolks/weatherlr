@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13178.6" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13045"/>
     </dependencies>
     <scenes>
         <!--Main-->
@@ -13,7 +16,7 @@
                         <label width="136" alignment="left" numberOfLines="0" id="u5m-K4-Lrm"/>
                         <table alignment="left" id="TYl-Sm-JJI">
                             <items>
-                                <tableRow identifier="currentWeatherRow" id="kQR-pv-c0v" customClass="CurrentWeatherRowController" customModule="watch_Extension" customModuleProvider="target">
+                                <tableRow identifier="currentWeatherRow" id="kQR-pv-c0v" customClass="CurrentWeatherRowController" customModule="watch" customModuleProvider="target">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="had-ae-hxC">
                                         <items>
                                             <group width="1" alignment="left" spacing="0.0" id="TDr-32-oMF">
@@ -33,7 +36,7 @@
                                         <outlet property="weatherImage" destination="O1i-kg-6zN" id="SNY-fo-IVf"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="nextWeatherRow" id="us4-lQ-Z5s" customClass="NextWeatherRowController" customModule="watch_Extension" customModuleProvider="target">
+                                <tableRow identifier="nextWeatherRow" id="us4-lQ-Z5s" customClass="NextWeatherRowController" customModule="watch" customModuleProvider="target">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="5H9-hx-MTY">
                                         <items>
                                             <label alignment="left" id="LZT-Vg-6E8">
@@ -66,7 +69,7 @@
                                         <outlet property="weatherLabel" destination="LZT-Vg-6E8" id="DEl-Jf-j8d"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="weatherRow" id="1dw-7p-5MP" customClass="WeatherRowController" customModule="watch_Extension" customModuleProvider="target">
+                                <tableRow identifier="weatherRow" id="1dw-7p-5MP" customClass="WeatherRowController" customModule="watch" customModuleProvider="target">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="vri-XI-FMR">
                                         <items>
                                             <label alignment="left" id="Wfe-as-Flu">
@@ -91,7 +94,7 @@
                         </table>
                         <button width="1" alignment="left" hidden="YES" title="Select city" id="ai4-HS-V5P">
                             <connections>
-                                <action selector="selectCity" destination="AgC-eL-Hgc" id="H2V-l0-hss"/>
+                                <action selector="selectCity" destination="AgC-eL-Hgc" id="NIw-9g-7dQ"/>
                             </connections>
                         </button>
                         <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
@@ -112,12 +115,12 @@
         <!--SelectCity-->
         <scene sceneID="NqG-b5-eso">
             <objects>
-                <controller identifier="SelectCity" id="LgY-22-iiV" customClass="SelectCityController" customModule="watch_Extension" customModuleProvider="target">
+                <controller identifier="SelectCity" id="LgY-22-iiV" customClass="SelectCityController" customModule="watch" customModuleProvider="target">
                     <items>
                         <label alignment="left" id="tPA-3Y-a4o"/>
                         <table alignment="left" id="GgL-0m-q9r">
                             <items>
-                                <tableRow identifier="CityRow" id="D7c-h4-eQe" customClass="CityRowController" customModule="watch_Extension" customModuleProvider="target">
+                                <tableRow identifier="CityRow" id="D7c-h4-eQe" customClass="CityRowController" customModule="watch" customModuleProvider="target">
                                     <group key="rootItem" width="1" alignment="left" id="ruJ-SU-M3L">
                                         <items>
                                             <label width="1" height="1" alignment="left" id="OD9-eG-HQL"/>

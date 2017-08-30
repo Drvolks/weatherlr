@@ -83,7 +83,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-9P-Atq">
-                                                    <rect key="frame" x="0.0" y="8" width="343" height="100"/>
+                                                    <rect key="frame" x="-8" y="8" width="343" height="100"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="8nP-l1-tAb">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
@@ -271,7 +271,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xXu-9P-Atq" firstAttribute="width" secondItem="Heb-MF-3Tf" secondAttribute="width" id="1Mu-zq-MGF"/>
-                                                <constraint firstItem="xXu-9P-Atq" firstAttribute="leading" secondItem="Heb-MF-3Tf" secondAttribute="leadingMargin" constant="-8" id="Bra-zI-DBP"/>
+                                                <constraint firstItem="xXu-9P-Atq" firstAttribute="leading" secondItem="Heb-MF-3Tf" secondAttribute="leadingMargin" constant="-16" id="Bra-zI-DBP"/>
                                                 <constraint firstItem="xXu-9P-Atq" firstAttribute="top" secondItem="Heb-MF-3Tf" secondAttribute="topMargin" id="QVG-ll-F3l"/>
                                             </constraints>
                                         </tableViewCellContentView>

@@ -337,14 +337,14 @@
                                                     </variation>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up" translatesAutoresizingMaskIntoConstraints="NO" id="Lt9-m4-eTC">
-                                                    <rect key="frame" x="312" y="5" width="23" height="23"/>
+                                                    <rect key="frame" x="328" y="5" width="23" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="23" id="9dB-BC-dp5"/>
                                                         <constraint firstAttribute="height" constant="23" id="UHK-Fz-4Iv"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-6d-xQy" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
-                                                    <rect key="frame" x="312" y="5" width="23" height="23"/>
+                                                    <rect key="frame" x="328" y="5" width="23" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="23" id="ds2-EZ-5rV"/>
                                                         <constraint firstAttribute="height" constant="23" id="u9z-qL-Ac6"/>
@@ -360,7 +360,7 @@
                                                 <constraint firstItem="isK-Iz-a9y" firstAttribute="trailing" secondItem="LIN-VY-oZw" secondAttribute="trailing" id="2fx-eI-3Mz"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" constant="-8" id="4Y7-j0-MPI"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="502" id="Ck0-9A-RzD"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Lt9-m4-eTC" secondAttribute="trailing" id="E1i-du-XxM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Lt9-m4-eTC" secondAttribute="trailing" constant="-16" id="E1i-du-XxM"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="isK-Iz-a9y" secondAttribute="bottom" constant="2" id="FcU-z0-dp4"/>
                                                 <constraint firstItem="isK-Iz-a9y" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="2" id="GFJ-G2-DdG"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" constant="-3" id="IuP-Dr-TtQ"/>
@@ -373,7 +373,7 @@
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="LIN-VY-oZw" secondAttribute="bottom" constant="5" id="OyO-ny-oOB"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="qo3-o5-Hbl" secondAttribute="bottom" constant="10" id="SA8-DY-Aoo"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="isK-Iz-a9y" secondAttribute="bottom" constant="2" id="SZJ-48-10r"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="MIo-6d-xQy" secondAttribute="trailing" id="Ukj-nb-Guj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MIo-6d-xQy" secondAttribute="trailing" constant="-16" id="Ukj-nb-Guj"/>
                                                 <constraint firstItem="LIN-VY-oZw" firstAttribute="trailing" secondItem="isK-Iz-a9y" secondAttribute="trailing" id="V2C-C4-v6y"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="isK-Iz-a9y" secondAttribute="bottom" constant="2" id="Vra-Gb-DPv"/>
                                                 <constraint firstItem="MIo-6d-xQy" firstAttribute="leading" secondItem="LIN-VY-oZw" secondAttribute="trailing" constant="10" id="ZbN-9f-idY"/>

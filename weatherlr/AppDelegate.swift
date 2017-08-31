@@ -45,8 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleQuickAction(application: UIApplication, shortcutItem: UIApplicationShortcutItem) -> Bool {
         print("Handling shortcut")
         
-        let index = shortcutItem.type.range(of: ":")?.upperBound
-        let cityId = shortcutItem.type.substring(from: index!)
+        let cityId = getCityIdFromShortcutItem(shortcutName: shortcutItem.type)
         
         PreferenceHelper.switchFavoriteCity(cityId: cityId)
         
@@ -59,6 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func getCityIdFromShortcutItem(shortcutName:String) -> String {
+        if let index = shortcutName.range(of: ":") {
+            return String(shortcutName[index.upperBound..<shortcutName.endIndex])
+        }
+        
+        return ""
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

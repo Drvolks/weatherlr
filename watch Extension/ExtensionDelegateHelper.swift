@@ -11,7 +11,6 @@ import WatchKit
 
 class ExtensionDelegateHelper {
     static func launchURLSession() {
-        print(WKExtension.shared().delegate)
         guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
             print("launchURLSession: no delegate!")
             return

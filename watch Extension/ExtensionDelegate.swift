@@ -47,9 +47,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     
     func scheduleSnapshot() {
         let fireDate = Date()
-        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: fireDate, userInfo: nil) { error in
-            if (error != nil) {
-                print("scheduleSnapshot error ", error)
+        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: fireDate, userInfo: nil) { (error: Error?) in
+            if let error = error {
+                print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
             }
         }
     }
@@ -103,8 +103,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        if(error != nil) {
-            print("urlSession error", error)
+        if let error = error {
+            print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
         }
     }
     
@@ -140,9 +140,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         
         let userInfo = ["reason" : "background update " + fireDateStr] as NSDictionary
         
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
-            if (error != nil) {
-                print("scheduleRefresh error ", error)
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error: Error?) in
+            if let error = error {
+                print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
             }
         }
     }

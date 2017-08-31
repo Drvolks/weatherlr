@@ -202,7 +202,7 @@ class PreferenceHelper {
     
     static func extractLang(_ locale:String) -> String {
         if let index = locale.range(of: "-") {
-            return locale.substring(to: index.lowerBound)
+            return String(locale[..<index.lowerBound])
         }
                 
         return locale

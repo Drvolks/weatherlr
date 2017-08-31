@@ -10,7 +10,8 @@
   },
   "social_media_url": "http://twitter.com/drvolks",
   "platforms": {
-    "ios": null
+    "ios": "11.0",
+    "watchos": "4.0"
   },
   "source": {
     "path": "."

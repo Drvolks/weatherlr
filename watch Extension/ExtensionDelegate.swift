@@ -41,7 +41,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
                 completeSnapshotTask(task: snapshotTask)
             }
             
-            task.setTaskCompleted()
+            task.setTaskCompletedWithSnapshot(false)
         }
     }
     

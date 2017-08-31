@@ -177,14 +177,7 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="40" id="7Fs-Pg-sxJ"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="E35-9I-wyL"/>
-                                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="F0X-NJ-UsA"/>
-                                                                                                <constraint firstAttribute="height" constant="40" id="OPl-cY-1Ci"/>
-                                                                                                <constraint firstAttribute="height" constant="40" id="PpA-ui-Jkx"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="SJM-wx-1of"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="fyu-Fr-sfv"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="k3a-IK-YML"/>
-                                                                                                <constraint firstAttribute="height" constant="40" id="pRS-4k-gfb"/>
+                                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="E35-9I-wyL"/>
                                                                                             </constraints>
                                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -193,13 +186,6 @@
                                                                                                 <mask key="constraints">
                                                                                                     <exclude reference="7Fs-Pg-sxJ"/>
                                                                                                     <exclude reference="E35-9I-wyL"/>
-                                                                                                    <exclude reference="F0X-NJ-UsA"/>
-                                                                                                    <exclude reference="OPl-cY-1Ci"/>
-                                                                                                    <exclude reference="PpA-ui-Jkx"/>
-                                                                                                    <exclude reference="SJM-wx-1of"/>
-                                                                                                    <exclude reference="fyu-Fr-sfv"/>
-                                                                                                    <exclude reference="k3a-IK-YML"/>
-                                                                                                    <exclude reference="pRS-4k-gfb"/>
                                                                                                 </mask>
                                                                                             </variation>
                                                                                         </label>
@@ -291,7 +277,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIN-VY-oZw">
-                                                    <rect key="frame" x="65" y="5" width="100" height="21"/>
+                                                    <rect key="frame" x="65" y="5" width="258" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="0f3-BI-1s6"/>
                                                         <constraint firstAttribute="height" constant="21" id="3YZ-WQ-inb"/>
@@ -393,6 +379,7 @@
                                                 <constraint firstItem="LIN-VY-oZw" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" constant="-8" id="o9u-GJ-ec0"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" constant="-8" id="oQM-cl-bbN"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="leading" secondItem="Rsr-vn-vr5" secondAttribute="leadingMargin" constant="-8" id="oV5-BF-X9j"/>
+                                                <constraint firstAttribute="trailing" secondItem="LIN-VY-oZw" secondAttribute="trailing" constant="20" id="oWH-GV-tGK"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" id="pSU-zW-HHy"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="isK-Iz-a9y" secondAttribute="bottom" priority="250" constant="2" id="q3k-6P-z8G"/>
                                                 <constraint firstItem="isK-Iz-a9y" firstAttribute="top" secondItem="LIN-VY-oZw" secondAttribute="top" id="u4W-4E-zmQ"/>

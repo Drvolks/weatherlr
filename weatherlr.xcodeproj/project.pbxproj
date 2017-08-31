@@ -820,6 +820,7 @@
 				6E04C80D1DB277FF002CB067 /* Embed Watch Content */,
 				CD29DDDB602570698E4FF3B0 /* [CP] Embed Pods Frameworks */,
 				8BC9B1E739203A9300E60C75 /* [CP] Copy Pods Resources */,
+				6E4EEAD51F58B21400984A0C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -842,6 +843,7 @@
 				6EB154911D282B0E0005B02A /* Embed Watch Content */,
 				7E7BEFA0C2329B6230D4F047 /* [CP] Embed Pods Frameworks */,
 				BE0D2747C065E83EE2C497A5 /* [CP] Copy Pods Resources */,
+				6E4EEAD41F58B1F000984A0C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1335,6 +1337,32 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		6E4EEAD41F58B1F000984A0C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "xcrun agvtool next-version -all";
+		};
+		6E4EEAD51F58B21400984A0C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "xcrun agvtool next-version -all";
 		};
 		7E7BEFA0C2329B6230D4F047 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

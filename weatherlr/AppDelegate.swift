@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PreferenceHelper.upgrade()
         
         #if FREE
-            FIRApp.configure()
+            FirebaseApp.configure()
             GADMobileAds.configure(withApplicationID: Constants.googleAddId);
         #endif
         

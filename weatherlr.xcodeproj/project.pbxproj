@@ -109,6 +109,12 @@
 		6E816C0F1CD10E9100533684 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C0E1CD10E9100533684 /* launch.png */; };
 		6E816C171CD63BCF00533684 /* WeatherInformationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E816C161CD63BCF00533684 /* WeatherInformationWrapper.swift */; };
 		6E816C191CD76DBB00533684 /* cities2 in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C181CD76DBB00533684 /* cities2 */; };
+		6E8EFD2D1F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EFD2C1F5B0EEF00B0388E /* PreferenceHelperError.swift */; };
+		6E8EFD2E1F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EFD2C1F5B0EEF00B0388E /* PreferenceHelperError.swift */; };
+		6E8EFD2F1F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EFD2C1F5B0EEF00B0388E /* PreferenceHelperError.swift */; };
+		6E8EFD301F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EFD2C1F5B0EEF00B0388E /* PreferenceHelperError.swift */; };
+		6E8EFD311F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EFD2C1F5B0EEF00B0388E /* PreferenceHelperError.swift */; };
+		6E8EFD321F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8EFD2C1F5B0EEF00B0388E /* PreferenceHelperError.swift */; };
 		6E9B63511CC593DE00B27334 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B63501CC593DE00B27334 /* StringExtension.swift */; };
 		6E9E12B51CDF8DAD00791284 /* cities3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B41CDF8DAD00791284 /* cities3 */; };
 		6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12B61CDF96A800791284 /* TemperatureTests.swift */; };
@@ -393,6 +399,7 @@
 		6E816C0E1CD10E9100533684 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		6E816C161CD63BCF00533684 /* WeatherInformationWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformationWrapper.swift; sourceTree = "<group>"; };
 		6E816C181CD76DBB00533684 /* cities2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities2; sourceTree = "<group>"; };
+		6E8EFD2C1F5B0EEF00B0388E /* PreferenceHelperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceHelperError.swift; sourceTree = "<group>"; };
 		6E9B63501CC593DE00B27334 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6E9E12B41CDF8DAD00791284 /* cities3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities3; sourceTree = "<group>"; };
 		6E9E12B61CDF96A800791284 /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
@@ -630,6 +637,7 @@
 				6EAB02E01CEE42F800BF7EC4 /* VerticalTopAlignLabel.swift */,
 				6EF6D0BD1DB2972800AE3252 /* GoogleService-Info.plist */,
 				6E4910A41CC59629006D3C82 /* Localizable.strings */,
+				6E8EFD2C1F5B0EEF00B0388E /* PreferenceHelperError.swift */,
 			);
 			path = weatherlr;
 			sourceTree = "<group>";
@@ -1565,6 +1573,7 @@
 				6E3252F01F41EDDB004A1867 /* City.swift in Sources */,
 				6E04C7D91DB277FF002CB067 /* WeatherInformation.swift in Sources */,
 				6E04C7DA1DB277FF002CB067 /* RadarViewController.swift in Sources */,
+				6E8EFD2E1F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */,
 				6E04C7DB1DB277FF002CB067 /* AlertDetailViewController.swift in Sources */,
 				6E04C7DD1DB277FF002CB067 /* CityDownloader.swift in Sources */,
 				6E04C7DE1DB277FF002CB067 /* RssEntry.swift in Sources */,
@@ -1609,6 +1618,7 @@
 				6E3252EF1F41EDC9004A1867 /* City.swift in Sources */,
 				6E9F32C01CB3056A00A9D6A7 /* WeatherInformation.swift in Sources */,
 				6E9E12D31CEA5ED000791284 /* RadarViewController.swift in Sources */,
+				6E8EFD2D1F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */,
 				6E9E12C31CEA012400791284 /* AlertDetailViewController.swift in Sources */,
 				6E4910BE1CC90598006D3C82 /* CityDownloader.swift in Sources */,
 				6E9F32D71CB3E91D00A9D6A7 /* RssEntry.swift in Sources */,
@@ -1655,6 +1665,7 @@
 				6E9F32E91CB4012B00A9D6A7 /* RssEntryToWeatherInformationTests.swift in Sources */,
 				6E9E12CF1CEA20D800791284 /* PreferenceHelperTests.swift in Sources */,
 				6E4910C61CC91854006D3C82 /* TestUtils.swift in Sources */,
+				6E8EFD301F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */,
 				6E9F32E11CB3F55C00A9D6A7 /* RssEntryTests.swift in Sources */,
 				6E3252F31F41EDE0004A1867 /* City.swift in Sources */,
 				6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */,
@@ -1671,6 +1682,7 @@
 				6E3252F41F41EDE0004A1867 /* City.swift in Sources */,
 				6E6517E71F426D0E00FE4AF1 /* CityParser.swift in Sources */,
 				6E29054C1CB2D5550040EB8B /* weatherlrUITests.swift in Sources */,
+				6E8EFD311F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1704,6 +1716,7 @@
 				6EA210C01DB2AA1100BC8B1C /* RssEntryToWeatherInformation.swift in Sources */,
 				6EA210C11DB2AA1100BC8B1C /* ExtensionDelegateHelper.swift in Sources */,
 				6EA210C21DB2AA1100BC8B1C /* ExtensionDelegate.swift in Sources */,
+				6E8EFD321F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */,
 				6EA210C31DB2AA1100BC8B1C /* WeatherInformation.swift in Sources */,
 				6EA210C41DB2AA1100BC8B1C /* RssParser.swift in Sources */,
 				6EA210C51DB2AA1100BC8B1C /* InterfaceController.swift in Sources */,
@@ -1739,6 +1752,7 @@
 				6EB154A11D285A5E0005B02A /* RssEntryToWeatherInformation.swift in Sources */,
 				6E3AC1991D93380D00E99C7D /* ExtensionDelegateHelper.swift in Sources */,
 				6EB154811D282B0E0005B02A /* ExtensionDelegate.swift in Sources */,
+				6E8EFD2F1F5B0EEF00B0388E /* PreferenceHelperError.swift in Sources */,
 				6EB154991D28591B0005B02A /* WeatherInformation.swift in Sources */,
 				6EB1549F1D285A590005B02A /* RssParser.swift in Sources */,
 				6EB1547F1D282B0E0005B02A /* InterfaceController.swift in Sources */,
@@ -2248,6 +2262,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 11;
@@ -2260,6 +2275,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -2273,6 +2289,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 11;
@@ -2350,6 +2367,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 11;
@@ -2362,6 +2380,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -2376,6 +2395,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 11;

@@ -50,15 +50,39 @@ class PreferenceHelper {
     }
     
     static func getFavoriteCities() -> [City] {
+        do {
+            let savedfavorites = try getFavoriteCitiesWithClassName("City")
+            return savedfavorites
+        } catch {}
+        
+        // trying with legacy names
+        do {
+            let savedfavorites = try getFavoriteCitiesWithClassName("weatherlr.City")
+            return savedfavorites
+        } catch {}
+        
+        do {
+            let savedfavorites = try getFavoriteCitiesWithClassName("weatherlrFree.City")
+            return savedfavorites
+        } catch {}
+        
+        return [City]()
+    }
+    
+    static func getFavoriteCitiesWithClassName(_ className:String) throws -> [City] {
         let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
-        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
+        NSKeyedUnarchiver.setClass(City.self, forClassName: className)
+        
         if let unarchivedObject = defaults.object(forKey: Constants.favotiteCitiesKey) as? Data {
-            if let savedfavorites = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject) as? [City] {
+            do {
+                let savedfavorites = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedObject) as! [City]
                 return savedfavorites
+            } catch {
+                // will throw error
             }
         }
         
-        return [City]()
+        throw PreferenceHelperError.unarchiveError
     }
     
     static func switchFavoriteCity(cityId: String) {
@@ -74,12 +98,14 @@ class PreferenceHelper {
     
     fileprivate static func saveFavoriteCities(_ cities: [City]) {
         let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
+        NSKeyedArchiver.setClassName("City", for: City.self)
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: cities as NSArray)
         defaults.set(archivedObject, forKey: Constants.favotiteCitiesKey)
         defaults.synchronize()
     }
     
     fileprivate static func saveSelectedCity(_ city: City) {
+        NSKeyedArchiver.setClassName("City", for: City.self)
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
         let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
         defaults.set(archivedObject, forKey: Constants.selectedCityKey)
@@ -87,20 +113,44 @@ class PreferenceHelper {
     }
     
     static func getSelectedCity() -> City? {
-        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
+        do {
+            let selectedCity = try getSelectedCityWithClassName("City")
+            return selectedCity
+        } catch {}
+        
+        // try with legacy names
+        do {
+            let selectedCity = try getSelectedCityWithClassName("weatherlr.City")
+            return selectedCity
+        } catch {}
+        
+        do {
+            let selectedCity = try getSelectedCityWithClassName("weatherlrFree.City")
+            return selectedCity
+        } catch {}
+        
+        return nil
+    }
+    
+    static func getSelectedCityWithClassName(_ className:String) throws -> City? {
+        NSKeyedUnarchiver.setClass(City.self, forClassName: className)
         let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
         if let unarchivedObject = defaults.object(forKey: Constants.selectedCityKey) as? Data {
-            if let selectedCity = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject) as? City {
+            do {
+                let selectedCity = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedObject) as! City
+                
                 // for legacy City object < 1.1 release
                 if selectedCity.radarId.isEmpty {
                     return refreshCity(selectedCity)
                 }
                 
                 return selectedCity
+            } catch {
+                // will throw error
             }
         }
         
-        return nil
+        throw PreferenceHelperError.unarchiveError
     }
     
     static func refreshCity(_ city:City) -> City {

@@ -1071,6 +1071,9 @@
 							com.apple.Keychain = {
 								enabled = 0;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					6E29053B1CB2D5550040EB8B = {

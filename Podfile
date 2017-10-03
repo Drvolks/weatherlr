@@ -51,3 +51,13 @@ target 'weatherlrFree' do
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
 end
+
+target 'WeatherlrTv' do
+  platform :tvos, '11.0'
+
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for weatherlrFree
+  pod 'WeatherFramework', :path => "./WeatherFramework/"
+end

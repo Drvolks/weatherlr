@@ -70,10 +70,10 @@ class PreferenceHelper {
     }
     
     static func getFavoriteCitiesWithClassName(_ className:String) throws -> [City] {
-        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         NSKeyedUnarchiver.setClass(City.self, forClassName: className)
         
-        if let unarchivedObject = defaults.object(forKey: Constants.favotiteCitiesKey) as? Data {
+        if let unarchivedObject = defaults.object(forKey: Global.favotiteCitiesKey) as? Data {
             do {
                 let savedfavorites = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedObject) as! [City]
                 return savedfavorites
@@ -97,18 +97,18 @@ class PreferenceHelper {
     }
     
     fileprivate static func saveFavoriteCities(_ cities: [City]) {
-        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         NSKeyedArchiver.setClassName("City", for: City.self)
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: cities as NSArray)
-        defaults.set(archivedObject, forKey: Constants.favotiteCitiesKey)
+        defaults.set(archivedObject, forKey: Global.favotiteCitiesKey)
         defaults.synchronize()
     }
     
     fileprivate static func saveSelectedCity(_ city: City) {
         NSKeyedArchiver.setClassName("City", for: City.self)
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
-        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
-        defaults.set(archivedObject, forKey: Constants.selectedCityKey)
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        defaults.set(archivedObject, forKey: Global.selectedCityKey)
         defaults.synchronize()
     }
     
@@ -134,8 +134,8 @@ class PreferenceHelper {
     
     static func getSelectedCityWithClassName(_ className:String) throws -> City? {
         NSKeyedUnarchiver.setClass(City.self, forClassName: className)
-        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
-        if let unarchivedObject = defaults.object(forKey: Constants.selectedCityKey) as? Data {
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        if let unarchivedObject = defaults.object(forKey: Global.selectedCityKey) as? Data {
             do {
                 let selectedCity = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedObject) as! City
                 
@@ -218,8 +218,8 @@ class PreferenceHelper {
     }
     
     static func getLanguage() -> Language {
-        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
-        if let lang = defaults.object(forKey: Constants.languageKey) as? String {
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        if let lang = defaults.object(forKey: Global.languageKey) as? String {
             if let langEnum = Language(rawValue: lang) {
                 return langEnum
             }
@@ -235,8 +235,8 @@ class PreferenceHelper {
     }
     
     static func saveLanguage(_ language: Language) {
-        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
-        defaults.set(language.rawValue, forKey: Constants.languageKey)
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        defaults.set(language.rawValue, forKey: Global.languageKey)
         defaults.synchronize()
         
         ExpiringCache.instance.removeAllObjects()
@@ -259,11 +259,11 @@ class PreferenceHelper {
     }
     
     static func upgrade() {
-        let defaults = UserDefaults(suiteName: Constants.SettingGroup)!
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         var shouldUpdateQuickActions = false
         var previousVersion = Double(0)
         
-        if let version = defaults.object(forKey: Constants.versionKey) as? Double {
+        if let version = defaults.object(forKey: Global.versionKey) as? Double {
             previousVersion = version
             
             if version < 2.5 {
@@ -281,7 +281,7 @@ class PreferenceHelper {
             let currentVersionDouble = Double(currentVersion)
             
             if previousVersion != currentVersionDouble {
-                defaults.set(currentVersionDouble, forKey: Constants.versionKey)
+                defaults.set(currentVersionDouble, forKey: Global.versionKey)
                 defaults.synchronize()
             }
         }

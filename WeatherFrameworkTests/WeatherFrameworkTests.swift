@@ -19,9 +19,9 @@ class WeatherFrameworkTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCityParser() {
-        let cityParser = CityParser(outputPath: "/Users/jfdufour/Downloads/")
-        cityParser.perform()
-    }
+    //func testCityParser() {
+    //    let cityParser = CityParser(outputPath: "/Users/jfdufour/Downloads/")
+    //    cityParser.perform()
+    //}
     
 }

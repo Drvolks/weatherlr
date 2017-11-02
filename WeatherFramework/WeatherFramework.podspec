@@ -61,10 +61,10 @@ Pod::Spec.new do |s|
   # s.platform     = :ios
 
   #  When using multiple platforms
-  s.ios.deployment_target = "11.0"
+  s.ios.deployment_target = "11.1"
   # s.osx.deployment_target = "10.7"
-  s.watchos.deployment_target = "4.0"
-  s.tvos.deployment_target = "11.0"
+  s.watchos.deployment_target = "4.1"
+  s.tvos.deployment_target = "11.1"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

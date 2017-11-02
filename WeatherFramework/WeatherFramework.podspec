@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "11.0"
   # s.osx.deployment_target = "10.7"
   s.watchos.deployment_target = "4.0"
-  # s.tvos.deployment_target = "9.0"
+  s.tvos.deployment_target = "11.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

@@ -32,8 +32,8 @@ class NextWeatherRowController : NSObject {
                 }
                 
                 if let range = weather.detail.range(of: ".") {
-                    let line1 = String(weather.detail.characters.prefix(upTo: range.lowerBound)).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                    let line2 = String(weather.detail.characters.suffix(from: range.upperBound)).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                    let line1 = String(weather.detail.prefix(upTo: range.lowerBound)).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                    let line2 = String(weather.detail.suffix(from: range.upperBound)).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
                     
                     detailLabel.setText(line1)
                     detailLine2Label.setText(line2)

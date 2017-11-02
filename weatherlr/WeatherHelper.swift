@@ -302,9 +302,9 @@ class WeatherHelper {
         var offsetLeft = 20
         var offsetTop = 10
         var textFont = UIFont.systemFont(ofSize: 55)
-        if text.characters.count == 1 {
+        if text.count == 1 {
             offsetLeft = 34
-        } else if text.characters.count == 3 {
+        } else if text.count == 3 {
             offsetLeft = 14
             offsetTop = 14
             textFont = UIFont.systemFont(ofSize: 45)

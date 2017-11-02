@@ -77,7 +77,7 @@ class TemperatureTests: XCTestCase {
                     var zero = temperatureText == "zero" || temperatureText == "zéro"
                     if temperatureText != "" && temperatureText[firstT] == "0" {
                         zero = true
-                    } else if temperatureText.characters.count > 1 {
+                    } else if temperatureText.count > 1 {
                         let secondT = temperatureText.index(temperatureText.startIndex, offsetBy: 2)
                         let temperatureTextSecond = String(temperatureText[..<secondT])
                         if temperatureTextSecond == "-0" {

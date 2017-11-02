@@ -276,7 +276,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         var lines = weatherInformationWrapper.alerts.count
         for i in 0..<weatherInformationWrapper.alerts.count {
             let alertText = weatherInformationWrapper.alerts[i].alertText
-            if alertText.characters.count > 30 {
+            if alertText.count > 30 {
                 lines = lines + 1
             }
         }

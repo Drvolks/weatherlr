@@ -54,7 +54,7 @@ class CityParser {
     
     func parse(_ data:String) {
         let regex = try! NSRegularExpression(pattern: "/city/pages/(\\w*)-(\\w\\d*)_metric_(f|e).html\">(.*?)<", options: [.caseInsensitive])
-        let results = regex.matches(in: data, options: [], range: NSMakeRange(0, data.characters.distance(from: data.startIndex, to: data.endIndex)))
+        let results = regex.matches(in: data, options: [], range: NSMakeRange(0, data.distance(from: data.startIndex, to: data.endIndex)))
         for i in 0..<results.count {
             let province = (data as NSString).substring(with: results[i].range(at: 1))
             var cityId = (data as NSString).substring(with: results[i].range(at: 2))
@@ -92,7 +92,7 @@ class CityParser {
             let content = try! NSString(contentsOf: url, usedEncoding: nil) as String
             
             let regex = try! NSRegularExpression(pattern: "\"/radar/index_f.html\\?id=(.*?)\"", options: [.caseInsensitive])
-            let results = regex.matches(in: content, options: [], range: NSMakeRange(0, content.characters.distance(from: content.startIndex, to: content.endIndex)))
+            let results = regex.matches(in: content, options: [], range: NSMakeRange(0, content.distance(from: content.startIndex, to: content.endIndex)))
             
             if results.count > 0 {
                 let radarId = (content as NSString).substring(with: results[0].range(at: 1))

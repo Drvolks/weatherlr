@@ -166,7 +166,7 @@ class InterfaceController: WKInterfaceController {
             citieNames.append(CityHelper.cityName($0) + ", " + $0.province.uppercased())
         })
         
-        citieNames.append(contentsOf: "abcdefghijklmnopqrstuvwxyz".uppercased().characters.map { String($0) })
+        citieNames.append(contentsOf: "abcdefghijklmnopqrstuvwxyz".uppercased().map { String($0) })
         
         presentTextInputController(withSuggestions: citieNames, allowedInputMode: .plain, completion: { (result) -> Void in
             self.didSayCityName(result as AnyObject?)
@@ -223,7 +223,7 @@ class InterfaceController: WKInterfaceController {
             let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
             let cities:[City]
             
-            if choice.characters.count == 1 {
+            if choice.count == 1 {
                 cities = CityHelper.searchCityStartingWith(choice, allCityList: allCityList)
             } else {
                 cities = CityHelper.searchCity(choice, allCityList: allCityList)

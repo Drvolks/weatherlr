@@ -438,13 +438,13 @@ class RssEntryToWeatherInformation {
     
     func convertWeatherStatusWithRegex(_ text: String) -> WeatherStatus {
         var regex = try! NSRegularExpression(pattern: "Nuageux avec \\d* pour cent de probabilité d'averses de neige", options: [.caseInsensitive])
-        var match = regex.matches(in: text, options: [], range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)))
+        var match = regex.matches(in: text, options: [], range: NSMakeRange(0, text.distance(from: text.startIndex, to: text.endIndex)))
         if match.count > 0 {
             return WeatherStatus.cloudyWithXPercentChanceOfFlurries
         }
         
         regex = try! NSRegularExpression(pattern: "Cloudy with \\d* percent chance of flurries", options: [.caseInsensitive])
-        match = regex.matches(in: text, options: [], range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)))
+        match = regex.matches(in: text, options: [], range: NSMakeRange(0, text.distance(from: text.startIndex, to: text.endIndex)))
         if match.count > 0 {
             return WeatherStatus.cloudyWithXPercentChanceOfFlurries
         }
@@ -467,7 +467,7 @@ class RssEntryToWeatherInformation {
     }
     
     func performRegex(_ regex: NSRegularExpression, text: String, index: Int) -> String {
-        let results = regex.matches(in: text, options: [], range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)))
+        let results = regex.matches(in: text, options: [], range: NSMakeRange(0, text.distance(from: text.startIndex, to: text.endIndex)))
         if let result = results.first {
             var condition = (text as NSString).substring(with: result.range(at: index))
             condition = condition.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
@@ -542,7 +542,7 @@ class RssEntryToWeatherInformation {
     func nettoyerDetail(_ text: String) -> String {
         let regex = try! NSRegularExpression(pattern: "(Prévisions émises|Forecast issued).*$", options: [.caseInsensitive])
         let textRegex = NSMutableString(string: text)
-        regex.replaceMatches(in: textRegex, options: .withTransparentBounds, range: NSMakeRange(0, text.characters.distance(from: text.startIndex, to: text.endIndex)), withTemplate: "")
+        regex.replaceMatches(in: textRegex, options: .withTransparentBounds, range: NSMakeRange(0, text.distance(from: text.startIndex, to: text.endIndex)), withTemplate: "")
         let result = textRegex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         return result

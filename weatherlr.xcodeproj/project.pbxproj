@@ -2638,7 +2638,7 @@
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2657,7 +2657,7 @@
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2676,7 +2676,7 @@
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2694,7 +2694,7 @@
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2784,7 +2784,7 @@
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherFrameworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.framework.WeatherFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2808,7 +2808,7 @@
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherFrameworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.framework.WeatherFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2831,7 +2831,7 @@
 				DEVELOPMENT_TEAM = 654X66AK24;
 				IBSC_MODULE = watchFree_Extension;
 				INFOPLIST_FILE = "watch/watchFree-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2858,7 +2858,7 @@
 				DEVELOPMENT_TEAM = 654X66AK24;
 				IBSC_MODULE = watchFree_Extension;
 				INFOPLIST_FILE = "watch/watchFree-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2882,7 +2882,7 @@
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = "watch Extension/watchFree Extension-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2907,7 +2907,7 @@
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = "watch Extension/watchFree Extension-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2936,7 +2936,7 @@
 				DEVELOPMENT_TEAM = 654X66AK24;
 				IBSC_MODULE = watch_Extension;
 				INFOPLIST_FILE = watch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2964,7 +2964,7 @@
 				DEVELOPMENT_TEAM = 654X66AK24;
 				IBSC_MODULE = watch_Extension;
 				INFOPLIST_FILE = watch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2989,7 +2989,7 @@
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = "watch Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -3015,7 +3015,7 @@
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = "watch Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";

@@ -176,7 +176,8 @@ class WeatherInformation {
              .freezingRainOrRain,
              .freezingRainOrIcePellets,
              .icePelletsMixedWithFreezingRain,
-             .rainAtTimesHeavyOrFreezingRain:
+             .rainAtTimesHeavyOrFreezingRain,
+             .rainMixedWithFreezingRain:
             return WeatherColor.cloudyDay
         case .snow,
              .periodsOfSnowAndBlowingSnow,

@@ -371,7 +371,7 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.snowOrFreezingRain
         case "forte averse de pluie", "heavy rainshower":
             return WeatherStatus.heavyRainshower
-        case "quelques averses ou orages", "a few showers or thunderstorms":
+        case "quelques averses ou orages", "a few showers or thunderstorms", "a few showers or thundershowers":
             return WeatherStatus.aFewShowersOrThunderstorms
         case "orage", "thunderstorm":
             return WeatherStatus.thunderstorm
@@ -391,7 +391,7 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.snowAtTimesHeavyOrRain
         case "brouillard se dissipant", "fog dissipating":
             return WeatherStatus.fogDissipating
-        case "averses ou orages", "showers or thunderstorms":
+        case "averses ou orages", "showers or thunderstorms", "showers or thundershowers":
             return WeatherStatus.showersOrThunderstorms
         case "orage avec faible pluie", "thunderstorm with light rain":
             return WeatherStatus.thunderstormWithLightRain
@@ -431,6 +431,8 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.icePellets
         case "pluie mêlée de pluie verglaçante", "rain mixed with freezing rain":
             return WeatherStatus.rainMixedWithFreezingRain
+        case "pluie et bruine faibles", "light rain and drizzle":
+            return WeatherStatus.lightRainAndDrizzle
         default:
             return convertWeatherStatusWithRegex(text)
         }

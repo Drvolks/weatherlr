@@ -77,6 +77,7 @@ enum WeatherStatus {
     case lightFreezingDrizzle
     case lightFreezingRain
     case lightRain
+    case lightRainAndDrizzle
     case lightRainAndFog
     case lightRainshower
     case lightSnow

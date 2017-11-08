@@ -929,6 +929,8 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         XCTAssertEqual(WeatherStatus.aFewShowersOrThunderstorms, result)
         result = performer.convertWeatherStatus("A few showers or thunderstorms")
         XCTAssertEqual(WeatherStatus.aFewShowersOrThunderstorms, result)
+        result = performer.convertWeatherStatus("A few showers or thundershowers")
+        XCTAssertEqual(WeatherStatus.aFewShowersOrThunderstorms, result)
         
         // Thunderstorm
         result = performer.convertWeatherStatus("Orage")
@@ -988,6 +990,8 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Averses ou orages")
         XCTAssertEqual(WeatherStatus.showersOrThunderstorms, result)
         result = performer.convertWeatherStatus("Showers or thunderstorms")
+        XCTAssertEqual(WeatherStatus.showersOrThunderstorms, result)
+        result = performer.convertWeatherStatus("Showers or thundershowers")
         XCTAssertEqual(WeatherStatus.showersOrThunderstorms, result)
         
         // ThunderstormWithLightRain
@@ -1098,8 +1102,11 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Rain mixed with freezing rain")
         XCTAssertEqual(WeatherStatus.rainMixedWithFreezingRain, result)
         
-        
-        
+        // lightRainAndDrizzle
+        result = performer.convertWeatherStatus("Pluie et bruine faibles")
+        XCTAssertEqual(WeatherStatus.lightRainAndDrizzle, result)
+        result = performer.convertWeatherStatus("Light Rain and Drizzle")
+        XCTAssertEqual(WeatherStatus.lightRainAndDrizzle, result)
         
         
         

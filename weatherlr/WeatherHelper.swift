@@ -124,7 +124,8 @@ class WeatherHelper {
              .drizzleOrRain,
              .rainAtTimesHeavyOrDrizzle,
              .aFewShowersOrDrizzle,
-             .chanceOfRainOrDrizzle:
+             .chanceOfRainOrDrizzle,
+             .lightRainAndDrizzle:
             return WeatherStatus.periodsOfRainOrDrizzle
         case .freezingDrizzleOrRain:
             return WeatherStatus.periodsOfFreezingDrizzleOrRain

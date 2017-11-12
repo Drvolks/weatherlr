@@ -82,6 +82,7 @@ enum WeatherStatus {
     case lightRainshower
     case lightSnow
     case lightSnowAndBlowingSnow
+    case lightSnowShowerAndBlowingSnow
     case lightSnowMixedWithRain
     case lightSnowOrFreezingRain
     case lightSnowOrRain

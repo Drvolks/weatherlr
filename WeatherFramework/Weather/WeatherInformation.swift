@@ -205,7 +205,8 @@ class WeatherInformation {
              .icePellets,
              .icePelletsMixedWithSnow,
              .periodsOfSnowMixedWithIcePellets,
-             .snowAtTimesHeavyMixedWithIcePellets:
+             .snowAtTimesHeavyMixedWithIcePellets,
+             .lightSnowShowerAndBlowingSnow:
             return WeatherColor.snowDay
         case .sunny,
              .partlyCloudy,

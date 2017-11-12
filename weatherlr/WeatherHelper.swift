@@ -170,7 +170,8 @@ class WeatherHelper {
             return WeatherStatus.cloudy
         case .periodsOfDrizzle:
             return WeatherStatus.chanceOfDrizzle
-        case .snowAndBlowingSnow:
+        case .snowAndBlowingSnow,
+             .lightSnowShowerAndBlowingSnow:
             return WeatherStatus.lightSnowAndBlowingSnow
         case .wetFlurries:
             return WeatherStatus.wetSnow

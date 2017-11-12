@@ -1108,6 +1108,13 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.convertWeatherStatus("Light Rain and Drizzle")
         XCTAssertEqual(WeatherStatus.lightRainAndDrizzle, result)
         
+        // lightSnowShowerAndBlowingSnow
+        result = performer.convertWeatherStatus("Faible averse de neige et poudrerie élevée")
+        XCTAssertEqual(WeatherStatus.lightSnowShowerAndBlowingSnow, result)
+        result = performer.convertWeatherStatus("Light Snow Shower and Blowing Snow")
+        XCTAssertEqual(WeatherStatus.lightSnowShowerAndBlowingSnow, result)
+        
+        
         
         
         
@@ -1284,6 +1291,24 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractTemperature("Wednesday: Chance of flurries. Temperature falling to minus 7 this morning then steady. POP 40%")
         XCTAssertEqual("minus 7", result)
+        
+        result = performer.extractTemperature("Samedi: Possibilité d'averses de neige. Températures à la baisse pour atteindre moins 2 le matin puis stables. PdP 60%")
+        XCTAssertEqual("moins 2", result)
+        
+        result = performer.extractTemperature("Saturday: Chance of rain showers or flurries. Temperature falling to zero in the morning then rising. POP 60%")
+        XCTAssertEqual("zero", result)
+        
+        result = performer.extractTemperature("Saturday: Chance of showers. Temperature falling to plus 3 in the morning then steady. POP 60%")
+        XCTAssertEqual("plus 3", result)
+        
+        result = performer.extractTemperature("Samedi: Possibilité d'averses de pluie ou de neige. Températures à la baisse pour atteindre zéro le matin puis à la hausse. PdP 60%")
+        XCTAssertEqual("zéro", result)
+        
+        result = performer.extractTemperature("Ce soir et cette nuit: Pluie ou neige. Températures à la hausse pour atteindre plus 3 ce soir puis à la baisse.")
+        XCTAssertEqual("plus 3", result)
+        
+        result = performer.extractTemperature("Friday night: Rain or snow. Temperature rising to plus 3 this evening then falling.")
+        XCTAssertEqual("plus 3", result)
     }
     
     func testConvertWeatherDay() {

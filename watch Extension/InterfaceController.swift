@@ -70,9 +70,7 @@ class InterfaceController: WKInterfaceController {
     func refreshDisplay() {
         cityLabel.setText("Loading".localized())
         
-        lastRefreshLabel.setHidden(false)
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
         
         if !rowTypesValid() {
             objc_sync_enter(rowTypes)
@@ -91,6 +89,8 @@ class InterfaceController: WKInterfaceController {
             objc_sync_exit(rowTypes)
             weatherTable.setRowTypes(rowTypes)
         }
+        
+        cityLabel.setText("Loading2".localized())
         
         for index in 0..<rowTypes.count {
             let weather = watchDelegate.wrapper.weatherInformations[index]
@@ -129,6 +129,9 @@ class InterfaceController: WKInterfaceController {
                 break
             }
         }
+        
+        lastRefreshLabel.setHidden(false)
+        lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
         
         watchDelegate.scheduleSnapshot()
         watchDelegate.updateComplication()

@@ -42,7 +42,7 @@ class WeatherInformationWrapper {
     }
     
     func refreshNeeded() -> Bool {
-        if initialState {
+        if initialState || weatherInformations.count == 0 {
             return true
         }
         

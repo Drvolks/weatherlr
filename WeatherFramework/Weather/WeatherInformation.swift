@@ -178,7 +178,9 @@ class WeatherInformation {
              .icePelletsMixedWithFreezingRain,
              .rainAtTimesHeavyOrFreezingRain,
              .rainMixedWithFreezingRain,
-             .lightRainAndDrizzle:
+             .lightRainAndDrizzle,
+             .aFewRainShowersOrWetFlurries,
+             .rainShower:
             return WeatherColor.cloudyDay
         case .snow,
              .periodsOfSnowAndBlowingSnow,
@@ -206,7 +208,8 @@ class WeatherInformation {
              .icePelletsMixedWithSnow,
              .periodsOfSnowMixedWithIcePellets,
              .snowAtTimesHeavyMixedWithIcePellets,
-             .lightSnowShowerAndBlowingSnow:
+             .lightSnowShowerAndBlowingSnow,
+             .chanceOfSnowAtTimesHeavy:
             return WeatherColor.snowDay
         case .sunny,
              .partlyCloudy,

@@ -95,7 +95,8 @@ class WeatherHelper {
              .periodsOfRain,
              .showers,
              .chanceOfRain,
-             .precipitation:
+             .precipitation,
+             .rainShower:
             return WeatherStatus.lightRain
         case .aMixOfSunAndCloud,
              .cloudyPeriods,
@@ -137,7 +138,8 @@ class WeatherHelper {
             return WeatherStatus.chanceOfDrizzleMixedWithFreezingDrizzle
         case .flurries:
             return WeatherStatus.snow
-        case .flurriesAtTimesHeavy:
+        case .flurriesAtTimesHeavy,
+             .chanceOfSnowAtTimesHeavy:
             return WeatherStatus.snowAtTimesHeavy
         case .flurriesOrRainShowers,
              .periodsOfRainMixedWithSnow,
@@ -190,7 +192,8 @@ class WeatherHelper {
         case .chanceOfWetFlurriesOrRainShowers,
              .periodsOfWetSnowOrRain,
              .wetFlurriesOrRainShowers,
-             .rainShowersOrWetFlurries:
+             .rainShowersOrWetFlurries,
+             .aFewRainShowersOrWetFlurries:
             return WeatherStatus.chanceOfRainShowersOrWetFlurries
         case .lightWetSnow:
             return WeatherStatus.chanceOfWetFlurries

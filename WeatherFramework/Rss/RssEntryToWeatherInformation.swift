@@ -435,6 +435,12 @@ class RssEntryToWeatherInformation {
             return WeatherStatus.lightRainAndDrizzle
         case "faible averse de neige et poudrerie élevée", "light snow shower and blowing snow":
             return WeatherStatus.lightSnowShowerAndBlowingSnow
+        case "a few rain showers or wet flurries":
+            return WeatherStatus.aFewRainShowersOrWetFlurries
+        case "averse de pluie", "rainshower":
+            return WeatherStatus.rainShower
+        case "possibilité de neige parfois forte", "chance of snow at times heavy":
+            return WeatherStatus.chanceOfSnowAtTimesHeavy
         default:
             return convertWeatherStatusWithRegex(text)
         }

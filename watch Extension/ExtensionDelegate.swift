@@ -31,6 +31,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
+        #if DEBUG
+            print("handle")
+        #endif
+        
         for task : WKRefreshBackgroundTask in backgroundTasks {
             if (WKExtension.shared().applicationState == .background) {
                 if task is WKApplicationRefreshBackgroundTask {
@@ -46,6 +50,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
     
     func scheduleSnapshot() {
+        #if DEBUG
+            print("scheduleSnapshot")
+        #endif
+        
         let fireDate = Date()
         WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: fireDate, userInfo: nil) { (error: Error?) in
             if let error = error {
@@ -56,8 +64,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     
     
     func scheduleURLSession() {
+        #if DEBUG
+            print("scheduleURLSession")
+        #endif
+        
         if let city = PreferenceHelper.getSelectedCity() {
-            scheduleRefresh()
+            //scheduleRefresh()
             
             let url = URL(string:UrlHelper.getUrl(city))!
             
@@ -71,8 +83,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     
     
     func launchURLSession() {
+        #if DEBUG
+            print("launchURLSession")
+        #endif
+        
         if let city = PreferenceHelper.getSelectedCity() {
-            scheduleRefresh()
+            //scheduleRefresh()
             
             let url = URL(string:UrlHelper.getUrl(city))!
             
@@ -85,7 +101,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        scheduleRefresh()
+        #if DEBUG
+            print("urlSession1")
+        #endif
         
         if let city = PreferenceHelper.getSelectedCity() {
             do {
@@ -93,6 +111,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
                 wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
                 
                 if let controller = WKExtension.shared().rootInterfaceController as? InterfaceController {
+                    #if DEBUG
+                        print("refreshDisplay")
+                    #endif
+
                     controller.refreshDisplay()
                 }
             } catch {
@@ -103,12 +125,22 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        #if DEBUG
+            print("urlSession2")
+        #endif
+        
+        scheduleRefresh()
+        
         if let error = error {
             print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
         }
     }
     
     func completeSnapshotTask(task: WKSnapshotRefreshBackgroundTask) {
+        #if DEBUG
+            print("completeSnapshotTask")
+        #endif
+        
         let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
         
         let dateFormatter = DateFormatter()
@@ -122,6 +154,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
     
     func updateComplication() {
+        #if DEBUG
+            print("updateComplication")
+        #endif
+        
         let complicationServer = CLKComplicationServer.sharedInstance()
         if let complications = complicationServer.activeComplications {
             for complication in complications {
@@ -131,6 +167,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
     }
     
     func scheduleRefresh() {
+        #if DEBUG
+            print("scheduleRefresh")
+        #endif
+        
         let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
         
         let dateFormatter = DateFormatter()

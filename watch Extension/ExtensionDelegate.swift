@@ -69,7 +69,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         #endif
         
         if let city = PreferenceHelper.getSelectedCity() {
-            //scheduleRefresh()
+            scheduleRefresh()
             
             let url = URL(string:UrlHelper.getUrl(city))!
             
@@ -88,7 +88,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         #endif
         
         if let city = PreferenceHelper.getSelectedCity() {
-            //scheduleRefresh()
+            scheduleRefresh()
             
             let url = URL(string:UrlHelper.getUrl(city))!
             
@@ -105,6 +105,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
             print("urlSession1")
         #endif
         
+	scheduleRefresh()
+	
         if let city = PreferenceHelper.getSelectedCity() {
             do {
                 let xmlData = try Data(contentsOf: location)
@@ -128,8 +130,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         #if DEBUG
             print("urlSession2")
         #endif
-        
-        scheduleRefresh()
         
         if let error = error {
             print("Error occurred while scheduling background refresh: \(error.localizedDescription)")

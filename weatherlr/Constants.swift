@@ -17,7 +17,12 @@ class Constants {
     static let cityListKey = "cityList"
     static let searchTextKey = "searchText"
     
-    static let backgroundRefreshInSeconds = 30.0 * 60.0
+    #if DEBUG
+        static let backgroundRefreshInSeconds = 1.0 * 60.0
+    #else
+        static let backgroundRefreshInSeconds = 30.0 * 60.0
+    #endif
+    
     #if FREE
         static let backgroundDownloadTaskName = "massawippi.weatherlr.free.download"
     #else

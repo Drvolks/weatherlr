@@ -1323,6 +1323,12 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         
         result = performer.extractTemperature("Friday night: Rain or snow. Temperature rising to plus 3 this evening then falling.")
         XCTAssertEqual("plus 3", result)
+        
+        result = performer.extractTemperature("Vendredi soir: Quelques averses débutant après minuit. Températures à la hausse pour atteindre plus 5 ce soir puis stable.")
+        XCTAssertEqual("plus 5", result)
+        
+        result = performer.extractTemperature("Friday night: Rain or snow. Temperature rising to plus 5 this evening then steady.")
+        XCTAssertEqual("plus 5", result)
     }
     
     func testConvertWeatherDay() {

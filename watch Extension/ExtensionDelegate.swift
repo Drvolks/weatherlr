@@ -10,9 +10,14 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelegate {
     var wrapper = WeatherInformationWrapper()
+    var backgroundConfigObject:URLSessionConfiguration!
+    var backgroundSession:URLSession!
     
     override init() {
         super.init()
+        
+        backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
+        backgroundSession = URLSession(configuration: backgroundConfigObject!, delegate: self, delegateQueue:nil)
         
         WKExtension.shared().delegate = self
     }
@@ -72,9 +77,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
             scheduleRefresh()
             
             let url = URL(string:UrlHelper.getUrl(city))!
-            
-            let backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
-            let backgroundSession = URLSession(configuration: backgroundConfigObject, delegate: self, delegateQueue:nil)
             
             let downloadTask = backgroundSession.downloadTask(with: url)
             downloadTask.resume()

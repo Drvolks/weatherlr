@@ -12,10 +12,6 @@ import WatchKit
 class ComplicationController: NSObject, CLKComplicationDataSource {
     override init() {
         super.init()
-        
-        if ExtensionDelegateHelper.refreshNeeded() {
-            ExtensionDelegateHelper.launchURLSession()
-        }
     }
     
     // MARK: - Timeline Configuration
@@ -39,8 +35,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Swift.Void) {
-        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        let wrapper = watchDelegate.wrapper
+        let wrapper = ExtensionDelegateHelper.getWrapper()
+        
+        if(wrapper.refreshNeeded()) {
+            #if DEBUG
+                print("Complication - refresh needed")
+            #endif
+            
+            if let delegate = WKExtension.shared().delegate as? ExtensionDelegate {
+                ExtensionDelegateHelper.launchURLSessionNow(delegate)
+                return
+            }
+        }
         
         var template:CLKComplicationTemplate? = nil
         
@@ -65,7 +71,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 } else if complication.family == .utilitarianSmall {
                     template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .utilitarianLarge {
-                    template = generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
+                    template = generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city, wrapper: wrapper)
                 } else if complication.family == .extraLarge {
                     template = generateExtraLargeTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .utilitarianSmallFlat {
@@ -198,9 +204,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return modularTemplate
     }
     
-    func generateLargeUtilitarianTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateUtilitarianLargeFlat {
+    func generateLargeUtilitarianTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City, wrapper: WeatherInformationWrapper) -> CLKComplicationTemplateUtilitarianLargeFlat {
         let modularTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-        modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
+        //modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: String(describing: Language.French))
+        dateFormatter.timeStyle = .short
+        let fireDateStr = dateFormatter.string(from: wrapper.lastRefresh)
+        
+        modularTemplate.textProvider = CLKSimpleTextProvider(text: fireDateStr)
         
         if let weather = weather {
             modularTemplate.imageProvider = WatchImageHelper.getImage(weatherInformation: weather)

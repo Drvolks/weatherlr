@@ -10,13 +10,14 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSessionDownloadDelegate {
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     
-    var initialState = true
+    var updatedDate = Date(timeIntervalSince1970: 0)
+    var updateInProgress = false
     var rowTypes = [String]()
     
     override func didDeactivate() {
@@ -49,17 +50,18 @@ class InterfaceController: WKInterfaceController {
     
     func loadData() {
         if PreferenceHelper.getSelectedCity() != nil {
-            if ExtensionDelegateHelper.refreshNeeded() {
+            if ExtensionDelegateHelper.refreshNeeded() && !updateInProgress {
+                updateInProgress = true
+                
                 lastRefreshLabel.setHidden(true)
                 
                 cityLabel.setHidden(false)
                 cityLabel.setText("Loading".localized())
                 selectCityButton.setHidden(true)
                 
-                ExtensionDelegateHelper.launchURLSession()
-            } else if initialState {
+                ExtensionDelegateHelper.launchURLSessionNow(self)
+            } else if updatedDate.compare(ExtensionDelegateHelper.getWrapper().lastRefresh) != ComparisonResult.orderedSame {
                 refreshDisplay()
-                initialState = false
             }
         } else {
             cityLabel.setHidden(true)
@@ -68,6 +70,10 @@ class InterfaceController: WKInterfaceController {
     }
     
     func refreshDisplay() {
+        #if DEBUG
+            print("refreshDisplay")
+        #endif
+        
         cityLabel.setText("Loading".localized())
         
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
@@ -133,8 +139,10 @@ class InterfaceController: WKInterfaceController {
         lastRefreshLabel.setHidden(false)
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
         
-        watchDelegate.scheduleSnapshot()
-        watchDelegate.updateComplication()
+        updatedDate = watchDelegate.wrapper.lastRefresh
+        
+        // TODO watchDelegate.scheduleSnapshot()
+        // TODO watchDelegate.updateComplication()
     }
     
     func rowTypesValid() -> Bool {
@@ -243,5 +251,29 @@ class InterfaceController: WKInterfaceController {
     func cityDidChange(_ city: City) {
         PreferenceHelper.addFavorite(city)
         loadData()
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        #if DEBUG
+            print("Watch urlSession didFinishDownloadingTo")
+        #endif
+        
+        if let city = PreferenceHelper.getSelectedCity() {
+            do {
+                let xmlData = try Data(contentsOf: location)
+                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city))
+                
+                #if DEBUG
+                    print("Watch wrapper updated")
+                #endif
+                
+                refreshDisplay()
+                updateInProgress = false
+            } catch {
+                print("Error info: \(error)")
+            }
+        } else {
+            print("Watch urlSession didFinishDownloadingTo - no selected city")
+        }
     }
 }

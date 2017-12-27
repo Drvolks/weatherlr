@@ -8,31 +8,27 @@
 
 import WatchKit
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelegate {
+class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLSessionDownloadDelegate  {
     var wrapper = WeatherInformationWrapper()
-    var backgroundConfigObject:URLSessionConfiguration!
-    var backgroundSession:URLSession!
+    let urlSessionConfig = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
+    var urlSession:URLSession!
     
     override init() {
         super.init()
-        
-        backgroundConfigObject = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
-        backgroundSession = URLSession(configuration: backgroundConfigObject!, delegate: self, delegateQueue:nil)
-        
         WKExtension.shared().delegate = self
     }
     
     func applicationDidFinishLaunching() {
-
+        #if DEBUG
+            print("creating urlSession")
+        #endif
+        urlSession = URLSession(configuration: urlSessionConfig, delegate: self, delegateQueue: nil)
     }
 
     func applicationDidBecomeActive() {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
     func applicationWillResignActive() {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, etc.
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
@@ -40,49 +36,34 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
             print("handle")
         #endif
         
-        for task : WKRefreshBackgroundTask in backgroundTasks {
-            if (WKExtension.shared().applicationState == .background) {
-                if task is WKApplicationRefreshBackgroundTask {
-                    scheduleURLSession()
-                }
-            }
-            else if let snapshotTask = task as? WKSnapshotRefreshBackgroundTask {
-                completeSnapshotTask(task: snapshotTask)
-            }
+        for task in backgroundTasks {
+            #if DEBUG
+                print(task)
+            #endif
             
-            task.setTaskCompletedWithSnapshot(false)
+            if let task = task as? WKApplicationRefreshBackgroundTask {
+                launchURLSession()
+                task.setTaskCompletedWithSnapshot(false)
+            } else if let task = task as? WKSnapshotRefreshBackgroundTask {
+                //updateApplication()
+                task.setTaskCompletedWithSnapshot(true)
+            } else {
+                task.setTaskCompletedWithSnapshot(false)
+            }
         }
     }
     
-    func scheduleSnapshot() {
+    func scheduleRefresh(_ backgroundRefreshInSeconds: Double) {
         #if DEBUG
-            print("scheduleSnapshot")
+            print("scheduleRefresh")
         #endif
         
-        let fireDate = Date()
-        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: fireDate, userInfo: nil) { (error: Error?) in
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: backgroundRefreshInSeconds), userInfo: nil) { (error: Error?) in
             if let error = error {
-                print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
+                print("Error occured while scheduling background refresh: \(error.localizedDescription)")
             }
         }
     }
-    
-    
-    func scheduleURLSession() {
-        #if DEBUG
-            print("scheduleURLSession")
-        #endif
-        
-        if let city = PreferenceHelper.getSelectedCity() {
-            scheduleRefresh()
-            
-            let url = URL(string:UrlHelper.getUrl(city))!
-            
-            let downloadTask = backgroundSession.downloadTask(with: url)
-            downloadTask.resume()
-        }
-    }
-    
     
     func launchURLSession() {
         #if DEBUG
@@ -90,69 +71,42 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         #endif
         
         if let city = PreferenceHelper.getSelectedCity() {
-            scheduleRefresh()
-            
             let url = URL(string:UrlHelper.getUrl(city))!
             
-            let configObject = URLSessionConfiguration.default
-            let session = URLSession(configuration: configObject, delegate: self, delegateQueue:nil)
-
-            let downloadTask = session.downloadTask(with: url)
+            let downloadTask = urlSession.downloadTask(with: url)
             downloadTask.resume()
+            
+            #if DEBUG
+                print("downloadTask fired")
+            #endif
+        } else {
+            print("scheduleURLSession - no selected city")
         }
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         #if DEBUG
-            print("urlSession1")
+            print("urlSession didFinishDownloadingTo")
         #endif
         
-	scheduleRefresh()
-	
         if let city = PreferenceHelper.getSelectedCity() {
             do {
                 let xmlData = try Data(contentsOf: location)
                 wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
                 
-                if let controller = WKExtension.shared().rootInterfaceController as? InterfaceController {
-                    #if DEBUG
-                        print("refreshDisplay")
-                    #endif
-
-                    controller.refreshDisplay()
-                }
+                #if DEBUG
+                    print("wrapper updated")
+                #endif
+                
+                updateComplication()
             } catch {
-                print("error urlSession when loading data at ", location)
+                print("Error info: \(error)")
             }
+        } else {
+            print("urlSession didFinishDownloadingTo - no selected city")
         }
         
-    }
-    
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        #if DEBUG
-            print("urlSession2")
-        #endif
-        
-        if let error = error {
-            print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
-        }
-    }
-    
-    func completeSnapshotTask(task: WKSnapshotRefreshBackgroundTask) {
-        #if DEBUG
-            print("completeSnapshotTask")
-        #endif
-        
-        let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: String(describing: Language.French))
-        dateFormatter.timeStyle = .short
-        let fireDateStr = dateFormatter.string(from: fireDate)
-        
-        let userInfo = ["reason" : "snapshot update " + fireDateStr] as NSDictionary
-        
-        task.setTaskCompleted(restoredDefaultState: false, estimatedSnapshotExpiration: fireDate, userInfo: userInfo)
+        scheduleRefresh(Constants.backgroundRefreshInSeconds)
     }
     
     func updateComplication() {
@@ -164,27 +118,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDownloadDelega
         if let complications = complicationServer.activeComplications {
             for complication in complications {
                 complicationServer.reloadTimeline(for: complication)
-            }
-        }
-    }
-    
-    func scheduleRefresh() {
-        #if DEBUG
-            print("scheduleRefresh")
-        #endif
-        
-        let fireDate = Date(timeIntervalSinceNow: Constants.backgroundRefreshInSeconds)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: String(describing: Language.French))
-        dateFormatter.timeStyle = .short
-        let fireDateStr = dateFormatter.string(from: fireDate)
-        
-        let userInfo = ["reason" : "background update " + fireDateStr] as NSDictionary
-        
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error: Error?) in
-            if let error = error {
-                print("Error occurred while scheduling background refresh: \(error.localizedDescription)")
             }
         }
     }

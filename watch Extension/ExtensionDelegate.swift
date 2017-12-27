@@ -11,18 +11,13 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLSessionDownloadDelegate  {
     var wrapper = WeatherInformationWrapper()
     let urlSessionConfig = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
-    var urlSession:URLSession!
-    
+
     override init() {
         super.init()
         WKExtension.shared().delegate = self
     }
     
     func applicationDidFinishLaunching() {
-        #if DEBUG
-            print("creating urlSession")
-        #endif
-        urlSession = URLSession(configuration: urlSessionConfig, delegate: self, delegateQueue: nil)
     }
 
     func applicationDidBecomeActive() {
@@ -45,7 +40,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
                 launchURLSession()
                 task.setTaskCompletedWithSnapshot(false)
             } else if let task = task as? WKSnapshotRefreshBackgroundTask {
-                //updateApplication()
                 task.setTaskCompletedWithSnapshot(true)
             } else {
                 task.setTaskCompletedWithSnapshot(false)
@@ -73,6 +67,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
         if let city = PreferenceHelper.getSelectedCity() {
             let url = URL(string:UrlHelper.getUrl(city))!
             
+            let urlSession = URLSession(configuration: urlSessionConfig, delegate: self, delegateQueue: nil)
             let downloadTask = urlSession.downloadTask(with: url)
             downloadTask.resume()
             
@@ -101,6 +96,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
                 updateComplication()
             } catch {
                 print("Error info: \(error)")
+                // plan b
+                ExtensionDelegateHelper.launchURLSessionNow(self)
             }
         } else {
             print("urlSession didFinishDownloadingTo - no selected city")

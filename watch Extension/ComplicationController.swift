@@ -71,7 +71,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 } else if complication.family == .utilitarianSmall {
                     template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .utilitarianLarge {
-                    template = generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city, wrapper: wrapper)
+                    template = generateLargeUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .extraLarge {
                     template = generateExtraLargeTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .utilitarianSmallFlat {
@@ -204,16 +204,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return modularTemplate
     }
     
-    func generateLargeUtilitarianTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City, wrapper: WeatherInformationWrapper) -> CLKComplicationTemplateUtilitarianLargeFlat {
+    func generateLargeUtilitarianTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateUtilitarianLargeFlat {
         let modularTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-        //modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: String(describing: Language.French))
-        dateFormatter.timeStyle = .short
-        let fireDateStr = dateFormatter.string(from: wrapper.lastRefresh)
-        
-        modularTemplate.textProvider = CLKSimpleTextProvider(text: fireDateStr)
+        modularTemplate.textProvider = getCurrentTemperature(weather, showCurrently: true)
         
         if let weather = weather {
             modularTemplate.imageProvider = WatchImageHelper.getImage(weatherInformation: weather)

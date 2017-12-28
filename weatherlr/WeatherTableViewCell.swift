@@ -13,7 +13,6 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var whenLabel: UILabel!
     @IBOutlet weak var minMaxLabel: UILabel!
-    @IBOutlet weak var minMaxImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,30 +30,15 @@ class WeatherTableViewCell: UITableViewCell {
         weatherImage.image = weatherInfo.image()
         weatherDetailLabel.text = weatherInfo.detail
         whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo)
-        backgroundColor = UIColor.clear
+        minMaxLabel.text = WeatherHelper.getWeatherTextWithMinMax(weatherInfo)
+        
+        var font = UIFont.boldSystemFont(ofSize: 15)
         
         if weatherInfo.weatherDay == WeatherDay.today && weatherInformationWrapper.weatherInformations[0].weatherDay == .now {
-            var minMax = "Maximum".localized()
-            if weatherInfo.tendancy == Tendency.minimum {
-                minMax = "Minimum".localized()
-            } else if weatherInfo.tendancy == Tendency.steady {
-                if weatherInfo.night {
-                    minMax = "Stable".localized()
-                }
-            }
-            
-            whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo) + " " + minMax + " " + String(weatherInfo.temperature) + "°"
-            whenLabel.font = UIFont.boldSystemFont(ofSize: 20)
-            
-            minMaxLabel.isHidden = true
-            minMaxImage.isHidden = true
-        } else {
-            whenLabel.font = UIFont.boldSystemFont(ofSize: 15)
-            minMaxLabel.text = String(weatherInfo.temperature)
-            minMaxImage.image = WeatherHelper.getMinMaxImage(weatherInfo, header: false)
-            
-            minMaxLabel.isHidden = false
-            minMaxImage.isHidden = false
+            font = UIFont.boldSystemFont(ofSize: 25)
         }
+        
+        whenLabel.font = font
+        minMaxLabel.font = font
     }
 }

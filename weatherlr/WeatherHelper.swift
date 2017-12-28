@@ -262,6 +262,19 @@ class WeatherHelper {
         return indexAjust
     }
     
+    static func getWeatherTextWithMinMax(_ weatherInfo: WeatherInformation) -> String {
+        var minMax = "Maximum".localized()
+        if weatherInfo.tendancy == Tendency.minimum {
+            minMax = "Minimum".localized()
+        } else if weatherInfo.tendancy == Tendency.steady {
+            if weatherInfo.night {
+                minMax = "Stable".localized()
+            }
+        }
+        
+        return minMax + " " + String(weatherInfo.temperature) + "°"
+    }
+    
     static func getWeatherDayWhenText(_ weatherInfo: WeatherInformation) -> String {
         if weatherInfo.weatherDay == WeatherDay.today {
             if weatherInfo.night {

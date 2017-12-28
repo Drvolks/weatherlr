@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vda-Mz-Pqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vda-Mz-Pqn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,208 +74,66 @@
                                 <rect key="frame" x="16" y="20" width="343" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" id="UnG-sV-I34" userLabel="Header" customClass="WeatherHeaderCell" customModule="weatherlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="343" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="90" id="UnG-sV-I34" userLabel="Header" customClass="WeatherHeaderCell" customModule="weatherlr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="343" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UnG-sV-I34" id="Heb-MF-3Tf">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-9P-Atq">
-                                                    <rect key="frame" x="-1" y="11" width="343" height="100"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="8nP-l1-tAb">
-                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="100" id="CcF-fi-Krh"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="HXE-Np-uGC"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="imt-ZP-HOd"/>
-                                                                <constraint firstAttribute="width" secondItem="8nP-l1-tAb" secondAttribute="height" multiplier="1:1" id="ksY-rN-O4y"/>
-                                                                <constraint firstAttribute="width" constant="120" id="yzv-xR-tQ6"/>
-                                                            </constraints>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="HXE-Np-uGC"/>
-                                                                    <exclude reference="imt-ZP-HOd"/>
-                                                                    <exclude reference="ksY-rN-O4y"/>
-                                                                </mask>
-                                                            </variation>
-                                                        </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gd6-WM-4BQ">
-                                                            <rect key="frame" x="120" y="0.0" width="223" height="100"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vlx-LA-Wjy">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="100"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L6i-Ra-uWF">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="100"/>
-                                                                            <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asN-ag-xjG" customClass="VerticalTopAlignLabel" customModule="weatherlr" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="21"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="21" id="Woy-am-vq9"/>
-                                                                                    </constraints>
-                                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FYP-WF-AVk">
-                                                                                    <rect key="frame" x="0.0" y="21" width="183" height="79"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="5jo-9T-bDL"/>
-                                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="Z83-eI-yMG"/>
-                                                                                    </constraints>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                    <variation key="default">
-                                                                                        <mask key="constraints">
-                                                                                            <exclude reference="5jo-9T-bDL"/>
-                                                                                        </mask>
-                                                                                    </variation>
-                                                                                </label>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstItem="asN-ag-xjG" firstAttribute="width" secondItem="L6i-Ra-uWF" secondAttribute="width" id="SZO-zJ-oJn"/>
-                                                                                <constraint firstItem="FYP-WF-AVk" firstAttribute="width" secondItem="L6i-Ra-uWF" secondAttribute="width" id="Vw6-A3-FfA"/>
-                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="o1M-9u-6kU"/>
-                                                                            </constraints>
-                                                                        </stackView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-hN-9tC">
-                                                                            <rect key="frame" x="183" y="30" width="40" height="40"/>
-                                                                            <subviews>
-                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teT-ry-Ofs">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                                                    <subviews>
-                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="0RI-NP-if0">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                                                            <constraints>
-                                                                                                <constraint firstAttribute="width" constant="40" id="5NR-Fd-xpH"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="7gf-Bb-MFT"/>
-                                                                                                <constraint firstAttribute="height" constant="40" id="J8b-ck-En8"/>
-                                                                                                <constraint firstAttribute="height" constant="40" id="bLZ-tK-jRm"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="d8v-PE-Yaq"/>
-                                                                                                <constraint firstAttribute="height" constant="40" id="dGu-HW-GgD"/>
-                                                                                                <constraint firstAttribute="height" constant="40" id="fsG-Sa-8Ud"/>
-                                                                                                <constraint firstAttribute="width" constant="40" id="kca-gi-vc5"/>
-                                                                                            </constraints>
-                                                                                            <variation key="default">
-                                                                                                <mask key="constraints">
-                                                                                                    <exclude reference="5NR-Fd-xpH"/>
-                                                                                                    <exclude reference="7gf-Bb-MFT"/>
-                                                                                                    <exclude reference="J8b-ck-En8"/>
-                                                                                                    <exclude reference="bLZ-tK-jRm"/>
-                                                                                                    <exclude reference="d8v-PE-Yaq"/>
-                                                                                                    <exclude reference="dGu-HW-GgD"/>
-                                                                                                    <exclude reference="fsG-Sa-8Ud"/>
-                                                                                                    <exclude reference="kca-gi-vc5"/>
-                                                                                                </mask>
-                                                                                            </variation>
-                                                                                        </imageView>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e0K-S5-rdU" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                                                            <constraints>
-                                                                                                <constraint firstAttribute="height" constant="40" id="7Fs-Pg-sxJ"/>
-                                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="E35-9I-wyL"/>
-                                                                                            </constraints>
-                                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                            <nil key="highlightedColor"/>
-                                                                                            <variation key="default">
-                                                                                                <mask key="constraints">
-                                                                                                    <exclude reference="7Fs-Pg-sxJ"/>
-                                                                                                    <exclude reference="E35-9I-wyL"/>
-                                                                                                </mask>
-                                                                                            </variation>
-                                                                                        </label>
-                                                                                    </subviews>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="bottom" secondItem="e0K-S5-rdU" secondAttribute="bottom" id="3AL-Ee-X6H"/>
-                                                                                        <constraint firstAttribute="trailing" secondItem="e0K-S5-rdU" secondAttribute="trailing" id="Lfs-ki-so0"/>
-                                                                                        <constraint firstItem="0RI-NP-if0" firstAttribute="leading" secondItem="teT-ry-Ofs" secondAttribute="leading" id="Rx5-gY-xac"/>
-                                                                                        <constraint firstItem="e0K-S5-rdU" firstAttribute="leading" secondItem="teT-ry-Ofs" secondAttribute="leading" id="S5e-av-cqG"/>
-                                                                                        <constraint firstItem="e0K-S5-rdU" firstAttribute="top" secondItem="teT-ry-Ofs" secondAttribute="top" id="Y2e-gF-0hI"/>
-                                                                                        <constraint firstItem="0RI-NP-if0" firstAttribute="top" secondItem="teT-ry-Ofs" secondAttribute="top" id="oEc-XL-8jT"/>
-                                                                                        <constraint firstAttribute="bottom" secondItem="0RI-NP-if0" secondAttribute="bottom" id="uiG-fE-Gon"/>
-                                                                                        <constraint firstAttribute="trailing" secondItem="0RI-NP-if0" secondAttribute="trailing" id="yid-JV-Do7"/>
-                                                                                    </constraints>
-                                                                                </view>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="40" id="3QV-hR-n7x"/>
-                                                                                <constraint firstAttribute="height" constant="40" id="Que-CI-kTb"/>
-                                                                                <constraint firstAttribute="width" constant="40" id="SAR-Tv-mTl"/>
-                                                                                <constraint firstAttribute="height" constant="40" id="Uic-ti-OAp"/>
-                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="fAW-xJ-Bku"/>
-                                                                                <constraint firstAttribute="width" constant="40" id="u8u-vq-UIg"/>
-                                                                            </constraints>
-                                                                            <variation key="default">
-                                                                                <mask key="constraints">
-                                                                                    <exclude reference="3QV-hR-n7x"/>
-                                                                                    <exclude reference="SAR-Tv-mTl"/>
-                                                                                    <exclude reference="Uic-ti-OAp"/>
-                                                                                    <exclude reference="fAW-xJ-Bku"/>
-                                                                                </mask>
-                                                                            </variation>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="QQr-hN-9tC" secondAttribute="bottom" constant="20" id="8dq-6j-3TU"/>
-                                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="NYN-Ei-YgC"/>
-                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Syz-mx-16k"/>
-                                                                        <constraint firstAttribute="height" constant="100" id="fFc-a4-ibh"/>
-                                                                        <constraint firstItem="QQr-hN-9tC" firstAttribute="height" secondItem="Vlx-LA-Wjy" secondAttribute="height" id="kFa-nc-WhU"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="QQr-hN-9tC" secondAttribute="bottom" constant="20" id="nkI-kv-mhP"/>
-                                                                        <constraint firstItem="L6i-Ra-uWF" firstAttribute="height" secondItem="Vlx-LA-Wjy" secondAttribute="height" id="tkG-43-ZuH"/>
-                                                                    </constraints>
-                                                                    <variation key="default">
-                                                                        <mask key="constraints">
-                                                                            <exclude reference="NYN-Ei-YgC"/>
-                                                                            <exclude reference="Syz-mx-16k"/>
-                                                                            <exclude reference="fFc-a4-ibh"/>
-                                                                            <exclude reference="8dq-6j-3TU"/>
-                                                                            <exclude reference="kFa-nc-WhU"/>
-                                                                            <exclude reference="nkI-kv-mhP"/>
-                                                                        </mask>
-                                                                    </variation>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="Vlx-LA-Wjy" firstAttribute="height" secondItem="Gd6-WM-4BQ" secondAttribute="height" id="9KR-r4-3cQ"/>
-                                                                <constraint firstAttribute="height" constant="100" id="g6y-je-W48"/>
-                                                            </constraints>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="g6y-je-W48"/>
-                                                                    <exclude reference="9KR-r4-3cQ"/>
-                                                                </mask>
-                                                            </variation>
-                                                        </stackView>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City 25°" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asN-ag-xjG" customClass="VerticalTopAlignLabel" customModule="weatherlr" customModuleProvider="target">
+                                                    <rect key="frame" x="-0.5" y="7" width="343" height="76"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.1231612041592598" green="0.31097942590713501" blue="0.45643121004104614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="xXu-9P-Atq" firstAttribute="width" secondItem="Heb-MF-3Tf" secondAttribute="width" id="1Mu-zq-MGF"/>
-                                                <constraint firstItem="xXu-9P-Atq" firstAttribute="leading" secondItem="Heb-MF-3Tf" secondAttribute="leadingMargin" constant="-16" id="Bra-zI-DBP"/>
-                                                <constraint firstItem="xXu-9P-Atq" firstAttribute="top" secondItem="Heb-MF-3Tf" secondAttribute="topMargin" id="QVG-ll-F3l"/>
+                                                <constraint firstItem="asN-ag-xjG" firstAttribute="centerY" secondItem="Heb-MF-3Tf" secondAttribute="centerY" id="18q-e1-CsF"/>
+                                                <constraint firstItem="asN-ag-xjG" firstAttribute="top" secondItem="Heb-MF-3Tf" secondAttribute="topMargin" constant="-4" id="HAh-tG-S5x"/>
+                                                <constraint firstItem="asN-ag-xjG" firstAttribute="leading" secondItem="Heb-MF-3Tf" secondAttribute="leading" id="VkR-4t-v1S"/>
+                                                <constraint firstItem="asN-ag-xjG" firstAttribute="centerX" secondItem="Heb-MF-3Tf" secondAttribute="centerX" id="cIq-zC-9Wc"/>
+                                                <constraint firstAttribute="trailing" secondItem="asN-ag-xjG" secondAttribute="trailing" id="f6Z-2j-spT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cityLabel" destination="asN-ag-xjG" id="rfA-Db-eDv"/>
-                                            <outlet property="currentTemperatureLabel" destination="FYP-WF-AVk" id="cP3-xB-PNv"/>
-                                            <outlet property="temperatureImage" destination="0RI-NP-if0" id="NWX-6w-KsT"/>
-                                            <outlet property="temperatureLabel" destination="e0K-S5-rdU" id="Fco-CN-qiv"/>
-                                            <outlet property="weatherImage" destination="8nP-l1-tAb" id="hE6-aO-ArR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherNowCell" rowHeight="200" id="rWe-PS-EGo" customClass="WeatherNowCell" customModule="weatherlr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="91" width="343" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWe-PS-EGo" id="9P1-Eg-9GU">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" image="blowingSnow" translatesAutoresizingMaskIntoConstraints="NO" id="8nP-l1-tAb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="KWz-L2-s3w"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8nP-l1-tAb" firstAttribute="top" secondItem="9P1-Eg-9GU" secondAttribute="top" id="GCE-aV-rem"/>
+                                                <constraint firstItem="8nP-l1-tAb" firstAttribute="leading" secondItem="9P1-Eg-9GU" secondAttribute="leading" id="oJQ-iz-Yes"/>
+                                                <constraint firstAttribute="trailing" secondItem="8nP-l1-tAb" secondAttribute="trailing" id="qFj-O3-Dcv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1231612041592598" green="0.31097942590713501" blue="0.45643121004104614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="weatherImage" destination="8nP-l1-tAb" id="NUz-Qe-c4k"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="60" id="aJv-0C-ytY" customClass="WeatherTableViewCell" customModule="weatherlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="141" width="343" height="60"/>
+                                        <rect key="frame" x="0.0" y="291" width="343" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJv-0C-ytY" id="Rsr-vn-vr5">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIN-VY-oZw">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LIN-VY-oZw">
                                                     <rect key="frame" x="65" y="5" width="258" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="0f3-BI-1s6"/>
@@ -445,7 +302,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.61960784313725492" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.34403660935173674" blue="0.42300274646660696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="IOA-ci-JnR" secondAttribute="leading" constant="15" id="Amd-fY-vbi"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0UC-87-mQn" secondAttribute="leading" id="Ppz-Yv-rEV"/>
@@ -493,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-53" y="406"/>
+            <point key="canvasLocation" x="-53.600000000000001" y="405.24737631184411"/>
         </scene>
         <!--Alert View Controller-->
         <scene sceneID="KTg-Dr-wSA">
@@ -1095,6 +952,7 @@
     </scenes>
     <resources>
         <image name="Flag_of_Canada.png" width="213" height="106"/>
+        <image name="blowingSnow" width="200" height="166"/>
         <image name="radar" width="28" height="28"/>
         <image name="rainAtTimesHeavy" width="200" height="166"/>
         <image name="settings" width="28" height="28"/>

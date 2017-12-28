@@ -19,8 +19,8 @@ class ErrorViewController: UIViewController {
         errorLabel.text = "Error".localized()
         tryAgainButton.title = "Try Again".localized()
 
-        let colorDay = UIColor(weatherColor: WeatherColor.clearDay)
-        let colorNight = UIColor(weatherColor: WeatherColor.clearNight)
+        let colorDay = UIColor(weatherColor: WeatherColor.defaultColor)
+        let colorNight = UIColor(weatherColor: WeatherColor.defaultColor)
         
         view.backgroundColor = colorDay
         gradientView.backgroundColor = colorDay

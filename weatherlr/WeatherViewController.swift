@@ -51,7 +51,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.dataSource = self
         weatherTable.rowHeight = UITableViewAutomaticDimension
         weatherTable.estimatedRowHeight = 100.0
-        weatherTable.tableHeaderView = nil
+        //weatherTable.tableHeaderView = nil
         weatherTable.backgroundColor = UIColor.clear
         
         refreshControl = UIRefreshControl()
@@ -160,28 +160,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func decorate() {
-        var colorDay = UIColor(weatherColor: WeatherColor.clearDay)
-        var colorNight = UIColor(weatherColor: WeatherColor.clearNight)
-        
-        if weatherInformationWrapper.weatherInformations.count > 0 {
-            let weatherInfo = weatherInformationWrapper.weatherInformations[0]
-            
-            colorDay = UIColor(weatherColor: weatherInfo.color())
-            
-            switch weatherInfo.color() {
-            case .clearDay:
-                colorNight = UIColor(weatherColor: WeatherColor.clearNight)
-                break
-            case .snowDay:
-                colorNight = UIColor(weatherColor: WeatherColor.snowNight)
-                break
-            case .cloudyDay:
-                colorNight = UIColor(weatherColor: WeatherColor.cloudyNight)
-                break
-            default:
-                colorNight = UIColor(weatherColor: WeatherColor.defaultColor)
-            }
-        }
+        let colorDay = UIColor(weatherColor: WeatherColor.defaultColor)
+        let colorNight = UIColor(weatherColor: WeatherColor.defaultColor)
         
         view.backgroundColor = colorDay
         gradientView.backgroundColor = colorDay
@@ -210,16 +190,26 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
+        // other cells
         let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
-        
         return weatherInformationWrapper.weatherInformations.count - indexAjust
     }
     
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
+            
+             if let city = selectedCity {
+                cell.populate(city, weatherInformationWrapper: weatherInformationWrapper)
+             }
+            
+             return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherTableViewCell
-        
+            
         cell.populate(weatherInformationWrapper, indexPath: indexPath)
-        
+            
         return cell
     }
     
@@ -229,28 +219,35 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "header")! as! WeatherHeaderCell
-        
+            
         if let city = selectedCity {
             header.populate(city, weatherInformationWrapper: weatherInformationWrapper)
         }
-        
-        header.bounds.size.width = weatherTable.bounds.size.width
-        
-        header.gradientBackground(self.view.backgroundColor!)
-        
+            
         return header
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if indexPath.row == 0 {
+            if weatherInformationWrapper.weatherInformations.count > 0 {
+                let weatherInfo = weatherInformationWrapper.weatherInformations[0]
+                
+                if weatherInfo.weatherDay == WeatherDay.now {
+                    if(weatherInfo.weatherStatus != .blank) {
+                        return 200
+                    }
+                }
+            }
+            
+            return 0
+        }
+        
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if weatherInformationWrapper.weatherInformations.count > 0 {
-            let weatherInfo = weatherInformationWrapper.weatherInformations[0]
-            
-            if weatherInfo.weatherDay != WeatherDay.now {
-                return 30
-            }
-        }
-        
-        return 130
+        return 70
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

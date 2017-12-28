@@ -1,16 +1,15 @@
 //
-//  WeatherHeaderCell.swift
+//  WeatherNowCell.swift
 //  weatherlr
 //
-//  Created by Jean-Francois Dufour on 2016-04-09.
-//  Copyright © 2016 Jean-Francois Dufour. All rights reserved.
+//  Created by Jean-Francois Dufour on 17-12-28.
+//  Copyright © 2017 Jean-Francois Dufour. All rights reserved.
 //
 
 import UIKit
 
-class WeatherHeaderCell: UITableViewCell {
-
-    @IBOutlet weak var cityLabel: VerticalTopAlignLabel!
+class WeatherNowCell: UITableViewCell {
+    @IBOutlet weak var weatherImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,13 +23,18 @@ class WeatherHeaderCell: UITableViewCell {
     }
     
     func populate(_ city:City, weatherInformationWrapper: WeatherInformationWrapper) {
-        cityLabel.text = CityHelper.cityName(city)
-        
         if weatherInformationWrapper.weatherInformations.count > 0 {
             let weatherInfo = weatherInformationWrapper.weatherInformations[0]
             
             if weatherInfo.weatherDay == WeatherDay.now {
-                cityLabel.text = CityHelper.cityName(city) + " " + String(weatherInfo.temperature) + "°"
+                if(weatherInfo.weatherStatus == .blank) {
+                    weatherImage.isHidden = true
+                } else {
+                    weatherImage.image = weatherInfo.image()
+                    weatherImage.isHidden = false
+                }
+            } else {
+                weatherImage.isHidden = true
             }
         }
     }

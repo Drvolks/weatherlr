@@ -27,18 +27,29 @@ class WeatherTableViewCell: UITableViewCell {
     }
 
     func populate(_ weatherInformationWrapper: WeatherInformationWrapper, indexPath: IndexPath) {
-        let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
-        
-        let weatherInfo = weatherInformationWrapper.weatherInformations[(indexPath as NSIndexPath).row+indexAjust]
+        let weatherInfo = weatherInformationWrapper.weatherInformations[(indexPath as NSIndexPath).row]
         weatherImage.image = weatherInfo.image()
         weatherDetailLabel.text = weatherInfo.detail
         whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo)
         backgroundColor = UIColor.clear
         
         if weatherInfo.weatherDay == WeatherDay.today && weatherInformationWrapper.weatherInformations[0].weatherDay == .now {
+            var minMax = "Maximum".localized()
+            if weatherInfo.tendancy == Tendency.minimum {
+                minMax = "Minimum".localized()
+            } else if weatherInfo.tendancy == Tendency.steady {
+                if weatherInfo.night {
+                    minMax = "Stable".localized()
+                }
+            }
+            
+            whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo) + " " + minMax + " " + String(weatherInfo.temperature) + "°"
+            whenLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            
             minMaxLabel.isHidden = true
             minMaxImage.isHidden = true
         } else {
+            whenLabel.font = UIFont.boldSystemFont(ofSize: 15)
             minMaxLabel.text = String(weatherInfo.temperature)
             minMaxImage.image = WeatherHelper.getMinMaxImage(weatherInfo, header: false)
             

@@ -9,10 +9,7 @@
 import Foundation
 
 class Constants {
-    
     static let selectedWatchCityKey = "selectedWatchCity"
-    
-    
     static let requestCityMessage = "requestCityMessage"
     static let cityListKey = "cityList"
     static let searchTextKey = "searchText"
@@ -20,7 +17,7 @@ class Constants {
     #if DEBUG
         static let backgroundRefreshInSeconds = 1.0 * 60.0
     #else
-        static let backgroundRefreshInSeconds = 30.0 * 60.0
+        static let backgroundRefreshInSeconds = Global.expirationInMinutes * 60.0
     #endif
     
     #if FREE
@@ -30,5 +27,4 @@ class Constants {
     #endif
     
     static let googleAddId = "ca-app-pub-2793046476751764/6255610730"
-    
 }

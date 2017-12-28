@@ -17,7 +17,7 @@ class Constants {
     #if DEBUG
         static let backgroundRefreshInSeconds = 1.0 * 60.0
     #else
-        static let backgroundRefreshInSeconds = Global.expirationInMinutes * 60.0
+        static let backgroundRefreshInSeconds = Double(Global.expirationInMinutes) * 60.0
     #endif
     
     #if FREE

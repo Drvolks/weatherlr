@@ -15,7 +15,6 @@ import UIKit
 class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!
-    @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var warningBarButton: UIBarButtonItem!
     @IBOutlet weak var radarButton: UIBarButtonItem!
     #if FREE
@@ -162,14 +161,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func decorate() {
-        let colorDay = UIColor(weatherColor: WeatherColor.defaultColor)
-        let colorNight = UIColor(weatherColor: WeatherColor.defaultColor)
-        
-        view.backgroundColor = colorDay
-        gradientView.backgroundColor = colorDay
-        
-        gradientView.gradientWithColors(colorDay, colorNight)
-        
         if view.bounds.size.width > maxWidth {
             weatherTable.bounds.size.width = maxWidth
         }

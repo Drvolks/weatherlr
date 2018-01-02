@@ -176,7 +176,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if weatherInformationWrapper.alerts.count > 0 {
             warningBarButton.isEnabled = true
-            warningBarButton.image = UIImage(named: "warning2")
+            warningBarButton.image = UIImage(named: "warning")
         } else {
             warningBarButton.isEnabled = false
             warningBarButton.image = nil

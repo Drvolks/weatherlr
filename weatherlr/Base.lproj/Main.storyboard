@@ -264,7 +264,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="nxU-3d-Fp4"/>
-                        <barButtonItem image="warning2" id="4Bz-ee-TLE">
+                        <barButtonItem image="warning" id="4Bz-ee-TLE">
                             <connections>
                                 <action selector="showAlert:" destination="BYZ-38-t0r" id="uyR-BP-nBr"/>
                             </connections>
@@ -895,6 +895,6 @@
         <image name="radar" width="28" height="28"/>
         <image name="rainAtTimesHeavy" width="200" height="166"/>
         <image name="settings" width="28" height="28"/>
-        <image name="warning2" width="166" height="166"/>
+        <image name="warning" width="166" height="166"/>
     </resources>
 </document>

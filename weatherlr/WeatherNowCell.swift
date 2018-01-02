@@ -11,18 +11,15 @@ import UIKit
 class WeatherNowCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper) {
+        if let city = city {
+            populate(city: city, weatherInformationWrapper: weatherInformationWrapper)
+        }
         
-        // Configure the view for the selected state
+        separatorInset = UIEdgeInsetsMake(0, 0, 0, UIScreen.main.bounds.width)
     }
     
-    func populate(_ city:City, weatherInformationWrapper: WeatherInformationWrapper) {
+    private func populate(city:City, weatherInformationWrapper: WeatherInformationWrapper) {
         if weatherInformationWrapper.weatherInformations.count > 0 {
             let weatherInfo = weatherInformationWrapper.weatherInformations[0]
             

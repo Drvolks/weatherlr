@@ -173,6 +173,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             warningBarButton.image = nil
         }
         
+        // TODO retirer l'image au lieu du tint
         if selectedCity != nil && !selectedCity!.radarId.isEmpty {
             radarButton.isEnabled = true
             radarButton.tintColor = nil
@@ -183,7 +184,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        // other cells
         let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
         return weatherInformationWrapper.weatherInformations.count - indexAjust
     }
@@ -191,12 +191,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
-            
-             if let city = selectedCity {
-                cell.populate(city, weatherInformationWrapper: weatherInformationWrapper)
-             }
-            
-             return cell
+            cell.initialize(city: selectedCity, weatherInformationWrapper: weatherInformationWrapper)
+            return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherTableViewCell

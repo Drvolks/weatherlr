@@ -176,9 +176,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if weatherInformationWrapper.alerts.count > 0 {
             warningBarButton.isEnabled = true
+            warningBarButton.image = UIImage(named: "warning2")
         } else {
             warningBarButton.isEnabled = false
-            warningBarButton.tintColor = UIColor.clear
+            warningBarButton.image = nil
         }
         
         if selectedCity != nil && !selectedCity!.radarId.isEmpty {

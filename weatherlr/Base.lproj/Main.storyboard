@@ -66,10 +66,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ok4-Zn-oFQ" customClass="GradientView" customModule="weatherlr" customModuleProvider="target">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="643"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="140" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0UC-87-mQn">
                                 <rect key="frame" x="16" y="20" width="343" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -241,19 +237,15 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.34403660935173674" blue="0.42300274646660696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="IOA-ci-JnR" secondAttribute="leading" constant="15" id="Amd-fY-vbi"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0UC-87-mQn" secondAttribute="leading" id="Ppz-Yv-rEV"/>
                             <constraint firstItem="IOA-ci-JnR" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="S3a-dN-H5M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0UC-87-mQn" secondAttribute="trailing" id="YwF-t0-axs"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ok4-Zn-oFQ" secondAttribute="bottom" constant="-20" id="Zr3-iM-NDL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ok4-Zn-oFQ" secondAttribute="trailing" constant="-20" id="h4v-Hv-V6u"/>
-                            <constraint firstItem="ok4-Zn-oFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="jAa-zQ-cYK"/>
                             <constraint firstItem="0UC-87-mQn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jvP-IK-N4M"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IOA-ci-JnR" secondAttribute="bottom" id="n6Z-z9-cHS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IOA-ci-JnR" secondAttribute="trailing" constant="-15" id="oYT-jC-OCO"/>
-                            <constraint firstItem="ok4-Zn-oFQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ocU-YG-kNU"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -280,7 +272,6 @@
                     <connections>
                         <outlet property="googleBannerHeightConstraint" destination="86m-ci-NiX" id="GVg-bf-osH"/>
                         <outlet property="googleBannerView" destination="IOA-ci-JnR" id="IeX-DC-JkV"/>
-                        <outlet property="gradientView" destination="ok4-Zn-oFQ" id="uhv-NR-e8v"/>
                         <outlet property="radarButton" destination="7SW-Zm-9Eg" id="mmd-DB-eME"/>
                         <outlet property="warningBarButton" destination="4Bz-ee-TLE" id="v8H-gH-yo1"/>
                         <outlet property="weatherTable" destination="0UC-87-mQn" id="8dB-z3-7hh"/>

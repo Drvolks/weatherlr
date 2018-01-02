@@ -150,14 +150,14 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-6d-xQy" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
-                                                    <rect key="frame" x="65" y="16" width="278" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-6d-xQy" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
+                                                    <rect key="frame" x="64" y="16" width="279" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isK-Iz-a9y">
-                                                    <rect key="frame" x="65" y="35.5" width="278" height="34.5"/>
+                                                    <rect key="frame" x="66" y="35.5" width="277" height="34.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="P8S-SQ-AuP"/>
                                                     </constraints>
@@ -181,7 +181,7 @@
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" constant="-3" id="IuP-Dr-TtQ"/>
                                                 <constraint firstItem="isK-Iz-a9y" firstAttribute="top" secondItem="MIo-6d-xQy" secondAttribute="bottom" id="L7F-kM-4UG"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="leading" secondItem="Rsr-vn-vr5" secondAttribute="leadingMargin" constant="1" id="LfA-cT-sa3"/>
-                                                <constraint firstItem="MIo-6d-xQy" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="5" id="Swa-55-8P9"/>
+                                                <constraint firstItem="MIo-6d-xQy" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="4" id="Swa-55-8P9"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="isK-Iz-a9y" secondAttribute="bottom" constant="20" id="WpQ-un-nxn"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="qo3-o5-Hbl" secondAttribute="bottom" constant="-10" id="b2j-Hl-Xrs"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="leading" secondItem="Rsr-vn-vr5" secondAttribute="leading" id="gN4-hA-9mD"/>
@@ -194,7 +194,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="MIo-6d-xQy" secondAttribute="trailing" id="qK3-1d-VJZ"/>
                                                 <constraint firstItem="LIN-VY-oZw" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="5" id="sd7-ga-FIm"/>
                                                 <constraint firstAttribute="trailing" secondItem="LIN-VY-oZw" secondAttribute="trailing" id="tFW-tZ-Ebg"/>
-                                                <constraint firstItem="isK-Iz-a9y" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="5" id="x96-g7-q1g"/>
+                                                <constraint firstItem="isK-Iz-a9y" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="6" id="x96-g7-q1g"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="qo3-o5-Hbl" secondAttribute="bottom" constant="-8.5" id="xsm-e3-qaa"/>
                                             </constraints>
                                             <variation key="default">

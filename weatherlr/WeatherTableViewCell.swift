@@ -32,13 +32,12 @@ class WeatherTableViewCell: UITableViewCell {
         whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo)
         minMaxLabel.text = WeatherHelper.getWeatherTextWithMinMax(weatherInfo)
         
-        var font = UIFont.boldSystemFont(ofSize: 15)
-        
         if weatherInfo.weatherDay == WeatherDay.today && weatherInformationWrapper.weatherInformations[0].weatherDay == .now {
-            font = UIFont.boldSystemFont(ofSize: 25)
+            whenLabel.font = UIFont.boldSystemFont(ofSize: 25)
+            minMaxLabel.font = UIFont.systemFont(ofSize: 23)
+        } else {
+            whenLabel.font = UIFont.boldSystemFont(ofSize: 17)
+            minMaxLabel.font = UIFont.systemFont(ofSize: 15)
         }
-        
-        whenLabel.font = font
-        minMaxLabel.font = font
     }
 }

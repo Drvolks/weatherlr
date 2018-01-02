@@ -237,7 +237,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 if weatherInfo.weatherDay == WeatherDay.now {
                     if(weatherInfo.weatherStatus != .blank) {
-                        return 200
+                        return 210
                     }
                 }
             }

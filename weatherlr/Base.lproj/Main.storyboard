@@ -96,20 +96,20 @@
                                                 <constraint firstItem="asN-ag-xjG" firstAttribute="leading" secondItem="Heb-MF-3Tf" secondAttribute="leading" id="xp2-Do-w5d"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="cityLabel" destination="asN-ag-xjG" id="rfA-Db-eDv"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherNowCell" rowHeight="200" id="rWe-PS-EGo" customClass="WeatherNowCell" customModule="weatherlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="91" width="343" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherNowCell" rowHeight="210" id="rWe-PS-EGo" customClass="WeatherNowCell" customModule="weatherlr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="91" width="343" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWe-PS-EGo" id="9P1-Eg-9GU">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" image="blowingSnow" translatesAutoresizingMaskIntoConstraints="NO" id="8nP-l1-tAb">
-                                                    <rect key="frame" x="0.0" y="-10" width="343" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="KWz-L2-s3w"/>
                                                     </constraints>
@@ -127,7 +127,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="90" id="aJv-0C-ytY" customClass="WeatherTableViewCell" customModule="weatherlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="291" width="343" height="90"/>
+                                        <rect key="frame" x="0.0" y="301" width="343" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJv-0C-ytY" id="Rsr-vn-vr5">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="90"/>
@@ -895,6 +895,6 @@
         <image name="radar" width="28" height="28"/>
         <image name="rainAtTimesHeavy" width="200" height="166"/>
         <image name="settings" width="28" height="28"/>
-        <image name="warning" width="28" height="28"/>
+        <image name="warning" width="166" height="166"/>
     </resources>
 </document>

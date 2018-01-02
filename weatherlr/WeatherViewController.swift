@@ -176,7 +176,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if weatherInformationWrapper.alerts.count > 0 {
             warningBarButton.isEnabled = true
-            warningBarButton.tintColor = UIColor.red
         } else {
             warningBarButton.isEnabled = false
             warningBarButton.tintColor = UIColor.clear

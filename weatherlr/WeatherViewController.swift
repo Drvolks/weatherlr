@@ -221,11 +221,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "header")! as! WeatherHeaderCell
-            
-        if let city = selectedCity {
-            header.populate(city, weatherInformationWrapper: weatherInformationWrapper)
-        }
-            
+        header.initialize(city: selectedCity, weatherInformationWrapper: weatherInformationWrapper)
         return header
     }
 

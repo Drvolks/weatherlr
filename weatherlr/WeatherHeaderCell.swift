@@ -20,14 +20,15 @@ class WeatherHeaderCell: UITableViewCell {
     }
     
     private func populate(city:City, weatherInformationWrapper: WeatherInformationWrapper) {
-        cityLabel.text = CityHelper.cityName(city)
-        
         if weatherInformationWrapper.weatherInformations.count > 0 {
             let weatherInfo = weatherInformationWrapper.weatherInformations[0]
             
             if weatherInfo.weatherDay == WeatherDay.now {
                 cityLabel.text = CityHelper.cityName(city) + " " + String(weatherInfo.temperature) + "°"
+                return
             }
         }
+        
+        cityLabel.text = CityHelper.cityName(city)
     }
 }

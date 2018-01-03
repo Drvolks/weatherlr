@@ -36,9 +36,8 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         allCities = buildCityIndex(allCityList)
         allSections = buildSections(allCities)
 
-        // TODO remove
-        //let parser = CityParser()
-        //parser.perform()
+        self.navigationController?.navigationBar.barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         resetSearch()
         

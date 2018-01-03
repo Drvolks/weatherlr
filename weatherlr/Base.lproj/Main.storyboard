@@ -123,11 +123,11 @@
                                             <outlet property="weatherImage" destination="8nP-l1-tAb" id="NUz-Qe-c4k"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="90" id="aJv-0C-ytY" customClass="WeatherTableViewCell" customModule="weatherlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="301" width="343" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="100" id="aJv-0C-ytY" customClass="WeatherTableViewCell" customModule="weatherlr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="301" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJv-0C-ytY" id="Rsr-vn-vr5">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qo3-o5-Hbl">
@@ -143,20 +143,23 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LIN-VY-oZw">
-                                                    <rect key="frame" x="65" y="10" width="278" height="16"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Today June 24th" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LIN-VY-oZw">
+                                                    <rect key="frame" x="65" y="10" width="144.5" height="21.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="5qt-yT-ecN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-6d-xQy" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
-                                                    <rect key="frame" x="64" y="26" width="279" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="22°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-6d-xQy" customClass="MinMaxLabel" customModule="weatherlr" customModuleProvider="target">
+                                                    <rect key="frame" x="209.5" y="10" width="133.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isK-Iz-a9y">
-                                                    <rect key="frame" x="66" y="45.5" width="277" height="24.5"/>
+                                                    <rect key="frame" x="66" y="31.5" width="277" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="P8S-SQ-AuP"/>
                                                     </constraints>
@@ -175,13 +178,14 @@
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="centerX" secondItem="Rsr-vn-vr5" secondAttribute="centerX" id="07S-dz-7iW"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" constant="-8" id="4Y7-j0-MPI"/>
                                                 <constraint firstItem="LIN-VY-oZw" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="top" constant="10" id="7BD-9h-73B"/>
+                                                <constraint firstItem="LIN-VY-oZw" firstAttribute="trailing" secondItem="MIo-6d-xQy" secondAttribute="leading" id="BQn-lA-lrE"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="502" id="Ck0-9A-RzD"/>
-                                                <constraint firstItem="MIo-6d-xQy" firstAttribute="top" secondItem="LIN-VY-oZw" secondAttribute="bottom" id="DAm-8v-5X6"/>
+                                                <constraint firstItem="MIo-6d-xQy" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="top" constant="10" id="DAm-8v-5X6"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qo3-o5-Hbl" secondAttribute="bottom" constant="10" id="E05-EW-LWi"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" constant="-3" id="IuP-Dr-TtQ"/>
-                                                <constraint firstItem="isK-Iz-a9y" firstAttribute="top" secondItem="MIo-6d-xQy" secondAttribute="bottom" id="L7F-kM-4UG"/>
+                                                <constraint firstItem="isK-Iz-a9y" firstAttribute="top" secondItem="LIN-VY-oZw" secondAttribute="bottom" id="L7F-kM-4UG"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="leading" secondItem="Rsr-vn-vr5" secondAttribute="leadingMargin" constant="1" id="LfA-cT-sa3"/>
-                                                <constraint firstItem="MIo-6d-xQy" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="4" id="Swa-55-8P9"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="isK-Iz-a9y" secondAttribute="bottom" constant="20" id="WpQ-un-nxn"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="isK-Iz-a9y" secondAttribute="bottom" constant="10" id="WpQ-un-nxn"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="qo3-o5-Hbl" secondAttribute="bottom" constant="-10" id="b2j-Hl-Xrs"/>
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="leading" secondItem="Rsr-vn-vr5" secondAttribute="leading" id="gN4-hA-9mD"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="qo3-o5-Hbl" secondAttribute="bottom" constant="-8" id="h2c-Jw-4qz"/>
@@ -192,7 +196,6 @@
                                                 <constraint firstItem="qo3-o5-Hbl" firstAttribute="top" secondItem="Rsr-vn-vr5" secondAttribute="topMargin" constant="10" id="pSU-zW-HHy"/>
                                                 <constraint firstAttribute="trailing" secondItem="MIo-6d-xQy" secondAttribute="trailing" id="qK3-1d-VJZ"/>
                                                 <constraint firstItem="LIN-VY-oZw" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="5" id="sd7-ga-FIm"/>
-                                                <constraint firstAttribute="trailing" secondItem="LIN-VY-oZw" secondAttribute="trailing" id="tFW-tZ-Ebg"/>
                                                 <constraint firstItem="isK-Iz-a9y" firstAttribute="leading" secondItem="qo3-o5-Hbl" secondAttribute="trailing" constant="6" id="x96-g7-q1g"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="qo3-o5-Hbl" secondAttribute="bottom" constant="-8.5" id="xsm-e3-qaa"/>
                                             </constraints>

@@ -361,7 +361,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="hkA-1r-g1P" secondAttribute="trailing" constant="-20" id="Pcc-P2-JpW"/>
                             <constraint firstItem="iNe-w0-SDs" firstAttribute="top" secondItem="hkA-1r-g1P" secondAttribute="bottom" id="cdP-wb-s9E"/>
@@ -439,7 +439,7 @@
                                 <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4jR-9S-bQh" firstAttribute="leading" secondItem="wWW-9d-D22" secondAttribute="leadingMargin" constant="-20" id="JGq-VU-8dX"/>
                             <constraint firstItem="lzU-se-ROR" firstAttribute="top" secondItem="4jR-9S-bQh" secondAttribute="bottom" id="UT5-w5-1jE"/>

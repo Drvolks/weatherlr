@@ -30,7 +30,7 @@ class WeatherTableViewCell: UITableViewCell {
         weatherImage.image = weatherInfo.image()
         weatherDetailLabel.text = weatherInfo.detail
         whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo)
-        minMaxLabel.text = WeatherHelper.getWeatherTextWithMinMax(weatherInfo)
+        minMaxLabel.text = String(weatherInfo.temperature) + "°"
         
         var font = UIFont.boldSystemFont(ofSize: 17)
         if weatherInfo.weatherDay == WeatherDay.today && weatherInformationWrapper.weatherInformations[0].weatherDay == .now {

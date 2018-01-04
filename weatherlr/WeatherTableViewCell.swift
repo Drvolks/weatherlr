@@ -14,18 +14,11 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var whenLabel: UILabel!
     @IBOutlet weak var minMaxLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func initialize(weatherInformationWrapper: WeatherInformationWrapper, indexPath: IndexPath) {
+        populate(weatherInformationWrapper: weatherInformationWrapper, indexPath: indexPath)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-    func populate(_ weatherInformationWrapper: WeatherInformationWrapper, indexPath: IndexPath) {
+    
+    private func populate(weatherInformationWrapper: WeatherInformationWrapper, indexPath: IndexPath) {
         let weatherInfo = weatherInformationWrapper.weatherInformations[(indexPath as NSIndexPath).row]
         weatherImage.image = weatherInfo.image()
         weatherDetailLabel.text = weatherInfo.detail
@@ -38,6 +31,6 @@ class WeatherTableViewCell: UITableViewCell {
         }
         
         whenLabel.font = font
-        minMaxLabel.font = font
+        minMaxLabel.font = UIFont.boldSystemFont(ofSize: 25)
     }
 }

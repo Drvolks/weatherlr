@@ -196,9 +196,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherTableViewCell
-            
-        cell.populate(weatherInformationWrapper, indexPath: indexPath)
-            
+        cell.initialize(weatherInformationWrapper: weatherInformationWrapper, indexPath: indexPath)
         return cell
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 class WeatherHeaderCell: UITableViewCell {
-    @IBOutlet weak var cityLabel: VerticalTopAlignLabel!
+    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
     func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper) {

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,44 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data provided by Environment Canada" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mel-mm-4xu">
-                                <rect key="frame" x="84" y="624" width="216.5" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Flag_of_Canada.png" highlightedImage="Flag_of_Canada.png" translatesAutoresizingMaskIntoConstraints="NO" id="icY-hp-b60">
-                                <rect key="frame" x="16" y="615" width="60" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="aYe-pi-czx"/>
-                                    <constraint firstAttribute="width" constant="60" id="sVP-8t-SFE"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch.png" translatesAutoresizingMaskIntoConstraints="NO" id="t58-3i-cny">
-                                <rect key="frame" x="65" y="134" width="245" height="299"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="299" id="HbZ-0j-XF9"/>
-                                    <constraint firstAttribute="width" constant="245" id="dUO-xr-O2e"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Weatherlr Launchscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="t58-3i-cny">
+                                <rect key="frame" x="20" y="-83" width="335" height="833"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="icY-hp-b60" secondAttribute="leading" id="4jv-YZ-N5N"/>
-                            <constraint firstItem="mel-mm-4xu" firstAttribute="leading" secondItem="icY-hp-b60" secondAttribute="trailing" constant="8" id="5Id-gK-dWV"/>
-                            <constraint firstItem="icY-hp-b60" firstAttribute="top" secondItem="mel-mm-4xu" secondAttribute="bottom" constant="-26" id="6bB-2z-lfl"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="icY-hp-b60" secondAttribute="bottom" constant="20" id="PbT-Bh-vUr"/>
+                            <constraint firstItem="t58-3i-cny" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="QtU-OQ-UPu"/>
+                            <constraint firstAttribute="trailing" secondItem="t58-3i-cny" secondAttribute="trailing" constant="20" id="Qx6-6f-23V"/>
                             <constraint firstItem="t58-3i-cny" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Wgd-6x-P1X"/>
-                            <constraint firstItem="mel-mm-4xu" firstAttribute="centerY" secondItem="icY-hp-b60" secondAttribute="centerY" id="b62-oO-4aw"/>
-                            <constraint firstItem="mel-mm-4xu" firstAttribute="leading" secondItem="icY-hp-b60" secondAttribute="trailing" constant="8" id="bw5-p2-Vtd"/>
-                            <constraint firstItem="t58-3i-cny" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="eud-uy-FwD"/>
+                            <constraint firstItem="t58-3i-cny" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eud-uy-FwD"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="6bB-2z-lfl"/>
-                                <exclude reference="bw5-p2-Vtd"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
@@ -69,7 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Flag_of_Canada.png" width="213" height="106"/>
-        <image name="launch.png" width="341" height="416"/>
+        <image name="Weatherlr Launchscreen.png" width="682" height="833"/>
     </resources>
 </document>

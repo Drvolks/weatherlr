@@ -21,9 +21,6 @@ class AlertDetailViewController: UIViewController, UIWebViewDelegate {
         
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        
         self.title = "Warning".localized()
     }
     

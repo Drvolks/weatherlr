@@ -51,11 +51,6 @@ class SettingsViewController: UITableViewController {
         cityTable.estimatedRowHeight = 21
         cityTable.rowHeight = UITableViewAutomaticDimension
         
-        self.navigationController?.navigationBar.barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.toolbar.barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
-        self.navigationController?.toolbar.tintColor = UIColor.white
-        
         cityTable.reloadData()
     }
 

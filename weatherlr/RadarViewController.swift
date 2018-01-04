@@ -26,9 +26,6 @@ class RadarViewController: UIViewController, WKNavigationDelegate {
         
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        
         self.title = "Radar".localized()
     }
     

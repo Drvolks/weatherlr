@@ -230,7 +230,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return 140
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

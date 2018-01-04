@@ -52,9 +52,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.backgroundColor = UIColor.clear
         
-        self.navigationController?.toolbar.barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
-        self.navigationController?.toolbar.tintColor = UIColor.white
-        
         refreshControl = UIRefreshControl()
         refreshLabel()
         refreshControl.addTarget(self, action: #selector(refreshFromScroll(_:)), for: UIControlEvents.valueChanged)

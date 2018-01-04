@@ -35,9 +35,6 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         allCities = buildCityIndex(allCityList)
         allSections = buildSections(allCities)
-
-        self.navigationController?.navigationBar.barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
-        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         resetSearch()
         

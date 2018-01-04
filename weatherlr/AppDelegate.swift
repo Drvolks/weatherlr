@@ -34,6 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             performShortcutDelegate = false
         }
         
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
+        UIToolbar.appearance().tintColor = UIColor.white
+        UIToolbar.appearance().barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
+        
         return performShortcutDelegate
     }
     

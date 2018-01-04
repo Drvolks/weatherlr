@@ -10,6 +10,7 @@ import UIKit
 
 class WeatherHeaderCell: UITableViewCell {
     @IBOutlet weak var cityLabel: VerticalTopAlignLabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     
     func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper) {
         if let city = city {
@@ -24,11 +25,13 @@ class WeatherHeaderCell: UITableViewCell {
             let weatherInfo = weatherInformationWrapper.weatherInformations[0]
             
             if weatherInfo.weatherDay == WeatherDay.now {
-                cityLabel.text = CityHelper.cityName(city) + " " + String(weatherInfo.temperature) + "°"
+                cityLabel.text = CityHelper.cityName(city)
+                temperatureLabel.text = String(weatherInfo.temperature) + "°"
                 return
             }
         }
         
+        temperatureLabel.text = ""
         cityLabel.text = CityHelper.cityName(city)
     }
 }

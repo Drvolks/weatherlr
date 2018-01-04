@@ -72,23 +72,31 @@
                                 <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="90" id="UnG-sV-I34" userLabel="Header" customClass="WeatherHeaderCell" customModule="weatherlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="343" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="150" id="UnG-sV-I34" userLabel="Header" customClass="WeatherHeaderCell" customModule="weatherlr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UnG-sV-I34" id="Heb-MF-3Tf">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City 25°" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asN-ag-xjG" customClass="VerticalTopAlignLabel" customModule="weatherlr" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="9" width="343.5" height="72"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asN-ag-xjG" customClass="VerticalTopAlignLabel" customModule="weatherlr" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343.5" height="72"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeD-Jr-h43">
+                                                    <rect key="frame" x="120.5" y="72" width="101.5" height="72"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="asN-ag-xjG" firstAttribute="centerY" secondItem="Heb-MF-3Tf" secondAttribute="centerY" id="18q-e1-CsF"/>
+                                                <constraint firstItem="asN-ag-xjG" firstAttribute="top" secondItem="Heb-MF-3Tf" secondAttribute="top" id="DJN-JY-8SM"/>
+                                                <constraint firstItem="aeD-Jr-h43" firstAttribute="centerX" secondItem="asN-ag-xjG" secondAttribute="centerX" id="Jst-KB-m4i"/>
+                                                <constraint firstItem="aeD-Jr-h43" firstAttribute="top" secondItem="asN-ag-xjG" secondAttribute="bottom" id="Lrg-NU-epH"/>
                                                 <constraint firstItem="asN-ag-xjG" firstAttribute="centerX" secondItem="Heb-MF-3Tf" secondAttribute="centerX" id="cIq-zC-9Wc"/>
                                                 <constraint firstItem="asN-ag-xjG" firstAttribute="leading" secondItem="Heb-MF-3Tf" secondAttribute="leading" id="xp2-Do-w5d"/>
                                             </constraints>
@@ -96,10 +104,11 @@
                                         <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="cityLabel" destination="asN-ag-xjG" id="rfA-Db-eDv"/>
+                                            <outlet property="temperatureLabel" destination="aeD-Jr-h43" id="Vis-oo-j5M"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherNowCell" rowHeight="210" id="rWe-PS-EGo" customClass="WeatherNowCell" customModule="weatherlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="91" width="343" height="210"/>
+                                        <rect key="frame" x="0.0" y="151" width="343" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWe-PS-EGo" id="9P1-Eg-9GU">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="209.5"/>
@@ -124,7 +133,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="100" id="aJv-0C-ytY" customClass="WeatherTableViewCell" customModule="weatherlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="301" width="343" height="100"/>
+                                        <rect key="frame" x="0.0" y="361" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJv-0C-ytY" id="Rsr-vn-vr5">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>

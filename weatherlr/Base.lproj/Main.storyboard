@@ -443,17 +443,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jR-9S-bQh">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
-                                <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsj-or-H9j">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4jR-9S-bQh" firstAttribute="leading" secondItem="wWW-9d-D22" secondAttribute="leadingMargin" constant="-20" id="JGq-VU-8dX"/>
-                            <constraint firstItem="lzU-se-ROR" firstAttribute="top" secondItem="4jR-9S-bQh" secondAttribute="bottom" id="UT5-w5-1jE"/>
-                            <constraint firstItem="4jR-9S-bQh" firstAttribute="top" secondItem="S1b-Ou-duL" secondAttribute="bottom" constant="-64" id="X7u-fI-DEv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4jR-9S-bQh" secondAttribute="trailing" constant="-20" id="zFo-oP-wqx"/>
+                            <constraint firstAttribute="trailing" secondItem="hsj-or-H9j" secondAttribute="trailing" id="Sq5-rX-RTT"/>
+                            <constraint firstItem="hsj-or-H9j" firstAttribute="top" secondItem="S1b-Ou-duL" secondAttribute="bottom" id="VqP-tJ-MNL"/>
+                            <constraint firstItem="lzU-se-ROR" firstAttribute="top" secondItem="hsj-or-H9j" secondAttribute="bottom" id="h6K-3V-wd0"/>
+                            <constraint firstItem="hsj-or-H9j" firstAttribute="leading" secondItem="wWW-9d-D22" secondAttribute="leading" id="yqA-zY-UVY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ivu-S9-4Bo">
@@ -464,7 +468,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="webView" destination="4jR-9S-bQh" id="m4G-h1-uNe"/>
+                        <outlet property="webView" destination="hsj-or-H9j" id="duC-dR-DxY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQc-pQ-EeR" userLabel="First Responder" sceneMemberID="firstResponder"/>

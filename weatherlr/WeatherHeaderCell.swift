@@ -16,8 +16,6 @@ class WeatherHeaderCell: UITableViewCell {
         if let city = city {
             populate(city: city, weatherInformationWrapper: weatherInformationWrapper)
         }
-        
-        backgroundColor = UIColor.clear
     }
     
     private func populate(city:City, weatherInformationWrapper: WeatherInformationWrapper) {

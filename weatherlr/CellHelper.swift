@@ -14,41 +14,27 @@ class CellHelper {
         let isNowCell = cell as? WeatherNowCell != nil
         let moveUp = lastContentOffset < offset
         
-        var triggerPosition = CGFloat(100)
-        var triggerPositionHalf = CGFloat(120)
-        if isNowCell {
-            triggerPosition = CGFloat(-100)
-            triggerPositionHalf = CGFloat(0)
+        var triggerPosition = CGFloat(120)
+        if moveUp {
+            if isNowCell {
+                triggerPosition = CGFloat(0)
+            }
+        } else {
+            triggerPosition = CGFloat(60)
+            if isNowCell {
+                triggerPosition = CGFloat(-50)
+            }
         }
 
-        // full display and should be half hidden
-        if position <= triggerPositionHalf && cell.alpha == 1 {
+        if position <= triggerPosition && cell.alpha == 1 {
             if moveUp {
                 UIView.animate(withDuration: 1, animations: {
-                    cell.alpha = 0.5
-                })
-            } else {
-                cell.alpha = 0.5
-            }
-        // half display and should be hidden
-        } else if position <= triggerPosition && cell.alpha == 0.5 {
-            if moveUp {
-                UIView.animate(withDuration: 1, animations: {
-                        cell.alpha = 0
+                    cell.alpha = 0
                 })
             } else {
                 cell.alpha = 0
             }
-        // hidden and should be half displayed
         } else if position > triggerPosition && cell.alpha == 0 {
-            if !moveUp {
-                UIView.animate(withDuration: 1, animations: {
-                    cell.alpha = 0.5
-                })
-            } else {
-                cell.alpha = 0.5
-            }
-        } else if position > triggerPositionHalf && cell.alpha == 0.5 {
             if !moveUp {
                 UIView.animate(withDuration: 1, animations: {
                     cell.alpha = 1

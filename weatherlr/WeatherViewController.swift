@@ -28,6 +28,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var weatherInformationWrapper = WeatherInformationWrapper()
     var selectedCity:City?
     let maxWidth = CGFloat(600)
+    var lastContentOffset: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -280,5 +281,21 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.lastContentOffset = scrollView.contentOffset.y
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let indexes = weatherTable.indexPathsForVisibleRows {
+            for i in 0..<indexes.count {
+                let index = indexes[i]
+                if let cell = weatherTable.cellForRow(at: index) {
+                    CellHelper.showHide(cell: cell, offset: scrollView.contentOffset.y, lastContentOffset: self.lastContentOffset)
+                }
+            }
+        }
+    }
+
 }
 

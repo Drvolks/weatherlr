@@ -243,8 +243,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             if minMaxName == "up" {
                 minMaxLabel = "Maximum".localized()
             }
+            var miniMinMaxLabel = "Min".localized()
+            if minMaxName == "up" {
+                miniMinMaxLabel = "Max".localized()
+            }
+            
             let provider = CLKSimpleTextProvider(text: minMaxLabel + " " + String(nextWeather.temperature) + "°")
-            provider.shortText = String(nextWeather.temperature) + "°"
+            provider.shortText = miniMinMaxLabel + " " + String(nextWeather.temperature) + "°"
             return provider
         }
         

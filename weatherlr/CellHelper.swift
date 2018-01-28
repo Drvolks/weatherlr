@@ -29,12 +29,12 @@ class CellHelper {
         if position <= triggerPosition && cell.alpha == 1 {
             if moveUp {
                 UIView.animate(withDuration: 1, animations: {
-                    cell.alpha = 0
+                    cell.alpha = 0.1
                 })
             } else {
-                cell.alpha = 0
+                cell.alpha = 0.1
             }
-        } else if position > triggerPosition && cell.alpha == 0 {
+        } else if position > triggerPosition && cell.alpha != 1 {
             if !moveUp {
                 UIView.animate(withDuration: 1, animations: {
                     cell.alpha = 1

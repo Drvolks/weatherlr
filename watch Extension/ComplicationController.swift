@@ -37,6 +37,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Swift.Void) {
         let wrapper = ExtensionDelegateHelper.getWrapper()
         
+        #if DEBUG
+            print("Complication - getCurrentTimelineEntry")
+        #endif
+        
         if(wrapper.refreshNeeded()) {
             #if DEBUG
                 print("Complication - refresh needed")
@@ -63,7 +67,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 }
                 
                 if complication.family == .modularLarge {
-                    template = generateLargeModularTemplate(weather, nextWeather: nextWeather, city: city)
+                    template = generateLargeModularTemplate(weather, nextWeather: nextWeather, city: city, wrapper: wrapper)
                 } else if complication.family == .modularSmall {
                     template = generateSmallModularTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .circularSmall {
@@ -107,16 +111,22 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
     }
     
-    func generateLargeModularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateModularLargeTable {
+    func generateLargeModularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City, wrapper: WeatherInformationWrapper) -> CLKComplicationTemplateModularLargeTable {
         let modularTemplate = CLKComplicationTemplateModularLargeTable()
         modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: CityHelper.cityName(city))
         modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
         modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
         
         if let weather = weather {
+            let lang = PreferenceHelper.getLanguage()
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: String(describing: lang))
+            dateFormatter.timeStyle = .short
+            let ladate = dateFormatter.string(from: wrapper.lastRefresh as Date)
+            
             modularTemplate.headerImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
             modularTemplate.row1Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
-            modularTemplate.row2Column1TextProvider = getMinMaxTemperature(nextWeather)
+            modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text:ladate) // TODO remettre getMinMaxTemperature(nextWeather)
         } else {
             modularTemplate.row1Column1TextProvider = getMinMaxTemperature(nextWeather)
             modularTemplate.row2Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)

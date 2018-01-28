@@ -11,7 +11,8 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLSessionDownloadDelegate  {
     var wrapper = WeatherInformationWrapper()
     let urlSessionConfig = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
-
+    var savedTask:WKRefreshBackgroundTask?
+    
     override init() {
         super.init()
         WKExtension.shared().delegate = self
@@ -39,6 +40,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             if let task = task as? WKApplicationRefreshBackgroundTask {
                 launchURLSession()
                 task.setTaskCompletedWithSnapshot(false)
+            } else if let task = task as? WKURLSessionRefreshBackgroundTask {
+                savedTask = task
+                
+                #if DEBUG
+                    print("savedTask initialized")
+                #endif
             } else if let task = task as? WKSnapshotRefreshBackgroundTask {
                 task.setTaskCompletedWithSnapshot(true)
             } else {
@@ -103,7 +110,35 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             print("urlSession didFinishDownloadingTo - no selected city")
         }
         
+        if let task = savedTask {
+            task.setTaskCompletedWithSnapshot(true)
+            savedTask = nil
+            
+            #if DEBUG
+                print("savedTask comleted")
+            #endif
+        }
+            
         scheduleRefresh(Constants.backgroundRefreshInSeconds)
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        #if DEBUG
+            print("urlSession didCompleteWithError")
+        #endif
+        
+        if let error = error {
+            print(error)
+        }
+        
+        if let task = savedTask {
+            task.setTaskCompletedWithSnapshot(true)
+            savedTask = nil
+            
+            #if DEBUG
+                print("savedTask comleted in didCompleteWithError")
+            #endif
+        }
     }
     
     func updateComplication() {

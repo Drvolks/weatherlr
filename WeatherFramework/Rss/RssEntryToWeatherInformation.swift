@@ -97,8 +97,9 @@ class RssEntryToWeatherInformation {
         let detail = nettoyerDetail(rssEntry.summary)
         let tendendy = extractTendency(rssEntry.title)
         let when = extractWhen(rssEntry.title)
+        let dateObservation = obtenirDateObservation(rssEntry.summary)
 
-        let result = WeatherInformation(temperature: temperature, weatherStatus: weatherStatus, weatherDay: weatherDay, summary: rssEntry.title, detail: detail, tendancy: tendendy, when: when, night: night)
+        let result = WeatherInformation(temperature: temperature, weatherStatus: weatherStatus, weatherDay: weatherDay, summary: rssEntry.title, detail: detail, tendancy: tendendy, when: when, night: night, dateObservation: dateObservation)
         
         if(weatherDay != WeatherDay.now && (!night || weatherDay == WeatherDay.today)) {
             day = day + 1
@@ -620,5 +621,13 @@ class RssEntryToWeatherInformation {
         let alertText = performRegex(regex, text: title, index: 1)
         
         return alertText
+    }
+    
+    func obtenirDateObservation(_ summary: String) -> String {
+        // TODO AM PM en anglais
+        let regex = try! NSRegularExpression(pattern: ".*(Enregistrées à|Observed at).*(\\d\\d[h:]\\d\\d).*(\\d\\d \\w* \\d\\d\\d\\d)", options: [.caseInsensitive])
+        let dateObservationHeure = performRegex(regex, text: summary, index: 2)
+        let dateObservation = performRegex(regex, text: summary, index: 3)
+        return dateObservation + " " + dateObservationHeure
     }
 }

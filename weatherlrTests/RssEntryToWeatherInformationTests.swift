@@ -1702,4 +1702,16 @@ class RssEntryToWeatherInformationTests: XCTestCase {
         result = performer.extractAlertType("test")
         XCTAssertEqual(AlertType.warning, result)
     }
+    
+    func testObtenirDateObservation() {
+        let parser = RssParserStub(xmlName: "TestDataEntryCurrent")!
+        let rssEntry = RssEntry(parent: parser as RssParser)
+        let performer = RssEntryToWeatherInformation(rssEntry: rssEntry)
+        
+        var result = performer.obtenirDateObservation(summaryNowFr);
+        XCTAssertEqual("04 avril 2016 17h00", result)
+        
+        result = performer.obtenirDateObservation(summaryNowEn);
+        XCTAssertEqual("05 April 2016 08:00", result)
+    }
 }

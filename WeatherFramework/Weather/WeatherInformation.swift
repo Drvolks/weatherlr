@@ -17,6 +17,7 @@ class WeatherInformation {
     var tendancy:Tendency
     var when: String
     var night:Bool
+    var dateObservation:String
     
     init() {
         temperature = 0
@@ -27,9 +28,10 @@ class WeatherInformation {
         tendancy = Tendency.na
         when = ""
         night = false
+        dateObservation = ""
     }
     
-    init(temperature: Int, weatherStatus: WeatherStatus, weatherDay: WeatherDay, summary: String, detail: String, tendancy:Tendency, when: String, night: Bool) {
+    init(temperature: Int, weatherStatus: WeatherStatus, weatherDay: WeatherDay, summary: String, detail: String, tendancy:Tendency, when: String, night: Bool, dateObservation: String) {
         self.temperature = temperature
         self.weatherStatus = weatherStatus
         self.weatherDay = weatherDay
@@ -38,6 +40,7 @@ class WeatherInformation {
         self.tendancy = tendancy
         self.when = when
         self.night = night
+        self.dateObservation = dateObservation
     }
     
     func image() -> UIImage {

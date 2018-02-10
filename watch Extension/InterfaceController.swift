@@ -17,7 +17,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     
     var updatedDate = Date(timeIntervalSince1970: 0)
-    var updateInProgress = false
     var rowTypes = [String]()
     
     override func didDeactivate() {
@@ -50,9 +49,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     func loadData() {
         if PreferenceHelper.getSelectedCity() != nil {
-            if ExtensionDelegateHelper.refreshNeeded() && !updateInProgress {
-                updateInProgress = true
-                
+            if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
                 
                 cityLabel.setHidden(false)
@@ -268,7 +265,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                 #endif
                 
                 refreshDisplay()
-                updateInProgress = false
             } catch {
                 print("Error info: \(error)")
             }

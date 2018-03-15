@@ -9,7 +9,7 @@
 import ClockKit
 import WatchKit
 
-class ComplicationController: NSObject, CLKComplicationDataSource {
+class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDelegate, URLSessionDownloadDelegate {
     override init() {
         super.init()
     }
@@ -46,10 +46,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 print("Complication - refresh needed")
             #endif
             
-            if let delegate = WKExtension.shared().delegate as? ExtensionDelegate {
-                ExtensionDelegateHelper.launchURLSessionNow(delegate)
-                return
-            }
+            ExtensionDelegateHelper.launchURLSessionNow(self)
+            handler(nil)
+            return
         }
         
         var template:CLKComplicationTemplate? = nil
@@ -410,5 +409,28 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         }
         
         handler(template)
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        #if DEBUG
+            print("Watch complication urlSession didFinishDownloadingTo")
+        #endif
+        
+        if let city = PreferenceHelper.getSelectedCity() {
+            do {
+                let xmlData = try Data(contentsOf: location)
+                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city))
+                
+                #if DEBUG
+                    print("Watch complication wrapper updated")
+                #endif
+                
+                ExtensionDelegateHelper.updateComplication()
+            } catch {
+                print("Error info: \(error)")
+            }
+        } else {
+            print("Watch complication urlSession didFinishDownloadingTo - no selected city")
+        }
     }
 }

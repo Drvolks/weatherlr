@@ -43,9 +43,6 @@
 		6E04C8071DB277FF002CB067 /* nu-29_English.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12C81CEA10D200791284 /* nu-29_English.xml */; };
 		6E04C8081DB277FF002CB067 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E29052F1CB2D5550040EB8B /* Main.storyboard */; };
 		6E04C80B1DB277FF002CB067 /* nu-2_French.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12CC1CEA1ED800791284 /* nu-2_French.xml */; };
-		6E1627C41FFEB9D200B2969E /* Weatherlr Launchscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1627C11FFEB9D000B2969E /* Weatherlr Launchscreen@3x.png */; };
-		6E1627C51FFEB9D200B2969E /* Weatherlr Launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1627C21FFEB9D100B2969E /* Weatherlr Launchscreen.png */; };
-		6E1627C61FFEB9D200B2969E /* Weatherlr Launchscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1627C31FFEB9D200B2969E /* Weatherlr Launchscreen@2x.png */; };
 		6E1627C81FFFDCBE00B2969E /* CellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1627C71FFFDCBE00B2969E /* CellHelper.swift */; };
 		6E24A4C61E3E2E7D0063A839 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E24A4C51E3E2E7D0063A839 /* test.xml */; };
 		6E26A8051FABB65400207D53 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F32BD1CB3048100A9D6A7 /* RssParser.swift */; };
@@ -113,6 +110,9 @@
 		6E6517E61F426D0D00FE4AF1 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3252E01F41EAE1004A1867 /* CityParser.swift */; };
 		6E6517E71F426D0E00FE4AF1 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3252E01F41EAE1004A1867 /* CityParser.swift */; };
 		6E6517E81F426D0F00FE4AF1 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3252E01F41EAE1004A1867 /* CityParser.swift */; };
+		6E661508205B2F5B008075CB /* Weatherlr Launchscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E661505205B2F56008075CB /* Weatherlr Launchscreen@3x.png */; };
+		6E661509205B2F5B008075CB /* Weatherlr Launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E661506205B2F58008075CB /* Weatherlr Launchscreen.png */; };
+		6E66150A205B2F5B008075CB /* Weatherlr Launchscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E661507205B2F5B008075CB /* Weatherlr Launchscreen@2x.png */; };
 		6E816C0D1CCFF87800533684 /* cities1 in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C0C1CCFF87800533684 /* cities1 */; };
 		6E816C191CD76DBB00533684 /* cities2 in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C181CD76DBB00533684 /* cities2 */; };
 		6E9E12B51CDF8DAD00791284 /* cities3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B41CDF8DAD00791284 /* cities3 */; };
@@ -492,9 +492,6 @@
 		6E013ECE1FF562EC00043E31 /* WeatherNowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNowCell.swift; sourceTree = "<group>"; };
 		6E04C7D11DB26B73002CB067 /* VersionProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionProviderTableViewCell.swift; sourceTree = "<group>"; };
 		6E04C8121DB277FF002CB067 /* weatherlrFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlrFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E1627C11FFEB9D000B2969E /* Weatherlr Launchscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen@3x.png"; sourceTree = "<group>"; };
-		6E1627C21FFEB9D100B2969E /* Weatherlr Launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen.png"; sourceTree = "<group>"; };
-		6E1627C31FFEB9D200B2969E /* Weatherlr Launchscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen@2x.png"; sourceTree = "<group>"; };
 		6E1627C71FFFDCBE00B2969E /* CellHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHelper.swift; sourceTree = "<group>"; };
 		6E24A4C51E3E2E7D0063A839 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
 		6E2905281CB2D5550040EB8B /* weatherlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -536,6 +533,9 @@
 		6E4E75FD1F84481A0037980C /* PreferenceHelperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreferenceHelperError.swift; path = weatherlr/PreferenceHelperError.swift; sourceTree = SOURCE_ROOT; };
 		6E4EEA6D1F583EE000984A0C /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		6E4EEB0E1F59BC9100984A0C /* weatherlrFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "weatherlrFree-Info.plist"; path = "weatherlr/weatherlrFree-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6E661505205B2F56008075CB /* Weatherlr Launchscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen@3x.png"; sourceTree = "<group>"; };
+		6E661506205B2F58008075CB /* Weatherlr Launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen.png"; sourceTree = "<group>"; };
+		6E661507205B2F5B008075CB /* Weatherlr Launchscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen@2x.png"; sourceTree = "<group>"; };
 		6E7C78B11D4031EE00005D7A /* watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watch Extension.entitlements"; sourceTree = "<group>"; };
 		6E816C0C1CCFF87800533684 /* cities1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities1; sourceTree = "<group>"; };
 		6E816C181CD76DBB00533684 /* cities2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities2; sourceTree = "<group>"; };
@@ -740,9 +740,9 @@
 		6E1627C01FFEB9C400B2969E /* images */ = {
 			isa = PBXGroup;
 			children = (
-				6E1627C21FFEB9D100B2969E /* Weatherlr Launchscreen.png */,
-				6E1627C31FFEB9D200B2969E /* Weatherlr Launchscreen@2x.png */,
-				6E1627C11FFEB9D000B2969E /* Weatherlr Launchscreen@3x.png */,
+				6E661506205B2F58008075CB /* Weatherlr Launchscreen.png */,
+				6E661507205B2F5B008075CB /* Weatherlr Launchscreen@2x.png */,
+				6E661505205B2F56008075CB /* Weatherlr Launchscreen@3x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -1482,14 +1482,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1627C41FFEB9D200B2969E /* Weatherlr Launchscreen@3x.png in Resources */,
-				6E1627C51FFEB9D200B2969E /* Weatherlr Launchscreen.png in Resources */,
+				6E661508205B2F5B008075CB /* Weatherlr Launchscreen@3x.png in Resources */,
+				6E661509205B2F5B008075CB /* Weatherlr Launchscreen.png in Resources */,
 				6EB154A61D2860680005B02A /* Cities.plist in Resources */,
 				6E4910A21CC59629006D3C82 /* Localizable.strings in Resources */,
 				6E2905361CB2D5550040EB8B /* LaunchScreen.storyboard in Resources */,
 				6E2905331CB2D5550040EB8B /* Assets.xcassets in Resources */,
 				6E9E12BD1CE9223D00791284 /* nl-19_French.xml in Resources */,
-				6E1627C61FFEB9D200B2969E /* Weatherlr Launchscreen@2x.png in Resources */,
+				6E66150A205B2F5B008075CB /* Weatherlr Launchscreen@2x.png in Resources */,
 				6EF6D0BE1DB2972800AE3252 /* GoogleService-Info.plist in Resources */,
 				6E9E12C91CEA10D200791284 /* nu-29_English.xml in Resources */,
 				6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */,

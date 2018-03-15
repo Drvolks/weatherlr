@@ -63,4 +63,17 @@ class ExtensionDelegateHelper {
         
         return delegate.wrapper = wrapper
     }
+    
+    static func updateComplication() {
+        #if DEBUG
+            print("updateComplication")
+        #endif
+        
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        if let complications = complicationServer.activeComplications {
+            for complication in complications {
+                complicationServer.reloadTimeline(for: complication)
+            }
+        }
+    }
 }

@@ -100,7 +100,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
                     print("wrapper updated")
                 #endif
                 
-                updateComplication()
+                ExtensionDelegateHelper.updateComplication()
             } catch {
                 print("Error info: \(error)")
                 // plan b
@@ -138,19 +138,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             #if DEBUG
                 print("savedTask comleted in didCompleteWithError")
             #endif
-        }
-    }
-    
-    func updateComplication() {
-        #if DEBUG
-            print("updateComplication")
-        #endif
-        
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        if let complications = complicationServer.activeComplications {
-            for complication in complications {
-                complicationServer.reloadTimeline(for: complication)
-            }
         }
     }
 }

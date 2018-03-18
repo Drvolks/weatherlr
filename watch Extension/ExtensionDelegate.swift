@@ -36,17 +36,25 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             #if DEBUG
                 print(task)
             #endif
-            
+
             if let task = task as? WKApplicationRefreshBackgroundTask {
                 launchURLSession()
                 task.setTaskCompletedWithSnapshot(false)
             } else if let task = task as? WKURLSessionRefreshBackgroundTask {
                 savedTask = task
-                
+                    
                 #if DEBUG
                     print("savedTask initialized")
                 #endif
             } else if let task = task as? WKSnapshotRefreshBackgroundTask {
+                if savedTask == nil && ExtensionDelegateHelper.refreshNeeded() {
+                    #if DEBUG
+                        print("WKSnapshotRefreshBackgroundTask without any background refresh task in progress, creating one")
+                    #endif
+                    
+                    launchURLSession()
+                }
+            
                 task.setTaskCompletedWithSnapshot(true)
             } else {
                 task.setTaskCompletedWithSnapshot(false)

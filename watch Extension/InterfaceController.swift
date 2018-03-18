@@ -264,6 +264,8 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                     print("Watch wrapper updated")
                 #endif
                 
+                ExtensionDelegateHelper.updateComplication()
+                
                 refreshDisplay()
             } catch {
                 print("Error info: \(error)")

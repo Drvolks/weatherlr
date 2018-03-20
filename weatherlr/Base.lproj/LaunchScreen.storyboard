@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Weatherlr Launchscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="t58-3i-cny">
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Weatherlr Launchscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="t58-3i-cny">
                                 <rect key="frame" x="20" y="-83" width="335" height="833"/>
                             </imageView>
                         </subviews>

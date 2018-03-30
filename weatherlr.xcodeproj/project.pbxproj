@@ -102,6 +102,8 @@
 		6E4E75FE1F8448240037980C /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4E75FD1F84481A0037980C /* PreferenceHelperError.swift */; };
 		6E4E75FF1F8448250037980C /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4E75FD1F84481A0037980C /* PreferenceHelperError.swift */; };
 		6E4EEA6E1F583EE000984A0C /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4EEA6D1F583EE000984A0C /* AppDelegateTests.swift */; };
+		6E4F596D2061C619006A12DA /* WeatherNowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E013ECE1FF562EC00043E31 /* WeatherNowCell.swift */; };
+		6E4F596E2061C62C006A12DA /* CellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1627C71FFFDCBE00B2969E /* CellHelper.swift */; };
 		6E6517E11F426D0800FE4AF1 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3252E01F41EAE1004A1867 /* CityParser.swift */; };
 		6E6517E21F426D0800FE4AF1 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3252E01F41EAE1004A1867 /* CityParser.swift */; };
 		6E6517E31F426D0A00FE4AF1 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3252E01F41EAE1004A1867 /* CityParser.swift */; };
@@ -1950,6 +1952,7 @@
 				6E04C7DD1DB277FF002CB067 /* CityDownloader.swift in Sources */,
 				6E04C7DE1DB277FF002CB067 /* RssEntry.swift in Sources */,
 				6E04C7DF1DB277FF002CB067 /* UIColorExtension.swift in Sources */,
+				6E4F596D2061C619006A12DA /* WeatherNowCell.swift in Sources */,
 				6E04C7E21DB277FF002CB067 /* SettingsViewController.swift in Sources */,
 				6EF08EA61F844952009165BF /* WeatherEnums.swift in Sources */,
 				6E04C7E31DB277FF002CB067 /* MinMaxLabel.swift in Sources */,
@@ -1971,6 +1974,7 @@
 				6E04C7F11DB277FF002CB067 /* AddCityViewController.swift in Sources */,
 				6E04C7F21DB277FF002CB067 /* RssParser.swift in Sources */,
 				6E04C7F41DB277FF002CB067 /* RssParserBase.swift in Sources */,
+				6E4F596E2061C62C006A12DA /* CellHelper.swift in Sources */,
 				6E04C7F51DB277FF002CB067 /* VersionProviderTableViewCell.swift in Sources */,
 				6EF08EC11F844974009165BF /* StringExtension.swift in Sources */,
 				6E04C7F71DB277FF002CB067 /* CityTableViewCell.swift in Sources */,
@@ -2403,7 +2407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2430,7 +2434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FREE=1",
@@ -2561,7 +2565,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2587,7 +2591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = weatherlr/Info.plist;
@@ -2607,7 +2611,7 @@
 			baseConfigurationReference = 2644AAD74CA58C29E603F966 /* Pods-weatherlrTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
@@ -2626,7 +2630,7 @@
 			baseConfigurationReference = 971E0BA28FB97AA4C321C487 /* Pods-weatherlrTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
@@ -2645,7 +2649,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCF4416C6E6EC18604FAB4E9 /* Pods-weatherlrUITests.debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
@@ -2663,7 +2667,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F0BDF897391683D90D12B95C /* Pods-weatherlrUITests.release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
@@ -2689,11 +2693,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 62;
+				DYLIB_CURRENT_VERSION = 63;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherFramework/Info.plist;
@@ -2723,11 +2727,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 62;
+				DYLIB_CURRENT_VERSION = 63;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherFramework/Info.plist;
@@ -2752,7 +2756,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherFrameworkTests/Info.plist;
@@ -2776,7 +2780,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherFrameworkTests/Info.plist;
@@ -2799,7 +2803,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				IBSC_MODULE = watchFree_Extension;
 				INFOPLIST_FILE = "watch/watchFree-Info.plist";
@@ -2826,7 +2830,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				IBSC_MODULE = watchFree_Extension;
 				INFOPLIST_FILE = "watch/watchFree-Info.plist";
@@ -2851,7 +2855,7 @@
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = "watch Extension/watchFree Extension-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
@@ -2876,7 +2880,7 @@
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = "watch Extension/watchFree Extension-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
@@ -2904,7 +2908,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				IBSC_MODULE = watch_Extension;
 				INFOPLIST_FILE = watch/Info.plist;
@@ -2932,7 +2936,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				IBSC_MODULE = watch_Extension;
 				INFOPLIST_FILE = watch/Info.plist;
@@ -2958,7 +2962,7 @@
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = "watch Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
@@ -2985,7 +2989,7 @@
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 62;
+				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = "watch Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;

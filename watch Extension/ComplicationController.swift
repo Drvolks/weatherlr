@@ -108,32 +108,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         
     }
     
-    func generateLargeModularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City, wrapper: WeatherInformationWrapper) -> CLKComplicationTemplateModularLargeTable {
-        let modularTemplate = CLKComplicationTemplateModularLargeTable()
+    func generateLargeModularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City, wrapper: WeatherInformationWrapper) -> CLKComplicationTemplateModularLargeStandardBody {
+        let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
         modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: CityHelper.cityName(city))
-        modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
-        modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
         
         if let weather = weather {
             modularTemplate.headerImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
-            modularTemplate.row1Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
-            modularTemplate.row2Column1TextProvider = getMinMaxTemperature(weather, wrapper: wrapper)
-        } else {
-            modularTemplate.row1Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
-            modularTemplate.row2Column1TextProvider = getMinMaxTemperature(nextWeather, wrapper: wrapper)
+            modularTemplate.body1TextProvider = getCurrentTemperature(weather, showCurrently: true)
+            modularTemplate.body2TextProvider = getMinMaxTemperature(weather, wrapper: wrapper)
         }
         
         return modularTemplate
     }
     
-    func generateEmptyLargeModularTemplate() -> CLKComplicationTemplateModularLargeTable {
-        let modularTemplate = CLKComplicationTemplateModularLargeTable()
+    func generateEmptyLargeModularTemplate() -> CLKComplicationTemplateModularLargeStandardBody {
+        let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
         modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
-        modularTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: "Open iPhone app Complication1".localized())
-        modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
-        modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "Open iPhone app Complication2".localized())
-        modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
-        
+        modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "Open iPhone app Complication1".localized())
+        modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "Open iPhone app Complication2".localized())
+
         return modularTemplate
     }
     
@@ -146,11 +139,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     
     func generateExtraLargeTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateExtraLargeStackImage {
         let modularTemplate = CLKComplicationTemplateExtraLargeStackImage()
+        
         if let weather = weather {
             modularTemplate.line1ImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
             modularTemplate.line2TextProvider = getCurrentTemperature(weather, showCurrently: false)
-        } else {
-            modularTemplate.line2TextProvider = CLKSimpleTextProvider(text: "iPhone".localized())
         }
         
         return modularTemplate
@@ -245,32 +237,21 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         
         if let nextWeather = nextWeather {
             let minMaxName = WeatherHelper.getMinMaxImageName(nextWeather)
+            var minMaxLabel = "Minimum".localized()
+            if minMaxName == "up" {
+                minMaxLabel = "Maximum".localized()
+            }
             var miniMinMaxLabel = "Min".localized()
             if minMaxName == "up" {
                 miniMinMaxLabel = "Max".localized()
             }
             
-            let provider = CLKSimpleTextProvider(text: miniMinMaxLabel + " " + String(nextWeather.temperature) + "°" + warning)
+            let provider = CLKSimpleTextProvider(text: minMaxLabel + " " + String(nextWeather.temperature) + "°" + warning)
             provider.shortText = miniMinMaxLabel + " " + String(nextWeather.temperature) + "°" + warning
             return provider
         }
         
         return CLKSimpleTextProvider(text: "")
-    }
-    
-    func getMinMaxTemperatureText(_ nextWeather: WeatherInformation?) -> String {
-        if let nextWeather = nextWeather {
-            let minMaxName = WeatherHelper.getMinMaxImageName(nextWeather)
-
-            var miniMinMaxLabel = "Min".localized()
-            if minMaxName == "up" {
-                miniMinMaxLabel = "Max".localized()
-            }
-            
-            return miniMinMaxLabel + " " + String(nextWeather.temperature) + "°"
-        }
-        
-        return ""
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Swift.Void) {

@@ -47,8 +47,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             #endif
             
             ExtensionDelegateHelper.launchURLSessionNow(self)
-            handler(nil)
-            return
         }
         
         var template:CLKComplicationTemplate? = nil
@@ -117,18 +115,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         modularTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: "")
         
         if let weather = weather {
-            let lang = PreferenceHelper.getLanguage()
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: String(describing: lang))
-            dateFormatter.timeStyle = .short
-            let ladate = dateFormatter.string(from: wrapper.lastRefresh as Date)
-            
             modularTemplate.headerImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
             modularTemplate.row1Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
-            modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text:ladate) // TODO remettre getMinMaxTemperature(nextWeather)
+            modularTemplate.row2Column1TextProvider = getMinMaxTemperature(weather, wrapper: wrapper)
         } else {
-            modularTemplate.row1Column1TextProvider = getMinMaxTemperature(nextWeather)
-            modularTemplate.row2Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
+            modularTemplate.row1Column1TextProvider = getCurrentTemperature(weather, showCurrently: true)
+            modularTemplate.row2Column1TextProvider = getMinMaxTemperature(nextWeather, wrapper: wrapper)
         }
         
         return modularTemplate
@@ -245,24 +237,40 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         }
     }
     
-    func getMinMaxTemperature(_ nextWeather: WeatherInformation?) -> CLKSimpleTextProvider {
+    func getMinMaxTemperature(_ nextWeather: WeatherInformation?, wrapper:WeatherInformationWrapper) -> CLKSimpleTextProvider {
+        var warning = "";
+        if(wrapper.expiredTooLongAgo()) {
+            warning = " ⚠️";
+        }
+        
         if let nextWeather = nextWeather {
             let minMaxName = WeatherHelper.getMinMaxImageName(nextWeather)
-            var minMaxLabel = "Minimum".localized()
-            if minMaxName == "up" {
-                minMaxLabel = "Maximum".localized()
-            }
             var miniMinMaxLabel = "Min".localized()
             if minMaxName == "up" {
                 miniMinMaxLabel = "Max".localized()
             }
             
-            let provider = CLKSimpleTextProvider(text: minMaxLabel + " " + String(nextWeather.temperature) + "°")
-            provider.shortText = miniMinMaxLabel + " " + String(nextWeather.temperature) + "°"
+            let provider = CLKSimpleTextProvider(text: miniMinMaxLabel + " " + String(nextWeather.temperature) + "°" + warning)
+            provider.shortText = miniMinMaxLabel + " " + String(nextWeather.temperature) + "°" + warning
             return provider
         }
         
         return CLKSimpleTextProvider(text: "")
+    }
+    
+    func getMinMaxTemperatureText(_ nextWeather: WeatherInformation?) -> String {
+        if let nextWeather = nextWeather {
+            let minMaxName = WeatherHelper.getMinMaxImageName(nextWeather)
+
+            var miniMinMaxLabel = "Min".localized()
+            if minMaxName == "up" {
+                miniMinMaxLabel = "Max".localized()
+            }
+            
+            return miniMinMaxLabel + " " + String(nextWeather.temperature) + "°"
+        }
+        
+        return ""
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Swift.Void) {

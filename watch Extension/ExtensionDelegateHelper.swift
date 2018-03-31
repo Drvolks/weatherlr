@@ -22,10 +22,8 @@ class ExtensionDelegateHelper {
                 #endif
                 return
             }
-        }
-        
-        if let city = getCurrentCity() {
-            let url = URL(string:UrlHelper.getUrl(city))!
+            
+            let url = URL(string:UrlHelper.getUrl(activeCity))!
             
             let configObject = URLSessionConfiguration.default
             let session = URLSession(configuration: configObject, delegate: delegate, delegateQueue:nil)
@@ -37,16 +35,17 @@ class ExtensionDelegateHelper {
         }
     }
     
-    static func getCurrentCity() -> City? {
+    static func getCurrentCity(_ locationService: LocationService) -> City? {
         #if DEBUG
             print("getCurrentCity")
         #endif
-        guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
-            print("resetWeather: no delegate!")
-            return nil
+        
+        if let city = locationService.getCurrentCity() {
+            setActiveCity(city)
+            return city
         }
-    
-        return extensionDelegate.getCurrentCity()
+        
+        return nil
     }
     
     static func getActiveCity() -> City? {
@@ -56,6 +55,15 @@ class ExtensionDelegateHelper {
         }
         
         return extensionDelegate.selectedCity
+    }
+    
+    static func setActiveCity(_ city:City?) {
+        guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+            print("resetWeather: no delegate!")
+            return
+        }
+        
+        extensionDelegate.selectedCity = city
     }
     
     static func refreshNeeded() -> Bool {

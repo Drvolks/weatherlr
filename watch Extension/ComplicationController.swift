@@ -10,6 +10,8 @@ import ClockKit
 import WatchKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDelegate, URLSessionDownloadDelegate {
+    var locationService:LocationService?
+    
     override init() {
         super.init()
     }
@@ -36,22 +38,27 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Swift.Void) {
         let wrapper = ExtensionDelegateHelper.getWrapper()
-        
+  
         #if DEBUG
             print("Complication - getCurrentTimelineEntry")
         #endif
         
-        if(wrapper.refreshNeeded()) {
-            #if DEBUG
-                print("Complication - refresh needed")
-            #endif
-            
-            ExtensionDelegateHelper.launchURLSessionNow(self)
+        if locationService == nil {
+            locationService = LocationService(self)
+            locationService?.start()
         }
         
         var template:CLKComplicationTemplate? = nil
         
-        if let city = PreferenceHelper.getSelectedCity() {
+        if let city = ExtensionDelegateHelper.getCurrentCity(locationService!) {
+            if(wrapper.refreshNeeded()) {
+                #if DEBUG
+                    print("Complication - refresh needed")
+                #endif
+            
+                ExtensionDelegateHelper.launchURLSessionNow(self)
+            }
+        
             if wrapper.weatherInformations.count > 0 {
                 var weather:WeatherInformation? = nil
                 if wrapper.weatherInformations[0].weatherDay == WeatherDay.now {

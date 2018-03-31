@@ -97,6 +97,16 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("getCurrentCity")
         #endif
         
+        // TODO
+        //if let city = ExtensionDelegateHelper.getActiveCity() {
+        //    if city.id != Global.currentLocationCityId && !ExtensionDelegateHelper.refreshNeeded() {
+        //        #if DEBUG
+        //        print("getCurrentCity - city already found and weather not expired")
+        //        #endif
+        //        return city
+        //    }
+        //}
+        
         if let city = PreferenceHelper.getSelectedCity() {
             if city.id == Global.currentLocationCityId {
                 self.selectedCity = city

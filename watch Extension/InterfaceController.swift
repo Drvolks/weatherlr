@@ -18,6 +18,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     var updatedDate = Date(timeIntervalSince1970: 0)
     var rowTypes = [String]()
+    var locationService:LocationService?
     
     override func didDeactivate() {
         super.didDeactivate()
@@ -25,6 +26,11 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        if locationService == nil {
+            locationService = LocationService(self)
+            locationService?.start()
+        }
         
         selectCityButton.setTitle("Select city".localized())
         
@@ -48,7 +54,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func loadData() {
-        if ExtensionDelegateHelper.getCurrentCity() != nil {
+        if ExtensionDelegateHelper.getCurrentCity(locationService!) != nil {
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
                 

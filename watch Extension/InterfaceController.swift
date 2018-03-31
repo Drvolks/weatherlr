@@ -48,7 +48,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func loadData() {
-        if PreferenceHelper.getSelectedCity() != nil {
+        if ExtensionDelegateHelper.getCurrentCity() != nil {
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
                 
@@ -117,7 +117,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                     controller.weather = weather
                 }
                 
-                if let city = PreferenceHelper.getSelectedCity() {
+                if let city = watchDelegate.wrapper.city {
                     self.cityLabel.setText(CityHelper.cityName(city))
                 }
                 
@@ -171,7 +171,11 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     @IBAction func selectCity() {
         var citieNames = [String]()
         PreferenceHelper.getFavoriteCities().forEach({
-            citieNames.append(CityHelper.cityName($0) + ", " + $0.province.uppercased())
+            if $0.id == Global.currentLocationCityId {
+                citieNames.append(CityHelper.cityName($0))
+            } else {
+                citieNames.append(CityHelper.cityName($0) + ", " + $0.province.uppercased())
+            }
         })
         
         citieNames.append(contentsOf: "abcdefghijklmnopqrstuvwxyz".uppercased().map { String($0) })
@@ -230,6 +234,12 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
             let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
             let cities:[City]
+            let useCurrentCity = CityHelper.getCurrentLocationCity()
+            
+            if choice == useCurrentCity.englishName || choice == useCurrentCity.frenchName {
+                cityDidChange(useCurrentCity)
+                return
+            }
             
             if choice.count == 1 {
                 cities = CityHelper.searchCityStartingWith(choice, allCityList: allCityList)
@@ -255,7 +265,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             print("Watch urlSession didFinishDownloadingTo")
         #endif
         
-        if let city = PreferenceHelper.getSelectedCity() {
+        if let city = ExtensionDelegateHelper.getActiveCity() {
             do {
                 let xmlData = try Data(contentsOf: location)
                 ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city))

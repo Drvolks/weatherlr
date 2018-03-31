@@ -31,8 +31,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     let maxWidth = CGFloat(600)
     var lastContentOffset: CGFloat = 0
     var allCityList = [City]()
-    var currentLocationActivated = false
-    let locationServices = LocationServices()
+    var locationManager : CLLocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,20 +93,24 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func getCurrentCity() -> City? {
+        #if DEBUG
+            print("getCurrentCity")
+        #endif
+        
         if let city = PreferenceHelper.getSelectedCity() {
             if city.id == Global.currentLocationCityId {
                 self.selectedCity = city
                 
-                locationServices.getAdress { locationData, error in
-                    if let data = locationData {
-                        if let cityFound = CityHelper.searchSingleCity(data.cityName, allCityList: self.allCityList) {
-                            self.currentLocationActivated = true
-                            self.selectedCity = cityFound
-                            self.refresh(false)
-                        } else {
-                            self.currentLocationActivated = false
-                        }
-                    }
+                if locationManager == nil
+                {
+                    locationManager = CLLocationManager()
+                    locationManager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+                    locationManager?.delegate = self
+                }
+                else
+                {
+                    self.selectedCity = city
+                    getCurrentLocation()
                 }
                 
                 return self.selectedCity
@@ -119,6 +122,81 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         selectedCity = nil
         return selectedCity
+    }
+    
+    func getCurrentLocation()
+    {
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        handleLocationServicesAuthorizationStatus(status: authorizationStatus)
+    }
+    
+    func handleLocationServicesAuthorizationStatus(status: CLAuthorizationStatus)
+    {
+        switch status
+        {
+        case .notDetermined:
+            handleLocationServicesStateNotDetermined()
+        case .restricted, .denied:
+            handleLocationServicesStateUnavailable()
+        case .authorizedAlways, .authorizedWhenInUse:
+            handleLocationServicesStateAvailable()
+        }
+    }
+    
+    func handleLocationServicesStateNotDetermined()
+    {
+        locationManager?.requestWhenInUseAuthorization()
+    }
+    
+    func handleLocationServicesStateUnavailable()
+    {
+        //TODO Ask user to change the settings through a pop up.
+    }
+    
+    func handleLocationServicesStateAvailable()
+    {
+        locationManager?.requestLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
+    {
+        handleLocationServicesAuthorizationStatus(status: status)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        guard let mostRecentLocation = locations.last else { return }
+        #if DEBUG
+            print(mostRecentLocation)
+        #endif
+        getAdress(mostRecentLocation)
+    }
+    
+    func getAdress(_ location: CLLocation) {
+        let geoCoder = CLGeocoder()
+        
+        geoCoder.reverseGeocodeLocation(location) { placemarks, error in
+            if let e = error {
+                print(e)
+            } else {
+                var placeMark: CLPlacemark!
+                placeMark = placemarks?[0]
+                
+                if let cityName = placeMark.locality  {
+                    //TODO if let country = placeMark.country
+                    
+                    if let cityFound = CityHelper.searchSingleCity(cityName, allCityList: self.allCityList) {
+                        self.selectedCity = cityFound
+                        self.refresh(false)
+                    }
+                }
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("CL failed: \(error)")
     }
     
     func refreshLabel() {

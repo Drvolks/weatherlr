@@ -26,7 +26,8 @@ class SelectCityController: WKInterfaceController {
         let dictionary = context as! Dictionary<String, AnyObject>
         cities = dictionary[Constants.cityListKey] as! [City]
         cities = CityHelper.sortCityList(cities)
-            
+        cities.insert(CityHelper.getCurrentLocationCity(), at: 0)
+        
         cityTable.setNumberOfRows(cities.count, withRowType: "CityRow")
             
         for index in 0..<cityTable.numberOfRows {

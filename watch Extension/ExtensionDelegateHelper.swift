@@ -15,7 +15,16 @@ class ExtensionDelegateHelper {
             print("launchURLSessionNow")
         #endif
         
-        if let city = PreferenceHelper.getSelectedCity() {
+        if let activeCity = getActiveCity() {
+            if activeCity.id == Global.currentLocationCityId {
+                #if DEBUG
+                    print("launchURLSessionNow Current location search in progress")
+                #endif
+                return
+            }
+        }
+        
+        if let city = getCurrentCity() {
             let url = URL(string:UrlHelper.getUrl(city))!
             
             let configObject = URLSessionConfiguration.default
@@ -26,6 +35,27 @@ class ExtensionDelegateHelper {
         } else {
             print("scheduleURLSession - no selected city")
         }
+    }
+    
+    static func getCurrentCity() -> City? {
+        #if DEBUG
+            print("getCurrentCity")
+        #endif
+        guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+            print("resetWeather: no delegate!")
+            return nil
+        }
+    
+        return extensionDelegate.getCurrentCity()
+    }
+    
+    static func getActiveCity() -> City? {
+        guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+            print("resetWeather: no delegate!")
+            return nil
+        }
+        
+        return extensionDelegate.selectedCity
     }
     
     static func refreshNeeded() -> Bool {

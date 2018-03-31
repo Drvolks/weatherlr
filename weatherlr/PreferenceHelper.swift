@@ -17,10 +17,12 @@ class PreferenceHelper {
         var newFavorites = [City]()
         
         saveSelectedCity(city)
-        newFavorites.append(city)
+        if city.id != Global.currentLocationCityId {
+            newFavorites.append(city)
+        }
         
         for i in 0..<favorites.count {
-            if city.id != favorites[i].id {
+            if city.id != favorites[i].id && favorites[i].id != Global.currentLocationCityId {
                 newFavorites.append(favorites[i])
             }
         }
@@ -50,19 +52,24 @@ class PreferenceHelper {
     }
     
     static func getFavoriteCities() -> [City] {
+        let currentLocation = CityHelper.getCurrentLocationCity()
+        
         do {
-            let savedfavorites = try getFavoriteCitiesWithClassName("City")
+            var savedfavorites = try getFavoriteCitiesWithClassName("City")
+            savedfavorites.insert(currentLocation, at: 0)
             return savedfavorites
         } catch {}
         
         // trying with legacy names
         do {
-            let savedfavorites = try getFavoriteCitiesWithClassName("weatherlr.City")
+            var savedfavorites = try getFavoriteCitiesWithClassName("weatherlr.City")
+            savedfavorites.insert(currentLocation, at: 0)
             return savedfavorites
         } catch {}
         
         do {
-            let savedfavorites = try getFavoriteCitiesWithClassName("weatherlrFree.City")
+            var savedfavorites = try getFavoriteCitiesWithClassName("weatherlrFree.City")
+            savedfavorites.insert(currentLocation, at: 0)
             return savedfavorites
         } catch {}
         

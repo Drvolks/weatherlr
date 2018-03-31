@@ -16,4 +16,5 @@ class Global {
     static let languageKey = "lang"
     static let versionKey = "version"
     static let SettingGroup = "APP_GROUP_ID"
+    static let currentLocationCityId = "currentLocation"
 }

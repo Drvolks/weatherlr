@@ -84,4 +84,13 @@ class CityHelper {
         
         return newCityList
     }
+    
+    static func getCurrentLocationCity() -> City {
+        let currentLocation = City()
+        currentLocation.englishName = "Use Current Location".localized()
+        currentLocation.frenchName = "Use Current Location".localized()
+        currentLocation.id = Global.currentLocationCityId
+        
+        return currentLocation
+    }
 }

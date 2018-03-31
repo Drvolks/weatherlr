@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
 #if FREE
     import GoogleMobileAds
 #endif
 
-class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
+class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, CLLocationManagerDelegate {
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!
     @IBOutlet weak var warningBarButton: UIBarButtonItem!
@@ -29,9 +30,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var selectedCity:City?
     let maxWidth = CGFloat(600)
     var lastContentOffset: CGFloat = 0
+    var allCityList = [City]()
+    var currentLocationActivated = false
+    let locationServices = LocationServices()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
+        allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         
@@ -76,7 +83,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        if PreferenceHelper.getSelectedCity() != nil {
+        if getCurrentCity() != nil {
             refresh(false)
         } else {
             DispatchQueue.main.async(execute: { () -> Void in
@@ -84,6 +91,34 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.present(viewController, animated: false, completion: nil)
             })
         }
+    }
+    
+    func getCurrentCity() -> City? {
+        if let city = PreferenceHelper.getSelectedCity() {
+            if city.id == Global.currentLocationCityId {
+                self.selectedCity = city
+                
+                locationServices.getAdress { locationData, error in
+                    if let data = locationData {
+                        if let cityFound = CityHelper.searchSingleCity(data.cityName, allCityList: self.allCityList) {
+                            self.currentLocationActivated = true
+                            self.selectedCity = cityFound
+                            self.refresh(false)
+                        } else {
+                            self.currentLocationActivated = false
+                        }
+                    }
+                }
+                
+                return self.selectedCity
+            } else {
+                selectedCity = city
+                return selectedCity
+            }
+        }
+        
+        selectedCity = nil
+        return selectedCity
     }
     
     func refreshLabel() {
@@ -98,15 +133,19 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func refreshFromScroll(_ sender:AnyObject) {
-        refresh(true)
+        if getCurrentCity() != nil {
+            refresh(true)
+        }
     }
     
     @objc func applicationWillEnterForeground(_ notification: Notification) {
         var backgroundRefresh = true
         
-        if let city = PreferenceHelper.getSelectedCity() {
-            if let selectedCity = selectedCity {
-                if selectedCity.id != city.id {
+        let previousSelectedCity = selectedCity
+        
+        if let city = getCurrentCity() {
+            if let previousSelectedCityInitialized = previousSelectedCity {
+                if previousSelectedCityInitialized.id != city.id {
                     backgroundRefresh = false
                 }
             }
@@ -121,22 +160,29 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func refresh(_ thread: Bool) {
-        if let city = PreferenceHelper.getSelectedCity() {
-            self.selectedCity = city
-            
-            if thread {
-                DispatchQueue.global().async {
-                    self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
-                    
-                    DispatchQueue.main.async {
-                        self.displayWeather(false)
-                    }
-                }
+        if let city = selectedCity {
+            if city.id == Global.currentLocationCityId {
+                // recherche de l'emplecement en cours
+                
             } else {
-                self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
-                displayWeather(true)
+                if thread {
+                    DispatchQueue.global().async {
+                        self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
+                        
+                        DispatchQueue.main.async {
+                            self.displayWeather(false)
+                        }
+                    }
+                } else {
+                    self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
+                    displayWeather(true)
+                }
             }
         }
+    }
+    
+    func displayUseCurrentLocationProgress() {
+        
     }
     
     func displayWeather(_ foreground: Bool) {
@@ -296,6 +342,5 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-
 }
 

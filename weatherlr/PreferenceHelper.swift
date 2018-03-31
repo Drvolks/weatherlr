@@ -73,7 +73,9 @@ class PreferenceHelper {
             return savedfavorites
         } catch {}
         
-        return [City]()
+        var savedfavorites = [City]()
+        savedfavorites.insert(currentLocation, at: 0)
+        return savedfavorites
     }
     
     static func getFavoriteCitiesWithClassName(_ className:String) throws -> [City] {

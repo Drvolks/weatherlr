@@ -87,8 +87,8 @@ class CityHelper {
     
     static func getCurrentLocationCity() -> City {
         let currentLocation = City()
-        currentLocation.englishName = "Use Current Location".localized()
-        currentLocation.frenchName = "Use Current Location".localized()
+        currentLocation.englishName = "Use Current Location"
+        currentLocation.frenchName = "Utiliser la géolocalisation"
         currentLocation.id = Global.currentLocationCityId
         
         return currentLocation

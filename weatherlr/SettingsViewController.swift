@@ -79,6 +79,12 @@ class SettingsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if (indexPath as NSIndexPath).section == citySection {
+            let city = savedCities[(indexPath as NSIndexPath).row]
+
+            if city.id == Global.currentLocationCityId {
+                return false
+            }
+            
             return true
         } else {
             return false
@@ -106,7 +112,11 @@ class SettingsViewController: UITableViewController {
                 if let currentWeatherInformation = selectedCityWeatherInformation {
                     cell.weatherImage.isHidden = false
                     cell.activityIndicator.isHidden = true
-                    cell.weatherImage.image = currentWeatherInformation.image()
+                    if city.id == Global.currentLocationCityId {
+                        cell.weatherImage.image = UIImage(named: String(describing: "currentLocation"))
+                    } else {
+                        cell.weatherImage.image = currentWeatherInformation.image()
+                    }
                 } else {
                     fetchWeather(cell, city: city)
                 }
@@ -178,11 +188,15 @@ class SettingsViewController: UITableViewController {
                 cell.activityIndicator.isHidden = true
                 cell.weatherImage.isHidden = false
                 
-                if weatherInformationWrapper.weatherInformations.count > 0 {
-                    let weatherInfo = weatherInformationWrapper.weatherInformations[0]
-                    cell.weatherImage.image = weatherInfo.image()
+                if city.id == Global.currentLocationCityId {
+                    cell.weatherImage.image = UIImage(named: String(describing: "currentLocation"))
                 } else {
-                    cell.weatherImage.image = UIImage(named: String(describing: WeatherStatus.blank))
+                    if weatherInformationWrapper.weatherInformations.count > 0 {
+                        let weatherInfo = weatherInformationWrapper.weatherInformations[0]
+                        cell.weatherImage.image = weatherInfo.image()
+                    } else {
+                        cell.weatherImage.image = UIImage(named: String(describing: WeatherStatus.blank))
+                    }
                 }
             }
         }

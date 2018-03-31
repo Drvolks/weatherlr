@@ -16,4 +16,5 @@ class Global {
     static let languageKey = "lang"
     static let versionKey = "version"
     static let SettingGroup = "group.com.massawippi.weatherlr"
+    static let currentLocationCityId = "currentLocation"
 }

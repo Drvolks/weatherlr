@@ -200,6 +200,28 @@
 		6EB155351D315D040005B02A /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154A51D2860680005B02A /* Cities.plist */; };
 		6EB155371D3162AD0005B02A /* CityRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155361D3162AD0005B02A /* CityRowController.swift */; };
 		6ECF1F7D20704CB2005770E7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7C20704CB2005770E7 /* LocationService.swift */; };
+		6ECF1F7F20710642005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F812071066D005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F82207106F4005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F83207106F5005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F84207106F6005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F85207106F7005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F86207106F7005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F87207106F8005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F88207106F9005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F89207106F9005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F8A207106FA005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F8B207106FA005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
+		6ECF1F8C207106FD005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F8D207106FE005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F8E207106FF005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F8F20710700005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F9020710700005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F9120710702005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F9220710702005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F9320710703005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F9420710704005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
+		6ECF1F9520710704005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
 		6EDC30141CF9B7D1006325EE /* cities5 in Resources */ = {isa = PBXBuildFile; fileRef = 6EDC30131CF9B7D1006325EE /* cities5 */; };
 		6EE41A251F82FB2200508FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE41A241F82FB2200508FD8 /* AppDelegate.swift */; };
 		6EE41A271F82FB2200508FD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE41A261F82FB2200508FD8 /* ViewController.swift */; };
@@ -602,6 +624,8 @@
 		6EB155321D3159FF0005B02A /* CityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHelper.swift; sourceTree = "<group>"; };
 		6EB155361D3162AD0005B02A /* CityRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityRowController.swift; sourceTree = "<group>"; };
 		6ECF1F7C20704CB2005770E7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		6ECF1F7E20710642005770E7 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
+		6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicesDelegate.swift; sourceTree = "<group>"; };
 		6EDC30131CF9B7D1006325EE /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
 		6EE41A221F82FB2100508FD8 /* WeatherlrTv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherlrTv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE41A241F82FB2200508FD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -866,6 +890,8 @@
 				6EE41A561F82FCC900508FD8 /* WeatherHelper.swift */,
 				6E3252B31F41E7E3004A1867 /* WeatherFramework.h */,
 				6E3252B41F41E7E3004A1867 /* Info.plist */,
+				6ECF1F7E20710642005770E7 /* LocationServices.swift */,
+				6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */,
 			);
 			path = WeatherFramework;
 			sourceTree = "<group>";
@@ -1960,6 +1986,7 @@
 				6EF08EA61F844952009165BF /* WeatherEnums.swift in Sources */,
 				6E04C7E31DB277FF002CB067 /* MinMaxLabel.swift in Sources */,
 				6E04C7E41DB277FF002CB067 /* Constants.swift in Sources */,
+				6ECF1F8D207106FE005770E7 /* LocationServices.swift in Sources */,
 				6E04C7E61DB277FF002CB067 /* ErrorViewController.swift in Sources */,
 				6E04C7E71DB277FF002CB067 /* RssEntryToWeatherInformation.swift in Sources */,
 				6EF08E941F844930009165BF /* WeatherInformation.swift in Sources */,
@@ -1979,6 +2006,7 @@
 				6E04C7F41DB277FF002CB067 /* RssParserBase.swift in Sources */,
 				6E4F596E2061C62C006A12DA /* CellHelper.swift in Sources */,
 				6E04C7F51DB277FF002CB067 /* VersionProviderTableViewCell.swift in Sources */,
+				6ECF1F83207106F5005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EF08EC11F844974009165BF /* StringExtension.swift in Sources */,
 				6E04C7F71DB277FF002CB067 /* CityTableViewCell.swift in Sources */,
 				6E04C7F81DB277FF002CB067 /* AlertViewController.swift in Sources */,
@@ -2006,6 +2034,7 @@
 				6EF08EA51F844951009165BF /* WeatherEnums.swift in Sources */,
 				6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */,
 				6E9F33581CB7FB0600A9D6A7 /* Constants.swift in Sources */,
+				6ECF1F8C207106FD005770E7 /* LocationServices.swift in Sources */,
 				6E4910D01CCD08A6006D3C82 /* ErrorViewController.swift in Sources */,
 				6E9F32E61CB4009900A9D6A7 /* RssEntryToWeatherInformation.swift in Sources */,
 				6EF08E931F84492F009165BF /* WeatherInformation.swift in Sources */,
@@ -2025,6 +2054,7 @@
 				6E9F32BE1CB3048100A9D6A7 /* RssParser.swift in Sources */,
 				6E9F32DD1CB3F30D00A9D6A7 /* RssParserBase.swift in Sources */,
 				6E04C7D21DB26B73002CB067 /* VersionProviderTableViewCell.swift in Sources */,
+				6ECF1F82207106F4005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EF08EC01F844973009165BF /* StringExtension.swift in Sources */,
 				6E9F32F91CB6C5AB00A9D6A7 /* CityTableViewCell.swift in Sources */,
 				6E9E12C11CE92BEC00791284 /* AlertViewController.swift in Sources */,
@@ -2044,6 +2074,7 @@
 				6E6517E61F426D0D00FE4AF1 /* CityParser.swift in Sources */,
 				6E4E75FC1F8447E90037980C /* CityHelper.swift in Sources */,
 				6EF08E8D1F844928009165BF /* AlertInformation.swift in Sources */,
+				6ECF1F8F20710700005770E7 /* LocationServices.swift in Sources */,
 				6E9F32C81CB30C6D00A9D6A7 /* WeatherInformationTests.swift in Sources */,
 				6EF08E9F1F844942009165BF /* WeatherInformationWrapper.swift in Sources */,
 				6EF08ECC1F84497F009165BF /* Global.swift in Sources */,
@@ -2061,6 +2092,7 @@
 				6EF08EB11F84495C009165BF /* PreferenceHelper.swift in Sources */,
 				6E4EEA6E1F583EE000984A0C /* AppDelegateTests.swift in Sources */,
 				6EF08ED51F844989009165BF /* ExpiringCache.swift in Sources */,
+				6ECF1F85207106F7005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EF08EDF1F844996009165BF /* UrlHelper.swift in Sources */,
 				6EF08EC31F844976009165BF /* StringExtension.swift in Sources */,
 				6EF08EE51F8449A0009165BF /* WeatherHelper.swift in Sources */,
@@ -2087,8 +2119,10 @@
 				6EF08E8E1F844929009165BF /* AlertInformation.swift in Sources */,
 				6EF08EB21F84495D009165BF /* PreferenceHelper.swift in Sources */,
 				6E26A8061FABB65400207D53 /* RssParser.swift in Sources */,
+				6ECF1F86207106F7005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6E4E75F81F8447E90037980C /* CityHelper.swift in Sources */,
 				6EF08E771F8448FA009165BF /* RssParserBase.swift in Sources */,
+				6ECF1F9020710700005770E7 /* LocationServices.swift in Sources */,
 				6EF08EE01F844998009165BF /* UrlHelper.swift in Sources */,
 				6EF08EC41F844976009165BF /* StringExtension.swift in Sources */,
 				6E29054C1CB2D5550040EB8B /* weatherlrUITests.swift in Sources */,
@@ -2113,10 +2147,12 @@
 				6EF2E4B01F8444F7004A0B6E /* WeatherEnums.swift in Sources */,
 				6E3252E11F41EC4F004A1867 /* CityParser.swift in Sources */,
 				6EF2E4B41F84450B004A0B6E /* AlertInformation.swift in Sources */,
+				6ECF1F812071066D005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EF2E4AF1F8444F4004A0B6E /* WeatherHelper.swift in Sources */,
 				6E4E75E51F8445890037980C /* RssParserBase.swift in Sources */,
 				6E4E75FE1F8448240037980C /* PreferenceHelperError.swift in Sources */,
 				6E4E75FA1F8447E90037980C /* CityHelper.swift in Sources */,
+				6ECF1F7F20710642005770E7 /* LocationServices.swift in Sources */,
 				6EF2E4AD1F8444EA004A0B6E /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2138,8 +2174,10 @@
 				6EF08E901F84492B009165BF /* AlertInformation.swift in Sources */,
 				6EF08EB41F844963009165BF /* PreferenceHelper.swift in Sources */,
 				6E26A8071FABB65500207D53 /* RssParser.swift in Sources */,
+				6ECF1F88207106F9005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6E3252EE1F41ED90004A1867 /* CityParser.swift in Sources */,
 				6EF08E781F8448FF009165BF /* RssParserBase.swift in Sources */,
+				6ECF1F9220710702005770E7 /* LocationServices.swift in Sources */,
 				6EF08EE21F84499A009165BF /* UrlHelper.swift in Sources */,
 				6EF08EC61F844978009165BF /* StringExtension.swift in Sources */,
 				6E3252C11F41E7E4004A1867 /* WeatherFrameworkTests.swift in Sources */,
@@ -2151,6 +2189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ECF1F87207106F8005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EF08EB31F844960009165BF /* PreferenceHelper.swift in Sources */,
 				6E3252F51F41EDE2004A1867 /* City.swift in Sources */,
 				6EA210C01DB2AA1100BC8B1C /* RssEntryToWeatherInformation.swift in Sources */,
@@ -2164,6 +2203,7 @@
 				6EA210C81DB2AA1100BC8B1C /* CityHelper.swift in Sources */,
 				6EA210C91DB2AA1100BC8B1C /* CurrentWeatherRowController.swift in Sources */,
 				6EF08EBC1F84496E009165BF /* PreferenceHelperError.swift in Sources */,
+				6ECF1F9120710702005770E7 /* LocationServices.swift in Sources */,
 				6E6517E81F426D0F00FE4AF1 /* CityParser.swift in Sources */,
 				6EA210CA1DB2AA1100BC8B1C /* WeatherRowController.swift in Sources */,
 				6EA210CB1DB2AA1100BC8B1C /* ComplicationController.swift in Sources */,
@@ -2205,10 +2245,12 @@
 				6EB154A91D2869200005B02A /* WeatherRowController.swift in Sources */,
 				6EAA0E6E1E6646110023DB15 /* UIColorExtension.swift in Sources */,
 				6EF08EEC1F8449BF009165BF /* WeatherHelper.swift in Sources */,
+				6ECF1F84207106F6005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EB154FD1D287B1A0005B02A /* ComplicationController.swift in Sources */,
 				6EB154981D2859140005B02A /* Constants.swift in Sources */,
 				6EF08E951F844930009165BF /* WeatherInformation.swift in Sources */,
 				6EAA0E6B1E663C150023DB15 /* WatchImageHelper.swift in Sources */,
+				6ECF1F8E207106FF005770E7 /* LocationServices.swift in Sources */,
 				6EF08ECB1F84497F009165BF /* Global.swift in Sources */,
 				6EF08EDE1F844996009165BF /* UrlHelper.swift in Sources */,
 				6EF08E9E1F844942009165BF /* WeatherInformationWrapper.swift in Sources */,
@@ -2226,6 +2268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ECF1F9320710703005770E7 /* LocationServices.swift in Sources */,
 				6EE41A551F82FC7100508FD8 /* WeatherInformationWrapper.swift in Sources */,
 				6EF2E4AB1F8444C8004A0B6E /* WeatherEnums.swift in Sources */,
 				6EE41A501F82FC5500508FD8 /* PreferenceHelper.swift in Sources */,
@@ -2240,6 +2283,7 @@
 				6E4E75F91F8447E90037980C /* CityHelper.swift in Sources */,
 				6EF08EDA1F84498F009165BF /* ExpiringCache.swift in Sources */,
 				6EE41A251F82FB2200508FD8 /* AppDelegate.swift in Sources */,
+				6ECF1F89207106F9005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EF2E4AA1F8444BA004A0B6E /* AlertInformation.swift in Sources */,
 				6EE41A571F82FCD600508FD8 /* WeatherHelper.swift in Sources */,
 				6E4E75F71F8447A30037980C /* StringExtension.swift in Sources */,
@@ -2266,8 +2310,10 @@
 				6EF08E7F1F84490F009165BF /* CityParser.swift in Sources */,
 				6EF08E911F84492C009165BF /* AlertInformation.swift in Sources */,
 				6EF08EE81F8449A7009165BF /* WeatherHelper.swift in Sources */,
+				6ECF1F8A207106FA005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EF08EAC1F844956009165BF /* WeatherEnums.swift in Sources */,
 				6EF08E811F844915009165BF /* RssParser.swift in Sources */,
+				6ECF1F9420710704005770E7 /* LocationServices.swift in Sources */,
 				6EF08EB51F844964009165BF /* PreferenceHelper.swift in Sources */,
 				6EF08EE31F84499A009165BF /* UrlHelper.swift in Sources */,
 				6EF08E831F84491A009165BF /* RssEntry.swift in Sources */,
@@ -2292,8 +2338,10 @@
 				6EF08E801F844910009165BF /* CityParser.swift in Sources */,
 				6EF08E921F84492C009165BF /* AlertInformation.swift in Sources */,
 				6EF08EE91F8449A8009165BF /* WeatherHelper.swift in Sources */,
+				6ECF1F8B207106FA005770E7 /* LocationServicesDelegate.swift in Sources */,
 				6EF08EAD1F844957009165BF /* WeatherEnums.swift in Sources */,
 				6EF08E821F844915009165BF /* RssParser.swift in Sources */,
+				6ECF1F9520710704005770E7 /* LocationServices.swift in Sources */,
 				6EF08EB61F844965009165BF /* PreferenceHelper.swift in Sources */,
 				6EF08EE41F84499B009165BF /* UrlHelper.swift in Sources */,
 				6EF08E841F84491B009165BF /* RssEntry.swift in Sources */,

@@ -12,8 +12,9 @@ import MapKit
 #if FREE
     import GoogleMobileAds
 #endif
-
-class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, CLLocationManagerDelegate {
+// TODO retrait CLLocationManagerDelegate
+class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, LocationServicesDelegate {
+    
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!
     @IBOutlet weak var warningBarButton: UIBarButtonItem!
@@ -27,17 +28,20 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var refreshControl: UIRefreshControl!
     var weatherInformationWrapper = WeatherInformationWrapper()
-    var selectedCity:City?
     let maxWidth = CGFloat(600)
     var lastContentOffset: CGFloat = 0
-    var allCityList = [City]()
-    var locationManager : CLLocationManager?
+    var locationServices:LocationServices?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
-        allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
+        let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
+        
+        locationServices = LocationServices()
+        locationServices!.delegate = self
+        locationServices!.allCityList = allCityList
+        locationServices!.start()
         
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         
@@ -82,9 +86,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        if getCurrentCity() != nil {
+        if locationServices?.currentCity != nil {
             refresh(false)
         } else {
+            // TODO ça ne se fera peut-être pas ici
             DispatchQueue.main.async(execute: { () -> Void in
                 let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as! UINavigationController
                 self.present(viewController, animated: false, completion: nil)
@@ -92,122 +97,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func getCurrentCity() -> City? {
-        #if DEBUG
-            print("getCurrentCity")
-        #endif
-        
-        // TODO
-        //if let city = ExtensionDelegateHelper.getActiveCity() {
-        //    if city.id != Global.currentLocationCityId && !ExtensionDelegateHelper.refreshNeeded() {
-        //        #if DEBUG
-        //        print("getCurrentCity - city already found and weather not expired")
-        //        #endif
-        //        return city
-        //    }
-        //}
-        
-        if let city = PreferenceHelper.getSelectedCity() {
-            if city.id == Global.currentLocationCityId {
-                self.selectedCity = city
-                
-                if locationManager == nil
-                {
-                    locationManager = CLLocationManager()
-                    locationManager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-                    locationManager?.delegate = self
-                }
-                else
-                {
-                    self.selectedCity = city
-                    getCurrentLocation()
-                }
-                
-                return self.selectedCity
-            } else {
-                selectedCity = city
-                return selectedCity
-            }
-        }
-        
-        selectedCity = nil
-        return selectedCity
-    }
-    
-    func getCurrentLocation()
-    {
-        let authorizationStatus = CLLocationManager.authorizationStatus()
-        handleLocationServicesAuthorizationStatus(status: authorizationStatus)
-    }
-    
-    func handleLocationServicesAuthorizationStatus(status: CLAuthorizationStatus)
-    {
-        switch status
-        {
-        case .notDetermined:
-            handleLocationServicesStateNotDetermined()
-        case .restricted, .denied:
-            handleLocationServicesStateUnavailable()
-        case .authorizedAlways, .authorizedWhenInUse:
-            handleLocationServicesStateAvailable()
-        }
-    }
-    
-    func handleLocationServicesStateNotDetermined()
-    {
-        locationManager?.requestWhenInUseAuthorization()
-    }
-    
-    func handleLocationServicesStateUnavailable()
-    {
-        //TODO Ask user to change the settings through a pop up.
-    }
-    
-    func handleLocationServicesStateAvailable()
-    {
-        locationManager?.requestLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
-    {
-        handleLocationServicesAuthorizationStatus(status: status)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-    {
-        guard let mostRecentLocation = locations.last else { return }
-        #if DEBUG
-            print(mostRecentLocation)
-        #endif
-        getAdress(mostRecentLocation)
-    }
-    
-    func getAdress(_ location: CLLocation) {
-        let geoCoder = CLGeocoder()
-        
-        geoCoder.reverseGeocodeLocation(location) { placemarks, error in
-            if let e = error {
-                print(e)
-            } else {
-                var placeMark: CLPlacemark!
-                placeMark = placemarks?[0]
-                
-                if let cityName = placeMark.locality  {
-                    //TODO if let country = placeMark.country
-                    
-                    if let cityFound = CityHelper.searchSingleCity(cityName, allCityList: self.allCityList) {
-                        self.selectedCity = cityFound
-                        self.refresh(false)
-                    }
-                }
-            }
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
-        print("CL failed: \(error)")
-    }
     
     func refreshLabel() {
         let refreshControlFont = [ NSAttributedStringKey.foregroundColor: UIColor.white ]
@@ -221,25 +110,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func refreshFromScroll(_ sender:AnyObject) {
-        if getCurrentCity() != nil {
+        if locationServices!.currentCity != nil {
             refresh(true)
         }
     }
     
     @objc func applicationWillEnterForeground(_ notification: Notification) {
-        var backgroundRefresh = true
-        
-        let previousSelectedCity = selectedCity
-        
-        if let city = getCurrentCity() {
-            if let previousSelectedCityInitialized = previousSelectedCity {
-                if previousSelectedCityInitialized.id != city.id {
-                    backgroundRefresh = false
-                }
-            }
-        }
-        
-        refresh(backgroundRefresh)
+        refresh(false)
     }
     
     override func viewDidLayoutSubviews() {
@@ -248,7 +125,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func refresh(_ thread: Bool) {
-        if let city = selectedCity {
+        if let city = locationServices?.currentCity {
             if city.id == Global.currentLocationCityId {
                 // recherche de l'emplecement en cours
                 
@@ -267,10 +144,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         }
-    }
-    
-    func displayUseCurrentLocationProgress() {
-        
     }
     
     func displayWeather(_ foreground: Bool) {
@@ -306,7 +179,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         // TODO retirer l'image au lieu du tint
-        if selectedCity != nil && !selectedCity!.radarId.isEmpty {
+        if locationServices!.currentCity != nil && !locationServices!.currentCity!.radarId.isEmpty {
             radarButton.isEnabled = true
             radarButton.tintColor = nil
         } else {
@@ -323,7 +196,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
-            cell.initialize(city: selectedCity, weatherInformationWrapper: weatherInformationWrapper)
+            cell.initialize(city: locationServices?.currentCity, weatherInformationWrapper: weatherInformationWrapper)
             return cell
         }
         
@@ -338,7 +211,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "header")! as! WeatherHeaderCell
-        header.initialize(city: selectedCity, weatherInformationWrapper: weatherInformationWrapper)
+        header.initialize(city: locationServices?.currentCity, weatherInformationWrapper: weatherInformationWrapper)
         return header
     }
 
@@ -373,7 +246,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else if segue.identifier  == "ShowRadar" {
             let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! RadarViewController
-            targetController.city = selectedCity
+            targetController.city = locationServices?.currentCity
         }
     }
 
@@ -429,6 +302,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         }
+    }
+    
+    func cityHasBeenUpdated(_ city: City) {
+        refresh(false)
     }
 }
 

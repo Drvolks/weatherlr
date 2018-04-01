@@ -120,9 +120,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: CityHelper.cityName(city))
         
         if let weather = weather {
+            let lang = PreferenceHelper.getLanguage()
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: String(describing: lang))
+            dateFormatter.timeStyle = .short
+            let ladate = dateFormatter.string(from: wrapper.lastRefresh as Date)
+            
             modularTemplate.headerImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
             modularTemplate.body1TextProvider = getCurrentTemperature(weather, showCurrently: true)
-            modularTemplate.body2TextProvider = getMinMaxTemperature(weather, wrapper: wrapper)
+            modularTemplate.body2TextProvider =  CLKSimpleTextProvider(text: ladate)
+            // TODO getMinMaxTemperature(weather, wrapper: wrapper)
         }
         
         return modularTemplate

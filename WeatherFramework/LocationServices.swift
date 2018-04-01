@@ -14,10 +14,12 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
     var locationManager : CLLocationManager?
     var allCityList:[City]?
     var currentCity:City?
+    var errorCount = 0
     
     func start() {
         locationManager = CLLocationManager()
         locationManager!.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager!.distanceFilter = 1000
         locationManager!.delegate = self
         
         updateCity(PreferenceHelper.getSelectedCity())
@@ -28,8 +30,10 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         
         if let city = cityToUse {
             if isUseCurrentLocation(city) {
+                locationManager?.startUpdatingLocation()
                 getCurrentLocation()
             } else {
+                locationManager?.stopUpdatingLocation()
                 currentCity = city
                 self.delegate!.cityHasBeenUpdated(city)
             }
@@ -45,6 +49,8 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         #if DEBUG
         print("didUpdateLocations")
         #endif
+        
+        errorCount = 0
         
         guard let mostRecentLocation = manager.location else { return }
         #if DEBUG
@@ -103,8 +109,14 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
     {
         print("CL failed: \(error)")
         
+        errorCount = errorCount + 1
         currentCity = nil
-        // TODO implémenter delegate.locationNonDisponible
+        
+        if(errorCount < 10) {
+            getCurrentLocation()
+        } else {
+            // TODO implémenter delegate.locationNonDisponible
+        }
     }
     
     func getCurrentLocation()

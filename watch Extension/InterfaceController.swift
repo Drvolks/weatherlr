@@ -78,9 +78,10 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             print("refreshDisplay")
         #endif
         
-        cityLabel.setText("Loading".localized())
-        
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        
+        cityLabel.setHidden(false)
+        cityLabel.setText("Loading".localized())
         
         if !rowTypesValid() {
             objc_sync_enter(rowTypes)
@@ -124,10 +125,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                     controller.weather = weather
                 }
                 
-                if let city = locationServices?.currentCity {
-                    self.cityLabel.setText(CityHelper.cityName(city))
-                }
-                
                 break
             case "weatherRow":
                 if let controller = weatherTable.rowController(at: index) as? WeatherRowController {
@@ -138,6 +135,10 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             default:
                 break
             }
+        }
+        
+        if let city = locationServices?.currentCity {
+            self.cityLabel.setText(CityHelper.cityName(city))
         }
         
         lastRefreshLabel.setHidden(false)
@@ -238,7 +239,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             let cities:[City]
             let useCurrentCity = CityHelper.getCurrentLocationCity()
             
-            if choice == useCurrentCity.englishName || choice == useCurrentCity.frenchName {
+            if choice == CityHelper.cityName(useCurrentCity) {
                 cityDidChange(useCurrentCity)
                 return
             }

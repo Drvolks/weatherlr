@@ -48,15 +48,23 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
                     print("savedTask initialized")
                 #endif
             } else if let task = task as? WKSnapshotRefreshBackgroundTask {
-                if savedTask == nil && ExtensionDelegateHelper.refreshNeeded() {
+                if ExtensionDelegateHelper.refreshNeeded() {
                     #if DEBUG
-                        print("WKSnapshotRefreshBackgroundTask without any background refresh task in progress, creating one")
+                        print("WKSnapshotRefreshBackgroundTask and refresh needed")
                     #endif
                     
+                    if let previousTask = savedTask {
+                        previousTask.setTaskCompletedWithSnapshot(true)
+                        savedTask = nil
+                    }
+                    
                     launchURLSession()
+                    task.setTaskCompletedWithSnapshot(false)
+                    return
                 }
-            
-                task.setTaskCompletedWithSnapshot(true)
+                else {
+                    task.setTaskCompletedWithSnapshot(true)
+                }
             } else {
                 task.setTaskCompletedWithSnapshot(false)
             }
@@ -81,22 +89,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
         #endif
         
         if let city = selectedCity {
-            if city.id == Global.currentLocationCityId {
-                // recherche de l'emplecement en cours
+            let url = URL(string:UrlHelper.getUrl(city))!
                 
-            } else {
-                let url = URL(string:UrlHelper.getUrl(city))!
+            let urlSession = URLSession(configuration: urlSessionConfig, delegate: self, delegateQueue: nil)
+            let downloadTask = urlSession.downloadTask(with: url)
+            downloadTask.resume()
                 
-                let urlSession = URLSession(configuration: urlSessionConfig, delegate: self, delegateQueue: nil)
-                let downloadTask = urlSession.downloadTask(with: url)
-                downloadTask.resume()
-                
-                #if DEBUG
-                    print("downloadTask fired")
-                #endif
-            }
+            #if DEBUG
+                print("downloadTask fired")
+            #endif
         } else {
             print("scheduleURLSession - no selected city")
+            scheduleRefresh(Constants.backgroundRefreshInSeconds)
         }
     }
     
@@ -108,13 +112,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
         #endif
         
         if let city = selectedCity {
-            if city.id == Global.currentLocationCityId {
-                #if DEBUG
-                    print("urlSession didFinishDownloadingTo Current location search in progress")
-                #endif
-                return
-            }
-            
             do {
                 let xmlData = try Data(contentsOf: location)
                 wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)

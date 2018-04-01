@@ -9,8 +9,9 @@
 import ClockKit
 import WatchKit
 
-class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDelegate, URLSessionDownloadDelegate {
-    var locationService:LocationService?
+class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDelegate, URLSessionDownloadDelegate, LocationServicesDelegate {
+    
+    var locationServices:LocationServices?
     
     override init() {
         super.init()
@@ -43,14 +44,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             print("Complication - getCurrentTimelineEntry")
         #endif
         
-        if locationService == nil {
-            locationService = LocationService(self)
-            locationService?.start()
+        if locationServices == nil {
+            let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
+            let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
+            
+            locationServices = LocationServices()
+            locationServices?.delegate = self
+            locationServices?.allCityList = allCityList
+            locationServices?.start()
         }
         
         var template:CLKComplicationTemplate? = nil
         
-        if let city = ExtensionDelegateHelper.getCurrentCity(locationService!) {
+        if let city = ExtensionDelegateHelper.getSelectedCity() {
             if(wrapper.refreshNeeded()) {
                 #if DEBUG
                     print("Complication - refresh needed")
@@ -435,5 +441,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         } else {
             print("Watch complication urlSession didFinishDownloadingTo - no selected city")
         }
+    }
+    
+    func cityHasBeenUpdated(_ city: City) {
+        ExtensionDelegateHelper.setSelectedCity(city)
+        ExtensionDelegateHelper.launchURLSessionNow(self)
+    }
+    
+    func getAllCityList() -> [City] {
+        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
     }
 }

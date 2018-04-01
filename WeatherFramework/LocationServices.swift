@@ -82,6 +82,10 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                     print("reverseGeocodeLocation found city " + cityName)
                     #endif
 
+                    if self.allCityList == nil {
+                        self.allCityList = self.delegate!.getAllCityList()
+                    }
+                    
                     if let cityFound = CityHelper.searchSingleCity(cityName, allCityList: self.allCityList!) {
                         #if DEBUG
                             print("reverseGeocodeLocation matched city.")

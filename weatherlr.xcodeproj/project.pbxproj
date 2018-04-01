@@ -199,7 +199,6 @@
 		6EB155341D315AEC0005B02A /* CityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155321D3159FF0005B02A /* CityHelper.swift */; };
 		6EB155351D315D040005B02A /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154A51D2860680005B02A /* Cities.plist */; };
 		6EB155371D3162AD0005B02A /* CityRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155361D3162AD0005B02A /* CityRowController.swift */; };
-		6ECF1F7D20704CB2005770E7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7C20704CB2005770E7 /* LocationService.swift */; };
 		6ECF1F7F20710642005770E7 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F7E20710642005770E7 /* LocationServices.swift */; };
 		6ECF1F812071066D005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
 		6ECF1F82207106F4005770E7 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */; };
@@ -623,7 +622,6 @@
 		6EB155301D31531C0005B02A /* SelectCityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCityController.swift; sourceTree = "<group>"; };
 		6EB155321D3159FF0005B02A /* CityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHelper.swift; sourceTree = "<group>"; };
 		6EB155361D3162AD0005B02A /* CityRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityRowController.swift; sourceTree = "<group>"; };
-		6ECF1F7C20704CB2005770E7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		6ECF1F7E20710642005770E7 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		6ECF1F802071066D005770E7 /* LocationServicesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicesDelegate.swift; sourceTree = "<group>"; };
 		6EDC30131CF9B7D1006325EE /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
@@ -1008,7 +1006,6 @@
 				6EB154861D282B0E0005B02A /* Info.plist */,
 				6EA210E21DB2AA1100BC8B1C /* watchFree Extension-Info.plist */,
 				6EAA0E6A1E663C150023DB15 /* WatchImageHelper.swift */,
-				6ECF1F7C20704CB2005770E7 /* LocationService.swift */,
 			);
 			path = "watch Extension";
 			sourceTree = "<group>";
@@ -2260,7 +2257,6 @@
 				6EF08ED41F844989009165BF /* ExpiringCache.swift in Sources */,
 				6EB154A01D285A5C0005B02A /* RssEntry.swift in Sources */,
 				6EB155371D3162AD0005B02A /* CityRowController.swift in Sources */,
-				6ECF1F7D20704CB2005770E7 /* LocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

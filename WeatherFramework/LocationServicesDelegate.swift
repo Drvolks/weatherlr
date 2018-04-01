@@ -10,4 +10,5 @@ import Foundation
 
 protocol LocationServicesDelegate {
     func cityHasBeenUpdated(_ city: City)
+    func getAllCityList() -> [City]
 }

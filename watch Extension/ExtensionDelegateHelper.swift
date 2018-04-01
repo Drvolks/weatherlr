@@ -15,7 +15,14 @@ class ExtensionDelegateHelper {
             print("launchURLSessionNow")
         #endif
         
+        guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+            print("launchURLSessionNow: no delegate!")
+            return
+        }
+        
         if let city = getSelectedCity() {
+            //extensionDelegate.scheduleRefresh(Constants.backgroundRefreshInSeconds)
+            
             let url = URL(string:UrlHelper.getUrl(city))!
             
             let configObject = URLSessionConfiguration.default
@@ -30,7 +37,7 @@ class ExtensionDelegateHelper {
     
     static func getSelectedCity() -> City? {
         guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
-            print("resetWeather: no delegate!")
+            print("getSelectedCity: no delegate!")
             return nil
         }
         
@@ -39,7 +46,7 @@ class ExtensionDelegateHelper {
     
     static func setSelectedCity(_ city:City?) {
         guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
-            print("resetWeather: no delegate!")
+            print("setSelectedCity: no delegate!")
             return
         }
         

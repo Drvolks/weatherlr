@@ -45,12 +45,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         #endif
         
         if locationServices == nil {
-            let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
-            let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
-            
             locationServices = LocationServices()
             locationServices?.delegate = self
-            locationServices?.allCityList = allCityList
             locationServices?.start()
         }
         
@@ -132,9 +128,26 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             dateFormatter.timeStyle = .short
             let ladate = dateFormatter.string(from: wrapper.lastRefresh as Date)
             
+            let minMaxName = WeatherHelper.getMinMaxImageName(weather)
+            var miniMinMaxLabel = "Min".localized()
+            if minMaxName == "up" {
+                miniMinMaxLabel = "Max".localized()
+            }
+            
+            var warning = "";
+            if(wrapper.expiredTooLongAgo()) {
+                warning = " ⚠️";
+            }
+            
             modularTemplate.headerImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
             modularTemplate.body1TextProvider = getCurrentTemperature(weather, showCurrently: true)
-            modularTemplate.body2TextProvider =  CLKSimpleTextProvider(text: ladate)
+            
+            
+            let provider = CLKSimpleTextProvider(text: miniMinMaxLabel + " " + String(weather.temperature) + "° " + ladate + warning)
+            modularTemplate.body2TextProvider =  provider
+            
+            
+            
             // TODO getMinMaxTemperature(weather, wrapper: wrapper)
         }
         

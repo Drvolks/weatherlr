@@ -37,7 +37,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         locationServices = LocationServices()
         locationServices!.delegate = self
-        locationServices!.start()
         
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         
@@ -64,6 +63,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl.addTarget(self, action: #selector(refreshFromScroll(_:)), for: UIControlEvents.valueChanged)
         weatherTable.addSubview(refreshControl)
 
+        locationServices!.start()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
         
     }
@@ -82,14 +83,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
+        locationServices?.updateCity(PreferenceHelper.getSelectedCity())
+        
         if locationServices?.currentCity != nil {
             refresh(false)
-        } else {
-            // TODO ça ne se fera peut-être pas ici
-            DispatchQueue.main.async(execute: { () -> Void in
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as! UINavigationController
-                self.present(viewController, animated: false, completion: nil)
-            })
         }
     }
     
@@ -307,6 +304,23 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func getAllCityList() -> [City] {
         let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
+    }
+    
+    func unknownCity(_ cityName:String) {
+        let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: "The iPhone detected that you are located in" + " " + cityName + ", " + "but this city is not in the Environment Canada list. Do you want to select a city yourself?".localized(), preferredStyle: UIAlertControllerStyle.alert)
+        
+        unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            DispatchQueue.main.async(execute: { () -> Void in
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as! UINavigationController
+                self.present(viewController, animated: false, completion: nil)
+            })
+        }))
+        
+        unknownCityAlert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action: UIAlertAction!) in
+            // TODO vider la vue
+        }))
+        
+        present(unknownCityAlert, animated: true, completion: nil)
     }
 }
 

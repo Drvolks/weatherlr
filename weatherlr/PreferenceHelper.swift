@@ -121,6 +121,7 @@ class PreferenceHelper {
         defaults.synchronize()
     }
     
+    // TODO -> City
     static func getSelectedCity() -> City? {
         do {
             let selectedCity = try getSelectedCityWithClassName("City")
@@ -138,7 +139,7 @@ class PreferenceHelper {
             return selectedCity
         } catch {}
         
-        return nil
+        return CityHelper.getCurrentLocationCity()
     }
     
     static func getSelectedCityWithClassName(_ className:String) throws -> City? {

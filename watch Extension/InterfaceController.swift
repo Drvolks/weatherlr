@@ -297,4 +297,8 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
     }
+    
+    func unknownCity(_ cityName:String) {
+        // TODO unknownCity
+    }
 }

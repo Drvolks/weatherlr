@@ -10,7 +10,9 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSessionDownloadDelegate {
+class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSessionDownloadDelegate, LocationServicesDelegate {
+    
+    
     @IBOutlet var cityLabel: WKInterfaceLabel!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
@@ -18,7 +20,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     var updatedDate = Date(timeIntervalSince1970: 0)
     var rowTypes = [String]()
-    var locationService:LocationService?
+    var locationServices:LocationServices?
     
     override func didDeactivate() {
         super.didDeactivate()
@@ -27,10 +29,9 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        if locationService == nil {
-            locationService = LocationService(self)
-            locationService?.start()
-        }
+        locationServices = LocationServices()
+        locationServices?.delegate = self
+        locationServices?.start()
         
         selectCityButton.setTitle("Select city".localized())
         
@@ -54,7 +55,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func loadData() {
-        if ExtensionDelegateHelper.getCurrentCity(locationService!) != nil {
+        if ExtensionDelegateHelper.getSelectedCity() != nil {
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
                 
@@ -123,7 +124,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                     controller.weather = weather
                 }
                 
-                if let city = watchDelegate.wrapper.city {
+                if let city = locationServices?.currentCity {
                     self.cityLabel.setText(CityHelper.cityName(city))
                 }
                 
@@ -143,9 +144,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
         
         updatedDate = watchDelegate.wrapper.lastRefresh
-        
-        // TODO watchDelegate.scheduleSnapshot()
-        // TODO watchDelegate.updateComplication()
     }
     
     func rowTypesValid() -> Bool {
@@ -237,8 +235,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                 return
             }
      
-            let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
-            let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
             let cities:[City]
             let useCurrentCity = CityHelper.getCurrentLocationCity()
             
@@ -248,9 +244,9 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             }
             
             if choice.count == 1 {
-                cities = CityHelper.searchCityStartingWith(choice, allCityList: allCityList)
+                cities = CityHelper.searchCityStartingWith(choice, allCityList: (locationServices?.allCityList)!)
             } else {
-                cities = CityHelper.searchCity(choice, allCityList: allCityList)
+                cities = CityHelper.searchCity(choice, allCityList: (locationServices?.allCityList)!)
             }
             
             if cities.count == 1 {
@@ -271,7 +267,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             print("Watch urlSession didFinishDownloadingTo")
         #endif
         
-        if let city = ExtensionDelegateHelper.getActiveCity() {
+        if let city = ExtensionDelegateHelper.getSelectedCity() {
             do {
                 let xmlData = try Data(contentsOf: location)
                 ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city))
@@ -289,5 +285,15 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         } else {
             print("Watch urlSession didFinishDownloadingTo - no selected city")
         }
+    }
+    
+    func cityHasBeenUpdated(_ city: City) {
+        ExtensionDelegateHelper.setSelectedCity(city)
+        ExtensionDelegateHelper.launchURLSessionNow(self)
+    }
+    
+    func getAllCityList() -> [City] {
+        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
     }
 }

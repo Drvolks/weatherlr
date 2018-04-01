@@ -35,12 +35,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
-        let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
-        
         locationServices = LocationServices()
         locationServices!.delegate = self
-        locationServices!.allCityList = allCityList
         locationServices!.start()
         
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
@@ -306,6 +302,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func cityHasBeenUpdated(_ city: City) {
         refresh(false)
+    }
+    
+    func getAllCityList() -> [City] {
+        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
     }
 }
 

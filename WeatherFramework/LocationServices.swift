@@ -150,12 +150,8 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                         print("reverseGeocodeLocation found city " + cityNameFound)
                     #endif
 
-                    if self.allCityList == nil {
-                        self.allCityList = self.delegate!.getAllCityList()
-                    }
-                    
                     var cityFoundInList:City?
-                    let cities = CityHelper.searchCity(cityNameFound, allCityList: self.allCityList!)
+                    let cities = CityHelper.searchCity(cityNameFound, allCityList: self.getAllCityList())
                     for i in 0..<cities.count {
                         let city = cities[i]
                         
@@ -184,6 +180,14 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                 }
             }
         })
+    }
+    
+    func getAllCityList() -> [City] {
+        if allCityList == nil {
+            allCityList = delegate!.getAllCityList()
+        }
+        
+        return allCityList!
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)

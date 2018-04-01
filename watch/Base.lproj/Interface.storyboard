@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13178.6" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13045"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
     </dependencies>
     <scenes>
         <!--Main-->
@@ -97,6 +98,7 @@
                                 <action selector="selectCity" destination="AgC-eL-Hgc" id="NIw-9g-7dQ"/>
                             </connections>
                         </button>
+                        <imageView width="120" height="100" alignment="center" verticalAlignment="center" hidden="YES" image="locating" id="1xC-Wv-pwc"/>
                         <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
@@ -105,6 +107,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="u5m-K4-Lrm" id="ZAO-E9-rya"/>
                         <outlet property="lastRefreshLabel" destination="6me-SD-2jn" id="ITo-E0-gbf"/>
+                        <outlet property="locatingImage" destination="1xC-Wv-pwc" id="uzM-3f-MHw"/>
                         <outlet property="selectCityButton" destination="ai4-HS-V5P" id="899-k6-Olf"/>
                         <outlet property="weatherTable" destination="TYl-Sm-JJI" id="ulS-d7-dXp"/>
                     </connections>

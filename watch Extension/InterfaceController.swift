@@ -17,6 +17,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
+    @IBOutlet var locatingImage: WKInterfaceImage!
     
     var updatedDate = Date(timeIntervalSince1970: 0)
     var rowTypes = [String]()
@@ -56,12 +57,14 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     func loadData() {
         if ExtensionDelegateHelper.getSelectedCity() != nil {
+            selectCityButton.setHidden(true)
+            locatingImage.setHidden(true)
+            
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
                 
                 cityLabel.setHidden(false)
                 cityLabel.setText("Loading".localized())
-                selectCityButton.setHidden(true)
                 
                 ExtensionDelegateHelper.launchURLSessionNow(self)
             } else if updatedDate.compare(ExtensionDelegateHelper.getWrapper().lastRefresh) != ComparisonResult.orderedSame {
@@ -69,6 +72,17 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             }
         } else {
             cityLabel.setHidden(true)
+            
+            if let city = locationServices?.currentCity {
+                if LocationServices.isUseCurrentLocation(city) {
+                    //  TODO l'image ne s'affiche pas
+                    selectCityButton.setHidden(true)
+                    locatingImage.setHidden(false)
+                    return
+                }
+            }
+            
+            locatingImage.setHidden(true)
             selectCityButton.setHidden(false)
         }
     }
@@ -137,7 +151,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             }
         }
         
-        if let city = locationServices?.currentCity {
+        if let city = ExtensionDelegateHelper.getSelectedCity() {
             self.cityLabel.setText(CityHelper.cityName(city))
         }
         
@@ -175,11 +189,20 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     @IBAction func selectCity() {
         var citieNames = [String]()
+        let isFrench = PreferenceHelper.isFrench()
         PreferenceHelper.getFavoriteCities().forEach({
             if $0.id == Global.currentLocationCityId {
-                citieNames.append(CityHelper.cityName($0))
+                if isFrench {
+                    citieNames.append($0.frenchName)
+                } else {
+                    citieNames.append($0.englishName)
+                }
             } else {
-                citieNames.append(CityHelper.cityName($0) + ", " + $0.province.uppercased())
+                if isFrench {
+                    citieNames.append($0.frenchName + ", " + $0.province.uppercased())
+                } else {
+                    citieNames.append($0.englishName + ", " + $0.province.uppercased())
+                }
             }
         })
         
@@ -208,6 +231,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     @objc func refresh() {
+        rowTypes = [String]()
         ExtensionDelegateHelper.resetWeather()
         loadData()
     }
@@ -239,15 +263,15 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             let cities:[City]
             let useCurrentCity = CityHelper.getCurrentLocationCity()
             
-            if choice == CityHelper.cityName(useCurrentCity) {
+            if choice == useCurrentCity.englishName || choice == useCurrentCity.frenchName {
                 cityDidChange(useCurrentCity)
                 return
             }
             
             if choice.count == 1 {
-                cities = CityHelper.searchCityStartingWith(choice, allCityList: (locationServices?.allCityList)!)
+                cities = CityHelper.searchCityStartingWith(choice, allCityList: (locationServices?.getAllCityList())!)
             } else {
-                cities = CityHelper.searchCity(choice, allCityList: (locationServices?.allCityList)!)
+                cities = CityHelper.searchCity(choice, allCityList: (locationServices?.getAllCityList())!)
             }
             
             if cities.count == 1 {
@@ -260,7 +284,8 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     func cityDidChange(_ city: City) {
         PreferenceHelper.addFavorite(city)
-        loadData()
+        locationServices?.updateCity(city)
+        refresh()
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
@@ -300,9 +325,11 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     func unknownCity(_ cityName:String) {
         // TODO unknownCity
+        refresh()
     }
     
     func notInCanada() {
         // TODO notInCanada
+        refresh()
     }
 }

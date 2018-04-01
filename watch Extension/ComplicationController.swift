@@ -149,6 +149,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             
             
             // TODO getMinMaxTemperature(weather, wrapper: wrapper)
+        } else if let weather = nextWeather {
+            modularTemplate.body1TextProvider = getMinMaxTemperature(weather, wrapper: wrapper)
+            modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "")
+        } else {
+            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "")
+            modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "")
         }
         
         return modularTemplate

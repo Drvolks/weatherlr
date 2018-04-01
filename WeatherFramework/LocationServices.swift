@@ -99,6 +99,9 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                         
                         self.currentCity = cityFound
                         self.delegate!.cityHasBeenUpdated(cityFound)
+                    } else {
+                        self.currentCity = nil
+                        self.delegate!.unknownCity(cityName)
                     }
                 }
             }

@@ -83,11 +83,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        locationServices?.updateCity(PreferenceHelper.getSelectedCity())
-        
-        if locationServices?.currentCity != nil {
-            refresh(false)
-        }
+        refreshFromScroll(self)
     }
     
     
@@ -103,6 +99,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func refreshFromScroll(_ sender:AnyObject) {
+        locationServices?.updateCity(PreferenceHelper.getSelectedCity())
+        
         if locationServices!.currentCity != nil {
             refresh(true)
         }
@@ -182,6 +180,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let city = locationServices?.currentCity {
+            if LocationServices.isUseCurrentLocation(city) {
+                return 1
+            }
+        }
+        
         let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
         return weatherInformationWrapper.weatherInformations.count - indexAjust
     }
@@ -211,6 +215,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if indexPath.row == 0 {
+            if let city = locationServices?.currentCity {
+                if LocationServices.isUseCurrentLocation(city) {
+                    return 300
+                }
+            }
+            
             if weatherInformationWrapper.weatherInformations.count > 0 {
                 let weatherInfo = weatherInformationWrapper.weatherInformations[0]
                 
@@ -307,7 +317,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func unknownCity(_ cityName:String) {
-        let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: "The iPhone detected that you are located in" + " " + cityName + ", " + "but this city is not in the Environment Canada list. Do you want to select a city yourself?".localized(), preferredStyle: UIAlertControllerStyle.alert)
+        chargementVilleManuelPopup("The iPhone detected that you are located in".localized() + " " + cityName + ", " + "but this city is not in the Environment Canada list. Do you want to select a city yourself?".localized())
+    }
+    
+    func notInCanada() {
+        chargementVilleManuelPopup("The iPhone detected that you are not located in Canada".localized())
+    }
+    
+    func chargementVilleManuelPopup(_ message:String) {
+        let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             DispatchQueue.main.async(execute: { () -> Void in
@@ -317,7 +335,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }))
         
         unknownCityAlert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action: UIAlertAction!) in
-            // TODO vider la vue
+            self.refreshControl.endRefreshing()
+            self.refresh(false)
         }))
         
         present(unknownCityAlert, animated: true, completion: nil)

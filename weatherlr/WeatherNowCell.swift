@@ -20,18 +20,23 @@ class WeatherNowCell: UITableViewCell {
     }
     
     private func populate(city:City, weatherInformationWrapper: WeatherInformationWrapper) {
-        if weatherInformationWrapper.weatherInformations.count > 0 {
-            let weatherInfo = weatherInformationWrapper.weatherInformations[0]
-            
-            if weatherInfo.weatherDay == WeatherDay.now {
-                if(weatherInfo.weatherStatus == .blank) {
-                    weatherImage.isHidden = true
+        if LocationServices.isUseCurrentLocation(city) {
+            weatherImage.isHidden = false
+            weatherImage.image = UIImage(named: "locating")
+        } else {
+            if weatherInformationWrapper.weatherInformations.count > 0 {
+                let weatherInfo = weatherInformationWrapper.weatherInformations[0]
+                
+                if weatherInfo.weatherDay == WeatherDay.now {
+                    if(weatherInfo.weatherStatus == .blank) {
+                        weatherImage.isHidden = true
+                    } else {
+                        weatherImage.image = weatherInfo.image()
+                        weatherImage.isHidden = false
+                    }
                 } else {
-                    weatherImage.image = weatherInfo.image()
-                    weatherImage.isHidden = false
+                    weatherImage.isHidden = true
                 }
-            } else {
-                weatherImage.isHidden = true
             }
         }
     }

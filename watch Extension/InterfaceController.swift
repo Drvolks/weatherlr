@@ -301,4 +301,8 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     func unknownCity(_ cityName:String) {
         // TODO unknownCity
     }
+    
+    func notInCanada() {
+        // TODO notInCanada
+    }
 }

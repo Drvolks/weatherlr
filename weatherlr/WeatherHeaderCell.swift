@@ -21,17 +21,22 @@ class WeatherHeaderCell: UITableViewCell {
     }
     
     private func populate(city:City, weatherInformationWrapper: WeatherInformationWrapper) {
-        if weatherInformationWrapper.weatherInformations.count > 0 {
-            let weatherInfo = weatherInformationWrapper.weatherInformations[0]
-            
-            if weatherInfo.weatherDay == WeatherDay.now {
-                cityLabel.text = CityHelper.cityName(city)
-                temperatureLabel.text = String(weatherInfo.temperature) + "°"
-                return
+        if LocationServices.isUseCurrentLocation(city) {
+            temperatureLabel.text = ""
+            cityLabel.text = ""
+        } else {
+            if weatherInformationWrapper.weatherInformations.count > 0 {
+                let weatherInfo = weatherInformationWrapper.weatherInformations[0]
+                
+                if weatherInfo.weatherDay == WeatherDay.now {
+                    cityLabel.text = CityHelper.cityName(city)
+                    temperatureLabel.text = String(weatherInfo.temperature) + "°"
+                    return
+                }
             }
+            
+            temperatureLabel.text = ""
+            cityLabel.text = CityHelper.cityName(city)
         }
-        
-        temperatureLabel.text = ""
-        cityLabel.text = CityHelper.cityName(city)
     }
 }

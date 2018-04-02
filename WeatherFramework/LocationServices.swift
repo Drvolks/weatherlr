@@ -16,7 +16,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
     var allCityList:[City]?
     var currentCity:City?
     var errorCount = 0
-    var lastRefresh = Date()
+    var modeBackground = false
     
     func start() {
         #if DEBUG
@@ -24,6 +24,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         #endif
         locationManager = CLLocationManager()
         locationManager!.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager!.distanceFilter = 1000
         locationManager!.delegate = self
         
         updateCity(PreferenceHelper.getSelectedCity())
@@ -70,8 +71,6 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         #if DEBUG
             print(mostRecentLocation)
         #endif
-        
-        lastRefresh = Date()
         
         getAdress(mostRecentLocation)
     }
@@ -177,7 +176,11 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                     if let cityFound = cityFoundInList {
                         #if DEBUG
                             print("reverseGeocodeLocation matched city " + cityFound.frenchName)
+                            print("startUpdatingLocation")
                         #endif
+                        
+                        self.modeBackground = true
+                        self.locationManager?.startUpdatingLocation()
                         
                         self.currentCity = cityFound
                         self.delegate!.cityHasBeenUpdated(cityFound)
@@ -277,23 +280,19 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         #endif
         
         currentCity = CityHelper.getCurrentLocationCity()
+        
+        if modeBackground {
+            #if DEBUG
+                print("stopUpdatingLocation")
+            #endif
+            self.modeBackground = false
+            self.locationManager?.stopUpdatingLocation()
+        }
+        
         locationManager?.requestLocation()
     }
     
     func getCurrentCity() -> City? {
-        if expired() {
-            getCurrentLocation()
-        }
-        
         return currentCity
-    }
-    
-    func expired() -> Bool {
-        let elapsedTime = Calendar.current.dateComponents([.minute], from: lastRefresh as Date, to: Date()).minute
-        if elapsedTime! < Global.expirationInMinutes {
-            return false
-        } else {
-            return true
-        }
     }
 }

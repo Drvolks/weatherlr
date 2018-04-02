@@ -16,6 +16,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
     var allCityList:[City]?
     var currentCity:City?
     var errorCount = 0
+    var lastRefresh = Date()
     
     func start() {
         #if DEBUG
@@ -67,8 +68,11 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         
         guard let mostRecentLocation = manager.location else { return }
         #if DEBUG
-        print(mostRecentLocation)
+            print(mostRecentLocation)
         #endif
+        
+        lastRefresh = Date()
+        
         getAdress(mostRecentLocation)
     }
     
@@ -84,9 +88,12 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
             
             if let e = error {
                 #if DEBUG
-                print("reverseGeocodeLocation error")
-                print(e)
+                    print("reverseGeocodeLocation error")
+                    print(e)
                 #endif
+                
+                self.currentCity = nil
+                self.delegate!.errorLocating(3)
             } else {
                 var placeMark: CLPlacemark!
                 placeMark = placemarks?[0]
@@ -134,6 +141,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                 }
                 
                 if !isCanada {
+                    self.currentCity = nil
                     self.delegate!.notInCanada()
                     return
                 }
@@ -177,6 +185,9 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                         self.currentCity = nil
                         self.delegate!.unknownCity(cityNameFound)
                     }
+                } else {
+                    self.currentCity = nil
+                    self.delegate!.errorLocating(2)
                 }
             }
         })
@@ -195,12 +206,13 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         print("CL failed: \(error)")
         
         errorCount = errorCount + 1
-        currentCity = nil
         
-        if(errorCount < 10) {
+        if(errorCount < 3) {
             getCurrentLocation()
         } else {
-            // TODO implémenter delegate.locationNonDisponible
+            currentCity = nil
+            errorCount = 0
+            delegate!.errorLocating(1)
         }
     }
     
@@ -268,4 +280,20 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         locationManager?.requestLocation()
     }
     
+    func getCurrentCity() -> City? {
+        if expired() {
+            getCurrentLocation()
+        }
+        
+        return currentCity
+    }
+    
+    func expired() -> Bool {
+        let elapsedTime = Calendar.current.dateComponents([.minute], from: lastRefresh as Date, to: Date()).minute
+        if elapsedTime! < Global.expirationInMinutes {
+            return false
+        } else {
+            return true
+        }
+    }
 }

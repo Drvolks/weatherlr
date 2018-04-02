@@ -13,4 +13,5 @@ protocol LocationServicesDelegate {
     func getAllCityList() -> [City]
     func unknownCity(_ cityName:String)
     func notInCanada()
+    func errorLocating(_ errorCode:Int)
 }

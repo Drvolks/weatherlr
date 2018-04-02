@@ -18,6 +18,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     @IBOutlet var locatingImage: WKInterfaceImage!
+    @IBOutlet var locationErrorLabel: WKInterfaceLabel!
     
     var updatedDate = Date(timeIntervalSince1970: 0)
     var rowTypes = [String]()
@@ -59,6 +60,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         if ExtensionDelegateHelper.getSelectedCity() != nil {
             selectCityButton.setHidden(true)
             locatingImage.setHidden(true)
+            locationErrorLabel.setHidden(true)
             
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
@@ -72,13 +74,19 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             }
         } else {
             cityLabel.setHidden(true)
+            locationErrorLabel.setHidden(true)
             
-            if let city = locationServices?.currentCity {
+            if let city = locationServices?.getCurrentCity() {
                 if LocationServices.isUseCurrentLocation(city) {
-                    //  TODO l'image ne s'affiche pas
                     selectCityButton.setHidden(true)
                     locatingImage.setHidden(false)
                     return
+                }
+            }
+            
+            if let city = PreferenceHelper.getSelectedCity() {
+                if LocationServices.isUseCurrentLocation(city) {
+                    locationErrorLabel.setHidden(false)
                 }
             }
             
@@ -324,12 +332,18 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func unknownCity(_ cityName:String) {
-        // TODO unknownCity
+        locationErrorLabel.setText("The iPhone detected that you are located in".localized() + " " + cityName + ", " + "but this city is not in the Environment Canada list. Do you want to select a city yourself?")
         refresh()
     }
     
     func notInCanada() {
-        // TODO notInCanada
+        locationErrorLabel.setText("The iPhone detected that you are not located in Canada".localized())
+        refresh()
+    }
+    
+    func errorLocating(_ errorCode:Int) {
+        // TODO retier code erreur
+        locationErrorLabel.setText("Unable to detect your current location".localized() + " (code " + String(errorCode) + ")")
         refresh()
     }
 }

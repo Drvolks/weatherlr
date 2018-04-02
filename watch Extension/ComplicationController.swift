@@ -119,7 +119,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     
     func generateLargeModularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City, wrapper: WeatherInformationWrapper) -> CLKComplicationTemplateModularLargeStandardBody {
         let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
-        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: CityHelper.cityName(city))
+        var cityName = CityHelper.cityName(city)
+        
+        if let city = PreferenceHelper.getSelectedCity() {
+            if LocationServices.isUseCurrentLocation(city) {
+                cityName = "➤ " + cityName
+            }
+        }
+        
+        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: cityName)
         
         if let weather = weather {
             let lang = PreferenceHelper.getLanguage()
@@ -478,5 +486,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     
     func notInCanada() {
         // TODO notInCanada
+    }
+    
+    func errorLocating(_ errorCode:Int) {
+        // TODO errorLocating
     }
 }

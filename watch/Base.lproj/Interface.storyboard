@@ -93,12 +93,13 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <label alignment="left" text="Location Error Label" numberOfLines="0" id="hNI-1L-1Pp"/>
                         <button width="1" alignment="left" hidden="YES" title="Select city" id="ai4-HS-V5P">
                             <connections>
                                 <action selector="selectCity" destination="AgC-eL-Hgc" id="NIw-9g-7dQ"/>
                             </connections>
                         </button>
-                        <imageView width="120" height="100" alignment="center" verticalAlignment="center" hidden="YES" image="locating" id="1xC-Wv-pwc"/>
+                        <imageView width="120" height="100" alignment="center" verticalAlignment="center" hidden="YES" image="WatchLocating" id="1xC-Wv-pwc"/>
                         <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
@@ -108,6 +109,7 @@
                         <outlet property="cityLabel" destination="u5m-K4-Lrm" id="ZAO-E9-rya"/>
                         <outlet property="lastRefreshLabel" destination="6me-SD-2jn" id="ITo-E0-gbf"/>
                         <outlet property="locatingImage" destination="1xC-Wv-pwc" id="uzM-3f-MHw"/>
+                        <outlet property="locationErrorLabel" destination="hNI-1L-1Pp" id="COZ-4t-y70"/>
                         <outlet property="selectCityButton" destination="ai4-HS-V5P" id="899-k6-Olf"/>
                         <outlet property="weatherTable" destination="TYl-Sm-JJI" id="ulS-d7-dXp"/>
                     </connections>

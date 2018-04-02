@@ -149,7 +149,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                 if let val = placeMark.locality  {
                     cityName = val
                 } else if let val = placeMark.subLocality {
-                    cityName = val
+                    cityName = val.replacingOccurrences(of: ", Unorganized", with: "")
                 }
                 
                 if let cityNameFound = cityName {

@@ -7,15 +7,19 @@
 //
 
 import Foundation
+import MapKit
 
 class CityParser {
     var outputPath:String
+    var coordinates = [Int: CLLocationCoordinate2D]()
+    var citiesWithRadar = [String: String]()
 
     var cities = [String:City]()
     let provinces = ["AB","BC","PE","MB","NB","NS","NU","ON","QC","SK","NL","NT","YT"]
     let lang = ["https://meteo.gc.ca/forecast/canada/index_f.html?id=", "https://weather.gc.ca/forecast/canada/index_e.html?id="]
     let weatherUrl1 = "https://meteo.gc.ca/city/pages/"
     let weatherUrl2 = "_metric_f.html"
+    let geoCoder = CLGeocoder()
     
     init(outputPath:String) {
         self.outputPath = outputPath
@@ -37,18 +41,89 @@ class CityParser {
         }
         
         var cityArray = [City]()
-        for (_, city) in cities {
-            print(String(city.id) + "|" + city.province + "|" + city.frenchName + "|" + city.englishName)
+        let dispatchGroup = DispatchGroup()
+        let dispatchQueue = DispatchQueue(label: "taskQueue")
+        let dispatchSemaphore = DispatchSemaphore(value: 0)
+        
+        dispatchQueue.async {
+        
+        for (_, city) in self.cities {
+            //print(String(city.id) + "|" + city.province + "|" + city.frenchName + "|" + city.englishName)
+
+            let address = city.englishName + ", " + city.province + ", Canada"
+            
+            print("enter")
+            dispatchGroup.enter()
+            sleep(1)
+            self.geoCoder.geocodeAddressString(address) {placemarks, error in
+                print("Address = \(address)");
+                if let placemark = placemarks?.first {
+                    if let coordinate = placemark.location?.coordinate {
+                        city.latitude = "\(coordinate.latitude)"
+                        city.longitude = "\(coordinate.longitude)"
+                    
+                        print(coordinate);
+                    }
+                }
+                print("leave")
+                dispatchSemaphore.signal()
+                dispatchGroup.leave()
+            }
+            
+            dispatchSemaphore.wait()
             
             cityArray.append(city)
         }
+        }
         
+        dispatchGroup.notify(queue: dispatchQueue){
+            print("geocoder completed")
+            
+            for i in 0..<cityArray.count {
+                let city = cityArray[i]
+                print(city.englishName)
+                
+                if let coor = self.coordinates[i] {
+                    city.latitude = "\(coor.latitude)"
+                    city.longitude = "\(coor.longitude)"
+                }
+            }
+            
+            self.successCallback(cityArray)
+        }
+    }
+    
+    func geoCode(cityArray:[City], position:Int, workGroup:DispatchGroup)  {
+        let city = cityArray[position]
+        let address = city.englishName + ", " + city.province + ", Canada"
+        
+        geoCoder.geocodeAddressString(address) {placemarks, error in
+            print("Address = \(address)");
+            if let placemark = placemarks?.first {
+                let coordinate = placemark.location?.coordinate
+                self.coordinates[position] = coordinate!
+                print(coordinate!);
+            }
+            
+            let thePosition = position + 1
+            if(thePosition<cityArray.count) {
+                workGroup.enter()
+                self.geoCode(cityArray: cityArray, position: thePosition, workGroup: workGroup)
+            }
+            
+            workGroup.leave()
+        }
+    }
+    
+    func successCallback(_ cityArray:[City]) {
         let path = outputPath + "/cities.plist"
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cityArray, toFile: path)
         
         
         if !isSuccessfulSave {
             print("Error saving cities :(")
+        } else {
+            print("Done!")
         }
     }
     
@@ -86,19 +161,25 @@ class CityParser {
     }
     
     func getRadarId(_ cityId:String) -> String {
-        // TODO caching resultat car le même pour français et anglais
-        let urlStr = weatherUrl1 + cityId + weatherUrl2
-        if let url = URL(string: urlStr) {
-            let content = try! NSString(contentsOf: url, usedEncoding: nil) as String
-            
-            let regex = try! NSRegularExpression(pattern: "\"/radar/index_f.html\\?id=(.*?)\"", options: [.caseInsensitive])
-            let results = regex.matches(in: content, options: [], range: NSMakeRange(0, content.distance(from: content.startIndex, to: content.endIndex)))
-            
-            if results.count > 0 {
-                let radarId = (content as NSString).substring(with: results[0].range(at: 1))
+        let cityWithRadar = citiesWithRadar[cityId]
+        
+        if cityWithRadar == nil {
+            let urlStr = weatherUrl1 + cityId + weatherUrl2
+            if let url = URL(string: urlStr) {
+                let content = try! NSString(contentsOf: url, usedEncoding: nil) as String
                 
-                return radarId
+                let regex = try! NSRegularExpression(pattern: "\"/radar/index_f.html\\?id=(.*?)\"", options: [.caseInsensitive])
+                let results = regex.matches(in: content, options: [], range: NSMakeRange(0, content.distance(from: content.startIndex, to: content.endIndex)))
+                
+                if results.count > 0 {
+                    let radarId = (content as NSString).substring(with: results[0].range(at: 1))
+                    
+                    citiesWithRadar[cityId] = radarId
+                    return radarId
+                }
             }
+        } else {
+            return cityWithRadar!
         }
         
         return ""

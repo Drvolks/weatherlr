@@ -282,8 +282,8 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func download(_ sender: UIBarButtonItem) {
         #if DEBUG
-            let downloader = CityDownloader(outputPath: "/Users/jfdufour/Downloads/cities")
-            downloader.process()
+            //let downloader = CityDownloader(outputPath: "/Users/jfdufour/Downloads/cities")
+            //downloader.process()
             
             let cityParser = CityParser(outputPath: "/Users/jfdufour/Downloads/")
             cityParser.perform()

@@ -50,6 +50,11 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                     print("updateCity " + city.frenchName)
                 #endif
                 
+                if modeBackground {
+                    modeBackground = false
+                    locationManager?.stopUpdatingLocation()
+                }
+                
                 currentCity = city
                 self.delegate!.cityHasBeenUpdated(city)
             }
@@ -66,9 +71,20 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
             print("didUpdateLocations")
         #endif
         
+        guard let mostRecentLocation = manager.location else {
+            errorCount = errorCount + 1
+            if(errorCount < 3) {
+                getCurrentLocation()
+            } else {
+                errorCount = 0
+                currentCity = nil
+                delegate!.errorLocating(6)
+            }
+            return
+        }
+        
         errorCount = 0
         
-        guard let mostRecentLocation = manager.location else { return }
         #if DEBUG
             print(mostRecentLocation)
         #endif
@@ -337,15 +353,9 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         
         currentCity = CityHelper.getCurrentLocationCity()
         
-        if modeBackground {
-            #if DEBUG
-                print("stopUpdatingLocation")
-            #endif
-            self.modeBackground = false
-            self.locationManager?.stopUpdatingLocation()
+        if !modeBackground {
+            locationManager?.requestLocation()
         }
-        
-        locationManager?.requestLocation()
     }
     
     func getCurrentCity() -> City? {

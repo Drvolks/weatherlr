@@ -80,6 +80,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                 if LocationServices.isUseCurrentLocation(city) {
                     selectCityButton.setHidden(true)
                     locatingImage.setHidden(false)
+                    cityLabel.setText("Locating".localized())
                     return
                 }
             }
@@ -291,9 +292,19 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func cityDidChange(_ city: City) {
+        lastRefreshLabel.setHidden(true)
+        
+        if LocationServices.isUseCurrentLocation(city) {
+            locatingImage.setHidden(false)
+            cityLabel.setText("Locating".localized())
+        } else {
+            locatingImage.setHidden(true)
+            cityLabel.setText("Loading".localized())
+        }
+        
+        weatherTable.setNumberOfRows(0, withRowType: "")
         PreferenceHelper.addFavorite(city)
         locationServices?.updateCity(city)
-        refresh()
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
@@ -327,7 +338,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func getAllCityList() -> [City] {
-        //NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
+        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
     }

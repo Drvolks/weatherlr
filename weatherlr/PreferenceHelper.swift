@@ -150,7 +150,7 @@ class PreferenceHelper {
                 let selectedCity = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedObject) as! City
                 
                 // for legacy City object < 1.1 release
-                if selectedCity.radarId.isEmpty {
+                if selectedCity.id != Global.currentLocationCityId && selectedCity.radarId.isEmpty {
                     return refreshCity(selectedCity)
                 }
                 

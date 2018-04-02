@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class City : NSObject, NSCoding {
     var id = ""
@@ -14,6 +15,8 @@ class City : NSObject, NSCoding {
     var englishName = ""
     var province = ""
     var radarId = ""
+    var latitude = ""
+    var longitude = ""
     
     // MARK: Types
     struct PropertyKey {
@@ -22,18 +25,22 @@ class City : NSObject, NSCoding {
         static let idKey = "id"
         static let provinceKey = "province"
         static let radarKey = "radar"
+        static let latitudeKey = "latitude"
+        static let longitudeKey = "longitude"
     }
     
     override init() {
         super.init()
     }
     
-    init(id: String, frenchName: String, englishName: String, province: String, radarId: String) {
+    init(id: String, frenchName: String, englishName: String, province: String, radarId: String, latitude:String, longitude:String) {
         self.id = id
         self.frenchName = frenchName
         self.englishName = englishName
         self.province = province
         self.radarId = radarId
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
     // MARK: NSCoding
@@ -43,6 +50,8 @@ class City : NSObject, NSCoding {
         aCoder.encode(id, forKey: PropertyKey.idKey)
         aCoder.encode(province, forKey: PropertyKey.provinceKey)
         aCoder.encode(radarId, forKey: PropertyKey.radarKey)
+        aCoder.encode(latitude, forKey: PropertyKey.latitudeKey)
+        aCoder.encode(longitude, forKey: PropertyKey.longitudeKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -51,11 +60,21 @@ class City : NSObject, NSCoding {
         let province = aDecoder.decodeObject(forKey: PropertyKey.provinceKey) as! String
         let id = aDecoder.decodeObject(forKey: PropertyKey.idKey) as! String
         var radarId = aDecoder.decodeObject(forKey: PropertyKey.radarKey) as? String
+        var latitude = aDecoder.decodeObject(forKey: PropertyKey.latitudeKey) as? String
+        var longitude = aDecoder.decodeObject(forKey: PropertyKey.longitudeKey) as? String
         
         if radarId == nil {
             radarId = ""
         }
         
-        self.init(id: id, frenchName: frenchName, englishName: englishName, province: province, radarId: radarId!)
+        if latitude == nil {
+            latitude = ""
+        }
+        
+        if longitude == nil {
+            longitude = ""
+        }
+        
+        self.init(id: id, frenchName: frenchName, englishName: englishName, province: province, radarId: radarId!, latitude:latitude!, longitude:longitude!)
     }
 }

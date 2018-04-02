@@ -476,6 +476,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     }
     
     func getAllCityList() -> [City] {
+        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
     }

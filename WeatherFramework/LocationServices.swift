@@ -17,6 +17,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
     var currentCity:City?
     var errorCount = 0
     var modeBackground = false
+    var locations:[LocatedCity]?
     
     func start() {
         #if DEBUG
@@ -24,7 +25,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         #endif
         locationManager = CLLocationManager()
         locationManager!.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-        locationManager!.distanceFilter = 1000
+        locationManager!.distanceFilter = 10000 // 10 km
         locationManager!.delegate = self
         
         updateCity(PreferenceHelper.getSelectedCity())
@@ -72,7 +73,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
             print(mostRecentLocation)
         #endif
         
-        getAdress(mostRecentLocation)
+        getAdressLocalData(mostRecentLocation)
     }
     
     func getAdress(_ location: CLLocation) {
@@ -196,6 +197,61 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         })
     }
     
+    func getAdressLocalData(_ location: CLLocation) {
+        #if DEBUG
+            print("getAdressLocalData called")
+        #endif
+        
+        if locations == nil {
+            buildLocations()
+        }
+        
+        if let closestLocation = locations!.min(by: { location.distance(from: $0.location) < location.distance(from: $1.location) }) {
+            print("closest location: \(closestLocation.city.frenchName), distance: \(location.distance(from: closestLocation.location))")
+            currentCity = closestLocation.city
+            delegate!.cityHasBeenUpdated(closestLocation.city)
+        } else {
+            print("coordinates is empty")
+            if let city = currentCity {
+                if LocationServices.isUseCurrentLocation(city) {
+                    currentCity = nil
+                }
+            }
+            delegate!.errorLocating(5)
+        }
+        
+        #if DEBUG
+        print("startUpdatingLocation")
+        #endif
+        
+        self.modeBackground = true
+        self.locationManager?.startUpdatingLocation()
+    }
+    
+    func buildLocations() {
+        #if DEBUG
+            print("buildLocations called")
+        #endif
+        
+        let cities = getAllCityList()
+        locations = [LocatedCity]()
+        
+        for i in 0..<cities.count {
+            if cities[i].latitude != "" && cities[i].longitude != "" {
+                let clLatitude = CLLocationDegrees(cities[i].latitude)
+                let clLongitude = CLLocationDegrees(cities[i].longitude)
+                let location = CLLocation(latitude: clLatitude!, longitude: clLongitude!)
+                let localCity = LocatedCity(city: cities[i], location: location)
+                
+                locations?.append(localCity)
+            }
+        }
+        
+        #if DEBUG
+        print("buildLocations with \(String(describing: locations?.count)) cities having a location")
+        #endif
+    }
+    
     func getAllCityList() -> [City] {
         if allCityList == nil {
             allCityList = delegate!.getAllCityList()
@@ -294,5 +350,15 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
     
     func getCurrentCity() -> City? {
         return currentCity
+    }
+    
+    func closestLocation(locations: [CLLocation], closestToLocation location: CLLocation) -> CLLocation? {
+        if let closestLocation = locations.min(by: { location.distance(from: $0) < location.distance(from: $1) }) {
+            print("closest location: \(closestLocation), distance: \(location.distance(from: closestLocation))")
+            return closestLocation
+        } else {
+            print("coordinates is empty")
+            return nil
+        }
     }
 }

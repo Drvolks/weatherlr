@@ -23,7 +23,7 @@ class WeatherHeaderCell: UITableViewCell {
     private func populate(city:City, weatherInformationWrapper: WeatherInformationWrapper) {
         if LocationServices.isUseCurrentLocation(city) {
             temperatureLabel.text = ""
-            cityLabel.text = ""
+            cityLabel.text = "Locating".localized()
         } else {
             if weatherInformationWrapper.weatherInformations.count > 0 {
                 let weatherInfo = weatherInformationWrapper.weatherInformations[0]

@@ -14,12 +14,7 @@ class ExtensionDelegateHelper {
         #if DEBUG
             print("launchURLSessionNow")
         #endif
-        
-        guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
-            print("launchURLSessionNow: no delegate!")
-            return
-        }
-        
+
         if let city = getSelectedCity() {
             //extensionDelegate.scheduleRefresh(Constants.backgroundRefreshInSeconds)
             

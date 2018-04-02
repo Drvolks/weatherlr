@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import Contacts
 
 class CityParser {
     var outputPath:String
@@ -50,27 +51,32 @@ class CityParser {
         for (_, city) in self.cities {
             //print(String(city.id) + "|" + city.province + "|" + city.frenchName + "|" + city.englishName)
 
-            let address = city.englishName + ", " + city.province + ", Canada"
+            let address = CNMutablePostalAddress()
+            address.city = city.englishName
+            address.state = city.province
+            address.country = "Canada"
             
-            print("enter")
-            dispatchGroup.enter()
-            sleep(1)
-            self.geoCoder.geocodeAddressString(address) {placemarks, error in
-                print("Address = \(address)");
-                if let placemark = placemarks?.first {
-                    if let coordinate = placemark.location?.coordinate {
-                        city.latitude = "\(coordinate.latitude)"
-                        city.longitude = "\(coordinate.longitude)"
-                    
-                        print(coordinate);
+                //let address = city.englishName + ", " + city.province + ", Canada"
+                
+                print("enter")
+                dispatchGroup.enter()
+                sleep(1)
+                self.geoCoder.geocodePostalAddress(address) {placemarks, error in
+                    print("Address = \(address)");
+                    if let placemark = placemarks?.first {
+                        if let coordinate = placemark.location?.coordinate {
+                            city.latitude = "\(coordinate.latitude)"
+                            city.longitude = "\(coordinate.longitude)"
+                        
+                            print(coordinate);
+                        }
                     }
+                    print("leave")
+                    dispatchSemaphore.signal()
+                    dispatchGroup.leave()
                 }
-                print("leave")
-                dispatchSemaphore.signal()
-                dispatchGroup.leave()
-            }
             
-            dispatchSemaphore.wait()
+                dispatchSemaphore.wait()
             
             cityArray.append(city)
         }

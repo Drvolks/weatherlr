@@ -11,6 +11,7 @@ import Foundation
 class Global {
     static let weatherCacheInMinutes = 30
     static let expirationInMinutes = 30
+    static let expirationLocationInMinutes = 60
     static let selectedCityKey = "selectedCity"
     static let favotiteCitiesKey = "favoriteCities"
     static let languageKey = "lang"

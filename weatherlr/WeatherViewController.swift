@@ -324,6 +324,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         chargementVilleManuelPopup("The iPhone detected that you are not located in Canada".localized())
     }
     
+    func errorLocating(_ errorCode:Int) {
+        chargementVilleManuelPopup("Unable to detect your current location".localized())
+    }
+    
     func chargementVilleManuelPopup(_ message:String) {
         let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertControllerStyle.alert)
         

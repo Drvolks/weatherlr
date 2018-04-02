@@ -121,36 +121,43 @@ class PreferenceHelper {
         defaults.synchronize()
     }
     
-    // TODO -> City
-    static func getSelectedCity() -> City? {
+    static func getSelectedCity() -> City {
+        if let city = getCity(key: Global.selectedCityKey) {
+            return city
+        }
+        
+        return CityHelper.getCurrentLocationCity()
+    }
+    
+    private static func getCity(key:String) -> City? {
         do {
-            let selectedCity = try getSelectedCityWithClassName("City")
+            let selectedCity = try getCityWithClassName("City", key:key)
             return selectedCity
         } catch {}
         
         // try with legacy names
         do {
-            let selectedCity = try getSelectedCityWithClassName("weatherlr.City")
+            let selectedCity = try getCityWithClassName("weatherlr.City", key:key)
             return selectedCity
         } catch {}
         
         do {
-            let selectedCity = try getSelectedCityWithClassName("weatherlrFree.City")
+            let selectedCity = try getCityWithClassName("weatherlrFree.City", key:key)
             return selectedCity
         } catch {}
         
         return CityHelper.getCurrentLocationCity()
     }
     
-    static func getSelectedCityWithClassName(_ className:String) throws -> City? {
+    private static func getCityWithClassName(_ className:String, key:String) throws -> City? {
         NSKeyedUnarchiver.setClass(City.self, forClassName: className)
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
-        if let unarchivedObject = defaults.object(forKey: Global.selectedCityKey) as? Data {
+        if let unarchivedObject = defaults.object(forKey: key) as? Data {
             do {
                 let selectedCity = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedObject) as! City
                 
                 // for legacy City object < 1.1 release
-                if selectedCity.id != Global.currentLocationCityId && selectedCity.radarId.isEmpty {
+                if key == Global.selectedCityKey && selectedCity.id != Global.currentLocationCityId && selectedCity.radarId.isEmpty {
                     return refreshCity(selectedCity)
                 }
                 
@@ -163,7 +170,7 @@ class PreferenceHelper {
         throw PreferenceHelperError.unarchiveError
     }
     
-    static func refreshCity(_ city:City) -> City {
+    private static func refreshCity(_ city:City) -> City {
         let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         let cities = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
         
@@ -205,11 +212,10 @@ class PreferenceHelper {
         
         saveFavoriteCities(newFavorites)
         
-        if let selectedCity = getSelectedCity() {
+        let selectedCity = getSelectedCity()
             if selectedCity.id == city.id {
                 saveSelectedCity(newFavorites[0])
             }
-        }
     }
     
     static func removeFavorites() {
@@ -220,9 +226,7 @@ class PreferenceHelper {
         }
         
         var newFavorites = [City]()
-        if let city = getSelectedCity() {
-            newFavorites.append(city)
-        }
+        newFavorites.append(getSelectedCity())
         
         saveFavoriteCities(newFavorites)
     }
@@ -295,5 +299,26 @@ class PreferenceHelper {
                 defaults.synchronize()
             }
         }
+    }
+    
+    static func getCityToUse() -> City {
+        let selectedCity = getSelectedCity()
+            if selectedCity.id == Global.currentLocationCityId {
+                if let city = getCity(key: Global.lastLocatedCityKey) {
+                    return city
+                }
+            } else {
+                return selectedCity
+            }
+        
+        return CityHelper.getCurrentLocationCity()
+    }
+    
+    static func saveLastLocatedCity(_ city: City) {
+        NSKeyedArchiver.setClassName("City", for: City.self)
+        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        defaults.set(archivedObject, forKey: Global.lastLocatedCityKey)
+        defaults.synchronize()
     }
 }

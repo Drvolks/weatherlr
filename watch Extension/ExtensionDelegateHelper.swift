@@ -15,10 +15,10 @@ class ExtensionDelegateHelper {
             print("launchURLSessionNow")
         #endif
 
-        if let city = getSelectedCity() {
+        if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
             //extensionDelegate.scheduleRefresh(Constants.backgroundRefreshInSeconds)
             
-            let url = URL(string:UrlHelper.getUrl(city))!
+            let url = URL(string:UrlHelper.getUrl(PreferenceHelper.getCityToUse()))!
             
             let configObject = URLSessionConfiguration.default
             let session = URLSession(configuration: configObject, delegate: delegate, delegateQueue:nil)
@@ -28,24 +28,6 @@ class ExtensionDelegateHelper {
         } else {
             print("scheduleURLSession - no selected city")
         }
-    }
-    
-    static func getSelectedCity() -> City? {
-        guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
-            print("getSelectedCity: no delegate!")
-            return nil
-        }
-        
-        return extensionDelegate.selectedCity
-    }
-    
-    static func setSelectedCity(_ city:City?) {
-        guard let extensionDelegate = WKExtension.shared().delegate as? ExtensionDelegate else {
-            print("setSelectedCity: no delegate!")
-            return
-        }
-        
-        extensionDelegate.selectedCity = city
     }
     
     static func refreshNeeded() -> Bool {

@@ -52,7 +52,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         
         var template:CLKComplicationTemplate? = nil
         
-        if let city = ExtensionDelegateHelper.getSelectedCity() {
+        let city = PreferenceHelper.getCityToUse()
+        if !LocationServices.isUseCurrentLocation(city) {
             if(wrapper.refreshNeeded()) {
                 #if DEBUG
                     print("Complication - refresh needed")
@@ -121,10 +122,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
         var cityName = CityHelper.cityName(city)
         
-        if let city = PreferenceHelper.getSelectedCity() {
-            if LocationServices.isUseCurrentLocation(city) {
-                cityName = "➤ " + cityName
-            }
+        if LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
+            cityName = "➤ " + cityName
         }
         
         modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: cityName)
@@ -452,10 +451,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             print("Watch complication urlSession didFinishDownloadingTo")
         #endif
         
-        if let city = PreferenceHelper.getSelectedCity() {
+        if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
             do {
                 let xmlData = try Data(contentsOf: location)
-                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city))
+                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: PreferenceHelper.getCityToUse()))
                 
                 #if DEBUG
                     print("Watch complication wrapper updated")
@@ -471,7 +470,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     }
     
     func cityHasBeenUpdated(_ city: City) {
-        ExtensionDelegateHelper.setSelectedCity(city)
         ExtensionDelegateHelper.launchURLSessionNow(self)
     }
     

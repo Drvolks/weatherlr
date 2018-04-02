@@ -94,12 +94,12 @@
                             </items>
                         </table>
                         <label alignment="left" text="Location Error Label" numberOfLines="0" id="hNI-1L-1Pp"/>
+                        <imageView width="120" height="100" alignment="center" verticalAlignment="center" hidden="YES" image="WatchLocating" id="1xC-Wv-pwc"/>
                         <button width="1" alignment="left" hidden="YES" title="Select city" id="ai4-HS-V5P">
                             <connections>
                                 <action selector="selectCity" destination="AgC-eL-Hgc" id="NIw-9g-7dQ"/>
                             </connections>
                         </button>
-                        <imageView width="120" height="100" alignment="center" verticalAlignment="center" hidden="YES" image="WatchLocating" id="1xC-Wv-pwc"/>
                         <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>

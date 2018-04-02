@@ -55,7 +55,7 @@ class WeatherInformationWrapper {
         }
         
         if let oldCity = city {
-            if let currentCity = PreferenceHelper.getSelectedCity() {
+            let currentCity = PreferenceHelper.getCityToUse()
                 if expired() {
                     return true
                 }
@@ -64,7 +64,6 @@ class WeatherInformationWrapper {
                 }
                 
                 return false
-            }
         }
         
         return true

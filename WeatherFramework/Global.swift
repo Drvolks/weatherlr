@@ -13,6 +13,7 @@ class Global {
     static let expirationInMinutes = 30
     static let expirationLocationInMinutes = 60
     static let selectedCityKey = "selectedCity"
+    static let lastLocatedCityKey = "lastLocatedCity"
     static let favotiteCitiesKey = "favoriteCities"
     static let languageKey = "lang"
     static let versionKey = "version"

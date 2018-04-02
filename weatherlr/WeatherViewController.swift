@@ -101,7 +101,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @objc func refreshFromScroll(_ sender:AnyObject) {
         locationServices?.updateCity(PreferenceHelper.getSelectedCity())
         
-        if locationServices!.currentCity != nil {
+        if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
             refresh(true)
         }
     }
@@ -116,11 +116,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func refresh(_ thread: Bool) {
-        if let city = locationServices?.currentCity {
-            if city.id == Global.currentLocationCityId {
-                // recherche de l'emplecement en cours
-                
-            } else {
+        let city = PreferenceHelper.getCityToUse()
+        if !LocationServices.isUseCurrentLocation(city) {
                 if thread {
                     DispatchQueue.global().async {
                         self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
@@ -133,7 +130,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
                     displayWeather(true)
                 }
-            }
         }
     }
     
@@ -170,7 +166,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         // TODO retirer l'image au lieu du tint
-        if locationServices!.currentCity != nil && !locationServices!.currentCity!.radarId.isEmpty {
+        let city = PreferenceHelper.getCityToUse()
+        if city.radarId.isEmpty {
             radarButton.isEnabled = true
             radarButton.tintColor = nil
         } else {
@@ -180,11 +177,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let city = locationServices?.currentCity {
-            if LocationServices.isUseCurrentLocation(city) {
+        if LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
                 return 1
             }
-        }
         
         let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
         return weatherInformationWrapper.weatherInformations.count - indexAjust
@@ -193,7 +188,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
-            cell.initialize(city: locationServices?.currentCity, weatherInformationWrapper: weatherInformationWrapper)
+            cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
             return cell
         }
         
@@ -208,17 +203,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "header")! as! WeatherHeaderCell
-        header.initialize(city: locationServices?.currentCity, weatherInformationWrapper: weatherInformationWrapper)
+        header.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
         return header
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if indexPath.row == 0 {
-            if let city = locationServices?.currentCity {
-                if LocationServices.isUseCurrentLocation(city) {
+            if LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
                     return 300
-                }
             }
             
             if weatherInformationWrapper.weatherInformations.count > 0 {
@@ -249,7 +242,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else if segue.identifier  == "ShowRadar" {
             let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! RadarViewController
-            targetController.city = locationServices?.currentCity
+            targetController.city = PreferenceHelper.getCityToUse()
         }
     }
 

@@ -167,7 +167,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // TODO retirer l'image au lieu du tint
         let city = PreferenceHelper.getCityToUse()
-        if city.radarId.isEmpty {
+        if !city.radarId.isEmpty {
             radarButton.isEnabled = true
             radarButton.tintColor = nil
         } else {

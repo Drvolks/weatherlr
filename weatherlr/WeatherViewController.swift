@@ -116,6 +116,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func refresh(_ thread: Bool) {
+        locationServices!.refreshLocation()
+        
         let city = PreferenceHelper.getCityToUse()
         if !LocationServices.isUseCurrentLocation(city) {
                 if thread {

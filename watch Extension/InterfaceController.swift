@@ -57,6 +57,8 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func loadData() {
+        locationServices!.refreshLocation()
+        
         let city = PreferenceHelper.getCityToUse()
 
         locationErrorLabel.setHidden(true)
@@ -152,7 +154,12 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             }
         }
         
-        self.cityLabel.setText(CityHelper.cityName(watchDelegate.wrapper.city!))
+        var cityName = CityHelper.cityName(watchDelegate.wrapper.city!)
+        if LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity()) {
+            cityName = "➤ " + cityName
+        }
+        
+        self.cityLabel.setText(cityName)
         
         lastRefreshLabel.setHidden(false)
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
@@ -310,6 +317,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                 #endif
                 
                 ExtensionDelegateHelper.updateComplication()
+                ExtensionDelegateHelper.scheduleRefresh()
                 
                 refreshDisplay()
             } catch {

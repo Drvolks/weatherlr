@@ -78,6 +78,30 @@ class CityParser {
             
                 dispatchSemaphore.wait()
             
+            if city.latitude == "" {
+                // try again
+                // TODO mettre dans une méthode
+                print("enter again")
+                dispatchGroup.enter()
+                sleep(1)
+                self.geoCoder.geocodePostalAddress(address) {placemarks, error in
+                    print("Address = \(address)");
+                    if let placemark = placemarks?.first {
+                        if let coordinate = placemark.location?.coordinate {
+                            city.latitude = "\(coordinate.latitude)"
+                            city.longitude = "\(coordinate.longitude)"
+                            
+                            print(coordinate);
+                        }
+                    }
+                    print("leave")
+                    dispatchSemaphore.signal()
+                    dispatchGroup.leave()
+                }
+                
+                dispatchSemaphore.wait()
+            }
+            
             cityArray.append(city)
         }
         }
@@ -167,9 +191,9 @@ class CityParser {
     }
     
     func getRadarId(_ cityId:String) -> String {
-        let cityWithRadar = citiesWithRadar[cityId]
+        //let cityWithRadar = citiesWithRadar[cityId]
         
-        if cityWithRadar == nil {
+       // if cityWithRadar == nil {
             let urlStr = weatherUrl1 + cityId + weatherUrl2
             if let url = URL(string: urlStr) {
                 let content = try! NSString(contentsOf: url, usedEncoding: nil) as String
@@ -184,9 +208,9 @@ class CityParser {
                     return radarId
                 }
             }
-        } else {
-            return cityWithRadar!
-        }
+      //  } else {
+       //     return cityWithRadar!
+      //  }
         
         return ""
     }

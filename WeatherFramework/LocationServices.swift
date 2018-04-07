@@ -15,8 +15,8 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
     var locationManager : CLLocationManager?
     var allCityList:[City]?
     var errorCount = 0
-    var modeBackground = false
     var locations:[LocatedCity]?
+    var serviceActive = false
     
     func start() {
         #if DEBUG
@@ -24,7 +24,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         #endif
         locationManager = CLLocationManager()
         locationManager!.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-        locationManager!.distanceFilter = 10000 // 10 km
+        locationManager!.distanceFilter = 5000 // 5 km
         locationManager!.delegate = self
         
         updateCity(PreferenceHelper.getSelectedCity())
@@ -40,22 +40,19 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                     print("updateCity " + cityToUse.frenchName)
                 #endif
                 
+                serviceActive = true
                 getCurrentLocation()
             } else {
                 #if DEBUG
                     print("updateCity " + cityToUse.frenchName)
                 #endif
-                
-                if modeBackground {
-                    modeBackground = false
-                    locationManager?.stopUpdatingLocation()
-                }
-                
-                cityHasBennUpdated(cityToUse)
+
+                serviceActive = false
+                cityHasBeenUpdated(cityToUse)
             }
     }
     
-    func cityHasBennUpdated(_ city:City) {
+    func cityHasBeenUpdated(_ city:City) {
         PreferenceHelper.saveLastLocatedCity(city)
         delegate!.cityHasBeenUpdated(city)
     }
@@ -101,18 +98,13 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         
         if let closestLocation = locations!.min(by: { location.distance(from: $0.location) < location.distance(from: $1.location) }) {
             print("closest location: \(closestLocation.city.frenchName), distance: \(location.distance(from: closestLocation.location))")
-            cityHasBennUpdated(closestLocation.city)
+            if closestLocation.city.id != PreferenceHelper.getCityToUse().id {
+                cityHasBeenUpdated(closestLocation.city)
+            }
         } else {
             print("coordinates is empty")
             delegate!.errorLocating(5)
         }
-        
-        #if DEBUG
-        print("startUpdatingLocation")
-        #endif
-        
-        self.modeBackground = true
-        self.locationManager?.startUpdatingLocation()
     }
     
     func buildLocations() {
@@ -218,15 +210,19 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         //TODO Ask user to change the settings through a pop up.
     }
     
+    func refreshLocation() {
+        if serviceActive {
+            handleLocationServicesStateAvailable()
+        }
+    }
+    
     func handleLocationServicesStateAvailable()
     {
         #if DEBUG
         print("handleLocationServicesStateAvailable")
         #endif
         
-        if !modeBackground {
-            locationManager?.requestLocation()
-        }
+        locationManager?.requestLocation()
     }
     
     func closestLocation(locations: [CLLocation], closestToLocation location: CLLocation) -> CLLocation? {

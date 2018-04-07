@@ -52,6 +52,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         
         var template:CLKComplicationTemplate? = nil
         
+        locationServices!.refreshLocation()
+        
         let city = PreferenceHelper.getCityToUse()
         if !LocationServices.isUseCurrentLocation(city) {
             if(wrapper.refreshNeeded()) {
@@ -122,7 +124,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
         var cityName = CityHelper.cityName(city)
         
-        if LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
+        if LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity()) {
             cityName = "➤ " + cityName
         }
         
@@ -461,6 +463,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
                 #endif
                 
                 ExtensionDelegateHelper.updateComplication()
+                ExtensionDelegateHelper.scheduleRefresh()
             } catch {
                 print("Error info: \(error)")
             }

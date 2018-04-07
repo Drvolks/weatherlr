@@ -15,10 +15,9 @@ class ExtensionDelegateHelper {
             print("launchURLSessionNow")
         #endif
 
-        if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
-            //extensionDelegate.scheduleRefresh(Constants.backgroundRefreshInSeconds)
-            
-            let url = URL(string:UrlHelper.getUrl(PreferenceHelper.getCityToUse()))!
+        let city = PreferenceHelper.getCityToUse()
+        if !LocationServices.isUseCurrentLocation(city) {
+            let url = URL(string:UrlHelper.getUrl(city))!
             
             let configObject = URLSessionConfiguration.default
             let session = URLSession(configuration: configObject, delegate: delegate, delegateQueue:nil)
@@ -77,5 +76,14 @@ class ExtensionDelegateHelper {
                 complicationServer.reloadTimeline(for: complication)
             }
         }
+    }
+    
+    static func scheduleRefresh() {
+        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+            print("getWrapper: no delegate!")
+            return
+        }
+        
+        delegate.scheduleRefresh(Constants.backgroundRefreshInSeconds)
     }
 }

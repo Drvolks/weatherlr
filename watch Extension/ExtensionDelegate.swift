@@ -12,7 +12,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
     var wrapper = WeatherInformationWrapper()
     let urlSessionConfig = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
     var savedTask:WKRefreshBackgroundTask?
-    var selectedCity:City?
     
     override init() {
         super.init()
@@ -48,23 +47,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
                     print("savedTask initialized")
                 #endif
             } else if let task = task as? WKSnapshotRefreshBackgroundTask {
-                if ExtensionDelegateHelper.refreshNeeded() {
+                if savedTask == nil && ExtensionDelegateHelper.refreshNeeded() {
                     #if DEBUG
-                        print("WKSnapshotRefreshBackgroundTask and refresh needed")
+                        print("WKSnapshotRefreshBackgroundTask without any background refresh task in progress, creating one")
                     #endif
                     
-                    if let previousTask = savedTask {
-                        previousTask.setTaskCompletedWithSnapshot(true)
-                        savedTask = nil
-                    }
-                    
                     launchURLSession()
-                    task.setTaskCompletedWithSnapshot(false)
-                    return
                 }
-                else {
-                    task.setTaskCompletedWithSnapshot(true)
-                }
+            
+                task.setTaskCompletedWithSnapshot(true)
             } else {
                 task.setTaskCompletedWithSnapshot(false)
             }
@@ -88,7 +79,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             print("launchURLSession")
         #endif
         
-        if let city = selectedCity {
+        let city = PreferenceHelper.getCityToUse()
+        if !LocationServices.isUseCurrentLocation(city) {
             let url = URL(string:UrlHelper.getUrl(city))!
                 
             let urlSession = URLSession(configuration: urlSessionConfig, delegate: self, delegateQueue: nil)
@@ -111,7 +103,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             print("urlSession didFinishDownloadingTo")
         #endif
         
-        if let city = selectedCity {
+        let city = PreferenceHelper.getCityToUse()
+        if !LocationServices.isUseCurrentLocation(city) {
             do {
                 let xmlData = try Data(contentsOf: location)
                 wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
@@ -160,4 +153,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             #endif
         }
     }
+    
+    
 }

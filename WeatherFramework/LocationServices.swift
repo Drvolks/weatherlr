@@ -169,45 +169,70 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         
         switch status
         {
-        case .notDetermined:
-            #if DEBUG
-            print("notDetermined")
-            #endif
-            handleLocationServicesStateNotDetermined()
-        case .restricted, .denied:
-            #if DEBUG
-            print("restricted or denied")
-            #endif
-            handleLocationServicesStateUnavailable()
-        case .authorizedAlways, .authorizedWhenInUse:
-            #if DEBUG
-            print("authorizedAlways authorizedWhenInUse")
-            #endif
-            handleLocationServicesStateAvailable()
+            case .notDetermined:
+                // Request when-in-use authorization initially
+                locationManager!.requestWhenInUseAuthorization()
+                break
+            
+            case .restricted, .denied:
+                // Disable location features
+                serviceActive = false
+                break
+            
+            case .authorizedWhenInUse:
+                // Enable basic location features
+                
+                #if os(watchOS)
+                    escalateLocationServiceAuthorization()
+                #endif
+                
+                handleLocationServicesStateAvailable()
+                break
+            
+            case .authorizedAlways:
+                // Enable any of your app's location features
+                handleLocationServicesStateAvailable()
+                break
         }
     }
     
-    func handleLocationServicesStateNotDetermined()
-    {
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
         #if DEBUG
-        print("handleLocationServicesStateNotDetermined - will request authorization")
+        print("locationManager didChangeAuthorization")
         #endif
         
-        // TODO debuter par inUse et escalader à always
-        #if os(watchOS)
-            locationManager!.requestAlwaysAuthorization()
-        #else
-            locationManager!.requestWhenInUseAuthorization()
-        #endif
+        switch status {
+            case .restricted, .denied:
+                // Disable your app's location features
+                serviceActive = false
+                break
+            
+            case .authorizedWhenInUse:
+                // Enable only your app's when-in-use features.
+                
+                #if os(watchOS)
+                    escalateLocationServiceAuthorization()
+                #endif
+                
+                handleLocationServicesStateAvailable()
+                break
+            
+            case .authorizedAlways:
+                // Enable any of your app's location services.
+                handleLocationServicesStateAvailable()
+                break
+            
+            case .notDetermined:
+                break
+        }
     }
     
-    func handleLocationServicesStateUnavailable()
-    {
-        #if DEBUG
-        print("handleLocationServicesStateUnavailable")
-        #endif
-        
-        //TODO Ask user to change the settings through a pop up.
+    func escalateLocationServiceAuthorization() {
+        // Escalate only when the authorization is set to when-in-use
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager!.requestAlwaysAuthorization()
+        }
     }
     
     func refreshLocation() {

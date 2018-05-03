@@ -4,7 +4,7 @@
 <dict>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Can Weatherlr use your current location?</string>
-    <key>NSLocationAlwaysUsageDescription</key>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>Can Weatherlr use your current location?</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

@@ -136,30 +136,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             dateFormatter.locale = Locale(identifier: String(describing: lang))
             dateFormatter.timeStyle = .short
             let ladate = dateFormatter.string(from: wrapper.lastRefresh as Date)
-            
-            let minMaxName = WeatherHelper.getMinMaxImageName(weather)
-            var miniMinMaxLabel = "Min".localized()
-            if minMaxName == "up" {
-                miniMinMaxLabel = "Max".localized()
-            }
-            
-            var warning = "";
-            if(wrapper.expiredTooLongAgo()) {
-                warning = " ⚠️";
-            }
-            
+
             modularTemplate.headerImageProvider = WatchImageHelper.getImage(weatherInformation: weather)
             modularTemplate.body1TextProvider = getCurrentTemperature(weather, showCurrently: true)
-            
-            
-            let provider = CLKSimpleTextProvider(text: miniMinMaxLabel + " " + String(weather.temperature) + "° " + ladate + warning)
-            modularTemplate.body2TextProvider =  provider
+
+            modularTemplate.body2TextProvider =  getMinMaxTemperature(nextWeather, wrapper: wrapper, ladate:ladate)
             
             
             
             // TODO getMinMaxTemperature(weather, wrapper: wrapper)
         } else if let weather = nextWeather {
-            modularTemplate.body1TextProvider = getMinMaxTemperature(weather, wrapper: wrapper)
+            modularTemplate.body1TextProvider = getMinMaxTemperature(weather, wrapper: wrapper, ladate: "")
             modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "")
         } else {
             modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "")
@@ -277,7 +264,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         }
     }
     
-    func getMinMaxTemperature(_ nextWeather: WeatherInformation?, wrapper:WeatherInformationWrapper) -> CLKSimpleTextProvider {
+    func getMinMaxTemperature(_ nextWeather: WeatherInformation?, wrapper:WeatherInformationWrapper, ladate:String) -> CLKSimpleTextProvider {
         var warning = "";
         if(wrapper.expiredTooLongAgo()) {
             warning = " ⚠️";

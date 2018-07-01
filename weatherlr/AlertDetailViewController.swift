@@ -7,27 +7,29 @@
 //
 
 import UIKit
+import WebKit
 
-class AlertDetailViewController: UIViewController, UIWebViewDelegate {
-    @IBOutlet weak var webView: UIWebView!
-    
+class AlertDetailViewController: UIViewController, WKNavigationDelegate {
+    @IBOutlet weak var webView: WKWebView!
     var alert:AlertInformation?
     var popOver:AlertViewController?
 
     override func viewDidLoad() {
-        webView.delegate = self
+        webView.navigationDelegate = self
         
-        webView.loadRequest(URLRequest(url: URL(string: alert!.url)!))
+        var url = alert!.url
+        // Problème de certificat ssl avec www.meteo.gc.ca!
+        url = url.replacingOccurrences(of: "www.meteo.gc.ca", with: "meteo.gc.ca")
+        webView.load(URLRequest(url: URL(string: url)!))
         
         super.viewDidLoad()
         
         self.title = "Warning".localized()
     }
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let js = "document.getElementById('wb-bc').remove(); document.getElementById('wb-glb-mn').remove(); document.getElementsByClassName('followus hidden-print')[0].remove(); document.getElementsByClassName('container hidden-print')[0].remove(); document.getElementById('weather-topics').remove(); document.getElementsByClassName('row pagedetails')[0].remove();  document.getElementById('wb-info').remove(); document.getElementById('wb-sm').remove(); document.getElementById('wb-srch').remove();"
-        webView.stringByEvaluatingJavaScript(from: js)
-        // document.getElementsByClassName('gc-nttvs container')[0].remove();
+        webView.evaluateJavaScript(js, completionHandler: { (html: AnyObject?, error: NSError?) in } as? (Any?, Error?) -> Void)
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {

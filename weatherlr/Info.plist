@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Can Weatherlr use your current location?</string>
+	<string>Weatherlr will use your current location to find the nearest city</string>
     <key>NSLocationAlwaysUsageDescription</key>
-    <string>Can Weatherlr use your current location?</string>
+    <string>Weatherlr will use your current location to find the nearest city</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

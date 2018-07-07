@@ -324,6 +324,26 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         chargementVilleManuelPopup("Unable to detect your current location".localized())
     }
     
+    func locationNotAvailable() {
+        let unknownCityAlert = UIAlertController(title: "Location service disabled".localized(), message: "You will need to select a city manually".localized(), preferredStyle: UIAlertControllerStyle.alert)
+        
+        unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            if(PreferenceHelper.getFavoriteCities().count == 1) {
+                DispatchQueue.main.async(execute: { () -> Void in
+                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as! UINavigationController
+                    self.present(viewController, animated: false, completion: nil)
+                })
+            } else {
+                DispatchQueue.main.async(execute: { () -> Void in
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsNavigation") as! UINavigationController
+                self.present(viewController, animated: false, completion: nil)
+                })
+            }
+        }))
+        
+        present(unknownCityAlert, animated: true, completion: nil)
+    }
+    
     func chargementVilleManuelPopup(_ message:String) {
         let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertControllerStyle.alert)
         

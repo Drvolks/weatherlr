@@ -57,5 +57,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Weatherlr will use your current location to find the nearest city</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Weatherlr will use your current location to find the nearest city</string>
 </dict>
 </plist>

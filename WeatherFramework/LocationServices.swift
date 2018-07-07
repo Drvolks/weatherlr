@@ -324,14 +324,14 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                     if country == "Canada" {
                         isCanada = true
                     }
-                }
-                
-                if !isCanada {
-                    self.serviceActive = false
-                    PreferenceHelper.switchFavoriteCity(cityId: Global.currentLocationCityId)
-                    PreferenceHelper.removeLastLocatedCity()
-                    self.delegate!.notInCanada()
-                    return
+                    
+                    if !isCanada {
+                        self.serviceActive = false
+                        PreferenceHelper.switchFavoriteCity(cityId: Global.currentLocationCityId)
+                        PreferenceHelper.removeLastLocatedCity()
+                        self.delegate!.notInCanada(country)
+                        return
+                    }
                 }
             }
         })

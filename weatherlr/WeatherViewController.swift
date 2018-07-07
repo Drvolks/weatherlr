@@ -317,6 +317,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func notInCanada() {
+        weatherInformationWrapper = WeatherInformationWrapper()
+        weatherTable.reloadData()
         chargementVilleManuelPopup("The iPhone detected that you are not located in Canada".localized())
     }
     
@@ -325,7 +327,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func locationNotAvailable() {
-        let unknownCityAlert = UIAlertController(title: "Location service disabled".localized(), message: "You will need to select a city manually".localized(), preferredStyle: UIAlertControllerStyle.alert)
+        chargementVilleManuelPopup("You will need to select a city manually".localized())
+    }
+    
+    func chargementVilleManuelPopup(_ message:String) {
+        let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             if(PreferenceHelper.getFavoriteCities().count == 1) {
@@ -335,28 +341,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 })
             } else {
                 DispatchQueue.main.async(execute: { () -> Void in
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsNavigation") as! UINavigationController
-                self.present(viewController, animated: false, completion: nil)
+                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsNavigation") as! UINavigationController
+                    self.present(viewController, animated: false, completion: nil)
                 })
             }
-        }))
-        
-        present(unknownCityAlert, animated: true, completion: nil)
-    }
-    
-    func chargementVilleManuelPopup(_ message:String) {
-        let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-            DispatchQueue.main.async(execute: { () -> Void in
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as! UINavigationController
-                self.present(viewController, animated: false, completion: nil)
-            })
-        }))
-        
-        unknownCityAlert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action: UIAlertAction!) in
-            self.refreshControl.endRefreshing()
-            self.refresh(false)
         }))
         
         present(unknownCityAlert, animated: true, completion: nil)

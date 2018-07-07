@@ -316,7 +316,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         chargementVilleManuelPopup("The iPhone detected that you are located in".localized() + " " + cityName + ", " + "but this city is not in the Environment Canada list. Do you want to select a city yourself?".localized())
     }
     
-    func notInCanada() {
+    func notInCanada(_ country:String) {
         weatherInformationWrapper = WeatherInformationWrapper()
         weatherTable.reloadData()
         chargementVilleManuelPopup("The iPhone detected that you are not located in Canada".localized())

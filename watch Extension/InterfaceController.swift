@@ -343,7 +343,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         refresh()
     }
     
-    func notInCanada() {
+    func notInCanada(_ country:String) {
         locationErrorLabel.setText("The iPhone detected that you are not located in Canada".localized())
         refresh()
     }

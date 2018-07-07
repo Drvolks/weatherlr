@@ -12,7 +12,7 @@ protocol LocationServicesDelegate {
     func cityHasBeenUpdated(_ city: City)
     func getAllCityList() -> [City]
     func unknownCity(_ cityName:String)
-    func notInCanada()
+    func notInCanada(_ country:String)
     func errorLocating(_ errorCode:Int)
     func locationNotAvailable()
 }

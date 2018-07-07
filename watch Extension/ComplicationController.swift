@@ -472,7 +472,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     func unknownCity(_ cityName:String) {
     }
     
-    func notInCanada() {
+    func notInCanada(_ country:String) {
     }
     
     func errorLocating(_ errorCode:Int) {

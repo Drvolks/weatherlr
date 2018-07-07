@@ -92,6 +92,8 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
             print("getAdressLocalData called")
         #endif
         
+        getAdressAndValidateCanada(location)
+        
         if locations == nil {
             buildLocations()
         }
@@ -251,6 +253,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         locationManager?.requestLocation()
     }
     
+    /*
     func closestLocation(locations: [CLLocation], closestToLocation location: CLLocation) -> CLLocation? {
         if let closestLocation = locations.min(by: { location.distance(from: $0) < location.distance(from: $1) }) {
             print("closest location: \(closestLocation), distance: \(location.distance(from: closestLocation))")
@@ -259,5 +262,78 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
             print("coordinates is empty")
             return nil
         }
+    }
+ */
+    
+    func getAdressAndValidateCanada(_ location: CLLocation) {
+        #if DEBUG
+            print("getAdressAndValidateCanada called")
+        #endif
+        
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            #if DEBUG
+            print("reverseGeocodeLocation completed")
+            #endif
+            
+            if let e = error {
+                #if DEBUG
+                    print("reverseGeocodeLocation error")
+                    print(e)
+                #endif
+            } else {
+                var placeMark: CLPlacemark!
+                placeMark = placemarks?[0]
+                
+                #if DEBUG
+                    print(placeMark)
+                    if let val = placeMark.locality {
+                        print("locality " + val)
+                    }
+                
+                    if let val = placeMark.name {
+                        print("name " + val)
+                    }
+                
+                    if let val = placeMark.country {
+                        print("country " + val)
+                    }
+                
+                    if let val = placeMark.postalCode {
+                        print("postalCode " + val)
+                    }
+                
+                    if let val = placeMark.administrativeArea {
+                        print("administrativeArea " + val)
+                    }
+                
+                    if let val = placeMark.subAdministrativeArea {
+                        print("subAdministrativeArea " + val)
+                    }
+                
+                    if let val = placeMark.locality {
+                        print("subLocality " + val)
+                    }
+                
+                    if let val = placeMark.subLocality {
+                        print("subLocality " + val)
+                    }
+                #endif
+                
+                var isCanada = false
+                if let country = placeMark.country {
+                    if country == "Canada" {
+                        isCanada = true
+                    }
+                }
+                
+                if !isCanada {
+                    self.serviceActive = false
+                    PreferenceHelper.switchFavoriteCity(cityId: Global.currentLocationCityId)
+                    PreferenceHelper.removeLastLocatedCity()
+                    self.delegate!.notInCanada()
+                    return
+                }
+            }
+        })
     }
 }

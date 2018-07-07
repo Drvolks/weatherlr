@@ -46,9 +46,8 @@
 "Use Current Location" = "Use Current Location";
 "The iPhone detected that you are located in" = "The iPhone detected that you are located in";
 "but this city is not in the Environment Canada list. Do you want to select a city yourself?" = "but this city is not in the Environment Canada list. Do you want to select a city yourself?";
-"The iPhone detected that you are not located in Canada" = "The iPhone detected that you are not located in Canada. Do you want to select a city yourself?";
-"Unable to detect your current location" = "Unable to detect your current location. Do you want to select a city yourself?";
+"The iPhone detected that you are not located in Canada" = "The iPhone detected that you are not located in Canada. You will need to select a city manually.";
+"Unable to detect your current location" = "Unable to detect your current location. You will need to select a city manually.";
 "Locating" = "Locating...";
 "Weatherlr will use your current location to find the nearest city" = "Weatherlr will use your current location to find the nearest city";
-"Location service disabled" = "Location service is disabled";
-"You will need to select a city manually" = "You will need to select a city manually";
+"You will need to select a city manually" = "Location service is disabled. You will need to select a city manually.";

@@ -321,4 +321,10 @@ class PreferenceHelper {
         defaults.set(archivedObject, forKey: Global.lastLocatedCityKey)
         defaults.synchronize()
     }
+    
+    static func removeLastLocatedCity() {
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        defaults.removeObject(forKey: Global.lastLocatedCityKey)
+        defaults.synchronize()
+    }
 }

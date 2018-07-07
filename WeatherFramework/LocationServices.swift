@@ -208,7 +208,10 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         switch status {
             case .restricted, .denied:
                 serviceActive = false
-                delegate!.locationNotAvailable()
+                
+                if(LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity())) {
+                    delegate!.locationNotAvailable()
+                }
                 break
             
             case .authorizedWhenInUse:

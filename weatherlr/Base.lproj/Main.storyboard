@@ -396,7 +396,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Gmf-Y4-7GZ">
             <objects>
-                <navigationController toolbarHidden="NO" id="1PO-Kc-7hw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="settingsNavigation" toolbarHidden="NO" id="1PO-Kc-7hw" sceneMemberID="viewController">
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4AY-MB-0KJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

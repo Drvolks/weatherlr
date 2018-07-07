@@ -177,6 +177,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
             case .restricted, .denied:
                 // Disable location features
                 serviceActive = false
+                delegate!.locationNotAvailable()
                 break
             
             case .authorizedWhenInUse:
@@ -204,8 +205,8 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         
         switch status {
             case .restricted, .denied:
-                // Disable your app's location features
                 serviceActive = false
+                delegate!.locationNotAvailable()
                 break
             
             case .authorizedWhenInUse:

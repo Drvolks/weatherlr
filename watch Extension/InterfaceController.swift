@@ -353,4 +353,8 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         locationErrorLabel.setText("Unable to detect your current location".localized() + " (code " + String(errorCode) + ")")
         refresh()
     }
+    
+    func locationNotAvailable() {
+        refresh()
+    }
 }

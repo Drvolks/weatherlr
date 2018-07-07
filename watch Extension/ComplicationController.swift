@@ -470,14 +470,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     }
     
     func unknownCity(_ cityName:String) {
-        // TODO unknownCity
     }
     
     func notInCanada() {
-        // TODO notInCanada
     }
     
     func errorLocating(_ errorCode:Int) {
-        // TODO errorLocating
+    }
+    
+    func locationNotAvailable() {
     }
 }

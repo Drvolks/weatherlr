@@ -1,5 +1,5 @@
 target 'watch' do
-  platform :watchos, "4.1"
+  platform :watchos, "5.0"
   
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
@@ -9,7 +9,7 @@ target 'watch' do
 end
 
 target 'watch Extension' do
-  platform :watchos, "4.1"
+  platform :watchos, "5.0"
   
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
@@ -19,7 +19,7 @@ target 'watch Extension' do
 end
 
 target 'weatherlr' do
-  platform :ios, '11.1'
+  platform :ios, '12.0'
 
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
@@ -39,7 +39,7 @@ target 'weatherlr' do
 end
 
 target 'weatherlrFree' do
-  platform :ios, '11.1'
+  platform :ios, '12.0'
   
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
@@ -53,7 +53,7 @@ target 'weatherlrFree' do
 end
 
 target 'WeatherlrTv' do
-  platform :tvos, '11.1'
+  platform :tvos, '12.0'
 
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!

@@ -361,6 +361,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             
             template = modularTemplate
             break
+        case .graphicCorner:
+            // TODO
+            break
+        case .graphicBezel:
+            // TODO
+            break
+        case .graphicCircular:
+            // TODO
+            break
+        case .graphicRectangular:
+            // TODO
+            break
         }
         
         handler(template)
@@ -429,6 +441,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             modularTemplate.textProvider = provideTemperature
             
             template = modularTemplate
+            break
+        case .graphicCorner:
+            // TODO
+            break
+        case .graphicBezel:
+            // TODO
+            break
+        case .graphicCircular:
+            // TODO
+            break
+        case .graphicRectangular:
+            // TODO
             break
         }
         

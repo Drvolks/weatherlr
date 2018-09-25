@@ -89,6 +89,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
                     template = generateExtraLargeTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .utilitarianSmallFlat {
                     template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .graphicCorner {
+                    template = generateGraphicCornerTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .graphicCircular {
+                    template = generateGraphicCircularTemplate(weather, nextWeather: nextWeather, city: city)
+                } else if complication.family == .graphicRectangular {
+                    template = generateGraphicRectangular(weather, nextWeather: nextWeather, city: city, wrapper: wrapper)
                 }
             }
         } else {
@@ -107,6 +113,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
                 template = generateEmptyExtraLargeTemplate()
             } else if complication.family == .extraLarge {
                 template = generateEmptySmallUtilitarianTemplate()
+            } else if complication.family == .graphicCorner {
+                template = generateEmptyGraphicCornerTemplate()
+            } else if complication.family == .graphicCircular {
+                template = generateEmptyGraphicCircularTemplate()
+            } else if complication.family == .graphicRectangular {
+                template = generateEmptyGraphicRectangular()
             }
         }
         
@@ -305,6 +317,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         var template: CLKComplicationTemplate? = nil
         
         let image = CLKImageProvider(onePieceImage: UIImage(named: String(describing:WeatherStatus.sunny))!)
+        let imageFull = CLKFullColorImageProvider(fullColorImage: UIImage(named: String(describing:WeatherStatus.sunny))!)
 
         let provideTemperature = CLKSimpleTextProvider(text: "Currently".localized() + " 25°")
         provideTemperature.shortText = "25°"
@@ -322,7 +335,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         case .modularLarge:
             let modularTemplate = CLKComplicationTemplateModularLargeTable()
             modularTemplate.headerImageProvider = image
-            modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
+            modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Montréal")
             modularTemplate.row1Column1TextProvider = provideTemperature
             modularTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: "")
             modularTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: "")
@@ -362,16 +375,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             template = modularTemplate
             break
         case .graphicCorner:
-            // TODO
+            let modularTemplate = CLKComplicationTemplateGraphicCornerStackText()
+            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "25°")
+            modularTemplate.innerTextProvider = CLKSimpleTextProvider(text: "Montréal")
+            
+            template = modularTemplate
             break
         case .graphicBezel:
             // TODO
             break
         case .graphicCircular:
-            // TODO
+            let modularTemplate = CLKComplicationTemplateGraphicCircularImage()
+            modularTemplate.imageProvider = imageFull
+
+            template = modularTemplate
             break
         case .graphicRectangular:
-            // TODO
+            let modularTemplate = CLKComplicationTemplateGraphicRectangularStandardBody()
+            
+            modularTemplate.headerImageProvider = imageFull
+            modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
+            modularTemplate.body1TextProvider = provideTemperature
+            modularTemplate.body1TextProvider = providerMax
+            
+            template = modularTemplate
             break
         }
         
@@ -384,6 +411,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         let city = CLKSimpleTextProvider(text: "Montreal")
         
         let image = CLKImageProvider(onePieceImage: UIImage(named: String(describing:WeatherStatus.sunny))!)
+        let imageFull = CLKFullColorImageProvider(fullColorImage: UIImage(named: String(describing:WeatherStatus.sunny))!)
         
         let provideTemperature = CLKSimpleTextProvider(text: "Currently".localized() + " 25°")
         provideTemperature.shortText = "25°"
@@ -443,16 +471,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             template = modularTemplate
             break
         case .graphicCorner:
-            // TODO
+            let modularTemplate = CLKComplicationTemplateGraphicCornerStackText()
+            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "25°")
+            modularTemplate.innerTextProvider = city
+            
+            template = modularTemplate
             break
         case .graphicBezel:
             // TODO
             break
         case .graphicCircular:
-            // TODO
+            let modularTemplate = CLKComplicationTemplateGraphicCircularImage()
+            modularTemplate.imageProvider = imageFull
+            
+            template = modularTemplate
             break
         case .graphicRectangular:
-            // TODO
+            let modularTemplate = CLKComplicationTemplateGraphicRectangularStandardBody()
+            
+            modularTemplate.headerImageProvider = imageFull
+            modularTemplate.headerTextProvider = city
+            modularTemplate.body1TextProvider = provideTemperature
+            modularTemplate.body1TextProvider = providerMax
+            
+            template = modularTemplate
             break
         }
         
@@ -503,5 +545,91 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     }
     
     func locationNotAvailable() {
+    }
+    
+    func generateEmptyGraphicCornerTemplate() -> CLKComplicationTemplateGraphicCornerStackText {
+        let modularTemplate = CLKComplicationTemplateGraphicCornerStackText()
+        modularTemplate.innerTextProvider = CLKSimpleTextProvider(text: "")
+        modularTemplate.outerTextProvider =  CLKSimpleTextProvider(text: "")
+        
+        return modularTemplate
+    }
+    
+    func generateEmptyGraphicCircularTemplate() -> CLKComplicationTemplateGraphicCircularImage {
+        let modularTemplate = CLKComplicationTemplateGraphicCircularImage()
+        
+        return modularTemplate
+    }
+    
+    func generateEmptyGraphicRectangular() -> CLKComplicationTemplateGraphicRectangularStandardBody {
+        let modularTemplate = CLKComplicationTemplateGraphicRectangularStandardBody()
+        
+        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "")
+        modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "")
+        modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "")
+        
+        return modularTemplate
+    }
+    
+    func generateGraphicCornerTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateGraphicCornerStackText {
+        var cityName = CityHelper.cityName(city)
+        
+        if LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity()) {
+            cityName = "➤ " + cityName
+        }
+        
+        let modularTemplate = CLKComplicationTemplateGraphicCornerStackText()
+        
+        if let weather = weather {
+            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: String(weather.temperature) + "°")
+        } else {
+            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "")
+        }
+        
+        modularTemplate.innerTextProvider =  CLKSimpleTextProvider(text: cityName)
+        
+        return modularTemplate
+    }
+    
+    func generateGraphicCircularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateGraphicCircularImage {
+        let modularTemplate = CLKComplicationTemplateGraphicCircularImage()
+        
+        if let weather = weather {
+            modularTemplate.imageProvider = WatchImageHelper.getImageProviderFull(weatherInformation: weather)
+        }
+        
+        return modularTemplate
+    }
+    
+    func generateGraphicRectangular(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City, wrapper:WeatherInformationWrapper) -> CLKComplicationTemplateGraphicRectangularStandardBody {
+        let modularTemplate = CLKComplicationTemplateGraphicRectangularStandardBody()
+        var cityName = CityHelper.cityName(city)
+        
+        if LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity()) {
+            cityName = "➤ " + cityName
+        }
+        
+        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: cityName)
+        
+        if let weather = weather {
+            let lang = PreferenceHelper.getLanguage()
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: String(describing: lang))
+            dateFormatter.timeStyle = .short
+            let ladate = dateFormatter.string(from: wrapper.lastRefresh as Date)
+            
+            modularTemplate.headerImageProvider = WatchImageHelper.getImageProviderFull(weatherInformation: weather)
+            modularTemplate.body1TextProvider = getCurrentTemperature(weather, showCurrently: true)
+            
+            modularTemplate.body2TextProvider =  getMinMaxTemperature(nextWeather, wrapper: wrapper, ladate:ladate)
+        } else if let weather = nextWeather {
+            modularTemplate.body1TextProvider = getMinMaxTemperature(weather, wrapper: wrapper, ladate: "")
+            modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "")
+        } else {
+            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "")
+            modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "")
+        }
+        
+        return modularTemplate
     }
 }

@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0.1</string>
+	<string>3.1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -31,6 +31,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Weatherlr will use your current location to find the nearest city</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Weatherlr will use your current location to find the nearest city</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -57,9 +61,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Weatherlr will use your current location to find the nearest city</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Weatherlr will use your current location to find the nearest city</string>
 </dict>
 </plist>

@@ -173,6 +173,7 @@ enum WeatherStatus {
 enum WeatherColor : Int {
     case rain = 0x1fbfff
     case defaultColor = 0x1f4f74
+    case watchRing = 0x65DA7D
 }
 
 enum WeatherDay : Int {

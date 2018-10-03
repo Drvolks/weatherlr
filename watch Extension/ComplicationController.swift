@@ -375,9 +375,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             template = modularTemplate
             break
         case .graphicCorner:
-            let modularTemplate = CLKComplicationTemplateGraphicCornerStackText()
+            let modularTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
             modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "25°")
-            modularTemplate.innerTextProvider = CLKSimpleTextProvider(text: "Montréal")
+            modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: "20")
+            modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text: "30")
+            modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: UIColor.yellow, fillFraction: 0.5)
             
             template = modularTemplate
             break
@@ -471,9 +473,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             template = modularTemplate
             break
         case .graphicCorner:
-            let modularTemplate = CLKComplicationTemplateGraphicCornerStackText()
+            let modularTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
             modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "25°")
-            modularTemplate.innerTextProvider = city
+            modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: "20")
+            modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text: "30")
+            modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: UIColor.yellow, fillFraction: 0.5)
             
             template = modularTemplate
             break
@@ -547,10 +551,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     func locationNotAvailable() {
     }
     
-    func generateEmptyGraphicCornerTemplate() -> CLKComplicationTemplateGraphicCornerStackText {
-        let modularTemplate = CLKComplicationTemplateGraphicCornerStackText()
-        modularTemplate.innerTextProvider = CLKSimpleTextProvider(text: "")
-        modularTemplate.outerTextProvider =  CLKSimpleTextProvider(text: "")
+    func generateEmptyGraphicCornerTemplate() -> CLKComplicationTemplateGraphicCornerGaugeText {
+        let modularTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
+        modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "--")
+        modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text:"")
+        modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text:"")
+        modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: UIColor.black, fillFraction: 0)
         
         return modularTemplate
     }
@@ -571,22 +577,56 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         return modularTemplate
     }
     
-    func generateGraphicCornerTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateGraphicCornerStackText {
-        var cityName = CityHelper.cityName(city)
+    func generateGraphicCornerTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateGraphicCornerGaugeText {
         
-        if LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity()) {
-            cityName = "➤ " + cityName
-        }
-        
-        let modularTemplate = CLKComplicationTemplateGraphicCornerStackText()
+        let modularTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
+        modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "--")
+        modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text:"")
+        modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text:"")
+        modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: UIColor.black, fillFraction: 0)
         
         if let weather = weather {
             modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: String(weather.temperature) + "°")
-        } else {
-            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "")
+           
+            if let nextWeather = nextWeather {
+                var down = false
+                if nextWeather.tendancy == Tendency.minimum {
+                    down = true
+                } else if nextWeather.tendancy == Tendency.steady {
+                    if nextWeather.night {
+                        down = true
+                    }
+                }
+                
+                var min = 0
+                var max = 0
+                // TODO ajuster la couleur selon la température
+                let color = UIColor(weatherColor:WeatherColor.watchRing)
+                
+                // TODO obtenir les vraies valeur min/max
+                if down {
+                    modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: String(nextWeather.temperature))
+                    min = nextWeather.temperature
+                    max = weather.temperature + 10
+                } else {
+                    modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text: String(nextWeather.temperature))
+                    min = weather.temperature - 10
+                    max = nextWeather.temperature
+                }
+                
+                var fraction = Float(weather.temperature - min) / Float(max - min)
+                
+                // protection
+                if fraction > 1 {
+                    fraction = Float(1)
+                } else if fraction < 0 {
+                    fraction = Float(0)
+                }
+                
+                modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .ring, gaugeColor: color, fillFraction: fraction)
+            }
         }
         
-        modularTemplate.innerTextProvider =  CLKSimpleTextProvider(text: cityName)
         
         return modularTemplate
     }

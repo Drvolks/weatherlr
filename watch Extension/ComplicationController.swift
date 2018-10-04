@@ -9,10 +9,7 @@
 import ClockKit
 import WatchKit
 
-class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDelegate, URLSessionDownloadDelegate, LocationServicesDelegate {
-    
-    var locationServices:LocationServices?
-    
+class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDelegate, URLSessionDownloadDelegate {
     override init() {
         super.init()
     }
@@ -43,16 +40,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         #if DEBUG
             print("Complication - getCurrentTimelineEntry")
         #endif
-        
-        if locationServices == nil {
-            locationServices = LocationServices()
-            locationServices?.delegate = self
-            locationServices?.start()
-        }
-        
+
         var template:CLKComplicationTemplate? = nil
-        
-        locationServices!.refreshLocation()
         
         let city = PreferenceHelper.getCityToUse()
         if !LocationServices.isUseCurrentLocation(city) {
@@ -525,7 +514,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
                 print("Error info: \(error)")
             }
         } else {
-            print("Watch complication urlSession didFinishDownloadingTo - no selected city")
+            #if DEBUG
+                print("Watch complication urlSession didFinishDownloadingTo - no selected city")
+            #endif
         }
     }
     
@@ -537,18 +528,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
         return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
-    }
-    
-    func unknownCity(_ cityName:String) {
-    }
-    
-    func notInCanada(_ country:String) {
-    }
-    
-    func errorLocating(_ errorCode:Int) {
-    }
-    
-    func locationNotAvailable() {
     }
     
     func generateEmptyGraphicCornerTemplate() -> CLKComplicationTemplateGraphicCornerGaugeText {

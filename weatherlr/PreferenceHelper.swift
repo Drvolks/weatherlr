@@ -113,7 +113,7 @@ class PreferenceHelper {
         defaults.synchronize()
     }
     
-    fileprivate static func saveSelectedCity(_ city: City) {
+    static func saveSelectedCity(_ city: City) {
         NSKeyedArchiver.setClassName("City", for: City.self)
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!

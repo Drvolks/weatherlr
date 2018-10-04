@@ -33,7 +33,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         
         locationServices = LocationServices()
         locationServices?.delegate = self
-        locationServices?.start()
         
         selectCityButton.setTitle("Select city".localized())
         
@@ -57,8 +56,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func loadData() {
-        locationServices!.refreshLocation()
-        
         let city = PreferenceHelper.getCityToUse()
 
         locationErrorLabel.setHidden(true)
@@ -72,11 +69,18 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
                 cityLabel.setText("Loading".localized())
-                locationServices?.getCurrentLocation()
             } else if updatedDate.compare(ExtensionDelegateHelper.getWrapper().lastRefresh) != ComparisonResult.orderedSame {
                 refreshDisplay()
             }
         } else {
+            let selectedCity = PreferenceHelper.getSelectedCity()
+            if LocationServices.isUseCurrentLocation(selectedCity) {
+                #if DEBUG
+                    print("Retrait de la sélection gps")
+                #endif
+                PreferenceHelper.saveSelectedCity(selectedCity)
+            }
+            
             locatingImage.setHidden(true)
             
             if ExtensionDelegateHelper.refreshNeeded() {
@@ -154,11 +158,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             }
         }
         
-        var cityName = CityHelper.cityName(watchDelegate.wrapper.city!)
-        if LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity()) {
-            cityName = "➤ " + cityName
-        }
-        
+        let cityName = CityHelper.cityName(watchDelegate.wrapper.city!)
         self.cityLabel.setText(cityName)
         
         lastRefreshLabel.setHidden(false)
@@ -293,13 +293,17 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         if LocationServices.isUseCurrentLocation(city) {
             locatingImage.setHidden(false)
             cityLabel.setText("Locating".localized())
+            
+            locationServices?.start()
+            locationServices?.updateCity(city)
         } else {
             locatingImage.setHidden(true)
             cityLabel.setText("Loading".localized())
+            
+            locationServices?.cityHasBeenUpdated(city)
         }
         
         PreferenceHelper.addFavorite(city)
-        locationServices?.updateCity(city)
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {

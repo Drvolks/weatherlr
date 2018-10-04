@@ -79,9 +79,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
                 } else if complication.family == .utilitarianSmallFlat {
                     template = generateSmallUtilitarianTemplate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .graphicCorner {
-                    template = generateGraphicCornerTemplate(weather, nextWeather: nextWeather, city: city)
+                    template = ComplicationTemplateGraphicCorner().generate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .graphicCircular {
-                    template = generateGraphicCircularTemplate(weather, nextWeather: nextWeather, city: city)
+                    template = ComplicationTemplateGraphicCircular().generate(weather, nextWeather: nextWeather, city: city)
                 } else if complication.family == .graphicRectangular {
                     template = generateGraphicRectangular(weather, nextWeather: nextWeather, city: city, wrapper: wrapper)
                 }
@@ -103,9 +103,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             } else if complication.family == .extraLarge {
                 template = generateEmptySmallUtilitarianTemplate()
             } else if complication.family == .graphicCorner {
-                template = generateEmptyGraphicCornerTemplate()
+                template = ComplicationTemplateGraphicCorner().initialState()
             } else if complication.family == .graphicCircular {
-                template = generateEmptyGraphicCircularTemplate()
+                template = ComplicationTemplateGraphicCircular().initialState()
             } else if complication.family == .graphicRectangular {
                 template = generateEmptyGraphicRectangular()
             }
@@ -364,22 +364,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             template = modularTemplate
             break
         case .graphicCorner:
-            let modularTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
-            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "25°")
-            modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: "20")
-            modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text: "30")
-            modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: UIColor.yellow, fillFraction: 0.5)
-            
-            template = modularTemplate
+            template = ComplicationTemplateGraphicCorner().demoState()
             break
         case .graphicBezel:
             // TODO
             break
         case .graphicCircular:
-            let modularTemplate = CLKComplicationTemplateGraphicCircularImage()
-            modularTemplate.imageProvider = imageFull
-
-            template = modularTemplate
+            template = ComplicationTemplateGraphicCircular().demoState()
             break
         case .graphicRectangular:
             let modularTemplate = CLKComplicationTemplateGraphicRectangularStandardBody()
@@ -462,22 +453,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             template = modularTemplate
             break
         case .graphicCorner:
-            let modularTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
-            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "25°")
-            modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: "20")
-            modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text: "30")
-            modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: UIColor.yellow, fillFraction: 0.5)
-            
-            template = modularTemplate
+            template = ComplicationTemplateGraphicCorner().initialState()
             break
         case .graphicBezel:
             // TODO
             break
         case .graphicCircular:
-            let modularTemplate = CLKComplicationTemplateGraphicCircularImage()
-            modularTemplate.imageProvider = imageFull
-            
-            template = modularTemplate
+            template = ComplicationTemplateGraphicCircular().initialState()
             break
         case .graphicRectangular:
             let modularTemplate = CLKComplicationTemplateGraphicRectangularStandardBody()
@@ -530,92 +512,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
     }
     
-    func generateEmptyGraphicCornerTemplate() -> CLKComplicationTemplateGraphicCornerGaugeText {
-        let modularTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
-        modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "--")
-        modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text:"")
-        modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text:"")
-        modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: UIColor.black, fillFraction: 0)
-        
-        return modularTemplate
-    }
-    
-    func generateEmptyGraphicCircularTemplate() -> CLKComplicationTemplateGraphicCircularImage {
-        let modularTemplate = CLKComplicationTemplateGraphicCircularImage()
-        
-        return modularTemplate
-    }
-    
     func generateEmptyGraphicRectangular() -> CLKComplicationTemplateGraphicRectangularStandardBody {
         let modularTemplate = CLKComplicationTemplateGraphicRectangularStandardBody()
         
         modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "")
         modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "")
         modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "")
-        
-        return modularTemplate
-    }
-    
-    func generateGraphicCornerTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateGraphicCornerGaugeText {
-        
-        let modularTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
-        modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: "--")
-        modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text:"")
-        modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text:"")
-        modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: UIColor.black, fillFraction: 0)
-        
-        if let weather = weather {
-            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: String(weather.temperature) + "°")
-           
-            if let nextWeather = nextWeather {
-                var down = false
-                if nextWeather.tendancy == Tendency.minimum {
-                    down = true
-                } else if nextWeather.tendancy == Tendency.steady {
-                    if nextWeather.night {
-                        down = true
-                    }
-                }
-                
-                var min = 0
-                var max = 0
-                // TODO ajuster la couleur selon la température
-                let color = UIColor(weatherColor:WeatherColor.watchRing)
-                
-                // TODO obtenir les vraies valeur min/max
-                if down {
-                    modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: String(nextWeather.temperature))
-                    min = nextWeather.temperature
-                    max = weather.temperature + 10
-                } else {
-                    modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text: String(nextWeather.temperature))
-                    min = weather.temperature - 10
-                    max = nextWeather.temperature
-                }
-                
-                var fraction = Float(weather.temperature - min) / Float(max - min)
-                
-                // protection
-                if fraction > 1 {
-                    fraction = Float(1)
-                } else if fraction < 0 {
-                    fraction = Float(0)
-                }
-                
-                modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .ring, gaugeColor: color, fillFraction: fraction)
-            }
-        }
-        
-        
-        return modularTemplate
-    }
-    
-    func generateGraphicCircularTemplate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplateGraphicCircularImage {
-        let modularTemplate = CLKComplicationTemplateGraphicCircularImage()
-        
-        if let weather = weather {
-            modularTemplate.imageProvider = WatchImageHelper.getImageProviderFull(weatherInformation: weather)
-        }
         
         return modularTemplate
     }

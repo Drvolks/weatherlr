@@ -160,7 +160,7 @@ class WatchImageHelper {
              .mostlyCloudy,
              .overcast,
              .partlyCloudy:
-            image = UIImage(named: "WatchCloudy")!
+            image = UIImage(named: "ComplicationCloudy")!
             tint = UIColor.lightGray
             break
         case .aFewFlurries,
@@ -189,7 +189,7 @@ class WatchImageHelper {
              .snowGrains,
              .wetFlurries,
              .wetSnow:
-            image = UIImage(named: "WatchSnow")!
+            image = UIImage(named: "ComplicationSnow")!
             tint = UIColor.white
             break
         case .aFewShowersOrThunderstorms,
@@ -230,7 +230,7 @@ class WatchImageHelper {
              .thunderstorm,
              .thunderstormWithLightRain,
              .thunderstormWithLightRainshowers:
-            image = UIImage(named: "WatchRain")!
+            image = UIImage(named: "ComplicationRain")!
             tint = UIColor(weatherColor: WeatherColor.rain)
             break
         case .aMixOfSunAndCloud,
@@ -238,7 +238,7 @@ class WatchImageHelper {
              .mainlyClear,
              .mainlySunny,
              .sunny:
-            image = UIImage(named: "WatchSunny")!
+            image = UIImage(named: "ComplicationSunny")!
             tint = UIColor.yellow
             break
         case .chanceOfDrizzle,
@@ -261,7 +261,7 @@ class WatchImageHelper {
              .periodsOfRainOrDrizzle,
              .rainOrDrizzle,
              .showersOrDrizzle:
-            image = UIImage(named: "WatchDrizzle")!
+            image = UIImage(named: "ComplicationDrizzle")!
             tint = UIColor(weatherColor: WeatherColor.rain)
             break
         case .freezingRainMixedWithIcePellets,
@@ -272,7 +272,7 @@ class WatchImageHelper {
              .icePelletsMixedWithFreezingRain,
              .periodsOfFreezingRainMixedWithIcePellets,
              .periodsOfSnowMixedWithIcePellets:
-            image = UIImage(named: "WatchIcePellets")!
+            image = UIImage(named: "ComplicationIcePellets")!
             tint = UIColor.white
             break
         default:

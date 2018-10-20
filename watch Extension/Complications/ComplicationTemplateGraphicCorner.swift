@@ -14,40 +14,18 @@ class ComplicationTemplateGraphicCorner: ComplicationTemplate, ComplicationTempl
         let modularTemplate = initialState() as! CLKComplicationTemplateGraphicCornerGaugeText
         
         if let weather = weather {
-            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: temp(weather: weather))
+            modularTemplate.outerTextProvider = CLKSimpleTextProvider(text: temp(weather))
             
             if let nextWeather = nextWeather {
-                var down = false
-                if nextWeather.tendancy == Tendency.minimum {
-                    down = true
-                } else if nextWeather.tendancy == Tendency.steady {
-                    if nextWeather.night {
-                        down = true
-                    }
-                }
-                
-                var min = 0
-                var max = 0
-                
+                let down = isDown(nextWeather)
+
                 if down {
-                    modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: temp(weather: nextWeather))
-                    min = nextWeather.temperature
-                    max = weather.temperature + 10
+                    modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: temp(nextWeather))
                 } else {
-                    modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text: temp(weather: nextWeather))
-                    min = weather.temperature - 10
-                    max = nextWeather.temperature
+                    modularTemplate.trailingTextProvider = CLKSimpleTextProvider(text: temp(nextWeather))
                 }
                 
-                var fraction = Float(weather.temperature - min) / Float(max - min)
-                
-                // protection
-                if fraction > 1 {
-                    fraction = Float(1)
-                } else if fraction < 0 {
-                    fraction = Float(0)
-                }
-                
+                let fraction = gaugeFraction(down: down, weather: weather, nextWeather: nextWeather)
                 modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .ring, gaugeColor: ringColor(), fillFraction: fraction)
             }
         }
@@ -73,9 +51,5 @@ class ComplicationTemplateGraphicCorner: ComplicationTemplate, ComplicationTempl
         modularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: ringColor(), fillFraction: 0)
         
         return modularTemplate
-    }
-    
-    func ringColor() -> UIColor {
-        return UIColor(weatherColor:WeatherColor.watchRing)
     }
 }

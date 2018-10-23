@@ -33,7 +33,7 @@ class ComplicationTemplateGraphicCircular: ComplicationTemplate, ComplicationTem
         return modularTemplate
     }
     
-    func initialState() -> CLKComplicationTemplate {
+    func demoState() -> CLKComplicationTemplate {
         let modularTemplate = CLKComplicationTemplateGraphicCircularOpenGaugeRangeText()
         modularTemplate.centerTextProvider = CLKSimpleTextProvider(text: "25°")
         modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text: "")
@@ -42,7 +42,7 @@ class ComplicationTemplateGraphicCircular: ComplicationTemplate, ComplicationTem
         return modularTemplate
     }
     
-    func demoState() -> CLKComplicationTemplate {
+    func initialState() -> CLKComplicationTemplate {
         let modularTemplate = CLKComplicationTemplateGraphicCircularOpenGaugeRangeText()
         modularTemplate.centerTextProvider = CLKSimpleTextProvider(text: "--")
         modularTemplate.leadingTextProvider = CLKSimpleTextProvider(text:"")

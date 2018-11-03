@@ -42,12 +42,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cityTable.dataSource = self
         searchText.delegate = self
         
-        let selectedCity = PreferenceHelper.getSelectedCity()
-        if selectedCity == nil {
-            cancelButton.isEnabled = false
-        } else {
-            cancelButton.isEnabled = true
-        }
+        cancelButton.isEnabled = true
         
         cityTable.sectionIndexBackgroundColor = UIColor.clear
     }

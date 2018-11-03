@@ -108,14 +108,14 @@ class PreferenceHelper {
     fileprivate static func saveFavoriteCities(_ cities: [City]) {
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         NSKeyedArchiver.setClassName("City", for: City.self)
-        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: cities as NSArray)
+        let archivedObject = try! NSKeyedArchiver.archivedData(withRootObject: cities, requiringSecureCoding: false)
         defaults.set(archivedObject, forKey: Global.favotiteCitiesKey)
         defaults.synchronize()
     }
     
     static func saveSelectedCity(_ city: City) {
         NSKeyedArchiver.setClassName("City", for: City.self)
-        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
+        let archivedObject = try! NSKeyedArchiver.archivedData(withRootObject: city, requiringSecureCoding: false)
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         defaults.set(archivedObject, forKey: Global.selectedCityKey)
         defaults.synchronize()
@@ -316,7 +316,7 @@ class PreferenceHelper {
     
     static func saveLastLocatedCity(_ city: City) {
         NSKeyedArchiver.setClassName("City", for: City.self)
-        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: city)
+        let archivedObject = try! NSKeyedArchiver.archivedData(withRootObject: city, requiringSecureCoding: false)
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         defaults.set(archivedObject, forKey: Global.lastLocatedCityKey)
         defaults.synchronize()

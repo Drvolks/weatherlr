@@ -16,7 +16,7 @@ class WeatherNowCell: UITableViewCell {
             populate(city: city, weatherInformationWrapper: weatherInformationWrapper)
         }
         
-        separatorInset = UIEdgeInsetsMake(0, 0, 0, UIScreen.main.bounds.width)
+        separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
     }
     
     private func populate(city:City, weatherInformationWrapper: WeatherInformationWrapper) {

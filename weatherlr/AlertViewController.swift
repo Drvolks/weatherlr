@@ -30,7 +30,7 @@ class AlertViewController: UIViewController {
         }
 
         alertLabel.text = alertTexts
-        moreDetailButton.setTitle("More details".localized(), for: UIControlState())
+        moreDetailButton.setTitle("More details".localized(), for: UIControl.State())
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

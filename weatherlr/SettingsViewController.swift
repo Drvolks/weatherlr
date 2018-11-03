@@ -36,7 +36,7 @@ class SettingsViewController: UITableViewController {
         
         #if DEBUG
             if downloadButton == nil {
-                downloadButton = UIBarButtonItem(title: "Download", style: UIBarButtonItemStyle.plain, target: self, action: #selector(download(_:)))
+                downloadButton = UIBarButtonItem(title: "Download", style: UIBarButtonItem.Style.plain, target: self, action: #selector(download(_:)))
                 toolbarItems?.append(downloadButton)
             }
         #endif
@@ -48,7 +48,7 @@ class SettingsViewController: UITableViewController {
         setEditing(false, animated: false)
 
         cityTable.estimatedRowHeight = 21
-        cityTable.rowHeight = UITableViewAutomaticDimension
+        cityTable.rowHeight = UITableView.automaticDimension
         
         cityTable.reloadData()
     }
@@ -91,11 +91,11 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if (indexPath as NSIndexPath).section == citySection {
-            return UITableViewCellEditingStyle.delete
+            return UITableViewCell.EditingStyle.delete
         } else {
-            return UITableViewCellEditingStyle.none
+            return UITableViewCell.EditingStyle.none
         }
     }
     
@@ -107,7 +107,7 @@ class SettingsViewController: UITableViewController {
             cell.cityLabel.text = CityHelper.cityName(city)
             
             if selectedCity != nil && city.id == selectedCity!.id {
-                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                cell.accessoryType = UITableViewCell.AccessoryType.checkmark
                 
                 if let currentWeatherInformation = selectedCityWeatherInformation {
                     cell.weatherImage.isHidden = false
@@ -121,7 +121,7 @@ class SettingsViewController: UITableViewController {
                     fetchWeather(cell, city: city)
                 }
             } else {
-                cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+                cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
                 
                 fetchWeather(cell, city: city)
             }
@@ -130,19 +130,19 @@ class SettingsViewController: UITableViewController {
         } else if (indexPath as NSIndexPath).section == langSection {
             let cell = tableView.dequeueReusableCell(withIdentifier: "langCell", for: indexPath) as! LangTableViewCell
             
-            cell.accessoryType = UITableViewCellAccessoryType.none
+            cell.accessoryType = UITableViewCell.AccessoryType.none
             
             if (indexPath as NSIndexPath).row == francaisRow {
                 cell.langLabel.text = "Français"
                 
                 if Language.French == PreferenceHelper.getLanguage() {
-                    cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                    cell.accessoryType = UITableViewCell.AccessoryType.checkmark
                 }
             } else {
                 cell.langLabel.text = "English"
                 
                 if Language.English == PreferenceHelper.getLanguage() {
-                    cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                    cell.accessoryType = UITableViewCell.AccessoryType.checkmark
                 }
             }
             
@@ -212,7 +212,7 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (indexPath as NSIndexPath).section == citySection {
             if editingStyle == .delete {
                 let city = savedCities[(indexPath as NSIndexPath).row]

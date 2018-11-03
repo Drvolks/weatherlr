@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var shortcutItem: UIApplicationShortcutItem?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         PreferenceHelper.upgrade()
         
@@ -28,14 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var performShortcutDelegate = true
         
-        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             self.shortcutItem = shortcutItem
             
             performShortcutDelegate = false
         }
         
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         UINavigationBar.appearance().barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)
         UIToolbar.appearance().tintColor = UIColor.white
         UIToolbar.appearance().barTintColor = UIColor(weatherColor: WeatherColor.defaultColor)

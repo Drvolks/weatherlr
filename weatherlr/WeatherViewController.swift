@@ -38,7 +38,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         locationServices = LocationServices()
         locationServices!.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         #if FREE
             googleBannerView.adUnitID = Constants.googleAddId
@@ -54,18 +54,18 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         weatherTable.delegate = self
         weatherTable.dataSource = self
-        weatherTable.rowHeight = UITableViewAutomaticDimension
+        weatherTable.rowHeight = UITableView.automaticDimension
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.backgroundColor = UIColor.clear
         
         refreshControl = UIRefreshControl()
         refreshLabel()
-        refreshControl.addTarget(self, action: #selector(refreshFromScroll(_:)), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshFromScroll(_:)), for: UIControl.Event.valueChanged)
         weatherTable.addSubview(refreshControl)
 
         locationServices!.start()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
     }
     
@@ -88,7 +88,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func refreshLabel() {
-        let refreshControlFont = [ NSAttributedStringKey.foregroundColor: UIColor.white ]
+        let refreshControlFont = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
         let refreshLabel:String
         refreshLabel = WeatherHelper.getRefreshTime(weatherInformationWrapper)
 
@@ -229,7 +229,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             return 0
         }
         
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -331,7 +331,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func chargementVilleManuelPopup(_ message:String) {
-        let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertController.Style.alert)
         
         unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             if(PreferenceHelper.getFavoriteCities().count == 1) {

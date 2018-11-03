@@ -150,7 +150,6 @@ class WatchImageHelper {
     // TODO  patch temp - merge le code des 2 méthode
     static func getImageProviderFull(weatherInformation: WeatherInformation) -> CLKFullColorImageProvider {
         var image = weatherInformation.image()
-        var tint = UIColor.lightGray
         
         switch(weatherInformation.weatherStatus) {
         case .aFewClouds,
@@ -161,7 +160,6 @@ class WatchImageHelper {
              .overcast,
              .partlyCloudy:
             image = UIImage(named: "ComplicationCloudy")!
-            tint = UIColor.lightGray
             break
         case .aFewFlurries,
              .blowingSnow,
@@ -190,7 +188,6 @@ class WatchImageHelper {
              .wetFlurries,
              .wetSnow:
             image = UIImage(named: "ComplicationSnow")!
-            tint = UIColor.white
             break
         case .aFewShowersOrThunderstorms,
              .aFewShowersOrDrizzle,
@@ -231,7 +228,6 @@ class WatchImageHelper {
              .thunderstormWithLightRain,
              .thunderstormWithLightRainshowers:
             image = UIImage(named: "ComplicationRain")!
-            tint = UIColor(weatherColor: WeatherColor.rain)
             break
         case .aMixOfSunAndCloud,
              .clearing,
@@ -239,7 +235,6 @@ class WatchImageHelper {
              .mainlySunny,
              .sunny:
             image = UIImage(named: "ComplicationSunny")!
-            tint = UIColor.yellow
             break
         case .chanceOfDrizzle,
              .chanceOfDrizzleMixedWithFreezingDrizzle,
@@ -262,7 +257,6 @@ class WatchImageHelper {
              .rainOrDrizzle,
              .showersOrDrizzle:
             image = UIImage(named: "ComplicationDrizzle")!
-            tint = UIColor(weatherColor: WeatherColor.rain)
             break
         case .freezingRainMixedWithIcePellets,
              .freezingRainOrIcePellets,
@@ -273,7 +267,6 @@ class WatchImageHelper {
              .periodsOfFreezingRainMixedWithIcePellets,
              .periodsOfSnowMixedWithIcePellets:
             image = UIImage(named: "ComplicationIcePellets")!
-            tint = UIColor.white
             break
         default:
             break

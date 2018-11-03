@@ -149,7 +149,6 @@ class CityParser {
         let path = outputPath + "/cities.plist"
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cityArray, toFile: path)
         
-        
         if !isSuccessfulSave {
             print("Error saving cities :(")
         } else {

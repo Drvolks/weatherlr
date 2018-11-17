@@ -20,6 +20,7 @@ class ExtensionDelegateHelper {
             let url = URL(string:UrlHelper.getUrl(city))!
             
             let configObject = URLSessionConfiguration.default
+            configObject.requestCachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
             let session = URLSession(configuration: configObject, delegate: delegate, delegateQueue:nil)
             
             let downloadTask = session.downloadTask(with: url)

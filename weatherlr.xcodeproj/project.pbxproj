@@ -133,6 +133,8 @@
 		6E91639620F41C9F00E11DD8 /* AssetsWatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154721D282B0D0005B02A /* AssetsWatch.xcassets */; };
 		6E91639720F41C9F00E11DD8 /* AssetsWatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154721D282B0D0005B02A /* AssetsWatch.xcassets */; };
 		6E91639820F41CA800E11DD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2905321CB2D5550040EB8B /* Assets.xcassets */; };
+		6E956CF8227A537000DCB7D8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E956CF7227A537000DCB7D8 /* WebKit.framework */; };
+		6E956CF9227A53F800DCB7D8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E956CF7227A537000DCB7D8 /* WebKit.framework */; };
 		6E96F854217B626C00F7BDDD /* ComplicationTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05B9B02166C70200FAA2C3 /* ComplicationTemplate.swift */; };
 		6E96F855217B626F00F7BDDD /* ComplicationTemplateGraphicCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05B9AE2166C6F000FAA2C3 /* ComplicationTemplateGraphicCorner.swift */; };
 		6E96F856217B627300F7BDDD /* ComplicationTemplateGraphicCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05B9B32166CAE500FAA2C3 /* ComplicationTemplateGraphicCircular.swift */; };
@@ -584,6 +586,7 @@
 		6E7C78B11D4031EE00005D7A /* watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watch Extension.entitlements"; sourceTree = "<group>"; };
 		6E816C0C1CCFF87800533684 /* cities1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities1; sourceTree = "<group>"; };
 		6E816C181CD76DBB00533684 /* cities2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities2; sourceTree = "<group>"; };
+		6E956CF7227A537000DCB7D8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6E9E12B41CDF8DAD00791284 /* cities3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities3; sourceTree = "<group>"; };
 		6E9E12B61CDF96A800791284 /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
 		6E9E12B81CDFC2F000791284 /* cities4 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities4; sourceTree = "<group>"; };
@@ -689,6 +692,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E956CF9227A53F800DCB7D8 /* WebKit.framework in Frameworks */,
 				CED4EB60C1F11D192D7007F5 /* Pods_weatherlrFree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,6 +701,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E956CF8227A537000DCB7D8 /* WebKit.framework in Frameworks */,
 				673168B9ECE482C19C1E091E /* Pods_weatherlr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1074,6 +1079,7 @@
 		9799B631E60476874FB40063 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E956CF7227A537000DCB7D8 /* WebKit.framework */,
 				3159A45390EFC42AECBC4D57 /* Pods_WeatherlrTv.framework */,
 				6A68BDDCA854F52AE6C0A267 /* Pods_watch.framework */,
 				6C11C455BF02688C8242E9A4 /* Pods_watch_Extension.framework */,
@@ -1388,7 +1394,7 @@
 					6E2905271CB2D5550040EB8B = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 654X66AK24;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1407,24 +1413,24 @@
 					6E29053B1CB2D5550040EB8B = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 654X66AK24;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						TestTargetID = 6E2905271CB2D5550040EB8B;
 					};
 					6E2905461CB2D5550040EB8B = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 654X66AK24;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						TestTargetID = 6E2905271CB2D5550040EB8B;
 					};
 					6E3252B01F41E7E3004A1867 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = 654X66AK24;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 					6E3252B81F41E7E4004A1867 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = 654X66AK24;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						TestTargetID = 6E2905271CB2D5550040EB8B;
 					};
 					6EA210A91DB2A9E100BC8B1C = {
@@ -1448,7 +1454,7 @@
 					6EB154781D282B0D0005B02A = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 654X66AK24;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1479,6 +1485,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				fr,
@@ -2324,7 +2331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -2351,7 +2358,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -2409,6 +2416,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2459,6 +2467,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2484,7 +2493,7 @@
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -2506,7 +2515,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -2523,7 +2532,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weatherlr.app/weatherlr";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2542,7 +2551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weatherlr.app/weatherlr";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2559,7 +2568,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = weatherlr;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2577,7 +2586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = weatherlr;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2610,7 +2619,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2642,7 +2651,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.framework.WeatherFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2666,7 +2675,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.framework.WeatherFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weatherlr.app/weatherlr";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2689,7 +2698,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.framework.WeatherFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weatherlr.app/weatherlr";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2716,7 +2725,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
@@ -2742,7 +2751,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
@@ -2767,7 +2776,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
@@ -2793,7 +2802,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
@@ -2821,7 +2830,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
@@ -2848,7 +2857,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
@@ -2874,7 +2883,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
@@ -2900,7 +2909,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 5.0;
@@ -2929,7 +2938,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
@@ -2956,7 +2965,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
@@ -2980,7 +2989,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherlrTv.app/WeatherlrTv";
 				TVOS_DEPLOYMENT_TARGET = 12.0;
@@ -3004,7 +3013,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherlrTv.app/WeatherlrTv";
 				TVOS_DEPLOYMENT_TARGET = 12.0;
@@ -3028,7 +3037,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_TARGET_NAME = WeatherlrTv;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
@@ -3051,7 +3060,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_TARGET_NAME = WeatherlrTv;
 				TVOS_DEPLOYMENT_TARGET = 12.0;

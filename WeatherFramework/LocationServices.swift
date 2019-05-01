@@ -25,7 +25,6 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager!.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager!.distanceFilter = 5000 // 5 km
-        locationManager!.delegate = self
         
         updateCity(PreferenceHelper.getSelectedCity())
     }
@@ -40,14 +39,14 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                     print("updateCity " + cityToUse.frenchName)
                 #endif
                 
-                serviceActive = true
+                enableLocation()
                 getCurrentLocation()
             } else {
                 #if DEBUG
                     print("updateCity " + cityToUse.frenchName)
                 #endif
 
-                serviceActive = false
+                disableLocation()
                 cityHasBeenUpdated(cityToUse)
             }
     }
@@ -178,7 +177,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
             
             case .restricted, .denied:
                 // Disable location features
-                serviceActive = false
+                disableLocation()
                 delegate!.locationNotAvailable()
                 break
             
@@ -199,6 +198,16 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func disableLocation() {
+        serviceActive = false
+        locationManager!.delegate = nil
+    }
+    
+    func enableLocation() {
+        serviceActive = true
+        locationManager!.delegate = self
+    }
+    
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
         #if DEBUG
@@ -207,7 +216,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
         
         switch status {
             case .restricted, .denied:
-                serviceActive = false
+                disableLocation()
                 
                 if(LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity())) {
                     delegate!.locationNotAvailable()
@@ -329,7 +338,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                     }
                     
                     if !isCanada {
-                        self.serviceActive = false
+                        self.disableLocation()
                         PreferenceHelper.switchFavoriteCity(cityId: Global.currentLocationCityId)
                         PreferenceHelper.removeLastLocatedCity()
                         self.delegate!.notInCanada(country)

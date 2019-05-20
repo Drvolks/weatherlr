@@ -195,6 +195,10 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                 // Enable any of your app's location features
                 handleLocationServicesStateAvailable()
                 break
+        
+            @unknown default:
+                print("Unknown status from handleLocationServicesAuthorizationStatus")
+                break
         }
     }
     
@@ -239,6 +243,10 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                 break
             
             case .notDetermined:
+                break
+        
+            @unknown default:
+                print("Unknown status from handleLocationServicesAuthorizationStatus")
                 break
         }
     }
@@ -297,7 +305,7 @@ class LocationServices : NSObject, CLLocationManagerDelegate {
                 placeMark = placemarks?[0]
                 
                 #if DEBUG
-                    print(placeMark)
+                    print(placeMark as Any)
                     if let val = placeMark.locality {
                         print("locality " + val)
                     }

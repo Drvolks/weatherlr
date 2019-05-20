@@ -338,8 +338,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     
     func getAllCityList() -> [City] {
         NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
-        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
-        return (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
+        return CityHelper.loadAllCities()
     }
     
     func unknownCity(_ cityName:String) {

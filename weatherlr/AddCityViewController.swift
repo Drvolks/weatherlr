@@ -31,8 +31,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cancelButton.title = "Cancel".localized()
         searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
         
-        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
-        allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
+        allCityList = CityHelper.loadAllCities()
         allCities = buildCityIndex(allCityList)
         allSections = buildSections(allCities)
         

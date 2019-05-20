@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #if FREE
             FirebaseApp.configure()
-            GADMobileAds.configure(withApplicationID: Constants.googleAddId);
+            GADMobileAds.sharedInstance().start(completionHandler: nil)
         #endif
         
         var performShortcutDelegate = true

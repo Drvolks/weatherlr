@@ -240,7 +240,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier  == "Settings" {
             let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! SettingsViewController
-            targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
+            if weatherInformationWrapper.weatherInformations.count > 0 {
+                targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
+            } else {
+                targetController.selectedCityWeatherInformation = nil
+            }
         } else if segue.identifier  == "ShowRadar" {
             let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! RadarViewController

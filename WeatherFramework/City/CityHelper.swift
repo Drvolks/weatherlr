@@ -93,4 +93,17 @@ class CityHelper {
         
         return currentLocation
     }
+    
+    static func loadAllCities() -> [City] {
+        let url = Bundle.main.url(forResource: "Cities", withExtension: "plist")!
+        do {
+            let rawdata = try Data(contentsOf: url)
+            return try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as! [City]
+        } catch {
+            print("Unexpected error: \(error).")
+            print("Couldn't read cities plist file")
+        }
+        
+        return [City]()
+    }
 }

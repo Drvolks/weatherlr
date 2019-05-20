@@ -16,8 +16,7 @@ class CityDownloader {
     }
     
     func process() {
-        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
-        let cities = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
+        let cities = CityHelper.loadAllCities()
         
         for i in 0..<cities.count {
             let city = cities[i]

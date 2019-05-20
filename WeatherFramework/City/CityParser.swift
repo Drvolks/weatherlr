@@ -147,12 +147,12 @@ class CityParser {
     
     func successCallback(_ cityArray:[City]) {
         let path = outputPath + "/cities.plist"
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cityArray, toFile: path)
-        
-        if !isSuccessfulSave {
-            print("Error saving cities :(")
-        } else {
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: cityArray, requiringSecureCoding: false)
+            try data.write(to: URL(fileURLWithPath: path))
             print("Done!")
+        } catch {
+            print("Error saving cities :(")
         }
     }
     

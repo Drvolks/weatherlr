@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-
+import WeatherFramework
 
 class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSessionDownloadDelegate, LocationServicesDelegate {
     

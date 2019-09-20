@@ -8,6 +8,7 @@
 
 import Foundation
 import WatchKit
+import WeatherFramework
 
 class ComplicationTemplateGraphicCircular: ComplicationTemplate, ComplicationTemplateProtocol {
     func generate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city: City) -> CLKComplicationTemplate {

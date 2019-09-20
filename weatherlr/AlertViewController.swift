@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherFramework
 
 class AlertViewController: UIViewController {
 

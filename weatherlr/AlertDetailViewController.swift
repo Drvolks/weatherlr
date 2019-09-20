@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import WeatherFramework
 
 class AlertDetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!

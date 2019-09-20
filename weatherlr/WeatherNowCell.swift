@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherFramework
 
 class WeatherNowCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!

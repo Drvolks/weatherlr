@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherFramework
 
 class ErrorViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import WeatherFramework
 
 #if FREE
     import GoogleMobileAds

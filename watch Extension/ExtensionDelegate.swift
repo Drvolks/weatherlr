@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import WeatherFramework
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLSessionDownloadDelegate  {
     var wrapper = WeatherInformationWrapper()
@@ -15,7 +16,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
     
     override init() {
         super.init()
-        WKExtension.shared().delegate = self
     }
     
     func applicationDidFinishLaunching() {

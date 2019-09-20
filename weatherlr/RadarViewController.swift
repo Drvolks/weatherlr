@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import WeatherFramework
 
 class RadarViewController: UIViewController, WKNavigationDelegate {
     

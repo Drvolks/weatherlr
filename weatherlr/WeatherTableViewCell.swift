@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherFramework
 
 class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherDetailLabel: UILabel!

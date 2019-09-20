@@ -8,6 +8,7 @@
 
 import Foundation
 import WatchKit
+import WeatherFramework
 
 class NextWeatherRowController : NSObject {
     @IBOutlet var weatherLabel: WKInterfaceLabel!

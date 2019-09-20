@@ -8,6 +8,7 @@
 
 import ClockKit
 import WatchKit
+import WeatherFramework
 
 class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDelegate, URLSessionDownloadDelegate {
     override init() {

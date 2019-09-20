@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WeatherFramework
 
 class CityDownloader {
     var outputPath:String

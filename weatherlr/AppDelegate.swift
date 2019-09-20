@@ -10,6 +10,7 @@ import UIKit
 #if FREE
     import Firebase
 #endif
+import WeatherFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

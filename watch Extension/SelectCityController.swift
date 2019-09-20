@@ -8,6 +8,7 @@
 
 import Foundation
 import WatchKit
+import WeatherFramework
 
 class SelectCityController: WKInterfaceController {
     @IBOutlet var cityTable: WKInterfaceTable!

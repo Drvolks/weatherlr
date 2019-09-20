@@ -19,6 +19,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
     @IBOutlet var locatingImage: WKInterfaceImage!
     @IBOutlet var locationErrorLabel: WKInterfaceLabel!
+    @IBOutlet weak var versionLabel: WKInterfaceLabel!
     
     var updatedDate = Date(timeIntervalSince1970: 0)
     var rowTypes = [String]()
@@ -91,6 +92,12 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
             } else if updatedDate.compare(ExtensionDelegateHelper.getWrapper().lastRefresh) != ComparisonResult.orderedSame {
                 refreshDisplay()
             }
+        }
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            versionLabel.setText(version)
+        } else {
+            versionLabel.setText("")
         }
     }
     

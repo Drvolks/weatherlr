@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import weatherlr
+import WeatherFramework
 
 class AlertTests: XCTestCase {
     let testBundle = Bundle(for: AlertTests.self)

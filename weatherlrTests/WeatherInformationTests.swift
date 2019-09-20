@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import weatherlr
+import WeatherFramework
 
 class WeatherInformationTests: XCTestCase {
     func testWeatherInformationBaseConstructor() {
@@ -66,7 +67,7 @@ class WeatherInformationTests: XCTestCase {
         
         var nb = 0
         
-        for status in TestUtils.iterateEnum(WeatherStatus.self) {
+        for status in WeatherStatus.allCases {
             nb = nb + 1
             
             if status != WeatherStatus.unitTest && status != WeatherStatus.na {

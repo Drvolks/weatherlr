@@ -22,7 +22,7 @@ class CityDownloader {
         for i in 0..<cities.count {
             let city = cities[i]
             
-            for lang in Language.all {
+            for lang in Language.allCases {
                 let url = UrlHelper.getUrl(city, lang: lang)
                 
                 if let url = URL(string: url) {

@@ -57,6 +57,9 @@
 		6E4ED5982335455C00A44046 /* WeatherFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 6E4ED5972335455C00A44046 /* WeatherFramework */; };
 		6E4ED59A2335458B00A44046 /* WeatherFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 6E4ED5992335458B00A44046 /* WeatherFramework */; };
 		6E4ED59E233585AD00A44046 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
+		6E4ED5A2233586B600A44046 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
+		6E4ED5A6233586EA00A44046 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
+		6E4ED5A7233586EB00A44046 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
 		6E4EEA6E1F583EE000984A0C /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4EEA6D1F583EE000984A0C /* AppDelegateTests.swift */; };
 		6E4F596D2061C619006A12DA /* WeatherNowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E013ECE1FF562EC00043E31 /* WeatherNowCell.swift */; };
 		6E4F596E2061C62C006A12DA /* CellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1627C71FFFDCBE00B2969E /* CellHelper.swift */; };
@@ -988,6 +991,7 @@
 				6E04C8021DB277FF002CB067 /* LaunchScreen.storyboard in Resources */,
 				6E04C8041DB277FF002CB067 /* nl-19_French.xml in Resources */,
 				6E04C8071DB277FF002CB067 /* nu-29_English.xml in Resources */,
+				6E4ED5A2233586B600A44046 /* Cities.plist in Resources */,
 				6E04C8081DB277FF002CB067 /* Main.storyboard in Resources */,
 				6E91639420F41BF600E11DD8 /* Assets.xcassets in Resources */,
 				6E04C80B1DB277FF002CB067 /* nu-2_French.xml in Resources */,
@@ -1049,6 +1053,7 @@
 				6EA210D91DB2AA1100BC8B1C /* Assets.xcassets in Resources */,
 				6EA210DA1DB2AA1100BC8B1C /* Localizable.strings in Resources */,
 				6E91639720F41C9F00E11DD8 /* AssetsWatch.xcassets in Resources */,
+				6E4ED5A7233586EB00A44046 /* Cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,6 +1073,7 @@
 				6EAA0E6C1E6645020023DB15 /* AssetsWatch.xcassets in Resources */,
 				6EB154AC1D28766F0005B02A /* Assets.xcassets in Resources */,
 				6EB154A71D2867930005B02A /* Localizable.strings in Resources */,
+				6E4ED5A6233586EA00A44046 /* Cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,8 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         // TODO à vérifier, ne fonctionne pas
         cancelButton.possibleTitles = ["Cancel".localized()]
         cancelButton.title = "Cancel".localized()
-        searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
+        // ne fonctionne plus en iOS 13
+        // searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
         
         allCityList = CityHelper.loadAllCities()
         allCities = buildCityIndex(allCityList)

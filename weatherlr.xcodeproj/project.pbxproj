@@ -56,6 +56,7 @@
 		6E4910D21CCD1F81006D3C82 /* DataProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910D11CCD1F81006D3C82 /* DataProviderTableViewCell.swift */; };
 		6E4ED5982335455C00A44046 /* WeatherFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 6E4ED5972335455C00A44046 /* WeatherFramework */; };
 		6E4ED59A2335458B00A44046 /* WeatherFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 6E4ED5992335458B00A44046 /* WeatherFramework */; };
+		6E4ED59E233585AD00A44046 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
 		6E4EEA6E1F583EE000984A0C /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4EEA6D1F583EE000984A0C /* AppDelegateTests.swift */; };
 		6E4F596D2061C619006A12DA /* WeatherNowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E013ECE1FF562EC00043E31 /* WeatherNowCell.swift */; };
 		6E4F596E2061C62C006A12DA /* CellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1627C71FFFDCBE00B2969E /* CellHelper.swift */; };
@@ -274,6 +275,7 @@
 		6E4910CD1CCC3335006D3C82 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		6E4910CF1CCD08A6006D3C82 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		6E4910D11CCD1F81006D3C82 /* DataProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderTableViewCell.swift; sourceTree = "<group>"; };
+		6E4ED59D233585AD00A44046 /* Cities.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cities.plist; sourceTree = "<group>"; };
 		6E4EEA6D1F583EE000984A0C /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		6E4EEB0E1F59BC9100984A0C /* weatherlrFree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "weatherlrFree-Info.plist"; path = "weatherlr/weatherlrFree-Info.plist"; sourceTree = SOURCE_ROOT; };
 		6E661505205B2F56008075CB /* Weatherlr Launchscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen@3x.png"; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 		6E29052A1CB2D5550040EB8B /* weatherlr */ = {
 			isa = PBXGroup;
 			children = (
+				6E4ED59D233585AD00A44046 /* Cities.plist */,
 				6E1627C01FFEB9C400B2969E /* images */,
 				6EB154921D284E6C0005B02A /* weatherlr.entitlements */,
 				6E29052B1CB2D5550040EB8B /* AppDelegate.swift */,
@@ -1006,6 +1009,7 @@
 				6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */,
 				6E91639820F41CA800E11DD8 /* Assets.xcassets in Resources */,
 				6E9E12CD1CEA1ED800791284 /* nu-2_French.xml in Resources */,
+				6E4ED59E233585AD00A44046 /* Cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

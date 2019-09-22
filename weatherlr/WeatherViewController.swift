@@ -87,7 +87,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func refresh() {
-        refresh(false)
+        locationServices?.updateCity(PreferenceHelper.getSelectedCity())
+        
+        if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
+            refresh(true)
+        }
     }
     
     func refreshLabel() {
@@ -102,11 +106,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func refreshFromScroll(_ sender:AnyObject) {
-        locationServices?.updateCity(PreferenceHelper.getSelectedCity())
-        
-        if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
-            refresh(true)
-        }
+        refresh()
     }
     
     @objc func applicationWillEnterForeground(_ notification: Notification) {

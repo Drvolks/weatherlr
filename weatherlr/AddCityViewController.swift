@@ -22,6 +22,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     var filteredCities = [String:[City]]()
     var sections = [Int:String]()
     var allSections = [Int:String]()
+    var modalDelegate:ModalDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cancelButton.title = "Cancel".localized()
         // ne fonctionne plus en iOS 13
         // searchText.setValue("Cancel".localized(), forKey:"_cancelButtonText")
-        
+
         allCityList = CityHelper.loadAllCities()
         allCities = buildCityIndex(allCityList)
         allSections = buildSections(allCities)
@@ -46,6 +47,12 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cancelButton.isEnabled = true
         
         cityTable.sectionIndexBackgroundColor = UIColor.clear
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if let delegate = modalDelegate {
+            delegate.refresh()
+        }
     }
     
     func buildCityIndex(_ cityListToProcess: [City]) -> [String:[City]] {

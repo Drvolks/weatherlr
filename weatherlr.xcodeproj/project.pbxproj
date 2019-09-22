@@ -114,6 +114,8 @@
 		6EAA0E6C1E6645020023DB15 /* AssetsWatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154721D282B0D0005B02A /* AssetsWatch.xcassets */; };
 		6EAA0E6E1E6646110023DB15 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910A81CC7E99A006D3C82 /* UIColorExtension.swift */; };
 		6EAA0E6F1E6646120023DB15 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910A81CC7E99A006D3C82 /* UIColorExtension.swift */; };
+		6EAE930923381B7B00C72255 /* ModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE930823381B7B00C72255 /* ModalDelegate.swift */; };
+		6EAE930A23381B7B00C72255 /* ModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE930823381B7B00C72255 /* ModalDelegate.swift */; };
 		6EB154711D282B0D0005B02A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB1546F1D282B0D0005B02A /* Interface.storyboard */; };
 		6EB1547A1D282B0E0005B02A /* watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6EB154791D282B0D0005B02A /* watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6EB1547F1D282B0E0005B02A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1547E1D282B0E0005B02A /* InterfaceController.swift */; };
@@ -310,6 +312,7 @@
 		6EA210E11DB2AA1100BC8B1C /* watchFree Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchFree Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA210E21DB2AA1100BC8B1C /* watchFree Extension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "watchFree Extension-Info.plist"; sourceTree = "<group>"; };
 		6EAA0E6A1E663C150023DB15 /* WatchImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchImageHelper.swift; sourceTree = "<group>"; };
+		6EAE930823381B7B00C72255 /* ModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDelegate.swift; sourceTree = "<group>"; };
 		6EB1546D1D282B0D0005B02A /* watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB154701D282B0D0005B02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		6EB154721D282B0D0005B02A /* AssetsWatch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsWatch.xcassets; sourceTree = "<group>"; };
@@ -513,6 +516,7 @@
 				6E4910CD1CCC3335006D3C82 /* GradientView.swift */,
 				6EF6D0BD1DB2972800AE3252 /* GoogleService-Info.plist */,
 				6E4910A41CC59629006D3C82 /* Localizable.strings */,
+				6EAE930823381B7B00C72255 /* ModalDelegate.swift */,
 			);
 			path = weatherlr;
 			sourceTree = "<group>";
@@ -1117,6 +1121,7 @@
 				6E04C7E31DB277FF002CB067 /* MinMaxLabel.swift in Sources */,
 				6E04C7E41DB277FF002CB067 /* Constants.swift in Sources */,
 				6E04C7E61DB277FF002CB067 /* ErrorViewController.swift in Sources */,
+				6EAE930A23381B7B00C72255 /* ModalDelegate.swift in Sources */,
 				6E04C7E81DB277FF002CB067 /* DataProviderTableViewCell.swift in Sources */,
 				6E04C7E91DB277FF002CB067 /* WeatherHeaderCell.swift in Sources */,
 				6E04C7EC1DB277FF002CB067 /* LangTableViewCell.swift in Sources */,
@@ -1145,6 +1150,7 @@
 				6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */,
 				6E9F33581CB7FB0600A9D6A7 /* Constants.swift in Sources */,
 				6E4910D01CCD08A6006D3C82 /* ErrorViewController.swift in Sources */,
+				6EAE930923381B7B00C72255 /* ModalDelegate.swift in Sources */,
 				6E4910D21CCD1F81006D3C82 /* DataProviderTableViewCell.swift in Sources */,
 				6E9F33601CB942C700A9D6A7 /* WeatherHeaderCell.swift in Sources */,
 				6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */,

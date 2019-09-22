@@ -9,7 +9,7 @@
 import UIKit
 import WeatherFramework
 
-class SettingsViewController: UITableViewController {
+class SettingsViewController: UITableViewController, ModalDelegate {
     
     @IBOutlet weak var cityTable: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
@@ -19,6 +19,7 @@ class SettingsViewController: UITableViewController {
     var savedCities = [City]()
     var selectedCity:City?
     var selectedCityWeatherInformation:WeatherInformation?
+    var modalDelegate:ModalDelegate?
     
     let citySection = 0
     let langSection = 1
@@ -28,8 +29,6 @@ class SettingsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,21 +41,31 @@ class SettingsViewController: UITableViewController {
             }
         #endif
         
-        savedCities = PreferenceHelper.getFavoriteCities()
-        selectedCity = PreferenceHelper.getSelectedCity()
-        
         navigationItem.leftBarButtonItem = editButtonItem
         setEditing(false, animated: false)
 
         cityTable.estimatedRowHeight = 21
         cityTable.rowHeight = UITableView.automaticDimension
         
+        refresh()
+    }
+    
+    func refresh() {
+        savedCities = PreferenceHelper.getFavoriteCities()
+        selectedCity = PreferenceHelper.getSelectedCity()
+
         cityTable.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if let delegate = modalDelegate {
+            delegate.refresh()
+        }
     }
     
     // MARK: - Navigation
@@ -274,6 +283,10 @@ class SettingsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addCity" {
             selectedCityWeatherInformation = nil
+            
+            let navigationController = segue.destination as! UINavigationController
+            let targetController = navigationController.topViewController as! AddCityViewController
+            targetController.modalDelegate = self
         }
     }
     

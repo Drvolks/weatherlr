@@ -13,8 +13,7 @@ import WeatherFramework
 #if FREE
     import GoogleMobileAds
 #endif
-// TODO retrait CLLocationManagerDelegate
-class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, LocationServicesDelegate {
+class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, LocationServicesDelegate, ModalDelegate {
     
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!
@@ -87,6 +86,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshFromScroll(self)
     }
     
+    func refresh() {
+        refresh(false)
+    }
     
     func refreshLabel() {
         let refreshControlFont = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
@@ -246,6 +248,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             } else {
                 targetController.selectedCityWeatherInformation = nil
             }
+            targetController.modalDelegate = self
         } else if segue.identifier  == "ShowRadar" {
             let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! RadarViewController

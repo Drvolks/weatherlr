@@ -2196,7 +2196,7 @@
 			repositoryURL = "git@github.com:Drvolks/WeatherFramework.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.1;
+				version = 1.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

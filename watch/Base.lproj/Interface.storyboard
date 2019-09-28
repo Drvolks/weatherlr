@@ -100,7 +100,6 @@
                         <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
-                        <label alignment="left" text="Version" id="jwe-MW-hHp" userLabel="version"/>
                     </items>
                     <menu key="menu" id="iB8-eH-vfl"/>
                     <connections>
@@ -109,7 +108,6 @@
                         <outlet property="locatingImage" destination="1xC-Wv-pwc" id="uzM-3f-MHw"/>
                         <outlet property="locationErrorLabel" destination="hNI-1L-1Pp" id="COZ-4t-y70"/>
                         <outlet property="selectCityButton" destination="ai4-HS-V5P" id="899-k6-Olf"/>
-                        <outlet property="versionLabel" destination="jwe-MW-hHp" id="AG6-jw-pAk"/>
                         <outlet property="weatherTable" destination="TYl-Sm-JJI" id="ulS-d7-dXp"/>
                     </connections>
                 </controller>

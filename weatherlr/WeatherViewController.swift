@@ -348,6 +348,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             } else {
                 DispatchQueue.main.async(execute: { () -> Void in
                     let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsNavigation") as! UINavigationController
+                    let targetController = viewController.topViewController as! SettingsViewController
+                    targetController.modalDelegate = self
                     self.present(viewController, animated: false, completion: nil)
                 })
             }

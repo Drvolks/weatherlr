@@ -17,6 +17,11 @@ class ExtensionDelegateHelper {
         #endif
 
         let city = PreferenceHelper.getCityToUse()
+        
+        #if DEBUG
+            print("launchURLSessionNow " + city.frenchName)
+        #endif
+        
         if !LocationServices.isUseCurrentLocation(city) {
             let url = URL(string:UrlHelper.getUrl(city))!
             

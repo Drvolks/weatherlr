@@ -82,14 +82,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                 refreshDisplay()
             }
         } else {
-            let selectedCity = PreferenceHelper.getSelectedCity()
-            if LocationServices.isUseCurrentLocation(selectedCity) {
-                #if DEBUG
-                    print("Retrait de la sélection gps")
-                #endif
-                PreferenceHelper.saveSelectedCity(selectedCity)
-            }
-            
             locatingImage.setHidden(true)
             
             if ExtensionDelegateHelper.refreshNeeded() {
@@ -112,8 +104,24 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         
         cityLabel.setHidden(false)
         cityLabel.setText("Loading".localized())
+
+        rowTypes = [String]()
         
-        clearTable()
+        if !rowTypesValid() {
+            for index in 0..<watchDelegate.wrapper.weatherInformations.count {
+                let weather = watchDelegate.wrapper.weatherInformations[index]
+                if weather.weatherDay == WeatherDay.now {
+                    rowTypes.append("currentWeatherRow")
+                }
+                else if weather.weatherDay == WeatherDay.today {
+                    rowTypes.append("nextWeatherRow")
+                } else {
+                    rowTypes.append("weatherRow")
+                }
+            }
+        }
+        
+        weatherTable.setRowTypes(rowTypes)
         
         cityLabel.setText("Loading2".localized())
         
@@ -157,29 +165,16 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         lastRefreshLabel.setHidden(false)
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
         
+        #if DEBUG
+            print("refreshDisplay for " + cityName)
+        #endif
+        
         updatedDate = watchDelegate.wrapper.lastRefresh
     }
     
     func clearTable() {
-        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        
-        if !rowTypesValid() {
-            //objc_sync_enter(rowTypes)
-            rowTypes = [String]()
-            for index in 0..<watchDelegate.wrapper.weatherInformations.count {
-                let weather = watchDelegate.wrapper.weatherInformations[index]
-                if weather.weatherDay == WeatherDay.now {
-                    rowTypes.append("currentWeatherRow")
-                }
-                else if weather.weatherDay == WeatherDay.today {
-                    rowTypes.append("nextWeatherRow")
-                } else {
-                    rowTypes.append("weatherRow")
-                }
-            }
-            //objc_sync_exit(rowTypes)
-            weatherTable.setRowTypes(rowTypes)
-        }
+        rowTypes = [String]()
+        weatherTable.setRowTypes(rowTypes)
     }
     
     func rowTypesValid() -> Bool {
@@ -303,17 +298,34 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func cityDidChange(_ city: City) {
+        #if DEBUG
+            print("cityDidChange")
+        #endif
+        
         lastRefreshLabel.setHidden(true)
+        clearTable()
+        locationErrorLabel.setText("")
         
         if LocationServices.isUseCurrentLocation(city) {
+            #if DEBUG
+                print("cityDidChange Locating")
+            #endif
+            
+            selectCityButton.setHidden(true)
             locatingImage.setHidden(false)
             cityLabel.setText("Locating".localized())
             
             locationServices?.start()
             locationServices?.updateCity(city)
         } else {
+            #if DEBUG
+                print("cityDidChange Loading")
+            #endif
+            
             locatingImage.setHidden(true)
             cityLabel.setText("Loading".localized())
+            
+            PreferenceHelper.saveSelectedCity(city)
             
             locationServices?.cityHasBeenUpdated(city)
         }
@@ -357,24 +369,42 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func unknownCity(_ cityName:String) {
-        locationErrorLabel.setText("The iPhone detected that you are located in".localized() + " " + cityName + ", " + "but this city is not in the Environment Canada list. Do you want to select a city yourself?")
-        clearTable()
-        refresh(showError:true)
+        error("The iPhone detected that you are located in".localized() + " " + cityName + ", " + "but this city is not in the Environment Canada list. Do you want to select a city yourself?")
     }
     
     func notInCanada(_ country:String) {
-        locationErrorLabel.setText("The iPhone detected that you are not located in Canada".localized())
-        clearTable()
-        refresh(showError:true)
+        #if DEBUG
+            print("notInCanada")
+        #endif
+        
+        error("The iPhone detected that you are not located in Canada".localized())
     }
     
     func errorLocating(_ errorCode:Int) {
-        locationErrorLabel.setText("Unable to detect your current location".localized())
+        error("Unable to detect your current location".localized())
+    }
+    
+    func error(_ message:String) {
+        locatingCompleted()
+        locationErrorLabel.setHidden(false)
+        locationErrorLabel.setText(message)
         clearTable()
-        refresh(showError:true)
     }
     
     func locationNotAvailable() {
         refresh(showError:false)
+    }
+    
+    func locatingCompleted() {
+        #if DEBUG
+            print("locatingCompleted")
+        #endif
+        
+        locatingImage.setHidden(true)
+        selectCityButton.setHidden(false)
+    }
+    
+    func locationSameCity() {
+        refreshDisplay()
     }
 }

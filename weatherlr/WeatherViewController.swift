@@ -357,5 +357,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         present(unknownCityAlert, animated: true, completion: nil)
     }
+    
+    func locatingCompleted() {
+        
+    }
+    
+    func locationSameCity() {
+        
+    }
 }
 

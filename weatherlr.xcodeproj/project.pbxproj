@@ -78,6 +78,19 @@
 		6E96F854217B626C00F7BDDD /* ComplicationTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05B9B02166C70200FAA2C3 /* ComplicationTemplate.swift */; };
 		6E96F855217B626F00F7BDDD /* ComplicationTemplateGraphicCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05B9AE2166C6F000FAA2C3 /* ComplicationTemplateGraphicCorner.swift */; };
 		6E96F856217B627300F7BDDD /* ComplicationTemplateGraphicCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05B9B32166CAE500FAA2C3 /* ComplicationTemplateGraphicCircular.swift */; };
+		6E9CD115235E563700444D3E /* WeatherFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 6E9CD114235E563700444D3E /* WeatherFramework */; };
+		6E9CD117235E56A200444D3E /* WeatherFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 6E9CD116235E56A200444D3E /* WeatherFramework */; };
+		6E9CD119235E57BA00444D3E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD118235E57B900444D3E /* GoogleMobileAds.framework */; };
+		6E9CD125235E5E4700444D3E /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD11A235E5E4600444D3E /* FirebaseCoreDiagnostics.framework */; };
+		6E9CD126235E5E4700444D3E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD11B235E5E4600444D3E /* GoogleUtilities.framework */; };
+		6E9CD127235E5E4700444D3E /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD11C235E5E4600444D3E /* nanopb.framework */; };
+		6E9CD128235E5E4700444D3E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD11D235E5E4600444D3E /* FIRAnalyticsConnector.framework */; };
+		6E9CD129235E5E4700444D3E /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD11E235E5E4600444D3E /* GoogleDataTransportCCTSupport.framework */; };
+		6E9CD12A235E5E4700444D3E /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD11F235E5E4600444D3E /* FirebaseCore.framework */; };
+		6E9CD12B235E5E4700444D3E /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD120235E5E4700444D3E /* GoogleDataTransport.framework */; };
+		6E9CD12C235E5E4700444D3E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD121235E5E4700444D3E /* GoogleAppMeasurement.framework */; };
+		6E9CD12D235E5E4700444D3E /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD122235E5E4700444D3E /* FirebaseInstanceID.framework */; };
+		6E9CD12E235E5E4700444D3E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9CD123235E5E4700444D3E /* FirebaseAnalytics.framework */; };
 		6E9E12B51CDF8DAD00791284 /* cities3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B41CDF8DAD00791284 /* cities3 */; };
 		6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12B61CDF96A800791284 /* TemperatureTests.swift */; };
 		6E9E12B91CDFC2F000791284 /* cities4 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B81CDFC2F000791284 /* cities4 */; };
@@ -139,7 +152,6 @@
 		6EE41A421F82FB2300508FD8 /* WeatherlrTvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE41A411F82FB2300508FD8 /* WeatherlrTvUITests.swift */; };
 		6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */; };
 		6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */; };
-		6EF6D0BE1DB2972800AE3252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6D0BD1DB2972800AE3252 /* GoogleService-Info.plist */; };
 		6EF6D0BF1DB2978D00AE3252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6D0BD1DB2972800AE3252 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -290,6 +302,18 @@
 		6E816C0C1CCFF87800533684 /* cities1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities1; sourceTree = "<group>"; };
 		6E816C181CD76DBB00533684 /* cities2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities2; sourceTree = "<group>"; };
 		6E956CF7227A537000DCB7D8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		6E9CD118235E57B900444D3E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		6E9CD11A235E5E4600444D3E /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		6E9CD11B235E5E4600444D3E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
+		6E9CD11C235E5E4600444D3E /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
+		6E9CD11D235E5E4600444D3E /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		6E9CD11E235E5E4600444D3E /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransportCCTSupport.framework; path = Carthage/Build/iOS/GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
+		6E9CD11F235E5E4600444D3E /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
+		6E9CD120235E5E4700444D3E /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
+		6E9CD121235E5E4700444D3E /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		6E9CD122235E5E4700444D3E /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Carthage/Build/iOS/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		6E9CD123235E5E4700444D3E /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		6E9CD124235E5E4700444D3E /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
 		6E9E12B41CDF8DAD00791284 /* cities3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities3; sourceTree = "<group>"; };
 		6E9E12B61CDF96A800791284 /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
 		6E9E12B81CDFC2F000791284 /* cities4 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities4; sourceTree = "<group>"; };
@@ -359,7 +383,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9CD119235E57BA00444D3E /* GoogleMobileAds.framework in Frameworks */,
+				6E9CD125235E5E4700444D3E /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				6E9CD12C235E5E4700444D3E /* GoogleAppMeasurement.framework in Frameworks */,
+				6E9CD12A235E5E4700444D3E /* FirebaseCore.framework in Frameworks */,
+				6E9CD115235E563700444D3E /* WeatherFramework in Frameworks */,
+				6E9CD126235E5E4700444D3E /* GoogleUtilities.framework in Frameworks */,
+				6E9CD12B235E5E4700444D3E /* GoogleDataTransport.framework in Frameworks */,
+				6E9CD12D235E5E4700444D3E /* FirebaseInstanceID.framework in Frameworks */,
+				6E9CD128235E5E4700444D3E /* FIRAnalyticsConnector.framework in Frameworks */,
+				6E9CD127235E5E4700444D3E /* nanopb.framework in Frameworks */,
+				6E9CD129235E5E4700444D3E /* GoogleDataTransportCCTSupport.framework in Frameworks */,
 				6E956CF9227A53F800DCB7D8 /* WebKit.framework in Frameworks */,
+				6E9CD12E235E5E4700444D3E /* FirebaseAnalytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +433,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9CD117235E56A200444D3E /* WeatherFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +676,18 @@
 		9799B631E60476874FB40063 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E9CD11D235E5E4600444D3E /* FIRAnalyticsConnector.framework */,
+				6E9CD124235E5E4700444D3E /* Firebase.framework */,
+				6E9CD123235E5E4700444D3E /* FirebaseAnalytics.framework */,
+				6E9CD11F235E5E4600444D3E /* FirebaseCore.framework */,
+				6E9CD11A235E5E4600444D3E /* FirebaseCoreDiagnostics.framework */,
+				6E9CD122235E5E4700444D3E /* FirebaseInstanceID.framework */,
+				6E9CD121235E5E4700444D3E /* GoogleAppMeasurement.framework */,
+				6E9CD120235E5E4700444D3E /* GoogleDataTransport.framework */,
+				6E9CD11E235E5E4600444D3E /* GoogleDataTransportCCTSupport.framework */,
+				6E9CD11B235E5E4600444D3E /* GoogleUtilities.framework */,
+				6E9CD11C235E5E4600444D3E /* nanopb.framework */,
+				6E9CD118235E57B900444D3E /* GoogleMobileAds.framework */,
 				6E956CF7227A537000DCB7D8 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -663,6 +712,9 @@
 				6EA210E81DB2AC4800BC8B1C /* PBXTargetDependency */,
 			);
 			name = weatherlrFree;
+			packageProductDependencies = (
+				6E9CD114235E563700444D3E /* WeatherFramework */,
+			);
 			productName = weatherlr;
 			productReference = 6E04C8121DB277FF002CB067 /* weatherlrFree.app */;
 			productType = "com.apple.product-type.application";
@@ -759,6 +811,9 @@
 			dependencies = (
 			);
 			name = "watchFree Extension";
+			packageProductDependencies = (
+				6E9CD116235E56A200444D3E /* WeatherFramework */,
+			);
 			productName = "watch Extension";
 			productReference = 6EA210E11DB2AA1100BC8B1C /* watchFree Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -1019,7 +1074,6 @@
 				6E2905361CB2D5550040EB8B /* LaunchScreen.storyboard in Resources */,
 				6E9E12BD1CE9223D00791284 /* nl-19_French.xml in Resources */,
 				6E66150A205B2F5B008075CB /* Weatherlr Launchscreen@2x.png in Resources */,
-				6EF6D0BE1DB2972800AE3252 /* GoogleService-Info.plist in Resources */,
 				6E9E12C91CEA10D200791284 /* nu-29_English.xml in Resources */,
 				6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */,
 				6E91639820F41CA800E11DD8 /* Assets.xcassets in Resources */,
@@ -1483,6 +1537,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 113;
 				DEVELOPMENT_TEAM = 654X66AK24;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1495,6 +1554,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.0.0;
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				OTHER_SWIFT_FLAGS = "-DFREE -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1513,6 +1576,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 113;
 				DEVELOPMENT_TEAM = 654X66AK24;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FREE=1",
 					"$(inherited)",
@@ -1524,6 +1592,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.0.0;
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				OTHER_SWIFT_FLAGS = "-DFREE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.free;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2337,6 +2409,16 @@
 			productName = WeatherFramework;
 		};
 		6E4ED5992335458B00A44046 /* WeatherFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E4ED5962335455C00A44046 /* XCRemoteSwiftPackageReference "WeatherFramework" */;
+			productName = WeatherFramework;
+		};
+		6E9CD114235E563700444D3E /* WeatherFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E4ED5962335455C00A44046 /* XCRemoteSwiftPackageReference "WeatherFramework" */;
+			productName = WeatherFramework;
+		};
+		6E9CD116235E56A200444D3E /* WeatherFramework */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6E4ED5962335455C00A44046 /* XCRemoteSwiftPackageReference "WeatherFramework" */;
 			productName = WeatherFramework;

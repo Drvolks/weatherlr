@@ -45,7 +45,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             googleBannerView.rootViewController = self
             let googleRequest = GADRequest()
             #if DEBUG
-                googleRequest.testDevices = [kGADSimulatorID, "9daac87965735d59a75181ae69755337"]
+                GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [(kGADSimulatorID as! String), "9daac87965735d59a75181ae69755337"]
             #endif
             googleBannerView.load(googleRequest)
             googleBannerView.isHidden = false

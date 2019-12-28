@@ -488,25 +488,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             print("Watch complication urlSession didFinishDownloadingTo")
         #endif
         
-        if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
+        let city = PreferenceHelper.getCityToUse()
+        if !LocationServices.isUseCurrentLocation(city) {
             do {
                 let xmlData = try Data(contentsOf: location)
-                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: PreferenceHelper.getCityToUse()))
+                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city))
                 
                 #if DEBUG
                     print("Watch complication wrapper updated")
                 #endif
                 
                 ExtensionDelegateHelper.updateComplication()
-                ExtensionDelegateHelper.scheduleRefresh()
             } catch {
                 print("Error info: \(error)")
+                
+                // plan b
+                ExtensionDelegateHelper.launchURLSessionNow(self)
             }
         } else {
             #if DEBUG
                 print("Watch complication urlSession didFinishDownloadingTo - no selected city")
             #endif
         }
+        
+        ExtensionDelegateHelper.scheduleRefresh()
     }
     
     func cityHasBeenUpdated(_ city: City) {

@@ -120,7 +120,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
                 ExtensionDelegateHelper.launchURLSessionNow(self)
             }
         } else {
-            print("urlSession didFinishDownloadingTo - no selected city")
+            #if DEBUG
+                print("urlSession didFinishDownloadingTo - no selected city")
+            #endif
         }
         
         if let task = savedTask {

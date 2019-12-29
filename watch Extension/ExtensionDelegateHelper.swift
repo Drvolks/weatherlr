@@ -85,12 +85,15 @@ class ExtensionDelegateHelper {
         }
     }
     
-    static func scheduleRefresh() {
-        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
-            print("getWrapper: no delegate!")
-            return
-        }
+    static func scheduleRefresh(_ backgroundRefreshInSeconds:Double) {
+        #if DEBUG
+            print("scheduleRefresh")
+        #endif
         
-        delegate.scheduleRefresh(Constants.backgroundRefreshInSeconds)
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: backgroundRefreshInSeconds), userInfo: nil) { (error: Error?) in
+            if let error = error {
+                print("Error occured while calling scheduleBackgroundRefresh: \(error.localizedDescription)")
+            }
+        }
     }
 }

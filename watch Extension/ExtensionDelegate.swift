@@ -62,18 +62,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
         }
     }
     
-    func scheduleRefresh(_ backgroundRefreshInSeconds: Double) {
-        #if DEBUG
-            print("scheduleRefresh")
-        #endif
-        
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: backgroundRefreshInSeconds), userInfo: nil) { (error: Error?) in
-            if let error = error {
-                print("Error occured while scheduling background refresh: \(error.localizedDescription)")
-            }
-        }
-    }
-    
     func launchURLSession() {
         #if DEBUG
             print("launchURLSession")
@@ -92,7 +80,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             #endif
         } else {
             print("scheduleURLSession - no selected city")
-            scheduleRefresh(Constants.backgroundRefreshInSeconds)
+            ExtensionDelegateHelper.scheduleRefresh(Constants.backgroundRefreshInSeconds)
         }
     }
     
@@ -134,7 +122,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
             #endif
         }
             
-        scheduleRefresh(Constants.backgroundRefreshInSeconds)
+        ExtensionDelegateHelper.scheduleRefresh(Constants.backgroundRefreshInSeconds)
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {

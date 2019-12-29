@@ -348,7 +348,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
                 #endif
                 
                 ExtensionDelegateHelper.updateComplication()
-                ExtensionDelegateHelper.scheduleRefresh()
+                ExtensionDelegateHelper.scheduleRefresh(Constants.backgroundRefreshInSeconds)
                 
                 refreshDisplay()
             } catch {

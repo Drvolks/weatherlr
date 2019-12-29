@@ -511,7 +511,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
             #endif
         }
         
-        ExtensionDelegateHelper.scheduleRefresh()
+        ExtensionDelegateHelper.scheduleRefresh(Constants.backgroundRefreshInSeconds)
     }
     
     func cityHasBeenUpdated(_ city: City) {

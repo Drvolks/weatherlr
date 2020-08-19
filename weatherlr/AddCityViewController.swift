@@ -194,7 +194,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         PreferenceHelper.addFavorite(city)
         
-        dismiss(animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

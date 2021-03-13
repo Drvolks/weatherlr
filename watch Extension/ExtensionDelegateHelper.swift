@@ -9,6 +9,7 @@
 import Foundation
 import WatchKit
 import WeatherFramework
+import ClockKit
 
 class ExtensionDelegateHelper {
     static func launchURLSessionNow(_ delegate: URLSessionDelegate) {

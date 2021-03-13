@@ -9,6 +9,7 @@
 import Foundation
 import WatchKit
 import WeatherFramework
+import ClockKit
 
 protocol ComplicationTemplateProtocol {
     func generate(_ weather: WeatherInformation?, nextWeather: WeatherInformation?, city:City) -> CLKComplicationTemplate

@@ -9,6 +9,7 @@
 import Foundation
 import WatchKit
 import WeatherFramework
+import ClockKit
 
 class WatchImageHelper {
     static func getImage(weatherInformation: WeatherInformation) -> CLKImageProvider {

@@ -32,7 +32,7 @@ class RadarViewController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // document.getElementsByClassName('gc-nttvs container')[0].remove();
-        let js = "document.body.style.backgroundColor = '#1f4f74'; document.body.style.color = 'white'; document.getElementsByClassName('container hidden-print')[0].remove(); document.getElementById('links').remove(); document.getElementById('weather-topics').remove();  document.getElementById('wb-info').remove(); document.getElementsByClassName('well')[0].remove(); document.getElementById('wb-srch').remove();document.getElementById('wxo-overlay-cities').parentNode.parentNode.parentNode.parentNode.style.display = 'none'; document.getElementsByClassName('gc-prtts')[0].remove(); document.getElementsByClassName('gcweb-menu')[0].remove(); document.getElementsByClassName('pagedetails')[0].remove(); document.getElementById('wb-lng').remove(); document.getElementById('wb-bc').remove();"
+        let js = "document.body.style.backgroundColor = '#1f4f74'; document.body.style.color = 'white'; document.getElementsByClassName('container hidden-print')[0].remove(); document.getElementById('weather-topics').remove();  document.getElementById('wb-info').remove(); document.getElementById('wb-srch').remove(); document.getElementsByClassName('gcweb-menu')[0].remove(); document.getElementsByClassName('pagedetails')[0].remove(); document.getElementById('wb-lng').remove(); document.getElementById('wb-bc').remove(); "
         webView.evaluateJavaScript(js, completionHandler: { (html: AnyObject?, error: NSError?) in } as? (Any?, Error?) -> Void)
     }
 

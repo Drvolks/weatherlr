@@ -144,6 +144,39 @@
 		F2A2B2C2D2E2F20212223243 /* PWSObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B2C2D2E2F2021222324252 /* PWSObservation.swift */; };
 		F3A3B3C3D3E3F30313233343 /* PWSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3C3D3E3F3031323334353 /* PWSService.swift */; };
 		F3A3B3C3D3E3F30313233344 /* PWSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3C3D3E3F3031323334353 /* PWSService.swift */; };
+		D1B00100000000000000B001 /* weatherlrWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10700000000000000000007 /* weatherlrWidget.swift */; };
+		D1B00200000000000000B002 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E43F6910A882D75EE4C72 /* ExpiringCache.swift */; };
+		D1B00300000000000000B003 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C35C05D39F0641C27E887 /* Global.swift */; };
+		D1B00400000000000000B004 /* LocatedCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B1023FCFAC6D86C3A3EFD /* LocatedCity.swift */; };
+		D1B00500000000000000B005 /* LocationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364582F5E25B18C9B9930D00 /* LocationErrors.swift */; };
+		D1B00600000000000000B006 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB93945D670C63472B0D736 /* LocationServices.swift */; };
+		D1B00700000000000000B007 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6FB581650FDC090BABB9B /* LocationServicesDelegate.swift */; };
+		D1B00800000000000000B008 /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914E20A848D19BB1DB6897A /* PreferenceHelper.swift */; };
+		D1B00900000000000000B009 /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938B53ABA71309E34B89CE0 /* PreferenceHelperError.swift */; };
+		D1B00A00000000000000B00A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF41E4B20D534DAC338FA1 /* StringExtension.swift */; };
+		D1B00B00000000000000B00B /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6898273E6B4D6B8702EE1 /* UrlHelper.swift */; };
+		D1B00C00000000000000B00C /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88C4D78EAE014C5ECE5BB9 /* WeatherHelper.swift */; };
+		D1B00D00000000000000B00D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23BBD3639305F0B403E189E /* City.swift */; };
+		D1B00E00000000000000B00E /* CityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A31C3B77CC79F6E435B3A4 /* CityHelper.swift */; };
+		D1B00F00000000000000B00F /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB99306198BAF42E529B22D /* CityParser.swift */; };
+		D1B01000000000000000B010 /* RssEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E589AFB08C2CC13C5705E /* RssEntry.swift */; };
+		D1B01100000000000000B011 /* RssEntryToWeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7B94416CFB79B2E9AFBE1 /* RssEntryToWeatherInformation.swift */; };
+		D1B01200000000000000B012 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D00EB2864B75E5EB9204ED /* RssParser.swift */; };
+		D1B01300000000000000B013 /* RssParserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96EE110F7C3D82719FE6B3B /* RssParserBase.swift */; };
+		D1B01400000000000000B014 /* AlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD89E5567BE1033F96C083 /* AlertInformation.swift */; };
+		D1B01500000000000000B015 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57929464604AA772CAD6341A /* WeatherEnums.swift */; };
+		D1B01600000000000000B016 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC3E4C6D87F1F471233B0FD /* WeatherInformation.swift */; };
+		D1B01700000000000000B017 /* WeatherInformationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC544E32C5DD76F8D295070 /* WeatherInformationWrapper.swift */; };
+		D1B01800000000000000B018 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11111111111111111111A1 /* WeatherApiResponse.swift */; };
+		D1B01900000000000000B019 /* JsonWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22222222222222222222A2 /* JsonWeatherParser.swift */; };
+		D1B01A00000000000000B01A /* PWSObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B2C2D2E2F2021222324252 /* PWSObservation.swift */; };
+		D1B01B00000000000000B01B /* PWSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3C3D3E3F3031323334353 /* PWSService.swift */; };
+		D1B01C00000000000000B01C /* PWSStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1C1D1E1F1011121314151 /* PWSStation.swift */; };
+		D1B01D00000000000000B01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2905321CB2D5550040EB8B /* Assets.xcassets */; };
+		D1B01E00000000000000B01E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910A41CC59629006D3C82 /* Localizable.strings */; };
+		D1B01F00000000000000B01F /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
+		D1B02000000000000000B020 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000001AAAA0000 /* Secrets.plist */; };
+		D1B02100000000000000B021 /* weatherlr Widget.appex in Embed Widget Extension */ = {isa = PBXBuildFile; fileRef = D10200000000000000000002 /* weatherlr Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +222,13 @@
 			remoteGlobalIDString = 6EE41A211F82FB2100508FD8;
 			remoteInfo = WeatherlrTv;
 		};
+		D10D0000000000000000000D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D10100000000000000000001;
+			remoteInfo = "weatherlr Widget";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -212,6 +252,17 @@
 				6EB154891D282B0E0005B02A /* watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D10F0000000000000000000F /* Embed Widget Extension */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D1B02100000000000000B021 /* weatherlr Widget.appex in Embed Widget Extension */,
+			);
+			name = "Embed Widget Extension";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -338,6 +389,10 @@
 		F914E20A848D19BB1DB6897A /* PreferenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceHelper.swift; sourceTree = "<group>"; };
 		FDC3E4C6D87F1F471233B0FD /* WeatherInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
 		FDD6FB581650FDC090BABB9B /* LocationServicesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicesDelegate.swift; sourceTree = "<group>"; };
+		D10200000000000000000002 /* weatherlr Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "weatherlr Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10700000000000000000007 /* weatherlrWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherlrWidget.swift; sourceTree = "<group>"; };
+		D10800000000000000000008 /* weatherlrWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = weatherlrWidget.entitlements; sourceTree = "<group>"; };
+		D10900000000000000000009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +453,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D10400000000000000000004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -440,6 +502,7 @@
 				6E29054A1CB2D5550040EB8B /* weatherlrUITests */,
 				6EB1546E1D282B0D0005B02A /* watch */,
 				6EB1547D1D282B0E0005B02A /* watch Extension */,
+				D10600000000000000000006 /* weatherlr Widget */,
 				6EE41A231F82FB2200508FD8 /* WeatherlrTv */,
 				6EE41A351F82FB2200508FD8 /* WeatherlrTvTests */,
 				6EE41A401F82FB2200508FD8 /* WeatherlrTvUITests */,
@@ -456,6 +519,7 @@
 				6E2905471CB2D5550040EB8B /* weatherlrUITests.xctest */,
 				6EB1546D1D282B0D0005B02A /* watch.app */,
 				6EB154791D282B0D0005B02A /* watch Extension.appex */,
+				D10200000000000000000002 /* weatherlr Widget.appex */,
 				6EE41A221F82FB2100508FD8 /* WeatherlrTv.app */,
 				6EE41A321F82FB2200508FD8 /* WeatherlrTvTests.xctest */,
 				6EE41A3D1F82FB2200508FD8 /* WeatherlrTvUITests.xctest */,
@@ -695,6 +759,16 @@
 			path = City;
 			sourceTree = "<group>";
 		};
+		D10600000000000000000006 /* weatherlr Widget */ = {
+			isa = PBXGroup;
+			children = (
+				D10800000000000000000008 /* weatherlrWidget.entitlements */,
+				D10900000000000000000009 /* Info.plist */,
+				D10700000000000000000007 /* weatherlrWidget.swift */,
+			);
+			path = "weatherlr Widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -706,11 +780,13 @@
 				6E2905251CB2D5550040EB8B /* Frameworks */,
 				6E2905261CB2D5550040EB8B /* Resources */,
 				6EB154911D282B0E0005B02A /* Embed Watch Content */,
+				D10F0000000000000000000F /* Embed Widget Extension */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				6EB154881D282B0E0005B02A /* PBXTargetDependency */,
+				D10E0000000000000000000E /* PBXTargetDependency */,
 			);
 			name = weatherlr;
 			productName = weatherlr;
@@ -841,6 +917,23 @@
 			productReference = 6EE41A3D1F82FB2200508FD8 /* WeatherlrTvUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D10100000000000000000001 /* weatherlr Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D10A0000000000000000000A /* Build configuration list for PBXNativeTarget "weatherlr Widget" */;
+			buildPhases = (
+				D10300000000000000000003 /* Sources */,
+				D10400000000000000000004 /* Frameworks */,
+				D10500000000000000000005 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "weatherlr Widget";
+			productName = "weatherlr Widget";
+			productReference = D10200000000000000000002 /* weatherlr Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -901,6 +994,16 @@
 							};
 						};
 					};
+					D10100000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+						DevelopmentTeam = 654X66AK24;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					6EE41A211F82FB2100508FD8 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = 654X66AK24;
@@ -936,6 +1039,7 @@
 			projectRoot = "";
 			targets = (
 				6E2905271CB2D5550040EB8B /* weatherlr */,
+				D10100000000000000000001 /* weatherlr Widget */,
 				6EB1546C1D282B0D0005B02A /* watch */,
 				6EB154781D282B0D0005B02A /* watch Extension */,
 				6E29053B1CB2D5550040EB8B /* weatherlrTests */,
@@ -1028,6 +1132,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D10500000000000000000005 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1B01D00000000000000B01D /* Assets.xcassets in Resources */,
+				D1B01E00000000000000B01E /* Localizable.strings in Resources */,
+				D1B01F00000000000000B01F /* Cities.plist in Resources */,
+				D1B02000000000000000B020 /* Secrets.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1190,6 +1305,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D10300000000000000000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1B00100000000000000B001 /* weatherlrWidget.swift in Sources */,
+				D1B00200000000000000B002 /* ExpiringCache.swift in Sources */,
+				D1B00300000000000000B003 /* Global.swift in Sources */,
+				D1B00400000000000000B004 /* LocatedCity.swift in Sources */,
+				D1B00500000000000000B005 /* LocationErrors.swift in Sources */,
+				D1B00600000000000000B006 /* LocationServices.swift in Sources */,
+				D1B00700000000000000B007 /* LocationServicesDelegate.swift in Sources */,
+				D1B00800000000000000B008 /* PreferenceHelper.swift in Sources */,
+				D1B00900000000000000B009 /* PreferenceHelperError.swift in Sources */,
+				D1B00A00000000000000B00A /* StringExtension.swift in Sources */,
+				D1B00B00000000000000B00B /* UrlHelper.swift in Sources */,
+				D1B00C00000000000000B00C /* WeatherHelper.swift in Sources */,
+				D1B00D00000000000000B00D /* City.swift in Sources */,
+				D1B00E00000000000000B00E /* CityHelper.swift in Sources */,
+				D1B00F00000000000000B00F /* CityParser.swift in Sources */,
+				D1B01000000000000000B010 /* RssEntry.swift in Sources */,
+				D1B01100000000000000B011 /* RssEntryToWeatherInformation.swift in Sources */,
+				D1B01200000000000000B012 /* RssParser.swift in Sources */,
+				D1B01300000000000000B013 /* RssParserBase.swift in Sources */,
+				D1B01400000000000000B014 /* AlertInformation.swift in Sources */,
+				D1B01500000000000000B015 /* WeatherEnums.swift in Sources */,
+				D1B01600000000000000B016 /* WeatherInformation.swift in Sources */,
+				D1B01700000000000000B017 /* WeatherInformationWrapper.swift in Sources */,
+				D1B01800000000000000B018 /* WeatherApiResponse.swift in Sources */,
+				D1B01900000000000000B019 /* JsonWeatherParser.swift in Sources */,
+				D1B01A00000000000000B01A /* PWSObservation.swift in Sources */,
+				D1B01B00000000000000B01B /* PWSService.swift in Sources */,
+				D1B01C00000000000000B01C /* PWSStation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1222,6 +1372,11 @@
 			isa = PBXTargetDependency;
 			target = 6EE41A211F82FB2100508FD8 /* WeatherlrTv */;
 			targetProxy = 6EE41A3E1F82FB2200508FD8 /* PBXContainerItemProxy */;
+		};
+		D10E0000000000000000000E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D10100000000000000000001 /* weatherlr Widget */;
+			targetProxy = D10D0000000000000000000D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1828,6 +1983,58 @@
 			};
 			name = Release;
 		};
+		D10B0000000000000000000B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 113;
+				DEVELOPMENT_TEAM = 654X66AK24;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 5;
+				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D10C0000000000000000000C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 113;
+				DEVELOPMENT_TEAM = 654X66AK24;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 5;
+				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1908,6 +2115,15 @@
 			buildConfigurations = (
 				6EE41A481F82FB2300508FD8 /* Debug */,
 				6EE41A491F82FB2300508FD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D10A0000000000000000000A /* Build configuration list for PBXNativeTarget "weatherlr Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D10B0000000000000000000B /* Debug */,
+				D10C0000000000000000000C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

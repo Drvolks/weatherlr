@@ -32,21 +32,21 @@ public class PreferenceHelper {
     }
     
     public static func updateQuickActions() {
-        #if os(iOS)
+        #if os(iOS) && !WIDGET_EXTENSION
             var shortcutItems = [UIApplicationShortcutItem]()
             let cities = PreferenceHelper.getFavoriteCities()
-            
+
             var i = 0
             for city in cities {
                 let shortcutItem = UIApplicationShortcutItem(type: "City:" + city.id, localizedTitle: CityHelper.cityName(city))
                 shortcutItems.append(shortcutItem)
-                
+
                 i = i+1
                 if(i>3) {
                     break
                 }
             }
-            
+
             UIApplication.shared.shortcutItems = shortcutItems
         #endif
     }

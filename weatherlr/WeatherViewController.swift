@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import WidgetKit
 
 class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, @preconcurrency LocationServicesDelegate, @preconcurrency ModalDelegate {
 
@@ -136,6 +137,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.decorate()
 
             self.weatherTable.reloadData()
+
+            WidgetCenter.shared.reloadAllTimelines()
 
             fetchWeatherKitData()
         }

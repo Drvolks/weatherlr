@@ -295,4 +295,38 @@ public class PreferenceHelper {
         defaults.removeObject(forKey: Global.lastLocatedCityKey)
 
     }
+
+    // MARK: - PWS
+
+    public static func getPWSStations() -> [PWSStation] {
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        guard let data = defaults.data(forKey: Global.pwsStationsKey) else { return [] }
+        return (try? JSONDecoder().decode([PWSStation].self, from: data)) ?? []
+    }
+
+    public static func savePWSStations(_ stations: [PWSStation]) {
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        let data = try! JSONEncoder().encode(stations)
+        defaults.set(data, forKey: Global.pwsStationsKey)
+    }
+
+    private nonisolated(unsafe) static let secretsPlist: [String: String]? = {
+        guard let url = Bundle.main.url(forResource: "Secrets", withExtension: "plist"),
+              let data = try? Data(contentsOf: url),
+              let dict = try? PropertyListSerialization.propertyList(from: data, format: nil) as? [String: String] else {
+            return nil
+        }
+        return dict
+    }()
+
+    public static func getPWSApiKey() -> String? {
+        return secretsPlist?["PWS_API_KEY"]
+    }
+
+    public static func hasPWSCredentials() -> Bool {
+        guard let apiKey = getPWSApiKey(), !apiKey.isEmpty else {
+            return false
+        }
+        return true
+    }
 }

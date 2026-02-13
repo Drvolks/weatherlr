@@ -21,8 +21,9 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
     
     let citySection = 0
     let langSection = 1
-    let dataProviderSection = 2
-    let versionSection = 3
+    let pwsSection = 2
+    let dataProviderSection = 3
+    let versionSection = 4
     let francaisRow = 1
     
     override func viewDidLoad() {
@@ -65,7 +66,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,6 +74,11 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             return savedCities.count
         } else if section == langSection {
             return 2
+        } else if section == pwsSection {
+            if !PreferenceHelper.hasPWSCredentials() {
+                return 0
+            }
+            return PreferenceHelper.getPWSStations().count + 1
         } else {
             return 1
         }
@@ -85,8 +91,11 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             if city.id == Global.currentLocationCityId {
                 return false
             }
-            
+
             return true
+        } else if indexPath.section == pwsSection {
+            let stations = PreferenceHelper.getPWSStations()
+            return indexPath.row < stations.count
         } else {
             return false
         }
@@ -95,6 +104,12 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if indexPath.section == citySection {
             return UITableViewCell.EditingStyle.delete
+        } else if indexPath.section == pwsSection {
+            let stations = PreferenceHelper.getPWSStations()
+            if indexPath.row < stations.count {
+                return UITableViewCell.EditingStyle.delete
+            }
+            return UITableViewCell.EditingStyle.none
         } else {
             return UITableViewCell.EditingStyle.none
         }
@@ -148,24 +163,41 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             }
             
             return cell
+        } else if indexPath.section == pwsSection {
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+            cell.backgroundColor = UIColor.clear
+            cell.textLabel?.textColor = UIColor.label
+
+            let stations = PreferenceHelper.getPWSStations()
+
+            if indexPath.row < stations.count {
+                let station = stations[indexPath.row]
+                cell.textLabel?.text = station.name
+                cell.detailTextLabel?.text = station.stationId
+            } else {
+                cell.textLabel?.text = "Add Station".localized()
+                cell.textLabel?.textColor = UIColor.systemBlue
+            }
+
+            return cell
         } else if indexPath.section == versionSection {
             let cell = tableView.dequeueReusableCell(withIdentifier: "versionProviderCell", for: indexPath) as! VersionProviderTableViewCell
-            
+
             cell.backgroundColor = UIColor.clear
-            
+
             if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
                 cell.versionLabel.text = "Version".localized() + " " + version
             } else {
                 cell.versionLabel.text = ""
             }
-            
+
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "dataProviderCell", for: indexPath) as! DataProviderTableViewCell
-            
+
             cell.dataProviderLabel.text = "Provider".localized()
             cell.backgroundColor = UIColor.clear
-            
+
             return cell
 
         }
@@ -204,6 +236,11 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             return "City".localized()
         } else if section == langSection {
             return "Language".localized()
+        } else if section == pwsSection {
+            if !PreferenceHelper.hasPWSCredentials() {
+                return nil
+            }
+            return "Personal Weather Station".localized()
         } else {
             return nil
         }
@@ -213,10 +250,18 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
         if indexPath.section == citySection {
             if editingStyle == .delete {
                 let city = savedCities[indexPath.row]
-                
+
                 savedCities.remove(at: indexPath.row)
                 PreferenceHelper.removeFavorite(city)
-                
+
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        } else if indexPath.section == pwsSection {
+            if editingStyle == .delete {
+                var stations = PreferenceHelper.getPWSStations()
+                stations.remove(at: indexPath.row)
+                PreferenceHelper.savePWSStations(stations)
+
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
@@ -225,19 +270,26 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == citySection {
             let city = savedCities[indexPath.row]
-            
+
             PreferenceHelper.addFavorite(city)
-            
+
             dismiss(animated: true, completion: nil)
+        } else if indexPath.section == pwsSection {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let stations = PreferenceHelper.getPWSStations()
+
+            if indexPath.row == stations.count {
+                showAddStationAlert()
+            }
         } else {
             if indexPath.row == francaisRow {
                 PreferenceHelper.saveLanguage(Language.French)
             } else {
                 PreferenceHelper.saveLanguage(Language.English)
             }
-            
+
             tableView.deselectRow(at: indexPath, animated: true)
-            
+
             tableView.reloadSectionIndexTitles()
             tableView.reloadData()
         }
@@ -280,5 +332,47 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
+
+    // MARK: - PWS Helpers
+
+    private func showAddStationAlert() {
+        let alert = UIAlertController(title: "Station ID".localized(), message: "Enter station ID".localized(), preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = "Station ID".localized()
+            textField.autocorrectionType = .no
+            textField.autocapitalizationType = .none
+        }
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+            guard let stationId = alert.textFields?.first?.text, !stationId.isEmpty else { return }
+            self?.validateAndAddStation(stationId: stationId)
+        })
+        present(alert, animated: true)
+    }
+
+    private func validateAndAddStation(stationId: String) {
+        Task {
+            let observation = await PWSService.shared.fetchObservation(for: stationId)
+            await MainActor.run {
+                if let observation = observation {
+                    let station = PWSStation(
+                        stationId: stationId,
+                        name: observation.neighborhood ?? stationId.capitalized,
+                        latitude: observation.lat,
+                        longitude: observation.lon
+                    )
+                    var stations = PreferenceHelper.getPWSStations()
+                    // Avoid duplicates
+                    stations.removeAll { $0.stationId == stationId }
+                    stations.append(station)
+                    PreferenceHelper.savePWSStations(stations)
+                    cityTable.reloadData()
+                } else {
+                    let errorAlert = UIAlertController(title: nil, message: "Invalid Station".localized(), preferredStyle: .alert)
+                    errorAlert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(errorAlert, animated: true)
+                }
+            }
+        }
+    }
 }

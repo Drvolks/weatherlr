@@ -52,6 +52,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl.addTarget(self, action: #selector(refreshFromScroll(_:)), for: UIControl.Event.valueChanged)
         weatherTable.addSubview(refreshControl)
 
+        let appearance = UIToolbarAppearance()
+        appearance.configureWithTransparentBackground()
+        navigationController?.toolbar.standardAppearance = appearance
+        navigationController?.toolbar.scrollEdgeAppearance = appearance
+
         locationServices!.start()
 
         NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -211,7 +216,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     #if ENABLE_WEATHERKIT
     private var hasHourlyRow: Bool {
-        return weatherKitData?.next24Hours.isEmpty == false
+        return weatherInformationWrapper.weatherInformations.count > 0
     }
     #else
     private var hasHourlyRow: Bool {
@@ -243,7 +248,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         #if ENABLE_WEATHERKIT
         if hasHourlyRow && indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: HourlyForecastCell.reuseIdentifier, for: indexPath) as! HourlyForecastCell
-            cell.configure(with: weatherKitData!)
+            cell.configure(with: weatherKitData)
             return cell
         }
         #endif

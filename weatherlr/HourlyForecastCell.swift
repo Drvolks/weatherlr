@@ -14,19 +14,40 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
     static let reuseIdentifier = "HourlyForecastCell"
 
     private var hours: [HourWeather] = []
+    private var isLoading = true
     private var collectionView: UICollectionView!
+    private var loadingLabel: UILabel!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupCollectionView()
+        setupViews()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupCollectionView()
+        setupViews()
     }
 
-    private func setupCollectionView() {
+    private func setupViews() {
+        backgroundColor = .clear
+        selectionStyle = .none
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
+
+        // Loading placeholder
+        loadingLabel = UILabel()
+        loadingLabel.translatesAutoresizingMaskIntoConstraints = false
+        loadingLabel.text = "Hourly Loading".localized()
+        loadingLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+        loadingLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        loadingLabel.textAlignment = .center
+        contentView.addSubview(loadingLabel)
+        NSLayoutConstraint.activate([
+            loadingLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            loadingLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            loadingLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
+
+        // Collection view
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 60, height: 100)
@@ -48,14 +69,18 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
             collectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-
-        backgroundColor = .clear
-        selectionStyle = .none
-        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
     }
 
-    func configure(with weatherKitData: WeatherKitData) {
-        self.hours = weatherKitData.next24Hours
+    func configure(with weatherKitData: WeatherKitData?) {
+        if let data = weatherKitData {
+            self.hours = data.next24Hours
+            self.isLoading = false
+        } else {
+            self.hours = []
+            self.isLoading = true
+        }
+        loadingLabel.isHidden = !isLoading
+        collectionView.isHidden = isLoading
         collectionView.reloadData()
     }
 

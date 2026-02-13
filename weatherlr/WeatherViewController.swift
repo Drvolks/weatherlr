@@ -8,12 +8,11 @@
 
 import UIKit
 import MapKit
-import WeatherFramework
 
 #if FREE
     import GoogleMobileAds
 #endif
-class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, LocationServicesDelegate, ModalDelegate {
+class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, @preconcurrency LocationServicesDelegate, @preconcurrency ModalDelegate {
     
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!
@@ -31,6 +30,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     let maxWidth = CGFloat(600)
     var lastContentOffset: CGFloat = 0
     var locationServices:LocationServices?
+    var settingsButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             googleBannerView.load(googleRequest)
             googleBannerView.isHidden = false
             googleBannerHeightConstraint.constant = 50
+        #else
+            googleBannerView.isHidden = true
+            googleBannerHeightConstraint.constant = 0
         #endif
         
         weatherTable.delegate = self
@@ -105,7 +108,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl.endRefreshing()
     }
     
-    @objc func refreshFromScroll(_ sender:AnyObject) {
+    @objc func refreshFromScroll(_ sender:Any) {
         refresh()
     }
     
@@ -161,23 +164,33 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if view.bounds.size.width > maxWidth {
             weatherTable.bounds.size.width = maxWidth
         }
-        
-        if weatherInformationWrapper.alerts.count > 0 {
-            warningBarButton.isEnabled = true
-            warningBarButton.image = UIImage(named: "warning")
-        } else {
-            warningBarButton.isEnabled = false
-            warningBarButton.image = nil
-        }
-        
-        // TODO retirer l'image au lieu du tint
+
+        guard warningBarButton != nil, radarButton != nil else { return }
+
         let city = PreferenceHelper.getCityToUse()
-        if !city.radarId.isEmpty {
-            radarButton.isEnabled = true
-            radarButton.tintColor = nil
-        } else {
-            radarButton.isEnabled = false
-            radarButton.tintColor = UIColor.clear
+        let hasAlerts = weatherInformationWrapper.alerts.count > 0
+        let hasRadar = !city.radarId.isEmpty
+
+        warningBarButton.isEnabled = hasAlerts
+        warningBarButton.image = hasAlerts ? UIImage(named: "warning") : nil
+
+        radarButton.isEnabled = hasRadar
+        radarButton.tintColor = hasRadar ? nil : UIColor.clear
+
+        // Rebuild toolbar items to avoid empty liquid glass capsules
+        if settingsButton == nil {
+            settingsButton = toolbarItems?.first
+        }
+        if let settingsButton = settingsButton {
+            var items = [UIBarButtonItem]()
+            items.append(settingsButton)
+            items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+            if hasAlerts {
+                items.append(warningBarButton)
+                items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+            }
+            items.append(radarButton)
+            toolbarItems = items
         }
     }
 

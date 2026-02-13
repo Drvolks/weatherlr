@@ -7,9 +7,8 @@
 //
 
 import WatchKit
-import WeatherFramework
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLSessionDownloadDelegate  {
+class ExtensionDelegate: NSObject, WKExtensionDelegate, @preconcurrency URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate  {
     var wrapper = WeatherInformationWrapper()
     let urlSessionConfig = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
     var savedTask:WKRefreshBackgroundTask?
@@ -94,8 +93,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, URLS
         let city = PreferenceHelper.getCityToUse()
         if !LocationServices.isUseCurrentLocation(city) {
             do {
-                let xmlData = try Data(contentsOf: location)
-                wrapper = WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city)
+                let jsonData = try Data(contentsOf: location)
+                wrapper = WeatherHelper.getWeatherInformationsNoCache(jsonData, city: city)
                 
                 #if DEBUG
                     print("wrapper updated")

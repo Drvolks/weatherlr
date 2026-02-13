@@ -8,9 +8,8 @@
 
 import WatchKit
 import Foundation
-import WeatherFramework
 
-class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSessionDownloadDelegate, LocationServicesDelegate {
+class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate, @preconcurrency LocationServicesDelegate {
     
     
     @IBOutlet var cityLabel: WKInterfaceLabel!
@@ -225,7 +224,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         citieNames.append(contentsOf: "abcdefghijklmnopqrstuvwxyz".uppercased().map { String($0) })
         
         presentTextInputController(withSuggestions: citieNames, allowedInputMode: .plain, completion: { (result) -> Void in
-            self.didSayCityName(result as AnyObject?)
+            self.didSayCityName(result)
         })
     }
     
@@ -252,7 +251,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         loadData(showError:showError)
     }
     
-    func didSayCityName(_ result: AnyObject?) {
+    func didSayCityName(_ result: [Any]?) {
         if let result = result, let choice = result[0] as? String {
             var match = false;
             PreferenceHelper.getFavoriteCities().forEach({
@@ -340,8 +339,8 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
         
         if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
             do {
-                let xmlData = try Data(contentsOf: location)
-                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: PreferenceHelper.getCityToUse()))
+                let jsonData = try Data(contentsOf: location)
+                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(jsonData, city: PreferenceHelper.getCityToUse()))
                 
                 #if DEBUG
                     print("Watch wrapper updated")
@@ -364,7 +363,6 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, URLSession
     }
     
     func getAllCityList() -> [City] {
-        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         return CityHelper.loadAllCities()
     }
     

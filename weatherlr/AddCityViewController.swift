@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WeatherFramework
 
 class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
@@ -61,7 +60,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         for i in 0..<cityListToProcess.count {
             let city = cityListToProcess[i]
             let name = CityHelper.cityName(city)
-            let letter = (name.uppercased() as NSString).substring(to: 1)
+            let letter = String(name.uppercased().prefix(1))
             
             var cityListForLettre = cityDictionary[letter]
             if cityListForLettre == nil {
@@ -186,7 +185,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func cityRow(_ indexPath: IndexPath) -> City {
-        return filteredCities[sections[(indexPath as NSIndexPath).section]!]![(indexPath as NSIndexPath).row]
+        return filteredCities[sections[indexPath.section]!]![indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

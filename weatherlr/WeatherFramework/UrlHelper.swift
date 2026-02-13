@@ -17,10 +17,4 @@ public class UrlHelper {
         let langParam = lang == .French ? "fr-CA" : "en-CA"
         return "https://api.weather.gc.ca/collections/citypageweather-realtime/items/\(city.id)?f=json&lang=\(langParam)"
     }
-    
-    public static func getRadarUrl(_ city: City) -> String {
-        let url = "radarUrl".localized().replacingOccurrences(of: "{longitude}", with: city.longitude).replacingOccurrences(of: "{latitude}", with: city.latitude)
-        
-        return url
-    }
 }

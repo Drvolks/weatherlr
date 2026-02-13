@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6592D7D8BB470F147AC8C725 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E43F6910A882D75EE4C72 /* ExpiringCache.swift */; };
-		6FD0CE0B6DAC5B5CAE5324C5 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D00EB2864B75E5EB9204ED /* RssParser.swift */; };
 		000E5801924551FAC9D18B2B /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914E20A848D19BB1DB6897A /* PreferenceHelper.swift */; };
 		01379F7DFA276F57F5386CDE /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB99306198BAF42E529B22D /* CityParser.swift */; };
 		07A4800BCB25E289C8BBB5CB /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23BBD3639305F0B403E189E /* City.swift */; };
@@ -23,7 +21,6 @@
 		3426611E57305D9D37083206 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6FB581650FDC090BABB9B /* LocationServicesDelegate.swift */; };
 		3ACC8744F047C9AF1CCE736D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C35C05D39F0641C27E887 /* Global.swift */; };
 		3DA256933009DAA5A2DC10B0 /* WeatherInformationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC544E32C5DD76F8D295070 /* WeatherInformationWrapper.swift */; };
-		3EE55D2A685302D180A816B4 /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88C4D78EAE014C5ECE5BB9 /* WeatherHelper.swift */; };
 		487CBEC175C7B9B39176C67E /* RssEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E589AFB08C2CC13C5705E /* RssEntry.swift */; };
 		4D663955AF16B275A926A55E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF41E4B20D534DAC338FA1 /* StringExtension.swift */; };
 		50F0121C2E83821C410FAD0C /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88C4D78EAE014C5ECE5BB9 /* WeatherHelper.swift */; };
@@ -32,7 +29,6 @@
 		5E5DA53EDF4A3501D8BF1CBD /* CityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A31C3B77CC79F6E435B3A4 /* CityHelper.swift */; };
 		61CFB581202A7E36DAF3FB55 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57929464604AA772CAD6341A /* WeatherEnums.swift */; };
 		6592D7D8BB470F147AC8C725 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E43F6910A882D75EE4C72 /* ExpiringCache.swift */; };
-		6FD0CE0B6DAC5B5CAE5324C5 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D00EB2864B75E5EB9204ED /* RssParser.swift */; };
 		66FC6BCEB1F24253BE93EB49 /* HourlyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04ECD758E5C434DBF3687FC /* HourlyForecastCell.swift */; };
 		6747906E30639B3BA5E7ABDC /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88C4D78EAE014C5ECE5BB9 /* WeatherHelper.swift */; };
 		6A95AED8E27F2C3705CEB494 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57929464604AA772CAD6341A /* WeatherEnums.swift */; };
@@ -112,6 +108,7 @@
 		6EE41A421F82FB2300508FD8 /* WeatherlrTvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE41A411F82FB2300508FD8 /* WeatherlrTvUITests.swift */; };
 		6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */; };
 		6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */; };
+		6FD0CE0B6DAC5B5CAE5324C5 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D00EB2864B75E5EB9204ED /* RssParser.swift */; };
 		72947C11D7AB8B1017E5638D /* RssEntryToWeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7B94416CFB79B2E9AFBE1 /* RssEntryToWeatherInformation.swift */; };
 		72BDF0611B51B6010F3F100F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23BBD3639305F0B403E189E /* City.swift */; };
 		7AD2D67E97EAE74F07D20C74 /* AlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD89E5567BE1033F96C083 /* AlertInformation.swift */; };
@@ -1369,12 +1366,14 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = weatherlr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0.1;
+				MARKETING_VERSION = 5;
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1396,12 +1395,14 @@
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = weatherlr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0.1;
+				MARKETING_VERSION = 5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -9,21 +9,12 @@
 import UIKit
 import MapKit
 
-#if FREE
-    import GoogleMobileAds
-#endif
 class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, @preconcurrency LocationServicesDelegate, @preconcurrency ModalDelegate {
-    
+
     // MARK: outlets
     @IBOutlet weak var weatherTable: UITableView!
     @IBOutlet weak var warningBarButton: UIBarButtonItem!
     @IBOutlet weak var radarButton: UIBarButtonItem!
-    #if FREE
-        @IBOutlet weak var googleBannerView: GADBannerView!
-    #else
-        @IBOutlet weak var googleBannerView: UIView!
-    #endif
-    @IBOutlet weak var googleBannerHeightConstraint: NSLayoutConstraint!
     
     var refreshControl: UIRefreshControl!
     var weatherInformationWrapper = WeatherInformationWrapper()
@@ -40,22 +31,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         locationServices!.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
-        
-        #if FREE
-            googleBannerView.adUnitID = Constants.googleAddId
-            googleBannerView.rootViewController = self
-            let googleRequest = GADRequest()
-            #if DEBUG
-                GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [(kGADSimulatorID as! String), "9daac87965735d59a75181ae69755337"]
-            #endif
-            googleBannerView.load(googleRequest)
-            googleBannerView.isHidden = false
-            googleBannerHeightConstraint.constant = 50
-        #else
-            googleBannerView.isHidden = true
-            googleBannerHeightConstraint.constant = 0
-        #endif
-        
+
         weatherTable.delegate = self
         weatherTable.dataSource = self
         weatherTable.rowHeight = UITableView.automaticDimension

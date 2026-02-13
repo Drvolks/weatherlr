@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class SettingsViewController: UITableViewController, @preconcurrency ModalDelegate {
     
@@ -272,6 +273,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             let city = savedCities[indexPath.row]
 
             PreferenceHelper.addFavorite(city)
+            WidgetCenter.shared.reloadAllTimelines()
 
             dismiss(animated: true, completion: nil)
         } else if indexPath.section == pwsSection {
@@ -287,6 +289,8 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             } else {
                 PreferenceHelper.saveLanguage(Language.English)
             }
+
+            WidgetCenter.shared.reloadAllTimelines()
 
             tableView.deselectRow(at: indexPath, animated: true)
 

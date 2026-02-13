@@ -241,10 +241,10 @@
                             <constraint firstAttribute="leadingMargin" secondItem="0UC-87-mQn" secondAttribute="leading" id="Ppz-Yv-rEV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0UC-87-mQn" secondAttribute="trailing" id="YwF-t0-axs"/>
                             <constraint firstItem="0UC-87-mQn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jvP-IK-N4M"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="tVw-bB-m0n"/>
+                            <constraint firstAttribute="bottom" secondItem="0UC-87-mQn" secondAttribute="bottom" id="tVw-bB-m0n"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems>
                         <barButtonItem image="settings" id="jhq-HL-zW2">
                             <connections>

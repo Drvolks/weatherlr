@@ -20,11 +20,5 @@ class Constants {
         static let backgroundRefreshInSeconds = Double(Global.expirationInMinutes) * 60.0
     #endif
     
-    #if FREE
-        static let backgroundDownloadTaskName = "massawippi.weatherlr.free.download"
-    #else
-        static let backgroundDownloadTaskName = "massawippi.weatherlr.download"
-    #endif
-    
-    static let googleAddId = "ca-app-pub-2793046476751764/6255610730"
+    static let backgroundDownloadTaskName = "massawippi.weatherlr.download"
 }

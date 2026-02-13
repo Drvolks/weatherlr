@@ -7,9 +7,6 @@
 //
 
 import UIKit
-#if FREE
-    import Firebase
-#endif
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,12 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         PreferenceHelper.upgrade()
-        
-        #if FREE
-            FirebaseApp.configure()
-            GADMobileAds.sharedInstance().start(completionHandler: nil)
-        #endif
-        
+
         var performShortcutDelegate = true
         
         if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {

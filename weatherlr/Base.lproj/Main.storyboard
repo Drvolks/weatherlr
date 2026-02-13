@@ -235,23 +235,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOA-ci-JnR" customClass="GADBannerView">
-                                <rect key="frame" x="1" y="623" width="373" height="0.0"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" id="86m-ci-NiX"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1231612042" green="0.31097942589999999" blue="0.45643120999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="IOA-ci-JnR" secondAttribute="leading" constant="15" id="Amd-fY-vbi"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0UC-87-mQn" secondAttribute="leading" id="Ppz-Yv-rEV"/>
-                            <constraint firstItem="IOA-ci-JnR" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="S3a-dN-H5M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0UC-87-mQn" secondAttribute="trailing" id="YwF-t0-axs"/>
                             <constraint firstItem="0UC-87-mQn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jvP-IK-N4M"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IOA-ci-JnR" secondAttribute="bottom" id="n6Z-z9-cHS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IOA-ci-JnR" secondAttribute="trailing" constant="-15" id="oYT-jC-OCO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0UC-87-mQn" secondAttribute="bottom" id="tVw-bB-m0n"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -276,8 +266,6 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="oQ1-eD-ZCC"/>
                     <connections>
-                        <outlet property="googleBannerHeightConstraint" destination="86m-ci-NiX" id="GVg-bf-osH"/>
-                        <outlet property="googleBannerView" destination="IOA-ci-JnR" id="IeX-DC-JkV"/>
                         <outlet property="radarButton" destination="7SW-Zm-9Eg" id="mmd-DB-eME"/>
                         <outlet property="warningBarButton" destination="4Bz-ee-TLE" id="v8H-gH-yo1"/>
                         <outlet property="weatherTable" destination="0UC-87-mQn" id="8dB-z3-7hh"/>

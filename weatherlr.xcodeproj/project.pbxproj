@@ -1714,6 +1714,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				WK_COMPANION_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 			};
 			name = Debug;
 		};
@@ -1744,6 +1745,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				WK_COMPANION_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 			};
 			name = Release;
 		};
@@ -1774,6 +1776,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				WK_APP_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 			};
 			name = Debug;
 		};
@@ -1805,6 +1808,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				WK_APP_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 			};
 			name = Release;
 		};
@@ -2172,7 +2176,7 @@
 				);
 				MARKETING_VERSION = 5;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_WEATHERKIT";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 6.2;
@@ -2201,7 +2205,7 @@
 				);
 				MARKETING_VERSION = 5;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_WEATHERKIT";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2315,7 +2319,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -2325,6 +2329,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				WK_COMPANION_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
 			};
 			name = DebugInternal;
 		};
@@ -2346,7 +2351,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -2355,6 +2360,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				WK_COMPANION_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
 			};
 			name = ReleaseInternal;
 		};
@@ -2376,7 +2382,7 @@
 				);
 				MARKETING_VERSION = 5;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -2385,6 +2391,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				WK_APP_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 			};
 			name = DebugInternal;
 		};
@@ -2406,7 +2413,7 @@
 				);
 				MARKETING_VERSION = 5;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -2417,6 +2424,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				WK_APP_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 			};
 			name = ReleaseInternal;
 		};
@@ -2612,7 +2620,7 @@
 				);
 				MARKETING_VERSION = 5;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 6.2;
@@ -2637,7 +2645,7 @@
 				);
 				MARKETING_VERSION = 5;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

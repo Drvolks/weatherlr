@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.massawippi.weatherlr</string>
+	<string>$(WK_COMPANION_BUNDLE_IDENTIFIER)</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

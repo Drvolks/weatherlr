@@ -9,7 +9,9 @@
 import WidgetKit
 import SwiftUI
 import CoreLocation
+#if ENABLE_WEATHERKIT
 import WeatherKit
+#endif
 
 // MARK: - Models
 
@@ -50,8 +52,16 @@ struct WeatherTimelineProvider: TimelineProvider {
         let city = PreferenceHelper.getCityToUse()
         let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
 
+        #if ENABLE_PWS
         let pws = Self.fetchPWSSync(for: city)
+        #else
+        let pws = (hasPWS: false, temperature: nil as Int?)
+        #endif
+        #if ENABLE_WEATHERKIT
         let wk = Self.fetchWeatherKitSync(for: city)
+        #else
+        let wk = (hourly: [ForecastItem](), precipitation: [Double]())
+        #endif
 
         let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, hourlyForecasts: wk.hourly, precipitationIntensities: wk.precipitation)
         let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
@@ -59,6 +69,7 @@ struct WeatherTimelineProvider: TimelineProvider {
         completion(timeline)
     }
 
+    #if ENABLE_PWS
     static func fetchPWSSync(for city: City) -> (hasPWS: Bool, temperature: Int?) {
         let stations = PreferenceHelper.getPWSStations()
         guard !stations.isEmpty,
@@ -88,7 +99,9 @@ struct WeatherTimelineProvider: TimelineProvider {
 
         return (false, nil)
     }
+    #endif
 
+    #if ENABLE_WEATHERKIT
     private final class WeatherKitResultBox: @unchecked Sendable {
         var hourlyForecasts: [ForecastItem] = []
         var precipitationIntensities: [Double] = []
@@ -145,8 +158,6 @@ struct WeatherTimelineProvider: TimelineProvider {
         return (box.hourlyForecasts, box.precipitationIntensities)
     }
 
-    private static let nightVariants: Set<String> = ["aFewCloudsNight", "clearingNight"]
-
     static func weatherImageNameForCondition(_ condition: WeatherCondition, night: Bool) -> String {
         var status = WeatherHelper.weatherStatus(from: condition)
         if let substitute = WeatherHelper.getImageSubstitute(status) {
@@ -162,6 +173,9 @@ struct WeatherTimelineProvider: TimelineProvider {
 
         return String(describing: status)
     }
+    #endif
+
+    private static let nightVariants: Set<String> = ["aFewCloudsNight", "clearingNight"]
 
     private func buildEntry() -> WeatherEntry {
         let city = PreferenceHelper.getCityToUse()
@@ -264,16 +278,19 @@ struct SmallWeatherView: View {
                     .font(.caption)
                     .foregroundStyle(.white.opacity(0.9))
                     .lineLimit(1)
+                #if ENABLE_PWS
                 if entry.hasPWS {
                     Image(systemName: "sensor.fill")
                         .font(.caption2)
                         .foregroundStyle(.white.opacity(0.7))
                 }
+                #endif
             }
         }
     }
 }
 
+#if ENABLE_WEATHERKIT
 struct PrecipitationChart: View {
     let intensities: [Double]
     private let maxIntensity: Double = 8.0
@@ -312,13 +329,20 @@ struct PrecipitationChart: View {
         }
     }
 }
+#endif
 
 struct MediumWeatherView: View {
     let entry: WeatherEntry
 
+    #if ENABLE_WEATHERKIT
     private var hasPrecipitation: Bool {
         !entry.precipitationIntensities.isEmpty
     }
+    #else
+    private var hasPrecipitation: Bool {
+        false
+    }
+    #endif
 
     var body: some View {
         if hasPrecipitation {
@@ -328,6 +352,7 @@ struct MediumWeatherView: View {
         }
     }
 
+    #if ENABLE_WEATHERKIT
     private var precipitationLayout: some View {
         VStack(spacing: 4) {
             HStack(spacing: 6) {
@@ -335,11 +360,13 @@ struct MediumWeatherView: View {
                     .font(.caption)
                     .foregroundStyle(.white.opacity(0.9))
                     .lineLimit(1)
+                #if ENABLE_PWS
                 if entry.hasPWS {
                     Image(systemName: "sensor.fill")
                         .font(.caption2)
                         .foregroundStyle(.white.opacity(0.7))
                 }
+                #endif
                 Spacer()
                 Image(entry.weatherImageName)
                     .renderingMode(.original)
@@ -354,6 +381,11 @@ struct MediumWeatherView: View {
             PrecipitationChart(intensities: entry.precipitationIntensities)
         }
     }
+    #else
+    private var precipitationLayout: some View {
+        EmptyView()
+    }
+    #endif
 
     private var forecastLayout: some View {
         HStack(spacing: 0) {
@@ -372,11 +404,13 @@ struct MediumWeatherView: View {
                         .font(.caption2)
                         .foregroundStyle(.white.opacity(0.9))
                         .lineLimit(1)
+                    #if ENABLE_PWS
                     if entry.hasPWS {
                         Image(systemName: "sensor.fill")
                             .font(.caption2)
                             .foregroundStyle(.white.opacity(0.7))
                     }
+                    #endif
                 }
             }
             .frame(maxWidth: .infinity)

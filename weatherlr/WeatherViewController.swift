@@ -16,22 +16,26 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var weatherTable: UITableView!
     @IBOutlet weak var warningBarButton: UIBarButtonItem!
     @IBOutlet weak var radarButton: UIBarButtonItem!
-    
+
     var refreshControl: UIRefreshControl!
     var weatherInformationWrapper = WeatherInformationWrapper()
     let maxWidth = CGFloat(600)
     var lastContentOffset: CGFloat = 0
     var locationServices:LocationServices?
     var settingsButton: UIBarButtonItem?
+    #if ENABLE_WEATHERKIT
     var weatherKitData: WeatherKitData?
+    #endif
+    #if ENABLE_PWS
     var pwsResult: (station: PWSStation, observation: WUObservation)?
-    
+    #endif
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         locationServices = LocationServices()
         locationServices!.delegate = self
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
 
         weatherTable.delegate = self
@@ -39,19 +43,21 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.rowHeight = UITableView.automaticDimension
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.backgroundColor = UIColor.clear
+        #if ENABLE_WEATHERKIT
         weatherTable.register(HourlyForecastCell.self, forCellReuseIdentifier: HourlyForecastCell.reuseIdentifier)
-        
+        #endif
+
         refreshControl = UIRefreshControl()
         refreshLabel()
         refreshControl.addTarget(self, action: #selector(refreshFromScroll(_:)), for: UIControl.Event.valueChanged)
         weatherTable.addSubview(refreshControl)
 
         locationServices!.start()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        
+
     }
-    
+
     @objc func willGoToBackground() {
         if weatherTable.numberOfRows(inSection: 0) > 0 {
             let indexPath = IndexPath(row: 0, section: 0)
@@ -65,51 +71,51 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        
+
         refreshFromScroll(self)
     }
-    
+
     func refresh() {
         locationServices?.updateCity(PreferenceHelper.getSelectedCity())
-        
+
         if !LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
             refresh(true)
         }
     }
-    
+
     func refreshLabel() {
         let refreshControlFont = [ NSAttributedString.Key.foregroundColor: UIColor.white ]
         let refreshLabel:String
         refreshLabel = WeatherHelper.getRefreshTime(weatherInformationWrapper)
 
         refreshControl.attributedTitle = NSAttributedString(string: refreshLabel, attributes: refreshControlFont)
-        
+
         refreshControl.beginRefreshing()
         refreshControl.endRefreshing()
     }
-    
+
     @objc func refreshFromScroll(_ sender:Any) {
         refresh()
     }
-    
+
     @objc func applicationWillEnterForeground(_ notification: Notification) {
         refresh(false)
     }
-    
+
     override func viewDidLayoutSubviews() {
         decorate()
     }
 
-    
+
     func refresh(_ thread: Bool) {
         locationServices!.refreshLocation()
-        
+
         let city = PreferenceHelper.getCityToUse()
         if !LocationServices.isUseCurrentLocation(city) {
                 if thread {
                     DispatchQueue.global().async {
                         self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
-                        
+
                         DispatchQueue.main.async {
                             self.displayWeather(false)
                         }
@@ -120,7 +126,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
         }
     }
-    
+
     func displayWeather(_ foreground: Bool) {
         if weatherInformationWrapper.weatherInformations.count == 0 {
             if(foreground) {
@@ -140,7 +146,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             WidgetCenter.shared.reloadAllTimelines()
 
+            #if ENABLE_WEATHERKIT || ENABLE_PWS
             fetchWeatherKitData()
+            #endif
         }
     }
 
@@ -149,16 +157,24 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard !LocationServices.isUseCurrentLocation(city) else { return }
 
         Task {
+            #if ENABLE_WEATHERKIT
             let data = await WeatherKitService.shared.fetchWeatherKitData(for: city)
+            #endif
+            #if ENABLE_PWS
             let pws = await PWSService.shared.findClosestStation(to: city)
+            #endif
             await MainActor.run {
+                #if ENABLE_WEATHERKIT
                 self.weatherKitData = data
+                #endif
+                #if ENABLE_PWS
                 self.pwsResult = pws
+                #endif
                 self.weatherTable.reloadData()
             }
         }
     }
-    
+
     func decorate() {
         if view.bounds.size.width > maxWidth {
             weatherTable.bounds.size.width = maxWidth
@@ -193,9 +209,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
+    #if ENABLE_WEATHERKIT
     private var hasHourlyRow: Bool {
         return weatherKitData?.next24Hours.isEmpty == false
     }
+    #else
+    private var hasHourlyRow: Bool {
+        return false
+    }
+    #endif
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         if LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
@@ -210,15 +232,21 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
+            #if ENABLE_WEATHERKIT
             cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, weatherKitData: weatherKitData)
+            #else
+            cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
+            #endif
             return cell
         }
 
+        #if ENABLE_WEATHERKIT
         if hasHourlyRow && indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: HourlyForecastCell.reuseIdentifier, for: indexPath) as! HourlyForecastCell
             cell.configure(with: weatherKitData!)
             return cell
         }
+        #endif
 
         let adjustedRow = hasHourlyRow ? indexPath.row - 1 : indexPath.row
         let adjustedIndexPath = IndexPath(row: adjustedRow, section: indexPath.section)
@@ -226,13 +254,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.initialize(weatherInformationWrapper: weatherInformationWrapper, indexPath: adjustedIndexPath)
         return cell
     }
-    
+
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         weatherTable.reloadData()
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "header")! as! WeatherHeaderCell
+        #if ENABLE_PWS
         var pwsStationName: String? = nil
         var pwsTemperature: Int? = nil
         if let pws = pwsResult, let tempC = pws.observation.tempC {
@@ -240,6 +269,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             pwsTemperature = Int(tempC.rounded())
         }
         header.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
+        #else
+        header.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
+        #endif
         return header
     }
 
@@ -263,17 +295,19 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             return 0
         }
 
+        #if ENABLE_WEATHERKIT
         if hasHourlyRow && indexPath.row == 1 {
             return 110
         }
+        #endif
 
         return UITableView.automaticDimension
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 140
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "Settings" {
             let navigationController = segue.destination as! UINavigationController
@@ -294,7 +328,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func showAlert(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let alertController = storyboard.instantiateViewController(withIdentifier: "Alert") as! AlertViewController
-        
+
         var width = weatherTable.bounds.size.width - 40
         if width > 300 {
             width = 300
@@ -307,33 +341,33 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         let height = CGFloat(80 + (21*lines))
-        
+
         alertController.modalPresentationStyle = .popover;
         alertController.preferredContentSize = CGSize(width: width, height: height)
-        
+
         let popoverPresentation = alertController.popoverPresentationController!
         popoverPresentation.permittedArrowDirections = .any
         popoverPresentation.barButtonItem = sender
         popoverPresentation.delegate = self
         popoverPresentation.backgroundColor = UIColor.white
-        
+
         alertController.alerts = weatherInformationWrapper.alerts
-        
+
         present(alertController, animated: true, completion: nil)
     }
-    
+
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.lastContentOffset = scrollView.contentOffset.y
     }
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let indexes = weatherTable.indexPathsForVisibleRows {
             for i in 0..<indexes.count {
@@ -344,36 +378,36 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-    
+
     func cityHasBeenUpdated(_ city: City) {
         refresh(false)
     }
-    
+
     func getAllCityList() -> [City] {
        return CityHelper.loadAllCities()
     }
-    
+
     func unknownCity(_ cityName:String) {
         chargementVilleManuelPopup("The iPhone detected that you are located in".localized() + " " + cityName + ", " + "but this city is not in the Environment Canada list. Do you want to select a city yourself?".localized())
     }
-    
+
     func notInCanada(_ country:String) {
         weatherInformationWrapper = WeatherInformationWrapper()
         weatherTable.reloadData()
         chargementVilleManuelPopup("The iPhone detected that you are not located in Canada".localized())
     }
-    
+
     func errorLocating(_ errorCode:Int) {
         chargementVilleManuelPopup("Unable to detect your current location".localized())
     }
-    
+
     func locationNotAvailable() {
         chargementVilleManuelPopup("You will need to select a city manually".localized())
     }
-    
+
     func chargementVilleManuelPopup(_ message:String) {
         let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertController.Style.alert)
-        
+
         unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             if(PreferenceHelper.getFavoriteCities().count == 1) {
                 DispatchQueue.main.async(execute: { () -> Void in
@@ -389,16 +423,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 })
             }
         }))
-        
+
         present(unknownCityAlert, animated: true, completion: nil)
     }
-    
+
     func locatingCompleted() {
-        
+
     }
-    
+
     func locationSameCity() {
-        
+
     }
 }
-

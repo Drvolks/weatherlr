@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreText
-#if canImport(WeatherKit)
+#if ENABLE_WEATHERKIT
 import WeatherKit
 #endif
 
@@ -383,7 +383,7 @@ public class WeatherHelper {
         return "Last refresh".localized() + " " + dateFormatter.string(from: wrapper.lastRefresh as Date)
     }
 
-    #if canImport(WeatherKit)
+    #if ENABLE_WEATHERKIT
     public static func weatherStatus(from condition: WeatherCondition) -> WeatherStatus {
         switch condition {
         case .clear:

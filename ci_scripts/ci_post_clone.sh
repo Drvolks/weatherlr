@@ -13,3 +13,16 @@ cat > "$CI_PRIMARY_REPOSITORY_PATH/weatherlr/Secrets.plist" <<EOF
 </dict>
 </plist>
 EOF
+
+# Strip optional feature flags when DISABLE_* environment variables are set.
+PBXPROJ="$CI_PRIMARY_REPOSITORY_PATH/weatherlr.xcodeproj/project.pbxproj"
+
+if [ "$DISABLE_PWS" = "1" ]; then
+    echo "Stripping ENABLE_PWS from build settings..."
+    sed -i '' 's/ -DENABLE_PWS//g' "$PBXPROJ"
+fi
+
+if [ "$DISABLE_WEATHERKIT" = "1" ]; then
+    echo "Stripping ENABLE_WEATHERKIT from build settings..."
+    sed -i '' 's/ -DENABLE_WEATHERKIT//g' "$PBXPROJ"
+fi

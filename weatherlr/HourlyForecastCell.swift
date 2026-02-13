@@ -6,6 +6,7 @@
 //  Copyright © 2025 Jean-Francois Dufour. All rights reserved.
 //
 
+#if ENABLE_WEATHERKIT
 import UIKit
 import WeatherKit
 
@@ -71,3 +72,4 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
         return cell
     }
 }
+#endif

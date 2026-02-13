@@ -6,6 +6,7 @@
 //  Copyright © 2025 Jean-Francois Dufour. All rights reserved.
 //
 
+#if ENABLE_PWS
 import Foundation
 import CoreLocation
 
@@ -80,3 +81,4 @@ class PWSService {
         return nil
     }
 }
+#endif

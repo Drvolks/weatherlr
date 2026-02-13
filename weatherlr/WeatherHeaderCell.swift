@@ -12,6 +12,7 @@ class WeatherHeaderCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
 
+    #if ENABLE_PWS
     func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper, pwsStationName: String? = nil, pwsTemperature: Int? = nil) {
         if let city = city {
             populate(city: city, weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
@@ -67,4 +68,33 @@ class WeatherHeaderCell: UITableViewCell {
         attributed.append(NSAttributedString(attachment: attachment))
         cityLabel.attributedText = attributed
     }
+    #else
+    func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper) {
+        if let city = city {
+            populate(city: city, weatherInformationWrapper: weatherInformationWrapper)
+        }
+
+        backgroundColor = UIColor.clear
+    }
+
+    private func populate(city: City, weatherInformationWrapper: WeatherInformationWrapper) {
+        if LocationServices.isUseCurrentLocation(city) {
+            temperatureLabel.text = ""
+            cityLabel.text = "Locating".localized()
+        } else {
+            if weatherInformationWrapper.weatherInformations.count > 0 {
+                let weatherInfo = weatherInformationWrapper.weatherInformations[0]
+
+                if weatherInfo.weatherDay == WeatherDay.now {
+                    temperatureLabel.text = String(weatherInfo.temperature) + "°"
+                    cityLabel.text = CityHelper.cityName(city)
+                    return
+                }
+            }
+
+            temperatureLabel.text = ""
+            cityLabel.text = CityHelper.cityName(city)
+        }
+    }
+    #endif
 }

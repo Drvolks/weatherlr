@@ -6,6 +6,7 @@
 //  Copyright © 2025 Jean-Francois Dufour. All rights reserved.
 //
 
+#if ENABLE_PWS
 import Foundation
 
 struct WUResponse: Codable {
@@ -46,3 +47,4 @@ struct WUImperial: Codable {
     let precipTotal: Double?
     let elev: Double?
 }
+#endif

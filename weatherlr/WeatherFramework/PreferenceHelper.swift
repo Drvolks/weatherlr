@@ -296,6 +296,7 @@ public class PreferenceHelper {
 
     }
 
+    #if ENABLE_PWS
     // MARK: - PWS
 
     public static func getPWSStations() -> [PWSStation] {
@@ -329,4 +330,5 @@ public class PreferenceHelper {
         }
         return true
     }
+    #endif
 }

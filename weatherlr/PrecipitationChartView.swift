@@ -6,6 +6,7 @@
 //  Copyright © 2025 Jean-Francois Dufour. All rights reserved.
 //
 
+#if ENABLE_WEATHERKIT
 import UIKit
 
 class PrecipitationChartView: UIView {
@@ -75,3 +76,4 @@ class PrecipitationChartView: UIView {
         }
     }
 }
+#endif

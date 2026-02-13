@@ -11,6 +11,7 @@ import UIKit
 class WeatherNowCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
 
+    #if ENABLE_WEATHERKIT
     private var precipitationChartView: PrecipitationChartView?
 
     func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper, weatherKitData: WeatherKitData? = nil) {
@@ -77,4 +78,40 @@ class WeatherNowCell: UITableViewCell {
         weatherImage.isHidden = true
         hidePrecipitationChart()
     }
+    #else
+    func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper) {
+        if let city = city {
+            populate(city: city, weatherInformationWrapper: weatherInformationWrapper)
+        }
+
+        separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
+    }
+
+    private func populate(city: City, weatherInformationWrapper: WeatherInformationWrapper) {
+        if LocationServices.isUseCurrentLocation(city) {
+            weatherImage.isHidden = false
+            weatherImage.image = UIImage(named: "locating")
+        } else {
+            if weatherInformationWrapper.weatherInformations.count > 0 {
+                let weatherInfo = weatherInformationWrapper.weatherInformations[0]
+
+                if weatherInfo.weatherDay == WeatherDay.now {
+                    if weatherInfo.weatherStatus == .blank {
+                        weatherImage.isHidden = true
+                    } else {
+                        weatherImage.image = weatherInfo.image()
+                        weatherImage.isHidden = false
+                    }
+                } else {
+                    weatherImage.isHidden = true
+                }
+            }
+        }
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        weatherImage.isHidden = true
+    }
+    #endif
 }

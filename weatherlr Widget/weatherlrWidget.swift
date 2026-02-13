@@ -497,7 +497,7 @@ struct WeatherlrWidget: Widget {
             WeatherlrWidgetEntryView(entry: entry)
                 .containerBackground(widgetBackground, for: .widget)
         }
-        .configurationDisplayName("weatherlr")
+        .configurationDisplayName("PréviCA")
         .description("Current weather conditions")
         .supportedFamilies([.systemSmall, .systemMedium])
     }

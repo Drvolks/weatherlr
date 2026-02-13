@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Weatherlr</string>
+	<string>PréviCA</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -32,11 +32,11 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Weatherlr will use your current location to find the nearest city</string>
+	<string>PréviCA will use your current location to find the nearest city</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Weatherlr will use your current location to find the nearest city</string>
+	<string>PréviCA will use your current location to find the nearest city</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Weatherlr will use your current location to find the nearest city</string>
+	<string>PréviCA will use your current location to find the nearest city</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

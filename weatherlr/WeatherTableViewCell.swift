@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WeatherFramework
 
 class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherDetailLabel: UILabel!
@@ -20,7 +19,7 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     private func populate(weatherInformationWrapper: WeatherInformationWrapper, indexPath: IndexPath) {
-        let weatherInfo = weatherInformationWrapper.weatherInformations[(indexPath as NSIndexPath).row]
+        let weatherInfo = weatherInformationWrapper.weatherInformations[indexPath.row]
         weatherImage.image = weatherInfo.image()
         weatherDetailLabel.text = weatherInfo.detail
         whenLabel.text = WeatherHelper.getWeatherDayWhenText(weatherInfo)

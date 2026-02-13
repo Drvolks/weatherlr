@@ -8,7 +8,6 @@
 
 import XCTest
 @testable import weatherlr
-import WeatherFramework
 
 class WeatherInformationTests: XCTestCase {
     func testWeatherInformationBaseConstructor() {

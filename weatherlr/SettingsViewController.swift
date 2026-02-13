@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import WeatherFramework
 
-class SettingsViewController: UITableViewController, ModalDelegate {
+class SettingsViewController: UITableViewController, @preconcurrency ModalDelegate {
     
     @IBOutlet weak var cityTable: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var doneButton: UIBarButtonItem!
-    var downloadButton: UIBarButtonItem!
     
     var savedCities = [City]()
     var selectedCity:City?
@@ -33,13 +31,6 @@ class SettingsViewController: UITableViewController, ModalDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        #if DEBUG
-            if downloadButton == nil {
-                downloadButton = UIBarButtonItem(title: "Download", style: UIBarButtonItem.Style.plain, target: self, action: #selector(download(_:)))
-                toolbarItems?.append(downloadButton)
-            }
-        #endif
         
         navigationItem.leftBarButtonItem = editButtonItem
         setEditing(false, animated: false)
@@ -88,8 +79,8 @@ class SettingsViewController: UITableViewController, ModalDelegate {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if (indexPath as NSIndexPath).section == citySection {
-            let city = savedCities[(indexPath as NSIndexPath).row]
+        if indexPath.section == citySection {
+            let city = savedCities[indexPath.row]
 
             if city.id == Global.currentLocationCityId {
                 return false
@@ -102,7 +93,7 @@ class SettingsViewController: UITableViewController, ModalDelegate {
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if (indexPath as NSIndexPath).section == citySection {
+        if indexPath.section == citySection {
             return UITableViewCell.EditingStyle.delete
         } else {
             return UITableViewCell.EditingStyle.none
@@ -110,10 +101,10 @@ class SettingsViewController: UITableViewController, ModalDelegate {
     }
     
     override func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
-        if (indexPath as NSIndexPath).section == citySection {
+        if indexPath.section == citySection {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
             
-            let city = savedCities[(indexPath as NSIndexPath).row]
+            let city = savedCities[indexPath.row]
             cell.cityLabel.text = CityHelper.cityName(city)
             
             if selectedCity != nil && city.id == selectedCity!.id {
@@ -137,12 +128,12 @@ class SettingsViewController: UITableViewController, ModalDelegate {
             }
             
             return cell;
-        } else if (indexPath as NSIndexPath).section == langSection {
+        } else if indexPath.section == langSection {
             let cell = tableView.dequeueReusableCell(withIdentifier: "langCell", for: indexPath) as! LangTableViewCell
             
             cell.accessoryType = UITableViewCell.AccessoryType.none
             
-            if (indexPath as NSIndexPath).row == francaisRow {
+            if indexPath.row == francaisRow {
                 cell.langLabel.text = "Français"
                 
                 if Language.French == PreferenceHelper.getLanguage() {
@@ -157,7 +148,7 @@ class SettingsViewController: UITableViewController, ModalDelegate {
             }
             
             return cell
-        } else if (indexPath as NSIndexPath).section == versionSection {
+        } else if indexPath.section == versionSection {
             let cell = tableView.dequeueReusableCell(withIdentifier: "versionProviderCell", for: indexPath) as! VersionProviderTableViewCell
             
             cell.backgroundColor = UIColor.clear
@@ -223,11 +214,11 @@ class SettingsViewController: UITableViewController, ModalDelegate {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (indexPath as NSIndexPath).section == citySection {
+        if indexPath.section == citySection {
             if editingStyle == .delete {
-                let city = savedCities[(indexPath as NSIndexPath).row]
+                let city = savedCities[indexPath.row]
                 
-                savedCities.remove(at: (indexPath as NSIndexPath).row)
+                savedCities.remove(at: indexPath.row)
                 PreferenceHelper.removeFavorite(city)
                 
                 tableView.deleteRows(at: [indexPath], with: .fade)
@@ -236,14 +227,14 @@ class SettingsViewController: UITableViewController, ModalDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath as NSIndexPath).section == citySection {
-            let city = savedCities[(indexPath as NSIndexPath).row]
+        if indexPath.section == citySection {
+            let city = savedCities[indexPath.row]
             
             PreferenceHelper.addFavorite(city)
             
             dismiss(animated: true, completion: nil)
         } else {
-            if (indexPath as NSIndexPath).row == francaisRow {
+            if indexPath.row == francaisRow {
                 PreferenceHelper.saveLanguage(Language.French)
             } else {
                 PreferenceHelper.saveLanguage(Language.English)
@@ -294,13 +285,4 @@ class SettingsViewController: UITableViewController, ModalDelegate {
         return .default
     }
     
-    @IBAction func download(_ sender: UIBarButtonItem) {
-        #if DEBUG
-            //let downloader = CityDownloader(outputPath: "/Users/jfdufour/Downloads/cities")
-            //downloader.process()
-            
-            let cityParser = CityParser(outputPath: "/Users/jfdufour/Downloads/")
-            cityParser.perform()
-        #endif
-    }
 }

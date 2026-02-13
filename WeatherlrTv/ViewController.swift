@@ -26,8 +26,7 @@ class ViewController: UIViewController {
 
     func refresh() {
         // TODO remove this
-        let path = Bundle.main.path(forResource: "Cities", ofType: "plist")
-        let allCityList = (NSKeyedUnarchiver.unarchiveObject(withFile: path!) as? [City])!
+        let allCityList = CityHelper.loadAllCities()
         let cities = CityHelper.searchCity("Montreal", allCityList: allCityList)
         let city = cities[0]
         

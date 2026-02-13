@@ -8,9 +8,8 @@
 
 import ClockKit
 import WatchKit
-import WeatherFramework
 
-class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDelegate, URLSessionDownloadDelegate {
+class ComplicationController: NSObject, CLKComplicationDataSource, @preconcurrency URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate {
     override init() {
         super.init()
     }
@@ -491,8 +490,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
         let city = PreferenceHelper.getCityToUse()
         if !LocationServices.isUseCurrentLocation(city) {
             do {
-                let xmlData = try Data(contentsOf: location)
-                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(xmlData, city: city))
+                let jsonData = try Data(contentsOf: location)
+                ExtensionDelegateHelper.setWrapper(WeatherHelper.getWeatherInformationsNoCache(jsonData, city: city))
                 
                 #if DEBUG
                     print("Watch complication wrapper updated")
@@ -519,7 +518,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource, URLSessionDel
     }
     
     func getAllCityList() -> [City] {
-        NSKeyedUnarchiver.setClass(City.self, forClassName: "weatherlr.City")
         return CityHelper.loadAllCities()
     }
     

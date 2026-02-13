@@ -8,7 +8,6 @@
 
 import Foundation
 import WatchKit
-import WeatherFramework
 
 class SelectCityController: WKInterfaceController {
     @IBOutlet var cityTable: WKInterfaceTable!
@@ -24,7 +23,7 @@ class SelectCityController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        let dictionary = context as! Dictionary<String, AnyObject>
+        let dictionary = context as! [String: Any]
         cities = dictionary[Constants.cityListKey] as! [City]
         cities = CityHelper.sortCityList(cities)
         

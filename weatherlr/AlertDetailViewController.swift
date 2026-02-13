@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import WeatherFramework
 
 class AlertDetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!
@@ -30,7 +29,7 @@ class AlertDetailViewController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let js = "document.getElementById('wb-bc').remove(); document.getElementById('wb-glb-mn').remove(); document.getElementsByClassName('followus hidden-print')[0].remove(); document.getElementsByClassName('container hidden-print')[0].remove(); document.getElementById('weather-topics').remove(); document.getElementsByClassName('row pagedetails')[0].remove();  document.getElementById('wb-info').remove(); document.getElementById('wb-sm').remove(); document.getElementById('wb-srch').remove();"
-        webView.evaluateJavaScript(js, completionHandler: { (html: AnyObject?, error: NSError?) in } as? (Any?, Error?) -> Void)
+        webView.evaluateJavaScript(js, completionHandler: { (_, _) in })
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {

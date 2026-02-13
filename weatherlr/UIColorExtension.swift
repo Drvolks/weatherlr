@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WeatherFramework
 
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {

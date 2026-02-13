@@ -8,7 +8,6 @@
 
 import Foundation
 import WatchKit
-import WeatherFramework
 
 class CurrentWeatherRowController : NSObject {
     @IBOutlet var weatherImage: WKInterfaceImage!

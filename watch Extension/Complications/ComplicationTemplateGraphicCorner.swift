@@ -8,7 +8,6 @@
 
 import Foundation
 import WatchKit
-import WeatherFramework
 import ClockKit
 
 class ComplicationTemplateGraphicCorner: ComplicationTemplate, ComplicationTemplateProtocol {

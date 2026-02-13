@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import WeatherFramework
 
 class Constants {
     static let selectedWatchCityKey = "selectedWatchCity"

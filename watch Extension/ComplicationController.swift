@@ -159,7 +159,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, @preconcurren
     
     func generateEmptyLargeModularTemplate() -> CLKComplicationTemplateModularLargeStandardBody {
         let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
-        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
+        modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "PréviCA")
         modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "Open iPhone app Complication1".localized())
         modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "Open iPhone app Complication2".localized())
 
@@ -376,7 +376,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource, @preconcurren
             let modularTemplate = CLKComplicationTemplateGraphicRectangularStandardBody()
             
             modularTemplate.headerImageProvider = imageFull
-            modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "weatherlr")
+            modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "PréviCA")
             modularTemplate.body1TextProvider = provideTemperature
             modularTemplate.body1TextProvider = providerMax
             

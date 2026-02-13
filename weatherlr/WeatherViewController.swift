@@ -23,6 +23,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var locationServices:LocationServices?
     var settingsButton: UIBarButtonItem?
     var weatherKitData: WeatherKitData?
+    var pwsResult: (station: PWSStation, observation: WUObservation)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,8 +147,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         Task {
             let data = await WeatherKitService.shared.fetchWeatherKitData(for: city)
+            let pws = await PWSService.shared.findClosestStation(to: city)
             await MainActor.run {
                 self.weatherKitData = data
+                self.pwsResult = pws
                 self.weatherTable.reloadData()
             }
         }
@@ -227,7 +230,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "header")! as! WeatherHeaderCell
-        header.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
+        var pwsStationName: String? = nil
+        var pwsTemperature: Int? = nil
+        if let pws = pwsResult, let tempC = pws.observation.tempC {
+            pwsStationName = pws.station.name
+            pwsTemperature = Int(tempC.rounded())
+        }
+        header.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
         return header
     }
 

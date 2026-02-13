@@ -21,4 +21,5 @@ public struct Global {
     public static let currentLocationCityId = "currentLocation"
     public static let locationDistance = Double(5000) // 5 km
     public static let currentLocationMaxDistance = Double(1000000) // 1000 km
+    public static let pwsStationsKey = "pwsStations"
 }

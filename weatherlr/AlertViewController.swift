@@ -38,8 +38,7 @@ class AlertViewController: UIViewController {
             let navigationController = segue.destination as! UINavigationController
             let targetController = navigationController.topViewController as! AlertDetailViewController
             
-            // pour le URL c'est toujours le même peut importe l'alerte
-            targetController.alert = alerts[0]
+            targetController.alerts = alerts
             targetController.popOver = self
         }
     }

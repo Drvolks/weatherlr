@@ -65,7 +65,6 @@
 		6E816C191CD76DBB00533684 /* cities2 in Resources */ = {isa = PBXBuildFile; fileRef = 6E816C181CD76DBB00533684 /* cities2 */; };
 		6E91639520F41C9200E11DD8 /* AssetsWatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB154721D282B0D0005B02A /* AssetsWatch.xcassets */; };
 		6E91639820F41CA800E11DD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2905321CB2D5550040EB8B /* Assets.xcassets */; };
-		6E956CF8227A537000DCB7D8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E956CF7227A537000DCB7D8 /* WebKit.framework */; };
 		6E9E12B51CDF8DAD00791284 /* cities3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B41CDF8DAD00791284 /* cities3 */; };
 		6E9E12B71CDF96A800791284 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E12B61CDF96A800791284 /* TemperatureTests.swift */; };
 		6E9E12B91CDFC2F000791284 /* cities4 in Resources */ = {isa = PBXBuildFile; fileRef = 6E9E12B81CDFC2F000791284 /* cities4 */; };
@@ -322,7 +321,6 @@
 		6E7C78B11D4031EE00005D7A /* watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watch Extension.entitlements"; sourceTree = "<group>"; };
 		6E816C0C1CCFF87800533684 /* cities1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities1; sourceTree = "<group>"; };
 		6E816C181CD76DBB00533684 /* cities2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities2; sourceTree = "<group>"; };
-		6E956CF7227A537000DCB7D8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6E9E12B41CDF8DAD00791284 /* cities3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities3; sourceTree = "<group>"; };
 		6E9E12B61CDF96A800791284 /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
 		6E9E12B81CDFC2F000791284 /* cities4 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities4; sourceTree = "<group>"; };
@@ -409,7 +407,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E956CF8227A537000DCB7D8 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +692,6 @@
 		9799B631E60476874FB40063 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E956CF7227A537000DCB7D8 /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

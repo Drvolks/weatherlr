@@ -31,6 +31,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var lastContentOffset: CGFloat = 0
     var locationServices:LocationServices?
     var settingsButton: UIBarButtonItem?
+    var weatherKitData: WeatherKitData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.rowHeight = UITableView.automaticDimension
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.backgroundColor = UIColor.clear
+        weatherTable.register(HourlyForecastCell.self, forCellReuseIdentifier: HourlyForecastCell.reuseIdentifier)
         
         refreshControl = UIRefreshControl()
         refreshLabel()
@@ -151,12 +153,27 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         } else {
             refreshLabel()
-            
+
             refreshControl.endRefreshing()
-            
+
             self.decorate()
-            
+
             self.weatherTable.reloadData()
+
+            fetchWeatherKitData()
+        }
+    }
+
+    private func fetchWeatherKitData() {
+        let city = PreferenceHelper.getCityToUse()
+        guard !LocationServices.isUseCurrentLocation(city) else { return }
+
+        Task {
+            let data = await WeatherKitService.shared.fetchWeatherKitData(for: city)
+            await MainActor.run {
+                self.weatherKitData = data
+                self.weatherTable.reloadData()
+            }
         }
     }
     
@@ -194,24 +211,37 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
+    private var hasHourlyRow: Bool {
+        return weatherKitData?.next24Hours.isEmpty == false
+    }
+
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         if LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
                 return 1
             }
-        
+
         let indexAjust = WeatherHelper.getIndexAjust(weatherInformationWrapper.weatherInformations)
-        return weatherInformationWrapper.weatherInformations.count - indexAjust
+        let baseCount = weatherInformationWrapper.weatherInformations.count - indexAjust
+        return baseCount + (hasHourlyRow ? 1 : 0)
     }
-    
+
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
-            cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
+            cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, weatherKitData: weatherKitData)
             return cell
         }
-        
+
+        if hasHourlyRow && indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HourlyForecastCell.reuseIdentifier, for: indexPath) as! HourlyForecastCell
+            cell.configure(with: weatherKitData!)
+            return cell
+        }
+
+        let adjustedRow = hasHourlyRow ? indexPath.row - 1 : indexPath.row
+        let adjustedIndexPath = IndexPath(row: adjustedRow, section: indexPath.section)
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherTableViewCell
-        cell.initialize(weatherInformationWrapper: weatherInformationWrapper, indexPath: indexPath)
+        cell.initialize(weatherInformationWrapper: weatherInformationWrapper, indexPath: adjustedIndexPath)
         return cell
     }
     
@@ -231,20 +261,24 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             if LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
                     return 300
             }
-            
+
             if weatherInformationWrapper.weatherInformations.count > 0 {
                 let weatherInfo = weatherInformationWrapper.weatherInformations[0]
-                
+
                 if weatherInfo.weatherDay == WeatherDay.now {
                     if(weatherInfo.weatherStatus != .blank) {
                         return 210
                     }
                 }
             }
-            
+
             return 0
         }
-        
+
+        if hasHourlyRow && indexPath.row == 1 {
+            return 110
+        }
+
         return UITableView.automaticDimension
     }
     

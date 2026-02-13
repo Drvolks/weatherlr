@@ -144,7 +144,11 @@ public class JsonWeatherParser {
             let alertType = extractAlertType(alertText)
 
             if alertType != .none && alertType != .ended {
-                let alert = AlertInformation(alertText: alertText, url: url, type: alertType)
+                let eventIssueTime = warning.eventIssue?.value(for: language) ?? ""
+                let expiryTime = warning.expiryTime?.value(for: language) ?? ""
+                let alertColourLevel = warning.alertColourLevel?.value(for: language) ?? ""
+
+                let alert = AlertInformation(alertText: alertText, url: url, type: alertType, eventIssueTime: eventIssueTime, expiryTime: expiryTime, alertColourLevel: alertColourLevel)
                 result.append(alert)
             }
         }

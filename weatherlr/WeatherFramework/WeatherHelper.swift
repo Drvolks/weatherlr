@@ -216,7 +216,20 @@ public class WeatherHelper {
             return nil
         }
     }
-    
+
+    public static func getNightImageName(_ status: WeatherStatus) -> String? {
+        switch status {
+        case .sunny, .mainlySunny, .clear:
+            return "clearingNight"
+        case .aFewClouds:
+            return "aFewCloudsNight"
+        case .clearing:
+            return "clearingNight"
+        default:
+            return nil
+        }
+    }
+
     public static func getMinMaxImage(_ weatherInfo: WeatherInformation, header: Bool) -> UIImage {
         let name = getMinMaxImageName(weatherInfo)
         
@@ -450,8 +463,8 @@ public class WeatherHelper {
         }
 
         if night {
-            let nameNight = String(describing: status) + "Night"
-            if let image = UIImage(named: nameNight) {
+            if let nightName = getNightImageName(status),
+               let image = UIImage(named: nightName) {
                 return image
             }
         }

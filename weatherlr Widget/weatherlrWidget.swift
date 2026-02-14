@@ -488,6 +488,26 @@ struct MediumWeatherView: View {
     }
 }
 
+struct AccessoryCircularView: View {
+    let entry: WeatherEntry
+
+    var body: some View {
+        ZStack {
+            AccessoryWidgetBackground()
+            VStack(spacing: 0) {
+                Text("\(entry.temperature)\u{00B0}")
+                    .font(.system(size: 22, weight: .medium))
+                #if ENABLE_PWS
+                if entry.hasPWS {
+                    Image(systemName: "sensor.fill")
+                        .font(.system(size: 8))
+                }
+                #endif
+            }
+        }
+    }
+}
+
 struct WeatherlrWidgetEntryView: View {
     @Environment(\.widgetFamily) var family
     let entry: WeatherEntry
@@ -496,6 +516,8 @@ struct WeatherlrWidgetEntryView: View {
         switch family {
         case .systemMedium:
             MediumWeatherView(entry: entry)
+        case .accessoryCircular:
+            AccessoryCircularView(entry: entry)
         default:
             SmallWeatherView(entry: entry)
         }
@@ -515,6 +537,6 @@ struct WeatherlrWidget: Widget {
         }
         .configurationDisplayName("PréviCA")
         .description("Current weather conditions")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular])
     }
 }

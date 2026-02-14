@@ -11,7 +11,6 @@ import UIKit
 
 class PrecipitationChartView: UIView {
     private var precipitationData: [(minuteOffset: Int, intensity: Double)] = []
-    private let maxIntensity: Double = 8.0 // mm/hr cap
 
     func configure(with data: [(minuteOffset: Int, intensity: Double)]) {
         self.precipitationData = data
@@ -22,9 +21,10 @@ class PrecipitationChartView: UIView {
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.clear(rect)
 
-        let titleHeight: CGFloat = 24
-        let labelHeight: CGFloat = 16
-        let chartTop = titleHeight + 4
+        let titleHeight: CGFloat = 20
+        let labelHeight: CGFloat = 14
+        let titleBottomPadding: CGFloat = 8
+        let chartTop = titleHeight + titleBottomPadding
         let chartBottom = rect.height - labelHeight - 4
         let chartHeight = chartBottom - chartTop
         let barWidth = rect.width / 60.0
@@ -40,17 +40,35 @@ class PrecipitationChartView: UIView {
         let titleX = (rect.width - titleSize.width) / 2
         (title as NSString).draw(at: CGPoint(x: titleX, y: 2), withAttributes: titleAttrs)
 
+        // Scale so max bar reaches ~1/3 height (first guide line)
+        let dataMax = precipitationData.prefix(60).map { $0.intensity }.max() ?? 0
+        let scaleMax = max(dataMax * 3.0, 0.3)
+
+        // Horizontal guide lines
+        let guideColor = UIColor.white.withAlphaComponent(0.15).cgColor
+        context.setStrokeColor(guideColor)
+        context.setLineWidth(0.5)
+        context.setLineDash(phase: 0, lengths: [3, 3])
+        for fraction in [1.0 / 3.0, 2.0 / 3.0, 1.0] {
+            let y = chartBottom - CGFloat(fraction) * chartHeight
+            context.move(to: CGPoint(x: 0, y: y))
+            context.addLine(to: CGPoint(x: rect.width, y: y))
+        }
+        context.strokePath()
+        context.setLineDash(phase: 0, lengths: [])
+
         // Bars
         let barColor = UIColor(red: 0.4, green: 0.7, blue: 1.0, alpha: 0.9)
         for i in 0..<min(precipitationData.count, 60) {
             let entry = precipitationData[i]
-            let normalizedIntensity = min(entry.intensity / maxIntensity, 1.0)
+            let normalizedIntensity = min(entry.intensity / scaleMax, 1.0)
             let barHeight = CGFloat(normalizedIntensity) * chartHeight
+            let effectiveHeight = barHeight > 0 ? max(barHeight, 2) : 0
 
-            if barHeight > 0 {
+            if effectiveHeight > 0 {
                 let x = CGFloat(i) * barWidth
-                let y = chartBottom - barHeight
-                let barRect = CGRect(x: x + barSpacing / 2, y: y, width: barWidth - barSpacing, height: barHeight)
+                let y = chartBottom - effectiveHeight
+                let barRect = CGRect(x: x + barSpacing / 2, y: y, width: barWidth - barSpacing, height: effectiveHeight)
                 context.setFillColor(barColor.cgColor)
                 context.fill(barRect)
             }

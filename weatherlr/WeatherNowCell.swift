@@ -51,7 +51,29 @@ class WeatherNowCell: UITableViewCell {
         }
     }
 
+    func transitionToPrecipitation(with data: [(minuteOffset: Int, intensity: Double)]) {
+        ensureChartView()
+        precipitationChartView?.configure(with: data)
+        precipitationChartView?.alpha = 0
+        precipitationChartView?.isHidden = false
+
+        UIView.animate(withDuration: 0.5) {
+            self.weatherImage.alpha = 0
+            self.precipitationChartView?.alpha = 1
+        } completion: { _ in
+            self.weatherImage.isHidden = true
+            self.weatherImage.alpha = 1
+        }
+    }
+
     private func showPrecipitationChart(with data: [(minuteOffset: Int, intensity: Double)]) {
+        ensureChartView()
+        precipitationChartView?.configure(with: data)
+        precipitationChartView?.alpha = 1
+        precipitationChartView?.isHidden = false
+    }
+
+    private func ensureChartView() {
         if precipitationChartView == nil {
             let chart = PrecipitationChartView()
             chart.backgroundColor = .clear
@@ -65,8 +87,6 @@ class WeatherNowCell: UITableViewCell {
             ])
             precipitationChartView = chart
         }
-        precipitationChartView?.configure(with: data)
-        precipitationChartView?.isHidden = false
     }
 
     private func hidePrecipitationChart() {
@@ -76,6 +96,7 @@ class WeatherNowCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         weatherImage.isHidden = true
+        weatherImage.alpha = 1
         hidePrecipitationChart()
     }
     #else

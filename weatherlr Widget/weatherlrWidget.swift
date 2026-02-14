@@ -293,8 +293,12 @@ struct SmallWeatherView: View {
 #if ENABLE_WEATHERKIT
 struct PrecipitationChart: View {
     let intensities: [Double]
-    private let maxIntensity: Double = 8.0
     private let barColor = Color(red: 0.4, green: 0.7, blue: 1.0)
+
+    private var scaleMax: Double {
+        let dataMax = intensities.prefix(60).max() ?? 0
+        return max(dataMax * 3.0, 0.3)
+    }
 
     var body: some View {
         VStack(spacing: 2) {
@@ -303,14 +307,26 @@ struct PrecipitationChart: View {
                 .foregroundStyle(.white)
 
             GeometryReader { geometry in
-                HStack(alignment: .bottom, spacing: 0) {
+                // Horizontal guide lines
+                Path { path in
+                    for fraction in [1.0 / 3.0, 2.0 / 3.0, 1.0] {
+                        let y = geometry.size.height * (1.0 - CGFloat(fraction))
+                        path.move(to: CGPoint(x: 0, y: y))
+                        path.addLine(to: CGPoint(x: geometry.size.width, y: y))
+                    }
+                }
+                .stroke(style: StrokeStyle(lineWidth: 0.5, dash: [3, 3]))
+                .foregroundStyle(.white.opacity(0.15))
+
+                HStack(alignment: .bottom, spacing: 1) {
                     ForEach(0..<min(intensities.count, 60), id: \.self) { i in
-                        let normalized = min(intensities[i] / maxIntensity, 1.0)
+                        let normalized = min(intensities[i] / scaleMax, 1.0)
                         Rectangle()
                             .fill(barColor.opacity(0.9))
                             .frame(height: max(CGFloat(normalized) * geometry.size.height, normalized > 0 ? 2 : 0))
                     }
                 }
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
 
             HStack {

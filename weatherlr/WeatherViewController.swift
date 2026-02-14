@@ -170,12 +170,31 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             #endif
             await MainActor.run {
                 #if ENABLE_WEATHERKIT
+                let wasShowingPrecipitation = self.weatherKitData?.hasPrecipitationNextHour ?? false
                 self.weatherKitData = data
+                let isShowingPrecipitation = self.weatherKitData?.hasPrecipitationNextHour ?? false
                 #endif
                 #if ENABLE_PWS
                 self.pwsResult = pws
                 #endif
+
+                #if ENABLE_WEATHERKIT
+                if !wasShowingPrecipitation && isShowingPrecipitation,
+                   let cell = self.weatherTable.cellForRow(at: IndexPath(row: 0, section: 0)) as? WeatherNowCell {
+                    cell.transitionToPrecipitation(with: self.weatherKitData!.precipitationMinutes)
+                    self.weatherTable.beginUpdates()
+                    self.weatherTable.endUpdates()
+                    let rowCount = self.weatherTable.numberOfRows(inSection: 0)
+                    if rowCount > 1 {
+                        let rows = (1..<rowCount).map { IndexPath(row: $0, section: 0) }
+                        self.weatherTable.reloadRows(at: rows, with: .none)
+                    }
+                } else {
+                    self.weatherTable.reloadData()
+                }
+                #else
                 self.weatherTable.reloadData()
+                #endif
             }
         }
     }
@@ -292,6 +311,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
                 if weatherInfo.weatherDay == WeatherDay.now {
                     if(weatherInfo.weatherStatus != .blank) {
+                        #if ENABLE_WEATHERKIT
+                        if let data = weatherKitData, data.hasPrecipitationNextHour {
+                            return 100
+                        }
+                        #endif
                         return 210
                     }
                 }

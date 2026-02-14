@@ -1548,6 +1548,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
 				DEVELOPMENT_TEAM = 654X66AK24;
+				BUNDLE_DISPLAY_NAME = "PréviCA";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1580,6 +1581,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
 				DEVELOPMENT_TEAM = 654X66AK24;
+				BUNDLE_DISPLAY_NAME = "PréviCA";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = weatherlr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA";
@@ -2166,8 +2168,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				BUNDLE_DISPLAY_NAME = "PréciCA+";
 				INFOPLIST_FILE = weatherlr/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA";
+				INFOPLIST_KEY_CFBundleDisplayName = "PréciCA+";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2195,8 +2198,9 @@
 				CURRENT_PROJECT_VERSION = 113;
 				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				BUNDLE_DISPLAY_NAME = "PréciCA+";
 				INFOPLIST_FILE = weatherlr/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA";
+				INFOPLIST_KEY_CFBundleDisplayName = "PréciCA+";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (

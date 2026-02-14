@@ -37,7 +37,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
         mapView = MKMapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mapView.mapType = .satellite
+        mapView.mapType = .hybrid
         mapView.isRotateEnabled = false
         mapView.showsUserLocation = true
         mapView.delegate = self
@@ -45,7 +45,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
         overlay = WMSTileOverlay()
         overlay.tileSize = CGSize(width: 256, height: 256)
-        mapView.addOverlay(overlay, level: .aboveLabels)
+        mapView.addOverlay(overlay, level: .aboveRoads)
 
         if let city = city,
            let lat = Double(city.latitude),

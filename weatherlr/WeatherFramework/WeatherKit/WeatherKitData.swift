@@ -11,6 +11,7 @@ import Foundation
 import WeatherKit
 
 struct WeatherKitData {
+    let currentWeather: CurrentWeather
     let minuteForecast: WeatherKit.Forecast<MinuteWeather>?
     let hourlyForecast: WeatherKit.Forecast<HourWeather>
 

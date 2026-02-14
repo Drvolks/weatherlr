@@ -50,13 +50,12 @@ public class WeatherInformation {
         }
         
         if night {
-            let nameNight = String(describing: status) + "Night"
-            if let image = UIImage(named: nameNight) {
+            if let nightName = WeatherHelper.getNightImageName(status),
+               let image = UIImage(named: nightName) {
                 return image
-            } else {
-                if let image = UIImage(named: String(describing: status)) {
-                    return image
-                }
+            }
+            if let image = UIImage(named: String(describing: status)) {
+                return image
             }
         } else {
             if let image = UIImage(named: String(describing: status)) {

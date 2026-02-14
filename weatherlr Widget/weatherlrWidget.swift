@@ -60,10 +60,10 @@ struct WeatherTimelineProvider: TimelineProvider {
         #if ENABLE_WEATHERKIT
         let wk = Self.fetchWeatherKitSync(for: city)
         #else
-        let wk = (hourly: [ForecastItem](), precipitation: [Double]())
+        let wk = (hourly: [ForecastItem](), precipitation: [Double](), currentImageName: nil as String?)
         #endif
 
-        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, hourlyForecasts: wk.hourly, precipitationIntensities: wk.precipitation)
+        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, hourlyForecasts: wk.hourly, precipitationIntensities: wk.precipitation, currentImageName: wk.currentImageName)
         let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
         let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
         completion(timeline)
@@ -103,13 +103,14 @@ struct WeatherTimelineProvider: TimelineProvider {
 
     #if ENABLE_WEATHERKIT
     private final class WeatherKitResultBox: @unchecked Sendable {
+        var currentImageName: String?
         var hourlyForecasts: [ForecastItem] = []
         var precipitationIntensities: [Double] = []
     }
 
-    static func fetchWeatherKitSync(for city: City) -> (hourly: [ForecastItem], precipitation: [Double]) {
+    static func fetchWeatherKitSync(for city: City) -> (hourly: [ForecastItem], precipitation: [Double], currentImageName: String?) {
         guard let lat = Double(city.latitude), let lon = Double(city.longitude) else {
-            return ([], [])
+            return ([], [], nil)
         }
 
         let location = CLLocation(latitude: lat, longitude: lon)
@@ -119,9 +120,13 @@ struct WeatherTimelineProvider: TimelineProvider {
         Task.detached {
             defer { semaphore.signal() }
             do {
-                let weather = try await WeatherService.shared.weather(for: location, including: .minute, .hourly)
-                let minuteForecast = weather.0
-                let hourlyForecast = weather.1
+                let weather = try await WeatherService.shared.weather(for: location, including: .current, .minute, .hourly)
+                let currentWeather = weather.0
+                let minuteForecast = weather.1
+                let hourlyForecast = weather.2
+
+                // Current condition
+                box.currentImageName = weatherImageNameForCondition(currentWeather.condition, night: !currentWeather.isDaylight)
 
                 // Hourly
                 let now = Date()
@@ -155,7 +160,7 @@ struct WeatherTimelineProvider: TimelineProvider {
         }
 
         semaphore.wait()
-        return (box.hourlyForecasts, box.precipitationIntensities)
+        return (box.hourlyForecasts, box.precipitationIntensities, box.currentImageName)
     }
 
     static func weatherImageNameForCondition(_ condition: WeatherCondition, night: Bool) -> String {
@@ -164,26 +169,21 @@ struct WeatherTimelineProvider: TimelineProvider {
             status = substitute
         }
 
-        if night {
-            let nameNight = String(describing: status) + "Night"
-            if nightVariants.contains(nameNight) {
-                return nameNight
-            }
+        if night, let nightName = WeatherHelper.getNightImageName(status) {
+            return nightName
         }
 
         return String(describing: status)
     }
     #endif
 
-    private static let nightVariants: Set<String> = ["aFewCloudsNight", "clearingNight"]
-
     private func buildEntry() -> WeatherEntry {
         let city = PreferenceHelper.getCityToUse()
         let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
-        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil, hourlyForecasts: [], precipitationIntensities: [])
+        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil, hourlyForecasts: [], precipitationIntensities: [], currentImageName: nil)
     }
 
-    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?, hourlyForecasts: [ForecastItem], precipitationIntensities: [Double]) -> WeatherEntry {
+    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?, hourlyForecasts: [ForecastItem], precipitationIntensities: [Double], currentImageName: String?) -> WeatherEntry {
         let cityName = (hasPWS ? pwsStationName : nil) ?? CityHelper.cityName(city)
 
         guard wrapper.weatherInformations.count > 0 else {
@@ -192,7 +192,7 @@ struct WeatherTimelineProvider: TimelineProvider {
 
         let current = wrapper.weatherInformations[0]
         let temperature = pwsTemp ?? current.temperature
-        let imageName = weatherImageName(for: current)
+        let imageName = currentImageName ?? weatherImageName(for: current)
 
         let indexAdjust = WeatherHelper.getIndexAjust(wrapper.weatherInformations)
 
@@ -245,11 +245,8 @@ struct WeatherTimelineProvider: TimelineProvider {
             status = substitute
         }
 
-        if info.night {
-            let nameNight = String(describing: status) + "Night"
-            if nightVariants.contains(nameNight) {
-                return nameNight
-            }
+        if info.night, let nightName = WeatherHelper.getNightImageName(status) {
+            return nightName
         }
 
         return String(describing: status)

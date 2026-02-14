@@ -55,7 +55,7 @@ struct WeatherTimelineProvider: TimelineProvider {
         #if ENABLE_PWS
         let pws = Self.fetchPWSSync(for: city)
         #else
-        let pws = (hasPWS: false, temperature: nil as Int?)
+        let pws = (hasPWS: false, temperature: nil as Int?, stationName: nil as String?)
         #endif
         #if ENABLE_WEATHERKIT
         let wk = Self.fetchWeatherKitSync(for: city)
@@ -63,21 +63,21 @@ struct WeatherTimelineProvider: TimelineProvider {
         let wk = (hourly: [ForecastItem](), precipitation: [Double]())
         #endif
 
-        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, hourlyForecasts: wk.hourly, precipitationIntensities: wk.precipitation)
+        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, hourlyForecasts: wk.hourly, precipitationIntensities: wk.precipitation)
         let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
         let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
         completion(timeline)
     }
 
     #if ENABLE_PWS
-    static func fetchPWSSync(for city: City) -> (hasPWS: Bool, temperature: Int?) {
+    static func fetchPWSSync(for city: City) -> (hasPWS: Bool, temperature: Int?, stationName: String?) {
         let stations = PreferenceHelper.getPWSStations()
         guard !stations.isEmpty,
               PreferenceHelper.hasPWSCredentials(),
               let cityLat = Double(city.latitude),
               let cityLon = Double(city.longitude),
               let apiKey = PreferenceHelper.getPWSApiKey() else {
-            return (false, nil)
+            return (false, nil, nil)
         }
 
         let cityLocation = CLLocation(latitude: cityLat, longitude: cityLon)
@@ -94,10 +94,10 @@ struct WeatherTimelineProvider: TimelineProvider {
                   let observation = response.observations?.first,
                   let tempC = observation.tempC else { continue }
 
-            return (true, Int(tempC.rounded()))
+            return (true, Int(tempC.rounded()), station.name)
         }
 
-        return (false, nil)
+        return (false, nil, nil)
     }
     #endif
 
@@ -180,11 +180,11 @@ struct WeatherTimelineProvider: TimelineProvider {
     private func buildEntry() -> WeatherEntry {
         let city = PreferenceHelper.getCityToUse()
         let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
-        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, hourlyForecasts: [], precipitationIntensities: [])
+        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil, hourlyForecasts: [], precipitationIntensities: [])
     }
 
-    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, hourlyForecasts: [ForecastItem], precipitationIntensities: [Double]) -> WeatherEntry {
-        let cityName = CityHelper.cityName(city)
+    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?, hourlyForecasts: [ForecastItem], precipitationIntensities: [Double]) -> WeatherEntry {
+        let cityName = (hasPWS ? pwsStationName : nil) ?? CityHelper.cityName(city)
 
         guard wrapper.weatherInformations.count > 0 else {
             return WeatherEntry(date: Date(), cityName: cityName, temperature: 0, weatherImageName: "na", hasPWS: false, forecasts: [], longTermForecast: nil, precipitationIntensities: [], hasData: false)

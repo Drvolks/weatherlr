@@ -1,0 +1,76 @@
+#!/bin/bash
+# Archive and upload PréviCA for iOS, tvOS, and macOS to TestFlight
+#
+# Requirements:
+#   App Store Connect API key (.p8 file)
+#   Apple Distribution certificate in local Keychain
+#   Set these environment variables or edit the values below:
+#     ASC_KEY_ID       - API Key ID
+#     ASC_ISSUER_ID    - Issuer ID
+#     ASC_KEY_PATH     - Path to AuthKey_XXXX.p8 file
+
+set -e
+
+# App Store Connect API key config
+KEY_ID="${ASC_KEY_ID:?Set ASC_KEY_ID environment variable}"
+ISSUER_ID="${ASC_ISSUER_ID:?Set ASC_ISSUER_ID environment variable}"
+KEY_PATH="${ASC_KEY_PATH:?Set ASC_KEY_PATH environment variable}"
+
+ARCHIVE_DIR=~/Library/Developer/Xcode/Archives/$(date +%Y-%m-%d)
+EXPORT_DIR=/tmp/PreviCA-export
+PROJECT=weatherlr.xcodeproj
+SCHEME=PréviCA+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+EXPORT_PLIST="$SCRIPT_DIR/ExportOptions.plist"
+
+AUTH_FLAGS=(-allowProvisioningUpdates \
+  -authenticationKeyPath "$KEY_PATH" \
+  -authenticationKeyID "$KEY_ID" \
+  -authenticationKeyIssuerID "$ISSUER_ID")
+
+rm -rf "$EXPORT_DIR"
+
+# --- Archive ---
+
+echo "=== Archiving iOS ==="
+xcodebuild archive -project "$PROJECT" -scheme "$SCHEME" \
+  -destination 'generic/platform=iOS' \
+  -archivePath "$ARCHIVE_DIR/PreviCAPlus-iOS.xcarchive" \
+  "${AUTH_FLAGS[@]}"
+
+# --- Export (sign for distribution) ---
+
+for PLATFORM in iOS; do
+  echo "=== Exporting $PLATFORM ==="
+  mkdir -p "$EXPORT_DIR/$PLATFORM"
+  xcodebuild -exportArchive \
+    -archivePath "$ARCHIVE_DIR/PreviCAPlus-$PLATFORM.xcarchive" \
+    -exportOptionsPlist "$EXPORT_PLIST" \
+    -exportPath "$EXPORT_DIR/$PLATFORM" \
+    "${AUTH_FLAGS[@]}"
+done
+
+# --- Upload to TestFlight ---
+
+for PLATFORM in iOS; do
+  echo "=== Uploading $PLATFORM to TestFlight ==="
+  ARTIFACT=$(find "$EXPORT_DIR/$PLATFORM" \( -name "*.ipa" -o -name "*.pkg" \) -print -quit)
+  if [ -z "$ARTIFACT" ]; then
+    echo "ERROR: No IPA/PKG found for $PLATFORM in $EXPORT_DIR/$PLATFORM"
+    exit 1
+  fi
+
+  case "$PLATFORM" in
+    iOS)   TYPE=ios ;;
+    tvOS)  TYPE=appletvos ;;
+    macOS) TYPE=osx ;;
+  esac
+
+  xcrun altool --upload-app \
+    -f "$ARTIFACT" \
+    -t "$TYPE" \
+    --apiKey "$KEY_ID" \
+    --apiIssuer "$ISSUER_ID"
+done
+
+echo "=== All platforms archived and uploaded to TestFlight ==="

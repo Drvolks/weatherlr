@@ -30,6 +30,18 @@ AUTH_FLAGS=(-allowProvisioningUpdates \
 
 rm -rf "$EXPORT_DIR"
 
+# --- Bump build number once for all archives ---
+
+cd "$SCRIPT_DIR"
+CURRENT_BUILD=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" weatherlr/Info.plist)
+NEW_BUILD=$((CURRENT_BUILD + 1))
+echo "=== Bumping build number: $CURRENT_BUILD → $NEW_BUILD ==="
+for plist in weatherlr/Info.plist "watch Extension/Info.plist" watch/Info.plist "weatherlr Widget/Info.plist"; do
+  if [ -f "$plist" ]; then
+    /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $NEW_BUILD" "$plist"
+  fi
+done
+
 # --- Archive ---
 
 echo "=== Archiving iOS ==="

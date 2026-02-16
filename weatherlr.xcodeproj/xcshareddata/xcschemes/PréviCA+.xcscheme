@@ -74,24 +74,5 @@
    <ArchiveAction
       buildConfiguration = "ReleaseInternal"
       revealArchiveInOrganizer = "YES">
-      <PreActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Increment Build Number"
-               scriptText = "cd &quot;${SRCROOT}&quot;&#10;BUILD=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleVersion&quot; weatherlr/Info.plist)&#10;BUILD=$((BUILD + 1))&#10;for plist in weatherlr/Info.plist &quot;watch Extension/Info.plist&quot; watch/Info.plist &quot;weatherlr Widget/Info.plist&quot;; do&#10;  /usr/libexec/PlistBuddy -c &quot;Set :CFBundleVersion $BUILD&quot; &quot;$plist&quot;&#10;done&#10;"
-               shellToInvoke = "/bin/sh">
-               <EnvironmentBuildable>
-                  <BuildableReference
-                     BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "6E2905271CB2D5550040EB8B"
-                     BuildableName = "weatherlr.app"
-                     BlueprintName = "weatherlr"
-                     ReferencedContainer = "container:weatherlr.xcodeproj">
-                  </BuildableReference>
-               </EnvironmentBuildable>
-            </ActionContent>
-         </ExecutionAction>
-      </PreActions>
    </ArchiveAction>
 </Scheme>

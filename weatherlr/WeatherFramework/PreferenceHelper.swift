@@ -321,7 +321,11 @@ public class PreferenceHelper {
     }()
 
     public static func getPWSApiKey() -> String? {
-        return secretsPlist?["PWS_API_KEY"]
+        if let key = secretsPlist?["PWS_API_KEY"] {
+            return key
+        }
+        // Fallback: API key synced from iPhone via WatchConnectivity
+        return UserDefaults(suiteName: Global.SettingGroup)!.string(forKey: "pwsApiKey")
     }
 
     public static func hasPWSCredentials() -> Bool {

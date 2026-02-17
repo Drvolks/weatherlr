@@ -1,0 +1,229 @@
+//
+//  watchWidget.swift
+//  watch Widget
+//
+//  Created by Jean-Francois Dufour on 2026-02-17.
+//  Copyright © 2026 Jean-Francois Dufour. All rights reserved.
+//
+
+import WidgetKit
+import SwiftUI
+import CoreLocation
+
+// MARK: - Models
+
+struct WatchWeatherEntry: TimelineEntry {
+    let date: Date
+    let cityName: String
+    let temperature: Int
+    let weatherImageName: String
+    let hasPWS: Bool
+    let hasData: Bool
+}
+
+// MARK: - Provider
+
+struct WatchWeatherTimelineProvider: TimelineProvider {
+    func placeholder(in context: Context) -> WatchWeatherEntry {
+        WatchWeatherEntry(date: Date(), cityName: "---", temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false)
+    }
+
+    func getSnapshot(in context: Context, completion: @escaping (WatchWeatherEntry) -> Void) {
+        if context.isPreview {
+            completion(placeholder(in: context))
+        } else {
+            completion(buildEntry())
+        }
+    }
+
+    func getTimeline(in context: Context, completion: @escaping (Timeline<WatchWeatherEntry>) -> Void) {
+        let city = PreferenceHelper.getCityToUse()
+        let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
+
+        #if ENABLE_PWS
+        let pws = Self.fetchPWSSync(for: city)
+        #else
+        let pws = (hasPWS: false, temperature: nil as Int?, stationName: nil as String?)
+        #endif
+
+        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName)
+        let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
+        let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
+        completion(timeline)
+    }
+
+    #if ENABLE_PWS
+    static func fetchPWSSync(for city: City) -> (hasPWS: Bool, temperature: Int?, stationName: String?) {
+        let stations = PreferenceHelper.getPWSStations()
+        guard !stations.isEmpty,
+              PreferenceHelper.hasPWSCredentials(),
+              let cityLat = Double(city.latitude),
+              let cityLon = Double(city.longitude),
+              let apiKey = PreferenceHelper.getPWSApiKey() else {
+            return (false, nil, nil)
+        }
+
+        let cityLocation = CLLocation(latitude: cityLat, longitude: cityLon)
+
+        for station in stations {
+            let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
+            let distance = cityLocation.distance(from: stationLocation)
+            guard distance < 50_000 else { continue }
+
+            let urlString = "https://api.weather.com/v2/pws/observations/current?stationId=\(station.stationId)&format=json&units=e&apiKey=\(apiKey)"
+            guard let url = URL(string: urlString),
+                  let data = try? Data(contentsOf: url),
+                  let response = try? JSONDecoder().decode(WUResponse.self, from: data),
+                  let observation = response.observations?.first,
+                  let tempC = observation.tempC else { continue }
+
+            return (true, Int(tempC.rounded()), station.name)
+        }
+
+        return (false, nil, nil)
+    }
+    #endif
+
+    private func buildEntry() -> WatchWeatherEntry {
+        let city = PreferenceHelper.getCityToUse()
+        let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
+        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil)
+    }
+
+    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?) -> WatchWeatherEntry {
+        let cityName = (hasPWS ? pwsStationName : nil) ?? CityHelper.cityName(city)
+
+        guard wrapper.weatherInformations.count > 0 else {
+            return WatchWeatherEntry(date: Date(), cityName: cityName, temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false)
+        }
+
+        let current = wrapper.weatherInformations[0]
+        let temperature = pwsTemp ?? current.temperature
+
+        var status = current.weatherStatus
+        if let substitute = WeatherHelper.getImageSubstitute(status) {
+            status = substitute
+        }
+
+        let imageName: String
+        if current.night, let nightName = WeatherHelper.getNightImageName(status) {
+            imageName = nightName
+        } else {
+            imageName = String(describing: status)
+        }
+
+        return WatchWeatherEntry(
+            date: Date(),
+            cityName: cityName,
+            temperature: temperature,
+            weatherImageName: imageName,
+            hasPWS: hasPWS,
+            hasData: true
+        )
+    }
+}
+
+// MARK: - Views
+
+struct WatchAccessoryRectangularView: View {
+    let entry: WatchWeatherEntry
+
+    var body: some View {
+        HStack(spacing: 4) {
+            Image(entry.weatherImageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 28, height: 28)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("\(entry.temperature)\u{00B0}")
+                    .font(.system(size: 20, weight: .medium))
+                HStack(spacing: 2) {
+                    Text(entry.cityName)
+                        .font(.system(size: 12))
+                        .lineLimit(1)
+                    #if ENABLE_PWS
+                    if entry.hasPWS {
+                        Image(systemName: "sensor.fill")
+                            .font(.system(size: 8))
+                    }
+                    #endif
+                }
+            }
+        }
+    }
+}
+
+struct WatchAccessoryCircularView: View {
+    let entry: WatchWeatherEntry
+
+    var body: some View {
+        ZStack {
+            AccessoryWidgetBackground()
+            VStack(spacing: 0) {
+                Text("\(entry.temperature)\u{00B0}")
+                    .font(.system(size: 22, weight: .medium))
+                #if ENABLE_PWS
+                if entry.hasPWS {
+                    Image(systemName: "sensor.fill")
+                        .font(.system(size: 8))
+                }
+                #endif
+            }
+        }
+    }
+}
+
+struct WatchAccessoryInlineView: View {
+    let entry: WatchWeatherEntry
+
+    var body: some View {
+        Text("\(entry.cityName) \(entry.temperature)\u{00B0}")
+    }
+}
+
+struct WatchAccessoryCornerView: View {
+    let entry: WatchWeatherEntry
+
+    var body: some View {
+        Text("\(entry.temperature)\u{00B0}")
+            .font(.system(size: 28, weight: .medium))
+            .widgetLabel {
+                Text(entry.cityName)
+            }
+    }
+}
+
+struct WatchWeatherWidgetEntryView: View {
+    @Environment(\.widgetFamily) var family
+    let entry: WatchWeatherEntry
+
+    var body: some View {
+        switch family {
+        case .accessoryCircular:
+            WatchAccessoryCircularView(entry: entry)
+        case .accessoryInline:
+            WatchAccessoryInlineView(entry: entry)
+        case .accessoryCorner:
+            WatchAccessoryCornerView(entry: entry)
+        default:
+            WatchAccessoryRectangularView(entry: entry)
+        }
+    }
+}
+
+// MARK: - Widget
+
+@main
+struct WatchWeatherWidget: Widget {
+    let kind = "WatchWeatherWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: WatchWeatherTimelineProvider()) { entry in
+            WatchWeatherWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("PréviCA")
+        .description("Current weather conditions")
+        .supportedFamilies([.accessoryRectangular, .accessoryCircular, .accessoryCorner, .accessoryInline])
+    }
+}

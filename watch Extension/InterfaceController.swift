@@ -108,10 +108,6 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         cityLabel.setHidden(false)
         cityLabel.setText("Loading".localized())
 
-        #if ENABLE_PWS
-        let pws = Self.fetchPWSSync(for: watchDelegate.wrapper.city)
-        #endif
-
         rowTypes = [String]()
 
         if !rowTypesValid() {
@@ -143,9 +139,6 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                         controller.nextWeather = nextWeather
                     }
 
-                    #if ENABLE_PWS
-                    controller.pwsTemperature = pws.temperature
-                    #endif
                     controller.weather = weather
                 }
                 break
@@ -169,11 +162,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
             }
         }
 
-        #if ENABLE_PWS
-        let cityName = pws.stationName ?? CityHelper.cityName(watchDelegate.wrapper.city!)
-        #else
         let cityName = CityHelper.cityName(watchDelegate.wrapper.city!)
-        #endif
         self.cityLabel.setText(cityName)
 
         lastRefreshLabel.setHidden(false)
@@ -184,6 +173,22 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         #endif
 
         updatedDate = watchDelegate.wrapper.lastRefresh
+
+        #if ENABLE_PWS
+        let city = watchDelegate.wrapper.city
+        DispatchQueue.global(qos: .userInitiated).async {
+            let pws = Self.fetchPWSSync(for: city)
+            if let pwsTemp = pws.temperature {
+                DispatchQueue.main.async {
+                    if let controller = self.weatherTable.rowController(at: 0) as? CurrentWeatherRowController {
+                        controller.pwsTemperature = pwsTemp
+                        controller.currentTemperatureLabel.setText("Currently".localized() + " " + String(pwsTemp) + "°")
+                    }
+                    self.cityLabel.setText(pws.stationName ?? cityName)
+                }
+            }
+        }
+        #endif
     }
     
     func clearTable() {
@@ -363,7 +368,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                 
                 ExtensionDelegateHelper.updateComplication()
                 ExtensionDelegateHelper.scheduleRefresh(Constants.backgroundRefreshInSeconds)
-                
+
                 refreshDisplay()
             } catch {
                 print("Error info: \(error)")

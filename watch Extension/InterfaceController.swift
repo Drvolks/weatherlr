@@ -73,7 +73,10 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                 locatingImage.setHidden(false)
             }
             cityLabel.setText("Locating".localized())
-            
+
+            locationServices?.start()
+            locationServices?.updateCity(city)
+
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
                 cityLabel.setText("Loading".localized())

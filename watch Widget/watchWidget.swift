@@ -19,13 +19,15 @@ struct WatchWeatherEntry: TimelineEntry {
     let weatherImageName: String
     let hasPWS: Bool
     let hasData: Bool
+    let minTemperature: Int?
+    let maxTemperature: Int?
 }
 
 // MARK: - Provider
 
 struct WatchWeatherTimelineProvider: TimelineProvider {
     func placeholder(in context: Context) -> WatchWeatherEntry {
-        WatchWeatherEntry(date: Date(), cityName: "---", temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false)
+        WatchWeatherEntry(date: Date(), cityName: "---", temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false, minTemperature: nil, maxTemperature: nil)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (WatchWeatherEntry) -> Void) {
@@ -94,7 +96,7 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         let cityName = (hasPWS ? pwsStationName : nil) ?? CityHelper.cityName(city)
 
         guard wrapper.weatherInformations.count > 0 else {
-            return WatchWeatherEntry(date: Date(), cityName: cityName, temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false)
+            return WatchWeatherEntry(date: Date(), cityName: cityName, temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false, minTemperature: nil, maxTemperature: nil)
         }
 
         let current = wrapper.weatherInformations[0]
@@ -112,13 +114,35 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             imageName = String(describing: status)
         }
 
+        // Extract min/max from forecast entries
+        var minTemp: Int? = nil
+        var maxTemp: Int? = nil
+        for info in wrapper.weatherInformations {
+            if info.weatherDay == .today || info.weatherDay == .tomorow {
+                if info.tendancy == .minimum {
+                    minTemp = info.temperature
+                } else if info.tendancy == .maximum {
+                    maxTemp = info.temperature
+                }
+            }
+        }
+        // If we only have one bound, estimate the other from current temperature
+        if minTemp == nil && maxTemp != nil {
+            minTemp = min(temperature, maxTemp!) - 5
+        }
+        if maxTemp == nil && minTemp != nil {
+            maxTemp = max(temperature, minTemp!) + 5
+        }
+
         return WatchWeatherEntry(
             date: Date(),
             cityName: cityName,
             temperature: temperature,
             weatherImageName: imageName,
             hasPWS: hasPWS,
-            hasData: true
+            hasData: true,
+            minTemperature: minTemp,
+            maxTemperature: maxTemp
         )
     }
 }
@@ -158,17 +182,27 @@ struct WatchAccessoryCircularView: View {
     let entry: WatchWeatherEntry
 
     var body: some View {
-        ZStack {
-            AccessoryWidgetBackground()
-            VStack(spacing: 0) {
+        if let minTemp = entry.minTemperature, let maxTemp = entry.maxTemperature, maxTemp > minTemp {
+            let clampedTemp = min(max(Double(entry.temperature), Double(minTemp)), Double(maxTemp))
+            Gauge(value: clampedTemp, in: Double(minTemp)...Double(maxTemp)) {
+                Text("")
+            } currentValueLabel: {
+                Text("\(entry.temperature)\u{00B0}")
+                    .font(.system(size: 18, weight: .medium))
+            } minimumValueLabel: {
+                Text("\(minTemp)")
+                    .font(.system(size: 9))
+            } maximumValueLabel: {
+                Text("\(maxTemp)")
+                    .font(.system(size: 9))
+            }
+            .gaugeStyle(.accessoryCircular)
+            .tint(Gradient(colors: [.blue, .green, .yellow, .orange, .red]))
+        } else {
+            ZStack {
+                AccessoryWidgetBackground()
                 Text("\(entry.temperature)\u{00B0}")
                     .font(.system(size: 22, weight: .medium))
-                #if ENABLE_PWS
-                if entry.hasPWS {
-                    Image(systemName: "sensor.fill")
-                        .font(.system(size: 8))
-                }
-                #endif
             }
         }
     }
@@ -186,11 +220,29 @@ struct WatchAccessoryCornerView: View {
     let entry: WatchWeatherEntry
 
     var body: some View {
-        Text("\(entry.temperature)\u{00B0}")
-            .font(.system(size: 28, weight: .medium))
-            .widgetLabel {
-                Text(entry.cityName)
-            }
+        if let minTemp = entry.minTemperature, let maxTemp = entry.maxTemperature, maxTemp > minTemp {
+            let clampedTemp = min(max(Double(entry.temperature), Double(minTemp)), Double(maxTemp))
+            Text("\(entry.temperature)\u{00B0}")
+                .font(.system(size: 28, weight: .medium))
+                .widgetLabel {
+                    Gauge(value: clampedTemp, in: Double(minTemp)...Double(maxTemp)) {
+                        Text(entry.cityName)
+                    } currentValueLabel: {
+                        Text("\(entry.temperature)\u{00B0}")
+                    } minimumValueLabel: {
+                        Text("\(minTemp)\u{00B0}")
+                    } maximumValueLabel: {
+                        Text("\(maxTemp)\u{00B0}")
+                    }
+                    .tint(Gradient(colors: [.blue, .green, .yellow, .orange, .red]))
+                }
+        } else {
+            Text("\(entry.temperature)\u{00B0}")
+                .font(.system(size: 28, weight: .medium))
+                .widgetLabel {
+                    Text(entry.cityName)
+                }
+        }
     }
 }
 

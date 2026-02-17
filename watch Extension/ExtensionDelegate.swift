@@ -128,15 +128,17 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, @preconcurrency URLSessi
         #if DEBUG
             print("urlSession didCompleteWithError")
         #endif
-        
+
         if let error = error {
             print(error)
+            // Retry after 5 minutes on failure instead of silently stopping
+            ExtensionDelegateHelper.scheduleRefresh(5.0 * 60.0)
         }
-        
+
         if let task = savedTask {
             task.setTaskCompletedWithSnapshot(true)
             savedTask = nil
-            
+
             #if DEBUG
                 print("savedTask comleted in didCompleteWithError")
             #endif

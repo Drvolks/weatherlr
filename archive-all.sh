@@ -1,5 +1,6 @@
 #!/bin/bash
-# Archive and upload PréviCA for iOS, tvOS, and macOS to TestFlight
+# Archive and upload PréviCA for iOS to TestFlight
+# (watchOS app is embedded in the iOS archive)
 #
 # Requirements:
 #   App Store Connect API key (.p8 file)
@@ -52,37 +53,27 @@ xcodebuild archive -project "$PROJECT" -scheme "$SCHEME" \
 
 # --- Export (sign for distribution) ---
 
-for PLATFORM in iOS; do
-  echo "=== Exporting $PLATFORM ==="
-  mkdir -p "$EXPORT_DIR/$PLATFORM"
-  xcodebuild -exportArchive \
-    -archivePath "$ARCHIVE_DIR/PreviCAPlus-$PLATFORM.xcarchive" \
-    -exportOptionsPlist "$EXPORT_PLIST" \
-    -exportPath "$EXPORT_DIR/$PLATFORM" \
-    "${AUTH_FLAGS[@]}"
-done
+echo "=== Exporting iOS ==="
+mkdir -p "$EXPORT_DIR/iOS"
+xcodebuild -exportArchive \
+  -archivePath "$ARCHIVE_DIR/PreviCAPlus-iOS.xcarchive" \
+  -exportOptionsPlist "$EXPORT_PLIST" \
+  -exportPath "$EXPORT_DIR/iOS" \
+  "${AUTH_FLAGS[@]}"
 
 # --- Upload to TestFlight ---
 
-for PLATFORM in iOS; do
-  echo "=== Uploading $PLATFORM to TestFlight ==="
-  ARTIFACT=$(find "$EXPORT_DIR/$PLATFORM" \( -name "*.ipa" -o -name "*.pkg" \) -print -quit)
-  if [ -z "$ARTIFACT" ]; then
-    echo "ERROR: No IPA/PKG found for $PLATFORM in $EXPORT_DIR/$PLATFORM"
-    exit 1
-  fi
+echo "=== Uploading to TestFlight ==="
+ARTIFACT=$(find "$EXPORT_DIR/iOS" \( -name "*.ipa" -o -name "*.pkg" \) -print -quit)
+if [ -z "$ARTIFACT" ]; then
+  echo "ERROR: No IPA found in $EXPORT_DIR/iOS"
+  exit 1
+fi
 
-  case "$PLATFORM" in
-    iOS)   TYPE=ios ;;
-    tvOS)  TYPE=appletvos ;;
-    macOS) TYPE=osx ;;
-  esac
+xcrun altool --upload-app \
+  -f "$ARTIFACT" \
+  -t ios \
+  --apiKey "$KEY_ID" \
+  --apiIssuer "$ISSUER_ID"
 
-  xcrun altool --upload-app \
-    -f "$ARTIFACT" \
-    -t "$TYPE" \
-    --apiKey "$KEY_ID" \
-    --apiIssuer "$ISSUER_ID"
-done
-
-echo "=== All platforms archived and uploaded to TestFlight ==="
+echo "=== Archived and uploaded to TestFlight ==="

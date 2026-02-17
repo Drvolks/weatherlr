@@ -15,8 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var shortcutItem: UIApplicationShortcutItem?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
+
         PreferenceHelper.upgrade()
+        WatchSyncManager.shared.activate()
 
         var performShortcutDelegate = true
         

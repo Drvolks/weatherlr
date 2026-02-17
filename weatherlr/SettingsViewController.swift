@@ -68,6 +68,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
     // MARK: - Navigation
     @IBAction func done(_ sender: UIBarButtonItem) {
+        WatchSyncManager.shared.syncSettings()
         dismiss(animated: true, completion: nil)
     }
 
@@ -301,6 +302,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
             PreferenceHelper.addFavorite(city)
             WidgetCenter.shared.reloadAllTimelines()
+            WatchSyncManager.shared.syncSettings()
 
             dismiss(animated: true, completion: nil)
         } else if indexPath.section == langSection {

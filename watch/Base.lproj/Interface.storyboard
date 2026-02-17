@@ -11,7 +11,12 @@
             <objects>
                 <controller identifier="Main" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watch" customModuleProvider="target">
                     <items>
-                        <label width="136" alignment="left" numberOfLines="0" id="u5m-K4-Lrm"/>
+                        <group width="136" height="18" alignment="left" spacing="2.0" id="FRd-rK-WfX">
+                            <items>
+                                <label alignment="left" numberOfLines="1" id="u5m-K4-Lrm"/>
+                                <imageView width="12" height="12" alignment="left" verticalAlignment="center" hidden="YES" id="6bM-t3-3Q8"/>
+                            </items>
+                        </group>
                         <table alignment="left" id="TYl-Sm-JJI">
                             <items>
                                 <tableRow identifier="currentWeatherRow" id="kQR-pv-c0v" customClass="CurrentWeatherRowController" customModule="watch" customModuleProvider="target">
@@ -108,6 +113,7 @@
                         <outlet property="locatingImage" destination="1xC-Wv-pwc" id="uzM-3f-MHw"/>
                         <outlet property="locationErrorLabel" destination="hNI-1L-1Pp" id="COZ-4t-y70"/>
                         <outlet property="selectCityButton" destination="ai4-HS-V5P" id="899-k6-Olf"/>
+                        <outlet property="stationImage" destination="6bM-t3-3Q8" id="8lR-2P-Cjz"/>
                         <outlet property="weatherTable" destination="TYl-Sm-JJI" id="ulS-d7-dXp"/>
                     </connections>
                 </controller>

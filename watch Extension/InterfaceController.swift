@@ -9,11 +9,13 @@
 import WatchKit
 import Foundation
 import CoreLocation
+import UIKit
 
 class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate, @preconcurrency LocationServicesDelegate {
     
     
     @IBOutlet var cityLabel: WKInterfaceLabel!
+    @IBOutlet var stationImage: WKInterfaceImage!
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
@@ -41,6 +43,8 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         addMenuItem(with: WKMenuItemIcon.info, title: "English", action: #selector(InterfaceController.englishSelected))
         addMenuItem(with: WKMenuItemIcon.more, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
         addMenuItem(with: WKMenuItemIcon.repeat, title: "Refresh".localized(), action: #selector(InterfaceController.refresh))
+
+        stationImage.setHidden(true)
     }
 
     override func willActivate() {
@@ -73,14 +77,14 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
             } else {
                 locatingImage.setHidden(false)
             }
-            cityLabel.setText("Locating".localized())
+            setCityName("Locating".localized())
 
             locationServices?.start()
             locationServices?.updateCity(city)
 
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
-                cityLabel.setText("Loading".localized())
+                setCityName("Loading".localized())
             } else if updatedDate.compare(ExtensionDelegateHelper.getWrapper().lastRefresh) != ComparisonResult.orderedSame {
                 refreshDisplay()
             }
@@ -89,7 +93,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
             
             if ExtensionDelegateHelper.refreshNeeded() {
                 lastRefreshLabel.setHidden(true)
-                cityLabel.setText("Loading".localized())
+                setCityName("Loading".localized())
                 
                 ExtensionDelegateHelper.launchURLSessionNow(self)
             } else if updatedDate.compare(ExtensionDelegateHelper.getWrapper().lastRefresh) != ComparisonResult.orderedSame {
@@ -106,7 +110,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
 
         cityLabel.setHidden(false)
-        cityLabel.setText("Loading".localized())
+        setCityName("Loading".localized())
 
         rowTypes = [String]()
 
@@ -126,7 +130,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
 
         weatherTable.setRowTypes(rowTypes)
 
-        cityLabel.setText("Loading2".localized())
+        setCityName("Loading2".localized())
 
         for index in 0..<rowTypes.count {
             let weather = watchDelegate.wrapper.weatherInformations[index]
@@ -163,7 +167,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         }
 
         let cityName = CityHelper.cityName(watchDelegate.wrapper.city!)
-        self.cityLabel.setText(cityName)
+        self.setCityName(cityName)
 
         lastRefreshLabel.setHidden(false)
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
@@ -184,7 +188,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                         controller.pwsTemperature = pwsTemp
                         controller.currentTemperatureLabel.setText("Currently".localized() + " " + String(pwsTemp) + "°")
                     }
-                    self.cityLabel.setText(pws.stationName ?? cityName)
+                    self.setCityWithStationIcon(pws.stationName ?? cityName)
                 }
             }
         }
@@ -332,7 +336,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
             
             selectCityButton.setHidden(true)
             locatingImage.setHidden(false)
-            cityLabel.setText("Locating".localized())
+            setCityName("Locating".localized())
             
             locationServices?.start()
             locationServices?.updateCity(city)
@@ -342,7 +346,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
             #endif
             
             locatingImage.setHidden(true)
-            cityLabel.setText("Loading".localized())
+            setCityName("Loading".localized())
             
             PreferenceHelper.saveSelectedCity(city)
             
@@ -426,7 +430,20 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         refreshDisplay()
     }
 
+    private func setCityName(_ name: String) {
+        cityLabel.setText(name)
+        stationImage.setHidden(true)
+    }
+
     #if ENABLE_PWS
+    private func setCityWithStationIcon(_ name: String) {
+        setCityName(name)
+        let symbolConfig = UIImage.SymbolConfiguration(pointSize: 10, weight: .medium)
+        guard let icon = UIImage(systemName: "sensor.fill", withConfiguration: symbolConfig)?.withTintColor(UIColor.white.withAlphaComponent(0.7), renderingMode: .alwaysOriginal) else { return }
+        stationImage.setImage(icon)
+        stationImage.setHidden(false)
+    }
+
     static func fetchPWSSync(for city: City?) -> (temperature: Int?, stationName: String?) {
         guard let city = city else { return (nil, nil) }
 
@@ -447,13 +464,25 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
             guard distance < 50_000 else { continue }
 
             let urlString = "https://api.weather.com/v2/pws/observations/current?stationId=\(station.stationId)&format=json&units=e&apiKey=\(apiKey)"
-            guard let url = URL(string: urlString),
-                  let data = try? Data(contentsOf: url),
-                  let response = try? JSONDecoder().decode(WUResponse.self, from: data),
-                  let observation = response.observations?.first,
-                  let tempC = observation.tempC else { continue }
+            guard let url = URL(string: urlString) else { continue }
 
-            return (Int(tempC.rounded()), station.name)
+            let semaphore = DispatchSemaphore(value: 0)
+            var result: (Int?, String?) = (nil, nil)
+
+            let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+                defer { semaphore.signal() }
+                guard let data = data,
+                      let response = try? JSONDecoder().decode(WUResponse.self, from: data),
+                      let observation = response.observations?.first,
+                      let tempC = observation.tempC else { return }
+                result = (Int(tempC.rounded()), station.name)
+            }
+            task.resume()
+            semaphore.wait()
+
+            if result.0 != nil {
+                return result
+            }
         }
 
         return (nil, nil)

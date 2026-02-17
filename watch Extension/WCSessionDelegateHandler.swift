@@ -14,6 +14,16 @@ class WCSessionDelegateHandler: NSObject, WCSessionDelegate {
         #if DEBUG
             print("WCSession activation: \(activationState.rawValue)")
         #endif
+
+        if activationState == .activated {
+            let existingContext = session.receivedApplicationContext
+            if !existingContext.isEmpty {
+                #if DEBUG
+                    print("Processing existing applicationContext on activation")
+                #endif
+                applyApplicationContext(existingContext)
+            }
+        }
     }
 
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
@@ -21,6 +31,10 @@ class WCSessionDelegateHandler: NSObject, WCSessionDelegate {
             print("Received applicationContext from iPhone")
         #endif
 
+        applyApplicationContext(applicationContext)
+    }
+
+    private func applyApplicationContext(_ applicationContext: [String : Any]) {
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
 
         if let data = applicationContext[Global.selectedCityKey] as? Data {

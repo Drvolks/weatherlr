@@ -8,7 +8,7 @@
 
 import Foundation
 import WatchKit
-import ClockKit
+import WidgetKit
 
 class ExtensionDelegateHelper {
     static func launchURLSessionNow(_ delegate: URLSessionDelegate) {
@@ -76,13 +76,8 @@ class ExtensionDelegateHelper {
         #if DEBUG
             print("updateComplication")
         #endif
-        
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        if let complications = complicationServer.activeComplications {
-            for complication in complications {
-                complicationServer.reloadTimeline(for: complication)
-            }
-        }
+
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     static func scheduleRefresh(_ backgroundRefreshInSeconds:Double) {

@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import CoreLocation
 
 class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate, @preconcurrency LocationServicesDelegate {
     
@@ -101,14 +102,18 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         #if DEBUG
             print("refreshDisplay")
         #endif
-        
+
         let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        
+
         cityLabel.setHidden(false)
         cityLabel.setText("Loading".localized())
 
+        #if ENABLE_PWS
+        let pws = Self.fetchPWSSync(for: watchDelegate.wrapper.city)
+        #endif
+
         rowTypes = [String]()
-        
+
         if !rowTypesValid() {
             for index in 0..<watchDelegate.wrapper.weatherInformations.count {
                 let weather = watchDelegate.wrapper.weatherInformations[index]
@@ -122,14 +127,14 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                 }
             }
         }
-        
+
         weatherTable.setRowTypes(rowTypes)
-        
+
         cityLabel.setText("Loading2".localized())
-        
+
         for index in 0..<rowTypes.count {
             let weather = watchDelegate.wrapper.weatherInformations[index]
-            
+
             switch(rowTypes[index]) {
             case "currentWeatherRow":
                 if let controller = weatherTable.rowController(at: index) as? CurrentWeatherRowController {
@@ -137,7 +142,10 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                         let nextWeather = watchDelegate.wrapper.weatherInformations[index+1]
                         controller.nextWeather = nextWeather
                     }
-                    
+
+                    #if ENABLE_PWS
+                    controller.pwsTemperature = pws.temperature
+                    #endif
                     controller.weather = weather
                 }
                 break
@@ -148,7 +156,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                     }
                     controller.weather = weather
                 }
-                
+
                 break
             case "weatherRow":
                 if let controller = weatherTable.rowController(at: index) as? WeatherRowController {
@@ -160,17 +168,21 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                 break
             }
         }
-        
+
+        #if ENABLE_PWS
+        let cityName = pws.stationName ?? CityHelper.cityName(watchDelegate.wrapper.city!)
+        #else
         let cityName = CityHelper.cityName(watchDelegate.wrapper.city!)
+        #endif
         self.cityLabel.setText(cityName)
-        
+
         lastRefreshLabel.setHidden(false)
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
-        
+
         #if DEBUG
             print("refreshDisplay for " + cityName)
         #endif
-        
+
         updatedDate = watchDelegate.wrapper.lastRefresh
     }
     
@@ -408,4 +420,38 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
     func locationSameCity() {
         refreshDisplay()
     }
+
+    #if ENABLE_PWS
+    static func fetchPWSSync(for city: City?) -> (temperature: Int?, stationName: String?) {
+        guard let city = city else { return (nil, nil) }
+
+        let stations = PreferenceHelper.getPWSStations()
+        guard !stations.isEmpty,
+              PreferenceHelper.hasPWSCredentials(),
+              let cityLat = Double(city.latitude),
+              let cityLon = Double(city.longitude),
+              let apiKey = PreferenceHelper.getPWSApiKey() else {
+            return (nil, nil)
+        }
+
+        let cityLocation = CLLocation(latitude: cityLat, longitude: cityLon)
+
+        for station in stations {
+            let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
+            let distance = cityLocation.distance(from: stationLocation)
+            guard distance < 50_000 else { continue }
+
+            let urlString = "https://api.weather.com/v2/pws/observations/current?stationId=\(station.stationId)&format=json&units=e&apiKey=\(apiKey)"
+            guard let url = URL(string: urlString),
+                  let data = try? Data(contentsOf: url),
+                  let response = try? JSONDecoder().decode(WUResponse.self, from: data),
+                  let observation = response.observations?.first,
+                  let tempC = observation.tempC else { continue }
+
+            return (Int(tempC.rounded()), station.name)
+        }
+
+        return (nil, nil)
+    }
+    #endif
 }

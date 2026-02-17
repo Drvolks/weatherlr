@@ -40,7 +40,7 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WatchWeatherEntry>) -> Void) {
         let city = PreferenceHelper.getCityToUse()
-        let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
+        let wrapper = Self.fetchWeatherSync(for: city)
 
         #if ENABLE_PWS
         let pws = Self.fetchPWSSync(for: city)
@@ -73,22 +73,53 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             guard distance < 50_000 else { continue }
 
             let urlString = "https://api.weather.com/v2/pws/observations/current?stationId=\(station.stationId)&format=json&units=e&apiKey=\(apiKey)"
-            guard let url = URL(string: urlString),
-                  let data = try? Data(contentsOf: url),
-                  let response = try? JSONDecoder().decode(WUResponse.self, from: data),
-                  let observation = response.observations?.first,
-                  let tempC = observation.tempC else { continue }
+            guard let url = URL(string: urlString) else { continue }
 
-            return (true, Int(tempC.rounded()), station.name)
+            let semaphore = DispatchSemaphore(value: 0)
+            var result: (Bool, Int?, String?) = (false, nil, nil)
+
+            let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+                defer { semaphore.signal() }
+                guard let data = data,
+                      let response = try? JSONDecoder().decode(WUResponse.self, from: data),
+                      let observation = response.observations?.first,
+                      let tempC = observation.tempC else { return }
+                result = (true, Int(tempC.rounded()), station.name)
+            }
+            task.resume()
+            semaphore.wait()
+
+            if result.0 {
+                return result
+            }
         }
 
         return (false, nil, nil)
     }
     #endif
 
+    static func fetchWeatherSync(for city: City) -> WeatherInformationWrapper {
+        guard let url = URL(string: UrlHelper.getUrl(city)) else {
+            return WeatherInformationWrapper()
+        }
+
+        let semaphore = DispatchSemaphore(value: 0)
+        var result = WeatherInformationWrapper()
+
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+            defer { semaphore.signal() }
+            guard let data = data else { return }
+            result = WeatherHelper.getWeatherInformationsNoCache(data, city: city)
+        }
+        task.resume()
+        semaphore.wait()
+
+        return result
+    }
+
     private func buildEntry() -> WatchWeatherEntry {
         let city = PreferenceHelper.getCityToUse()
-        let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
+        let wrapper = Self.fetchWeatherSync(for: city)
         return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil)
     }
 
@@ -155,7 +186,7 @@ struct WatchAccessoryRectangularView: View {
     var body: some View {
         HStack(spacing: 4) {
             Image(entry.weatherImageName)
-                .renderingMode(.original)
+                .renderingMode(.template)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 28, height: 28)
@@ -273,6 +304,7 @@ struct WatchWeatherWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: WatchWeatherTimelineProvider()) { entry in
             WatchWeatherWidgetEntryView(entry: entry)
+                .containerBackground(Color(red: 31.0/255.0, green: 79.0/255.0, blue: 116.0/255.0), for: .widget)
         }
         .configurationDisplayName("PréviCA")
         .description("Current weather conditions")

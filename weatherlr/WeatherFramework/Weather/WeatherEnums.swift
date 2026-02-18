@@ -173,6 +173,7 @@ public enum WeatherStatus : CaseIterable {
 public enum WeatherColor : Int {
     case rain = 0x1fbfff
     case defaultColor = 0x1f4f74
+    case nightColor = 0x0f2a3f
     case watchRing = 0x65DA7D
 }
 

@@ -105,6 +105,10 @@
                         <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
+                        <label width="1" alignment="left" text="" numberOfLines="1" id="pws-Db-Lbl">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
                     </items>
                     <menu key="menu" id="iB8-eH-vfl"/>
                     <connections>
@@ -114,6 +118,7 @@
                         <outlet property="locationErrorLabel" destination="hNI-1L-1Pp" id="COZ-4t-y70"/>
                         <outlet property="selectCityButton" destination="ai4-HS-V5P" id="899-k6-Olf"/>
                         <outlet property="stationImage" destination="6bM-t3-3Q8" id="8lR-2P-Cjz"/>
+                        <outlet property="pwsDebugLabel" destination="pws-Db-Lbl" id="pws-Db-Con"/>
                         <outlet property="weatherTable" destination="TYl-Sm-JJI" id="ulS-d7-dXp"/>
                     </connections>
                 </controller>

@@ -19,6 +19,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
+    @IBOutlet var pwsDebugLabel: WKInterfaceLabel!
     @IBOutlet var locatingImage: WKInterfaceImage!
     @IBOutlet var locationErrorLabel: WKInterfaceLabel!
     
@@ -180,6 +181,17 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
 
         #if ENABLE_PWS
         let city = watchDelegate.wrapper.city
+        let stations = PreferenceHelper.getPWSStations()
+        let hasCredentials = PreferenceHelper.hasPWSCredentials()
+        if hasCredentials && !stations.isEmpty {
+            let stationId = stations.first?.stationId ?? "no id"
+            pwsDebugLabel.setText("PWS: \(stationId)")
+        } else if hasCredentials {
+            pwsDebugLabel.setText("PWS: no id")
+        } else {
+            pwsDebugLabel.setText("PWS: no credentials")
+        }
+
         DispatchQueue.global(qos: .userInitiated).async {
             let pws = Self.fetchPWSSync(for: city)
             if let pwsTemp = pws.temperature {
@@ -192,6 +204,8 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                 }
             }
         }
+        #else
+        pwsDebugLabel.setText("PWS disabled")
         #endif
     }
     

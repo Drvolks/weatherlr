@@ -10,7 +10,6 @@ import WatchKit
 import Foundation
 import CoreLocation
 import UIKit
-import WatchConnectivity
 #if ENABLE_WEATHERKIT
 import WeatherKit
 #endif
@@ -23,7 +22,6 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
     @IBOutlet var weatherTable: WKInterfaceTable!
     @IBOutlet var selectCityButton: WKInterfaceButton!
     @IBOutlet var lastRefreshLabel: WKInterfaceLabel!
-    @IBOutlet var pwsDebugLabel: WKInterfaceLabel!
     @IBOutlet var locatingImage: WKInterfaceImage!
     @IBOutlet var locationErrorLabel: WKInterfaceLabel!
     
@@ -185,21 +183,6 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
 
         #if ENABLE_PWS
         let city = watchDelegate.wrapper.city
-        let stations = PreferenceHelper.getPWSStations()
-        let hasCredentials = PreferenceHelper.hasPWSCredentials()
-        if hasCredentials && !stations.isEmpty {
-            let stationId = stations.first?.stationId ?? "no id"
-            pwsDebugLabel.setText("PWS: \(stationId)")
-        } else if hasCredentials {
-            // Show sync diagnostic info
-            let ctx = WCSession.default.receivedApplicationContext
-            let ctxKeys = ctx.keys.sorted().joined(separator: ",")
-            let hasPwsKey = ctx[Global.pwsStationsKey] != nil
-            let pwsType = ctx[Global.pwsStationsKey].map { "\(type(of: $0))" } ?? "nil"
-            pwsDebugLabel.setText("PWS:noStn pws:\(hasPwsKey) t:\(pwsType)\nkeys:[\(ctxKeys)]")
-        } else {
-            pwsDebugLabel.setText("PWS: no credentials")
-        }
 
         DispatchQueue.global(qos: .userInitiated).async {
             let pws = Self.fetchPWSSync(for: city)
@@ -213,8 +196,6 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                 }
             }
         }
-        #else
-        pwsDebugLabel.setText("PWS disabled")
         #endif
 
         #if ENABLE_WEATHERKIT

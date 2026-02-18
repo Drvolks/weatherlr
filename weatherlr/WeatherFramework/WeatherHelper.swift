@@ -359,13 +359,15 @@ public class WeatherHelper {
         // Draw the base image (needs explicit flip since context is now flipped)
         context.draw(cgImage, in: CGRect(origin: .zero, size: size))
 
-        // Draw text using NSAttributedString (works correctly in flipped context)
+        // Push CGContext as current UIKit context so String.draw works
+        UIGraphicsPushContext(context)
         let textFontAttributes: [NSAttributedString.Key: Any] = [
             .font: textFont,
             .foregroundColor: textColor
         ]
         let rect = CGRect(x: CGFloat(offsetLeft), y: CGFloat(offsetTop), width: size.width, height: size.height)
         text.draw(in: rect, withAttributes: textFontAttributes)
+        UIGraphicsPopContext()
 
         guard let resultCGImage = context.makeImage() else { return baseImage }
         return UIImage(cgImage: resultCGImage)

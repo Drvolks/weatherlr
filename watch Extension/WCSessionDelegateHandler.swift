@@ -35,10 +35,6 @@ class WCSessionDelegateHandler: NSObject, WCSessionDelegate {
     }
 
     private func applyApplicationContext(_ applicationContext: [String : Any]) {
-        #if DEBUG
-        print("WatchSync: applying context with keys: \(applicationContext.keys.sorted())")
-        #endif
-
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
 
         if let data = applicationContext[Global.selectedCityKey] as? Data {
@@ -57,17 +53,6 @@ class WCSessionDelegateHandler: NSObject, WCSessionDelegate {
         #if ENABLE_PWS
         if let data = applicationContext[Global.pwsStationsKey] as? Data {
             defaults.set(data, forKey: Global.pwsStationsKey)
-            #if DEBUG
-            let stations = (try? JSONDecoder().decode([PWSStation].self, from: data)) ?? []
-            print("WatchSync: received \(stations.count) PWS station(s): \(stations.map { $0.stationId })")
-            #endif
-        } else {
-            #if DEBUG
-            print("WatchSync: no PWS stations in received context (key '\(Global.pwsStationsKey)' missing or wrong type)")
-            if let raw = applicationContext[Global.pwsStationsKey] {
-                print("WatchSync: key exists but type is \(type(of: raw))")
-            }
-            #endif
         }
         if let apiKey = applicationContext["pwsApiKey"] as? String {
             defaults.set(apiKey, forKey: "pwsApiKey")

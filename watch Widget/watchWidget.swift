@@ -9,6 +9,9 @@
 import WidgetKit
 import SwiftUI
 import CoreLocation
+#if ENABLE_WEATHERKIT
+import WeatherKit
+#endif
 
 // MARK: - Models
 
@@ -48,7 +51,13 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         let pws = (hasPWS: false, temperature: nil as Int?, stationName: nil as String?)
         #endif
 
-        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName)
+        #if ENABLE_WEATHERKIT
+        let wkImageName = Self.fetchWeatherKitImageSync(for: city)
+        #else
+        let wkImageName: String? = nil
+        #endif
+
+        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, weatherKitImageName: wkImageName)
         let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
         let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
         completion(timeline)
@@ -117,13 +126,60 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         return result
     }
 
+    #if ENABLE_WEATHERKIT
+    private final class WeatherKitImageBox: @unchecked Sendable {
+        var imageName: String?
+    }
+
+    static func fetchWeatherKitImageSync(for city: City) -> String? {
+        guard let lat = Double(city.latitude), let lon = Double(city.longitude) else {
+            return nil
+        }
+
+        let location = CLLocation(latitude: lat, longitude: lon)
+        let semaphore = DispatchSemaphore(value: 0)
+        let box = WeatherKitImageBox()
+
+        Task.detached {
+            defer { semaphore.signal() }
+            do {
+                let weather = try await WeatherService.shared.weather(for: location, including: .current)
+                let condition = weather.condition
+                let night = !weather.isDaylight
+
+                var status = WeatherHelper.weatherStatus(from: condition)
+                if let substitute = WeatherHelper.getImageSubstitute(status) {
+                    status = substitute
+                }
+
+                if status == .clear && !night {
+                    status = .sunny
+                }
+
+                if night, let nightName = WeatherHelper.getNightImageName(status) {
+                    box.imageName = nightName
+                } else {
+                    box.imageName = String(describing: status)
+                }
+            } catch {
+                #if DEBUG
+                print("WeatherKit watch widget error: \(error)")
+                #endif
+            }
+        }
+
+        semaphore.wait()
+        return box.imageName
+    }
+    #endif
+
     private func buildEntry() -> WatchWeatherEntry {
         let city = PreferenceHelper.getCityToUse()
         let wrapper = Self.fetchWeatherSync(for: city)
-        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil)
+        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil, weatherKitImageName: nil)
     }
 
-    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?) -> WatchWeatherEntry {
+    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?, weatherKitImageName: String?) -> WatchWeatherEntry {
         let cityName = (hasPWS ? pwsStationName : nil) ?? CityHelper.cityName(city)
 
         guard wrapper.weatherInformations.count > 0 else {
@@ -133,16 +189,19 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         let current = wrapper.weatherInformations[0]
         let temperature = pwsTemp ?? current.temperature
 
-        var status = current.weatherStatus
-        if let substitute = WeatherHelper.getImageSubstitute(status) {
-            status = substitute
-        }
-
         let imageName: String
-        if current.night, let nightName = WeatherHelper.getNightImageName(status) {
-            imageName = nightName
+        if let wkName = weatherKitImageName {
+            imageName = wkName
         } else {
-            imageName = String(describing: status)
+            var status = current.weatherStatus
+            if let substitute = WeatherHelper.getImageSubstitute(status) {
+                status = substitute
+            }
+            if current.night, let nightName = WeatherHelper.getNightImageName(status) {
+                imageName = nightName
+            } else {
+                imageName = String(describing: status)
+            }
         }
 
         // Extract min/max from forecast entries

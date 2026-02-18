@@ -39,8 +39,8 @@ class WeatherNowCell: UITableViewCell {
                         weatherImage.isHidden = true
                         showPrecipitationChart(with: data.precipitationMinutes)
                     } else {
-                        if let current = weatherKitData?.currentWeather {
-                            weatherImage.image = WeatherHelper.image(for: current.condition, night: !current.isDaylight)
+                        if let data = weatherKitData {
+                            weatherImage.image = WeatherHelper.image(for: data.currentWeather.condition, night: !data.isDaylight)
                         } else {
                             weatherImage.image = weatherInfo.image()
                         }

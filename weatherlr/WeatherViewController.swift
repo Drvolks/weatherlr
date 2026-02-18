@@ -204,6 +204,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             weatherTable.bounds.size.width = maxWidth
         }
 
+        // Use darker background at night
+        let isNight = weatherInformationWrapper.weatherInformations.first?.night ?? false
+        let bgColor = isNight ? UIColor(weatherColor: .nightColor) : UIColor(weatherColor: .defaultColor)
+        view.backgroundColor = bgColor
+
         guard warningBarButton != nil, radarButton != nil else { return }
 
         let city = PreferenceHelper.getCityToUse()

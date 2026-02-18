@@ -76,7 +76,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, @preconcurrency URLSessi
         if !LocationServices.isUseCurrentLocation(city) {
             let url = URL(string:UrlHelper.getUrl(city))!
                 
-            let urlSession = URLSession(configuration: urlSessionConfig, delegate: self, delegateQueue: nil)
+            let urlSession = URLSession(configuration: urlSessionConfig, delegate: self, delegateQueue: OperationQueue.main)
             let downloadTask = urlSession.downloadTask(with: url)
             downloadTask.resume()
                 

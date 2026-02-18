@@ -111,6 +111,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         decorate()
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            decorate()
+        }
+    }
 
     func refresh(_ thread: Bool) {
         locationServices!.refreshLocation()
@@ -204,10 +210,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             weatherTable.bounds.size.width = maxWidth
         }
 
-        // Use darker background at night
+        // Use darker background at night or in dark mode
         let isNight = weatherInformationWrapper.weatherInformations.first?.night ?? false
-        let bgColor = isNight ? UIColor(weatherColor: .nightColor) : UIColor(weatherColor: .defaultColor)
+        let isDarkMode = traitCollection.userInterfaceStyle == .dark
+        let bgColor = (isNight || isDarkMode) ? UIColor(weatherColor: .nightColor) : UIColor(weatherColor: .defaultColor)
         view.backgroundColor = bgColor
+        navigationController?.navigationBar.barTintColor = bgColor
+        navigationController?.toolbar.barTintColor = bgColor
 
         guard warningBarButton != nil, radarButton != nil else { return }
 
@@ -261,6 +270,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
+            cell.backgroundColor = .clear
             #if ENABLE_WEATHERKIT
             cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, weatherKitData: weatherKitData)
             #else
@@ -280,6 +290,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let adjustedRow = hasHourlyRow ? indexPath.row - 1 : indexPath.row
         let adjustedIndexPath = IndexPath(row: adjustedRow, section: indexPath.section)
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherTableViewCell
+        cell.backgroundColor = .clear
         cell.initialize(weatherInformationWrapper: weatherInformationWrapper, indexPath: adjustedIndexPath)
         return cell
     }

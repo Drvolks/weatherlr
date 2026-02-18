@@ -86,7 +86,9 @@ class HourlyItemCell: UICollectionViewCell {
             timeLabel.text = formatter.string(from: hourWeather.date) + "h"
         }
 
-        iconImageView.image = WeatherHelper.image(for: hourWeather.condition, night: !hourWeather.isDaylight)
+        let hour = Calendar.current.component(.hour, from: hourWeather.date)
+        let isNight = hour < 7 || hour >= 19
+        iconImageView.image = WeatherHelper.image(for: hourWeather.condition, night: isNight)
 
         let precipChance = Int(hourWeather.precipitationChance * 100)
         if precipChance > 0 {

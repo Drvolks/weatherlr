@@ -461,6 +461,11 @@ public class WeatherHelper {
             status = substitute
         }
 
+        // .clear is the night image (moon); use .sunny for daytime
+        if status == .clear && !night {
+            status = .sunny
+        }
+
         if night {
             if let nightName = getNightImageName(status),
                let image = UIImage(named: nightName) {

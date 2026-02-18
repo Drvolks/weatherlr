@@ -34,5 +34,10 @@ struct WeatherKitData {
             .prefix(24)
             .map { $0 }
     }
+
+    var isDaylight: Bool {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour >= 7 && hour < 19
+    }
 }
 #endif

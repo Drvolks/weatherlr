@@ -34,6 +34,9 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        overrideUserInterfaceStyle = .unspecified
+        tableView.backgroundColor = .systemGroupedBackground
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -141,6 +144,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
             let city = savedCities[indexPath.row]
             cell.cityLabel.text = CityHelper.cityName(city)
+            cell.cityLabel.textColor = .label
 
             if selectedCity != nil && city.id == selectedCity!.id {
                 cell.accessoryType = UITableViewCell.AccessoryType.checkmark
@@ -167,6 +171,8 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             let cell = tableView.dequeueReusableCell(withIdentifier: "langCell", for: indexPath) as! LangTableViewCell
 
             cell.accessoryType = UITableViewCell.AccessoryType.none
+
+            cell.langLabel.textColor = .label
 
             if indexPath.row == francaisRow {
                 cell.langLabel.text = "Français"
@@ -199,6 +205,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             let cell = tableView.dequeueReusableCell(withIdentifier: "dataProviderCell", for: indexPath) as! DataProviderTableViewCell
 
             cell.dataProviderLabel.text = "Provider".localized()
+            cell.dataProviderLabel.textColor = .label
             cell.backgroundColor = UIColor.clear
 
             return cell
@@ -367,6 +374,9 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
+        if traitCollection.userInterfaceStyle == .dark {
+            return .lightContent
+        }
         return .default
     }
 

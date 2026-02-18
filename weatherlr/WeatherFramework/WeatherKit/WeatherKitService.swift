@@ -33,8 +33,9 @@ class WeatherKitService {
         let location = CLLocation(latitude: lat, longitude: lon)
 
         do {
-            let weather = try await service.weather(for: location, including: .current, .minute, .hourly)
-            let data = WeatherKitData(currentWeather: weather.0, minuteForecast: weather.1, hourlyForecast: weather.2)
+            let weather = try await service.weather(for: location, including: .current, .minute, .hourly, .daily)
+            let today = weather.3.first
+            let data = WeatherKitData(currentWeather: weather.0, minuteForecast: weather.1, hourlyForecast: weather.2, sunrise: today?.sun.sunrise, sunset: today?.sun.sunset)
             cache.setObject(data, forKey: cacheKey)
             return data
         } catch {

@@ -14,6 +14,8 @@ struct WeatherKitData {
     let currentWeather: CurrentWeather
     let minuteForecast: WeatherKit.Forecast<MinuteWeather>?
     let hourlyForecast: WeatherKit.Forecast<HourWeather>
+    let sunrise: Date?
+    let sunset: Date?
 
     var hasPrecipitationNextHour: Bool {
         guard let minutes = minuteForecast else { return false }
@@ -35,8 +37,11 @@ struct WeatherKitData {
             .map { $0 }
     }
 
-    var isDaylight: Bool {
-        let hour = Calendar.current.component(.hour, from: Date())
+    func isDaylight(at date: Date = Date()) -> Bool {
+        if let sunrise = sunrise, let sunset = sunset {
+            return date >= sunrise && date < sunset
+        }
+        let hour = Calendar.current.component(.hour, from: date)
         return hour >= 7 && hour < 19
     }
 }

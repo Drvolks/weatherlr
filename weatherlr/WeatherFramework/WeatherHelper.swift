@@ -220,10 +220,12 @@ public class WeatherHelper {
     public static func getNightImageName(_ status: WeatherStatus) -> String? {
         switch status {
         case .sunny, .mainlySunny, .clear:
-            return "clearingNight"
-        case .aFewClouds:
+            return "clear"
+        case .aFewClouds, .aMixOfSunAndCloud, .cloudyPeriods, .partlyCloudy:
             return "aFewCloudsNight"
         case .clearing:
+            return "clearingNight"
+        case .mostlyCloudy:
             return "clearingNight"
         default:
             return nil

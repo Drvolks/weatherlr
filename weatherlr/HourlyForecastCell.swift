@@ -14,6 +14,8 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
     static let reuseIdentifier = "HourlyForecastCell"
 
     private var hours: [HourWeather] = []
+    private var sunrise: Date?
+    private var sunset: Date?
     private var isLoading = true
     private var collectionView: UICollectionView!
     private var loadingLabel: UILabel!
@@ -74,9 +76,13 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
     func configure(with weatherKitData: WeatherKitData?) {
         if let data = weatherKitData {
             self.hours = data.next24Hours
+            self.sunrise = data.sunrise
+            self.sunset = data.sunset
             self.isLoading = false
         } else {
             self.hours = []
+            self.sunrise = nil
+            self.sunset = nil
             self.isLoading = true
         }
         loadingLabel.isHidden = !isLoading
@@ -93,7 +99,7 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyItemCell.reuseIdentifier, for: indexPath) as! HourlyItemCell
         let hour = hours[indexPath.item]
-        cell.configure(with: hour, isCurrentHour: indexPath.item == 0)
+        cell.configure(with: hour, isCurrentHour: indexPath.item == 0, sunrise: sunrise, sunset: sunset)
         return cell
     }
 }

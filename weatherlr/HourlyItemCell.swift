@@ -77,7 +77,7 @@ class HourlyItemCell: UICollectionViewCell {
         ])
     }
 
-    func configure(with hourWeather: HourWeather, isCurrentHour: Bool) {
+    func configure(with hourWeather: HourWeather, isCurrentHour: Bool, sunrise: Date?, sunset: Date?) {
         if isCurrentHour {
             timeLabel.text = "Now".localized()
         } else {
@@ -86,8 +86,13 @@ class HourlyItemCell: UICollectionViewCell {
             timeLabel.text = formatter.string(from: hourWeather.date) + "h"
         }
 
-        let hour = Calendar.current.component(.hour, from: hourWeather.date)
-        let isNight = hour < 7 || hour >= 19
+        let isNight: Bool
+        if let sunrise = sunrise, let sunset = sunset {
+            isNight = hourWeather.date < sunrise || hourWeather.date >= sunset
+        } else {
+            let hour = Calendar.current.component(.hour, from: hourWeather.date)
+            isNight = hour < 7 || hour >= 19
+        }
         iconImageView.image = WeatherHelper.image(for: hourWeather.condition, night: isNight)
 
         let precipChance = Int(hourWeather.precipitationChance * 100)

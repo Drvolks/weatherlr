@@ -23,9 +23,19 @@ class WatchSyncManager: NSObject, @preconcurrency WCSessionDelegate {
     }
 
     func syncSettings() {
-        guard WCSession.isSupported() else { return }
+        guard WCSession.isSupported() else {
+            #if DEBUG
+            print("WatchSync: WCSession not supported")
+            #endif
+            return
+        }
         let session = WCSession.default
-        guard session.activationState == .activated else { return }
+        guard session.activationState == .activated else {
+            #if DEBUG
+            print("WatchSync: session not activated (state: \(session.activationState.rawValue))")
+            #endif
+            return
+        }
 
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         var context: [String: Any] = [:]
@@ -46,13 +56,30 @@ class WatchSyncManager: NSObject, @preconcurrency WCSessionDelegate {
         #if ENABLE_PWS
         if let pwsData = defaults.data(forKey: Global.pwsStationsKey) {
             context[Global.pwsStationsKey] = pwsData
+            #if DEBUG
+            let stations = (try? JSONDecoder().decode([PWSStation].self, from: pwsData)) ?? []
+            print("WatchSync: sending \(stations.count) PWS station(s): \(stations.map { $0.stationId })")
+            #endif
+        } else {
+            #if DEBUG
+            print("WatchSync: no PWS stations data in UserDefaults")
+            #endif
         }
         if let apiKey = PreferenceHelper.getPWSApiKey() {
             context["pwsApiKey"] = apiKey
         }
         #endif
 
-        try? session.updateApplicationContext(context)
+        do {
+            try session.updateApplicationContext(context)
+            #if DEBUG
+            print("WatchSync: updateApplicationContext succeeded with \(context.count) keys: \(context.keys.sorted())")
+            #endif
+        } catch {
+            #if DEBUG
+            print("WatchSync: updateApplicationContext FAILED: \(error)")
+            #endif
+        }
     }
 
     // MARK: - WCSessionDelegate

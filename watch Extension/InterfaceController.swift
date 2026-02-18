@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 import CoreLocation
 import UIKit
+import WatchConnectivity
 #if ENABLE_WEATHERKIT
 import WeatherKit
 #endif
@@ -190,7 +191,12 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
             let stationId = stations.first?.stationId ?? "no id"
             pwsDebugLabel.setText("PWS: \(stationId)")
         } else if hasCredentials {
-            pwsDebugLabel.setText("PWS: no id")
+            // Show sync diagnostic info
+            let ctx = WCSession.default.receivedApplicationContext
+            let ctxKeys = ctx.keys.sorted().joined(separator: ",")
+            let hasPwsKey = ctx[Global.pwsStationsKey] != nil
+            let pwsType = ctx[Global.pwsStationsKey].map { "\(type(of: $0))" } ?? "nil"
+            pwsDebugLabel.setText("PWS:noStn pws:\(hasPwsKey) t:\(pwsType)\nkeys:[\(ctxKeys)]")
         } else {
             pwsDebugLabel.setText("PWS: no credentials")
         }

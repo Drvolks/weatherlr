@@ -296,6 +296,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
                 var stations = PreferenceHelper.getPWSStations()
                 stations.remove(at: indexPath.row)
                 PreferenceHelper.savePWSStations(stations)
+                WatchSyncManager.shared.syncSettings()
 
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
@@ -414,6 +415,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
                     stations.removeAll { $0.stationId == stationId }
                     stations.append(station)
                     PreferenceHelper.savePWSStations(stations)
+                    WatchSyncManager.shared.syncSettings()
                     cityTable.reloadData()
                 } else {
                     let errorAlert = UIAlertController(title: nil, message: "Invalid Station".localized(), preferredStyle: .alert)

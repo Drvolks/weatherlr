@@ -8,6 +8,9 @@
 
 import Foundation
 import WatchKit
+#if ENABLE_WEATHERKIT
+import WeatherKit
+#endif
 
 class CurrentWeatherRowController : NSObject {
     @IBOutlet var weatherImage: WKInterfaceImage!
@@ -17,6 +20,9 @@ class CurrentWeatherRowController : NSObject {
     var nextWeather:WeatherInformation?
     #if ENABLE_PWS
     var pwsTemperature: Int?
+    #endif
+    #if ENABLE_WEATHERKIT
+    var weatherKitData: WeatherKitData?
     #endif
     var weather:WeatherInformation? {
         didSet {
@@ -44,4 +50,13 @@ class CurrentWeatherRowController : NSObject {
             }
         }
     }
+
+    #if ENABLE_WEATHERKIT
+    func updateImageWithWeatherKit(_ data: WeatherKitData) {
+        weatherKitData = data
+        let night = !data.isDaylight()
+        let image = WeatherHelper.image(for: data.currentWeather.condition, night: night)
+        weatherImage.setImage(image)
+    }
+    #endif
 }

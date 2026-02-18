@@ -10,6 +10,9 @@ import WatchKit
 import Foundation
 import CoreLocation
 import UIKit
+#if ENABLE_WEATHERKIT
+import WeatherKit
+#endif
 
 class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate, @preconcurrency LocationServicesDelegate {
     
@@ -207,6 +210,21 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         #else
         pwsDebugLabel.setText("PWS disabled")
         #endif
+
+        #if ENABLE_WEATHERKIT
+        let weatherKitCity = watchDelegate.wrapper.city
+        DispatchQueue.main.async {
+            guard let city = weatherKitCity else { return }
+            Task { @MainActor in
+                if let data = await WeatherKitService.shared.fetchWeatherKitData(for: city) {
+                    if self.weatherTable.numberOfRows > 0,
+                       let controller = self.weatherTable.rowController(at: 0) as? CurrentWeatherRowController {
+                        controller.updateImageWithWeatherKit(data)
+                    }
+                }
+            }
+        }
+        #endif
     }
     
     func clearTable() {
@@ -387,7 +405,9 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
                 ExtensionDelegateHelper.updateComplication()
                 ExtensionDelegateHelper.scheduleRefresh(Constants.backgroundRefreshInSeconds)
 
-                refreshDisplay()
+                DispatchQueue.main.async {
+                    self.refreshDisplay()
+                }
             } catch {
                 print("Error info: \(error)")
             }

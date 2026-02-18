@@ -15,6 +15,10 @@
 		28F4AD9286B42D623C2A3842 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC3E4C6D87F1F471233B0FD /* WeatherInformation.swift */; };
 		2902739DA1C886161AF0C846 /* RssEntryToWeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7B94416CFB79B2E9AFBE1 /* RssEntryToWeatherInformation.swift */; };
 		2D141E89145D4B638E9D4635 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
+		AA11BB22CC33DD44EE55FF01 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
+		AA11BB22CC33DD44EE55FF02 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
+		AA11BB22CC33DD44EE55FF03 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
+		AA11BB22CC33DD44EE55FF04 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
 		2D8FFCE61B1C7E3B0B04C986 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB93945D670C63472B0D736 /* LocationServices.swift */; };
 		2E048F6ACF2AA7D744E857EC /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC3E4C6D87F1F471233B0FD /* WeatherInformation.swift */; };
 		2F5CD4ED6434465AAABC6506 /* HourlyItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F3AC54DD341A39D5EF6F4 /* HourlyItemCell.swift */; };
@@ -1365,6 +1369,8 @@
 				F2A2B2C2D2E2F20212223243 /* PWSObservation.swift in Sources */,
 				F3A3B3C3D3E3F30313233344 /* PWSService.swift in Sources */,
 				F1A1B1C1D1E1F10111213142 /* PWSStation.swift in Sources */,
+				AA11BB22CC33DD44EE55FF01 /* WeatherKitData.swift in Sources */,
+				AA11BB22CC33DD44EE55FF02 /* WeatherKitService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1460,6 +1466,8 @@
 				E1B01A00000000000000B01A /* PWSObservation.swift in Sources */,
 				E1B01B00000000000000B01B /* PWSService.swift in Sources */,
 				E1B01C00000000000000B01C /* PWSStation.swift in Sources */,
+				AA11BB22CC33DD44EE55FF03 /* WeatherKitData.swift in Sources */,
+				AA11BB22CC33DD44EE55FF04 /* WeatherKitService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2354,7 +2362,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5;
-				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS";
+				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
@@ -2662,7 +2670,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5;
-				OTHER_SWIFT_FLAGS = "-DENABLE_PWS";
+				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
@@ -2860,7 +2868,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5;
-				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS";
+				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -2886,7 +2894,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5;
-				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS";
+				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

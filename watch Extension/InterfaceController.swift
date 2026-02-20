@@ -40,12 +40,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         locationServices?.delegate = self
         
         selectCityButton.setTitle("Select city".localized())
-        
-        clearAllMenuItems()
-        addMenuItem(with: WKMenuItemIcon.info, title: "Français", action: #selector(InterfaceController.francaisSelected))
-        addMenuItem(with: WKMenuItemIcon.info, title: "English", action: #selector(InterfaceController.englishSelected))
-        addMenuItem(with: WKMenuItemIcon.more, title: "City".localized(), action: #selector(InterfaceController.addCitySelected))
-        addMenuItem(with: WKMenuItemIcon.repeat, title: "Refresh".localized(), action: #selector(InterfaceController.refresh))
+
 
         stationImage.setHidden(true)
     }
@@ -293,6 +288,15 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         ExtensionDelegateHelper.resetWeather()
         loadData(showError:showError)
     }
+
+    @IBAction func francaisButtonTapped() {
+        francaisSelected()
+    }
+
+    @IBAction func englishButtonTapped() {
+        englishSelected()
+    }
+
     
     func didSayCityName(_ result: [Any]?) {
         if let result = result, let choice = result[0] as? String {

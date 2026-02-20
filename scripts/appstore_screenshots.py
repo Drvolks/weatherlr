@@ -17,6 +17,7 @@ App Store required sizes:
     iPhone 6.7"   : 1284 x 2778 (portrait) or 2778 x 1284 (landscape)
     iPad Pro 11"  : 2064 x 2752 (portrait) or 2752 x 2064 (landscape)
     iPad Pro 12.9": 2048 x 2732 (portrait) or 2732 x 2048 (landscape)
+    Apple Watch   : 368 x 448 (portrait)
     Mac           : 2560 x 1600, 2880 x 1800 (landscape only)
 
 The script auto-detects iPhone / iPad / Mac from the screenshot dimensions,
@@ -51,14 +52,21 @@ MAC_TARGETS = {
     "mac_2880": (2880, 1800),
 }
 
+WATCH_TARGETS = {
+    "watch": (368, 448),
+}
+
 # Common macOS screenshot widths (1x and 2x for standard resolutions)
 MAC_WIDTHS = {1280, 1440, 1470, 1512, 1552, 1680, 1728, 1800, 1920,
               2560, 2880, 2940, 3024, 3104, 3360, 3456, 3600, 3840}
 
 
 def detect_device(img: Image.Image) -> str:
-    """Detect if screenshot is from iPhone, iPad, or Mac."""
+    """Detect if screenshot is from iPhone, iPad, Mac, or Apple Watch."""
     w, h = img.size
+    # Watch screenshots are small (under 500px in both dimensions)
+    if w < 500 and h < 500:
+        return "watch"
     # Mac screenshots are landscape with typical macOS resolutions
     if w > h and w in MAC_WIDTHS:
         return "mac"
@@ -102,7 +110,7 @@ def process_file(input_path: Path, output_dir: Path, force_device: str | None = 
     img = Image.open(input_path)
     stem = input_path.stem
     device = force_device or detect_device(img)
-    targets = {"iphone": IPHONE_TARGETS, "ipad": IPAD_TARGETS, "mac": MAC_TARGETS}[device]
+    targets = {"iphone": IPHONE_TARGETS, "ipad": IPAD_TARGETS, "watch": WATCH_TARGETS, "mac": MAC_TARGETS}[device]
 
     print(f"  {input_path.name} ({img.size[0]}x{img.size[1]}) [{device}]")
 
@@ -121,7 +129,7 @@ def main():
     parser = argparse.ArgumentParser(description="Convert simulator screenshots to App Store sizes")
     parser.add_argument("inputs", nargs="+", help="Input PNG files or directories")
     parser.add_argument("--output", "-o", default=None, help="Output directory (default: <input_dir>/appstore/)")
-    parser.add_argument("--device", "-d", choices=["iphone", "ipad", "mac"], default=None,
+    parser.add_argument("--device", "-d", choices=["iphone", "ipad", "watch", "mac"], default=None,
                         help="Force device type (skip auto-detection)")
     args = parser.parse_args()
 

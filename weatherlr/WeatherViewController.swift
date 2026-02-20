@@ -365,6 +365,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             targetController.modalDelegate = self
         } else if segue.identifier  == "ShowRadar" {
             let navigationController = segue.destination as! UINavigationController
+            navigationController.modalPresentationStyle = .fullScreen
             let targetController = navigationController.topViewController as! RadarViewController
             targetController.city = PreferenceHelper.getCityToUse()
         }
@@ -457,6 +458,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             if(PreferenceHelper.getFavoriteCities().count == 1) {
                 DispatchQueue.main.async(execute: { () -> Void in
                     let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as! UINavigationController
+                    if let addCityVC = viewController.topViewController as? AddCityViewController {
+                        addCityVC.modalDelegate = self
+                    }
                     self.present(viewController, animated: false, completion: nil)
                 })
             } else {

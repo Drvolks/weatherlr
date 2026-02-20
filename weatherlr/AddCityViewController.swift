@@ -194,10 +194,15 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = cityRow(indexPath)
-        
+
         PreferenceHelper.addFavorite(city)
-        
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+
+        // Dismiss all the way back to the root (works for both 1-level and 2-level presentation)
+        var presenter = self.presentingViewController
+        while let parent = presenter?.presentingViewController {
+            presenter = parent
+        }
+        presenter?.dismiss(animated: true, completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

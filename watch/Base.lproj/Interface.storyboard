@@ -105,8 +105,21 @@
                         <label width="1" alignment="left" hidden="YES" text="Last refresh" numberOfLines="2" id="6me-SD-2jn">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
+                        <group width="1" alignment="left" id="mnu-RW-r01">
+                            <items>
+                                <button width="0.5" alignment="left" title="Français" id="mnu-BT-fr1">
+                                    <connections>
+                                        <action selector="francaisButtonTapped" destination="AgC-eL-Hgc" id="mnu-AC-fr1"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="English" id="mnu-BT-en1">
+                                    <connections>
+                                        <action selector="englishButtonTapped" destination="AgC-eL-Hgc" id="mnu-AC-en1"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
-                    <menu key="menu" id="iB8-eH-vfl"/>
                     <connections>
                         <outlet property="cityLabel" destination="u5m-K4-Lrm" id="ZAO-E9-rya"/>
                         <outlet property="lastRefreshLabel" destination="6me-SD-2jn" id="ITo-E0-gbf"/>
@@ -115,6 +128,7 @@
                         <outlet property="selectCityButton" destination="ai4-HS-V5P" id="899-k6-Olf"/>
                         <outlet property="stationImage" destination="6bM-t3-3Q8" id="8lR-2P-Cjz"/>
                         <outlet property="weatherTable" destination="TYl-Sm-JJI" id="ulS-d7-dXp"/>
+
                     </connections>
                 </controller>
             </objects>

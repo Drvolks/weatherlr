@@ -36,15 +36,17 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         allCityList = CityHelper.loadAllCities()
         allCities = buildCityIndex(allCityList)
         allSections = buildSections(allCities)
-        
+
         resetSearch()
-        
+
         cityTable.delegate = self
         cityTable.dataSource = self
         searchText.delegate = self
-        
+
         cancelButton.isEnabled = true
-        
+
+        view.backgroundColor = .systemBackground
+        cityTable.backgroundColor = .systemGroupedBackground
         cityTable.sectionIndexBackgroundColor = UIColor.clear
     }
     
@@ -178,6 +180,8 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         let city = cityRow(indexPath)
         
         cell.cityLabel.text = CityHelper.cityName(city) + ", " + city.province.uppercased()
+        cell.cityLabel.textColor = .label
+        cell.backgroundColor = .secondarySystemGroupedBackground
 
         return cell
     }

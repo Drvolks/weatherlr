@@ -25,7 +25,8 @@ struct WeatherKitData {
     var precipitationMinutes: [(minuteOffset: Int, intensity: Double)] {
         guard let minutes = minuteForecast else { return [] }
         return minutes.enumerated().map { (index, minute) in
-            (minuteOffset: index, intensity: minute.precipitationIntensity.value)
+            let intensity = minute.precipitationChance > 0 ? minute.precipitationIntensity.value : 0
+            return (minuteOffset: index, intensity: intensity)
         }
     }
 

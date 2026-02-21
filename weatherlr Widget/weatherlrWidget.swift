@@ -149,7 +149,7 @@ struct WeatherTimelineProvider: TimelineProvider {
                 if let minutes = minuteForecast {
                     let hasAnyPrecip = minutes.contains { $0.precipitationChance > 0 }
                     if hasAnyPrecip {
-                        box.precipitationIntensities = minutes.map { $0.precipitationIntensity.value }
+                        box.precipitationIntensities = minutes.map { $0.precipitationChance > 0 ? $0.precipitationIntensity.value : 0 }
                     }
                 }
             } catch {
@@ -304,26 +304,27 @@ struct PrecipitationChart: View {
                 .foregroundStyle(.white)
 
             GeometryReader { geometry in
-                // Horizontal guide lines
-                Path { path in
-                    for fraction in [1.0 / 3.0, 2.0 / 3.0, 1.0] {
-                        let y = geometry.size.height * (1.0 - CGFloat(fraction))
-                        path.move(to: CGPoint(x: 0, y: y))
-                        path.addLine(to: CGPoint(x: geometry.size.width, y: y))
+                ZStack(alignment: .bottom) {
+                    // Horizontal guide lines
+                    Path { path in
+                        for fraction in [1.0 / 3.0, 2.0 / 3.0, 1.0] {
+                            let y = geometry.size.height * (1.0 - CGFloat(fraction))
+                            path.move(to: CGPoint(x: 0, y: y))
+                            path.addLine(to: CGPoint(x: geometry.size.width, y: y))
+                        }
                     }
-                }
-                .stroke(style: StrokeStyle(lineWidth: 0.5, dash: [3, 3]))
-                .foregroundStyle(.white.opacity(0.15))
+                    .stroke(style: StrokeStyle(lineWidth: 0.5, dash: [3, 3]))
+                    .foregroundStyle(.white.opacity(0.15))
 
-                HStack(alignment: .bottom, spacing: 1) {
-                    ForEach(0..<min(intensities.count, 60), id: \.self) { i in
-                        let normalized = min(intensities[i] / scaleMax, 1.0)
-                        Rectangle()
-                            .fill(barColor.opacity(0.9))
-                            .frame(height: max(CGFloat(normalized) * geometry.size.height, normalized > 0 ? 2 : 0))
+                    HStack(alignment: .bottom, spacing: 1) {
+                        ForEach(0..<min(intensities.count, 60), id: \.self) { i in
+                            let normalized = min(intensities[i] / scaleMax, 1.0)
+                            Rectangle()
+                                .fill(barColor.opacity(0.9))
+                                .frame(height: max(CGFloat(normalized) * geometry.size.height, normalized > 0 ? 2 : 0))
+                        }
                     }
                 }
-                .frame(maxHeight: .infinity, alignment: .bottom)
             }
 
             HStack {
@@ -349,7 +350,7 @@ struct MediumWeatherView: View {
 
     #if ENABLE_WEATHERKIT
     private var hasPrecipitation: Bool {
-        !entry.precipitationIntensities.isEmpty
+        entry.precipitationIntensities.contains { $0 > 0 }
     }
     #else
     private var hasPrecipitation: Bool {

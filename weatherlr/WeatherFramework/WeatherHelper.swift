@@ -459,7 +459,7 @@ public class WeatherHelper {
         }
     }
 
-    public static func image(for condition: WeatherCondition, night: Bool) -> UIImage {
+    public static func imageName(for condition: WeatherCondition, night: Bool) -> String {
         var status = weatherStatus(from: condition)
         if let substitute = getImageSubstitute(status) {
             status = substitute
@@ -470,14 +470,17 @@ public class WeatherHelper {
             status = .sunny
         }
 
-        if night {
-            if let nightName = getNightImageName(status),
-               let image = UIImage(named: nightName) {
-                return image
-            }
+        if night, let nightName = getNightImageName(status) {
+            return nightName
         }
 
-        if let image = UIImage(named: String(describing: status)) {
+        return String(describing: status)
+    }
+
+    public static func image(for condition: WeatherCondition, night: Bool) -> UIImage {
+        let name = imageName(for: condition, night: night)
+
+        if let image = UIImage(named: name) {
             return image
         }
 

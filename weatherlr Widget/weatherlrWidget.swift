@@ -164,16 +164,7 @@ struct WeatherTimelineProvider: TimelineProvider {
     }
 
     static func weatherImageNameForCondition(_ condition: WeatherCondition, night: Bool) -> String {
-        var status = WeatherHelper.weatherStatus(from: condition)
-        if let substitute = WeatherHelper.getImageSubstitute(status) {
-            status = substitute
-        }
-
-        if night, let nightName = WeatherHelper.getNightImageName(status) {
-            return nightName
-        }
-
-        return String(describing: status)
+        return WeatherHelper.imageName(for: condition, night: night)
     }
     #endif
 

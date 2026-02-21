@@ -147,20 +147,7 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
                 let condition = weather.condition
                 let night = !weather.isDaylight
 
-                var status = WeatherHelper.weatherStatus(from: condition)
-                if let substitute = WeatherHelper.getImageSubstitute(status) {
-                    status = substitute
-                }
-
-                if status == .clear && !night {
-                    status = .sunny
-                }
-
-                if night, let nightName = WeatherHelper.getNightImageName(status) {
-                    box.imageName = nightName
-                } else {
-                    box.imageName = String(describing: status)
-                }
+                box.imageName = WeatherHelper.imageName(for: condition, night: night)
             } catch {
                 #if DEBUG
                 print("WeatherKit watch widget error: \(error)")

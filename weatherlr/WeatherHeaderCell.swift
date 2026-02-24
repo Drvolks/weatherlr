@@ -35,7 +35,11 @@ class WeatherHeaderCell: UITableViewCell {
                         setCityWithStationIcon(pwsStationName ?? CityHelper.cityName(city))
                     } else {
                         temperatureLabel.text = String(weatherInfo.temperature) + "°"
-                        cityLabel.text = CityHelper.cityName(city)
+                        if let stationName = pwsStationName {
+                            setCityWithStationIcon(stationName)
+                        } else {
+                            cityLabel.text = CityHelper.cityName(city)
+                        }
                     }
 
                     return

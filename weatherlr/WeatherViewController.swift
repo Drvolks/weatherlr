@@ -307,6 +307,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let pws = pwsResult, let tempC = pws.observation.tempC {
             pwsStationName = pws.station.name
             pwsTemperature = Int(tempC.rounded())
+        } else {
+            pwsStationName = PWSService.shared.closestStationName(to: PreferenceHelper.getCityToUse())
         }
         header.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
         #else

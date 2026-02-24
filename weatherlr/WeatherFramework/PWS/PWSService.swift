@@ -47,6 +47,34 @@ class PWSService {
         return nil
     }
 
+    func closestStationName(to city: City) -> String? {
+        let stations = PreferenceHelper.getPWSStations()
+        guard !stations.isEmpty,
+              PreferenceHelper.hasPWSCredentials(),
+              let cityLat = Double(city.latitude),
+              let cityLon = Double(city.longitude) else {
+            return nil
+        }
+
+        let cityLocation = CLLocation(latitude: cityLat, longitude: cityLon)
+        var closestName: String?
+        var closestDistance: CLLocationDistance = .greatestFiniteMagnitude
+
+        for station in stations {
+            let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
+            let distance = cityLocation.distance(from: stationLocation)
+
+            guard distance < 50_000 else { continue }
+
+            if distance < closestDistance {
+                closestDistance = distance
+                closestName = station.name
+            }
+        }
+
+        return closestName
+    }
+
     func findClosestStation(to city: City) async -> (station: PWSStation, observation: WUObservation)? {
         let stations = PreferenceHelper.getPWSStations()
         guard !stations.isEmpty,

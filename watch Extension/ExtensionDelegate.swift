@@ -9,7 +9,8 @@
 import WatchKit
 import WatchConnectivity
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate, URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate  {
+@main
+class ExtensionDelegate: NSObject, WKApplicationDelegate, URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate  {
     var wrapper = WeatherInformationWrapper()
     let urlSessionConfig = URLSessionConfiguration.background(withIdentifier: Constants.backgroundDownloadTaskName)
     var savedTask:WKRefreshBackgroundTask?

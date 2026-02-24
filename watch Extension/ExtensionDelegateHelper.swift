@@ -38,7 +38,7 @@ class ExtensionDelegateHelper {
     }
     
     static func refreshNeeded() -> Bool {
-        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+        guard let delegate = WKApplication.shared().delegate as? ExtensionDelegate else {
             print("refreshNeeded: no delegate!")
             return true
         }
@@ -47,7 +47,7 @@ class ExtensionDelegateHelper {
     }
     
     static func resetWeather() {
-        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+        guard let delegate = WKApplication.shared().delegate as? ExtensionDelegate else {
             print("resetWeather: no delegate!")
             return
         }
@@ -56,7 +56,7 @@ class ExtensionDelegateHelper {
     }
     
     static func getWrapper() -> WeatherInformationWrapper {
-        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+        guard let delegate = WKApplication.shared().delegate as? ExtensionDelegate else {
             print("getWrapper: no delegate!")
             return WeatherInformationWrapper()
         }
@@ -65,7 +65,7 @@ class ExtensionDelegateHelper {
     }
     
     static func setWrapper(_ wrapper: WeatherInformationWrapper) {
-        guard let delegate = WKExtension.shared().delegate as? ExtensionDelegate else {
+        guard let delegate = WKApplication.shared().delegate as? ExtensionDelegate else {
             print("getWrapper: no delegate!")
             return
         }
@@ -86,7 +86,7 @@ class ExtensionDelegateHelper {
             print("scheduleRefresh")
         #endif
         
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: backgroundRefreshInSeconds), userInfo: nil) { (error: Error?) in
+        WKApplication.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: backgroundRefreshInSeconds), userInfo: nil) { (error: Error?) in
             if let error = error {
                 print("Error occured while calling scheduleBackgroundRefresh: \(error.localizedDescription)")
             }

@@ -22,14 +22,25 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>242</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Weatherlr will use your current location to find the nearest city</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Weatherlr will use your current location to find the nearest city</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>WKApplication</key>
+	<true/>
 	<key>WKCompanionAppBundleIdentifier</key>
 	<string>$(WK_COMPANION_BUNDLE_IDENTIFIER)</string>
-	<key>WKWatchKitApp</key>
+	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<true/>
 </dict>
 </plist>

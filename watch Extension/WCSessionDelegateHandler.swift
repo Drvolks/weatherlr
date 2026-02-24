@@ -60,5 +60,10 @@ class WCSessionDelegateHandler: NSObject, WCSessionDelegate {
         #endif
 
         WeatherHelper.cache.removeAllObjects()
+
+        Task { @MainActor in
+            WatchWeatherModel.shared.resetWeather()
+            WatchWeatherModel.shared.loadData(showError: false)
+        }
     }
 }

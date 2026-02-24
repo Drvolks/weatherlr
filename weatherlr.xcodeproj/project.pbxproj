@@ -43,16 +43,6 @@
 		6E29054C1CB2D5550040EB8B /* weatherlrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29054B1CB2D5550040EB8B /* weatherlrUITests.swift */; };
 		6E2905FF1CB2D5550040EB8B /* WatchSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2906001CB2D5550040EB8B /* WatchSyncManager.swift */; };
 		6E2BD7B52F450C1B00B80D3C /* WCSessionDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2BD7B42F450C1B00B80D3C /* WCSessionDelegateHandler.swift */; };
-		CC10000100000001WATCH001 /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH001 /* WatchApp.swift */; };
-		CC10000100000001WATCH002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH002 /* AppDelegate.swift */; };
-		CC10000100000001WATCH003 /* WatchWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH003 /* WatchWeatherModel.swift */; };
-		CC10000100000001WATCH004 /* BackgroundSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH004 /* BackgroundSessionDelegate.swift */; };
-		CC10000100000001WATCH005 /* LocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH005 /* LocationCoordinator.swift */; };
-		CC10000100000001WATCH006 /* WeatherContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH006 /* WeatherContentView.swift */; };
-		CC10000100000001WATCH007 /* CurrentWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH007 /* CurrentWeatherRow.swift */; };
-		CC10000100000001WATCH008 /* NextWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH008 /* NextWeatherRow.swift */; };
-		CC10000100000001WATCH009 /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH009 /* WeatherRow.swift */; };
-		CC10000100000001WATCH00A /* CityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00A /* CityPickerView.swift */; };
 		6E4910A21CC59629006D3C82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910A41CC59629006D3C82 /* Localizable.strings */; };
 		6E4910A91CC7E99A006D3C82 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910A81CC7E99A006D3C82 /* UIColorExtension.swift */; };
 		6E4910BE1CC90598006D3C82 /* CityDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910BD1CC90598006D3C82 /* CityDownloader.swift */; };
@@ -121,6 +111,16 @@
 		C355576B44FF3068ADCF6065 /* RssParserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96EE110F7C3D82719FE6B3B /* RssParserBase.swift */; };
 		C442392EDE50DD8FE3C93372 /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938B53ABA71309E34B89CE0 /* PreferenceHelperError.swift */; };
 		CB4B62750090A087DB3486D6 /* PreferenceHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938B53ABA71309E34B89CE0 /* PreferenceHelperError.swift */; };
+		CC10000100000001WATCH001 /* WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH001 /* WatchApp.swift */; };
+		CC10000100000001WATCH002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH002 /* AppDelegate.swift */; };
+		CC10000100000001WATCH003 /* WatchWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH003 /* WatchWeatherModel.swift */; };
+		CC10000100000001WATCH004 /* BackgroundSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH004 /* BackgroundSessionDelegate.swift */; };
+		CC10000100000001WATCH005 /* LocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH005 /* LocationCoordinator.swift */; };
+		CC10000100000001WATCH006 /* WeatherContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH006 /* WeatherContentView.swift */; };
+		CC10000100000001WATCH007 /* CurrentWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH007 /* CurrentWeatherRow.swift */; };
+		CC10000100000001WATCH008 /* NextWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH008 /* NextWeatherRow.swift */; };
+		CC10000100000001WATCH009 /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH009 /* WeatherRow.swift */; };
+		CC10000100000001WATCH00A /* CityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00A /* CityPickerView.swift */; };
 		CC22222222222222222222C2 /* JsonWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22222222222222222222A2 /* JsonWeatherParser.swift */; };
 		CC44444444444444444444C4 /* JsonWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22222222222222222222A2 /* JsonWeatherParser.swift */; };
 		CD6F9B3556F43D730A6FE30B /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6898273E6B4D6B8702EE1 /* UrlHelper.swift */; };
@@ -229,20 +229,6 @@
 			remoteGlobalIDString = 6EB1546C1D282B0D0005B02A;
 			remoteInfo = watch;
 		};
-		6EE41A331F82FB2200508FD8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6EE41A211F82FB2100508FD8;
-			remoteInfo = WeatherlrTv;
-		};
-		6EE41A3E1F82FB2200508FD8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6EE41A211F82FB2100508FD8;
-			remoteInfo = WeatherlrTv;
-		};
 		D10D0000000000000000000D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
@@ -329,16 +315,6 @@
 		6E29054D1CB2D5550040EB8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E2906001CB2D5550040EB8B /* WatchSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSyncManager.swift; sourceTree = "<group>"; };
 		6E2BD7B42F450C1B00B80D3C /* WCSessionDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCSessionDelegateHandler.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH001 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH003 /* WatchWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWeatherModel.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH004 /* BackgroundSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSessionDelegate.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH005 /* LocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinator.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH006 /* WeatherContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherContentView.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH007 /* CurrentWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherRow.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH008 /* NextWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeatherRow.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH009 /* WeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
-		CC00000100000001WATCH00A /* CityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerView.swift; sourceTree = "<group>"; };
 		6E4910A51CC5963E006D3C82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E4910A71CC59672006D3C82 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E4910A81CC7E99A006D3C82 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -382,9 +358,6 @@
 		6EB154921D284E6C0005B02A /* weatherlr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = weatherlr.entitlements; sourceTree = "<group>"; };
 		6EB154931D2853FE0005B02A /* watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = watch.entitlements; sourceTree = "<group>"; };
 		6EDC30131CF9B7D1006325EE /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
-		6EE41A221F82FB2100508FD8 /* WeatherlrTv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherlrTv.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EE41A321F82FB2200508FD8 /* WeatherlrTvTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherlrTvTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EE41A3D1F82FB2200508FD8 /* WeatherlrTvUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherlrTvUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxLabel.swift; sourceTree = "<group>"; };
 		6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangTableViewCell.swift; sourceTree = "<group>"; };
 		94FD89E5567BE1033F96C083 /* AlertInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
@@ -398,6 +371,16 @@
 		AA22222222222222222222A2 /* JsonWeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWeatherParser.swift; sourceTree = "<group>"; };
 		BDC544E32C5DD76F8D295070 /* WeatherInformationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformationWrapper.swift; sourceTree = "<group>"; };
 		C938B53ABA71309E34B89CE0 /* PreferenceHelperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceHelperError.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH001 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH003 /* WatchWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWeatherModel.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH004 /* BackgroundSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSessionDelegate.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH005 /* LocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinator.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH006 /* WeatherContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherContentView.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH007 /* CurrentWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherRow.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH008 /* NextWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeatherRow.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH009 /* WeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH00A /* CityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerView.swift; sourceTree = "<group>"; };
 		D10200000000000000000002 /* weatherlr Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "weatherlr Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10700000000000000000007 /* weatherlrWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherlrWidget.swift; sourceTree = "<group>"; };
 		D10800000000000000000008 /* weatherlrWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = weatherlrWidget.entitlements; sourceTree = "<group>"; };
@@ -439,27 +422,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6E2905441CB2D5550040EB8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EE41A1F1F82FB2100508FD8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EE41A2F1F82FB2200508FD8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EE41A3A1F82FB2200508FD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -528,9 +490,6 @@
 				6EB1546D1D282B0D0005B02A /* watch.app */,
 				D10200000000000000000002 /* weatherlr Widget.appex */,
 				E10200000000000000000002 /* watch Widget.appex */,
-				6EE41A221F82FB2100508FD8 /* WeatherlrTv.app */,
-				6EE41A321F82FB2200508FD8 /* WeatherlrTvTests.xctest */,
-				6EE41A3D1F82FB2200508FD8 /* WeatherlrTvUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -837,59 +796,6 @@
 			productReference = 6EB1546D1D282B0D0005B02A /* watch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6EE41A211F82FB2100508FD8 /* WeatherlrTv */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6EE41A4A1F82FB2300508FD8 /* Build configuration list for PBXNativeTarget "WeatherlrTv" */;
-			buildPhases = (
-				6EE41A1E1F82FB2100508FD8 /* Sources */,
-				6EE41A1F1F82FB2100508FD8 /* Frameworks */,
-				6EE41A201F82FB2100508FD8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WeatherlrTv;
-			productName = WeatherlrTv;
-			productReference = 6EE41A221F82FB2100508FD8 /* WeatherlrTv.app */;
-			productType = "com.apple.product-type.application";
-		};
-		6EE41A311F82FB2200508FD8 /* WeatherlrTvTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6EE41A4B1F82FB2300508FD8 /* Build configuration list for PBXNativeTarget "WeatherlrTvTests" */;
-			buildPhases = (
-				6EE41A2E1F82FB2200508FD8 /* Sources */,
-				6EE41A2F1F82FB2200508FD8 /* Frameworks */,
-				6EE41A301F82FB2200508FD8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6EE41A341F82FB2200508FD8 /* PBXTargetDependency */,
-			);
-			name = WeatherlrTvTests;
-			productName = WeatherlrTvTests;
-			productReference = 6EE41A321F82FB2200508FD8 /* WeatherlrTvTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		6EE41A3C1F82FB2200508FD8 /* WeatherlrTvUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6EE41A4C1F82FB2300508FD8 /* Build configuration list for PBXNativeTarget "WeatherlrTvUITests" */;
-			buildPhases = (
-				6EE41A391F82FB2200508FD8 /* Sources */,
-				6EE41A3A1F82FB2200508FD8 /* Frameworks */,
-				6EE41A3B1F82FB2200508FD8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6EE41A3F1F82FB2200508FD8 /* PBXTargetDependency */,
-			);
-			name = WeatherlrTvUITests;
-			productName = WeatherlrTvUITests;
-			productReference = 6EE41A3D1F82FB2200508FD8 /* WeatherlrTvUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		D10100000000000000000001 /* weatherlr Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D10A0000000000000000000A /* Build configuration list for PBXNativeTarget "weatherlr Widget" */;
@@ -975,23 +881,6 @@
 							};
 						};
 					};
-					6EE41A211F82FB2100508FD8 = {
-						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 654X66AK24;
-						ProvisioningStyle = Automatic;
-					};
-					6EE41A311F82FB2200508FD8 = {
-						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 654X66AK24;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 6EE41A211F82FB2100508FD8;
-					};
-					6EE41A3C1F82FB2200508FD8 = {
-						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 654X66AK24;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 6EE41A211F82FB2100508FD8;
-					};
 					D10100000000000000000001 = {
 						CreatedOnToolsVersion = 16.0;
 						DevelopmentTeam = 654X66AK24;
@@ -1034,9 +923,6 @@
 				6EB1546C1D282B0D0005B02A /* watch */,
 				6E29053B1CB2D5550040EB8B /* weatherlrTests */,
 				6E2905461CB2D5550040EB8B /* weatherlrUITests */,
-				6EE41A211F82FB2100508FD8 /* WeatherlrTv */,
-				6EE41A311F82FB2200508FD8 /* WeatherlrTvTests */,
-				6EE41A3C1F82FB2200508FD8 /* WeatherlrTvUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1090,27 +976,6 @@
 				A1B2C3D400000001AAAA0002 /* Secrets.plist in Resources */,
 				6EB154AC1D28766F0005B02A /* Assets.xcassets in Resources */,
 				6E4ED5A6233586EA00A44046 /* Cities.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EE41A201F82FB2100508FD8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EE41A301F82FB2200508FD8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EE41A3B1F82FB2200508FD8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1273,27 +1138,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6EE41A1E1F82FB2100508FD8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EE41A2E1F82FB2200508FD8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EE41A391F82FB2200508FD8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D10300000000000000000003 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1383,16 +1227,6 @@
 			isa = PBXTargetDependency;
 			target = 6EB1546C1D282B0D0005B02A /* watch */;
 			targetProxy = 6EB154871D282B0E0005B02A /* PBXContainerItemProxy */;
-		};
-		6EE41A341F82FB2200508FD8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6EE41A211F82FB2100508FD8 /* WeatherlrTv */;
-			targetProxy = 6EE41A331F82FB2200508FD8 /* PBXContainerItemProxy */;
-		};
-		6EE41A3F1F82FB2200508FD8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6EE41A211F82FB2100508FD8 /* WeatherlrTv */;
-			targetProxy = 6EE41A3E1F82FB2200508FD8 /* PBXContainerItemProxy */;
 		};
 		D10E0000000000000000000E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1562,7 +1396,7 @@
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1575,8 +1409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1594,7 +1427,7 @@
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = weatherlr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA";
@@ -1604,8 +1437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1706,15 +1538,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				INFOPLIST_FILE = watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1737,15 +1568,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				INFOPLIST_FILE = watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1759,179 +1589,12 @@
 			};
 			name = Release;
 		};
-		6EE41A441F82FB2300508FD8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTv/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTv;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = Debug;
-		};
-		6EE41A451F82FB2300508FD8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTv/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTv;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = Release;
-		};
-		6EE41A461F82FB2300508FD8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTvTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherlrTv.app/WeatherlrTv";
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = Debug;
-		};
-		6EE41A471F82FB2300508FD8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTvTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherlrTv.app/WeatherlrTv";
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = Release;
-		};
-		6EE41A481F82FB2300508FD8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTvUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_TARGET_NAME = WeatherlrTv;
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = Debug;
-		};
-		6EE41A491F82FB2300508FD8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTvUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_TARGET_NAME = WeatherlrTv;
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = Release;
-		};
 		D10B0000000000000000000B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -1940,8 +1603,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1956,7 +1618,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -1965,8 +1627,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2048,7 +1709,7 @@
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2061,8 +1722,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2119,15 +1779,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				INFOPLIST_FILE = watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2143,97 +1802,12 @@
 			};
 			name = DebugInternal;
 		};
-		D20A00000000000000000DA7 /* DebugInternal */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTv/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTv;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = DebugInternal;
-		};
-		D20A00000000000000000DA8 /* DebugInternal */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTvTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherlrTv.app/WeatherlrTv";
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = DebugInternal;
-		};
-		D20A00000000000000000DA9 /* DebugInternal */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTvUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_TARGET_NAME = WeatherlrTv;
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = DebugInternal;
-		};
 		D20A00000000000000000DAA /* DebugInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -2242,8 +1816,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2318,7 +1891,7 @@
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = weatherlr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA+";
@@ -2328,8 +1901,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2392,15 +1964,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				INFOPLIST_FILE = watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2415,94 +1986,12 @@
 			};
 			name = ReleaseInternal;
 		};
-		D20B00000000000000000DB7 /* ReleaseInternal */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTv/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTv;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = ReleaseInternal;
-		};
-		D20B00000000000000000DB8 /* ReleaseInternal */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTvTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherlrTv.app/WeatherlrTv";
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = ReleaseInternal;
-		};
-		D20B00000000000000000DB9 /* ReleaseInternal */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = WeatherlrTvUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.tv.WeatherlrTvUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_TARGET_NAME = WeatherlrTv;
-				TVOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = ReleaseInternal;
-		};
 		D20B00000000000000000DBA /* ReleaseInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -2511,8 +2000,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2529,7 +2017,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "watch Widget/watchWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "watch Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2537,8 +2025,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2555,7 +2042,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "watch Widget/watchWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "watch Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2563,8 +2050,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2583,7 +2069,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "watch Widget/watchWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "watch Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2591,8 +2077,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2609,7 +2094,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "watch Widget/watchWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 242;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "watch Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2617,8 +2102,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				CURRENT_PROJECT_VERSION = 242;
-				MARKETING_VERSION = 5;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2686,39 +2170,6 @@
 				6EB1548B1D282B0E0005B02A /* Release */,
 				D20A00000000000000000DA5 /* DebugInternal */,
 				D20B00000000000000000DB5 /* ReleaseInternal */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6EE41A4A1F82FB2300508FD8 /* Build configuration list for PBXNativeTarget "WeatherlrTv" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6EE41A441F82FB2300508FD8 /* Debug */,
-				6EE41A451F82FB2300508FD8 /* Release */,
-				D20A00000000000000000DA7 /* DebugInternal */,
-				D20B00000000000000000DB7 /* ReleaseInternal */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6EE41A4B1F82FB2300508FD8 /* Build configuration list for PBXNativeTarget "WeatherlrTvTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6EE41A461F82FB2300508FD8 /* Debug */,
-				6EE41A471F82FB2300508FD8 /* Release */,
-				D20A00000000000000000DA8 /* DebugInternal */,
-				D20B00000000000000000DB8 /* ReleaseInternal */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6EE41A4C1F82FB2300508FD8 /* Build configuration list for PBXNativeTarget "WeatherlrTvUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6EE41A481F82FB2300508FD8 /* Debug */,
-				6EE41A491F82FB2300508FD8 /* Release */,
-				D20A00000000000000000DA9 /* DebugInternal */,
-				D20B00000000000000000DB9 /* ReleaseInternal */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 class CellHelper {
     static func showHide(cell: UITableViewCell, offset: CGFloat, lastContentOffset: CGFloat) {
         let position = cell.frame.origin.y - offset

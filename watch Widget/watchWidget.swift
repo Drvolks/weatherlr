@@ -84,23 +84,12 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             let urlString = "https://api.weather.com/v2/pws/observations/current?stationId=\(station.stationId)&format=json&units=e&apiKey=\(apiKey)"
             guard let url = URL(string: urlString) else { continue }
 
-            let semaphore = DispatchSemaphore(value: 0)
-            var result: (Bool, Int?, String?) = (false, nil, nil)
+            guard let data = try? Data(contentsOf: url),
+                  let response = try? JSONDecoder().decode(WUResponse.self, from: data),
+                  let observation = response.observations?.first,
+                  let tempC = observation.tempC else { continue }
 
-            let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-                defer { semaphore.signal() }
-                guard let data = data,
-                      let response = try? JSONDecoder().decode(WUResponse.self, from: data),
-                      let observation = response.observations?.first,
-                      let tempC = observation.tempC else { return }
-                result = (true, Int(tempC.rounded()), station.name)
-            }
-            task.resume()
-            semaphore.wait()
-
-            if result.0 {
-                return result
-            }
+            return (true, Int(tempC.rounded()), station.name)
         }
 
         return (false, nil, nil)
@@ -112,18 +101,11 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             return WeatherInformationWrapper()
         }
 
-        let semaphore = DispatchSemaphore(value: 0)
-        var result = WeatherInformationWrapper()
-
-        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-            defer { semaphore.signal() }
-            guard let data = data else { return }
-            result = WeatherHelper.getWeatherInformationsNoCache(data, city: city)
+        guard let data = try? Data(contentsOf: url) else {
+            return WeatherInformationWrapper()
         }
-        task.resume()
-        semaphore.wait()
 
-        return result
+        return WeatherHelper.getWeatherInformationsNoCache(data, city: city)
     }
 
     #if ENABLE_WEATHERKIT

@@ -197,11 +197,13 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
 
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
-            guard let self = self, !self.timeSteps.isEmpty else { return }
-            self.currentFrameIndex = (self.currentFrameIndex + 1) % self.timeSteps.count
-            self.timeSlider.value = Float(self.currentFrameIndex)
-            self.updateTimeLabel()
-            self.applyCurrentFrame()
+            MainActor.assumeIsolated {
+                guard let self = self, !self.timeSteps.isEmpty else { return }
+                self.currentFrameIndex = (self.currentFrameIndex + 1) % self.timeSteps.count
+                self.timeSlider.value = Float(self.currentFrameIndex)
+                self.updateTimeLabel()
+                self.applyCurrentFrame()
+            }
         }
     }
 

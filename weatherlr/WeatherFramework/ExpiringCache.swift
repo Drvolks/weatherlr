@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ExpiringCache<T> {
+class ExpiringCache<T>: @unchecked Sendable {
     private var cache = [String: T]()
     private let lock = NSLock()
     private let defaultTimeout: TimeInterval = 60 * Double(Global.weatherCacheInMinutes)

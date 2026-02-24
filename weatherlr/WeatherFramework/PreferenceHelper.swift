@@ -47,7 +47,9 @@ public class PreferenceHelper {
                 }
             }
 
-            UIApplication.shared.shortcutItems = shortcutItems
+            DispatchQueue.main.async {
+                UIApplication.shared.shortcutItems = shortcutItems
+            }
         #endif
     }
     
@@ -65,7 +67,9 @@ public class PreferenceHelper {
 
             // Fall back to legacy NSKeyedArchiver format and auto-migrate
             LegacyCity.registerClassMappings()
-            if let legacyCities = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [LegacyCity] {
+            let unarchiver1 = try? NSKeyedUnarchiver(forReadingFrom: data)
+            unarchiver1?.requiresSecureCoding = false
+            if let legacyCities = unarchiver1?.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as? [LegacyCity] {
                 let cities = legacyCities.map { $0.toCity() }
                 saveFavoriteCities(cities)
                 var result = cities
@@ -126,7 +130,9 @@ public class PreferenceHelper {
 
         // Fall back to legacy NSKeyedArchiver format and auto-migrate
         LegacyCity.registerClassMappings()
-        if let legacyCity = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? LegacyCity {
+        let unarchiver2 = try? NSKeyedUnarchiver(forReadingFrom: data)
+        unarchiver2?.requiresSecureCoding = false
+        if let legacyCity = unarchiver2?.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as? LegacyCity {
             let city = legacyCity.toCity()
             // Re-save in modern format
             let encoded = try! JSONEncoder().encode(city)
@@ -311,7 +317,7 @@ public class PreferenceHelper {
         defaults.set(data, forKey: Global.pwsStationsKey)
     }
 
-    private nonisolated(unsafe) static let secretsPlist: [String: String]? = {
+    private static let secretsPlist: [String: String]? = {
         guard let url = Bundle.main.url(forResource: "Secrets", withExtension: "plist"),
               let data = try? Data(contentsOf: url),
               let dict = try? PropertyListSerialization.propertyList(from: data, format: nil) as? [String: String] else {

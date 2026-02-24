@@ -9,7 +9,7 @@
 import Foundation
 import WatchConnectivity
 
-class WatchSyncManager: NSObject, @preconcurrency WCSessionDelegate {
+class WatchSyncManager: NSObject, WCSessionDelegate {
     nonisolated(unsafe) static let shared = WatchSyncManager()
 
     private override init() {

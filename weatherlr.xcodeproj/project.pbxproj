@@ -84,7 +84,6 @@
 		6EAA0E6E1E6646110023DB15 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4910A81CC7E99A006D3C82 /* UIColorExtension.swift */; };
 		6EAE930923381B7B00C72255 /* ModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE930823381B7B00C72255 /* ModalDelegate.swift */; };
 		6EB154711D282B0D0005B02A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB1546F1D282B0D0005B02A /* Interface.storyboard */; };
-		6EB1547A1D282B0E0005B02A /* watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6EB154791D282B0D0005B02A /* watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6EB1547F1D282B0E0005B02A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB1547E1D282B0E0005B02A /* InterfaceController.swift */; };
 		6EB154811D282B0E0005B02A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB154801D282B0E0005B02A /* ExtensionDelegate.swift */; };
 		6EB154891D282B0E0005B02A /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6EB1546D1D282B0D0005B02A /* watch.app */; };
@@ -197,7 +196,7 @@
 		E1B01E00000000000000B01E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E4910A41CC59629006D3C82 /* Localizable.strings */; };
 		E1B01F00000000000000B01F /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
 		E1B02000000000000000B020 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000001AAAA0000 /* Secrets.plist */; };
-		E1B02100000000000000B021 /* watch Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E10200000000000000000002 /* watch Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1B02100000000000000B021 /* watch Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E10200000000000000000002 /* watch Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E252005989CEF249D95CB6F5 /* LocationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6FB581650FDC090BABB9B /* LocationServicesDelegate.swift */; };
 		E98870E878869244EC02A828 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C35C05D39F0641C27E887 /* Global.swift */; };
 		F1A1B1C1D1E1F10111213141 /* PWSStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1C1D1E1F1011121314151 /* PWSStation.swift */; };
@@ -222,13 +221,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6E2905271CB2D5550040EB8B;
 			remoteInfo = weatherlr;
-		};
-		6EB1547B1D282B0E0005B02A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E2905201CB2D5550040EB8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6EB154781D282B0D0005B02A;
-			remoteInfo = "watch Extension";
 		};
 		6EB154871D282B0E0005B02A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -268,16 +260,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6EB1548F1D282B0E0005B02A /* Embed App Extensions */ = {
+		6EB1548F1D282B0E0005B02A /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				6EB1547A1D282B0E0005B02A /* watch Extension.appex in Embed App Extensions */,
-				E1B02100000000000000B021 /* watch Widget.appex in Embed App Extensions */,
+				E1B02100000000000000B021 /* watch Widget.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6EB154911D282B0E0005B02A /* Embed Watch Content */ = {
@@ -379,7 +370,6 @@
 		6EB154701D282B0D0005B02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		6EB154721D282B0D0005B02A /* AssetsWatch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsWatch.xcassets; sourceTree = "<group>"; };
 		6EB154741D282B0D0005B02A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6EB154791D282B0D0005B02A /* watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB1547E1D282B0E0005B02A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		6EB154801D282B0E0005B02A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		6EB154861D282B0E0005B02A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -448,13 +438,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6E2905441CB2D5550040EB8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EB154761D282B0D0005B02A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -542,7 +525,6 @@
 				6E29053C1CB2D5550040EB8B /* weatherlrTests.xctest */,
 				6E2905471CB2D5550040EB8B /* weatherlrUITests.xctest */,
 				6EB1546D1D282B0D0005B02A /* watch.app */,
-				6EB154791D282B0D0005B02A /* watch Extension.appex */,
 				D10200000000000000000002 /* weatherlr Widget.appex */,
 				E10200000000000000000002 /* watch Widget.appex */,
 				6EE41A221F82FB2100508FD8 /* WeatherlrTv.app */,
@@ -839,36 +821,19 @@
 			buildConfigurationList = 6EB154901D282B0E0005B02A /* Build configuration list for PBXNativeTarget "watch" */;
 			buildPhases = (
 				6EB1546B1D282B0D0005B02A /* Resources */,
-				6EB1548F1D282B0E0005B02A /* Embed App Extensions */,
+				6EB1548F1D282B0E0005B02A /* Embed Foundation Extensions */,
 				1F89BFE6D675F74917AD934E /* Frameworks */,
+				6EB154751D282B0D0005B02A /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6EB1547C1D282B0E0005B02A /* PBXTargetDependency */,
 				E10E0000000000000000000E /* PBXTargetDependency */,
 			);
 			name = watch;
 			productName = watch;
 			productReference = 6EB1546D1D282B0D0005B02A /* watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		6EB154781D282B0D0005B02A /* watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6EB1548E1D282B0E0005B02A /* Build configuration list for PBXNativeTarget "watch Extension" */;
-			buildPhases = (
-				6EB154751D282B0D0005B02A /* Sources */,
-				6EB154761D282B0D0005B02A /* Frameworks */,
-				6EB154771D282B0D0005B02A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "watch Extension";
-			productName = "watch Extension";
-			productReference = 6EB154791D282B0D0005B02A /* watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			productType = "com.apple.product-type.application";
 		};
 		6EE41A211F82FB2100508FD8 /* WeatherlrTv */ = {
 			isa = PBXNativeTarget;
@@ -963,8 +928,9 @@
 		6E2905201CB2D5550040EB8B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2620;
 				ORGANIZATIONNAME = "Jean-Francois Dufour";
 				TargetAttributes = {
 					6E2905271CB2D5550040EB8B = {
@@ -1001,16 +967,6 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 654X66AK24;
 						LastSwiftMigration = 0900;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					6EB154781D282B0D0005B02A = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 654X66AK24;
-						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1058,10 +1014,9 @@
 			};
 			buildConfigurationList = 6E2905231CB2D5550040EB8B /* Build configuration list for PBXProject "weatherlr" */;
 			compatibilityVersion = "Xcode 11.4";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 				fr,
@@ -1075,7 +1030,6 @@
 				D10100000000000000000001 /* weatherlr Widget */,
 				E10100000000000000000001 /* watch Widget */,
 				6EB1546C1D282B0D0005B02A /* watch */,
-				6EB154781D282B0D0005B02A /* watch Extension */,
 				6E29053B1CB2D5550040EB8B /* weatherlrTests */,
 				6E2905461CB2D5550040EB8B /* weatherlrUITests */,
 				6EE41A211F82FB2100508FD8 /* WeatherlrTv */,
@@ -1129,20 +1083,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E91639520F41C9200E11DD8 /* AssetsWatch.xcassets in Resources */,
-				6EB154711D282B0D0005B02A /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EB154771D282B0D0005B02A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6EAA0E6C1E6645020023DB15 /* AssetsWatch.xcassets in Resources */,
-				6EB154AC1D28766F0005B02A /* Assets.xcassets in Resources */,
 				6EB154A71D2867930005B02A /* Localizable.strings in Resources */,
-				6E4ED5A6233586EA00A44046 /* Cities.plist in Resources */,
+				6EAA0E6C1E6645020023DB15 /* AssetsWatch.xcassets in Resources */,
 				A1B2C3D400000001AAAA0002 /* Secrets.plist in Resources */,
+				6E91639520F41C9200E11DD8 /* AssetsWatch.xcassets in Resources */,
+				6EB154AC1D28766F0005B02A /* Assets.xcassets in Resources */,
+				6EB154711D282B0D0005B02A /* Interface.storyboard in Resources */,
+				6E4ED5A6233586EA00A44046 /* Cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1430,11 +1377,6 @@
 			target = 6E2905271CB2D5550040EB8B /* weatherlr */;
 			targetProxy = 6E2905481CB2D5550040EB8B /* PBXContainerItemProxy */;
 		};
-		6EB1547C1D282B0E0005B02A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6EB154781D282B0D0005B02A /* watch Extension */;
-			targetProxy = 6EB1547B1D282B0E0005B02A /* PBXContainerItemProxy */;
-		};
 		6EB154881D282B0E0005B02A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6EB1546C1D282B0D0005B02A /* watch */;
@@ -1532,8 +1474,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 654X66AK24;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1552,6 +1496,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1591,8 +1536,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 654X66AK24;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1604,6 +1551,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.2;
@@ -1621,7 +1569,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1653,7 +1600,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = weatherlr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA";
@@ -1679,7 +1625,6 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CURRENT_PROJECT_VERSION = 111;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1700,7 +1645,6 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CURRENT_PROJECT_VERSION = 111;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1722,7 +1666,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 111;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1742,7 +1685,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 111;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1766,16 +1708,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				BUNDLE_DISPLAY_NAME = "PréviCA";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
-				IBSC_MODULE = watch_Extension;
 				INFOPLIST_FILE = watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
@@ -1798,16 +1738,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				BUNDLE_DISPLAY_NAME = "PréviCA";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
-				IBSC_MODULE = watch_Extension;
 				INFOPLIST_FILE = watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
@@ -1820,67 +1758,6 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
 				WK_COMPANION_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
-			};
-			name = Release;
-		};
-		6EB1548C1D282B0E0005B02A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
-				INFOPLIST_FILE = "watch Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 5;
-				OTHER_SWIFT_FLAGS = "-DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				WATCHOS_DEPLOYMENT_TARGET = 26.0;
-				WK_APP_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
-			};
-			name = Debug;
-		};
-		6EB1548D1D282B0E0005B02A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
-				INFOPLIST_FILE = "watch Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				WATCHOS_DEPLOYMENT_TARGET = 26.0;
-				WK_APP_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 			};
 			name = Release;
 		};
@@ -1898,7 +1775,6 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1930,7 +1806,6 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1956,7 +1831,6 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTvTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1984,7 +1858,6 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTvTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2010,7 +1883,6 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTvUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2037,7 +1909,6 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTvUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2061,7 +1932,6 @@
 				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -2086,7 +1956,6 @@
 				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -2140,8 +2009,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 654X66AK24;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2160,6 +2031,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2175,7 +2047,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2203,7 +2074,6 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CURRENT_PROJECT_VERSION = 111;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2223,7 +2093,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 111;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2245,16 +2114,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				BUNDLE_DISPLAY_NAME = "PréviCA+";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
-				IBSC_MODULE = watch_Extension;
 				INFOPLIST_FILE = watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
@@ -2268,36 +2135,6 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
 				WK_COMPANION_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
-			};
-			name = DebugInternal;
-		};
-		D20A00000000000000000DA6 /* DebugInternal */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
-				INFOPLIST_FILE = "watch Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 5;
-				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_WEATHERKIT";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				WATCHOS_DEPLOYMENT_TARGET = 26.0;
-				WK_APP_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 			};
 			name = DebugInternal;
 		};
@@ -2315,7 +2152,6 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2342,7 +2178,6 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTvTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2369,7 +2204,6 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTvUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2394,7 +2228,6 @@
 				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -2446,8 +2279,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 654X66AK24;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2459,6 +2294,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.2;
@@ -2476,7 +2312,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = weatherlr/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PréviCA+";
@@ -2503,7 +2338,6 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CURRENT_PROJECT_VERSION = 111;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2525,7 +2359,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 111;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				INFOPLIST_FILE = weatherlrUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2549,16 +2382,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				BUNDLE_DISPLAY_NAME = "PréviCA+";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = watch/watch.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
-				IBSC_MODULE = watch_Extension;
 				INFOPLIST_FILE = watch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
@@ -2571,38 +2402,6 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 26.0;
 				WK_COMPANION_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
-			};
-			name = ReleaseInternal;
-		};
-		D20B00000000000000000DB6 /* ReleaseInternal */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
-				INFOPLIST_FILE = "watch Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 5;
-				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_WEATHERKIT";
-				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				WATCHOS_DEPLOYMENT_TARGET = 26.0;
-				WK_APP_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 			};
 			name = ReleaseInternal;
 		};
@@ -2620,7 +2419,6 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2646,7 +2444,6 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTvTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2672,7 +2469,6 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WeatherlrTvUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2696,7 +2492,6 @@
 				CODE_SIGN_ENTITLEMENTS = "weatherlr Widget/weatherlrWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "weatherlr Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -2723,7 +2518,6 @@
 				CODE_SIGN_ENTITLEMENTS = "watch Widget/watchWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "watch Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2749,7 +2543,6 @@
 				CODE_SIGN_ENTITLEMENTS = "watch Widget/watchWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "watch Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2777,7 +2570,6 @@
 				CODE_SIGN_ENTITLEMENTS = "watch Widget/watchWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "watch Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2803,7 +2595,6 @@
 				CODE_SIGN_ENTITLEMENTS = "watch Widget/watchWidget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 113;
-				DEVELOPMENT_TEAM = 654X66AK24;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "watch Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2868,17 +2659,6 @@
 				6E2905581CB2D5550040EB8B /* Release */,
 				D20A00000000000000000DA4 /* DebugInternal */,
 				D20B00000000000000000DB4 /* ReleaseInternal */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6EB1548E1D282B0E0005B02A /* Build configuration list for PBXNativeTarget "watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6EB1548C1D282B0E0005B02A /* Debug */,
-				6EB1548D1D282B0E0005B02A /* Release */,
-				D20A00000000000000000DA6 /* DebugInternal */,
-				D20B00000000000000000DB6 /* ReleaseInternal */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

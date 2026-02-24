@@ -105,7 +105,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, @preconcur
             print("refreshDisplay")
         #endif
 
-        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        let watchDelegate = WKApplication.shared().delegate as! ExtensionDelegate
 
         cityLabel.setHidden(false)
         setCityName("Loading".localized())
@@ -223,7 +223,7 @@ class InterfaceController: WKInterfaceController, URLSessionDelegate, @preconcur
     }
     
     func rowTypesValid() -> Bool {
-        let watchDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        let watchDelegate = WKApplication.shared().delegate as! ExtensionDelegate
         let wrapper = watchDelegate.wrapper
         
         if rowTypes.count == 0 || wrapper.weatherInformations.count == 0 {

@@ -40,15 +40,18 @@ struct WeatherTimelineProvider: TimelineProvider {
         WeatherEntry(date: Date(), cityName: "---", temperature: 0, weatherImageName: "na", hasPWS: false, forecasts: [], longTermForecast: nil, precipitationIntensities: [], hasData: false)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (WeatherEntry) -> Void) {
+    func getSnapshot(in context: Context, completion: @escaping @Sendable (WeatherEntry) -> Void) {
         if context.isPreview {
             completion(placeholder(in: context))
         } else {
-            completion(buildEntry())
+            DispatchQueue.global(qos: .userInitiated).async {
+                completion(self.buildEntry())
+            }
         }
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<WeatherEntry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<WeatherEntry>) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
         let city = PreferenceHelper.getCityToUse()
         let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
 
@@ -67,6 +70,7 @@ struct WeatherTimelineProvider: TimelineProvider {
         let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
         let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
         completion(timeline)
+        }
     }
 
     #if ENABLE_PWS

@@ -33,34 +33,38 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         WatchWeatherEntry(date: Date(), cityName: "---", temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false, minTemperature: nil, maxTemperature: nil)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (WatchWeatherEntry) -> Void) {
+    func getSnapshot(in context: Context, completion: @escaping @Sendable (WatchWeatherEntry) -> Void) {
         if context.isPreview {
             completion(placeholder(in: context))
         } else {
-            completion(buildEntry())
+            DispatchQueue.global(qos: .userInitiated).async {
+                completion(self.buildEntry())
+            }
         }
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<WatchWeatherEntry>) -> Void) {
-        let city = PreferenceHelper.getCityToUse()
-        let wrapper = Self.fetchWeatherSync(for: city)
+    func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<WatchWeatherEntry>) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let city = PreferenceHelper.getCityToUse()
+            let wrapper = Self.fetchWeatherSync(for: city)
 
-        #if ENABLE_PWS
-        let pws = Self.fetchPWSSync(for: city)
-        #else
-        let pws = (hasPWS: false, temperature: nil as Int?, stationName: nil as String?)
-        #endif
+            #if ENABLE_PWS
+            let pws = Self.fetchPWSSync(for: city)
+            #else
+            let pws = (hasPWS: false, temperature: nil as Int?, stationName: nil as String?)
+            #endif
 
-        #if ENABLE_WEATHERKIT
-        let wkImageName = Self.fetchWeatherKitImageSync(for: city)
-        #else
-        let wkImageName: String? = nil
-        #endif
+            #if ENABLE_WEATHERKIT
+            let wkImageName = Self.fetchWeatherKitImageSync(for: city)
+            #else
+            let wkImageName: String? = nil
+            #endif
 
-        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, weatherKitImageName: wkImageName)
-        let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
-        let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
-        completion(timeline)
+            let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, weatherKitImageName: wkImageName)
+            let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
+            let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
+            completion(timeline)
+        }
     }
 
     #if ENABLE_PWS

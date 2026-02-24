@@ -105,7 +105,9 @@ public class CityHelper {
 
             // Fall back to legacy NSKeyedArchiver format
             LegacyCity.registerClassMappings()
-            if let legacyCities = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? [LegacyCity] {
+            let unarchiver = try NSKeyedUnarchiver(forReadingFrom: rawdata)
+            unarchiver.requiresSecureCoding = false
+            if let legacyCities = unarchiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as? [LegacyCity] {
                 return legacyCities.map { $0.toCity() }
             }
         } catch {

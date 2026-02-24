@@ -16,7 +16,7 @@ class GradientView: UIView {
     
     func gradientWithColors(_ firstColor : UIColor, _ secondColor : UIColor) {
         
-        let deviceScale = UIScreen.main.scale
+        let deviceScale = traitCollection.displayScale
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0.0, y: 300, width: self.frame.size.width * deviceScale, height: self.frame.size.height * deviceScale)
         gradientLayer.colors = [ firstColor.cgColor, secondColor.cgColor ]

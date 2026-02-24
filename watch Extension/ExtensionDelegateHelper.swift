@@ -10,6 +10,7 @@ import Foundation
 import WatchKit
 import WidgetKit
 
+@MainActor
 class ExtensionDelegateHelper {
     static func launchURLSessionNow(_ delegate: URLSessionDelegate) {
         #if DEBUG

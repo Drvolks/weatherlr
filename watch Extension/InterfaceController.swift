@@ -14,7 +14,7 @@ import UIKit
 import WeatherKit
 #endif
 
-class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate, @preconcurrency LocationServicesDelegate {
+class InterfaceController: WKInterfaceController, URLSessionDelegate, @preconcurrency URLSessionDownloadDelegate, @preconcurrency LocationServicesDelegate {
     
     
     @IBOutlet var cityLabel: WKInterfaceLabel!
@@ -477,7 +477,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         stationImage.setHidden(false)
     }
 
-    static func closestStationName(for city: City?) -> String? {
+    nonisolated static func closestStationName(for city: City?) -> String? {
         guard let city = city else { return nil }
 
         let stations = PreferenceHelper.getPWSStations()
@@ -505,7 +505,7 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         return closestName
     }
 
-    static func fetchPWSSync(for city: City?) -> (temperature: Int?, stationName: String?) {
+    nonisolated static func fetchPWSSync(for city: City?) -> (temperature: Int?, stationName: String?) {
         guard let city = city else { return (nil, nil) }
 
         let stations = PreferenceHelper.getPWSStations()
@@ -527,23 +527,12 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
             let urlString = "https://api.weather.com/v2/pws/observations/current?stationId=\(station.stationId)&format=json&units=e&apiKey=\(apiKey)"
             guard let url = URL(string: urlString) else { continue }
 
-            let semaphore = DispatchSemaphore(value: 0)
-            var result: (Int?, String?) = (nil, nil)
+            guard let data = try? Data(contentsOf: url),
+                  let response = try? JSONDecoder().decode(WUResponse.self, from: data),
+                  let observation = response.observations?.first,
+                  let tempC = observation.tempC else { continue }
 
-            let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-                defer { semaphore.signal() }
-                guard let data = data,
-                      let response = try? JSONDecoder().decode(WUResponse.self, from: data),
-                      let observation = response.observations?.first,
-                      let tempC = observation.tempC else { return }
-                result = (Int(tempC.rounded()), station.name)
-            }
-            task.resume()
-            semaphore.wait()
-
-            if result.0 != nil {
-                return result
-            }
+            return (Int(tempC.rounded()), station.name)
         }
 
         return (nil, nil)

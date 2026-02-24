@@ -15,10 +15,6 @@
 		28F4AD9286B42D623C2A3842 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC3E4C6D87F1F471233B0FD /* WeatherInformation.swift */; };
 		2902739DA1C886161AF0C846 /* RssEntryToWeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7B94416CFB79B2E9AFBE1 /* RssEntryToWeatherInformation.swift */; };
 		2D141E89145D4B638E9D4635 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
-		AA11BB22CC33DD44EE55FF01 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
-		AA11BB22CC33DD44EE55FF02 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
-		AA11BB22CC33DD44EE55FF03 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
-		AA11BB22CC33DD44EE55FF04 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
 		2D8FFCE61B1C7E3B0B04C986 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB93945D670C63472B0D736 /* LocationServices.swift */; };
 		2E048F6ACF2AA7D744E857EC /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC3E4C6D87F1F471233B0FD /* WeatherInformation.swift */; };
 		2F5CD4ED6434465AAABC6506 /* HourlyItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F3AC54DD341A39D5EF6F4 /* HourlyItemCell.swift */; };
@@ -101,12 +97,6 @@
 		6EB155311D31531C0005B02A /* SelectCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155301D31531C0005B02A /* SelectCityController.swift */; };
 		6EB155371D3162AD0005B02A /* CityRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB155361D3162AD0005B02A /* CityRowController.swift */; };
 		6EDC30141CF9B7D1006325EE /* cities5 in Resources */ = {isa = PBXBuildFile; fileRef = 6EDC30131CF9B7D1006325EE /* cities5 */; };
-		6EE41A251F82FB2200508FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE41A241F82FB2200508FD8 /* AppDelegate.swift */; };
-		6EE41A271F82FB2200508FD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE41A261F82FB2200508FD8 /* ViewController.swift */; };
-		6EE41A2A1F82FB2200508FD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE41A281F82FB2200508FD8 /* Main.storyboard */; };
-		6EE41A2C1F82FB2200508FD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EE41A2B1F82FB2200508FD8 /* Assets.xcassets */; };
-		6EE41A371F82FB2200508FD8 /* WeatherlrTvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE41A361F82FB2200508FD8 /* WeatherlrTvTests.swift */; };
-		6EE41A421F82FB2300508FD8 /* WeatherlrTvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE41A411F82FB2300508FD8 /* WeatherlrTvUITests.swift */; };
 		6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */; };
 		6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */; };
 		6FD0CE0B6DAC5B5CAE5324C5 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D00EB2864B75E5EB9204ED /* RssParser.swift */; };
@@ -119,6 +109,10 @@
 		A1B2C3D400000001AAAA0001 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000001AAAA0000 /* Secrets.plist */; };
 		A1B2C3D400000001AAAA0002 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000001AAAA0000 /* Secrets.plist */; };
 		A1B2C3D4WMSTILE00000001 /* WMSTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4WMSTILE00000000 /* WMSTileOverlay.swift */; };
+		AA11BB22CC33DD44EE55FF01 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
+		AA11BB22CC33DD44EE55FF02 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
+		AA11BB22CC33DD44EE55FF03 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
+		AA11BB22CC33DD44EE55FF04 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
 		B2C48483FE45B1A1FF7C3E5E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF41E4B20D534DAC338FA1 /* StringExtension.swift */; };
 		BB22222222222222222222B2 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11111111111111111111A1 /* WeatherApiResponse.swift */; };
 		BB44444444444444444444B4 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11111111111111111111A1 /* WeatherApiResponse.swift */; };
@@ -398,17 +392,8 @@
 		6EB155361D3162AD0005B02A /* CityRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityRowController.swift; sourceTree = "<group>"; };
 		6EDC30131CF9B7D1006325EE /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
 		6EE41A221F82FB2100508FD8 /* WeatherlrTv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherlrTv.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EE41A241F82FB2200508FD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6EE41A261F82FB2200508FD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6EE41A291F82FB2200508FD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6EE41A2B1F82FB2200508FD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6EE41A2D1F82FB2200508FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EE41A321F82FB2200508FD8 /* WeatherlrTvTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherlrTvTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EE41A361F82FB2200508FD8 /* WeatherlrTvTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherlrTvTests.swift; sourceTree = "<group>"; };
-		6EE41A381F82FB2200508FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EE41A3D1F82FB2200508FD8 /* WeatherlrTvUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherlrTvUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EE41A411F82FB2300508FD8 /* WeatherlrTvUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherlrTvUITests.swift; sourceTree = "<group>"; };
-		6EE41A431F82FB2300508FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxLabel.swift; sourceTree = "<group>"; };
 		6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangTableViewCell.swift; sourceTree = "<group>"; };
 		94FD89E5567BE1033F96C083 /* AlertInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
@@ -545,9 +530,6 @@
 				6EB1547D1D282B0E0005B02A /* watch Extension */,
 				D10600000000000000000006 /* weatherlr Widget */,
 				E10600000000000000000006 /* watch Widget */,
-				6EE41A231F82FB2200508FD8 /* WeatherlrTv */,
-				6EE41A351F82FB2200508FD8 /* WeatherlrTvTests */,
-				6EE41A401F82FB2200508FD8 /* WeatherlrTvUITests */,
 				6E2905291CB2D5550040EB8B /* Products */,
 				9799B631E60476874FB40063 /* Frameworks */,
 			);
@@ -690,36 +672,6 @@
 				6EAA0E6A1E663C150023DB15 /* WatchImageHelper.swift */,
 			);
 			path = "watch Extension";
-			sourceTree = "<group>";
-		};
-		6EE41A231F82FB2200508FD8 /* WeatherlrTv */ = {
-			isa = PBXGroup;
-			children = (
-				6EE41A241F82FB2200508FD8 /* AppDelegate.swift */,
-				6EE41A261F82FB2200508FD8 /* ViewController.swift */,
-				6EE41A281F82FB2200508FD8 /* Main.storyboard */,
-				6EE41A2B1F82FB2200508FD8 /* Assets.xcassets */,
-				6EE41A2D1F82FB2200508FD8 /* Info.plist */,
-			);
-			path = WeatherlrTv;
-			sourceTree = "<group>";
-		};
-		6EE41A351F82FB2200508FD8 /* WeatherlrTvTests */ = {
-			isa = PBXGroup;
-			children = (
-				6EE41A361F82FB2200508FD8 /* WeatherlrTvTests.swift */,
-				6EE41A381F82FB2200508FD8 /* Info.plist */,
-			);
-			path = WeatherlrTvTests;
-			sourceTree = "<group>";
-		};
-		6EE41A401F82FB2200508FD8 /* WeatherlrTvUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6EE41A411F82FB2300508FD8 /* WeatherlrTvUITests.swift */,
-				6EE41A431F82FB2300508FD8 /* Info.plist */,
-			);
-			path = WeatherlrTvUITests;
 			sourceTree = "<group>";
 		};
 		79A41AEC2020A9F0FEEEDB3E /* Weather */ = {
@@ -1198,8 +1150,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EE41A2C1F82FB2200508FD8 /* Assets.xcassets in Resources */,
-				6EE41A2A1F82FB2200508FD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1378,8 +1328,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EE41A271F82FB2200508FD8 /* ViewController.swift in Sources */,
-				6EE41A251F82FB2200508FD8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1387,7 +1335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EE41A371F82FB2200508FD8 /* WeatherlrTvTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1395,7 +1342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EE41A421F82FB2300508FD8 /* WeatherlrTvUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1550,14 +1496,6 @@
 			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
-		6EE41A281F82FB2200508FD8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6EE41A291F82FB2200508FD8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1677,7 +1615,6 @@
 		6E2905511CB2D5550040EB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "PréviCA";
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
@@ -1710,7 +1647,6 @@
 		6E2905521CB2D5550040EB8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "PréviCA";
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
@@ -1827,7 +1763,6 @@
 		6EB1548A1D282B0E0005B02A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				BUNDLE_DISPLAY_NAME = "PréviCA";
 				CLANG_ENABLE_MODULES = YES;
@@ -1860,7 +1795,6 @@
 		6EB1548B1D282B0E0005B02A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				BUNDLE_DISPLAY_NAME = "PréviCA";
 				CLANG_ENABLE_MODULES = YES;
@@ -1892,7 +1826,6 @@
 		6EB1548C1D282B0E0005B02A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
@@ -1923,7 +1856,6 @@
 		6EB1548D1D282B0E0005B02A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
@@ -2018,7 +1950,6 @@
 		6EE41A461F82FB2300508FD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2047,7 +1978,6 @@
 		6EE41A471F82FB2300508FD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2075,7 +2005,6 @@
 		6EE41A481F82FB2300508FD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2103,7 +2032,6 @@
 		6EE41A491F82FB2300508FD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2241,7 +2169,6 @@
 		D20A00000000000000000DA2 /* DebugInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "PréviCA+";
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
@@ -2315,7 +2242,6 @@
 		D20A00000000000000000DA5 /* DebugInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				BUNDLE_DISPLAY_NAME = "PréviCA+";
 				CLANG_ENABLE_MODULES = YES;
@@ -2348,7 +2274,6 @@
 		D20A00000000000000000DA6 /* DebugInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
@@ -2411,7 +2336,6 @@
 		D20A00000000000000000DA8 /* DebugInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2440,7 +2364,6 @@
 		D20A00000000000000000DA9 /* DebugInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2547,7 +2470,6 @@
 		D20B00000000000000000DB2 /* ReleaseInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "PréviCA+";
 				CODE_SIGN_ENTITLEMENTS = weatherlr/weatherlr.entitlements;
@@ -2624,7 +2546,6 @@
 		D20B00000000000000000DB5 /* ReleaseInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				BUNDLE_DISPLAY_NAME = "PréviCA+";
 				CLANG_ENABLE_MODULES = YES;
@@ -2656,7 +2577,6 @@
 		D20B00000000000000000DB6 /* ReleaseInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
@@ -2720,7 +2640,6 @@
 		D20B00000000000000000DB8 /* ReleaseInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2748,7 +2667,6 @@
 		D20B00000000000000000DB9 /* ReleaseInternal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;

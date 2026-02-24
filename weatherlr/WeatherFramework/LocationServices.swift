@@ -10,7 +10,7 @@
 import Foundation
 import MapKit
 
-public class LocationServices : NSObject, CLLocationManagerDelegate {
+public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked Sendable {
     public var delegate:LocationServicesDelegate?
     var locationManager : CLLocationManager?
     var locationManagerType = CLLocationManager.self
@@ -271,74 +271,52 @@ public class LocationServices : NSObject, CLLocationManagerDelegate {
         #if DEBUG
             print("getAdressAndValidateCanada called")
         #endif
-        
-        CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-            #if DEBUG
-            print("reverseGeocodeLocation completed")
-            #endif
-            
-            if let e = error {
+
+        let coordinate = location.coordinate
+        reverseGeocode(coordinate: coordinate) { [weak self] country in
+            guard let country = country else { return }
+            if country != "Canada" {
+                self?.disableLocation()
+                PreferenceHelper.switchFavoriteCity(cityId: Global.currentLocationCityId)
+                PreferenceHelper.removeLastLocatedCity()
+                self?.delegate?.notInCanada(country)
+                return
+            }
+
+            self?.handleCanadianAddress(location)
+        }
+    }
+
+    private func reverseGeocode(coordinate: CLLocationCoordinate2D, completion: @escaping @Sendable (String?) -> Void) {
+        Task {
+            do {
+                let loc = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+                guard let request = MKReverseGeocodingRequest(location: loc) else {
+                    completion(nil)
+                    return
+                }
+                let mapItems = try await request.mapItems
+                let country = mapItems.first?.addressRepresentations?.regionName
+
+                #if DEBUG
+                print("reverseGeocodeLocation completed")
+                if let addressRep = mapItems.first?.addressRepresentations {
+                    print("regionName: \(addressRep.regionName ?? "nil")")
+                    print("cityName: \(addressRep.cityName ?? "nil")")
+                    print("cityWithContext: \(addressRep.cityWithContext ?? "nil")")
+                    print("fullAddress: \(addressRep.fullAddress(includingRegion: true, singleLine: true) ?? "nil")")
+                }
+                #endif
+
+                DispatchQueue.main.async { completion(country) }
+            } catch {
                 #if DEBUG
                     print("reverseGeocodeLocation error")
-                    print(e)
+                    print(error)
                 #endif
-            } else {
-                var placeMark: CLPlacemark!
-                placeMark = placemarks?[0]
-                
-                #if DEBUG
-                    print(placeMark as Any)
-                    if let val = placeMark.locality {
-                        print("locality " + val)
-                    }
-                
-                    if let val = placeMark.name {
-                        print("name " + val)
-                    }
-                
-                    if let val = placeMark.country {
-                        print("country " + val)
-                    }
-                
-                    if let val = placeMark.postalCode {
-                        print("postalCode " + val)
-                    }
-                
-                    if let val = placeMark.administrativeArea {
-                        print("administrativeArea " + val)
-                    }
-                
-                    if let val = placeMark.subAdministrativeArea {
-                        print("subAdministrativeArea " + val)
-                    }
-                
-                    if let val = placeMark.locality {
-                        print("subLocality " + val)
-                    }
-                
-                    if let val = placeMark.subLocality {
-                        print("subLocality " + val)
-                    }
-                #endif
-                
-                var isCanada = false
-                if let country = placeMark.country {
-                    if country == "Canada" {
-                        isCanada = true
-                    }
-                    
-                    if !isCanada {
-                        self.disableLocation()
-                        PreferenceHelper.switchFavoriteCity(cityId: Global.currentLocationCityId)
-                        PreferenceHelper.removeLastLocatedCity()
-                        self.delegate!.notInCanada(country)
-                        return
-                    }
-                    
-                    self.handleCanadianAddress(location)
-                }
+                DispatchQueue.main.async { completion(nil) }
             }
-        })
+        }
     }
     
     func handleCanadianAddress(_ location: CLLocation) {

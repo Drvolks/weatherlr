@@ -14,7 +14,7 @@ import WeatherKit
 
 public class WeatherHelper {
     static let offline = false
-    nonisolated(unsafe) static let cache = ExpiringCache<WeatherInformationWrapper>()
+    static let cache = ExpiringCache<WeatherInformationWrapper>()
 
     public static func getWeatherInformations(_ city:City) -> WeatherInformationWrapper {
         if offline {

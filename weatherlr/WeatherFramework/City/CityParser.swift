@@ -6,6 +6,9 @@
 //  Copyright © 2016 Jean-Francois Dufour. All rights reserved.
 //
 
+// Internal tool for generating cities.plist — not used at runtime.
+// Build with CITY_PARSER_TOOL flag to compile.
+#if CITY_PARSER_TOOL
 import Foundation
 import MapKit
 import Contacts
@@ -200,3 +203,4 @@ public class CityParser {
         return ""
     }
 }
+#endif

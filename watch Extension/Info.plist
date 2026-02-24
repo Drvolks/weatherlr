@@ -41,8 +41,6 @@
 	<string>Weatherlr will use your current location to find the nearest city</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Weatherlr will use your current location to find the nearest city</string>
-	<key>WKExtensionDelegateClassName</key>
-	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<true/>
 </dict>

@@ -123,19 +123,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         let city = PreferenceHelper.getCityToUse()
         if !LocationServices.isUseCurrentLocation(city) {
-                if thread {
-                    DispatchQueue.global().async {
-                        let wrapper = WeatherHelper.getWeatherInformations(city)
+            DispatchQueue.global().async {
+                let wrapper = WeatherHelper.getWeatherInformations(city)
 
-                        DispatchQueue.main.async {
-                            self.weatherInformationWrapper = wrapper
-                            self.displayWeather(false)
-                        }
-                    }
-                } else {
-                    self.weatherInformationWrapper = WeatherHelper.getWeatherInformations(city)
-                    displayWeather(true)
+                DispatchQueue.main.async {
+                    self.weatherInformationWrapper = wrapper
+                    self.displayWeather(false)
                 }
+            }
         }
     }
 

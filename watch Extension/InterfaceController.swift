@@ -165,7 +165,17 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         }
 
         let cityName = CityHelper.cityName(watchDelegate.wrapper.city!)
+
+        #if ENABLE_PWS
+        let city = watchDelegate.wrapper.city
+        if let stationName = Self.closestStationName(for: city) {
+            self.setCityWithStationIcon(stationName)
+        } else {
+            self.setCityName(cityName)
+        }
+        #else
         self.setCityName(cityName)
+        #endif
 
         lastRefreshLabel.setHidden(false)
         lastRefreshLabel.setText(WeatherHelper.getRefreshTime(watchDelegate.wrapper))
@@ -177,8 +187,6 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         updatedDate = watchDelegate.wrapper.lastRefresh
 
         #if ENABLE_PWS
-        let city = watchDelegate.wrapper.city
-
         DispatchQueue.global(qos: .userInitiated).async {
             let pws = Self.fetchPWSSync(for: city)
             if let pwsTemp = pws.temperature {
@@ -467,6 +475,34 @@ class InterfaceController: WKInterfaceController, @preconcurrency URLSessionDele
         guard let icon = UIImage(systemName: "sensor.fill", withConfiguration: symbolConfig)?.withTintColor(UIColor.white.withAlphaComponent(0.7), renderingMode: .alwaysOriginal) else { return }
         stationImage.setImage(icon)
         stationImage.setHidden(false)
+    }
+
+    static func closestStationName(for city: City?) -> String? {
+        guard let city = city else { return nil }
+
+        let stations = PreferenceHelper.getPWSStations()
+        guard !stations.isEmpty,
+              PreferenceHelper.hasPWSCredentials(),
+              let cityLat = Double(city.latitude),
+              let cityLon = Double(city.longitude) else {
+            return nil
+        }
+
+        let cityLocation = CLLocation(latitude: cityLat, longitude: cityLon)
+        var closestName: String?
+        var closestDistance: CLLocationDistance = .greatestFiniteMagnitude
+
+        for station in stations {
+            let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
+            let distance = cityLocation.distance(from: stationLocation)
+            guard distance < 50_000 else { continue }
+            if distance < closestDistance {
+                closestDistance = distance
+                closestName = station.name
+            }
+        }
+
+        return closestName
     }
 
     static func fetchPWSSync(for city: City?) -> (temperature: Int?, stationName: String?) {

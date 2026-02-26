@@ -69,34 +69,30 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
 
     #if ENABLE_PWS
     static func fetchPWSSync(for city: City) -> (hasPWS: Bool, temperature: Int?, stationName: String?) {
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        let stationName = defaults.string(forKey: Global.pwsStationNameKey)
+        guard stationName != nil, defaults.object(forKey: Global.pwsTemperatureKey) != nil else {
+            return (false, nil, nil)
+        }
+
+        // Verify the synced station is within range of the current city
         let stations = PreferenceHelper.getPWSStations()
         guard !stations.isEmpty,
-              PreferenceHelper.hasPWSCredentials(),
               let cityLat = Double(city.latitude),
-              let cityLon = Double(city.longitude),
-              let apiKey = PreferenceHelper.getPWSApiKey() else {
+              let cityLon = Double(city.longitude) else {
             return (false, nil, nil)
         }
 
         let cityLocation = CLLocation(latitude: cityLat, longitude: cityLon)
-
-        for station in stations {
+        let hasNearbyStation = stations.contains { station in
             let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
-            let distance = cityLocation.distance(from: stationLocation)
-            guard distance < 50_000 else { continue }
-
-            let urlString = "https://api.weather.com/v2/pws/observations/current?stationId=\(station.stationId)&format=json&units=e&apiKey=\(apiKey)"
-            guard let url = URL(string: urlString) else { continue }
-
-            guard let data = try? Data(contentsOf: url),
-                  let response = try? JSONDecoder().decode(WUResponse.self, from: data),
-                  let observation = response.observations?.first,
-                  let tempC = observation.tempC else { continue }
-
-            return (true, Int(tempC.rounded()), station.name)
+            return cityLocation.distance(from: stationLocation) < 50_000
         }
 
-        return (false, nil, nil)
+        guard hasNearbyStation else { return (false, nil, nil) }
+
+        let temperature = defaults.integer(forKey: Global.pwsTemperatureKey)
+        return (true, temperature, stationName)
     }
     #endif
 

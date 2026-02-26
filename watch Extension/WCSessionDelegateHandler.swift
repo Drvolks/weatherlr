@@ -57,6 +57,12 @@ class WCSessionDelegateHandler: NSObject, WCSessionDelegate {
         if let apiKey = applicationContext["pwsApiKey"] as? String {
             defaults.set(apiKey, forKey: "pwsApiKey")
         }
+        if let pwsTemp = applicationContext[Global.pwsTemperatureKey] as? Int {
+            defaults.set(pwsTemp, forKey: Global.pwsTemperatureKey)
+        }
+        if let pwsStation = applicationContext[Global.pwsStationNameKey] as? String {
+            defaults.set(pwsStation, forKey: Global.pwsStationNameKey)
+        }
         #endif
 
         WeatherHelper.cache.removeAllObjects()

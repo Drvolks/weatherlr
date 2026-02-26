@@ -23,5 +23,7 @@ public struct Global {
     public static let currentLocationMaxDistance = Double(1000000) // 1000 km
     #if ENABLE_PWS
     public static let pwsStationsKey = "pwsStations"
+    public static let pwsTemperatureKey = "pwsTemperature"
+    public static let pwsStationNameKey = "pwsStationName"
     #endif
 }

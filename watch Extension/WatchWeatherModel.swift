@@ -161,9 +161,7 @@ final class WatchWeatherModel {
         updatedDate = wrapper.lastRefresh
 
         #if ENABLE_PWS
-        if let city = wrapper.city {
-            fetchPWS(for: city)
-        }
+        loadSyncedPWS()
         #endif
 
         #if ENABLE_WEATHERKIT
@@ -248,48 +246,19 @@ final class WatchWeatherModel {
         return closestName
     }
 
-    nonisolated static func fetchPWSSync(for city: City?) -> (temperature: Int?, stationName: String?) {
-        guard let city = city else { return (nil, nil) }
-
-        let stations = PreferenceHelper.getPWSStations()
-        guard !stations.isEmpty,
-              PreferenceHelper.hasPWSCredentials(),
-              let cityLat = Double(city.latitude),
-              let cityLon = Double(city.longitude),
-              let apiKey = PreferenceHelper.getPWSApiKey() else {
+    nonisolated static func syncedPWSData() -> (temperature: Int?, stationName: String?) {
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+        let stationName = defaults.string(forKey: Global.pwsStationNameKey)
+        guard stationName != nil, defaults.object(forKey: Global.pwsTemperatureKey) != nil else {
             return (nil, nil)
         }
-
-        let cityLocation = CLLocation(latitude: cityLat, longitude: cityLon)
-
-        for station in stations {
-            let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
-            let distance = cityLocation.distance(from: stationLocation)
-            guard distance < 50_000 else { continue }
-
-            let urlString = "https://api.weather.com/v2/pws/observations/current?stationId=\(station.stationId)&format=json&units=e&apiKey=\(apiKey)"
-            guard let url = URL(string: urlString) else { continue }
-
-            guard let data = try? Data(contentsOf: url),
-                  let response = try? JSONDecoder().decode(WUResponse.self, from: data),
-                  let observation = response.observations?.first,
-                  let tempC = observation.tempC else { continue }
-
-            return (Int(tempC.rounded()), station.name)
-        }
-
-        return (nil, nil)
+        return (defaults.integer(forKey: Global.pwsTemperatureKey), stationName)
     }
 
-    private func fetchPWS(for city: City) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            let pws = Self.fetchPWSSync(for: city)
-            let stationName = Self.closestStationName(for: city)
-            Task { @MainActor in
-                self.pwsTemperature = pws.temperature
-                self.pwsStationName = pws.stationName ?? stationName
-            }
-        }
+    private func loadSyncedPWS() {
+        let synced = Self.syncedPWSData()
+        self.pwsTemperature = synced.temperature
+        self.pwsStationName = synced.stationName ?? Self.closestStationName(for: wrapper.city)
     }
     #endif
 

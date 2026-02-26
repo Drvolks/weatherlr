@@ -30,17 +30,32 @@ AUTH_FLAGS=(-allowProvisioningUpdates \
 
 rm -rf "$EXPORT_DIR"
 
-# --- Bump build number once for all archives ---
+# --- Derive build number from git commit count ---
 
 cd "$SCRIPT_DIR"
-CURRENT_BUILD=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" weatherlr/Info.plist)
-NEW_BUILD=$((CURRENT_BUILD + 1))
-echo "=== Bumping build number: $CURRENT_BUILD → $NEW_BUILD ==="
-for plist in weatherlr/Info.plist "watch Extension/Info.plist" watch/Info.plist "weatherlr Widget/Info.plist"; do
-  if [ -f "$plist" ]; then
-    /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $NEW_BUILD" "$plist"
+BUILD_NUMBER=$(git rev-list HEAD --count)
+echo "=== Build number (git commit count): $BUILD_NUMBER ==="
+
+TAG="build-$BUILD_NUMBER"
+echo "=== Tagging commit as $TAG ==="
+git tag "$TAG"
+git push origin "$TAG"
+
+# Stamp CFBundleVersion into all Info.plist files inside an xcarchive
+stamp_build_number() {
+  local archive="$1"
+  echo "  Stamping build $BUILD_NUMBER in $archive"
+  # App and extension Info.plist files
+  find "$archive/Products" -name "Info.plist" -print0 | while IFS= read -r -d '' plist; do
+    if /usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$plist" &>/dev/null; then
+      /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$plist"
+    fi
+  done
+  # Archive-level metadata
+  if /usr/libexec/PlistBuddy -c "Print ApplicationProperties:CFBundleVersion" "$archive/Info.plist" &>/dev/null; then
+    /usr/libexec/PlistBuddy -c "Set :ApplicationProperties:CFBundleVersion $BUILD_NUMBER" "$archive/Info.plist"
   fi
-done
+}
 
 # --- PréviCA+ (plus) ---
 
@@ -49,6 +64,8 @@ xcodebuild archive -project "$PROJECT" -scheme "PréviCA+" \
   -destination 'generic/platform=iOS' \
   -archivePath "$ARCHIVE_DIR/PreviCAPlus-iOS.xcarchive" \
   "${AUTH_FLAGS[@]}"
+
+stamp_build_number "$ARCHIVE_DIR/PreviCAPlus-iOS.xcarchive"
 
 echo "=== Exporting PréviCA+ ==="
 mkdir -p "$EXPORT_DIR/Plus"
@@ -77,6 +94,8 @@ xcodebuild archive -project "$PROJECT" -scheme "weatherlr" \
   -destination 'generic/platform=iOS' \
   -archivePath "$ARCHIVE_DIR/PreviCA-iOS.xcarchive" \
   "${AUTH_FLAGS[@]}"
+
+stamp_build_number "$ARCHIVE_DIR/PreviCA-iOS.xcarchive"
 
 echo "=== Exporting PréviCA ==="
 mkdir -p "$EXPORT_DIR/Free"

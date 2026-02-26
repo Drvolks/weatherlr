@@ -77,7 +77,7 @@ class HourlyItemCell: UICollectionViewCell {
         ])
     }
 
-    func configure(with hourWeather: HourWeather, isCurrentHour: Bool, sunrise: Date?, sunset: Date?) {
+    func configure(with hourWeather: HourWeather, isCurrentHour: Bool, weatherKitData: WeatherKitData?) {
         if isCurrentHour {
             timeLabel.text = "Now".localized()
         } else {
@@ -87,8 +87,8 @@ class HourlyItemCell: UICollectionViewCell {
         }
 
         let isNight: Bool
-        if let sunrise = sunrise, let sunset = sunset {
-            isNight = hourWeather.date < sunrise || hourWeather.date >= sunset
+        if let data = weatherKitData {
+            isNight = !data.isDaylight(at: hourWeather.date)
         } else {
             let hour = Calendar.current.component(.hour, from: hourWeather.date)
             isNight = hour < 7 || hour >= 19

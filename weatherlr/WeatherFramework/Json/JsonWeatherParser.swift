@@ -72,11 +72,7 @@ public class JsonWeatherParser {
             return result
         }
 
-        // The API duplicates forecasts (first half = second half). Use only the first half.
-        let forecastCount = forecasts.count / 2
-        let uniqueForecasts = Array(forecasts.prefix(forecastCount > 0 ? forecastCount : forecasts.count))
-
-        for forecast in uniqueForecasts {
+        for forecast in forecasts {
             let periodName = forecast.period?.textForecastName?.value(for: language) ?? ""
             let night = isNight(periodName)
 

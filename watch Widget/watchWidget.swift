@@ -105,7 +105,29 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             return WeatherInformationWrapper()
         }
 
-        guard let data = try? Data(contentsOf: url) else {
+        let semaphore = DispatchSemaphore(value: 0)
+        var fetchedData: Data?
+
+        let config = URLSessionConfiguration.default
+        config.timeoutIntervalForResource = 15
+        let session = URLSession(configuration: config)
+
+        let task = session.dataTask(with: url) { data, _, _ in
+            fetchedData = data
+            semaphore.signal()
+        }
+        task.resume()
+
+        let timeout = semaphore.wait(timeout: .now() + 15)
+        if timeout == .timedOut {
+            task.cancel()
+            #if DEBUG
+            print("EC weather fetch timed out for watch widget")
+            #endif
+            return WeatherInformationWrapper()
+        }
+
+        guard let data = fetchedData else {
             return WeatherInformationWrapper()
         }
 
@@ -141,7 +163,13 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             }
         }
 
-        semaphore.wait()
+        let timeout = semaphore.wait(timeout: .now() + 10)
+        if timeout == .timedOut {
+            #if DEBUG
+            print("WeatherKit watch widget timed out")
+            #endif
+            return nil
+        }
         return box.imageName
     }
     #endif

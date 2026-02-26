@@ -178,6 +178,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 #endif
                 #if ENABLE_PWS
                 self.pwsResult = pws
+                if let pws = pws, let tempC = pws.observation.tempC {
+                    let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+                    defaults.set(Int(tempC.rounded()), forKey: Global.pwsTemperatureKey)
+                    defaults.set(pws.station.name, forKey: Global.pwsStationNameKey)
+                    WatchSyncManager.shared.syncSettings()
+                }
                 #endif
 
                 #if ENABLE_WEATHERKIT

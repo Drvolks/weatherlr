@@ -50,6 +50,12 @@ class WatchSyncManager: NSObject, WCSessionDelegate {
         if let apiKey = PreferenceHelper.getPWSApiKey() {
             context["pwsApiKey"] = apiKey
         }
+        if defaults.object(forKey: Global.pwsTemperatureKey) != nil {
+            context[Global.pwsTemperatureKey] = defaults.integer(forKey: Global.pwsTemperatureKey)
+        }
+        if let stationName = defaults.string(forKey: Global.pwsStationNameKey) {
+            context[Global.pwsStationNameKey] = stationName
+        }
         #endif
 
         try? session.updateApplicationContext(context)

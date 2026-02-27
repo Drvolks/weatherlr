@@ -127,29 +127,47 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     // MARK: - Time Steps
 
     private func fetchTimeSteps() {
+        print("[Radar] fetchTimeSteps called")
+        if let cached = RadarTimeStepCache.shared.getCachedSteps() {
+            print("[Radar] using cached steps — applying immediately")
+            applyTimeSteps(cached)
+            return
+        }
+
+        print("[Radar] cache miss — fetching from network...")
+        let startTime = Date()
         let urlString = "https://geo.weather.gc.ca/geomet?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LAYERS=RADAR_1KM_RRAI"
         guard let url = URL(string: urlString) else { return }
 
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let self = self, let data = data, error == nil else { return }
+            let elapsed = Date().timeIntervalSince(startTime)
+            guard let self = self, let data = data, error == nil else {
+                print("[Radar] network fetch failed after \(String(format: "%.1f", elapsed))s — \(error?.localizedDescription ?? "no data")")
+                return
+            }
 
             let parser = TimeDimensionParser(data: data)
             let steps = parser.parse()
+            print("[Radar] network fetch complete — \(steps.count) steps in \(String(format: "%.1f", elapsed))s")
 
             DispatchQueue.main.async {
-                guard !steps.isEmpty else { return }
-                self.timeSteps = steps
-                self.currentFrameIndex = steps.count - 1
-
-                self.timeSlider.maximumValue = Float(steps.count - 1)
-                self.timeSlider.value = Float(self.currentFrameIndex)
-                self.timeSlider.isEnabled = true
-                self.playPauseButton.isEnabled = true
-
-                self.updateTimeLabel()
-                self.applyCurrentFrame()
+                self.applyTimeSteps(steps)
             }
         }.resume()
+    }
+
+    private func applyTimeSteps(_ steps: [String]) {
+        guard !steps.isEmpty else { return }
+        self.timeSteps = steps
+        self.currentFrameIndex = steps.count - 1
+
+        self.timeSlider.maximumValue = Float(steps.count - 1)
+        self.timeSlider.value = Float(self.currentFrameIndex)
+        self.timeSlider.isEnabled = true
+        self.playPauseButton.isEnabled = true
+
+        self.updateTimeLabel()
+        self.applyCurrentFrame()
     }
 
     private func updateTimeLabel() {
@@ -252,98 +270,3 @@ extension RadarViewController: @preconcurrency CLLocationManagerDelegate {
     }
 }
 
-// MARK: - TimeDimensionParser
-
-private class TimeDimensionParser: NSObject, XMLParserDelegate {
-    private let data: Data
-    private var foundDimension = false
-    private var dimensionValue = ""
-    private var timeSteps: [String] = []
-
-    init(data: Data) {
-        self.data = data
-    }
-
-    func parse() -> [String] {
-        let parser = XMLParser(data: data)
-        parser.delegate = self
-        parser.parse()
-        return timeSteps
-    }
-
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName: String?, attributes attributeDict: [String: String] = [:]) {
-        if elementName == "Dimension" && attributeDict["name"] == "time" {
-            foundDimension = true
-            dimensionValue = ""
-        }
-    }
-
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        if foundDimension {
-            dimensionValue += string
-        }
-    }
-
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName: String?) {
-        if elementName == "Dimension" && foundDimension {
-            foundDimension = false
-            let trimmed = dimensionValue.trimmingCharacters(in: .whitespacesAndNewlines)
-            timeSteps = generateTimeSteps(from: trimmed)
-            parser.abortParsing()
-        }
-    }
-
-    private func generateTimeSteps(from dimension: String) -> [String] {
-        // Format: "startTime/endTime/PT6M"
-        let parts = dimension.split(separator: "/")
-        guard parts.count == 3 else { return [] }
-
-        let startStr = String(parts[0])
-        let endStr = String(parts[1])
-        let intervalStr = String(parts[2])
-
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime]
-
-        guard let startDate = formatter.date(from: startStr),
-              let endDate = formatter.date(from: endStr),
-              let intervalSeconds = parseISO8601Duration(intervalStr) else {
-            return []
-        }
-
-        var steps: [String] = []
-        var current = startDate
-        while current <= endDate {
-            steps.append(formatter.string(from: current))
-            current = current.addingTimeInterval(intervalSeconds)
-        }
-        return steps
-    }
-
-    private func parseISO8601Duration(_ duration: String) -> TimeInterval? {
-        // Parse simple durations like PT6M, PT10M, PT1H
-        var str = duration
-        guard str.hasPrefix("PT") else { return nil }
-        str.removeFirst(2) // Remove "PT"
-
-        var totalSeconds: TimeInterval = 0
-        var numberStr = ""
-
-        for char in str {
-            if char.isNumber {
-                numberStr.append(char)
-            } else {
-                guard let value = Double(numberStr) else { return nil }
-                switch char {
-                case "H": totalSeconds += value * 3600
-                case "M": totalSeconds += value * 60
-                case "S": totalSeconds += value
-                default: return nil
-                }
-                numberStr = ""
-            }
-        }
-
-        return totalSeconds > 0 ? totalSeconds : nil
-    }
-}

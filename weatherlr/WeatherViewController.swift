@@ -59,6 +59,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         locationServices!.start()
 
+        RadarTimeStepCache.shared.preload()
+
         NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
 
         registerTraitChangeHandler()
@@ -105,6 +107,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     @objc func applicationWillEnterForeground(_ notification: Notification) {
+        RadarTimeStepCache.shared.preload()
         refresh(false)
     }
 
@@ -156,6 +159,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             #if ENABLE_WEATHERKIT || ENABLE_PWS
             fetchWeatherKitData()
             #endif
+
         }
     }
 

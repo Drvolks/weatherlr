@@ -29,6 +29,7 @@
 		5E5DA53EDF4A3501D8BF1CBD /* CityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A31C3B77CC79F6E435B3A4 /* CityHelper.swift */; };
 		61CFB581202A7E36DAF3FB55 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57929464604AA772CAD6341A /* WeatherEnums.swift */; };
 		6592D7D8BB470F147AC8C725 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E43F6910A882D75EE4C72 /* ExpiringCache.swift */; };
+		A2C3E4F5B6D7081930415A6B /* RadarTimeStepCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */; };
 		66FC6BCEB1F24253BE93EB49 /* HourlyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04ECD758E5C434DBF3687FC /* HourlyForecastCell.swift */; };
 		6747906E30639B3BA5E7ABDC /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88C4D78EAE014C5ECE5BB9 /* WeatherHelper.swift */; };
 		6A95AED8E27F2C3705CEB494 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57929464604AA772CAD6341A /* WeatherEnums.swift */; };
@@ -106,6 +107,7 @@
 		BB22222222222222222222B2 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11111111111111111111A1 /* WeatherApiResponse.swift */; };
 		BB44444444444444444444B4 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11111111111111111111A1 /* WeatherApiResponse.swift */; };
 		BCB9BB212DDE3528939EE764 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E43F6910A882D75EE4C72 /* ExpiringCache.swift */; };
+		A3C4E5F6B7D8091A40516A7B /* RadarTimeStepCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */; };
 		C070BDF92A8A6BE0560DF6FB /* LocatedCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B1023FCFAC6D86C3A3EFD /* LocatedCity.swift */; };
 		C2A1AD78E9499ED073F16229 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6898273E6B4D6B8702EE1 /* UrlHelper.swift */; };
 		C355576B44FF3068ADCF6065 /* RssParserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96EE110F7C3D82719FE6B3B /* RssParserBase.swift */; };
@@ -127,6 +129,7 @@
 		CF534B63C95B56C14846A219 /* RssParserBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96EE110F7C3D82719FE6B3B /* RssParserBase.swift */; };
 		D1B00100000000000000B001 /* weatherlrWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10700000000000000000007 /* weatherlrWidget.swift */; };
 		D1B00200000000000000B002 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E43F6910A882D75EE4C72 /* ExpiringCache.swift */; };
+		A4C5E6F7B8D90A1B50617A8B /* RadarTimeStepCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */; };
 		D1B00300000000000000B003 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C35C05D39F0641C27E887 /* Global.swift */; };
 		D1B00400000000000000B004 /* LocatedCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B1023FCFAC6D86C3A3EFD /* LocatedCity.swift */; };
 		D1B00500000000000000B005 /* LocationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364582F5E25B18C9B9930D00 /* LocationErrors.swift */; };
@@ -166,6 +169,7 @@
 		E0EBDE614AAB875BE883432B /* RssEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E589AFB08C2CC13C5705E /* RssEntry.swift */; };
 		E1B00100000000000000B001 /* watchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10700000000000000000007 /* watchWidget.swift */; };
 		E1B00200000000000000B002 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E43F6910A882D75EE4C72 /* ExpiringCache.swift */; };
+		A5C6E7F8B9DA0B1C60718A9B /* RadarTimeStepCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */; };
 		E1B00300000000000000B003 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9C35C05D39F0641C27E887 /* Global.swift */; };
 		E1B00400000000000000B004 /* LocatedCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B1023FCFAC6D86C3A3EFD /* LocatedCity.swift */; };
 		E1B00500000000000000B005 /* LocationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364582F5E25B18C9B9930D00 /* LocationErrors.swift */; };
@@ -294,6 +298,7 @@
 		40BF41E4B20D534DAC338FA1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		431B1023FCFAC6D86C3A3EFD /* LocatedCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatedCity.swift; sourceTree = "<group>"; };
 		561E43F6910A882D75EE4C72 /* ExpiringCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiringCache.swift; sourceTree = "<group>"; };
+		A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarTimeStepCache.swift; sourceTree = "<group>"; };
 		57929464604AA772CAD6341A /* WeatherEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
 		58D00EB2864B75E5EB9204ED /* RssParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		5C9C35C05D39F0641C27E887 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -645,6 +650,7 @@
 				79A41AEC2020A9F0FEEEDB3E /* Weather */,
 				B5D158442297480091B3540E /* WeatherKit */,
 				561E43F6910A882D75EE4C72 /* ExpiringCache.swift */,
+				A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */,
 				5C9C35C05D39F0641C27E887 /* Global.swift */,
 				431B1023FCFAC6D86C3A3EFD /* LocatedCity.swift */,
 				364582F5E25B18C9B9930D00 /* LocationErrors.swift */,
@@ -1033,6 +1039,7 @@
 				6E9F32F91CB6C5AB00A9D6A7 /* CityTableViewCell.swift in Sources */,
 				6E9E12C11CE92BEC00791284 /* AlertViewController.swift in Sources */,
 				6592D7D8BB470F147AC8C725 /* ExpiringCache.swift in Sources */,
+				A2C3E4F5B6D7081930415A6B /* RadarTimeStepCache.swift in Sources */,
 				3ACC8744F047C9AF1CCE736D /* Global.swift in Sources */,
 				C070BDF92A8A6BE0560DF6FB /* LocatedCity.swift in Sources */,
 				DD8B1EC322E334146BFBFF86 /* LocationErrors.swift in Sources */,
@@ -1107,6 +1114,7 @@
 				6EB154981D2859140005B02A /* Constants.swift in Sources */,
 				6EAA0E6B1E663C150023DB15 /* WatchImageHelper.swift in Sources */,
 				BCB9BB212DDE3528939EE764 /* ExpiringCache.swift in Sources */,
+				A3C4E5F6B7D8091A40516A7B /* RadarTimeStepCache.swift in Sources */,
 				E98870E878869244EC02A828 /* Global.swift in Sources */,
 				5C7AE36D3C95A7893930EAC0 /* LocatedCity.swift in Sources */,
 				98F8E52295DA21326A29F0C0 /* LocationErrors.swift in Sources */,
@@ -1144,6 +1152,7 @@
 			files = (
 				D1B00100000000000000B001 /* weatherlrWidget.swift in Sources */,
 				D1B00200000000000000B002 /* ExpiringCache.swift in Sources */,
+				A4C5E6F7B8D90A1B50617A8B /* RadarTimeStepCache.swift in Sources */,
 				D1B00300000000000000B003 /* Global.swift in Sources */,
 				D1B00400000000000000B004 /* LocatedCity.swift in Sources */,
 				D1B00500000000000000B005 /* LocationErrors.swift in Sources */,
@@ -1179,6 +1188,7 @@
 			files = (
 				E1B00100000000000000B001 /* watchWidget.swift in Sources */,
 				E1B00200000000000000B002 /* ExpiringCache.swift in Sources */,
+				A5C6E7F8B9DA0B1C60718A9B /* RadarTimeStepCache.swift in Sources */,
 				E1B00300000000000000B003 /* Global.swift in Sources */,
 				E1B00400000000000000B004 /* LocatedCity.swift in Sources */,
 				E1B00500000000000000B005 /* LocationErrors.swift in Sources */,

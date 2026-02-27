@@ -149,11 +149,11 @@ struct WeatherTimelineProvider: TimelineProvider {
                     ))
                 }
 
-                // Minute precipitation
+                // Minute precipitation (filter out negligible intensities below 0.1 mm/h)
                 if let minutes = minuteForecast {
-                    let hasAnyPrecip = minutes.contains { $0.precipitationChance > 0 }
-                    if hasAnyPrecip {
-                        box.precipitationIntensities = minutes.map { $0.precipitationChance > 0 ? $0.precipitationIntensity.value : 0 }
+                    let intensities = minutes.map { $0.precipitationChance > 0 ? $0.precipitationIntensity.value : 0 }
+                    if intensities.contains(where: { $0 >= 0.1 }) {
+                        box.precipitationIntensities = intensities
                     }
                 }
             } catch {
@@ -345,7 +345,7 @@ struct MediumWeatherView: View {
 
     #if ENABLE_WEATHERKIT
     private var hasPrecipitation: Bool {
-        entry.precipitationIntensities.contains { $0 > 0 }
+        entry.precipitationIntensities.contains { $0 >= 0.1 }
     }
     #else
     private var hasPrecipitation: Bool {

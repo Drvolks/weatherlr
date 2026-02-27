@@ -1409,7 +1409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1437,7 +1437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1545,7 +1545,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1575,7 +1575,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1603,7 +1603,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1627,7 +1627,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1722,7 +1722,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1786,7 +1786,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1816,7 +1816,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1901,7 +1901,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1971,7 +1971,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2000,7 +2000,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2025,7 +2025,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2050,7 +2050,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2077,7 +2077,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2102,7 +2102,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.1.1;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_WEATHERKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massawippi.weatherlr.internal.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";

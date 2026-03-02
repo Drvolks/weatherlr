@@ -164,7 +164,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     private func fetchWeatherKitData() {
-        let city = PreferenceHelper.getCityToUse()
+        let selectedCity = PreferenceHelper.getSelectedCity()
+        let city: City
+        if LocationServices.isUseCurrentLocation(selectedCity) {
+            // Current-location mode: use the resolved EC city when available.
+            city = weatherInformationWrapper.city ?? PreferenceHelper.getCityToUse()
+        } else {
+            city = PreferenceHelper.getCityToUse()
+        }
         guard !LocationServices.isUseCurrentLocation(city) else { return }
 
         Task {
@@ -182,12 +189,17 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 #endif
                 #if ENABLE_PWS
                 self.pwsResult = pws
+                let defaults = UserDefaults(suiteName: Global.SettingGroup)!
                 if let pws = pws, let tempC = pws.observation.tempC {
-                    let defaults = UserDefaults(suiteName: Global.SettingGroup)!
                     defaults.set(Int(tempC.rounded()), forKey: Global.pwsTemperatureKey)
                     defaults.set(pws.station.name, forKey: Global.pwsStationNameKey)
-                    WatchSyncManager.shared.syncSettings()
+                    defaults.set(Date().timeIntervalSince1970, forKey: Global.pwsTemperatureUpdatedAtKey)
+                } else {
+                    defaults.removeObject(forKey: Global.pwsTemperatureKey)
+                    defaults.removeObject(forKey: Global.pwsStationNameKey)
+                    defaults.removeObject(forKey: Global.pwsTemperatureUpdatedAtKey)
                 }
+                WatchSyncManager.shared.syncSettings()
                 #endif
 
                 #if ENABLE_WEATHERKIT

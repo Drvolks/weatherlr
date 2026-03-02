@@ -27,6 +27,7 @@ final class WatchWeatherModel {
     #if ENABLE_PWS
     var pwsTemperature: Int?
     var pwsStationName: String?
+    var pwsUpdatedAt: Date?
     #endif
 
     #if ENABLE_WEATHERKIT
@@ -49,6 +50,7 @@ final class WatchWeatherModel {
         #if ENABLE_PWS
         pwsTemperature = nil
         pwsStationName = nil
+        pwsUpdatedAt = nil
         #endif
         #if ENABLE_WEATHERKIT
         weatherKitData = nil
@@ -246,19 +248,38 @@ final class WatchWeatherModel {
         return closestName
     }
 
-    nonisolated static func syncedPWSData() -> (temperature: Int?, stationName: String?) {
+    nonisolated static func syncedPWSData() -> (temperature: Int?, stationName: String?, updatedAt: Date?) {
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         let stationName = defaults.string(forKey: Global.pwsStationNameKey)
         guard stationName != nil, defaults.object(forKey: Global.pwsTemperatureKey) != nil else {
-            return (nil, nil)
+            return (nil, nil, nil)
         }
-        return (defaults.integer(forKey: Global.pwsTemperatureKey), stationName)
+        let updatedAt: Date?
+        if defaults.object(forKey: Global.pwsTemperatureUpdatedAtKey) != nil {
+            updatedAt = Date(timeIntervalSince1970: defaults.double(forKey: Global.pwsTemperatureUpdatedAtKey))
+        } else {
+            updatedAt = nil
+        }
+        return (defaults.integer(forKey: Global.pwsTemperatureKey), stationName, updatedAt)
+    }
+
+    nonisolated static func isPWSFresh(updatedAt: Date?) -> Bool {
+        guard let updatedAt else { return false }
+        // If the iPhone has not synced PWS recently, prefer EC current conditions.
+        return Date().timeIntervalSince(updatedAt) <= 60 * 60
     }
 
     private func loadSyncedPWS() {
         let synced = Self.syncedPWSData()
-        self.pwsTemperature = synced.temperature
-        self.pwsStationName = synced.stationName ?? Self.closestStationName(for: wrapper.city)
+        if Self.isPWSFresh(updatedAt: synced.updatedAt) {
+            self.pwsTemperature = synced.temperature
+            self.pwsStationName = synced.stationName ?? Self.closestStationName(for: wrapper.city)
+            self.pwsUpdatedAt = synced.updatedAt
+        } else {
+            self.pwsTemperature = nil
+            self.pwsStationName = nil
+            self.pwsUpdatedAt = nil
+        }
     }
     #endif
 

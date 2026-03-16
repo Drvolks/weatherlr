@@ -189,6 +189,8 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         let imageName: String
         if let wkName = weatherKitImageName {
             imageName = wkName
+        } else if let code = current.iconCode, let name = WeatherHelper.imageNameForIconCode(code) {
+            imageName = name
         } else {
             var status = current.weatherStatus
             if let substitute = WeatherHelper.getImageSubstitute(status) {

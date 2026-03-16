@@ -232,6 +232,61 @@ public class WeatherHelper {
         }
     }
 
+    // Environment Canada icon code → image asset name
+    // Reference: https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/
+    public static func imageNameForIconCode(_ code: Int) -> String? {
+        switch code {
+        // Day-only conditions (0-9)
+        case 0:  return "sunny"                              // Sunny
+        case 1:  return "mainlySunny"                        // A few clouds
+        case 2:  return "aFewClouds"                         // A mix of sun and cloud / Partly cloudy
+        case 3:  return "mostlyCloudy"                       // Mostly cloudy
+        case 4:  return "clearing"                           // Increasing cloudiness
+        case 5:  return "clearing"                           // Clearing
+        case 6:  return "chanceOfShowers"                    // Chance of showers
+        case 7:  return "aFewRainShowersOrFlurries"          // A few flurries or rain showers
+        case 8:  return "chanceOfSnow"                       // A few flurries / Chance of flurries
+        case 9:  return "chanceOfShowersOrThunderstorms"     // Chance of thunderstorms
+
+        // Day and night conditions (10-28)
+        case 10: return "cloudy"                             // Cloudy / Overcast
+        case 11: return "lightRain"                          // Light rain showers
+        case 12: return "rain"                               // Rain showers
+        case 13: return "rain"                               // Rain
+        case 14: return "freezingRain"                       // Freezing rain
+        case 15: return "periodsOfRainOrSnow"                // Rain or snow mixed
+        case 16: return "lightSnow"                          // Light snow
+        case 17: return "snow"                               // Snow
+        case 18: return "blizzard"                           // Blizzard
+        case 19: return "chanceOfShowersOrThunderstorms"     // Thunderstorms
+        case 22: return "aFewClouds"                         // A mix of sun and cloud (alt)
+        case 23: return "mist"                               // Haze
+        case 24: return "mist"                               // Fog
+        case 25: return "driftingSnow"                       // Drifting snow
+        case 26: return "iceCrystals"                        // Ice crystals
+        case 27: return "icePellets"                         // Ice pellets / Hail
+        case 28: return "drizzle"                            // Drizzle
+
+        // Night-only conditions (30-39, mirror day codes 0-9)
+        case 30: return "clear"                              // Clear
+        case 31: return "aFewCloudsNight"                    // A few clouds
+        case 32: return "aFewCloudsNight"                    // Partly cloudy
+        case 33: return "aFewCloudsNight"                    // Mostly cloudy
+        case 34: return "clearingNight"                      // Increasing cloudiness
+        case 35: return "clearingNight"                      // Clearing
+        case 36: return "chanceOfShowers"                    // Chance of showers
+        case 37: return "aFewRainShowersOrFlurries"          // A few flurries or rain showers
+        case 38: return "chanceOfSnow"                       // A few flurries / Chance of flurries
+        case 39: return "chanceOfShowersOrThunderstorms"     // Chance of thunderstorms
+
+        // Extended conditions (40+)
+        case 40: return "periodsOfSnowAndBlowingSnow"        // Blowing snow
+        case 44: return "smoke"                              // Smoke
+
+        default: return nil
+        }
+    }
+
     public static func getMinMaxImage(_ weatherInfo: WeatherInformation, header: Bool) -> UIImage {
         let name = getMinMaxImageName(weatherInfo)
         

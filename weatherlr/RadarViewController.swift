@@ -17,13 +17,22 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private let locationManager = CLLocationManager()
     private var didCenterOnUser = false
 
-    private var overlay: WMSTileOverlay!
-    private var tileRenderer: MKTileOverlayRenderer!
-
     private var timeSteps: [String] = []
     private var currentFrameIndex = 0
     private var animationTimer: Timer?
     private var isPlaying = false
+
+    // Stacked overlays: one per time step, toggled via renderer alpha
+    private var tileOverlays: [WMSTileOverlay] = []
+    private var rendererMap: [ObjectIdentifier: MKTileOverlayRenderer] = [:]
+    private var overlaysAddedToMap: Set<Int> = []
+
+    // Dedicated session for background prefetch
+    private lazy var prefetchSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.httpMaximumConnectionsPerHost = 6
+        return URLSession(configuration: config)
+    }()
 
     private var playPauseButton: UIButton!
     private var timeSlider: UISlider!
@@ -42,10 +51,6 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         mapView.showsUserLocation = true
         mapView.delegate = self
         view.addSubview(mapView)
-
-        overlay = WMSTileOverlay()
-        overlay.tileSize = CGSize(width: 256, height: 256)
-        mapView.addOverlay(overlay, level: .aboveRoads)
 
         if let city = city,
            let lat = Double(city.latitude),
@@ -67,6 +72,11 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopAnimation()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        TileDataCache.shared.clear()
     }
 
     // MARK: - Control Bar
@@ -158,16 +168,136 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
     private func applyTimeSteps(_ steps: [String]) {
         guard !steps.isEmpty else { return }
-        self.timeSteps = steps
-        self.currentFrameIndex = steps.count - 1
 
-        self.timeSlider.maximumValue = Float(steps.count - 1)
-        self.timeSlider.value = Float(self.currentFrameIndex)
-        self.timeSlider.isEnabled = true
-        self.playPauseButton.isEnabled = true
+        // Clean up any existing overlays
+        for overlay in tileOverlays {
+            mapView.removeOverlay(overlay)
+        }
+        tileOverlays.removeAll()
+        rendererMap.removeAll()
+        overlaysAddedToMap.removeAll()
 
-        self.updateTimeLabel()
-        self.applyCurrentFrame()
+        timeSteps = steps
+        currentFrameIndex = steps.count - 1
+
+        // Create one overlay per time step
+        for step in steps {
+            let overlay = WMSTileOverlay(time: step)
+            overlay.tileSize = CGSize(width: 256, height: 256)
+            tileOverlays.append(overlay)
+        }
+
+        timeSlider.maximumValue = Float(steps.count - 1)
+        timeSlider.value = Float(currentFrameIndex)
+        timeSlider.isEnabled = true
+        updateTimeLabel()
+
+        // Phase 1: prefetch current frame tiles, then show overlay
+        let tilePaths = visibleTilePaths()
+        prefetchTilesForFrame(currentFrameIndex, tilePaths: tilePaths, session: URLSession.shared) { [weak self] in
+            guard let self = self else { return }
+
+            // Current frame tiles are cached — add overlay (instant cache hits)
+            self.addOverlayToMap(at: self.currentFrameIndex)
+            self.applyCurrentFrame()
+
+            // Phase 2: prefetch remaining frames in parallel
+            let remaining = Array(0..<steps.count).filter { $0 != self.currentFrameIndex }
+            self.prefetchFramesSequentially(remaining, tilePaths: tilePaths)
+        }
+    }
+
+    private func addOverlayToMap(at index: Int) {
+        guard index >= 0, index < tileOverlays.count, !overlaysAddedToMap.contains(index) else { return }
+        overlaysAddedToMap.insert(index)
+        mapView.addOverlay(tileOverlays[index], level: .aboveRoads)
+    }
+
+    private func addRemainingOverlays() {
+        for index in 0..<tileOverlays.count {
+            addOverlayToMap(at: index)
+        }
+    }
+
+    // MARK: - Tile Prefetching
+
+    private func prefetchTilesForFrame(_ frameIndex: Int, tilePaths: [MKTileOverlayPath], session: URLSession, completion: @escaping () -> Void) {
+        guard frameIndex < tileOverlays.count else {
+            DispatchQueue.main.async { completion() }
+            return
+        }
+
+        let overlay = tileOverlays[frameIndex]
+        var urls: [URL] = []
+        for path in tilePaths {
+            let url = overlay.url(forTilePath: path)
+            if TileDataCache.shared.get(url) == nil {
+                urls.append(url)
+            }
+        }
+
+        guard !urls.isEmpty else {
+            DispatchQueue.main.async { completion() }
+            return
+        }
+
+        let group = DispatchGroup()
+        for url in urls {
+            group.enter()
+            session.dataTask(with: url) { data, _, _ in
+                if let data = data {
+                    TileDataCache.shared.set(data, for: url)
+                }
+                group.leave()
+            }.resume()
+        }
+
+        group.notify(queue: .main) { completion() }
+    }
+
+    /// Prefetches all frames in parallel, adding each overlay to the map as soon as its tiles are cached.
+    private func prefetchFramesSequentially(_ frameIndices: [Int], tilePaths: [MKTileOverlayPath]) {
+        let startTime = Date()
+        let totalFrames = frameIndices.count
+        var completedCount = 0
+        print("[Radar] parallel prefetch starting — \(totalFrames) frames")
+
+        for index in frameIndices {
+            prefetchTilesForFrame(index, tilePaths: tilePaths, session: prefetchSession) { [weak self] in
+                guard let self = self else { return }
+                self.addOverlayToMap(at: index)
+                self.applyCurrentFrame()
+
+                completedCount += 1
+                if completedCount == totalFrames {
+                    let elapsed = Date().timeIntervalSince(startTime)
+                    print("[Radar] parallel prefetch complete — \(totalFrames) frames in \(String(format: "%.1f", elapsed))s")
+                    self.playPauseButton.isEnabled = true
+                }
+            }
+        }
+    }
+
+    private func visibleTilePaths() -> [MKTileOverlayPath] {
+        let mapRect = mapView.visibleMapRect
+        let zoomScale = Double(mapView.bounds.width) / mapRect.size.width
+        let zoomLevel = max(0, Int(log2(zoomScale * MKMapSize.world.width / 256.0)))
+
+        let tileCount = Double(1 << zoomLevel)
+        let minX = max(0, Int(mapRect.origin.x / MKMapSize.world.width * tileCount))
+        let maxX = min(Int(tileCount) - 1, Int((mapRect.origin.x + mapRect.size.width) / MKMapSize.world.width * tileCount))
+        let minY = max(0, Int(mapRect.origin.y / MKMapSize.world.height * tileCount))
+        let maxY = min(Int(tileCount) - 1, Int((mapRect.origin.y + mapRect.size.height) / MKMapSize.world.height * tileCount))
+
+        guard minX <= maxX, minY <= maxY else { return [] }
+
+        var paths: [MKTileOverlayPath] = []
+        for x in minX...maxX {
+            for y in minY...maxY {
+                paths.append(MKTileOverlayPath(x: x, y: y, z: zoomLevel, contentScaleFactor: 1.0))
+            }
+        }
+        return paths
     }
 
     private func updateTimeLabel() {
@@ -195,9 +325,16 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     }
 
     private func applyCurrentFrame() {
-        guard currentFrameIndex < timeSteps.count else { return }
-        overlay.currentTime = timeSteps[currentFrameIndex]
-        tileRenderer.reloadData()
+        guard currentFrameIndex < tileOverlays.count else { return }
+
+        // Ensure this overlay is added to the map
+        addOverlayToMap(at: currentFrameIndex)
+
+        // Toggle visibility: current frame alpha 1, all others alpha 0
+        for (index, overlay) in tileOverlays.enumerated() {
+            let id = ObjectIdentifier(overlay)
+            rendererMap[id]?.alpha = (index == currentFrameIndex) ? 1.0 : 0.0
+        }
     }
 
     // MARK: - Animation
@@ -211,6 +348,9 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     }
 
     private func startAnimation() {
+        // Ensure all overlays are added before animating
+        addRemainingOverlays()
+
         isPlaying = true
         playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
 
@@ -244,9 +384,18 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     // MARK: - MKMapViewDelegate
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if let tileOverlay = overlay as? MKTileOverlay {
+        if let tileOverlay = overlay as? WMSTileOverlay {
             let renderer = MKTileOverlayRenderer(overlay: tileOverlay)
-            self.tileRenderer = renderer
+            let id = ObjectIdentifier(tileOverlay)
+            rendererMap[id] = renderer
+
+            // Set initial alpha: visible only if this is the current frame
+            if let index = tileOverlays.firstIndex(where: { $0 === tileOverlay }) {
+                renderer.alpha = (index == currentFrameIndex) ? 1.0 : 0.0
+            } else {
+                renderer.alpha = 0.0
+            }
+
             return renderer
         }
         return MKOverlayRenderer(overlay: overlay)
@@ -269,4 +418,3 @@ extension RadarViewController: @preconcurrency CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
     }
 }
-

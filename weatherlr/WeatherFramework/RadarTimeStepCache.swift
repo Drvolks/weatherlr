@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 class RadarTimeStepCache: @unchecked Sendable {
     static let shared = RadarTimeStepCache()
@@ -16,12 +15,6 @@ class RadarTimeStepCache: @unchecked Sendable {
     private var cachedSteps: [String] = []
     private var fetchDate: Date?
     private var isFetching = false
-    private var tileSession: URLSession = {
-        let config = URLSessionConfiguration.default
-        config.urlCache = URLCache.shared
-        config.requestCachePolicy = .returnCacheDataElseLoad
-        return URLSession(configuration: config)
-    }()
 
     private init() {}
 
@@ -75,86 +68,12 @@ class RadarTimeStepCache: @unchecked Sendable {
                 self.cachedSteps = steps
                 self.fetchDate = Date()
                 print("[RadarCache] preload complete — \(steps.count) steps cached in \(String(format: "%.1f", elapsed))s")
-                let lastStep = steps.last
-                self.lock.unlock()
-                if let time = lastStep {
-                    self.preloadTiles(for: time)
-                }
             } else {
                 print("[RadarCache] preload failed — parsed 0 steps from \(data.count) bytes in \(String(format: "%.1f", elapsed))s")
-                self.isFetching = false
-                self.lock.unlock()
             }
+            self.isFetching = false
+            self.lock.unlock()
         }.resume()
-    }
-
-    private func preloadTiles(for timeStep: String) {
-        let city = PreferenceHelper.getCityToUse()
-        guard let lat = Double(city.latitude), let lon = Double(city.longitude) else {
-            print("[RadarCache] tile preload skipped — no city coordinates")
-            isFetching = false
-            return
-        }
-
-        let zoom = 7
-        let centerTileX = lonToTileX(lon: lon, zoom: zoom)
-        let centerTileY = latToTileY(lat: lat, zoom: zoom)
-
-        var tileURLs: [URL] = []
-        for dx in -1...1 {
-            for dy in -1...1 {
-                let tx = centerTileX + dx
-                let ty = centerTileY + dy
-                let bbox = tileBBox(x: tx, y: ty, z: zoom)
-                let urlString = "https://geo.weather.gc.ca/geomet?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=RADAR_1KM_RRAI&CRS=EPSG:3857&BBOX=\(bbox.minX),\(bbox.minY),\(bbox.maxX),\(bbox.maxY)&WIDTH=256&HEIGHT=256&FORMAT=image/png&TRANSPARENT=TRUE&TIME=\(timeStep)"
-                if let url = URL(string: urlString) {
-                    tileURLs.append(url)
-                }
-            }
-        }
-
-        print("[RadarCache] preloading \(tileURLs.count) tiles at zoom \(zoom) around (\(lat), \(lon))...")
-        let startTime = Date()
-        let group = DispatchGroup()
-
-        for url in tileURLs {
-            group.enter()
-            tileSession.dataTask(with: url) { data, response, _ in
-                if let data = data, let response = response {
-                    let cached = CachedURLResponse(response: response, data: data)
-                    URLCache.shared.storeCachedResponse(cached, for: URLRequest(url: url))
-                }
-                group.leave()
-            }.resume()
-        }
-
-        group.notify(queue: .global()) { [weak self] in
-            let elapsed = Date().timeIntervalSince(startTime)
-            print("[RadarCache] tile preload complete — \(tileURLs.count) tiles in \(String(format: "%.1f", elapsed))s")
-            self?.lock.lock()
-            self?.isFetching = false
-            self?.lock.unlock()
-        }
-    }
-
-    private static let originShift = 20037508.342789244
-
-    private func lonToTileX(lon: Double, zoom: Int) -> Int {
-        return Int(floor((lon + 180.0) / 360.0 * pow(2.0, Double(zoom))))
-    }
-
-    private func latToTileY(lat: Double, zoom: Int) -> Int {
-        let latRad = lat * .pi / 180.0
-        return Int(floor((1.0 - log(tan(latRad) + 1.0 / cos(latRad)) / .pi) / 2.0 * pow(2.0, Double(zoom))))
-    }
-
-    private func tileBBox(x: Int, y: Int, z: Int) -> (minX: Double, minY: Double, maxX: Double, maxY: Double) {
-        let tileSize = (2 * RadarTimeStepCache.originShift) / pow(2.0, Double(z))
-        let minX = Double(x) * tileSize - RadarTimeStepCache.originShift
-        let maxX = minX + tileSize
-        let maxY = RadarTimeStepCache.originShift - Double(y) * tileSize
-        let minY = maxY - tileSize
-        return (minX, minY, maxX, maxY)
     }
 
     func getCachedSteps() -> [String]? {

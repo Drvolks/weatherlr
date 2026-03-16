@@ -62,7 +62,8 @@ public class JsonWeatherParser {
                 tendancy: .na,
                 when: "",
                 night: false,
-                dateObservation: dateObservation
+                dateObservation: dateObservation,
+                iconCode: cc.iconCode?.value
             )
             result.append(now)
         }
@@ -102,7 +103,8 @@ public class JsonWeatherParser {
                 tendancy: tendency,
                 when: when,
                 night: night,
-                dateObservation: ""
+                dateObservation: "",
+                iconCode: forecast.abbreviatedForecast?.icon?.value
             )
 
             // If today's night forecast follows a .now entry, mark .now as night too

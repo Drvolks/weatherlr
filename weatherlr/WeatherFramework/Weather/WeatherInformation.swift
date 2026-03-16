@@ -18,7 +18,8 @@ public class WeatherInformation {
     public var when: String
     public var night:Bool
     public var dateObservation:String
-    
+    public var iconCode:Int?
+
     public init() {
         temperature = 0
         weatherStatus = .na
@@ -29,9 +30,10 @@ public class WeatherInformation {
         when = ""
         night = false
         dateObservation = ""
+        iconCode = nil
     }
-    
-    public init(temperature: Int, weatherStatus: WeatherStatus, weatherDay: WeatherDay, summary: String, detail: String, tendancy:Tendency, when: String, night: Bool, dateObservation: String) {
+
+    public init(temperature: Int, weatherStatus: WeatherStatus, weatherDay: WeatherDay, summary: String, detail: String, tendancy:Tendency, when: String, night: Bool, dateObservation: String, iconCode: Int? = nil) {
         self.temperature = temperature
         self.weatherStatus = weatherStatus
         self.weatherDay = weatherDay
@@ -41,14 +43,23 @@ public class WeatherInformation {
         self.when = when
         self.night = night
         self.dateObservation = dateObservation
+        self.iconCode = iconCode
     }
-    
+
     public func image() -> UIImage {
+        // Prefer icon code mapping when available
+        if let code = iconCode, let name = WeatherHelper.imageNameForIconCode(code) {
+            if let image = UIImage(named: name) {
+                return image
+            }
+        }
+
+        // Fallback to text-based WeatherStatus
         var status = self.weatherStatus
         if let substitute = WeatherHelper.getImageSubstitute(self.weatherStatus) {
             status = substitute
         }
-        
+
         if night {
             if let nightName = WeatherHelper.getNightImageName(status),
                let image = UIImage(named: nightName) {
@@ -62,7 +73,7 @@ public class WeatherInformation {
                 return image
             }
         }
-        
+
         return UIImage(named: "na")!
     }
 }

@@ -90,7 +90,7 @@ xcrun altool --upload-app \
 # --- PréviCA (free) ---
 
 echo "=== Archiving PréviCA ==="
-xcodebuild archive -project "$PROJECT" -scheme "weatherlr" \
+xcodebuild archive -project "$PROJECT" -scheme "PréviCA" \
   -destination 'generic/platform=iOS' \
   -archivePath "$ARCHIVE_DIR/PreviCA-iOS.xcarchive" \
   "${AUTH_FLAGS[@]}"

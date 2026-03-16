@@ -23,8 +23,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var lastContentOffset: CGFloat = 0
     var locationServices:LocationServices?
     var settingsButton: UIBarButtonItem?
-    #if ENABLE_WEATHERKIT
-    var weatherKitData: WeatherKitData?
+    #if ENABLE_PRECIPITATION
+    var precipitationData: PrecipitationData?
     #endif
     #if ENABLE_PWS
     var pwsResult: (station: PWSStation, observation: WUObservation)?
@@ -43,9 +43,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.rowHeight = UITableView.automaticDimension
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.backgroundColor = UIColor.clear
-        #if ENABLE_WEATHERKIT
         weatherTable.register(HourlyForecastCell.self, forCellReuseIdentifier: HourlyForecastCell.reuseIdentifier)
-        #endif
 
         refreshControl = UIRefreshControl()
         refreshLabel()
@@ -156,18 +154,17 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             WidgetCenter.shared.reloadAllTimelines()
 
-            #if ENABLE_WEATHERKIT || ENABLE_PWS
-            fetchWeatherKitData()
+            #if ENABLE_PRECIPITATION || ENABLE_PWS
+            fetchExtraData()
             #endif
 
         }
     }
 
-    private func fetchWeatherKitData() {
+    private func fetchExtraData() {
         let selectedCity = PreferenceHelper.getSelectedCity()
         let city: City
         if LocationServices.isUseCurrentLocation(selectedCity) {
-            // Current-location mode: use the resolved EC city when available.
             city = weatherInformationWrapper.city ?? PreferenceHelper.getCityToUse()
         } else {
             city = PreferenceHelper.getCityToUse()
@@ -175,17 +172,17 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard !LocationServices.isUseCurrentLocation(city) else { return }
 
         Task {
-            #if ENABLE_WEATHERKIT
-            let data = await WeatherKitService.shared.fetchWeatherKitData(for: city)
+            #if ENABLE_PRECIPITATION
+            let data = await PrecipitationService.shared.fetchPrecipitationData(for: city)
             #endif
             #if ENABLE_PWS
             let pws = await PWSService.shared.findClosestStation(to: city)
             #endif
             await MainActor.run {
-                #if ENABLE_WEATHERKIT
-                let wasShowingPrecipitation = self.weatherKitData?.hasPrecipitationNextHour ?? false
-                self.weatherKitData = data
-                let isShowingPrecipitation = self.weatherKitData?.hasPrecipitationNextHour ?? false
+                #if ENABLE_PRECIPITATION
+                let wasShowingPrecipitation = self.precipitationData?.hasPrecipitationNextHour ?? false
+                self.precipitationData = data
+                let isShowingPrecipitation = self.precipitationData?.hasPrecipitationNextHour ?? false
                 #endif
                 #if ENABLE_PWS
                 self.pwsResult = pws
@@ -202,10 +199,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 WatchSyncManager.shared.syncSettings()
                 #endif
 
-                #if ENABLE_WEATHERKIT
+                #if ENABLE_PRECIPITATION
                 if !wasShowingPrecipitation && isShowingPrecipitation,
                    let cell = self.weatherTable.cellForRow(at: IndexPath(row: 0, section: 0)) as? WeatherNowCell {
-                    cell.transitionToPrecipitation(with: self.weatherKitData!.precipitationMinutes)
+                    cell.transitionToPrecipitation(with: self.precipitationData!.precipitationMinutes)
                     self.weatherTable.beginUpdates()
                     self.weatherTable.endUpdates()
                     let rowCount = self.weatherTable.numberOfRows(inSection: 0)
@@ -265,15 +262,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
-    #if ENABLE_WEATHERKIT
     private var hasHourlyRow: Bool {
-        return weatherInformationWrapper.weatherInformations.count > 0
+        return !weatherInformationWrapper.hourlyForecasts.isEmpty
     }
-    #else
-    private var hasHourlyRow: Bool {
-        return false
-    }
-    #endif
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         if LocationServices.isUseCurrentLocation(PreferenceHelper.getCityToUse()) {
@@ -289,21 +280,19 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
             cell.backgroundColor = .clear
-            #if ENABLE_WEATHERKIT
-            cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, weatherKitData: weatherKitData)
+            #if ENABLE_PRECIPITATION
+            cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, precipitationData: precipitationData)
             #else
             cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
             #endif
             return cell
         }
 
-        #if ENABLE_WEATHERKIT
         if hasHourlyRow && indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: HourlyForecastCell.reuseIdentifier, for: indexPath) as! HourlyForecastCell
-            cell.configure(with: weatherKitData)
+            cell.configure(with: weatherInformationWrapper.hourlyForecasts)
             return cell
         }
-        #endif
 
         let adjustedRow = hasHourlyRow ? indexPath.row - 1 : indexPath.row
         let adjustedIndexPath = IndexPath(row: adjustedRow, section: indexPath.section)
@@ -347,8 +336,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
                 if weatherInfo.weatherDay == WeatherDay.now {
                     if(weatherInfo.weatherStatus != .blank) {
-                        #if ENABLE_WEATHERKIT
-                        if let data = weatherKitData, data.hasPrecipitationNextHour {
+                        #if ENABLE_PRECIPITATION
+                        if let data = precipitationData, data.hasPrecipitationNextHour {
                             return 100
                         }
                         #endif
@@ -360,11 +349,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             return 0
         }
 
-        #if ENABLE_WEATHERKIT
         if hasHourlyRow && indexPath.row == 1 {
             return 110
         }
-        #endif
 
         return UITableView.automaticDimension
     }

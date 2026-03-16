@@ -6,9 +6,7 @@
 //  Copyright © 2025 Jean-Francois Dufour. All rights reserved.
 //
 
-#if ENABLE_WEATHERKIT
 import UIKit
-import WeatherKit
 
 class HourlyItemCell: UICollectionViewCell {
     static let reuseIdentifier = "HourlyItemCell"
@@ -77,35 +75,29 @@ class HourlyItemCell: UICollectionViewCell {
         ])
     }
 
-    func configure(with hourWeather: HourWeather, isCurrentHour: Bool, weatherKitData: WeatherKitData?) {
+    func configure(with hourly: HourlyForecastInfo, isCurrentHour: Bool) {
         if isCurrentHour {
             timeLabel.text = "Now".localized()
         } else {
             let formatter = DateFormatter()
             formatter.dateFormat = "HH"
-            timeLabel.text = formatter.string(from: hourWeather.date) + "h"
+            timeLabel.text = formatter.string(from: hourly.date) + "h"
         }
 
-        let isNight: Bool
-        if let data = weatherKitData {
-            isNight = !data.isDaylight(at: hourWeather.date)
+        if let image = UIImage(named: hourly.imageName) {
+            iconImageView.image = image
         } else {
-            let hour = Calendar.current.component(.hour, from: hourWeather.date)
-            isNight = hour < 7 || hour >= 19
+            iconImageView.image = UIImage(named: "na")
         }
-        iconImageView.image = WeatherHelper.image(for: hourWeather.condition, night: isNight)
 
-        let precipChance = Int(hourWeather.precipitationChance * 100)
-        if precipChance > 0 {
-            precipLabel.text = "\(precipChance)%"
+        if hourly.precipChance > 0 {
+            precipLabel.text = "\(hourly.precipChance)%"
             precipLabel.isHidden = false
         } else {
             precipLabel.text = nil
             precipLabel.isHidden = true
         }
 
-        let temp = Int(hourWeather.temperature.value.rounded())
-        tempLabel.text = "\(temp)°"
+        tempLabel.text = "\(hourly.temperature)°"
     }
 }
-#endif

@@ -8,9 +8,6 @@
 
 import UIKit
 import CoreText
-#if ENABLE_WEATHERKIT
-import WeatherKit
-#endif
 
 public class WeatherHelper {
     static let offline = false
@@ -45,9 +42,9 @@ public class WeatherHelper {
 
     public static func getWeatherInformationsNoCache(_ data:Data, city:City) -> WeatherInformationWrapper {
         let parser = JsonWeatherParser(data: data, language: PreferenceHelper.getLanguage())
-        let (weatherInformations, alerts) = parser.parse()
+        let (weatherInformations, alerts, hourlyForecasts) = parser.parse()
 
-        let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts, city: city)
+        let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts, hourlyForecasts: hourlyForecasts, city: city)
         return weatherInformationWrapper
     }
     
@@ -454,92 +451,4 @@ public class WeatherHelper {
         return "Last refresh".localized() + " " + dateFormatter.string(from: wrapper.lastRefresh as Date)
     }
 
-    #if ENABLE_WEATHERKIT
-    public static func weatherStatus(from condition: WeatherCondition) -> WeatherStatus {
-        switch condition {
-        case .clear:
-            return .clear
-        case .mostlyClear:
-            return .mainlyClear
-        case .partlyCloudy:
-            return .partlyCloudy
-        case .mostlyCloudy:
-            return .mostlyCloudy
-        case .cloudy:
-            return .cloudy
-        case .drizzle:
-            return .drizzle
-        case .rain:
-            return .rain
-        case .heavyRain:
-            return .rainAtTimesHeavy
-        case .snow:
-            return .snow
-        case .heavySnow:
-            return .heavySnow
-        case .flurries:
-            return .flurries
-        case .freezingDrizzle:
-            return .freezingDrizzle
-        case .freezingRain:
-            return .freezingRain
-        case .sleet, .hail:
-            return .icePellets
-        case .blizzard:
-            return .blizzard
-        case .blowingSnow:
-            return .blowingSnow
-        case .thunderstorms, .isolatedThunderstorms, .scatteredThunderstorms, .strongStorms:
-            return .chanceOfShowersOrThunderstorms
-        case .foggy:
-            return .fog
-        case .haze, .blowingDust:
-            return .haze
-        case .smoky:
-            return .smoke
-        case .wintryMix:
-            return .snowOrRain
-        case .sunShowers:
-            return .lightRain
-        case .sunFlurries:
-            return .lightSnow
-        case .windy, .breezy:
-            return .aFewClouds
-        case .frigid, .hot:
-            return .sunny
-        case .hurricane, .tropicalStorm:
-            return .rainAtTimesHeavy
-        @unknown default:
-            return .na
-        }
-    }
-
-    public static func imageName(for condition: WeatherCondition, night: Bool) -> String {
-        var status = weatherStatus(from: condition)
-        if let substitute = getImageSubstitute(status) {
-            status = substitute
-        }
-
-        // .clear is the night image (moon); use .sunny for daytime
-        if status == .clear && !night {
-            status = .sunny
-        }
-
-        if night, let nightName = getNightImageName(status) {
-            return nightName
-        }
-
-        return String(describing: status)
-    }
-
-    public static func image(for condition: WeatherCondition, night: Bool) -> UIImage {
-        let name = imageName(for: condition, night: night)
-
-        if let image = UIImage(named: name) {
-            return image
-        }
-
-        return UIImage(named: "na") ?? UIImage()
-    }
-    #endif
 }

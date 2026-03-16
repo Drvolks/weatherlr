@@ -9,7 +9,7 @@
 import WidgetKit
 import SwiftUI
 import CoreLocation
-#if ENABLE_WEATHERKIT
+#if ENABLE_PRECIPITATION
 import WeatherKit
 #endif
 
@@ -60,13 +60,13 @@ struct WeatherTimelineProvider: TimelineProvider {
         #else
         let pws = (hasPWS: false, temperature: nil as Int?, stationName: nil as String?)
         #endif
-        #if ENABLE_WEATHERKIT
-        let wk = Self.fetchWeatherKitSync(for: city)
+        #if ENABLE_PRECIPITATION
+        let precipitation = Self.fetchPrecipitationSync(for: city)
         #else
-        let wk = (hourly: [ForecastItem](), precipitation: [Double](), currentImageName: nil as String?)
+        let precipitation = [Double]()
         #endif
 
-        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, hourlyForecasts: wk.hourly, precipitationIntensities: wk.precipitation, currentImageName: wk.currentImageName)
+        let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, precipitationIntensities: precipitation)
         let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
         let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
         completion(timeline)
@@ -105,55 +105,28 @@ struct WeatherTimelineProvider: TimelineProvider {
     }
     #endif
 
-    #if ENABLE_WEATHERKIT
-    private final class WeatherKitResultBox: @unchecked Sendable {
-        var currentImageName: String?
-        var hourlyForecasts: [ForecastItem] = []
-        var precipitationIntensities: [Double] = []
+    #if ENABLE_PRECIPITATION
+    private final class PrecipitationResultBox: @unchecked Sendable {
+        var intensities: [Double] = []
     }
 
-    static func fetchWeatherKitSync(for city: City) -> (hourly: [ForecastItem], precipitation: [Double], currentImageName: String?) {
+    static func fetchPrecipitationSync(for city: City) -> [Double] {
         guard let lat = Double(city.latitude), let lon = Double(city.longitude) else {
-            return ([], [], nil)
+            return []
         }
 
         let location = CLLocation(latitude: lat, longitude: lon)
         let semaphore = DispatchSemaphore(value: 0)
-        let box = WeatherKitResultBox()
+        let box = PrecipitationResultBox()
 
         Task.detached {
             defer { semaphore.signal() }
             do {
-                let weather = try await WeatherService.shared.weather(for: location, including: .current, .minute, .hourly)
-                let currentWeather = weather.0
-                let minuteForecast = weather.1
-                let hourlyForecast = weather.2
-
-                // Current condition
-                box.currentImageName = weatherImageNameForCondition(currentWeather.condition, night: !currentWeather.isDaylight)
-
-                // Hourly
-                let now = Date()
-                let hours = Array(hourlyForecast.filter { $0.date >= now }.prefix(5))
-                let formatter = DateFormatter()
-                formatter.dateFormat = "HH"
-
-                for hour in hours {
-                    let label = formatter.string(from: hour.date) + "h"
-                    let imageName = weatherImageNameForCondition(hour.condition, night: !hour.isDaylight)
-                    let temp = Int(hour.temperature.value.rounded())
-                    box.hourlyForecasts.append(ForecastItem(
-                        label: label,
-                        imageName: imageName,
-                        temperatureText: "\(temp)°"
-                    ))
-                }
-
-                // Minute precipitation (filter out negligible intensities below 0.1 mm/h)
+                let minuteForecast = try await WeatherService.shared.weather(for: location, including: .minute)
                 if let minutes = minuteForecast {
                     let intensities = minutes.map { $0.precipitationChance > 0 ? $0.precipitationIntensity.value : 0 }
                     if intensities.contains(where: { $0 >= 0.1 }) {
-                        box.precipitationIntensities = intensities
+                        box.intensities = intensities
                     }
                 }
             } catch {
@@ -164,21 +137,17 @@ struct WeatherTimelineProvider: TimelineProvider {
         }
 
         semaphore.wait()
-        return (box.hourlyForecasts, box.precipitationIntensities, box.currentImageName)
-    }
-
-    static func weatherImageNameForCondition(_ condition: WeatherCondition, night: Bool) -> String {
-        return WeatherHelper.imageName(for: condition, night: night)
+        return box.intensities
     }
     #endif
 
     private func buildEntry() -> WeatherEntry {
         let city = PreferenceHelper.getCityToUse()
         let wrapper = WeatherHelper.getWeatherInformationsNoCache(city)
-        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil, hourlyForecasts: [], precipitationIntensities: [], currentImageName: nil)
+        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil, precipitationIntensities: [])
     }
 
-    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?, hourlyForecasts: [ForecastItem], precipitationIntensities: [Double], currentImageName: String?) -> WeatherEntry {
+    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?, precipitationIntensities: [Double]) -> WeatherEntry {
         let cityName = (hasPWS ? pwsStationName : nil) ?? CityHelper.cityName(city)
 
         guard wrapper.weatherInformations.count > 0 else {
@@ -187,16 +156,24 @@ struct WeatherTimelineProvider: TimelineProvider {
 
         let current = wrapper.weatherInformations[0]
         let temperature = pwsTemp ?? current.temperature
-        let imageName = currentImageName ?? weatherImageName(for: current)
+        let imageName = weatherImageName(for: current)
 
         let indexAdjust = WeatherHelper.getIndexAjust(wrapper.weatherInformations)
 
-        // Use WeatherKit hourly data; fall back to EC forecasts if unavailable
-        var forecasts: [ForecastItem]
-        if !hourlyForecasts.isEmpty {
-            forecasts = hourlyForecasts
+        // Build hourly forecasts from EC data
+        var forecasts = [ForecastItem]()
+        if !wrapper.hourlyForecasts.isEmpty {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH"
+            for hourly in wrapper.hourlyForecasts.prefix(5) {
+                let label = formatter.string(from: hourly.date) + "h"
+                forecasts.append(ForecastItem(
+                    label: label,
+                    imageName: hourly.imageName,
+                    temperatureText: "\(hourly.temperature)°"
+                ))
+            }
         } else {
-            forecasts = [ForecastItem]()
             let startIndex = indexAdjust
             let endIndex = min(startIndex + 4, wrapper.weatherInformations.count)
 
@@ -286,7 +263,7 @@ struct SmallWeatherView: View {
     }
 }
 
-#if ENABLE_WEATHERKIT
+#if ENABLE_PRECIPITATION
 struct PrecipitationChart: View {
     let intensities: [Double]
     private let barColor = Color(red: 0.4, green: 0.7, blue: 1.0)
@@ -347,7 +324,7 @@ struct PrecipitationChart: View {
 struct MediumWeatherView: View {
     let entry: WeatherEntry
 
-    #if ENABLE_WEATHERKIT
+    #if ENABLE_PRECIPITATION
     private var hasPrecipitation: Bool {
         entry.precipitationIntensities.contains { $0 >= 0.1 }
     }
@@ -365,7 +342,7 @@ struct MediumWeatherView: View {
         }
     }
 
-    #if ENABLE_WEATHERKIT
+    #if ENABLE_PRECIPITATION
     private var precipitationLayout: some View {
         VStack(spacing: 4) {
             HStack(spacing: 6) {

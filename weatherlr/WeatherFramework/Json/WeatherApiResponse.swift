@@ -34,6 +34,7 @@ struct WeatherApiResponse: Codable {
 struct WeatherProperties: Codable {
     let currentConditions: CurrentConditions?
     let forecastGroup: ForecastGroup?
+    let hourlyForecastGroup: HourlyForecastGroup?
     let warnings: [WarningEntry]?
 }
 
@@ -91,6 +92,27 @@ struct ForecastTemperatureEntry: Codable {
 struct AbbreviatedForecast: Codable {
     let icon: IconCode?
     let textSummary: Bilingual<String>?
+}
+
+// MARK: - Hourly Forecast Group
+struct HourlyForecastGroup: Codable {
+    let hourlyForecasts: [HourlyForecast]?
+}
+
+struct HourlyForecast: Codable {
+    let condition: Bilingual<String>?
+    let temperature: HourlyTemperature?
+    let iconCode: IconCode?
+    let lop: HourlyLop?
+    let timestamp: String?
+}
+
+struct HourlyTemperature: Codable {
+    let value: Bilingual<Int>?
+}
+
+struct HourlyLop: Codable {
+    let value: Bilingual<Int>?
 }
 
 // MARK: - Warnings

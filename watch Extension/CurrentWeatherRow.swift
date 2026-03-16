@@ -16,7 +16,7 @@ struct CurrentWeatherRow: View {
     var body: some View {
         VStack(spacing: 4) {
             HStack {
-                Image(uiImage: weatherImage)
+                Image(uiImage: weather.image())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 60, height: 50)
@@ -48,15 +48,5 @@ struct CurrentWeatherRow: View {
         let temperature = weather.temperature
         #endif
         return "Currently".localized() + " " + String(temperature) + "°"
-    }
-
-    private var weatherImage: UIImage {
-        #if ENABLE_WEATHERKIT
-        if let data = model.weatherKitData {
-            let night = !data.isDaylight()
-            return WeatherHelper.image(for: data.currentWeather.condition, night: night)
-        }
-        #endif
-        return weather.image()
     }
 }

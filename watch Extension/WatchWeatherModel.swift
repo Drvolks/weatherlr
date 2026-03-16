@@ -10,9 +10,6 @@ import Foundation
 import WatchKit
 import WidgetKit
 import CoreLocation
-#if ENABLE_WEATHERKIT
-import WeatherKit
-#endif
 
 @Observable
 @MainActor
@@ -28,10 +25,6 @@ final class WatchWeatherModel {
     var pwsTemperature: Int?
     var pwsStationName: String?
     var pwsUpdatedAt: Date?
-    #endif
-
-    #if ENABLE_WEATHERKIT
-    var weatherKitData: WeatherKitData?
     #endif
 
     var locationCoordinator: LocationCoordinator?
@@ -51,9 +44,6 @@ final class WatchWeatherModel {
         pwsTemperature = nil
         pwsStationName = nil
         pwsUpdatedAt = nil
-        #endif
-        #if ENABLE_WEATHERKIT
-        weatherKitData = nil
         #endif
     }
 
@@ -164,16 +154,6 @@ final class WatchWeatherModel {
 
         #if ENABLE_PWS
         loadSyncedPWS()
-        #endif
-
-        #if ENABLE_WEATHERKIT
-        if let city = wrapper.city {
-            Task { @MainActor in
-                if let data = await WeatherKitService.shared.fetchWeatherKitData(for: city) {
-                    self.weatherKitData = data
-                }
-            }
-        }
         #endif
     }
 

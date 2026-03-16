@@ -6,18 +6,13 @@
 //  Copyright © 2025 drvolks. All rights reserved.
 //
 
-#if ENABLE_WEATHERKIT
 import UIKit
-import WeatherKit
 
 class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     static let reuseIdentifier = "HourlyForecastCell"
 
-    private var hours: [HourWeather] = []
-    private var weatherKitData: WeatherKitData?
-    private var isLoading = true
+    private var hours: [HourlyForecastInfo] = []
     private var collectionView: UICollectionView!
-    private var loadingLabel: UILabel!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,21 +29,6 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
         selectionStyle = .none
         separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
 
-        // Loading placeholder
-        loadingLabel = UILabel()
-        loadingLabel.translatesAutoresizingMaskIntoConstraints = false
-        loadingLabel.text = "Hourly Loading".localized()
-        loadingLabel.textColor = UIColor.white.withAlphaComponent(0.6)
-        loadingLabel.font = .systemFont(ofSize: 14, weight: .medium)
-        loadingLabel.textAlignment = .center
-        contentView.addSubview(loadingLabel)
-        NSLayoutConstraint.activate([
-            loadingLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            loadingLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            loadingLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
-
-        // Collection view
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 60, height: 100)
@@ -72,18 +52,9 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
         ])
     }
 
-    func configure(with weatherKitData: WeatherKitData?) {
-        if let data = weatherKitData {
-            self.hours = data.next24Hours
-            self.weatherKitData = data
-            self.isLoading = false
-        } else {
-            self.hours = []
-            self.weatherKitData = nil
-            self.isLoading = true
-        }
-        loadingLabel.isHidden = !isLoading
-        collectionView.isHidden = isLoading
+    func configure(with hourlyForecasts: [HourlyForecastInfo]) {
+        self.hours = hourlyForecasts
+        collectionView.isHidden = hours.isEmpty
         collectionView.reloadData()
     }
 
@@ -96,8 +67,7 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyItemCell.reuseIdentifier, for: indexPath) as! HourlyItemCell
         let hour = hours[indexPath.item]
-        cell.configure(with: hour, isCurrentHour: indexPath.item == 0, weatherKitData: weatherKitData)
+        cell.configure(with: hour, isCurrentHour: indexPath.item == 0)
         return cell
     }
 }
-#endif

@@ -22,7 +22,7 @@ if [ "$DISABLE_PWS" = "1" ]; then
     sed -i '' 's/ -DENABLE_PWS//g' "$PBXPROJ"
 fi
 
-if [ "$DISABLE_WEATHERKIT" = "1" ]; then
-    echo "Stripping ENABLE_WEATHERKIT from build settings..."
-    sed -i '' 's/ -DENABLE_WEATHERKIT//g' "$PBXPROJ"
+if [ "$DISABLE_PRECIPITATION" = "1" ]; then
+    echo "Stripping ENABLE_PRECIPITATION from build settings..."
+    sed -i '' 's/ -DENABLE_PRECIPITATION//g' "$PBXPROJ"
 fi

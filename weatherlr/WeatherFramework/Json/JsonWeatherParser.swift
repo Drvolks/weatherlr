@@ -18,15 +18,16 @@ public class JsonWeatherParser {
         self.language = language
     }
 
-    public func parse() -> ([WeatherInformation], [AlertInformation]) {
+    public func parse() -> ([WeatherInformation], [AlertInformation], [HourlyForecastInfo]) {
         guard let response = try? JSONDecoder().decode(WeatherApiResponse.self, from: data) else {
-            return ([], [])
+            return ([], [], [])
         }
 
         let weatherInformations = buildWeatherInformations(response)
         let alerts = buildAlerts(response)
+        let hourlyForecasts = buildHourlyForecasts(response)
 
-        return (weatherInformations, alerts)
+        return (weatherInformations, alerts, hourlyForecasts)
     }
 
     // MARK: - Weather Informations
@@ -184,6 +185,38 @@ public class JsonWeatherParser {
             return .ended
         }
         return .warning
+    }
+
+    // MARK: - Hourly Forecasts
+
+    func buildHourlyForecasts(_ response: WeatherApiResponse) -> [HourlyForecastInfo] {
+        guard let hourlyGroup = response.properties?.hourlyForecastGroup,
+              let forecasts = hourlyGroup.hourlyForecasts else {
+            return []
+        }
+
+        let isoFormatter = ISO8601DateFormatter()
+        var result = [HourlyForecastInfo]()
+
+        for forecast in forecasts {
+            guard let timestamp = forecast.timestamp,
+                  let date = isoFormatter.date(from: timestamp) else {
+                continue
+            }
+
+            let temperature = forecast.temperature?.value?.value(for: language) ?? 0
+            let iconCode = forecast.iconCode?.value
+            let precipChance = forecast.lop?.value?.value(for: language) ?? 0
+
+            result.append(HourlyForecastInfo(
+                date: date,
+                temperature: temperature,
+                iconCode: iconCode,
+                precipChance: precipChance
+            ))
+        }
+
+        return result
     }
 
     func formatObservationDate(_ isoTimestamp: String?) -> String {

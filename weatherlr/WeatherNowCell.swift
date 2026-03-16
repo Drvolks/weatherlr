@@ -11,18 +11,18 @@ import UIKit
 class WeatherNowCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
 
-    #if ENABLE_WEATHERKIT
+    #if ENABLE_PRECIPITATION
     private var precipitationChartView: PrecipitationChartView?
 
-    func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper, weatherKitData: WeatherKitData? = nil) {
+    func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper, precipitationData: PrecipitationData? = nil) {
         if let city = city {
-            populate(city: city, weatherInformationWrapper: weatherInformationWrapper, weatherKitData: weatherKitData)
+            populate(city: city, weatherInformationWrapper: weatherInformationWrapper, precipitationData: precipitationData)
         }
 
         separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
     }
 
-    private func populate(city: City, weatherInformationWrapper: WeatherInformationWrapper, weatherKitData: WeatherKitData?) {
+    private func populate(city: City, weatherInformationWrapper: WeatherInformationWrapper, precipitationData: PrecipitationData?) {
         if LocationServices.isUseCurrentLocation(city) {
             weatherImage.isHidden = false
             weatherImage.image = UIImage(named: "locating")
@@ -35,15 +35,11 @@ class WeatherNowCell: UITableViewCell {
                     if weatherInfo.weatherStatus == .blank {
                         weatherImage.isHidden = true
                         hidePrecipitationChart()
-                    } else if let data = weatherKitData, data.hasPrecipitationNextHour {
+                    } else if let data = precipitationData, data.hasPrecipitationNextHour {
                         weatherImage.isHidden = true
                         showPrecipitationChart(with: data.precipitationMinutes)
                     } else {
-                        if let data = weatherKitData {
-                            weatherImage.image = WeatherHelper.image(for: data.currentWeather.condition, night: !data.isDaylight())
-                        } else {
-                            weatherImage.image = weatherInfo.image()
-                        }
+                        weatherImage.image = weatherInfo.image()
                         weatherImage.isHidden = false
                         hidePrecipitationChart()
                     }

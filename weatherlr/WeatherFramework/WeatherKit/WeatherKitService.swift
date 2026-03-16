@@ -6,20 +6,20 @@
 //  Copyright © 2025 drvolks. All rights reserved.
 //
 
-#if ENABLE_WEATHERKIT
+#if ENABLE_PRECIPITATION
 import Foundation
 import WeatherKit
 import CoreLocation
 
 @MainActor
-class WeatherKitService {
-    static let shared = WeatherKitService()
+class PrecipitationService {
+    static let shared = PrecipitationService()
     private let service = WeatherService.shared
-    private let cache = ExpiringCache<WeatherKitData>()
+    private let cache = ExpiringCache<PrecipitationData>()
 
     private init() {}
 
-    func fetchWeatherKitData(for city: City) async -> WeatherKitData? {
+    func fetchPrecipitationData(for city: City) async -> PrecipitationData? {
         let cacheKey = city.id
 
         if let cached = cache.object(forKey: cacheKey) {
@@ -33,9 +33,8 @@ class WeatherKitService {
         let location = CLLocation(latitude: lat, longitude: lon)
 
         do {
-            let weather = try await service.weather(for: location, including: .current, .minute, .hourly, .daily)
-            let today = weather.3.first
-            let data = WeatherKitData(currentWeather: weather.0, minuteForecast: weather.1, hourlyForecast: weather.2, dailyForecast: weather.3, sunrise: today?.sun.sunrise, sunset: today?.sun.sunset)
+            let minuteForecast = try await service.weather(for: location, including: .minute)
+            let data = PrecipitationData(minuteForecast: minuteForecast)
             cache.setObject(data, forKey: cacheKey)
             return data
         } catch {

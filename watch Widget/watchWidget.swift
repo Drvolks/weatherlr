@@ -9,9 +9,6 @@
 import WidgetKit
 import SwiftUI
 import CoreLocation
-#if ENABLE_WEATHERKIT
-import WeatherKit
-#endif
 
 // MARK: - Models
 
@@ -54,13 +51,7 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             let pws = (hasPWS: false, temperature: nil as Int?, stationName: nil as String?)
             #endif
 
-            #if ENABLE_WEATHERKIT
-            let wkImageName = Self.fetchWeatherKitImageSync(for: city)
-            #else
-            let wkImageName: String? = nil
-            #endif
-
-            let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName, weatherKitImageName: wkImageName)
+            let entry = Self.buildEntry(city: city, wrapper: wrapper, hasPWS: pws.hasPWS, pwsTemp: pws.temperature, pwsStationName: pws.stationName)
             let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date())!
             let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
             completion(timeline)
@@ -130,53 +121,13 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         return WeatherHelper.getWeatherInformationsNoCache(data, city: city)
     }
 
-    #if ENABLE_WEATHERKIT
-    private final class WeatherKitImageBox: @unchecked Sendable {
-        var imageName: String?
-    }
-
-    static func fetchWeatherKitImageSync(for city: City) -> String? {
-        guard let lat = Double(city.latitude), let lon = Double(city.longitude) else {
-            return nil
-        }
-
-        let location = CLLocation(latitude: lat, longitude: lon)
-        let semaphore = DispatchSemaphore(value: 0)
-        let box = WeatherKitImageBox()
-
-        Task.detached {
-            defer { semaphore.signal() }
-            do {
-                let weather = try await WeatherService.shared.weather(for: location, including: .current)
-                let condition = weather.condition
-                let night = !weather.isDaylight
-
-                box.imageName = WeatherHelper.imageName(for: condition, night: night)
-            } catch {
-                #if DEBUG
-                print("WeatherKit watch widget error: \(error)")
-                #endif
-            }
-        }
-
-        let timeout = semaphore.wait(timeout: .now() + 10)
-        if timeout == .timedOut {
-            #if DEBUG
-            print("WeatherKit watch widget timed out")
-            #endif
-            return nil
-        }
-        return box.imageName
-    }
-    #endif
-
     private func buildEntry() -> WatchWeatherEntry {
         let city = PreferenceHelper.getCityToUse()
         let wrapper = Self.fetchWeatherSync(for: city)
-        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil, weatherKitImageName: nil)
+        return Self.buildEntry(city: city, wrapper: wrapper, hasPWS: false, pwsTemp: nil, pwsStationName: nil)
     }
 
-    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?, weatherKitImageName: String?) -> WatchWeatherEntry {
+    static func buildEntry(city: City, wrapper: WeatherInformationWrapper, hasPWS: Bool, pwsTemp: Int?, pwsStationName: String?) -> WatchWeatherEntry {
         let cityName = (hasPWS ? pwsStationName : nil) ?? CityHelper.cityName(city)
 
         guard wrapper.weatherInformations.count > 0 else {
@@ -187,9 +138,7 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         let temperature = pwsTemp ?? current.temperature
 
         let imageName: String
-        if let wkName = weatherKitImageName {
-            imageName = wkName
-        } else if let code = current.iconCode, let name = WeatherHelper.imageNameForIconCode(code) {
+        if let code = current.iconCode, let name = WeatherHelper.imageNameForIconCode(code) {
             imageName = name
         } else {
             var status = current.weatherStatus

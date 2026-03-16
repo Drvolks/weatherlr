@@ -6,7 +6,7 @@
 //  Copyright © 2025 drvolks. All rights reserved.
 //
 
-#if ENABLE_WEATHERKIT
+#if ENABLE_PRECIPITATION
 import UIKit
 
 class PrecipitationChartView: UIView {

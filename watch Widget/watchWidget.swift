@@ -12,6 +12,12 @@ import CoreLocation
 
 // MARK: - Models
 
+struct WatchHourlyItem {
+    let hour: String
+    let imageName: String
+    let temperature: Int
+}
+
 struct WatchWeatherEntry: TimelineEntry {
     let date: Date
     let cityName: String
@@ -21,13 +27,14 @@ struct WatchWeatherEntry: TimelineEntry {
     let hasData: Bool
     let minTemperature: Int?
     let maxTemperature: Int?
+    let hourlyItems: [WatchHourlyItem]
 }
 
 // MARK: - Provider
 
 struct WatchWeatherTimelineProvider: TimelineProvider {
     func placeholder(in context: Context) -> WatchWeatherEntry {
-        WatchWeatherEntry(date: Date(), cityName: "---", temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false, minTemperature: nil, maxTemperature: nil)
+        WatchWeatherEntry(date: Date(), cityName: "---", temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false, minTemperature: nil, maxTemperature: nil, hourlyItems: [])
     }
 
     func getSnapshot(in context: Context, completion: @escaping @Sendable (WatchWeatherEntry) -> Void) {
@@ -131,7 +138,7 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         let cityName = (hasPWS ? pwsStationName : nil) ?? CityHelper.cityName(city)
 
         guard wrapper.weatherInformations.count > 0 else {
-            return WatchWeatherEntry(date: Date(), cityName: cityName, temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false, minTemperature: nil, maxTemperature: nil)
+            return WatchWeatherEntry(date: Date(), cityName: cityName, temperature: 0, weatherImageName: "na", hasPWS: false, hasData: false, minTemperature: nil, maxTemperature: nil, hourlyItems: [])
         }
 
         let current = wrapper.weatherInformations[0]
@@ -172,6 +179,14 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             maxTemp = max(temperature, minTemp!) + 5
         }
 
+        // Build hourly items from EC data
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        let hourlyItems: [WatchHourlyItem] = wrapper.hourlyForecasts.prefix(5).map { hourly in
+            let hour = formatter.string(from: hourly.date) + "h"
+            return WatchHourlyItem(hour: hour, imageName: hourly.imageName, temperature: hourly.temperature)
+        }
+
         return WatchWeatherEntry(
             date: Date(),
             cityName: cityName,
@@ -180,7 +195,8 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
             hasPWS: hasPWS,
             hasData: true,
             minTemperature: minTemp,
-            maxTemperature: maxTemp
+            maxTemperature: maxTemp,
+            hourlyItems: hourlyItems
         )
     }
 }
@@ -191,25 +207,47 @@ struct WatchAccessoryRectangularView: View {
     let entry: WatchWeatherEntry
 
     var body: some View {
-        HStack(spacing: 4) {
-            Image(entry.weatherImageName)
-                .renderingMode(.template)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 28, height: 28)
-            VStack(alignment: .leading, spacing: 0) {
+        VStack(spacing: 2) {
+            // Line 1: icon, temperature, city
+            HStack(spacing: 4) {
+                Image(entry.weatherImageName)
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20)
                 Text("\(entry.temperature)\u{00B0}")
-                    .font(.system(size: 20, weight: .medium))
-                HStack(spacing: 2) {
-                    Text(entry.cityName)
-                        .font(.system(size: 12))
-                        .lineLimit(1)
-                    #if ENABLE_PWS
-                    if entry.hasPWS {
-                        Image(systemName: "sensor.fill")
-                            .font(.system(size: 8))
+                    .font(.system(size: 16, weight: .medium))
+                Text(entry.cityName)
+                    .font(.system(size: 12))
+                    .lineLimit(1)
+                    .foregroundStyle(.secondary)
+                #if ENABLE_PWS
+                if entry.hasPWS {
+                    Image(systemName: "sensor.fill")
+                        .font(.system(size: 8))
+                        .foregroundStyle(.secondary)
+                }
+                #endif
+            }
+
+            // Line 2: hourly forecasts
+            if !entry.hourlyItems.isEmpty {
+                HStack(spacing: 0) {
+                    ForEach(Array(entry.hourlyItems.enumerated()), id: \.offset) { _, item in
+                        VStack(spacing: 1) {
+                            Text(item.hour)
+                                .font(.system(size: 9))
+                                .foregroundStyle(.secondary)
+                            Image(item.imageName)
+                                .renderingMode(.template)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 14, height: 14)
+                            Text("\(item.temperature)\u{00B0}")
+                                .font(.system(size: 10))
+                        }
+                        .frame(maxWidth: .infinity)
                     }
-                    #endif
                 }
             }
         }

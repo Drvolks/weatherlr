@@ -15,6 +15,7 @@ struct WeatherContentView: View {
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
+        NavigationStack {
         ScrollViewReader { proxy in
             ScrollView {
                 VStack(spacing: 4) {
@@ -72,6 +73,7 @@ struct WeatherContentView: View {
                 }
             }
         }
+        }
         .environment(model)
         .onAppear {
             setupModel()
@@ -115,6 +117,10 @@ struct WeatherContentView: View {
                     weather: weather,
                     nextWeather: index + 1 < informations.count ? informations[index + 1] : nil
                 )
+
+                if !model.wrapper.hourlyForecasts.isEmpty {
+                    WatchHourlyRow(hourlyForecasts: model.wrapper.hourlyForecasts)
+                }
             } else if weather.weatherDay == WeatherDay.today {
                 NextWeatherRow(
                     weather: weather,

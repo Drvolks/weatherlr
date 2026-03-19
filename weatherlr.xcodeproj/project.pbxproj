@@ -129,6 +129,8 @@
 		CC10000100000001WATCH008 /* NextWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH008 /* NextWeatherRow.swift */; };
 		CC10000100000001WATCH009 /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH009 /* WeatherRow.swift */; };
 		CC10000100000001WATCH00A /* CityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00A /* CityPickerView.swift */; };
+		CC10000100000001WATCH00B /* WatchHourlyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00B /* WatchHourlyRow.swift */; };
+		CC10000100000001WATCH00C /* WatchHourlyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00C /* WatchHourlyDetailView.swift */; };
 		CC22222222222222222222C2 /* JsonWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22222222222222222222A2 /* JsonWeatherParser.swift */; };
 		CC44444444444444444444C4 /* JsonWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22222222222222222222A2 /* JsonWeatherParser.swift */; };
 		CD6F9B3556F43D730A6FE30B /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6898273E6B4D6B8702EE1 /* UrlHelper.swift */; };
@@ -391,6 +393,8 @@
 		CC00000100000001WATCH008 /* NextWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeatherRow.swift; sourceTree = "<group>"; };
 		CC00000100000001WATCH009 /* WeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
 		CC00000100000001WATCH00A /* CityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerView.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH00B /* WatchHourlyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHourlyRow.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH00C /* WatchHourlyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHourlyDetailView.swift; sourceTree = "<group>"; };
 		D10200000000000000000002 /* weatherlr Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "weatherlr Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10700000000000000000007 /* weatherlrWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherlrWidget.swift; sourceTree = "<group>"; };
 		D10800000000000000000008 /* weatherlrWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = weatherlrWidget.entitlements; sourceTree = "<group>"; };
@@ -621,6 +625,8 @@
 				CC00000100000001WATCH008 /* NextWeatherRow.swift */,
 				CC00000100000001WATCH009 /* WeatherRow.swift */,
 				CC00000100000001WATCH00A /* CityPickerView.swift */,
+				CC00000100000001WATCH00B /* WatchHourlyRow.swift */,
+				CC00000100000001WATCH00C /* WatchHourlyDetailView.swift */,
 				6EB154861D282B0E0005B02A /* Info.plist */,
 				6EAA0E6A1E663C150023DB15 /* WatchImageHelper.swift */,
 			);
@@ -1117,6 +1123,8 @@
 				CC10000100000001WATCH008 /* NextWeatherRow.swift in Sources */,
 				CC10000100000001WATCH009 /* WeatherRow.swift in Sources */,
 				CC10000100000001WATCH00A /* CityPickerView.swift in Sources */,
+				CC10000100000001WATCH00B /* WatchHourlyRow.swift in Sources */,
+				CC10000100000001WATCH00C /* WatchHourlyDetailView.swift in Sources */,
 				6EAA0E6E1E6646110023DB15 /* UIColorExtension.swift in Sources */,
 				6EB154981D2859140005B02A /* Constants.swift in Sources */,
 				6EAA0E6B1E663C150023DB15 /* WatchImageHelper.swift in Sources */,

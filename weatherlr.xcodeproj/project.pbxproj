@@ -13,10 +13,6 @@
 		0E0802EDB58FDE1B805250E5 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D00EB2864B75E5EB9204ED /* RssParser.swift */; };
 		115D5291CB885F20BDD95226 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB99306198BAF42E529B22D /* CityParser.swift */; };
 		28F4AD9286B42D623C2A3842 /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC3E4C6D87F1F471233B0FD /* WeatherInformation.swift */; };
-		AAFF0101HOURLY01AAAA0001 /* HourlyForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */; };
-		AAFF0101HOURLY01AAAA0002 /* HourlyForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */; };
-		AAFF0101HOURLY01AAAA0003 /* HourlyForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */; };
-		AAFF0101HOURLY01AAAA0004 /* HourlyForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */; };
 		2902739DA1C886161AF0C846 /* RssEntryToWeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7B94416CFB79B2E9AFBE1 /* RssEntryToWeatherInformation.swift */; };
 		2D141E89145D4B638E9D4635 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
 		2D8FFCE61B1C7E3B0B04C986 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB93945D670C63472B0D736 /* LocationServices.swift */; };
@@ -110,6 +106,10 @@
 		AA11BB22CC33DD44EE55FF02 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
 		AA11BB22CC33DD44EE55FF03 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
 		AA11BB22CC33DD44EE55FF04 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
+		AAFF0101HOURLY01AAAA0001 /* HourlyForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */; };
+		AAFF0101HOURLY01AAAA0002 /* HourlyForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */; };
+		AAFF0101HOURLY01AAAA0003 /* HourlyForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */; };
+		AAFF0101HOURLY01AAAA0004 /* HourlyForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */; };
 		B2C48483FE45B1A1FF7C3E5E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF41E4B20D534DAC338FA1 /* StringExtension.swift */; };
 		BB22222222222222222222B2 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11111111111111111111A1 /* WeatherApiResponse.swift */; };
 		BB44444444444444444444B4 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11111111111111111111A1 /* WeatherApiResponse.swift */; };
@@ -371,7 +371,6 @@
 		6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxLabel.swift; sourceTree = "<group>"; };
 		6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangTableViewCell.swift; sourceTree = "<group>"; };
 		94FD89E5567BE1033F96C083 /* AlertInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
-		AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastInfo.swift; sourceTree = "<group>"; };
 		9E4F3AC54DD341A39D5EF6F4 /* HourlyItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyItemCell.swift; sourceTree = "<group>"; };
 		A1B1C1D1E1F1011121314151 /* PWSStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSStation.swift; sourceTree = "<group>"; };
 		A1B2C3D400000001AAAA0000 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
@@ -381,6 +380,7 @@
 		A3B3C3D3E3F3031323334353 /* PWSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSService.swift; sourceTree = "<group>"; };
 		AA11111111111111111111A1 /* WeatherApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiResponse.swift; sourceTree = "<group>"; };
 		AA22222222222222222222A2 /* JsonWeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWeatherParser.swift; sourceTree = "<group>"; };
+		AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastInfo.swift; sourceTree = "<group>"; };
 		BDC544E32C5DD76F8D295070 /* WeatherInformationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformationWrapper.swift; sourceTree = "<group>"; };
 		C938B53ABA71309E34B89CE0 /* PreferenceHelperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceHelperError.swift; sourceTree = "<group>"; };
 		CC00000100000001WATCH001 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
@@ -1437,7 +1437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1465,7 +1465,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1573,7 +1573,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1603,7 +1603,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1631,7 +1631,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1655,7 +1655,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1750,7 +1750,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1814,7 +1814,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1844,7 +1844,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1929,7 +1929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1999,7 +1999,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2028,7 +2028,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2053,7 +2053,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2078,7 +2078,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2105,7 +2105,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2130,7 +2130,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.2.0;
+				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";

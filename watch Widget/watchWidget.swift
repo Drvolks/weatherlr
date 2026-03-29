@@ -348,8 +348,12 @@ struct WatchWeatherWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: WatchWeatherTimelineProvider()) { entry in
-            WatchWeatherWidgetEntryView(entry: entry)
-                .containerBackground(Color(red: 31.0/255.0, green: 79.0/255.0, blue: 116.0/255.0), for: .widget)
+            if #available(watchOSApplicationExtension 10.0, *) {
+                WatchWeatherWidgetEntryView(entry: entry)
+                    .containerBackground(Color(red: 31.0/255.0, green: 79.0/255.0, blue: 116.0/255.0), for: .widget)
+            } else {
+                WatchWeatherWidgetEntryView(entry: entry)
+            }
         }
         .configurationDisplayName("PréviCA")
         .description("Current weather conditions")

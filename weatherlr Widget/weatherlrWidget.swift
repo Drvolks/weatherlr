@@ -506,8 +506,12 @@ struct WeatherlrWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: WeatherTimelineProvider()) { entry in
-            WeatherlrWidgetEntryView(entry: entry)
-                .containerBackground(widgetBackground, for: .widget)
+            if #available(iOSApplicationExtension 17.0, *) {
+                WeatherlrWidgetEntryView(entry: entry)
+                    .containerBackground(widgetBackground, for: .widget)
+            } else {
+                WeatherlrWidgetEntryView(entry: entry)
+            }
         }
         .configurationDisplayName("PréviCA")
         .description("Current weather conditions")

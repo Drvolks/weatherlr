@@ -288,33 +288,51 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
     }
 
     private func reverseGeocode(coordinate: CLLocationCoordinate2D, completion: @escaping @Sendable (String?) -> Void) {
-        Task {
-            do {
-                let loc = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-                guard let request = MKReverseGeocodingRequest(location: loc) else {
-                    completion(nil)
-                    return
-                }
-                let mapItems = try await request.mapItems
-                let country = mapItems.first?.addressRepresentations?.regionName
+        let loc = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
 
-                #if DEBUG
-                print("reverseGeocodeLocation completed")
-                if let addressRep = mapItems.first?.addressRepresentations {
-                    print("regionName: \(addressRep.regionName ?? "nil")")
-                    print("cityName: \(addressRep.cityName ?? "nil")")
-                    print("cityWithContext: \(addressRep.cityWithContext ?? "nil")")
-                    print("fullAddress: \(addressRep.fullAddress(includingRegion: true, singleLine: true) ?? "nil")")
-                }
-                #endif
+        if #available(iOS 26.0, watchOS 26.0, *) {
+            Task {
+                do {
+                    guard let request = MKReverseGeocodingRequest(location: loc) else {
+                        completion(nil)
+                        return
+                    }
+                    let mapItems = try await request.mapItems
+                    let country = mapItems.first?.addressRepresentations?.regionName
 
-                DispatchQueue.main.async { completion(country) }
-            } catch {
-                #if DEBUG
+                    #if DEBUG
+                    print("reverseGeocodeLocation completed")
+                    if let addressRep = mapItems.first?.addressRepresentations {
+                        print("regionName: \(addressRep.regionName ?? "nil")")
+                        print("cityName: \(addressRep.cityName ?? "nil")")
+                        print("cityWithContext: \(addressRep.cityWithContext ?? "nil")")
+                        print("fullAddress: \(addressRep.fullAddress(includingRegion: true, singleLine: true) ?? "nil")")
+                    }
+                    #endif
+
+                    DispatchQueue.main.async { completion(country) }
+                } catch {
+                    #if DEBUG
                     print("reverseGeocodeLocation error")
                     print(error)
+                    #endif
+                    DispatchQueue.main.async { completion(nil) }
+                }
+            }
+        } else {
+            CLGeocoder().reverseGeocodeLocation(loc) { placemarks, error in
+                #if DEBUG
+                if let error = error {
+                    print("reverseGeocodeLocation error")
+                    print(error)
+                }
                 #endif
-                DispatchQueue.main.async { completion(nil) }
+                let country = placemarks?.first?.country
+                #if DEBUG
+                print("reverseGeocodeLocation completed")
+                print("country: \(country ?? "nil")")
+                #endif
+                DispatchQueue.main.async { completion(country) }
             }
         }
     }

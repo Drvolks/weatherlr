@@ -61,7 +61,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
 
-        registerTraitChangeHandler()
     }
 
     @objc func willGoToBackground() {
@@ -113,9 +112,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         decorate()
     }
 
-    func registerTraitChangeHandler() {
-        registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: WeatherViewController, _) in
-            self.decorate()
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            decorate()
         }
     }
 

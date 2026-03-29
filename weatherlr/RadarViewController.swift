@@ -255,7 +255,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         group.notify(queue: .main) { completion() }
     }
 
-    /// Prefetches all frames in parallel, adding each overlay to the map as soon as its tiles are cached.
+    /// Prefetches all frames in parallel into TileDataCache without adding overlays to the map.
     private func prefetchFramesSequentially(_ frameIndices: [Int], tilePaths: [MKTileOverlayPath]) {
         let startTime = Date()
         let totalFrames = frameIndices.count
@@ -265,8 +265,6 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         for index in frameIndices {
             prefetchTilesForFrame(index, tilePaths: tilePaths, session: prefetchSession) { [weak self] in
                 guard let self = self else { return }
-                self.addOverlayToMap(at: index)
-                self.applyCurrentFrame()
 
                 completedCount += 1
                 if completedCount == totalFrames {
@@ -327,13 +325,26 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private func applyCurrentFrame() {
         guard currentFrameIndex < tileOverlays.count else { return }
 
-        // Ensure this overlay is added to the map
-        addOverlayToMap(at: currentFrameIndex)
-
-        // Toggle visibility: current frame alpha 1, all others alpha 0
-        for (index, overlay) in tileOverlays.enumerated() {
-            let id = ObjectIdentifier(overlay)
-            rendererMap[id]?.alpha = (index == currentFrameIndex) ? 1.0 : 0.0
+        if isPlaying {
+            // During animation, toggle alpha for smooth transitions
+            addOverlayToMap(at: currentFrameIndex)
+            for (index, overlay) in tileOverlays.enumerated() {
+                let id = ObjectIdentifier(overlay)
+                rendererMap[id]?.alpha = (index == currentFrameIndex) ? 1.0 : 0.0
+            }
+        } else {
+            // When not animating, only keep the current overlay on the map
+            // so MapKit doesn't load tiles for all hidden frames
+            for (index, overlay) in tileOverlays.enumerated() {
+                if index != currentFrameIndex && overlaysAddedToMap.contains(index) {
+                    mapView.removeOverlay(overlay)
+                    overlaysAddedToMap.remove(index)
+                    rendererMap.removeValue(forKey: ObjectIdentifier(overlay))
+                }
+            }
+            addOverlayToMap(at: currentFrameIndex)
+            let id = ObjectIdentifier(tileOverlays[currentFrameIndex])
+            rendererMap[id]?.alpha = 1.0
         }
     }
 
@@ -368,6 +379,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         animationTimer?.invalidate()
         animationTimer = nil
         playPauseButton?.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        applyCurrentFrame()
     }
 
     @objc private func sliderChanged(_ sender: UISlider) {

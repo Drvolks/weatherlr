@@ -34,6 +34,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         return URLSession(configuration: config)
     }()
 
+    private var dismissButton: UIButton!
     private var playPauseButton: UIButton!
     private var timeSlider: UISlider!
     private var timeLabel: UILabel!
@@ -43,6 +44,8 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
 
         self.title = "Radar".localized()
+
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
         mapView = MKMapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -65,6 +68,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
 
+        setupDismissButton()
         setupControlBar()
         fetchTimeSteps()
     }
@@ -77,6 +81,30 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         TileDataCache.shared.clear()
+    }
+
+    // MARK: - Dismiss Button
+
+    private func setupDismissButton() {
+        dismissButton = UIButton(type: .system)
+        dismissButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        dismissButton.tintColor = .white
+        let config = UIImage.SymbolConfiguration(pointSize: 28)
+        dismissButton.setPreferredSymbolConfiguration(config, forImageIn: .normal)
+        dismissButton.addTarget(self, action: #selector(dismissTapped), for: .touchUpInside)
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dismissButton)
+
+        NSLayoutConstraint.activate([
+            dismissButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            dismissButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            dismissButton.widthAnchor.constraint(equalToConstant: 44),
+            dismissButton.heightAnchor.constraint(equalToConstant: 44),
+        ])
+    }
+
+    @objc private func dismissTapped() {
+        dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Control Bar

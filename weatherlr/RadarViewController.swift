@@ -88,8 +88,8 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private func setupDismissButton() {
         dismissButton = UIButton(type: .system)
         dismissButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-        dismissButton.tintColor = .white
-        let config = UIImage.SymbolConfiguration(pointSize: 28)
+        dismissButton.tintColor = UIColor.white.withAlphaComponent(0.8)
+        let config = UIImage.SymbolConfiguration(pointSize: 36)
         dismissButton.setPreferredSymbolConfiguration(config, forImageIn: .normal)
         dismissButton.addTarget(self, action: #selector(dismissTapped), for: .touchUpInside)
         dismissButton.translatesAutoresizingMaskIntoConstraints = false

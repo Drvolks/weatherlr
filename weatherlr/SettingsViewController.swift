@@ -195,7 +195,8 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             cell.backgroundColor = UIColor.clear
 
             if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                cell.versionLabel.text = "Version".localized() + " " + version
+                let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+                cell.versionLabel.text = "Version".localized() + " " + version + " (" + build + ")"
             } else {
                 cell.versionLabel.text = ""
             }

@@ -37,6 +37,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
         overrideUserInterfaceStyle = .unspecified
         tableView.backgroundColor = .systemGroupedBackground
+        navigationController?.view.backgroundColor = .systemGroupedBackground
     }
 
     override func viewWillAppear(_ animated: Bool) {

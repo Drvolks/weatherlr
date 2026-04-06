@@ -42,5 +42,7 @@
 	<string>$(WK_COMPANION_BUNDLE_IDENTIFIER)</string>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<true/>
+	<key>APP_GROUP_ID</key>
+	<string>$(APP_GROUP_ID)</string>
 </dict>
 </plist>

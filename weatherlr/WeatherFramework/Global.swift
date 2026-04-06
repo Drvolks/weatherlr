@@ -17,7 +17,7 @@ public struct Global {
     public static let favotiteCitiesKey = "favoriteCities"
     public static let languageKey = "lang"
     public static let versionKey = "version"
-    public static let SettingGroup = "APP_GROUP_ID"
+    public static let SettingGroup: String = Bundle.main.object(forInfoDictionaryKey: "APP_GROUP_ID") as? String ?? ""
     public static let currentLocationCityId = "currentLocation"
     public static let locationDistance = Double(5000) // 5 km
     public static let currentLocationMaxDistance = Double(1000000) // 1000 km

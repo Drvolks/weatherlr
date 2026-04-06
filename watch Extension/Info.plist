@@ -43,5 +43,7 @@
 	<string>Weatherlr will use your current location to find the nearest city</string>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<true/>
+	<key>APP_GROUP_ID</key>
+	<string>$(APP_GROUP_ID)</string>
 </dict>
 </plist>

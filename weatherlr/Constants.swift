@@ -20,5 +20,5 @@ class Constants {
         static let backgroundRefreshInSeconds = Double(Global.expirationInMinutes) * 60.0
     #endif
     
-    static let backgroundDownloadTaskName = "BUNDLE_ID_PREFIX.weatherlr.download"
+    static let backgroundDownloadTaskName = "\(Bundle.main.bundleIdentifier ?? "weatherlr").download"
 }

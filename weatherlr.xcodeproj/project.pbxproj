@@ -382,6 +382,8 @@
 		AA22222222222222222222A2 /* JsonWeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWeatherParser.swift; sourceTree = "<group>"; };
 		AAFF000100000001HOURLY01 /* HourlyForecastInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastInfo.swift; sourceTree = "<group>"; };
 		BDC544E32C5DD76F8D295070 /* WeatherInformationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformationWrapper.swift; sourceTree = "<group>"; };
+		C0F1600000000000000000A1 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		C0F1600000000000000000A3 /* Secret.xcconfig.template */ = {isa = PBXFileReference; lastKnownFileType = text; path = Secret.xcconfig.template; sourceTree = "<group>"; };
 		C938B53ABA71309E34B89CE0 /* PreferenceHelperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceHelperError.swift; sourceTree = "<group>"; };
 		CC00000100000001WATCH001 /* WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApp.swift; sourceTree = "<group>"; };
 		CC00000100000001WATCH002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 				6EB1547D1D282B0E0005B02A /* watch Extension */,
 				D10600000000000000000006 /* weatherlr Widget */,
 				E10600000000000000000006 /* watch Widget */,
+				C0F1600000000000000000A2 /* Configs */,
 				6E2905291CB2D5550040EB8B /* Products */,
 				9799B631E60476874FB40063 /* Frameworks */,
 			);
@@ -705,6 +708,15 @@
 			path = WeatherKit;
 			sourceTree = "<group>";
 		};
+		C0F1600000000000000000A2 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1600000000000000000A1 /* Base.xcconfig */,
+				C0F1600000000000000000A3 /* Secret.xcconfig.template */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		D10600000000000000000006 /* weatherlr Widget */ = {
 			isa = PBXGroup;
 			children = (
@@ -857,7 +869,7 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 2640;
-				ORGANIZATIONNAME = "drvolks";
+				ORGANIZATIONNAME = drvolks;
 				TargetAttributes = {
 					6E2905271CB2D5550040EB8B = {
 						CreatedOnToolsVersion = 7.3;
@@ -879,19 +891,16 @@
 					};
 					6E29053B1CB2D5550040EB8B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = DEVELOPMENT_TEAM;
 						LastSwiftMigration = 1020;
 						TestTargetID = 6E2905271CB2D5550040EB8B;
 					};
 					6E2905461CB2D5550040EB8B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = DEVELOPMENT_TEAM;
 						LastSwiftMigration = 1020;
 						TestTargetID = 6E2905271CB2D5550040EB8B;
 					};
 					6EB1546C1D282B0D0005B02A = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = DEVELOPMENT_TEAM;
 						LastSwiftMigration = 0900;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -901,7 +910,6 @@
 					};
 					D10100000000000000000001 = {
 						CreatedOnToolsVersion = 16.0;
-						DevelopmentTeam = DEVELOPMENT_TEAM;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -911,7 +919,6 @@
 					};
 					E10100000000000000000001 = {
 						CreatedOnToolsVersion = 16.0;
-						DevelopmentTeam = DEVELOPMENT_TEAM;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1299,6 +1306,7 @@
 /* Begin XCBuildConfiguration section */
 		6E29054E1CB2D5550040EB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F1600000000000000000A1 /* Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1362,6 +1370,7 @@
 		};
 		6E29054F1CB2D5550040EB8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F1600000000000000000A1 /* Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1441,7 +1450,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 6.2;
@@ -1468,7 +1477,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 5.3;
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1490,7 +1499,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlrTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 6.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weatherlr.app/weatherlr";
@@ -1510,7 +1519,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlrTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1531,7 +1540,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlrUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 6.2;
 				TEST_TARGET_NAME = weatherlr;
@@ -1550,7 +1559,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlrUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1576,7 +1585,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5.3;
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1586,7 +1595,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-				WK_COMPANION_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr;
+				WK_COMPANION_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr";
 			};
 			name = Debug;
 		};
@@ -1606,7 +1615,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 5.3;
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1615,7 +1624,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-				WK_COMPANION_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr;
+				WK_COMPANION_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr";
 			};
 			name = Release;
 		};
@@ -1635,7 +1644,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 6.2;
@@ -1659,7 +1668,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1671,6 +1680,7 @@
 		};
 		D20A00000000000000000DA1 /* DebugInternal */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F1600000000000000000A1 /* Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1755,7 +1765,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_PRECIPITATION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 6.2;
@@ -1775,7 +1785,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlrTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 6.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weatherlr.app/weatherlr";
@@ -1794,7 +1804,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlrUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 6.2;
 				TEST_TARGET_NAME = weatherlr;
@@ -1819,7 +1829,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_PRECIPITATION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1829,7 +1839,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-				WK_COMPANION_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal;
+				WK_COMPANION_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal";
 			};
 			name = DebugInternal;
 		};
@@ -1849,7 +1859,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 6.2;
@@ -1859,6 +1869,7 @@
 		};
 		D20B00000000000000000DB1 /* ReleaseInternal */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F1600000000000000000A1 /* Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1935,7 +1946,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_PRECIPITATION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1957,7 +1968,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlrTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1978,7 +1989,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlrUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -2005,7 +2016,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_PRECIPITATION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -2014,7 +2025,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-				WK_COMPANION_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal;
+				WK_COMPANION_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal";
 			};
 			name = ReleaseInternal;
 		};
@@ -2034,7 +2045,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2059,7 +2070,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.watchkitapp.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.watchkitapp.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -2084,7 +2095,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.watchkitapp.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.watchkitapp.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -2111,7 +2122,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.watchkitapp.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.watchkitapp.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -2136,7 +2147,7 @@
 				);
 				MARKETING_VERSION = 5.3;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
-				PRODUCT_BUNDLE_IDENTIFIER = BUNDLE_ID_PREFIX.weatherlr.internal.watchkitapp.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.watchkitapp.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;

@@ -21,7 +21,16 @@ ARCHIVE_DIR=~/Library/Developer/Xcode/Archives/$(date +%Y-%m-%d)
 EXPORT_DIR=/tmp/PreviCA-export
 PROJECT=weatherlr.xcodeproj
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-EXPORT_PLIST="$SCRIPT_DIR/ExportOptions.plist"
+EXPORT_PLIST_TEMPLATE="$SCRIPT_DIR/ExportOptions.plist"
+EXPORT_PLIST="/tmp/PreviCA-ExportOptions.plist"
+
+# Read DEVELOPMENT_TEAM from xcconfig
+TEAM_ID=$(grep '^DEVELOPMENT_TEAM' "$SCRIPT_DIR/Configs/Secret.xcconfig" | sed 's/.*= *//')
+if [ -z "$TEAM_ID" ]; then
+  echo "ERROR: DEVELOPMENT_TEAM not found in Configs/Secret.xcconfig"
+  exit 1
+fi
+sed "s/TEAM_ID_PLACEHOLDER/$TEAM_ID/" "$EXPORT_PLIST_TEMPLATE" > "$EXPORT_PLIST"
 
 AUTH_FLAGS=(-allowProvisioningUpdates \
   -authenticationKeyPath "$KEY_PATH" \

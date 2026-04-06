@@ -38,6 +38,13 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
         overrideUserInterfaceStyle = .unspecified
         tableView.backgroundColor = .systemGroupedBackground
         navigationController?.view.backgroundColor = .systemGroupedBackground
+
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = .systemGroupedBackground
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -74,6 +74,6 @@ public class WeatherInformation {
             }
         }
 
-        return UIImage(named: "na")!
+        return UIImage(named: "na") ?? UIImage()
     }
 }

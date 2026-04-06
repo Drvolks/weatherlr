@@ -9,25 +9,31 @@
 import Foundation
 
 class ExpiringCache<T>: @unchecked Sendable {
-    private var cache = [String: T]()
+    private var cache = [String: (value: T, expiration: Date)]()
     private let lock = NSLock()
     private let defaultTimeout: TimeInterval = 60 * Double(Global.weatherCacheInMinutes)
 
     func object(forKey key: String) -> T? {
         lock.lock()
         defer { lock.unlock() }
-        return cache[key]
+
+        guard let entry = cache[key] else { return nil }
+
+        if Date() >= entry.expiration {
+            cache.removeValue(forKey: key)
+            return nil
+        }
+
+        return entry.value
     }
 
     func setObject(_ obj: T, forKey key: String, timeout: TimeInterval? = nil) {
-        lock.lock()
-        cache[key] = obj
-        lock.unlock()
-
         let effectiveTimeout = timeout ?? defaultTimeout
-        Timer.scheduledTimer(withTimeInterval: effectiveTimeout, repeats: false) { [weak self] _ in
-            self?.removeObject(forKey: key)
-        }
+        let expiration = Date().addingTimeInterval(effectiveTimeout)
+
+        lock.lock()
+        defer { lock.unlock() }
+        cache[key] = (value: obj, expiration: expiration)
     }
 
     func removeObject(forKey key: String) {

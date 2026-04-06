@@ -2,7 +2,7 @@
 
 Effective date: March 26, 2026
 
-drvolks inc ("us", "we", or "our") operates the Weatherlr mobile application (the "Service").
+Drvolks ("us", "we", or "our") operates the Weatherlr mobile application (the "Service").
 
 ## Data Collection
 

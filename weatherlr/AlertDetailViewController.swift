@@ -163,8 +163,8 @@ class AlertDetailViewController: UIViewController {
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: {()->Void in
-                self.popOver?.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: { [weak self] in
+                self?.popOver?.dismiss(animated: true, completion: nil)
             })
     }
 

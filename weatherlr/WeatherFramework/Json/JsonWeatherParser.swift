@@ -9,6 +9,9 @@
 import Foundation
 
 public class JsonWeatherParser {
+    private static let nightRegex = try! NSRegularExpression(pattern: "(Ce soir|Soir et nuit|night)", options: [.caseInsensitive])
+    private static let endedRegex = try! NSRegularExpression(pattern: "(TERMINÉ|ENDED)", options: [.caseInsensitive])
+
     let data: Data
     let language: Language
     let weatherStatusConverter = RssEntryToWeatherInformation(rssEntries: [RssEntry]())
@@ -158,9 +161,8 @@ public class JsonWeatherParser {
     // MARK: - Helpers
 
     func isNight(_ periodName: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "(Ce soir|Soir et nuit|night)", options: [.caseInsensitive])
         let range = NSRange(periodName.startIndex..., in: periodName)
-        return regex.firstMatch(in: periodName, options: [], range: range) != nil
+        return Self.nightRegex.firstMatch(in: periodName, options: [], range: range) != nil
     }
 
     func extractTendency(_ forecast: Forecast) -> Tendency {
@@ -179,9 +181,8 @@ public class JsonWeatherParser {
     }
 
     func extractAlertType(_ alertText: String) -> AlertType {
-        let regex = try! NSRegularExpression(pattern: "(TERMINÉ|ENDED)", options: [.caseInsensitive])
         let range = NSRange(alertText.startIndex..., in: alertText)
-        if regex.firstMatch(in: alertText, options: [], range: range) != nil {
+        if Self.endedRegex.firstMatch(in: alertText, options: [], range: range) != nil {
             return .ended
         }
         return .warning

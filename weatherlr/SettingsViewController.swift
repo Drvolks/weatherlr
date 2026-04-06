@@ -146,7 +146,7 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
             cell.cityLabel.text = CityHelper.cityName(city)
             cell.cityLabel.textColor = .label
 
-            if selectedCity != nil && city.id == selectedCity!.id {
+            if let selectedCity = selectedCity, city.id == selectedCity.id {
                 cell.accessoryType = UITableViewCell.AccessoryType.checkmark
 
                 if let currentWeatherInformation = selectedCityWeatherInformation {
@@ -368,9 +368,10 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
         if segue.identifier == "addCity" {
             selectedCityWeatherInformation = nil
 
-            let navigationController = segue.destination as! UINavigationController
-            let targetController = navigationController.topViewController as! AddCityViewController
-            targetController.modalDelegate = self
+            if let navigationController = segue.destination as? UINavigationController,
+               let targetController = navigationController.topViewController as? AddCityViewController {
+                targetController.modalDelegate = self
+            }
         }
     }
 

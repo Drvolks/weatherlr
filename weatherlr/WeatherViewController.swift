@@ -30,11 +30,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var pwsResult: (station: PWSStation, observation: WUObservation)?
     #endif
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationServices = LocationServices()
-        locationServices!.delegate = self
+        locationServices?.delegate = self
 
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
 
@@ -55,7 +59,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         navigationController?.toolbar.standardAppearance = appearance
         navigationController?.toolbar.scrollEdgeAppearance = appearance
 
-        locationServices!.start()
+        locationServices?.start()
 
         RadarTimeStepCache.shared.preload()
 
@@ -120,14 +124,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func refresh(_ thread: Bool) {
-        locationServices!.refreshLocation()
+        locationServices?.refreshLocation()
 
         let city = PreferenceHelper.getCityToUse()
         if !LocationServices.isUseCurrentLocation(city) {
-            DispatchQueue.global().async {
+            DispatchQueue.global().async { [weak self] in
                 let wrapper = WeatherHelper.getWeatherInformations(city)
 
                 DispatchQueue.main.async {
+                    guard let self = self else { return }
                     self.weatherInformationWrapper = wrapper
                     self.displayWeather(false)
                 }
@@ -138,10 +143,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func displayWeather(_ foreground: Bool) {
         if weatherInformationWrapper.weatherInformations.count == 0 {
             if(foreground) {
-                DispatchQueue.main.async(execute: { () -> Void in
-                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "errorNav") as! UINavigationController
-                    self.present(viewController, animated: false, completion: nil)
-                })
+                DispatchQueue.main.async { [weak self] in
+                    if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "errorNav") as? UINavigationController {
+                        self?.present(viewController, animated: false, completion: nil)
+                    }
+                }
             }
         } else {
             refreshLabel()
@@ -186,7 +192,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 #endif
                 #if ENABLE_PWS
                 self.pwsResult = pws
-                let defaults = UserDefaults(suiteName: Global.SettingGroup)!
+                guard let defaults = UserDefaults(suiteName: Global.SettingGroup) else { return }
                 if let pws = pws, let tempC = pws.observation.tempC {
                     defaults.set(Int(tempC.rounded()), forKey: Global.pwsTemperatureKey)
                     defaults.set(pws.station.name, forKey: Global.pwsStationNameKey)
@@ -307,7 +313,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableCell(withIdentifier: "header")! as! WeatherHeaderCell
+        guard let header = tableView.dequeueReusableCell(withIdentifier: "header") as? WeatherHeaderCell else { return UIView() }
         #if ENABLE_PWS
         var pwsStationName: String? = nil
         var pwsTemperature: Int? = nil
@@ -362,25 +368,28 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "Settings" {
-            let navigationController = segue.destination as! UINavigationController
-            let targetController = navigationController.topViewController as! SettingsViewController
-            if weatherInformationWrapper.weatherInformations.count > 0 {
-                targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
-            } else {
-                targetController.selectedCityWeatherInformation = nil
+            if let navigationController = segue.destination as? UINavigationController,
+               let targetController = navigationController.topViewController as? SettingsViewController {
+                if weatherInformationWrapper.weatherInformations.count > 0 {
+                    targetController.selectedCityWeatherInformation = weatherInformationWrapper.weatherInformations[0]
+                } else {
+                    targetController.selectedCityWeatherInformation = nil
+                }
+                targetController.modalDelegate = self
             }
-            targetController.modalDelegate = self
         } else if segue.identifier  == "ShowRadar" {
-            let navigationController = segue.destination as! UINavigationController
-            navigationController.modalPresentationStyle = .fullScreen
-            let targetController = navigationController.topViewController as! RadarViewController
-            targetController.city = PreferenceHelper.getCityToUse()
+            if let navigationController = segue.destination as? UINavigationController {
+                navigationController.modalPresentationStyle = .fullScreen
+                if let targetController = navigationController.topViewController as? RadarViewController {
+                    targetController.city = PreferenceHelper.getCityToUse()
+                }
+            }
         }
     }
 
     @IBAction func showAlert(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let alertController = storyboard.instantiateViewController(withIdentifier: "Alert") as! AlertViewController
+        guard let alertController = storyboard.instantiateViewController(withIdentifier: "Alert") as? AlertViewController else { return }
 
         var width = weatherTable.bounds.size.width - 40
         if width > 300 {
@@ -398,7 +407,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         alertController.modalPresentationStyle = .popover;
         alertController.preferredContentSize = CGSize(width: width, height: height)
 
-        let popoverPresentation = alertController.popoverPresentationController!
+        guard let popoverPresentation = alertController.popoverPresentationController else { return }
         popoverPresentation.permittedArrowDirections = .any
         popoverPresentation.barButtonItem = sender
         popoverPresentation.delegate = self
@@ -461,22 +470,25 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func chargementVilleManuelPopup(_ message:String) {
         let unknownCityAlert = UIAlertController(title: "Select City".localized(), message: message, preferredStyle: UIAlertController.Style.alert)
 
-        unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+        unknownCityAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
             if(PreferenceHelper.getFavoriteCities().count == 1) {
-                DispatchQueue.main.async(execute: { () -> Void in
-                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as! UINavigationController
-                    if let addCityVC = viewController.topViewController as? AddCityViewController {
-                        addCityVC.modalDelegate = self
+                DispatchQueue.main.async { [weak self] in
+                    if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addCityNavigation") as? UINavigationController {
+                        if let addCityVC = viewController.topViewController as? AddCityViewController {
+                            addCityVC.modalDelegate = self
+                        }
+                        self?.present(viewController, animated: false, completion: nil)
                     }
-                    self.present(viewController, animated: false, completion: nil)
-                })
+                }
             } else {
-                DispatchQueue.main.async(execute: { () -> Void in
-                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsNavigation") as! UINavigationController
-                    let targetController = viewController.topViewController as! SettingsViewController
-                    targetController.modalDelegate = self
-                    self.present(viewController, animated: false, completion: nil)
-                })
+                DispatchQueue.main.async { [weak self] in
+                    if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsNavigation") as? UINavigationController,
+                       let targetController = viewController.topViewController as? SettingsViewController {
+                        targetController.modalDelegate = self
+                        self?.present(viewController, animated: false, completion: nil)
+                    }
+                }
             }
         }))
 

@@ -35,21 +35,16 @@ public class WeatherInformationWrapper {
     }
     
     public func expired() -> Bool {
-        let elapsedTime = Calendar.current.dateComponents([.minute], from: lastRefresh as Date, to: Date()).minute
-        if elapsedTime! < Global.expirationInMinutes {
-            return false
-        } else {
-            return true
-        }
+        return isExpiredAfter(Global.expirationInMinutes)
     }
-    
+
     public func expiredTooLongAgo() -> Bool {
-        let elapsedTime = Calendar.current.dateComponents([.minute], from: lastRefresh as Date, to: Date()).minute
-        if elapsedTime! < (Global.expirationInMinutes * 3) {
-            return false
-        } else {
-            return true
-        }
+        return isExpiredAfter(Global.expirationInMinutes * 3)
+    }
+
+    private func isExpiredAfter(_ minutes: Int) -> Bool {
+        let elapsedTime = Calendar.current.dateComponents([.minute], from: lastRefresh, to: Date()).minute ?? 0
+        return elapsedTime >= minutes
     }
     
     public func refreshNeeded() -> Bool {

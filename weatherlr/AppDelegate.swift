@@ -49,11 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PreferenceHelper.switchFavoriteCity(cityId: cityId)
         
         let mainSB = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainSB.instantiateViewController(withIdentifier: "WeatherView") as! WeatherViewController
-        
-        let navVC = self.window?.rootViewController as! UINavigationController
+        guard let viewController = mainSB.instantiateViewController(withIdentifier: "WeatherView") as? WeatherViewController,
+              let navVC = self.window?.rootViewController as? UINavigationController else {
+            return false
+        }
         navVC.pushViewController(viewController, animated: true)
-        
+
         return true
     }
 

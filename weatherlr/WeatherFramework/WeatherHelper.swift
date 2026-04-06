@@ -49,8 +49,8 @@ public class WeatherHelper {
     }
     
     static func getOfflineWeather() -> WeatherInformationWrapper {
-        let path = Bundle.main.path(forResource: "nu-29_English", ofType: "xml")
-        let url = URL(fileURLWithPath: path!)
+        guard let path = Bundle.main.path(forResource: "nu-29_English", ofType: "xml") else { return WeatherInformationWrapper() }
+        let url = URL(fileURLWithPath: path)
         
         if let rssParser = RssParser(url: url, language: PreferenceHelper.getLanguage()) {
             let rssEntries = rssParser.parse()
@@ -288,9 +288,9 @@ public class WeatherHelper {
         let name = getMinMaxImageName(weatherInfo)
         
         if header {
-            return UIImage(named: name + "Header")!
+            return UIImage(named: name + "Header") ?? UIImage()
         } else {
-            return UIImage(named: name)!
+            return UIImage(named: name) ?? UIImage()
         }
     }
     
@@ -370,7 +370,7 @@ public class WeatherHelper {
         dateComponents.day = NumberOfDaysToAdd
         
         let newDate = CurrentCalendar.date(byAdding: dateComponents, to: baseDate)
-        return newDate!
+        return newDate ?? baseDate
     }
     
     public static func textToImageMinMax(_ weather: WeatherInformation)->UIImage{

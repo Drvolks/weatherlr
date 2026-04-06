@@ -2,7 +2,7 @@
 
 Date de prise d'effet : 26 mars 2026
 
-drvolks inc (« nous », « notre », « nos ») exploite l'application mobile Weatherlr (ci-apr&egrave;s d&eacute;sign&eacute;e par le terme « Service »).
+Drvolks (« nous », « notre », « nos ») exploite l'application mobile Weatherlr (ci-apr&egrave;s d&eacute;sign&eacute;e par le terme « Service »).
 
 ## Collecte de donn&eacute;es
 

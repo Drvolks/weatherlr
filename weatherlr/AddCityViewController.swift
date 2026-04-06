@@ -59,18 +59,10 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     func buildCityIndex(_ cityListToProcess: [City]) -> [String:[City]] {
         var cityDictionary = [String:[City]]()
         
-        for i in 0..<cityListToProcess.count {
-            let city = cityListToProcess[i]
+        for city in cityListToProcess {
             let name = CityHelper.cityName(city)
             let letter = String(name.uppercased().prefix(1))
-            
-            var cityListForLettre = cityDictionary[letter]
-            if cityListForLettre == nil {
-                cityListForLettre = [City]()
-            }
-            
-            cityListForLettre!.append(city)
-            cityDictionary[letter] = cityListForLettre
+            cityDictionary[letter, default: [City]()].append(city)
         }
         
         return sortCityIndex(cityDictionary)
@@ -94,7 +86,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         for i in 0..<sortedKeys.count {
             let key = sortedKeys[i]
             
-            let cityListForLettre = cityDictionary[key]!
+            guard let cityListForLettre = cityDictionary[key] else { continue }
             sortedCityDictionary[key] = CityHelper.sortCityList(cityListForLettre)
         }
 
@@ -161,7 +153,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = sections[section]!
+        guard let key = sections[section] else { return 0 }
         if let sectionValues = filteredCities[key] {
             return sectionValues.count
         }
@@ -189,7 +181,12 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func cityRow(_ indexPath: IndexPath) -> City {
-        return filteredCities[sections[indexPath.section]!]![indexPath.row]
+        guard let key = sections[indexPath.section],
+              let cities = filteredCities[key],
+              indexPath.row < cities.count else {
+            return City()
+        }
+        return cities[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -8,40 +8,41 @@
 
 import Foundation
 
+nonisolated(unsafe) private var bundleCache = [String: Bundle]()
+
+private let commaFormatter: NumberFormatter = {
+    let f = NumberFormatter()
+    f.decimalSeparator = ","
+    return f
+}()
+
+private let dotFormatter: NumberFormatter = {
+    let f = NumberFormatter()
+    f.decimalSeparator = "."
+    return f
+}()
+
 public extension String {
-    func localized() ->String {
-        
-        let path = Bundle.main.path(forResource: PreferenceHelper.getLanguage().rawValue, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    func localized() -> String {
+        return localized(PreferenceHelper.getLanguage())
     }
 
-    func localized(_ lang: Language) ->String {
-        
-        let path = Bundle.main.path(forResource: lang.rawValue, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    func localized(_ lang: Language) -> String {
+        let key = lang.rawValue
+        if let bundle = bundleCache[key] {
+            return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+        }
+
+        guard let path = Bundle.main.path(forResource: key, ofType: "lproj"),
+              let bundle = Bundle(path: path) else {
+            return self
+        }
+
+        bundleCache[key] = bundle
+        return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
     }
 
     var isDouble: Bool {
-        if(isDouble(",")) {
-            return true
-        }
-        
-        return isDouble(".")
-    }
-    
-    private func isDouble(_ delemiter:String) -> Bool {
-        let formatter = NumberFormatter()
-        formatter.decimalSeparator = delemiter
-        let doubleFormatted = formatter.number(from: self)
-
-        if (doubleFormatted?.doubleValue) != nil {
-            return true
-        }
-        
-        return false
+        return commaFormatter.number(from: self) != nil || dotFormatter.number(from: self) != nil
     }
 }

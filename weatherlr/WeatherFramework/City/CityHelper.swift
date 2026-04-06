@@ -94,7 +94,7 @@ public class CityHelper {
     }
     
     public static func loadAllCities() -> [City] {
-        let url = Bundle.main.url(forResource: "Cities", withExtension: "plist")!
+        guard let url = Bundle.main.url(forResource: "Cities", withExtension: "plist") else { return [City]() }
         do {
             let rawdata = try Data(contentsOf: url)
 

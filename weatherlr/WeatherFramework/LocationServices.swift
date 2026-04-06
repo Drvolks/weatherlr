@@ -31,8 +31,8 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
         locationManagerType = type(of:manager)
         
         // TODO descendre ça à 1km
-        locationManager!.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-        locationManager!.distanceFilter = Global.locationDistance
+        locationManager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager?.distanceFilter = Global.locationDistance
     }
     
     public func updateCity(_ cityToUse:City) {
@@ -59,7 +59,7 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
     
     public func cityHasBeenUpdated(_ city:City) {
         PreferenceHelper.saveLastLocatedCity(city)
-        delegate!.cityHasBeenUpdated(city)
+        delegate?.cityHasBeenUpdated(city)
     }
         
     public static func isUseCurrentLocation(_ city:City) -> Bool {
@@ -78,7 +78,7 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
                 getCurrentLocation()
             } else {
                 errorCount = 0
-                delegate!.errorLocating(LocationErrors.TooManyErrors)
+                delegate?.errorLocating(LocationErrors.TooManyErrors)
             }
             return
         }
@@ -105,7 +105,7 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
             buildLocations()
         }
         
-        if let closestLocation = locations!.min(by: { location.distance(from: $0.location) < location.distance(from: $1.location) }) {
+        if let closestLocation = locations?.min(by: { location.distance(from: $0.location) < location.distance(from: $1.location) }) {
             print("closest location: \(closestLocation.city.frenchName), distance: \(location.distance(from: closestLocation.location))")
             if location.distance(from: closestLocation.location) < Global.currentLocationMaxDistance {
                 return closestLocation
@@ -127,9 +127,9 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
         let cities = getAllCityList()
         locations = [LocatedCity]()
         
-        for i in 0..<cities.count {
-            if shouldUseCityForLocation(city: cities[i]) {
-                let localCity = buildLocation(city: cities[i])
+        for city in cities {
+            if shouldUseCityForLocation(city: city),
+               let localCity = buildLocation(city: city) {
                 locations?.append(localCity)
             }
         }
@@ -143,19 +143,21 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
         return !city.latitude.isEmpty && !city.longitude.isEmpty && city.latitude.isDouble && city.longitude.isDouble
     }
     
-    func buildLocation(city:City) -> LocatedCity {
-        let clLatitude = CLLocationDegrees(city.latitude)
-        let clLongitude = CLLocationDegrees(city.longitude)
-        let location = CLLocation(latitude: clLatitude!, longitude: clLongitude!)
+    func buildLocation(city:City) -> LocatedCity? {
+        guard let clLatitude = CLLocationDegrees(city.latitude),
+              let clLongitude = CLLocationDegrees(city.longitude) else {
+            return nil
+        }
+        let location = CLLocation(latitude: clLatitude, longitude: clLongitude)
         return LocatedCity(city: city, location: location)
     }
     
     public func getAllCityList() -> [City] {
         if allCityList == nil {
-            allCityList = delegate!.getAllCityList()
+            allCityList = delegate?.getAllCityList() ?? []
         }
-        
-        return allCityList!
+
+        return allCityList ?? []
     }
     
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
@@ -168,7 +170,7 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
             getCurrentLocation()
         } else {
             errorCount = 0
-            delegate!.errorLocating(1)
+            delegate?.errorLocating(1)
         }
     }
     
@@ -178,7 +180,8 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
             print("getCurrentLocation")
         #endif
         
-        handleLocationServicesAuthorizationStatus(status: locationManager!.authorizationStatus)
+        guard let locationManager = locationManager else { return }
+        handleLocationServicesAuthorizationStatus(status: locationManager.authorizationStatus)
     }
 
     func handleLocationServicesAuthorizationStatus(status: CLAuthorizationStatus)
@@ -191,14 +194,14 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
         {
             case .notDetermined:
                 // Request when-in-use authorization initially
-                locationManager!.requestWhenInUseAuthorization()
+                locationManager?.requestWhenInUseAuthorization()
                 break
             
             case .restricted, .denied:
                 // Disable location features
                 disableLocation()
                 if(LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity())) {
-                    delegate!.locationNotAvailable()
+                    delegate?.locationNotAvailable()
                 }
                 break
             
@@ -247,8 +250,8 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
     
     func escalateLocationServiceAuthorization() {
         // Escalate only when the authorization is set to when-in-use
-        if locationManager!.authorizationStatus == .authorizedWhenInUse {
-            locationManager!.requestAlwaysAuthorization()
+        if locationManager?.authorizationStatus == .authorizedWhenInUse {
+            locationManager?.requestAlwaysAuthorization()
         }
     }
     
@@ -341,18 +344,18 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
         if let closestLocation = getClosestLocation(location) {
             print("closest location: \(closestLocation.city.frenchName), distance: \(location.distance(from: closestLocation.location))")
             
-            delegate!.locatingCompleted()
+            delegate?.locatingCompleted()
             
             if closestLocation.city.id != PreferenceHelper.getCityToUse().id {
                 cityHasBeenUpdated(closestLocation.city)
             } else {
-                delegate!.locationSameCity()
+                delegate?.locationSameCity()
             }
         } else {
             #if DEBUG
                 print("coordinates is empty or too far")
             #endif
-            delegate!.errorLocating(LocationErrors.LocationTooFarOrEmpty)
+            delegate?.errorLocating(LocationErrors.LocationTooFarOrEmpty)
         }
     }
 }

@@ -1,0 +1,192 @@
+{
+  "type": "Feature",
+  "id": "qc-147",
+  "properties": {
+    "currentConditions": {
+      "iconCode": { "format": "png", "value": 3, "url": "" },
+      "timestamp": { "en": "2026-04-11T12:00:00Z", "fr": "2026-04-11T12:00:00Z" },
+      "temperature": { "value": { "en": 12.0, "fr": 12.0 } },
+      "condition": { "en": "Mostly cloudy", "fr": "Généralement nuageux" },
+      "windChill": { "value": { "en": 10, "fr": 10 } }
+    },
+    "forecastGroup": {
+      "forecasts": [
+        {
+          "period": {
+            "textForecastName": { "en": "Saturday", "fr": "Samedi" },
+            "value": { "en": "Saturday", "fr": "Samedi" }
+          },
+          "temperatures": {
+            "temperature": [{
+              "class": { "en": "high", "fr": "maximum" },
+              "value": { "en": 15.0, "fr": 15.0 }
+            }]
+          },
+          "abbreviatedForecast": {
+            "icon": { "format": "png", "value": 2, "url": "" },
+            "textSummary": { "en": "A mix of sun and cloud", "fr": "Alternance de soleil et de nuages" }
+          },
+          "textSummary": { "en": "A mix of sun and cloud. High 15.", "fr": "Alternance de soleil et de nuages. Maximum 15." }
+        },
+        {
+          "period": {
+            "textForecastName": { "en": "Saturday night", "fr": "Samedi soir et nuit" },
+            "value": { "en": "Saturday night", "fr": "Samedi soir et nuit" }
+          },
+          "temperatures": {
+            "temperature": [{
+              "class": { "en": "low", "fr": "minimum" },
+              "value": { "en": 5.0, "fr": 5.0 }
+            }]
+          },
+          "abbreviatedForecast": {
+            "icon": { "format": "png", "value": 32, "url": "" },
+            "textSummary": { "en": "Partly cloudy", "fr": "Partiellement nuageux" }
+          },
+          "textSummary": { "en": "Partly cloudy. Low 5.", "fr": "Partiellement nuageux. Minimum 5." }
+        },
+        {
+          "period": {
+            "textForecastName": { "en": "Sunday", "fr": "Dimanche" },
+            "value": { "en": "Sunday", "fr": "Dimanche" }
+          },
+          "temperatures": {
+            "temperature": [{
+              "class": { "en": "high", "fr": "maximum" },
+              "value": { "en": 18.0, "fr": 18.0 }
+            }]
+          },
+          "abbreviatedForecast": {
+            "icon": { "format": "png", "value": 0, "url": "" },
+            "textSummary": { "en": "Sunny", "fr": "Ensoleillé" }
+          },
+          "textSummary": { "en": "Sunny. High 18.", "fr": "Ensoleillé. Maximum 18." }
+        },
+        {
+          "period": {
+            "textForecastName": { "en": "Sunday night", "fr": "Dimanche soir et nuit" },
+            "value": { "en": "Sunday night", "fr": "Dimanche soir et nuit" }
+          },
+          "temperatures": {
+            "temperature": [{
+              "class": { "en": "low", "fr": "minimum" },
+              "value": { "en": 7.0, "fr": 7.0 }
+            }]
+          },
+          "abbreviatedForecast": {
+            "icon": { "format": "png", "value": 30, "url": "" },
+            "textSummary": { "en": "Clear", "fr": "Dégagé" }
+          },
+          "textSummary": { "en": "Clear. Low 7.", "fr": "Dégagé. Minimum 7." }
+        },
+        {
+          "period": {
+            "textForecastName": { "en": "Monday", "fr": "Lundi" },
+            "value": { "en": "Monday", "fr": "Lundi" }
+          },
+          "temperatures": {
+            "temperature": [{
+              "class": { "en": "high", "fr": "maximum" },
+              "value": { "en": 20.0, "fr": 20.0 }
+            }]
+          },
+          "abbreviatedForecast": {
+            "icon": { "format": "png", "value": 1, "url": "" },
+            "textSummary": { "en": "A few clouds", "fr": "Quelques nuages" }
+          },
+          "textSummary": { "en": "A few clouds. High 20.", "fr": "Quelques nuages. Maximum 20." }
+        },
+        {
+          "period": {
+            "textForecastName": { "en": "Monday night", "fr": "Lundi soir et nuit" },
+            "value": { "en": "Monday night", "fr": "Lundi soir et nuit" }
+          },
+          "temperatures": {
+            "temperature": [{
+              "class": { "en": "low", "fr": "minimum" },
+              "value": { "en": 9.0, "fr": 9.0 }
+            }]
+          },
+          "abbreviatedForecast": {
+            "icon": { "format": "png", "value": 31, "url": "" },
+            "textSummary": { "en": "A few clouds", "fr": "Quelques nuages" }
+          },
+          "textSummary": { "en": "A few clouds. Low 9.", "fr": "Quelques nuages. Minimum 9." }
+        },
+        {
+          "period": {
+            "textForecastName": { "en": "Tuesday", "fr": "Mardi" },
+            "value": { "en": "Tuesday", "fr": "Mardi" }
+          },
+          "temperatures": {
+            "temperature": [{
+              "class": { "en": "high", "fr": "maximum" },
+              "value": { "en": 22.0, "fr": 22.0 }
+            }]
+          },
+          "abbreviatedForecast": {
+            "icon": { "format": "png", "value": 0, "url": "" },
+            "textSummary": { "en": "Sunny", "fr": "Ensoleillé" }
+          },
+          "textSummary": { "en": "Sunny. High 22.", "fr": "Ensoleillé. Maximum 22." }
+        }
+      ]
+    },
+    "hourlyForecastGroup": {
+      "hourlyForecasts": [
+        {
+          "condition": { "en": "Mostly cloudy", "fr": "Généralement nuageux" },
+          "temperature": { "value": { "en": 12, "fr": 12 } },
+          "iconCode": { "format": "png", "value": 3, "url": "" },
+          "lop": { "value": { "en": 10, "fr": 10 } },
+          "timestamp": "2026-04-11T13:00:00Z"
+        },
+        {
+          "condition": { "en": "Partly cloudy", "fr": "Partiellement nuageux" },
+          "temperature": { "value": { "en": 13, "fr": 13 } },
+          "iconCode": { "format": "png", "value": 2, "url": "" },
+          "lop": { "value": { "en": 20, "fr": 20 } },
+          "timestamp": "2026-04-11T14:00:00Z"
+        },
+        {
+          "condition": { "en": "Sunny", "fr": "Ensoleillé" },
+          "temperature": { "value": { "en": 15, "fr": 15 } },
+          "iconCode": { "format": "png", "value": 0, "url": "" },
+          "lop": { "value": { "en": 0, "fr": 0 } },
+          "timestamp": "2026-04-11T15:00:00Z"
+        },
+        {
+          "condition": { "en": "Sunny", "fr": "Ensoleillé" },
+          "temperature": { "value": { "en": 16, "fr": 16 } },
+          "iconCode": { "format": "png", "value": 0, "url": "" },
+          "lop": { "value": { "en": 0, "fr": 0 } },
+          "timestamp": "2026-04-11T16:00:00Z"
+        },
+        {
+          "condition": { "en": "Partly cloudy", "fr": "Partiellement nuageux" },
+          "temperature": { "value": { "en": 15, "fr": 15 } },
+          "iconCode": { "format": "png", "value": 2, "url": "" },
+          "lop": { "value": { "en": 10, "fr": 10 } },
+          "timestamp": "2026-04-11T17:00:00Z"
+        },
+        {
+          "condition": { "en": "Clear", "fr": "Dégagé" },
+          "temperature": { "value": { "en": 13, "fr": 13 } },
+          "iconCode": { "format": "png", "value": 30, "url": "" },
+          "lop": { "value": { "en": 0, "fr": 0 } },
+          "timestamp": "2026-04-11T20:00:00Z"
+        }
+      ]
+    },
+    "warnings": [
+      {
+        "description": { "en": "Special weather statement in effect", "fr": "Bulletin météorologique spécial en vigueur" },
+        "url": { "en": "https://weather.gc.ca/warnings/", "fr": "https://meteo.gc.ca/warnings/" },
+        "type": { "en": "statement", "fr": "bulletin" },
+        "expiryTime": { "en": "2026-04-11T23:00:00Z", "fr": "2026-04-11T23:00:00Z" },
+        "eventIssue": { "en": "2026-04-11T08:00:00Z", "fr": "2026-04-11T08:00:00Z" },
+        "alertColourLevel": { "en": "yellow", "fr": "jaune" }
+      }
+    ]
+  }
+}

@@ -42,7 +42,8 @@ class WeatherInformationTests: XCTestCase {
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .mostlyCloudy, weatherDay: .today, summary: "sumary", detail: "detail", tendancy: Tendency.na, when: "", night: true, dateObservation: "")
         resultat = bean.image()
-        XCTAssertEqual(UIImage(named: "mostlyCloudy"), resultat)
+        // .mostlyCloudy at night maps to "clearingNight" via WeatherHelper.getNightImageName
+        XCTAssertEqual(UIImage(named: "clearingNight"), resultat)
         
         bean = WeatherInformation(temperature: 10, weatherStatus: .partlyCloudy, weatherDay: .today, summary: "sumary", detail: "detail", tendancy: Tendency.na, when: "", night: false, dateObservation: "")
         resultat = bean.image()

@@ -21,6 +21,34 @@
                ReferencedContainer = "container:weatherlr.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6E29053B1CB2D5550040EB8B"
+               BuildableName = "weatherlrTests.xctest"
+               BlueprintName = "weatherlrTests"
+               ReferencedContainer = "container:weatherlr.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6E2905461CB2D5550040EB8B"
+               BuildableName = "weatherlrUITests.xctest"
+               BlueprintName = "weatherlrUITests"
+               ReferencedContainer = "container:weatherlr.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,7 +56,30 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6E29053B1CB2D5550040EB8B"
+               BuildableName = "weatherlrTests.xctest"
+               BlueprintName = "weatherlrTests"
+               ReferencedContainer = "container:weatherlr.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6E2905461CB2D5550040EB8B"
+               BuildableName = "weatherlrUITests.xctest"
+               BlueprintName = "weatherlrUITests"
+               ReferencedContainer = "container:weatherlr.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

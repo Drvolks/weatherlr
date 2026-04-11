@@ -9,6 +9,7 @@
 import XCTest
 @testable import weatherlr
 
+@MainActor
 class AppDelegateTests: XCTestCase {
     var appDelegate:AppDelegate = AppDelegate()
     

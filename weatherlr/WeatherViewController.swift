@@ -47,7 +47,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherTable.rowHeight = UITableView.automaticDimension
         weatherTable.estimatedRowHeight = 100.0
         weatherTable.backgroundColor = UIColor.clear
+        weatherTable.accessibilityIdentifier = "weatherTable"
         weatherTable.register(HourlyForecastCell.self, forCellReuseIdentifier: HourlyForecastCell.reuseIdentifier)
+
+        // Stable accessibility identifiers so UI tests don't depend on toolbar
+        // button ordering (which changes based on whether alerts are present).
+        toolbarItems?.first?.accessibilityIdentifier = "settingsButton"
+        warningBarButton?.accessibilityIdentifier = "warningButton"
+        radarButton?.accessibilityIdentifier = "radarButton"
 
         refreshControl = UIRefreshControl()
         refreshLabel()
@@ -247,9 +254,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         warningBarButton.isEnabled = hasAlerts
         warningBarButton.image = hasAlerts ? UIImage(named: "warning") : nil
+        // Re-apply after image toggle — UIBarButtonItem re-creates its backing
+        // view when the image changes and loses the identifier set in viewDidLoad.
+        warningBarButton.accessibilityIdentifier = "warningButton"
 
         radarButton.isEnabled = hasRadar
         radarButton.tintColor = hasRadar ? nil : UIColor.clear
+        radarButton.accessibilityIdentifier = "radarButton"
 
         // Rebuild toolbar items to avoid empty liquid glass capsules
         if settingsButton == nil {

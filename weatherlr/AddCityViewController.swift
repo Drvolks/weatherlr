@@ -43,6 +43,11 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         cityTable.dataSource = self
         searchText.delegate = self
 
+        // Stable accessibility identifiers for UI tests.
+        cityTable.accessibilityIdentifier = "addCityTable"
+        searchText.accessibilityIdentifier = "addCitySearch"
+        cancelButton.accessibilityIdentifier = "addCityCancel"
+
         cancelButton.isEnabled = true
 
         view.backgroundColor = .systemBackground

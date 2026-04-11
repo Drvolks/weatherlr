@@ -37,7 +37,12 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
         overrideUserInterfaceStyle = .unspecified
         tableView.backgroundColor = .systemGroupedBackground
+        tableView.accessibilityIdentifier = "settingsTable"
         navigationController?.view.backgroundColor = .systemGroupedBackground
+
+        // Stable accessibility identifiers for UI tests.
+        addButton?.accessibilityIdentifier = "addCityButton"
+        doneButton?.accessibilityIdentifier = "doneButton"
 
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()

@@ -295,7 +295,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as! WeatherNowCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "weatherNowCell", for: indexPath) as? WeatherNowCell else {
+                assertionFailure("Expected weatherNowCell to be a WeatherNowCell")
+                return UITableViewCell(style: .default, reuseIdentifier: "weatherNowCellFallback")
+            }
             cell.backgroundColor = .clear
             #if ENABLE_PRECIPITATION
             cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, precipitationData: precipitationData)
@@ -306,14 +309,20 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
 
         if hasHourlyRow && indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: HourlyForecastCell.reuseIdentifier, for: indexPath) as! HourlyForecastCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyForecastCell.reuseIdentifier, for: indexPath) as? HourlyForecastCell else {
+                assertionFailure("Expected \(HourlyForecastCell.reuseIdentifier) to be a HourlyForecastCell")
+                return UITableViewCell(style: .default, reuseIdentifier: "hourlyForecastCellFallback")
+            }
             cell.configure(with: weatherInformationWrapper.hourlyForecasts)
             return cell
         }
 
         let adjustedRow = hasHourlyRow ? indexPath.row - 1 : indexPath.row
         let adjustedIndexPath = IndexPath(row: adjustedRow, section: indexPath.section)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherTableViewCell else {
+            assertionFailure("Expected weatherCell to be a WeatherTableViewCell")
+            return UITableViewCell(style: .default, reuseIdentifier: "weatherCellFallback")
+        }
         cell.backgroundColor = .clear
         cell.initialize(weatherInformationWrapper: weatherInformationWrapper, indexPath: adjustedIndexPath)
         return cell

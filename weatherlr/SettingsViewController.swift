@@ -153,7 +153,10 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
     override func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         if indexPath.section == citySection {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as? CityTableViewCell else {
+                assertionFailure("Expected cityCell to be a CityTableViewCell")
+                return UITableViewCell(style: .default, reuseIdentifier: "cityCellFallback")
+            }
 
             let city = savedCities[indexPath.row]
             cell.cityLabel.text = CityHelper.cityName(city)
@@ -181,7 +184,10 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
             return cell;
         } else if indexPath.section == langSection {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "langCell", for: indexPath) as! LangTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "langCell", for: indexPath) as? LangTableViewCell else {
+                assertionFailure("Expected langCell to be a LangTableViewCell")
+                return UITableViewCell(style: .default, reuseIdentifier: "langCellFallback")
+            }
 
             cell.accessoryType = UITableViewCell.AccessoryType.none
 
@@ -203,7 +209,10 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
             return cell
         } else if indexPath.section == versionSection {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "versionProviderCell", for: indexPath) as! VersionProviderTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "versionProviderCell", for: indexPath) as? VersionProviderTableViewCell else {
+                assertionFailure("Expected versionProviderCell to be a VersionProviderTableViewCell")
+                return UITableViewCell(style: .default, reuseIdentifier: "versionProviderCellFallback")
+            }
 
             cell.backgroundColor = UIColor.clear
 
@@ -216,7 +225,10 @@ class SettingsViewController: UITableViewController, @preconcurrency ModalDelega
 
             return cell
         } else if indexPath.section == dataProviderSection {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "dataProviderCell", for: indexPath) as! DataProviderTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "dataProviderCell", for: indexPath) as? DataProviderTableViewCell else {
+                assertionFailure("Expected dataProviderCell to be a DataProviderTableViewCell")
+                return UITableViewCell(style: .default, reuseIdentifier: "dataProviderCellFallback")
+            }
 
             cell.dataProviderLabel.text = "Provider".localized()
             cell.dataProviderLabel.textColor = .label

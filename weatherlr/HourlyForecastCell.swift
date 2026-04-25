@@ -65,7 +65,10 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyItemCell.reuseIdentifier, for: indexPath) as! HourlyItemCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyItemCell.reuseIdentifier, for: indexPath) as? HourlyItemCell else {
+            assertionFailure("Expected \(HourlyItemCell.reuseIdentifier) to be a HourlyItemCell")
+            return UICollectionViewCell()
+        }
         let hour = hours[indexPath.item]
         cell.configure(with: hour, isCurrentHour: indexPath.item == 0)
         return cell

@@ -172,7 +172,10 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as? CityTableViewCell else {
+            assertionFailure("Expected cityCell to be a CityTableViewCell")
+            return UITableViewCell(style: .default, reuseIdentifier: "cityCellFallback")
+        }
         
         let city = cityRow(indexPath)
         

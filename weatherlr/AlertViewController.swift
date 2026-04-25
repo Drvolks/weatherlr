@@ -37,8 +37,11 @@ class AlertViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAlertDetail" {
-            let navigationController = segue.destination as! UINavigationController
-            let targetController = navigationController.topViewController as! AlertDetailViewController
+            guard let navigationController = segue.destination as? UINavigationController,
+                  let targetController = navigationController.topViewController as? AlertDetailViewController else {
+                assertionFailure("Unexpected destination for showAlertDetail segue")
+                return
+            }
             
             targetController.alerts = alerts
             targetController.popOver = self

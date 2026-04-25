@@ -54,21 +54,6 @@
 		6E4ED59E233585AD00A44046 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
 		6E4ED5A6233586EA00A44046 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ED59D233585AD00A44046 /* Cities.plist */; };
 		6E4EEA6E1F583EE000984A0C /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4EEA6D1F583EE000984A0C /* AppDelegateTests.swift */; };
-		6EFA11CA000000000000000C /* JsonWeatherParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000001 /* JsonWeatherParserTests.swift */; };
-		6EFA11CA000000000000000D /* ExpiringCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000002 /* ExpiringCacheTests.swift */; };
-		6EFA11CA000000000000000E /* CityHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000003 /* CityHelperTests.swift */; };
-		6EFA11CA000000000000000F /* WeatherHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000004 /* WeatherHelperTests.swift */; };
-		6EFA11CA0000000000000010 /* WeatherInformationWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000005 /* WeatherInformationWrapperTests.swift */; };
-		6EFA11CA0000000000000011 /* WeatherEnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000006 /* WeatherEnumsTests.swift */; };
-		6EFA11CA0000000000000012 /* PreferenceHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000007 /* PreferenceHelperTests.swift */; };
-		6EFA11CA0000000000000013 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000008 /* StringExtensionTests.swift */; };
-		6EFA11CA0000000000000014 /* UrlHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000009 /* UrlHelperTests.swift */; };
-		6EFA11CA0000000000000015 /* AlertInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA000000000000000A /* AlertInformationTests.swift */; };
-		6EFA11CA0000000000000016 /* HourlyForecastInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA000000000000000B /* HourlyForecastInfoTests.swift */; };
-		6EFA11CA0000000000000018 /* MiscHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000017 /* MiscHelperTests.swift */; };
-		6EFA11CA0000000000000020 /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000019 /* ViewControllerUnitTests.swift */; };
-		6EFA11CA00000000DEADBEE2 /* UITestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA00000000DEADBEE1 /* UITestSupport.swift */; };
-		6EFA11CA00000000DEADBEE4 /* ui_test_fixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA00000000DEADBEE3 /* ui_test_fixture.json */; };
 		6E661508205B2F5B008075CB /* Weatherlr Launchscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E661505205B2F56008075CB /* Weatherlr Launchscreen@3x.png */; };
 		6E661509205B2F5B008075CB /* Weatherlr Launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E661506205B2F58008075CB /* Weatherlr Launchscreen.png */; };
 		6E66150A205B2F5B008075CB /* Weatherlr Launchscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E661507205B2F5B008075CB /* Weatherlr Launchscreen@2x.png */; };
@@ -103,6 +88,21 @@
 		6EDC30141CF9B7D1006325EE /* cities5 in Resources */ = {isa = PBXBuildFile; fileRef = 6EDC30131CF9B7D1006325EE /* cities5 */; };
 		6EEBDE5F1CBC362100C5B14B /* MinMaxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */; };
 		6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */; };
+		6EFA11CA000000000000000C /* JsonWeatherParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000001 /* JsonWeatherParserTests.swift */; };
+		6EFA11CA000000000000000D /* ExpiringCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000002 /* ExpiringCacheTests.swift */; };
+		6EFA11CA000000000000000E /* CityHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000003 /* CityHelperTests.swift */; };
+		6EFA11CA000000000000000F /* WeatherHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000004 /* WeatherHelperTests.swift */; };
+		6EFA11CA0000000000000010 /* WeatherInformationWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000005 /* WeatherInformationWrapperTests.swift */; };
+		6EFA11CA0000000000000011 /* WeatherEnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000006 /* WeatherEnumsTests.swift */; };
+		6EFA11CA0000000000000012 /* PreferenceHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000007 /* PreferenceHelperTests.swift */; };
+		6EFA11CA0000000000000013 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000008 /* StringExtensionTests.swift */; };
+		6EFA11CA0000000000000014 /* UrlHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000009 /* UrlHelperTests.swift */; };
+		6EFA11CA0000000000000015 /* AlertInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA000000000000000A /* AlertInformationTests.swift */; };
+		6EFA11CA0000000000000016 /* HourlyForecastInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA000000000000000B /* HourlyForecastInfoTests.swift */; };
+		6EFA11CA0000000000000018 /* MiscHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000017 /* MiscHelperTests.swift */; };
+		6EFA11CA0000000000000020 /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000019 /* ViewControllerUnitTests.swift */; };
+		6EFA11CA00000000DEADBEE2 /* UITestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA00000000DEADBEE1 /* UITestSupport.swift */; };
+		6EFA11CA00000000DEADBEE4 /* ui_test_fixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA00000000DEADBEE3 /* ui_test_fixture.json */; };
 		6FD0CE0B6DAC5B5CAE5324C5 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D00EB2864B75E5EB9204ED /* RssParser.swift */; };
 		72947C11D7AB8B1017E5638D /* RssEntryToWeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7B94416CFB79B2E9AFBE1 /* RssEntryToWeatherInformation.swift */; };
 		72BDF0611B51B6010F3F100F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23BBD3639305F0B403E189E /* City.swift */; };
@@ -351,21 +351,6 @@
 		6E4910D11CCD1F81006D3C82 /* DataProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderTableViewCell.swift; sourceTree = "<group>"; };
 		6E4ED59D233585AD00A44046 /* Cities.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cities.plist; sourceTree = "<group>"; };
 		6E4EEA6D1F583EE000984A0C /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000001 /* JsonWeatherParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonWeatherParserTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000002 /* ExpiringCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiringCacheTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000003 /* CityHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHelperTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000004 /* WeatherHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHelperTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000005 /* WeatherInformationWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformationWrapperTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000006 /* WeatherEnumsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnumsTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000007 /* PreferenceHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelperTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000008 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000009 /* UrlHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHelperTests.swift; sourceTree = "<group>"; };
-		6EFA11CA000000000000000A /* AlertInformationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformationTests.swift; sourceTree = "<group>"; };
-		6EFA11CA000000000000000B /* HourlyForecastInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecastInfoTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000017 /* MiscHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscHelperTests.swift; sourceTree = "<group>"; };
-		6EFA11CA0000000000000019 /* ViewControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUnitTests.swift; sourceTree = "<group>"; };
-		6EFA11CA00000000DEADBEE1 /* UITestSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestSupport.swift; sourceTree = "<group>"; };
-		6EFA11CA00000000DEADBEE3 /* ui_test_fixture.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ui_test_fixture.json; sourceTree = "<group>"; };
 		6E661505205B2F56008075CB /* Weatherlr Launchscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen@3x.png"; sourceTree = "<group>"; };
 		6E661506205B2F58008075CB /* Weatherlr Launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen.png"; sourceTree = "<group>"; };
 		6E661507205B2F5B008075CB /* Weatherlr Launchscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Weatherlr Launchscreen@2x.png"; sourceTree = "<group>"; };
@@ -400,6 +385,21 @@
 		6EDC30131CF9B7D1006325EE /* cities5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cities5; sourceTree = "<group>"; };
 		6EEBDE5E1CBC362100C5B14B /* MinMaxLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinMaxLabel.swift; sourceTree = "<group>"; };
 		6EEBDE601CC5821E00C5B14B /* LangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangTableViewCell.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000001 /* JsonWeatherParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonWeatherParserTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000002 /* ExpiringCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiringCacheTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000003 /* CityHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHelperTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000004 /* WeatherHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHelperTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000005 /* WeatherInformationWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformationWrapperTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000006 /* WeatherEnumsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnumsTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000007 /* PreferenceHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelperTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000008 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000009 /* UrlHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHelperTests.swift; sourceTree = "<group>"; };
+		6EFA11CA000000000000000A /* AlertInformationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformationTests.swift; sourceTree = "<group>"; };
+		6EFA11CA000000000000000B /* HourlyForecastInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecastInfoTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000017 /* MiscHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscHelperTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000019 /* ViewControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUnitTests.swift; sourceTree = "<group>"; };
+		6EFA11CA00000000DEADBEE1 /* UITestSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestSupport.swift; sourceTree = "<group>"; };
+		6EFA11CA00000000DEADBEE3 /* ui_test_fixture.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ui_test_fixture.json; sourceTree = "<group>"; };
 		94FD89E5567BE1033F96C083 /* AlertInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInformation.swift; sourceTree = "<group>"; };
 		9E4F3AC54DD341A39D5EF6F4 /* HourlyItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyItemCell.swift; sourceTree = "<group>"; };
 		A1B1C1D1E1F1011121314151 /* PWSStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSStation.swift; sourceTree = "<group>"; };
@@ -1508,7 +1508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1536,7 +1536,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1644,7 +1644,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1674,7 +1674,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1702,7 +1702,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1726,7 +1726,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1823,7 +1823,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1887,7 +1887,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1917,7 +1917,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2004,7 +2004,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2074,7 +2074,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2103,7 +2103,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2128,7 +2128,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.watchkitapp.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2153,7 +2153,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.watchkitapp.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2180,7 +2180,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DDEBUG -DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.watchkitapp.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2205,7 +2205,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 5.3;
+				MARKETING_VERSION = 5.4;
 				OTHER_SWIFT_FLAGS = "-DWIDGET_EXTENSION -DENABLE_PWS -DENABLE_PRECIPITATION";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).weatherlr.internal.watchkitapp.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";

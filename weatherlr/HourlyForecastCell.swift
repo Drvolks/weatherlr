@@ -56,6 +56,11 @@ class HourlyForecastCell: UITableViewCell, UICollectionViewDataSource, UICollect
         self.hours = hourlyForecasts
         collectionView.isHidden = hours.isEmpty
         collectionView.reloadData()
+        resetScrollPosition()
+    }
+
+    private func resetScrollPosition() {
+        collectionView.setContentOffset(.zero, animated: false)
     }
 
     // MARK: - UICollectionViewDataSource

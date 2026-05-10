@@ -21,6 +21,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private var currentFrameIndex = 0
     private var animationTimer: Timer?
     private var isPlaying = false
+    private var sliderDebounceWorkItem: DispatchWorkItem?
 
     // Stacked overlays: one per time step, toggled via renderer alpha
     private var tileOverlays: [WMSTileOverlay] = []
@@ -31,6 +32,8 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private lazy var prefetchSession: URLSession = {
         let config = URLSessionConfiguration.default
         config.httpMaximumConnectionsPerHost = 6
+        config.urlCache = .radarTileCache
+        config.requestCachePolicy = .returnCacheDataElseLoad
         return URLSession(configuration: config)
     }()
 
@@ -49,7 +52,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
         mapView = MKMapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mapView.mapType = .hybrid
+        mapView.mapType = .mutedStandard
         mapView.isRotateEnabled = false
         mapView.showsUserLocation = true
         mapView.delegate = self
@@ -63,10 +66,12 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
             mapView.setRegion(region, animated: false)
         }
 
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        if city == nil {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        }
 
         setupDismissButton()
         setupControlBar()
@@ -80,6 +85,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Keep disk-backed URLCache intact; clear only in-memory tile cache.
         TileDataCache.shared.clear()
     }
 
@@ -220,16 +226,16 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         timeSlider.isEnabled = true
         updateTimeLabel()
 
-        // Phase 1: prefetch current frame tiles, then show overlay
+        // Show immediately; MapKit will render tiles as they arrive.
+        addOverlayToMap(at: currentFrameIndex)
+        applyCurrentFrame()
+
+        // Phase 1: prefetch current frame tiles, then background frames.
         let tilePaths = visibleTilePaths()
-        prefetchTilesForFrame(currentFrameIndex, tilePaths: tilePaths, session: URLSession.shared) { [weak self] in
+        prefetchTilesForFrame(currentFrameIndex, tilePaths: tilePaths, session: prefetchSession) { [weak self] in
             guard let self = self else { return }
 
-            // Current frame tiles are cached — add overlay (instant cache hits)
-            self.addOverlayToMap(at: self.currentFrameIndex)
-            self.applyCurrentFrame()
-
-            // Phase 2: prefetch remaining frames in parallel
+            // Phase 2: prefetch remaining frames with bounded concurrency.
             let remaining = Array(0..<steps.count).filter { $0 != self.currentFrameIndex }
             self.prefetchFramesSequentially(remaining, tilePaths: tilePaths)
         }
@@ -272,7 +278,8 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         let group = DispatchGroup()
         for url in urls {
             group.enter()
-            session.dataTask(with: url) { data, _, _ in
+            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+            session.dataTask(with: request) { data, _, _ in
                 if let data = data {
                     TileDataCache.shared.set(data, for: url)
                 }
@@ -283,25 +290,47 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         group.notify(queue: .main) { completion() }
     }
 
-    /// Prefetches all frames in parallel into TileDataCache without adding overlays to the map.
+    /// Prefetches remaining frames with bounded concurrency and proximity priority.
     private func prefetchFramesSequentially(_ frameIndices: [Int], tilePaths: [MKTileOverlayPath]) {
+        guard !frameIndices.isEmpty else {
+            playPauseButton.isEnabled = true
+            return
+        }
+
         let startTime = Date()
-        let totalFrames = frameIndices.count
+        let sorted = frameIndices.sorted { abs($0 - currentFrameIndex) < abs($1 - currentFrameIndex) }
+        let totalFrames = sorted.count
         var completedCount = 0
-        print("[Radar] parallel prefetch starting — \(totalFrames) frames")
+        var nextIndex = 0
+        var inFlight = 0
+        let maxInFlight = 3
 
-        for index in frameIndices {
-            prefetchTilesForFrame(index, tilePaths: tilePaths, session: prefetchSession) { [weak self] in
-                guard let self = self else { return }
+        print("[Radar] bounded prefetch starting — \(totalFrames) frames")
 
-                completedCount += 1
-                if completedCount == totalFrames {
-                    let elapsed = Date().timeIntervalSince(startTime)
-                    print("[Radar] parallel prefetch complete — \(totalFrames) frames in \(String(format: "%.1f", elapsed))s")
-                    self.playPauseButton.isEnabled = true
+        func launchMoreIfNeeded() {
+            while inFlight < maxInFlight, nextIndex < sorted.count {
+                let frameIndex = sorted[nextIndex]
+                nextIndex += 1
+                inFlight += 1
+
+                prefetchTilesForFrame(frameIndex, tilePaths: tilePaths, session: prefetchSession) { [weak self] in
+                    guard let self = self else { return }
+                    inFlight -= 1
+                    completedCount += 1
+
+                    if completedCount == totalFrames {
+                        let elapsed = Date().timeIntervalSince(startTime)
+                        print("[Radar] bounded prefetch complete — \(totalFrames) frames in \(String(format: "%.1f", elapsed))s")
+                        self.playPauseButton.isEnabled = true
+                        return
+                    }
+
+                    launchMoreIfNeeded()
                 }
             }
         }
+
+        launchMoreIfNeeded()
     }
 
     private func visibleTilePaths() -> [MKTileOverlayPath] {
@@ -416,7 +445,13 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         }
         currentFrameIndex = Int(sender.value)
         updateTimeLabel()
-        applyCurrentFrame()
+
+        sliderDebounceWorkItem?.cancel()
+        let work = DispatchWorkItem { [weak self] in
+            self?.applyCurrentFrame()
+        }
+        sliderDebounceWorkItem = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: work)
     }
 
     // MARK: - MKMapViewDelegate

@@ -11,12 +11,25 @@ import Foundation
 class RadarTimeStepCache: @unchecked Sendable {
     static let shared = RadarTimeStepCache()
 
+    private enum StorageKeys {
+        static let steps = "radarTimeSteps"
+        static let date = "radarTimeStepsDate"
+    }
+
     private let lock = NSLock()
     private var cachedSteps: [String] = []
     private var fetchDate: Date?
     private var isFetching = false
 
-    private init() {}
+    private init() {
+        if let steps = UserDefaults.standard.stringArray(forKey: StorageKeys.steps),
+           let date = UserDefaults.standard.object(forKey: StorageKeys.date) as? Date,
+           !steps.isEmpty,
+           Date().timeIntervalSince(date) < 1800 {
+            cachedSteps = steps
+            fetchDate = date
+        }
+    }
 
     func preload() {
         lock.lock()
@@ -67,6 +80,8 @@ class RadarTimeStepCache: @unchecked Sendable {
             if !steps.isEmpty {
                 self.cachedSteps = steps
                 self.fetchDate = Date()
+                UserDefaults.standard.set(steps, forKey: StorageKeys.steps)
+                UserDefaults.standard.set(self.fetchDate, forKey: StorageKeys.date)
                 print("[RadarCache] preload complete — \(steps.count) steps cached in \(String(format: "%.1f", elapsed))s")
             } else {
                 print("[RadarCache] preload failed — parsed 0 steps from \(data.count) bytes in \(String(format: "%.1f", elapsed))s")
@@ -88,6 +103,7 @@ class RadarTimeStepCache: @unchecked Sendable {
         print("[RadarCache] getCachedSteps — cache hit, \(cachedSteps.count) steps, age=\(Int(Date().timeIntervalSince(fetchDate)))s")
         return cachedSteps
     }
+
 }
 
 // MARK: - TimeDimensionParser

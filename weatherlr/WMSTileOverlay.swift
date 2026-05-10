@@ -8,6 +8,16 @@
 
 import MapKit
 
+extension URLCache {
+    static let radarTileCache: URLCache = {
+        let cachesDir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
+        let directory = cachesDir?.appendingPathComponent("RadarTiles", isDirectory: true)
+        return URLCache(memoryCapacity: 50 * 1024 * 1024,
+                        diskCapacity: 200 * 1024 * 1024,
+                        directory: directory)
+    }()
+}
+
 class TileDataCache: @unchecked Sendable {
     static let shared = TileDataCache()
     private let lock = NSLock()
@@ -35,6 +45,13 @@ class TileDataCache: @unchecked Sendable {
 
 class WMSTileOverlay: MKTileOverlay {
     private static let originShift = 20037508.342789244
+    private static let sharedTileSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.httpMaximumConnectionsPerHost = 6
+        config.urlCache = .radarTileCache
+        config.requestCachePolicy = .returnCacheDataElseLoad
+        return URLSession(configuration: config)
+    }()
 
     let timeStep: String
 
@@ -58,7 +75,8 @@ class WMSTileOverlay: MKTileOverlay {
             return
         }
 
-        URLSession.shared.dataTask(with: tileURL) { data, _, error in
+        let request = URLRequest(url: tileURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+        WMSTileOverlay.sharedTileSession.dataTask(with: request) { data, _, error in
             if let data = data {
                 TileDataCache.shared.set(data, for: tileURL)
             }

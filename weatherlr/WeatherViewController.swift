@@ -23,6 +23,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var lastContentOffset: CGFloat = 0
     var locationServices:LocationServices?
     var settingsButton: UIBarButtonItem?
+    // Strong references so rebuilding `toolbarItems` in decorate() (which drops
+    // any item not re-added) doesn't deallocate these weak outlets. Without
+    // this, when there are no alerts the warning button is left out of the
+    // rebuilt toolbar and deallocates; decorate()'s `warningBarButton != nil`
+    // guard then fails on every later call, so the radar button never gets
+    // re-enabled once the background radar fetch completes.
+    private var retainedBarButtons: [UIBarButtonItem] = []
     #if ENABLE_PRECIPITATION
     var precipitationData: PrecipitationData?
     #endif
@@ -42,6 +49,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
 
+        NotificationCenter.default.addObserver(self, selector: #selector(radarDataDidUpdate), name: RadarTimeStepCache.didUpdateNotification, object: nil)
+
         weatherTable.delegate = self
         weatherTable.dataSource = self
         weatherTable.rowHeight = UITableView.automaticDimension
@@ -55,6 +64,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         toolbarItems?.first?.accessibilityIdentifier = "settingsButton"
         warningBarButton?.accessibilityIdentifier = "warningButton"
         radarButton?.accessibilityIdentifier = "radarButton"
+        retainedBarButtons = [warningBarButton, radarButton].compactMap { $0 }
 
         refreshControl = UIRefreshControl()
         refreshLabel()
@@ -113,6 +123,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @objc func refreshFromScroll(_ sender:Any) {
         refresh()
+    }
+
+    @objc private func radarDataDidUpdate() {
+        // Radar time steps just became available — re-enable the radar button.
+        decorate()
     }
 
     @objc func applicationWillEnterForeground(_ notification: Notification) {
@@ -330,6 +345,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let city = PreferenceHelper.getCityToUse()
         let hasAlerts = weatherInformationWrapper.alerts.count > 0
         let hasRadar = !city.radarId.isEmpty
+        // Only enable the radar button once the current radar time steps have
+        // been fetched in the background — otherwise opening the radar has no
+        // data to display.
+        let radarReady = RadarTimeStepCache.shared.getCachedSteps() != nil
 
         warningBarButton.isEnabled = hasAlerts
         warningBarButton.image = hasAlerts ? UIImage(named: "warning") : nil
@@ -337,7 +356,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         // view when the image changes and loses the identifier set in viewDidLoad.
         warningBarButton.accessibilityIdentifier = "warningButton"
 
-        radarButton.isEnabled = hasRadar
+        radarButton.isEnabled = hasRadar && radarReady
         radarButton.tintColor = hasRadar ? nil : UIColor.clear
         radarButton.accessibilityIdentifier = "radarButton"
 

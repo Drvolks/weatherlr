@@ -11,6 +11,11 @@ import Foundation
 class RadarTimeStepCache: @unchecked Sendable {
     static let shared = RadarTimeStepCache()
 
+    /// Posted on the main queue whenever cached radar time steps become
+    /// available (either an initial fetch completing or a refresh). Observers
+    /// can use this to enable radar UI once `getCachedSteps()` returns data.
+    static let didUpdateNotification = Notification.Name("RadarTimeStepCacheDidUpdate")
+
     private enum StorageKeys {
         static let steps = "radarTimeSteps"
         static let date = "radarTimeStepsDate"
@@ -83,6 +88,9 @@ class RadarTimeStepCache: @unchecked Sendable {
                 UserDefaults.standard.set(steps, forKey: StorageKeys.steps)
                 UserDefaults.standard.set(self.fetchDate, forKey: StorageKeys.date)
                 print("[RadarCache] preload complete — \(steps.count) steps cached in \(String(format: "%.1f", elapsed))s")
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: RadarTimeStepCache.didUpdateNotification, object: nil)
+                }
             } else {
                 print("[RadarCache] preload failed — parsed 0 steps from \(data.count) bytes in \(String(format: "%.1f", elapsed))s")
             }

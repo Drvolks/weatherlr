@@ -57,14 +57,26 @@ class WCSessionDelegateHandler: NSObject, WCSessionDelegate {
         if let apiKey = applicationContext["pwsApiKey"] as? String {
             defaults.set(apiKey, forKey: "pwsApiKey")
         }
+        // The iPhone rebuilds the full context from its defaults on every sync, and writes
+        // the reading keys (temperature / station name / timestamp) as an atomic group. Mirror
+        // that here: when the context carries no reading, clear all three so a stale reading
+        // can't linger on the Watch after the iPhone has stopped reporting one.
         if let pwsTemp = applicationContext[Global.pwsTemperatureKey] as? Int {
             defaults.set(pwsTemp, forKey: Global.pwsTemperatureKey)
-        }
-        if let pwsStation = applicationContext[Global.pwsStationNameKey] as? String {
-            defaults.set(pwsStation, forKey: Global.pwsStationNameKey)
-        }
-        if let pwsUpdatedAt = applicationContext[Global.pwsTemperatureUpdatedAtKey] as? TimeInterval {
-            defaults.set(pwsUpdatedAt, forKey: Global.pwsTemperatureUpdatedAtKey)
+            if let pwsStation = applicationContext[Global.pwsStationNameKey] as? String {
+                defaults.set(pwsStation, forKey: Global.pwsStationNameKey)
+            } else {
+                defaults.removeObject(forKey: Global.pwsStationNameKey)
+            }
+            if let pwsUpdatedAt = applicationContext[Global.pwsTemperatureUpdatedAtKey] as? TimeInterval {
+                defaults.set(pwsUpdatedAt, forKey: Global.pwsTemperatureUpdatedAtKey)
+            } else {
+                defaults.removeObject(forKey: Global.pwsTemperatureUpdatedAtKey)
+            }
+        } else {
+            defaults.removeObject(forKey: Global.pwsTemperatureKey)
+            defaults.removeObject(forKey: Global.pwsStationNameKey)
+            defaults.removeObject(forKey: Global.pwsTemperatureUpdatedAtKey)
         }
         #endif
 

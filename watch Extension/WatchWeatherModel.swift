@@ -215,10 +215,13 @@ final class WatchWeatherModel {
         var closestName: String?
         var closestDistance: CLLocationDistance = .greatestFiniteMagnitude
 
+        // No distance cap: the user explicitly configured these stations, so when we already
+        // have a PWS reading we want to name its station regardless of how far it sits from the
+        // selected Environment Canada city. The 50 km filter belongs to the station-selection
+        // path (findClosestStation), not to this display-name lookup.
         for station in stations {
             let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
             let distance = cityLocation.distance(from: stationLocation)
-            guard distance < 50_000 else { continue }
             if distance < closestDistance {
                 closestDistance = distance
                 closestName = station.name
@@ -230,10 +233,13 @@ final class WatchWeatherModel {
 
     nonisolated static func syncedPWSData() -> (temperature: Int?, stationName: String?, updatedAt: Date?) {
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
-        let stationName = defaults.string(forKey: Global.pwsStationNameKey)
-        guard stationName != nil, defaults.object(forKey: Global.pwsTemperatureKey) != nil else {
+        // The temperature is the source of truth: if it is present, a PWS reading is in
+        // play. The station name is best-effort — it may be missing if the sync delivered
+        // temperature first, so don't drop the temperature just because the name is absent.
+        guard defaults.object(forKey: Global.pwsTemperatureKey) != nil else {
             return (nil, nil, nil)
         }
+        let stationName = defaults.string(forKey: Global.pwsStationNameKey)
         let updatedAt: Date?
         if defaults.object(forKey: Global.pwsTemperatureUpdatedAtKey) != nil {
             updatedAt = Date(timeIntervalSince1970: defaults.double(forKey: Global.pwsTemperatureUpdatedAtKey))

@@ -60,11 +60,12 @@ class PWSService {
         var closestName: String?
         var closestDistance: CLLocationDistance = .greatestFiniteMagnitude
 
+        // No distance cap here: this is the display-name lookup for a reading we already
+        // have. The 50 km filter that decides which station to actually fetch from lives in
+        // findClosestStation below.
         for station in stations {
             let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
             let distance = cityLocation.distance(from: stationLocation)
-
-            guard distance < 50_000 else { continue }
 
             if distance < closestDistance {
                 closestDistance = distance

@@ -99,7 +99,10 @@ struct WeatherContentView: View {
                 .lineLimit(1)
 
             #if ENABLE_PWS
-            if model.pwsStationName != nil {
+            // Key the sensor icon off the temperature, not the name: whenever a PWS reading
+            // is substituted into the Current row, the header must signal it — even if the
+            // station name pipeline failed to deliver a name.
+            if model.pwsTemperature != nil {
                 Image(systemName: "sensor.fill")
                     .font(.system(size: 10, weight: .medium))
                     .foregroundColor(.white.opacity(0.7))
@@ -146,8 +149,14 @@ struct WeatherContentView: View {
         }
 
         #if ENABLE_PWS
-        if let stationName = model.pwsStationName {
+        if let stationName = model.pwsStationName, !stationName.isEmpty {
             return stationName
+        }
+        // A reading is from the PWS but we couldn't resolve its station name. Don't fall back
+        // to the city name — that would mislead the user into reading the PWS number as the
+        // Environment Canada value for the city. Show a generic PWS label instead.
+        if model.pwsTemperature != nil {
+            return "Personal weather station".localized()
         }
         #endif
 

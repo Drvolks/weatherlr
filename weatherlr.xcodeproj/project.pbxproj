@@ -95,6 +95,7 @@
 		6EFA11CA0000000000000010 /* WeatherInformationWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000005 /* WeatherInformationWrapperTests.swift */; };
 		6EFA11CA0000000000000011 /* WeatherEnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000006 /* WeatherEnumsTests.swift */; };
 		6EFA11CA0000000000000012 /* PreferenceHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000007 /* PreferenceHelperTests.swift */; };
+		6EFA11CA0000000000000098 /* PWSServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000097 /* PWSServiceTests.swift */; };
 		6EFA11CA0000000000000013 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000008 /* StringExtensionTests.swift */; };
 		6EFA11CA0000000000000014 /* UrlHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000009 /* UrlHelperTests.swift */; };
 		6EFA11CA0000000000000015 /* AlertInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA000000000000000A /* AlertInformationTests.swift */; };
@@ -392,6 +393,7 @@
 		6EFA11CA0000000000000005 /* WeatherInformationWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInformationWrapperTests.swift; sourceTree = "<group>"; };
 		6EFA11CA0000000000000006 /* WeatherEnumsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnumsTests.swift; sourceTree = "<group>"; };
 		6EFA11CA0000000000000007 /* PreferenceHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelperTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000097 /* PWSServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PWSServiceTests.swift; sourceTree = "<group>"; };
 		6EFA11CA0000000000000008 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		6EFA11CA0000000000000009 /* UrlHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHelperTests.swift; sourceTree = "<group>"; };
 		6EFA11CA000000000000000A /* AlertInformationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformationTests.swift; sourceTree = "<group>"; };
@@ -604,6 +606,7 @@
 				6EFA11CA0000000000000005 /* WeatherInformationWrapperTests.swift */,
 				6EFA11CA0000000000000006 /* WeatherEnumsTests.swift */,
 				6EFA11CA0000000000000007 /* PreferenceHelperTests.swift */,
+				6EFA11CA0000000000000097 /* PWSServiceTests.swift */,
 				6EFA11CA0000000000000008 /* StringExtensionTests.swift */,
 				6EFA11CA0000000000000009 /* UrlHelperTests.swift */,
 				6EFA11CA000000000000000A /* AlertInformationTests.swift */,
@@ -1158,6 +1161,7 @@
 				6EFA11CA0000000000000010 /* WeatherInformationWrapperTests.swift in Sources */,
 				6EFA11CA0000000000000011 /* WeatherEnumsTests.swift in Sources */,
 				6EFA11CA0000000000000012 /* PreferenceHelperTests.swift in Sources */,
+				6EFA11CA0000000000000098 /* PWSServiceTests.swift in Sources */,
 				6EFA11CA0000000000000013 /* StringExtensionTests.swift in Sources */,
 				6EFA11CA0000000000000014 /* UrlHelperTests.swift in Sources */,
 				6EFA11CA0000000000000015 /* AlertInformationTests.swift in Sources */,
@@ -1839,6 +1843,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CURRENT_PROJECT_VERSION = 111;
 				INFOPLIST_FILE = weatherlrTests/Info.plist;
+				OTHER_SWIFT_FLAGS = "-DDEBUG -DENABLE_PWS -DENABLE_PRECIPITATION";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

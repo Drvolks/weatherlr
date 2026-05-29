@@ -101,6 +101,7 @@
 		6EFA11CA0000000000000015 /* AlertInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA000000000000000A /* AlertInformationTests.swift */; };
 		6EFA11CA0000000000000016 /* HourlyForecastInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA000000000000000B /* HourlyForecastInfoTests.swift */; };
 		6EFA11CA0000000000000018 /* MiscHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000017 /* MiscHelperTests.swift */; };
+		6EFA11CA0000000000000117 /* WMSTileOverlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000118 /* WMSTileOverlayTests.swift */; };
 		6EFA11CA0000000000000020 /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA0000000000000019 /* ViewControllerUnitTests.swift */; };
 		6EFA11CA00000000DEADBEE2 /* UITestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA00000000DEADBEE1 /* UITestSupport.swift */; };
 		6EFA11CA00000000DEADBEE4 /* ui_test_fixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EFA11CA00000000DEADBEE3 /* ui_test_fixture.json */; };
@@ -399,6 +400,7 @@
 		6EFA11CA000000000000000A /* AlertInformationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInformationTests.swift; sourceTree = "<group>"; };
 		6EFA11CA000000000000000B /* HourlyForecastInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecastInfoTests.swift; sourceTree = "<group>"; };
 		6EFA11CA0000000000000017 /* MiscHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscHelperTests.swift; sourceTree = "<group>"; };
+		6EFA11CA0000000000000118 /* WMSTileOverlayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMSTileOverlayTests.swift; sourceTree = "<group>"; };
 		6EFA11CA0000000000000019 /* ViewControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUnitTests.swift; sourceTree = "<group>"; };
 		6EFA11CA00000000DEADBEE1 /* UITestSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestSupport.swift; sourceTree = "<group>"; };
 		6EFA11CA00000000DEADBEE3 /* ui_test_fixture.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ui_test_fixture.json; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				6EFA11CA000000000000000A /* AlertInformationTests.swift */,
 				6EFA11CA000000000000000B /* HourlyForecastInfoTests.swift */,
 				6EFA11CA0000000000000017 /* MiscHelperTests.swift */,
+				6EFA11CA0000000000000118 /* WMSTileOverlayTests.swift */,
 				6EFA11CA0000000000000019 /* ViewControllerUnitTests.swift */,
 			);
 			path = weatherlrTests;
@@ -1167,6 +1170,7 @@
 				6EFA11CA0000000000000015 /* AlertInformationTests.swift in Sources */,
 				6EFA11CA0000000000000016 /* HourlyForecastInfoTests.swift in Sources */,
 				6EFA11CA0000000000000018 /* MiscHelperTests.swift in Sources */,
+				6EFA11CA0000000000000117 /* WMSTileOverlayTests.swift in Sources */,
 				6EFA11CA0000000000000020 /* ViewControllerUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

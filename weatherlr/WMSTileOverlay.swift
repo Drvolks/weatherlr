@@ -11,7 +11,9 @@ import MapKit
 extension URLCache {
     static let radarTileCache: URLCache = {
         let cachesDir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
-        let directory = cachesDir?.appendingPathComponent("RadarTiles", isDirectory: true)
+        // "V2": bumped from "RadarTiles" to abandon any poisoned tiles cached by
+        // earlier builds that stored non-PNG responses (see WMSTileOverlay.validate).
+        let directory = cachesDir?.appendingPathComponent("RadarTilesV2", isDirectory: true)
         return URLCache(memoryCapacity: 50 * 1024 * 1024,
                         diskCapacity: 200 * 1024 * 1024,
                         directory: directory)
@@ -76,11 +78,19 @@ class WMSTileOverlay: MKTileOverlay {
         }
 
         let request = URLRequest(url: tileURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-        WMSTileOverlay.sharedTileSession.dataTask(with: request) { data, _, error in
-            if let data = data {
-                TileDataCache.shared.set(data, for: tileURL)
+        WMSTileOverlay.sharedTileSession.dataTask(with: request) { data, response, error in
+            if let validData = WMSTileOverlay.validate(data, response) {
+                TileDataCache.shared.set(validData, for: tileURL)
+                result(validData, nil)
+            } else {
+                // Don't cache garbage (429s, error pages, truncated bodies). Evict any
+                // poisoned disk entry and report a failure so MKTileOverlayRenderer
+                // re-requests this tile on the next reloadData() — see
+                // RadarViewController.mapView(_:regionDidChangeAnimated:).
+                WMSTileOverlay.sharedTileSession.configuration.urlCache?.removeCachedResponse(for: request)
+                WMSTileOverlay.logRejectedTile(data: data, response: response, error: error)
+                result(nil, error)
             }
-            result(data, error)
         }.resume()
     }
 
@@ -91,5 +101,35 @@ class WMSTileOverlay: MKTileOverlay {
         let maxY = WMSTileOverlay.originShift - Double(y) * tileSize
         let minY = maxY - tileSize
         return (minX, minY, maxX, maxY)
+    }
+}
+
+// MARK: - Tile Validation
+
+extension WMSTileOverlay {
+    /// PNG file signature (first 8 bytes): 89 50 4E 47 0D 0A 1A 0A.
+    private static let pngSignature: [UInt8] = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]
+
+    /// Returns `data` only when the response looks like a real PNG tile worth
+    /// caching: an HTTP 2xx response whose body begins with the PNG signature.
+    /// Rejects rate-limit / error responses and HTML error pages, which would
+    /// otherwise be cached and rendered as transparent (empty) tiles.
+    static func validate(_ data: Data?, _ response: URLResponse?) -> Data? {
+        guard let data, data.count >= pngSignature.count,
+              let http = response as? HTTPURLResponse,
+              (200..<300).contains(http.statusCode) else {
+            return nil
+        }
+        for (offset, byte) in pngSignature.enumerated() where data[data.startIndex + offset] != byte {
+            return nil
+        }
+        return data
+    }
+
+    /// Logs a tile that failed validation so partial-load investigations can be
+    /// confirmed from device logs (matches the existing `[Radar]` log prefix).
+    static func logRejectedTile(data: Data?, response: URLResponse?, error: Error?) {
+        let status = (response as? HTTPURLResponse)?.statusCode ?? -1
+        print("[Radar] rejected tile — status=\(status) bytes=\(data?.count ?? 0) error=\(error?.localizedDescription ?? "none")")
     }
 }

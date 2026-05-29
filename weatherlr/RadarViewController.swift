@@ -239,6 +239,11 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
             let remaining = Array(0..<steps.count).filter { $0 != self.currentFrameIndex }
             self.prefetchFramesSequentially(remaining, tilePaths: tilePaths)
         }
+
+        // The first frame renders before the prefetch burst finishes, so any tile
+        // that came back rate-limited won't recover on its own (no region change to
+        // nudge MapKit). Re-request the current frame's tiles once it has settled.
+        scheduleInitialOverlayRefresh()
     }
 
     private func addOverlayToMap(at index: Int) {
@@ -279,9 +284,14 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         for url in urls {
             group.enter()
             let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-            session.dataTask(with: request) { data, _, _ in
-                if let data = data {
-                    TileDataCache.shared.set(data, for: url)
+            session.dataTask(with: request) { data, response, error in
+                if let validData = WMSTileOverlay.validate(data, response) {
+                    TileDataCache.shared.set(validData, for: url)
+                } else {
+                    // Same guard as WMSTileOverlay.loadTile: never cache a non-PNG body,
+                    // and evict any poisoned disk entry so the tile is re-fetched later.
+                    session.configuration.urlCache?.removeCachedResponse(for: request)
+                    WMSTileOverlay.logRejectedTile(data: data, response: response, error: error)
                 }
                 group.leave()
             }.resume()
@@ -454,7 +464,37 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: work)
     }
 
+    // MARK: - Overlay Recovery
+
+    /// Forces the current frame's renderer to drop any partial state and
+    /// re-request its visible tiles. A failed `loadTile` (e.g. a GeoMet 429)
+    /// otherwise leaves a permanent hole because MapKit marks the slot drawn and
+    /// never retries on its own.
+    private func reloadCurrentFrameRenderer(reason: String) {
+        guard currentFrameIndex >= 0, currentFrameIndex < tileOverlays.count else { return }
+        let id = ObjectIdentifier(tileOverlays[currentFrameIndex])
+        guard let renderer = rendererMap[id] else { return }
+        print("[Radar] \(reason) — reloading current frame renderer")
+        renderer.reloadData()
+    }
+
+    /// One-shot recovery for the very first frame, which has no region change
+    /// between `setRegion(animated: false)` and its first render to trigger
+    /// `regionDidChangeAnimated`. 2s is enough for the initial prefetch wave to
+    /// finish so tiles rejected by validation are re-requested.
+    private func scheduleInitialOverlayRefresh() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            self?.reloadCurrentFrameRenderer(reason: "initial refresh")
+        }
+    }
+
     // MARK: - MKMapViewDelegate
+
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        // After the map settles (initial setRegion, didUpdateLocations, or a user
+        // gesture), re-request visible tiles so partial overlays fill in.
+        reloadCurrentFrameRenderer(reason: "region settled")
+    }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let tileOverlay = overlay as? WMSTileOverlay {

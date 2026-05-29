@@ -45,14 +45,37 @@ public class JsonWeatherParser {
 
             let temperature = Int(round(tempValue))
 
+            // The hourly forecast group is reliably hour-fresh, whereas
+            // `currentConditions` reports a station observation that can be silent
+            // or lag reality. We prefer the first hourly forecast for the .now icon
+            // and condition. See issue #22.
+            let firstHourly = response.properties?.hourlyForecastGroup?.hourlyForecasts?.first
+
             let weatherStatus: WeatherStatus
             if let conditionText = cc.condition?.value(for: language), !conditionText.isEmpty {
                 weatherStatus = weatherStatusConverter.convertWeatherStatus(conditionText)
+            } else if let hourlyCondition = firstHourly?.condition?.value(for: language), !hourlyCondition.isEmpty {
+                weatherStatus = weatherStatusConverter.convertWeatherStatus(hourlyCondition)
             } else if let firstForecast = response.properties?.forecastGroup?.forecasts?.first,
                       let fallbackText = firstForecast.abbreviatedForecast?.textSummary?.value(for: language), !fallbackText.isEmpty {
+                // Last resort: this is a summary of the *entire* day, so it can
+                // mention later rain and poison the now icon. Only used when
+                // neither current conditions nor the hourly forecast report.
                 weatherStatus = weatherStatusConverter.convertWeatherStatus(fallbackText)
             } else {
                 weatherStatus = .blank
+            }
+
+            // Resolve the now icon. When current conditions and the hourly forecast
+            // disagree, trust the hour-aligned forecast over the (often stale or
+            // absent) current-conditions station reading.
+            let resolvedIconCode: Int?
+            if let ccIcon = cc.iconCode?.value,
+               let hourlyIcon = firstHourly?.iconCode?.value,
+               ccIcon != hourlyIcon {
+                resolvedIconCode = hourlyIcon
+            } else {
+                resolvedIconCode = cc.iconCode?.value ?? firstHourly?.iconCode?.value
             }
 
             let dateObservation = formatObservationDate(cc.timestamp?.value(for: language))
@@ -67,7 +90,7 @@ public class JsonWeatherParser {
                 when: "",
                 night: false,
                 dateObservation: dateObservation,
-                iconCode: cc.iconCode?.value
+                iconCode: resolvedIconCode
             )
             result.append(now)
         }

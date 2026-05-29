@@ -224,6 +224,121 @@ class JsonWeatherParserTests: XCTestCase {
     }
     """
 
+    /// Mode A (issue #22): `currentConditions.iconCode` is stale (Rain = 13) while
+    /// the first hourly forecast is fresh (Partly cloudy = 2). The .now icon must
+    /// follow the hourly forecast, not the stale station reading.
+    private static let staleIconCodeFixture: String = """
+    {
+      "type": "Feature",
+      "id": "qc-5",
+      "properties": {
+        "currentConditions": {
+          "iconCode": { "format": "png", "value": 13, "url": "" },
+          "timestamp": { "en": "2026-05-29T10:00:00Z", "fr": "2026-05-29T10:00:00Z" },
+          "temperature": { "value": { "en": 12.0, "fr": 12.0 } },
+          "condition": { "en": "Rain", "fr": "Pluie" }
+        },
+        "hourlyForecastGroup": {
+          "hourlyForecasts": [
+            {
+              "condition": { "en": "Partly cloudy", "fr": "Partiellement nuageux" },
+              "temperature": { "value": { "en": 12, "fr": 12 } },
+              "iconCode": { "format": "png", "value": 2, "url": "" },
+              "lop": { "value": { "en": 10, "fr": 10 } },
+              "timestamp": "2026-05-29T10:00:00Z"
+            }
+          ]
+        }
+      }
+    }
+    """
+
+    /// Mode B (issue #22), captured live from Granby (qc-5) at 06:45 local on
+    /// 2026-05-29: `currentConditions.condition` is absent and `iconCode` carries
+    /// no `value`, so the old parser fell through to the whole-day forecast text
+    /// ("Rain at times heavy") and rendered heavy rain. The first hourly forecast
+    /// correctly reports "A mix of sun and cloud" (icon 2). The .now entry must
+    /// follow the hourly forecast, not the day summary.
+    private static let granbyModeBFixture: String = """
+    {
+      "type": "Feature",
+      "id": "qc-5",
+      "properties": {
+        "currentConditions": {
+          "iconCode": { "format": "gif" },
+          "temperature": { "value": { "en": 12.1, "fr": 12.1 } }
+        },
+        "forecastGroup": {
+          "forecasts": [
+            {
+              "period": {
+                "textForecastName": { "en": "Today", "fr": "Aujourd'hui" },
+                "value": { "en": "Friday", "fr": "vendredi" }
+              },
+              "temperatures": {
+                "temperature": [{
+                  "class": { "en": "high", "fr": "maximum" },
+                  "value": { "en": 20.0, "fr": 20.0 }
+                }]
+              },
+              "abbreviatedForecast": {
+                "icon": { "format": "gif", "value": 9, "url": "" },
+                "textSummary": { "en": "Rain at times heavy", "fr": "Pluie parfois forte" }
+              },
+              "textSummary": { "en": "A mix of sun and cloud. Becoming cloudy near midday then rain at times heavy.", "fr": "Alternance de soleil et de nuages. Devenant nuageux en mi-journée suivi de pluie parfois forte." }
+            }
+          ]
+        },
+        "hourlyForecastGroup": {
+          "hourlyForecasts": [
+            {
+              "condition": { "en": "A mix of sun and cloud", "fr": "Alternance de soleil et de nuages" },
+              "temperature": { "value": { "en": 9, "fr": 9 } },
+              "iconCode": { "format": "png", "value": 2, "url": "" },
+              "lop": { "value": { "en": 0, "fr": 0 } },
+              "timestamp": "2026-05-29T10:00:00Z"
+            },
+            {
+              "condition": { "en": "Rain at times heavy. Risk of thunderstorms", "fr": "Pluie parfois forte. Risque d'orages" },
+              "temperature": { "value": { "en": 14, "fr": 14 } },
+              "iconCode": { "format": "png", "value": 19, "url": "" },
+              "lop": { "value": { "en": 100, "fr": 100 } },
+              "timestamp": "2026-05-29T15:00:00Z"
+            }
+          ]
+        }
+      }
+    }
+    """
+
+    /// Agreement case (issue #22): current conditions and the first hourly forecast
+    /// both report rain. The .now icon must stay rain — no behaviour change.
+    private static let agreementFixture: String = """
+    {
+      "type": "Feature",
+      "id": "qc-5",
+      "properties": {
+        "currentConditions": {
+          "iconCode": { "format": "png", "value": 13, "url": "" },
+          "timestamp": { "en": "2026-05-29T10:00:00Z", "fr": "2026-05-29T10:00:00Z" },
+          "temperature": { "value": { "en": 12.0, "fr": 12.0 } },
+          "condition": { "en": "Rain", "fr": "Pluie" }
+        },
+        "hourlyForecastGroup": {
+          "hourlyForecasts": [
+            {
+              "condition": { "en": "Rain", "fr": "Pluie" },
+              "temperature": { "value": { "en": 12, "fr": 12 } },
+              "iconCode": { "format": "png", "value": 13, "url": "" },
+              "lop": { "value": { "en": 90, "fr": 90 } },
+              "timestamp": "2026-05-29T10:00:00Z"
+            }
+          ]
+        }
+      }
+    }
+    """
+
     private func data(for fixture: String) -> Data {
         return fixture.data(using: .utf8)!
     }
@@ -345,6 +460,59 @@ class JsonWeatherParserTests: XCTestCase {
         // Fallback consumed the forecast's "Cloudy"
         XCTAssertEqual(.cloudy, now.weatherStatus)
         XCTAssertEqual(2, now.temperature) // round(2.3)
+    }
+
+    // MARK: - Now icon freshness (issue #22)
+
+    func testStaleCurrentIconCodeYieldsToHourlyForecast() {
+        // Mode A: cc.iconCode = 13 (Rain), hourly[0].iconCode = 2 (Partly cloudy).
+        let parser = JsonWeatherParser(data: data(for: Self.staleIconCodeFixture), language: .English)
+        let (forecasts, _, _) = parser.parse()
+
+        XCTAssertGreaterThanOrEqual(forecasts.count, 1)
+        let now = forecasts[0]
+        XCTAssertEqual(.now, now.weatherDay)
+        // Hourly forecast wins over the stale current-conditions reading.
+        XCTAssertEqual(2, now.iconCode)
+    }
+
+    func testGranbyModeBUsesHourlyNotWholeDaySummary() {
+        // Mode B: cc.condition absent, cc.iconCode carries no value; the whole-day
+        // forecast says "Rain at times heavy" but the first hourly forecast says
+        // "A mix of sun and cloud" (icon 2). The now entry must follow the hourly.
+        let parser = JsonWeatherParser(data: data(for: Self.granbyModeBFixture), language: .English)
+        let (forecasts, _, _) = parser.parse()
+
+        XCTAssertGreaterThanOrEqual(forecasts.count, 1)
+        let now = forecasts[0]
+        XCTAssertEqual(.now, now.weatherDay)
+        XCTAssertEqual(12, now.temperature) // round(12.1)
+        // Icon comes from the first hourly forecast, not the missing cc.iconCode.
+        XCTAssertEqual(2, now.iconCode)
+        // weatherStatus resolved from the hourly condition ("A mix of sun and
+        // cloud"), not the whole-day "Rain at times heavy" summary.
+        XCTAssertEqual(.aMixOfSunAndCloud, now.weatherStatus)
+    }
+
+    func testGranbyModeBFrenchUsesHourlyCondition() {
+        let parser = JsonWeatherParser(data: data(for: Self.granbyModeBFixture), language: .French)
+        let (forecasts, _, _) = parser.parse()
+
+        XCTAssertGreaterThanOrEqual(forecasts.count, 1)
+        let now = forecasts[0]
+        XCTAssertEqual(2, now.iconCode)
+        XCTAssertEqual(.aMixOfSunAndCloud, now.weatherStatus)
+    }
+
+    func testAgreementCaseKeepsRain() {
+        // Both sources say rain → no behaviour change.
+        let parser = JsonWeatherParser(data: data(for: Self.agreementFixture), language: .English)
+        let (forecasts, _, _) = parser.parse()
+
+        XCTAssertGreaterThanOrEqual(forecasts.count, 1)
+        let now = forecasts[0]
+        XCTAssertEqual(13, now.iconCode)
+        XCTAssertEqual(.rain, now.weatherStatus)
     }
 
     // MARK: - Degenerate inputs

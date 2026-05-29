@@ -41,11 +41,64 @@ public class WeatherHelper {
     }
 
     public static func getWeatherInformationsNoCache(_ data:Data, city:City) -> WeatherInformationWrapper {
-        let parser = JsonWeatherParser(data: data, language: PreferenceHelper.getLanguage())
+        let language = PreferenceHelper.getLanguage()
+        let parser = JsonWeatherParser(data: data, language: language)
         let (weatherInformations, alerts, hourlyForecasts) = parser.parse()
+
+        // citypageweather carries only a headline per warning; fetch the full
+        // bulletin text from the weather-alerts collection so every surface
+        // (iOS detail screen, watch, widgets) can show it. (#20)
+        enrichAlertDetails(alerts, language: language)
 
         let weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: weatherInformations, alerts: alerts, hourlyForecasts: hourlyForecasts, city: city)
         return weatherInformationWrapper
+    }
+
+    /// Populates `alertDetails` on each alert with the full bulletin text from
+    /// the weather-alerts collection. One network call per distinct warning
+    /// anchor (deduplicated); alerts without an anchor or that fail to load are
+    /// left untouched. No-op when there are no anchored alerts, so the offline
+    /// path and fixture-based parse tests never hit the network.
+    static func enrichAlertDetails(_ alerts: [AlertInformation], language: Language) {
+        var textByAnchor = [String: String]()
+
+        for alert in alerts {
+            guard let anchor = UrlHelper.getAlertAnchor(fromWarningUrl: alert.url) else { continue }
+
+            if let cached = textByAnchor[anchor] {
+                alert.alertDetails = cached
+                continue
+            }
+
+            let text = fetchAlertText(anchor: anchor, language: language)
+            textByAnchor[anchor] = text
+            if !text.isEmpty {
+                alert.alertDetails = text
+            }
+        }
+    }
+
+    /// Fetches the full bulletin text for a single warning anchor. Returns an
+    /// empty string on any failure so the caller falls back gracefully.
+    static func fetchAlertText(anchor: String, language: Language) -> String {
+        guard let urlString = UrlHelper.getAlertDetailUrl(anchor: anchor),
+              let url = URL(string: urlString),
+              let data = try? Data(contentsOf: url) else {
+            return ""
+        }
+        return parseAlertText(data, language: language)
+    }
+
+    /// Decodes a weather-alerts response and returns the bulletin text for the
+    /// given language. Pure (no network) so it can be unit-tested with fixtures.
+    static func parseAlertText(_ data: Data, language: Language) -> String {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        guard let response = try? decoder.decode(WeatherAlertsResponse.self, from: data),
+              let text = response.features?.first?.properties?.value(for: language) else {
+            return ""
+        }
+        return text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     static func getOfflineWeather() -> WeatherInformationWrapper {

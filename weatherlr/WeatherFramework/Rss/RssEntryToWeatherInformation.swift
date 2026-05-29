@@ -112,11 +112,28 @@ public class RssEntryToWeatherInformation {
         let alertText = extractAlertText(rssEntry.title)
         if !alertText.isEmpty {
             let alertType = extractAlertType(alertText)
-            
-            return AlertInformation(alertText: alertText, url: rssEntry.link, type:alertType)
+            let alertDetails = stripHtml(rssEntry.summary)
+
+            return AlertInformation(alertText: alertText, url: rssEntry.link, type:alertType, alertDetails: alertDetails)
         }
-        
+
         return AlertInformation()
+    }
+
+    /// Reduces the RSS alert summary (which may contain light HTML markup) to
+    /// plain text suitable for display in a label. Uses a regex tag strip rather
+    /// than `NSAttributedString(html:)` so it stays safe to call off the main
+    /// thread during parsing.
+    public func stripHtml(_ html: String) -> String {
+        let regex = try! NSRegularExpression(pattern: "<[^>]+>", options: [.caseInsensitive])
+        let range = NSRange(html.startIndex..., in: html)
+        let stripped = regex.stringByReplacingMatches(in: html, options: [], range: range, withTemplate: " ")
+        return stripped
+            .replacingOccurrences(of: "&deg;", with: "°")
+            .replacingOccurrences(of: "&nbsp;", with: " ")
+            .replacingOccurrences(of: "&amp;", with: "&")
+            .replacingOccurrences(of: "  ", with: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     public func extractAlertType(_ alertText:String) -> AlertType {

@@ -102,6 +102,41 @@ class ViewControllerUnitTests: XCTestCase {
         XCTAssertFalse((vc.title ?? "").isEmpty)
     }
 
+    func testAlertDetailViewControllerRendersBody() {
+        let vc = AlertDetailViewController()
+        vc.alerts = [
+            AlertInformation(alertText: "severe weather",
+                             url: "https://example.com",
+                             type: .warning,
+                             eventIssueTime: "2026-04-11T12:00:00Z",
+                             expiryTime: "2026-04-11T20:00:00Z",
+                             alertColourLevel: "red",
+                             alertDetails: "Damaging winds expected. Secure loose objects.")
+        ]
+        let nav = UINavigationController(rootViewController: vc)
+        _ = nav.view
+        vc.loadViewIfNeeded()
+        vc.view.frame = CGRect(x: 0, y: 0, width: 390, height: 844)
+        vc.view.setNeedsLayout()
+        vc.view.layoutIfNeeded()
+
+        let labels = allLabels(in: vc.view)
+        XCTAssertTrue(labels.contains { $0.text == "Damaging winds expected. Secure loose objects." },
+                      "The full warning body should be rendered as a label")
+    }
+
+    /// Recursively collects every UILabel in a view hierarchy.
+    private func allLabels(in view: UIView) -> [UILabel] {
+        var result = [UILabel]()
+        for subview in view.subviews {
+            if let label = subview as? UILabel {
+                result.append(label)
+            }
+            result.append(contentsOf: allLabels(in: subview))
+        }
+        return result
+    }
+
     func testAlertDetailViewControllerLoadsWithMultipleAlerts() {
         let vc = AlertDetailViewController()
         vc.alerts = [

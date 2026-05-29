@@ -116,6 +116,13 @@ struct HourlyLop: Codable {
 }
 
 // MARK: - Warnings
+//
+// The citypageweather-realtime API exposes only these six keys per warning, and
+// `description` is just a short headline (e.g. "YELLOW WARNING - RAINFALL").
+// There is no inline body/bulletin field — the full warning text lives only at
+// `url`. (Verified against all active warnings across every city, 2026-05.)
+// `AlertDetailViewController` therefore loads `url` in a web view to show the
+// full bulletin in-app. See issue #20.
 struct WarningEntry: Codable {
     let description: Bilingual<String>?
     let url: Bilingual<String>?
@@ -123,4 +130,31 @@ struct WarningEntry: Codable {
     let expiryTime: Bilingual<String>?
     let eventIssue: Bilingual<String>?
     let alertColourLevel: Bilingual<String>?
+}
+
+// MARK: - Weather Alerts (full bulletin text)
+//
+// The full warning body that citypageweather omits is served by the separate
+// `weather-alerts` collection. A citypageweather warning is joined to it via the
+// `#anchor` at the end of `WarningEntry.url`, which matches the leading part of
+// a weather-alerts feature `id`. Decoded with `.convertFromSnakeCase`, so the
+// JSON keys `alert_text_en` / `alert_text_fr` map to these properties. See #20.
+struct WeatherAlertsResponse: Codable {
+    let features: [WeatherAlertFeature]?
+}
+
+struct WeatherAlertFeature: Codable {
+    let properties: WeatherAlertProperties?
+}
+
+struct WeatherAlertProperties: Codable {
+    let alertTextEn: String?
+    let alertTextFr: String?
+
+    func value(for language: Language) -> String? {
+        switch language {
+        case .English: return alertTextEn
+        case .French: return alertTextFr
+        }
+    }
 }

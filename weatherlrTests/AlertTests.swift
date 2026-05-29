@@ -16,6 +16,34 @@ class AlertTests: XCTestCase {
         findAlert("/cities")
     }
     */
+    // MARK: - Alert body (#20)
+
+    func testConvertAlertPopulatesDetailsFromRssSummary() {
+        let file = testBundle.path(forResource: "cities1/qc-128_English", ofType: "xml")!
+        let xmlData = try! Data(contentsOf: URL(fileURLWithPath: file))
+        let rssEntries = RssParser(xmlData: xmlData, language: .English).parse()
+
+        let alerts = RssEntryToWeatherInformation(rssEntries: rssEntries).getAlerts()
+
+        XCTAssertFalse(alerts.isEmpty, "Fixture qc-128 should contain a BLIZZARD WARNING")
+        let blizzard = alerts.first { $0.alertText.uppercased().contains("BLIZZARD") }
+        XCTAssertNotNil(blizzard)
+        // The RSS summary carries a body the JSON API does not — it must survive.
+        XCTAssertFalse(blizzard!.alertDetails.isEmpty)
+        XCTAssertTrue(blizzard!.alertDetails.contains("adverse weather conditions"))
+        // No leftover HTML markup.
+        XCTAssertFalse(blizzard!.alertDetails.contains("<"))
+    }
+
+    func testStripHtmlRemovesTagsAndDecodesEntities() {
+        let converter = RssEntryToWeatherInformation(rssEntries: [])
+        XCTAssertEqual("Plain text", converter.stripHtml("Plain text"))
+        XCTAssertEqual("Line one Line two",
+                       converter.stripHtml("<b>Line one</b><br/>Line two"))
+        XCTAssertEqual("-4°C & windy", converter.stripHtml("-4&deg;C &amp; windy"))
+        XCTAssertEqual("", converter.stripHtml("   "))
+    }
+
     func findAlert(_ subPath: String) {
         let fileManager = FileManager.default
         let path = testBundle.resourcePath!

@@ -278,6 +278,10 @@ class JsonWeatherParserTests: XCTestCase {
         XCTAssertEqual("red", alerts[0].alertColourLevel)
         XCTAssertFalse(alerts[0].eventIssueTime.isEmpty)
         XCTAssertFalse(alerts[0].expiryTime.isEmpty)
+        // citypageweather carries no inline body, so the parser leaves
+        // alertDetails empty; WeatherHelper fills it from the weather-alerts
+        // collection during the live fetch. (#20)
+        XCTAssertEqual("", alerts[0].alertDetails)
 
         // Hourly: invalid timestamp skipped, 2 remain
         XCTAssertEqual(2, hourly.count)

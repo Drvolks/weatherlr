@@ -217,6 +217,42 @@ class weatherlrUITests: XCTestCase {
         }
     }
 
+    /// Regression test for issue #19: the warning bar-button icon rendered
+    /// massively oversized on iPad because it used a raster PNG with a large
+    /// intrinsic size instead of an auto-scaling SF Symbol. Guard against it by
+    /// asserting the warning button's height stays in line with the toolbar and
+    /// with its sibling buttons (settings, radar).
+    func testWarningButtonIsNotOversized() {
+        guard waitForWeatherTable() else { return }
+        let toolbar = app.toolbars.firstMatch
+        guard toolbar.waitForExistence(timeout: 5) else { return }
+
+        let buttons = toolbar.buttons
+        guard buttons.count >= 3 else {
+            XCTFail("Expected settings + warning + radar buttons in the toolbar")
+            return
+        }
+
+        let warning = buttons.element(boundBy: 1)
+        let radar = buttons.element(boundBy: 2)
+        XCTAssertTrue(warning.exists)
+        XCTAssertTrue(radar.exists)
+
+        // The warning button must not be taller than the toolbar that contains
+        // it — the bug made the icon bleed past the toolbar's height.
+        XCTAssertLessThanOrEqual(
+            warning.frame.height, toolbar.frame.height + 1.0,
+            "Warning button is taller than the toolbar — oversized icon regression"
+        )
+
+        // It should also match its sibling button's height (both are now
+        // toolbar-sized icons). Allow a small tolerance for layout rounding.
+        XCTAssertEqual(
+            warning.frame.height, radar.frame.height, accuracy: 8.0,
+            "Warning button height diverges from radar button — oversized icon regression"
+        )
+    }
+
     // MARK: - Radar flow
 
     func testRadarButtonOpensRadar() {

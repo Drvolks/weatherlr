@@ -351,7 +351,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let radarReady = RadarTimeStepCache.shared.getCachedSteps() != nil
 
         warningBarButton.isEnabled = hasAlerts
-        warningBarButton.image = hasAlerts ? UIImage(named: "warning") : nil
+        // Use an SF Symbol rather than a raster PNG so the icon scales to the
+        // toolbar's point size on every device. The custom "warning" asset
+        // rendered at its intrinsic pixel size on iPad, dwarfing the gear /
+        // radar buttons (see issue #19).
+        warningBarButton.image = hasAlerts ? UIImage(systemName: "exclamationmark.triangle.fill") : nil
+        warningBarButton.tintColor = hasAlerts ? .systemOrange : nil
         // Re-apply after image toggle — UIBarButtonItem re-creates its backing
         // view when the image changes and loses the identifier set in viewDidLoad.
         warningBarButton.accessibilityIdentifier = "warningButton"

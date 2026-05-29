@@ -104,6 +104,15 @@ class AlertDetailViewController: UIViewController {
         titleLabel.numberOfLines = 0
         contentStack.addArrangedSubview(titleLabel)
 
+        if !alert.alertDetails.isEmpty {
+            let detailsLabel = UILabel()
+            detailsLabel.text = alert.alertDetails
+            detailsLabel.font = .preferredFont(forTextStyle: .body)
+            detailsLabel.numberOfLines = 0
+            detailsLabel.lineBreakMode = .byWordWrapping
+            contentStack.addArrangedSubview(detailsLabel)
+        }
+
         if !alert.eventIssueTime.isEmpty {
             let issuedLabel = UILabel()
             issuedLabel.text = "Issued".localized() + ": " + alert.eventIssueTime

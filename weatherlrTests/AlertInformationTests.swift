@@ -11,6 +11,7 @@ class AlertInformationTests: XCTestCase {
     func testBaseInitializer() {
         let a = AlertInformation()
         XCTAssertEqual("", a.alertText)
+        XCTAssertEqual("", a.alertDetails)
         XCTAssertEqual("", a.url)
         XCTAssertEqual(.none, a.type)
         XCTAssertEqual("", a.eventIssueTime)
@@ -21,11 +22,21 @@ class AlertInformationTests: XCTestCase {
     func testShortInitializer() {
         let a = AlertInformation(alertText: "Severe weather", url: "https://example.com", type: .warning)
         XCTAssertEqual("Severe weather", a.alertText)
+        XCTAssertEqual("", a.alertDetails)
         XCTAssertEqual("https://example.com", a.url)
         XCTAssertEqual(.warning, a.type)
         XCTAssertEqual("", a.eventIssueTime)
         XCTAssertEqual("", a.expiryTime)
         XCTAssertEqual("", a.alertColourLevel)
+    }
+
+    func testShortInitializerWithDetails() {
+        let a = AlertInformation(alertText: "Severe weather",
+                                 url: "https://example.com",
+                                 type: .warning,
+                                 alertDetails: "Take shelter immediately.")
+        XCTAssertEqual("Severe weather", a.alertText)
+        XCTAssertEqual("Take shelter immediately.", a.alertDetails)
     }
 
     func testFullInitializer() {
@@ -34,8 +45,10 @@ class AlertInformationTests: XCTestCase {
                                  type: .warning,
                                  eventIssueTime: "2026-04-11T12:00:00Z",
                                  expiryTime: "2026-04-11T18:00:00Z",
-                                 alertColourLevel: "red")
+                                 alertColourLevel: "red",
+                                 alertDetails: "A tornado has been spotted. Seek shelter.")
         XCTAssertEqual("Tornado warning", a.alertText)
+        XCTAssertEqual("A tornado has been spotted. Seek shelter.", a.alertDetails)
         XCTAssertEqual("https://example.com", a.url)
         XCTAssertEqual(.warning, a.type)
         XCTAssertEqual("2026-04-11T12:00:00Z", a.eventIssueTime)

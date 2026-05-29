@@ -263,4 +263,54 @@ class WeatherHelperTests: XCTestCase {
         XCTAssertEqual("qc-1", wrapper.city?.id)
         XCTAssertFalse(wrapper.initialState)
     }
+
+    // MARK: - Alert detail text (#20)
+
+    private static let alertsJson = #"""
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "properties": {
+            "alert_text_en": "Heavy rain is expected.\n\nWhat: 30 to 50 millimetres of rain.",
+            "alert_text_fr": "De la pluie forte est prévue.\n\nQuoi : 30 à 50 millimètres de pluie."
+          }
+        }
+      ]
+    }
+    """#
+
+    func testParseAlertTextEnglish() {
+        let data = Self.alertsJson.data(using: .utf8)!
+        let text = WeatherHelper.parseAlertText(data, language: .English)
+        XCTAssertTrue(text.hasPrefix("Heavy rain is expected."))
+        XCTAssertTrue(text.contains("30 to 50 millimetres"))
+    }
+
+    func testParseAlertTextFrench() {
+        let data = Self.alertsJson.data(using: .utf8)!
+        let text = WeatherHelper.parseAlertText(data, language: .French)
+        XCTAssertTrue(text.hasPrefix("De la pluie forte"))
+        XCTAssertTrue(text.contains("millimètres"))
+    }
+
+    func testParseAlertTextEmptyFeaturesReturnsEmpty() {
+        let data = #"{"type":"FeatureCollection","features":[]}"#.data(using: .utf8)!
+        XCTAssertEqual("", WeatherHelper.parseAlertText(data, language: .English))
+    }
+
+    func testParseAlertTextInvalidJsonReturnsEmpty() {
+        XCTAssertEqual("", WeatherHelper.parseAlertText("nope".data(using: .utf8)!, language: .English))
+    }
+
+    func testEnrichAlertDetailsLeavesAnchorlessAlertsUntouched() {
+        // No "#anchor" in the URLs → no network, alertDetails stays empty.
+        let alerts = [
+            AlertInformation(alertText: "Rainfall warning", url: "https://weather.gc.ca/warnings/", type: .warning),
+            AlertInformation(alertText: "Wind warning", url: "", type: .warning),
+        ]
+        WeatherHelper.enrichAlertDetails(alerts, language: .English)
+        XCTAssertEqual("", alerts[0].alertDetails)
+        XCTAssertEqual("", alerts[1].alertDetails)
+    }
 }

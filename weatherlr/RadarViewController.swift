@@ -10,34 +10,87 @@ import UIKit
 import MapKit
 import CoreLocation
 
-private final class RadarTilePrefetchStats: @unchecked Sendable {
-    private let lock = NSLock()
-    private var downloadedTiles = 0
-    private var rejectedTiles = 0
+private final class RadarImageOverlay: NSObject, MKOverlay {
+    let coordinate: CLLocationCoordinate2D
+    let boundingMapRect: MKMapRect
+    var image: UIImage
 
-    func recordDownloaded() {
-        lock.lock()
-        downloadedTiles += 1
-        lock.unlock()
+    init(image: UIImage, mapRect: MKMapRect) {
+        self.image = image
+        self.boundingMapRect = mapRect
+        let center = MKMapPoint(x: mapRect.midX, y: mapRect.midY)
+        self.coordinate = center.coordinate
+        super.init()
+    }
+}
+
+private final class RadarImageOverlayRenderer: MKOverlayRenderer {
+    override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
+        guard let overlay = overlay as? RadarImageOverlay else { return }
+        let rect = self.rect(for: overlay.boundingMapRect)
+        UIGraphicsPushContext(context)
+        overlay.image.draw(in: rect)
+        UIGraphicsPopContext()
+    }
+}
+
+private struct RadarViewport: Equatable, Sendable {
+    private static let originShift = 20037508.342789244
+    let mapX: Double
+    let mapY: Double
+    let mapWidth: Double
+    let mapHeight: Double
+    let pixelWidth: Int
+    let pixelHeight: Int
+
+    var mapRect: MKMapRect {
+        MKMapRect(x: mapX, y: mapY, width: mapWidth, height: mapHeight)
     }
 
-    func recordRejected() {
-        lock.lock()
-        rejectedTiles += 1
-        lock.unlock()
+    func matches(_ mapRect: MKMapRect) -> Bool {
+        mapX == mapRect.origin.x &&
+        mapY == mapRect.origin.y &&
+        mapWidth == mapRect.size.width &&
+        mapHeight == mapRect.size.height
     }
 
-    func snapshot() -> (downloaded: Int, rejected: Int) {
-        lock.lock()
-        defer { lock.unlock() }
-        return (downloadedTiles, rejectedTiles)
+    var bbox: (minX: Double, minY: Double, maxX: Double, maxY: Double) {
+        let rect = mapRect
+        let minX = Self.mapXToMeters(rect.minX)
+        let maxX = Self.mapXToMeters(rect.maxX)
+        let maxY = Self.mapYToMeters(rect.minY)
+        let minY = Self.mapYToMeters(rect.maxY)
+        return (minX, minY, maxX, maxY)
     }
+
+    private static func mapXToMeters(_ x: Double) -> Double {
+        x / MKMapSize.world.width * (2 * originShift) - originShift
+    }
+
+    private static func mapYToMeters(_ y: Double) -> Double {
+        originShift - y / MKMapSize.world.height * (2 * originShift)
+    }
+}
+
+private struct RadarFrameData: Sendable {
+    let index: Int
+    let timeStep: String
+    let data: Data
+}
+
+private struct RadarRenderedFrame {
+    let index: Int
+    let timeStep: String
+    let image: UIImage
+    let viewport: RadarViewport
 }
 
 class RadarViewController: UIViewController, MKMapViewDelegate {
     private enum Constants {
-        static let visibleTilePrefetchPadding = 1
-        static let maxConcurrentTileRequestsPerFrame = 4
+        static let maxImageDimension = 1536
+        static let maxConcurrentFrameRequests = 3
+        static let animationInterval: TimeInterval = 0.5
+        static let regionReloadDelay: TimeInterval = 0.25
     }
 
     var city: City?
@@ -47,27 +100,20 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
     private var timeSteps: [String] = []
     private var currentFrameIndex = 0
+    private var renderedFrames: [Int: RadarRenderedFrame] = [:]
+    private var playbackFrameIndices: [Int] = []
+    private var activeViewport: RadarViewport?
+    private var radarLoadTask: Task<Void, Never>?
+    private var radarLoadGeneration = 0
+    private var isLoadingRadarFrames = false
+    private var regionReloadWorkItem: DispatchWorkItem?
+
+    private var radarOverlay: RadarImageOverlay?
+    private var radarOverlayRenderer: RadarImageOverlayRenderer?
+
     private var animationTimer: Timer?
     private var isPlaying = false
     private var sliderDebounceWorkItem: DispatchWorkItem?
-    private var isInitialPrefetchPending = false
-    private var didStartInitialPrefetch = false
-    private var isPreparingPlaybackFrames = false
-    private var didPreparePlaybackFrames = false
-
-    // Stacked overlays: one per time step, toggled via renderer alpha
-    private var tileOverlays: [WMSTileOverlay] = []
-    private var rendererMap: [ObjectIdentifier: MKTileOverlayRenderer] = [:]
-    private var overlaysAddedToMap: Set<Int> = []
-
-    // Dedicated session for background prefetch
-    private lazy var prefetchSession: URLSession = {
-        let config = URLSessionConfiguration.default
-        config.httpMaximumConnectionsPerHost = 6
-        config.urlCache = .radarTileCache
-        config.requestCachePolicy = .returnCacheDataElseLoad
-        return URLSession(configuration: config)
-    }()
 
     private var dismissButton: UIButton!
     private var playPauseButton: UIButton!
@@ -75,11 +121,14 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private var timeLabel: UILabel!
     private var controlBar: UIView!
 
+    deinit {
+        radarLoadTask?.cancel()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Radar".localized()
-
+        title = "Radar".localized()
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         mapView = MKMapView(frame: view.bounds)
@@ -110,20 +159,22 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         fetchTimeSteps()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        loadRadarForCurrentViewportIfNeeded(reason: "layout")
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopAnimation()
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        startInitialPrefetchIfReady()
+        regionReloadWorkItem?.cancel()
+        radarLoadTask?.cancel()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Keep disk-backed URLCache intact; clear only in-memory tile cache.
-        TileDataCache.shared.clear()
+        renderedFrames.removeAll()
+        playbackFrameIndices.removeAll()
     }
 
     // MARK: - Dismiss Button
@@ -147,7 +198,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     }
 
     @objc private func dismissTapped() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
 
     // MARK: - Control Bar
@@ -210,26 +261,24 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private func fetchTimeSteps() {
         print("[Radar] fetchTimeSteps called")
         if let cached = RadarTimeStepCache.shared.getCachedSteps() {
-            print("[Radar] using cached steps — applying immediately")
+            print("[Radar] using cached steps")
             applyTimeSteps(cached)
             return
         }
 
-        print("[Radar] cache miss — fetching from network...")
+        print("[Radar] cache miss - fetching time steps")
         let startTime = Date()
-        let urlString = "https://geo.weather.gc.ca/geomet?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LAYERS=RADAR_1KM_RRAI"
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: "https://geo.weather.gc.ca/geomet?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LAYERS=RADAR_1KM_RRAI") else { return }
 
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             let elapsed = Date().timeIntervalSince(startTime)
             guard let self = self, let data = data, error == nil else {
-                print("[Radar] network fetch failed after \(String(format: "%.1f", elapsed))s — \(error?.localizedDescription ?? "no data")")
+                print("[Radar] time step fetch failed in \(String(format: "%.1f", elapsed))s - \(error?.localizedDescription ?? "no data")")
                 return
             }
 
-            let parser = TimeDimensionParser(data: data)
-            let steps = parser.parse()
-            print("[Radar] network fetch complete — \(steps.count) steps in \(String(format: "%.1f", elapsed))s")
+            let steps = TimeDimensionParser(data: data).parse()
+            print("[Radar] time step fetch complete - \(steps.count) steps in \(String(format: "%.1f", elapsed))s")
 
             DispatchQueue.main.async {
                 self.applyTimeSteps(steps)
@@ -240,346 +289,276 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private func applyTimeSteps(_ steps: [String]) {
         guard !steps.isEmpty else { return }
 
-        // Clean up any existing overlays
-        for overlay in tileOverlays {
-            mapView.removeOverlay(overlay)
-        }
-        tileOverlays.removeAll()
-        rendererMap.removeAll()
-        overlaysAddedToMap.removeAll()
+        radarLoadTask?.cancel()
+        stopAnimation()
+        removeRadarOverlay()
+        renderedFrames.removeAll()
+        playbackFrameIndices.removeAll()
+        activeViewport = nil
+        isLoadingRadarFrames = false
 
         timeSteps = steps
         currentFrameIndex = steps.count - 1
-        isPreparingPlaybackFrames = false
-        didPreparePlaybackFrames = false
-
-        // Create one overlay per time step
-        for step in steps {
-            let overlay = WMSTileOverlay(time: step)
-            overlay.tileSize = CGSize(width: 256, height: 256)
-            tileOverlays.append(overlay)
-        }
-
         timeSlider.maximumValue = Float(steps.count - 1)
         timeSlider.value = Float(currentFrameIndex)
         timeSlider.isEnabled = true
+        playPauseButton.isEnabled = false
         updateTimeLabel()
 
-        // Defer visibleTilePaths() until after the map has laid out, then add
-        // the first overlay only after its visible tiles have been prefetched.
-        // That prevents MapKit from drawing a half-populated first frame.
-        isInitialPrefetchPending = true
-        didStartInitialPrefetch = false
-        startInitialPrefetchIfReady()
+        loadRadarForCurrentViewportIfNeeded(reason: "time steps applied")
     }
 
-    private func addOverlayToMap(at index: Int) {
-        guard index >= 0, index < tileOverlays.count, !overlaysAddedToMap.contains(index) else { return }
-        overlaysAddedToMap.insert(index)
-        mapView.addOverlay(tileOverlays[index], level: .aboveRoads)
-    }
+    // MARK: - Image Loading
 
-    private func addRemainingOverlays() {
-        for index in 0..<tileOverlays.count {
-            addOverlayToMap(at: index)
-        }
-    }
-
-    // MARK: - Tile Prefetching
-
-    private struct TilePrefetchResult {
-        let totalTiles: Int
-        let cachedTiles: Int
-        let downloadedTiles: Int
-        let rejectedTiles: Int
-
-        var validTiles: Int {
-            cachedTiles + downloadedTiles
-        }
-    }
-
-    private struct TilePrefetchSummary {
-        var frameCount = 0
-        var totalTiles = 0
-        var cachedTiles = 0
-        var downloadedTiles = 0
-        var rejectedTiles = 0
-
-        var validTiles: Int {
-            cachedTiles + downloadedTiles
-        }
-
-        mutating func add(_ result: TilePrefetchResult) {
-            frameCount += 1
-            totalTiles += result.totalTiles
-            cachedTiles += result.cachedTiles
-            downloadedTiles += result.downloadedTiles
-            rejectedTiles += result.rejectedTiles
-        }
-    }
-
-    private final class TilePrefetchCompletion: @unchecked Sendable {
-        private let completion: (TilePrefetchResult) -> Void
-
-        init(_ completion: @escaping (TilePrefetchResult) -> Void) {
-            self.completion = completion
-        }
-
-        func callAsFunction(_ result: TilePrefetchResult) {
-            completion(result)
-        }
-    }
-
-    private func startInitialPrefetchIfReady() {
-        guard isInitialPrefetchPending,
-              !didStartInitialPrefetch,
-              !timeSteps.isEmpty,
+    private func loadRadarForCurrentViewportIfNeeded(reason: String) {
+        guard !timeSteps.isEmpty,
               mapView.bounds.width > 0,
-              mapView.bounds.height > 0 else {
+              mapView.bounds.height > 0,
+              let viewport = currentViewport() else {
             return
         }
 
-        let tilePaths = visibleTilePaths()
-        guard !tilePaths.isEmpty else { return }
+        if activeViewport == viewport, isLoadingRadarFrames || !renderedFrames.isEmpty {
+            return
+        }
 
-        isInitialPrefetchPending = false
-        didStartInitialPrefetch = true
+        loadRadarFrames(for: viewport, startIndex: currentFrameIndex, reason: reason)
+    }
+
+    private func loadRadarFrames(for viewport: RadarViewport, startIndex: Int, reason: String) {
+        radarLoadTask?.cancel()
+        radarLoadGeneration += 1
+        let generation = radarLoadGeneration
+
+        activeViewport = viewport
+        isLoadingRadarFrames = true
+        renderedFrames.removeAll()
+        playbackFrameIndices.removeAll()
         playPauseButton.isEnabled = false
 
-        let initialFrameIndex = currentFrameIndex
-        let zoomLevel = tilePaths.first?.z ?? -1
-        let currentFrameStartTime = Date()
-        print("[Radar] initial prefetch starting - \(tilePaths.count) visible tiles at z=\(zoomLevel)")
+        let steps = timeSteps
+        print("[Radar] image load starting - \(steps.count) frames, \(viewport.pixelWidth)x\(viewport.pixelHeight), reason=\(reason)")
 
-        prefetchTilesForFrame(initialFrameIndex, tilePaths: tilePaths, session: prefetchSession) { [weak self] result in
+        radarLoadTask = Task { @MainActor [weak self] in
             guard let self = self else { return }
-
-            var summary = TilePrefetchSummary()
-            summary.add(result)
-            self.logPrefetch(summary, elapsed: Date().timeIntervalSince(currentFrameStartTime), context: "current frame")
-
-            self.addOverlayToMap(at: initialFrameIndex)
-            self.applyCurrentFrame()
-
-            if result.rejectedTiles > 0 {
-                self.reloadCurrentFrameRenderer(reason: "current frame prefetch rejected \(result.rejectedTiles) tiles")
-            }
-
-            let remaining = Array(0..<self.timeSteps.count).filter { $0 != initialFrameIndex }
-            self.prefetchFrames(remaining, tilePaths: tilePaths, referenceFrameIndex: initialFrameIndex)
-        }
-
-    }
-
-    private func prefetchTilesForFrame(_ frameIndex: Int, tilePaths: [MKTileOverlayPath], session: URLSession, completion: @escaping (TilePrefetchResult) -> Void) {
-        guard frameIndex < tileOverlays.count else {
-            DispatchQueue.main.async {
-                completion(TilePrefetchResult(totalTiles: 0, cachedTiles: 0, downloadedTiles: 0, rejectedTiles: 0))
-            }
-            return
-        }
-
-        let overlay = tileOverlays[frameIndex]
-        var urls: [URL] = []
-        var cachedTiles = 0
-        for path in tilePaths {
-            let url = overlay.url(forTilePath: path)
-            if TileDataCache.shared.get(url) == nil {
-                urls.append(url)
-            } else {
-                cachedTiles += 1
-            }
-        }
-
-        guard !urls.isEmpty else {
-            DispatchQueue.main.async {
-                completion(TilePrefetchResult(totalTiles: tilePaths.count, cachedTiles: cachedTiles, downloadedTiles: 0, rejectedTiles: 0))
-            }
-            return
-        }
-
-        let group = DispatchGroup()
-        let stats = RadarTilePrefetchStats()
-        let pendingURLs = urls
-        let alreadyCachedTiles = cachedTiles
-        let totalTiles = tilePaths.count
-        let completionHandler = TilePrefetchCompletion(completion)
-
-        DispatchQueue.global(qos: .utility).async {
-            let semaphore = DispatchSemaphore(value: Constants.maxConcurrentTileRequestsPerFrame)
-
-            for url in pendingURLs {
-                semaphore.wait()
-                group.enter()
-                let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-                session.dataTask(with: request) { data, response, error in
-                    if let validData = WMSTileOverlay.validate(data, response) {
-                        TileDataCache.shared.set(validData, for: url)
-                        if let response {
-                            session.configuration.urlCache?.storeCachedResponse(CachedURLResponse(response: response, data: validData), for: request)
-                        }
-                        stats.recordDownloaded()
-                    } else {
-                        // Same guard as WMSTileOverlay.loadTile: never cache a non-PNG body,
-                        // and evict any poisoned disk entry so the tile is re-fetched later.
-                        session.configuration.urlCache?.removeCachedResponse(for: request)
-                        WMSTileOverlay.logRejectedTile(data: data, response: response, error: error)
-                        stats.recordRejected()
-                    }
-                    semaphore.signal()
-                    group.leave()
-                }.resume()
-            }
-
-            group.notify(queue: .main) {
-                let (downloaded, rejected) = stats.snapshot()
-
-                completionHandler(TilePrefetchResult(totalTiles: totalTiles,
-                                                     cachedTiles: alreadyCachedTiles,
-                                                     downloadedTiles: downloaded,
-                                                     rejectedTiles: rejected))
-            }
+            await self.loadCurrentFrameFirst(steps: steps, viewport: viewport, startIndex: startIndex, generation: generation)
         }
     }
 
-    /// Prefetches remaining frames with bounded concurrency and proximity priority.
-    private func prefetchFrames(_ frameIndices: [Int], tilePaths: [MKTileOverlayPath], referenceFrameIndex: Int) {
-        guard !frameIndices.isEmpty else {
-            preparePlaybackFramesForAnimation(reason: "single-frame prefetch complete") { [weak self] in
-                self?.playPauseButton.isEnabled = true
-            }
+    @MainActor
+    private func loadCurrentFrameFirst(steps: [String], viewport: RadarViewport, startIndex: Int, generation: Int) async {
+        guard steps.indices.contains(startIndex) else { return }
+        let startTime = Date()
+
+        if let frame = await renderedFrame(index: startIndex, timeStep: steps[startIndex], viewport: viewport) {
+            guard isCurrentLoad(generation: generation, viewport: viewport) else { return }
+            renderedFrames[startIndex] = frame
+            rebuildPlaybackFrameIndices()
+            displayFrame(at: startIndex)
+            print("[Radar] current image loaded - frame=\(startIndex) in \(String(format: "%.1f", Date().timeIntervalSince(startTime)))s")
+        } else {
+            guard isCurrentLoad(generation: generation, viewport: viewport) else { return }
+            print("[Radar] current image failed - frame=\(startIndex)")
+        }
+
+        await preloadRemainingFrames(steps: steps, viewport: viewport, referenceIndex: startIndex, generation: generation)
+        if isCurrentLoad(generation: generation, viewport: viewport) {
+            isLoadingRadarFrames = false
+        }
+    }
+
+    @MainActor
+    private func preloadRemainingFrames(steps: [String], viewport: RadarViewport, referenceIndex: Int, generation: Int) async {
+        let remaining = steps.indices
+            .filter { $0 != referenceIndex }
+            .sorted { abs($0 - referenceIndex) < abs($1 - referenceIndex) }
+
+        guard !remaining.isEmpty else {
+            playPauseButton.isEnabled = playbackFrameIndices.count > 1
             return
         }
 
         let startTime = Date()
-        let sorted = frameIndices.sorted { abs($0 - referenceFrameIndex) < abs($1 - referenceFrameIndex) }
-        let totalFrames = sorted.count
-        var completedCount = 0
-        var nextIndex = 0
-        var inFlight = 0
-        let maxInFlight = 3
-        var summary = TilePrefetchSummary()
+        var completed = 0
+        var valid = 0
+        var failed = 0
 
-        print("[Radar] bounded prefetch starting - \(totalFrames) frames, maxInFlight=\(maxInFlight)")
+        await withTaskGroup(of: RadarFrameData?.self) { group in
+            var next = 0
+            let initialCount = min(Constants.maxConcurrentFrameRequests, remaining.count)
 
-        func launchMoreIfNeeded() {
-            while inFlight < maxInFlight, nextIndex < sorted.count {
-                let frameIndex = sorted[nextIndex]
-                nextIndex += 1
-                inFlight += 1
+            for _ in 0..<initialCount {
+                let index = remaining[next]
+                let timeStep = steps[index]
+                next += 1
+                group.addTask {
+                    await Self.fetchFrameData(index: index, timeStep: timeStep, viewport: viewport)
+                }
+            }
 
-                prefetchTilesForFrame(frameIndex, tilePaths: tilePaths, session: prefetchSession) { [weak self] result in
-                    guard let self = self else { return }
-                    inFlight -= 1
-                    completedCount += 1
-                    summary.add(result)
+            while let result = await group.next() {
+                guard isCurrentLoad(generation: generation, viewport: viewport) else {
+                    group.cancelAll()
+                    return
+                }
 
-                    if completedCount == totalFrames {
-                        let elapsed = Date().timeIntervalSince(startTime)
-                        self.logPrefetch(summary, elapsed: elapsed, context: "remaining frames")
-                        self.preparePlaybackFramesForAnimation(reason: "prefetch complete") {
-                            self.playPauseButton.isEnabled = true
-                        }
-                        return
+                completed += 1
+                if let result, let image = UIImage(data: result.data) {
+                    renderedFrames[result.index] = RadarRenderedFrame(index: result.index,
+                                                                      timeStep: result.timeStep,
+                                                                      image: image,
+                                                                      viewport: viewport)
+                    valid += 1
+                } else {
+                    failed += 1
+                }
+
+                if next < remaining.count {
+                    let index = remaining[next]
+                    let timeStep = steps[index]
+                    next += 1
+                    group.addTask {
+                        await Self.fetchFrameData(index: index, timeStep: timeStep, viewport: viewport)
                     }
-
-                    launchMoreIfNeeded()
                 }
             }
         }
 
-        launchMoreIfNeeded()
+        guard isCurrentLoad(generation: generation, viewport: viewport) else { return }
+        rebuildPlaybackFrameIndices()
+        playPauseButton.isEnabled = playbackFrameIndices.count > 1
+        print("[Radar] image preload complete - \(valid)/\(completed) remaining frames valid, failed=\(failed), playbackFrames=\(playbackFrameIndices.count), elapsed=\(String(format: "%.1f", Date().timeIntervalSince(startTime)))s")
     }
 
-    private func logPrefetch(_ summary: TilePrefetchSummary, elapsed: TimeInterval, context: String) {
-        let frameWord = summary.frameCount == 1 ? "frame" : "frames"
-        let elapsedText = elapsed > 0 ? " in \(String(format: "%.1f", elapsed))s" : ""
-        print("[Radar] prefetch: \(summary.validTiles)/\(summary.totalTiles) valid tiles across \(summary.frameCount) \(frameWord)\(elapsedText) (\(context), cached=\(summary.cachedTiles), downloaded=\(summary.downloadedTiles), rejected=\(summary.rejectedTiles))")
+    @MainActor
+    private func renderedFrame(index: Int, timeStep: String, viewport: RadarViewport) async -> RadarRenderedFrame? {
+        guard let frameData = await Self.fetchFrameData(index: index, timeStep: timeStep, viewport: viewport),
+              let image = UIImage(data: frameData.data) else {
+            return nil
+        }
+        return RadarRenderedFrame(index: frameData.index, timeStep: frameData.timeStep, image: image, viewport: viewport)
     }
 
-    private func preparePlaybackFramesForAnimation(reason: String, completion: @escaping () -> Void) {
-        guard !tileOverlays.isEmpty else {
-            completion()
-            return
+    private static func fetchFrameData(index: Int, timeStep: String, viewport: RadarViewport) async -> RadarFrameData? {
+        guard !Task.isCancelled, let url = radarImageURL(timeStep: timeStep, viewport: viewport) else { return nil }
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+
+        if let cached = URLCache.radarTileCache.cachedResponse(for: request),
+           let validData = WMSTileOverlay.validate(cached.data, cached.response) {
+            return RadarFrameData(index: index, timeStep: timeStep, data: validData)
         }
 
-        if didPreparePlaybackFrames {
-            completion()
-            return
-        }
-
-        guard !isPreparingPlaybackFrames else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-                self?.preparePlaybackFramesForAnimation(reason: reason, completion: completion)
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard let validData = WMSTileOverlay.validate(data, response) else {
+                URLCache.radarTileCache.removeCachedResponse(for: request)
+                WMSTileOverlay.logRejectedTile(data: data, response: response, error: nil)
+                return nil
             }
-            return
-        }
 
-        isPreparingPlaybackFrames = true
-        addRemainingOverlays()
-
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.setPlaybackRendererAlphas()
-            self.didPreparePlaybackFrames = true
-            self.isPreparingPlaybackFrames = false
-            print("[Radar] playback ready - \(self.overlaysAddedToMap.count)/\(self.tileOverlays.count) overlays prepared (\(reason))")
-            completion()
+            URLCache.radarTileCache.storeCachedResponse(CachedURLResponse(response: response, data: validData), for: request)
+            return RadarFrameData(index: index, timeStep: timeStep, data: validData)
+        } catch {
+            guard !Task.isCancelled else { return nil }
+            print("[Radar] image request failed - frame=\(index) error=\(error.localizedDescription)")
+            return nil
         }
     }
 
-    private func setPlaybackRendererAlphas() {
-        for (index, overlay) in tileOverlays.enumerated() {
-            renderer(for: overlay)?.alpha = (index == currentFrameIndex) ? 1.0 : 0.0
-        }
+    private static func radarImageURL(timeStep: String, viewport: RadarViewport) -> URL? {
+        let bbox = viewport.bbox
+        var components = URLComponents(string: "https://geo.weather.gc.ca/geomet")
+        components?.queryItems = [
+            URLQueryItem(name: "SERVICE", value: "WMS"),
+            URLQueryItem(name: "VERSION", value: "1.3.0"),
+            URLQueryItem(name: "REQUEST", value: "GetMap"),
+            URLQueryItem(name: "LAYERS", value: "RADAR_1KM_RRAI"),
+            URLQueryItem(name: "CRS", value: "EPSG:3857"),
+            URLQueryItem(name: "BBOX", value: "\(bbox.minX),\(bbox.minY),\(bbox.maxX),\(bbox.maxY)"),
+            URLQueryItem(name: "WIDTH", value: "\(viewport.pixelWidth)"),
+            URLQueryItem(name: "HEIGHT", value: "\(viewport.pixelHeight)"),
+            URLQueryItem(name: "FORMAT", value: "image/png"),
+            URLQueryItem(name: "TRANSPARENT", value: "TRUE"),
+            URLQueryItem(name: "TIME", value: timeStep),
+        ]
+        return components?.url
     }
 
-    private func renderer(for overlay: WMSTileOverlay) -> MKTileOverlayRenderer? {
-        let id = ObjectIdentifier(overlay)
-        if let renderer = rendererMap[id] {
-            return renderer
-        }
-        if let renderer = mapView.renderer(for: overlay) as? MKTileOverlayRenderer {
-            rendererMap[id] = renderer
-            return renderer
-        }
-        return nil
-    }
-
-    private func visibleTilePaths() -> [MKTileOverlayPath] {
+    private func currentViewport() -> RadarViewport? {
         let mapRect = mapView.visibleMapRect
-        guard mapRect.size.width > 0, mapRect.size.height > 0 else { return [] }
-
-        let zoomScale = Double(mapView.bounds.width) / mapRect.size.width
-        guard zoomScale.isFinite, zoomScale > 0 else { return [] }
-
-        let zoomLevel = max(0, Int(log2(zoomScale * MKMapSize.world.width / 256.0)))
-
-        let tileCount = Double(1 << zoomLevel)
-        let maxTileIndex = Int(tileCount) - 1
-        let rawMinX = Int((mapRect.origin.x / MKMapSize.world.width * tileCount).rounded(.down))
-        let rawMaxX = Int(((mapRect.origin.x + mapRect.size.width) / MKMapSize.world.width * tileCount).rounded(.down))
-        let rawMinY = Int((mapRect.origin.y / MKMapSize.world.height * tileCount).rounded(.down))
-        let rawMaxY = Int(((mapRect.origin.y + mapRect.size.height) / MKMapSize.world.height * tileCount).rounded(.down))
-
-        let minX = max(0, rawMinX - Constants.visibleTilePrefetchPadding)
-        let maxX = min(maxTileIndex, rawMaxX + Constants.visibleTilePrefetchPadding)
-        let minY = max(0, rawMinY - Constants.visibleTilePrefetchPadding)
-        let maxY = min(maxTileIndex, rawMaxY + Constants.visibleTilePrefetchPadding)
-
-        guard minX <= maxX, minY <= maxY else { return [] }
-
-        var paths: [MKTileOverlayPath] = []
-        for x in minX...maxX {
-            for y in minY...maxY {
-                paths.append(MKTileOverlayPath(x: x, y: y, z: zoomLevel, contentScaleFactor: 1.0))
-            }
+        guard mapRect.size.width > 0,
+              mapRect.size.height > 0,
+              mapRect.origin.x.isFinite,
+              mapRect.origin.y.isFinite else {
+            return nil
         }
-        return paths
+
+        let bounds = mapView.bounds
+        let scale = min(UIScreen.main.scale, 2.0)
+        var pixelWidth = max(256, Int((bounds.width * scale).rounded(.up)))
+        var pixelHeight = max(256, Int((bounds.height * scale).rounded(.up)))
+
+        let maxDimension = max(pixelWidth, pixelHeight)
+        if maxDimension > Constants.maxImageDimension {
+            let ratio = Double(Constants.maxImageDimension) / Double(maxDimension)
+            pixelWidth = max(256, Int((Double(pixelWidth) * ratio).rounded(.up)))
+            pixelHeight = max(256, Int((Double(pixelHeight) * ratio).rounded(.up)))
+        }
+
+        return RadarViewport(mapX: mapRect.origin.x,
+                             mapY: mapRect.origin.y,
+                             mapWidth: mapRect.size.width,
+                             mapHeight: mapRect.size.height,
+                             pixelWidth: pixelWidth,
+                             pixelHeight: pixelHeight)
+    }
+
+    private func isCurrentLoad(generation: Int, viewport: RadarViewport) -> Bool {
+        !Task.isCancelled && generation == radarLoadGeneration && activeViewport == viewport
+    }
+
+    // MARK: - Display
+
+    private func displayFrame(at index: Int) {
+        guard let frame = renderedFrames[index] else { return }
+
+        currentFrameIndex = index
+        timeSlider.value = Float(index)
+        updateTimeLabel()
+
+        if let overlay = radarOverlay, frame.viewport.matches(overlay.boundingMapRect) {
+            overlay.image = frame.image
+            radarOverlayRenderer?.setNeedsDisplay()
+        } else {
+            replaceRadarOverlay(with: frame)
+        }
+    }
+
+    private func replaceRadarOverlay(with frame: RadarRenderedFrame) {
+        removeRadarOverlay()
+        let overlay = RadarImageOverlay(image: frame.image, mapRect: frame.viewport.mapRect)
+        radarOverlay = overlay
+        mapView.addOverlay(overlay, level: .aboveRoads)
+    }
+
+    private func removeRadarOverlay() {
+        if let overlay = radarOverlay {
+            mapView.removeOverlay(overlay)
+        }
+        radarOverlay = nil
+        radarOverlayRenderer = nil
+    }
+
+    private func rebuildPlaybackFrameIndices() {
+        let viewport = activeViewport
+        playbackFrameIndices = renderedFrames
+            .filter { _, frame in frame.viewport == viewport }
+            .map(\.key)
+            .sorted()
     }
 
     private func updateTimeLabel() {
-        guard currentFrameIndex < timeSteps.count else { return }
+        guard timeSteps.indices.contains(currentFrameIndex) else { return }
         let isoString = timeSteps[currentFrameIndex]
 
         let isoFormatter = ISO8601DateFormatter()
@@ -602,33 +581,6 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         timeLabel.text = "\(timeString) \(tzString)"
     }
 
-    private func applyCurrentFrame() {
-        guard currentFrameIndex < tileOverlays.count else { return }
-
-        if isPlaying {
-            // During animation, toggle alpha for smooth transitions
-            addOverlayToMap(at: currentFrameIndex)
-            for (index, overlay) in tileOverlays.enumerated() {
-                let id = ObjectIdentifier(overlay)
-                rendererMap[id]?.alpha = (index == currentFrameIndex) ? 1.0 : 0.0
-            }
-        } else {
-            // When not animating, only keep the current overlay on the map
-            // so MapKit doesn't load tiles for all hidden frames
-            for (index, overlay) in tileOverlays.enumerated() {
-                if index != currentFrameIndex && overlaysAddedToMap.contains(index) {
-                    mapView.removeOverlay(overlay)
-                    overlaysAddedToMap.remove(index)
-                    rendererMap.removeValue(forKey: ObjectIdentifier(overlay))
-                    didPreparePlaybackFrames = false
-                }
-            }
-            addOverlayToMap(at: currentFrameIndex)
-            let id = ObjectIdentifier(tileOverlays[currentFrameIndex])
-            rendererMap[id]?.alpha = 1.0
-        }
-    }
-
     // MARK: - Animation
 
     @objc private func playPauseTapped() {
@@ -640,30 +592,13 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     }
 
     private func startAnimation() {
-        guard animationTimer == nil, !isPreparingPlaybackFrames else { return }
+        guard animationTimer == nil, playbackFrameIndices.count > 1 else { return }
 
-        guard didPreparePlaybackFrames else {
-            playPauseButton.isEnabled = false
-            preparePlaybackFramesForAnimation(reason: "manual playback start") { [weak self] in
-                guard let self = self else { return }
-                self.playPauseButton.isEnabled = true
-                self.startAnimation()
-            }
-            return
-        }
-
-        addRemainingOverlays()
-        setPlaybackRendererAlphas()
         isPlaying = true
         playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-
-        animationTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
+        animationTimer = Timer.scheduledTimer(withTimeInterval: Constants.animationInterval, repeats: true) { [weak self] _ in
             Task { @MainActor [weak self] in
-                guard let self = self, !self.timeSteps.isEmpty else { return }
-                self.currentFrameIndex = (self.currentFrameIndex + 1) % self.timeSteps.count
-                self.timeSlider.value = Float(self.currentFrameIndex)
-                self.updateTimeLabel()
-                self.applyCurrentFrame()
+                self?.advanceAnimationFrame()
             }
         }
     }
@@ -673,66 +608,103 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         animationTimer?.invalidate()
         animationTimer = nil
         playPauseButton?.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        applyCurrentFrame()
+    }
+
+    private func advanceAnimationFrame() {
+        guard !playbackFrameIndices.isEmpty else {
+            stopAnimation()
+            return
+        }
+
+        let nextIndex: Int
+        if let currentPlaybackPosition = playbackFrameIndices.firstIndex(of: currentFrameIndex) {
+            let nextPlaybackPosition = playbackFrameIndices.index(after: currentPlaybackPosition)
+            nextIndex = nextPlaybackPosition < playbackFrameIndices.endIndex ? playbackFrameIndices[nextPlaybackPosition] : playbackFrameIndices[0]
+        } else {
+            nextIndex = playbackFrameIndices[0]
+        }
+
+        displayFrame(at: nextIndex)
     }
 
     @objc private func sliderChanged(_ sender: UISlider) {
         if isPlaying {
             stopAnimation()
         }
-        currentFrameIndex = Int(sender.value)
+
+        let requestedIndex = Int(sender.value.rounded())
+        currentFrameIndex = requestedIndex
         updateTimeLabel()
 
         sliderDebounceWorkItem?.cancel()
         let work = DispatchWorkItem { [weak self] in
-            self?.applyCurrentFrame()
+            self?.displayOrLoadFrame(at: requestedIndex)
         }
         sliderDebounceWorkItem = work
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: work)
     }
 
-    // MARK: - Overlay Recovery
+    private func displayOrLoadFrame(at index: Int) {
+        if renderedFrames[index] != nil {
+            displayFrame(at: index)
+            return
+        }
 
-    /// Forces the current frame's renderer to drop any partial state and
-    /// re-request its visible tiles. A failed `loadTile` (e.g. a GeoMet 429)
-    /// otherwise leaves a permanent hole because MapKit marks the slot drawn and
-    /// never retries on its own.
-    private func reloadCurrentFrameRenderer(reason: String) {
-        guard currentFrameIndex >= 0, currentFrameIndex < tileOverlays.count else { return }
-        let id = ObjectIdentifier(tileOverlays[currentFrameIndex])
-        guard let renderer = rendererMap[id] else { return }
-        print("[Radar] \(reason) — reloading current frame renderer")
-        renderer.reloadData()
+        guard timeSteps.indices.contains(index),
+              let viewport = activeViewport ?? currentViewport() else {
+            return
+        }
+
+        let generation = radarLoadGeneration
+        let timeStep = timeSteps[index]
+        Task { @MainActor [weak self] in
+            guard let self = self,
+                  let frame = await self.renderedFrame(index: index, timeStep: timeStep, viewport: viewport),
+                  self.isCurrentLoad(generation: generation, viewport: viewport) else {
+                return
+            }
+            self.renderedFrames[index] = frame
+            self.rebuildPlaybackFrameIndices()
+            self.displayFrame(at: index)
+        }
     }
 
     // MARK: - MKMapViewDelegate
 
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        if isPlaying {
+            stopAnimation()
+        }
+        regionReloadWorkItem?.cancel()
+        radarLoadTask?.cancel()
+        radarLoadGeneration += 1
+        isLoadingRadarFrames = false
+    }
+
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        // After the map settles (initial setRegion, didUpdateLocations, or a user
-        // gesture), re-request visible tiles so partial overlays fill in.
-        reloadCurrentFrameRenderer(reason: "region settled")
+        regionReloadWorkItem?.cancel()
+        let work = DispatchWorkItem { [weak self] in
+            self?.loadRadarFramesForSettledRegion()
+        }
+        regionReloadWorkItem = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.regionReloadDelay, execute: work)
+    }
+
+    private func loadRadarFramesForSettledRegion() {
+        loadRadarForCurrentViewportIfNeeded(reason: "region settled")
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if let tileOverlay = overlay as? WMSTileOverlay {
-            let renderer = MKTileOverlayRenderer(overlay: tileOverlay)
-            let id = ObjectIdentifier(tileOverlay)
-            rendererMap[id] = renderer
-
-            // Set initial alpha: visible only if this is the current frame
-            if let index = tileOverlays.firstIndex(where: { $0 === tileOverlay }) {
-                renderer.alpha = (index == currentFrameIndex) ? 1.0 : 0.0
-            } else {
-                renderer.alpha = 0.0
-            }
-
+        if let overlay = overlay as? RadarImageOverlay {
+            let renderer = RadarImageOverlayRenderer(overlay: overlay)
+            radarOverlayRenderer = renderer
             return renderer
         }
         return MKOverlayRenderer(overlay: overlay)
     }
 
     @IBAction func done(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
 }
 

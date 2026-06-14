@@ -78,7 +78,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         locationServices?.start()
 
         RadarTimeStepCache.shared.preload()
-        preloadLatestRadarFrameTiles()
 
         NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
 
@@ -125,23 +124,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     @objc private func radarDataDidUpdate() {
-        preloadLatestRadarFrameTiles()
         // Radar time steps just became available — re-enable the radar button.
         decorate()
     }
 
     @objc func applicationWillEnterForeground(_ notification: Notification) {
         RadarTimeStepCache.shared.preload()
-        preloadLatestRadarFrameTiles()
         refresh(false)
-    }
-
-    private func preloadLatestRadarFrameTiles() {
-        RadarTimeStepCache.shared.preloadLatestFrameTiles(
-            for: PreferenceHelper.getCityToUse(),
-            cachedTile: { TileDataCache.shared.get($0) },
-            storeTile: { TileDataCache.shared.set($0, for: $1) }
-        )
     }
 
     override func viewDidLayoutSubviews() {

@@ -8,6 +8,44 @@
 
 import Foundation
 
+#if os(iOS)
+extension URLCache {
+    static let radarTileCache: URLCache = {
+        let cachesDir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
+        // "V2": bumped from "RadarTiles" to abandon any poisoned tiles cached by
+        // earlier builds that stored non-PNG responses.
+        let directory = cachesDir?.appendingPathComponent("RadarTilesV2", isDirectory: true)
+        return URLCache(memoryCapacity: 50 * 1024 * 1024,
+                        diskCapacity: 200 * 1024 * 1024,
+                        directory: directory)
+    }()
+}
+
+private final class RadarTileDownloadStats: @unchecked Sendable {
+    private let lock = NSLock()
+    private var downloadedCount = 0
+    private var rejectedCount = 0
+
+    func recordDownloaded() {
+        lock.lock()
+        downloadedCount += 1
+        lock.unlock()
+    }
+
+    func recordRejected() {
+        lock.lock()
+        rejectedCount += 1
+        lock.unlock()
+    }
+
+    func snapshot() -> (downloaded: Int, rejected: Int) {
+        lock.lock()
+        defer { lock.unlock() }
+        return (downloadedCount, rejectedCount)
+    }
+}
+#endif
+
 class RadarTimeStepCache: @unchecked Sendable {
     static let shared = RadarTimeStepCache()
 
@@ -25,6 +63,26 @@ class RadarTimeStepCache: @unchecked Sendable {
     private var cachedSteps: [String] = []
     private var fetchDate: Date?
     private var isFetching = false
+
+    #if os(iOS)
+    private struct RadarTilePath {
+        let x: Int
+        let y: Int
+        let z: Int
+    }
+
+    private let latestFrameTileSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.httpMaximumConnectionsPerHost = 6
+        config.urlCache = .radarTileCache
+        config.requestCachePolicy = .returnCacheDataElseLoad
+        config.timeoutIntervalForRequest = 30
+        config.timeoutIntervalForResource = 60
+        return URLSession(configuration: config)
+    }()
+
+    private var isPreloadingLatestFrameTiles = false
+    #endif
 
     private init() {
         if let steps = UserDefaults.standard.stringArray(forKey: StorageKeys.steps),
@@ -111,6 +169,177 @@ class RadarTimeStepCache: @unchecked Sendable {
         print("[RadarCache] getCachedSteps — cache hit, \(cachedSteps.count) steps, age=\(Int(Date().timeIntervalSince(fetchDate)))s")
         return cachedSteps
     }
+
+    #if os(iOS)
+    func preloadLatestFrameTiles(
+        for city: City,
+        cachedTile: @escaping @Sendable (URL) -> Data? = { _ in nil },
+        storeTile: @escaping @Sendable (Data, URL) -> Void = { _, _ in }
+    ) {
+        guard !city.radarId.isEmpty else {
+            print("[RadarCache] latest frame tile preload skipped - city has no radar")
+            return
+        }
+        guard let lat = Double(city.latitude), let lon = Double(city.longitude) else {
+            print("[RadarCache] latest frame tile preload skipped - invalid city coordinates")
+            return
+        }
+        guard let latestStep = getCachedSteps()?.last else {
+            print("[RadarCache] latest frame tile preload skipped - time steps not cached yet")
+            return
+        }
+
+        lock.lock()
+        guard !isPreloadingLatestFrameTiles else {
+            lock.unlock()
+            print("[RadarCache] latest frame tile preload skipped - already preloading")
+            return
+        }
+        isPreloadingLatestFrameTiles = true
+        lock.unlock()
+
+        let startTime = Date()
+        let tilePaths = radarTilePaths(centerLat: lat, centerLon: lon, zoom: 7, halfSpanKm: 200)
+        guard !tilePaths.isEmpty else {
+            finishLatestFrameTilePreload()
+            print("[RadarCache] latest frame tile preload skipped - no tile paths")
+            return
+        }
+
+        var pendingRequests: [(url: URL, request: URLRequest)] = []
+        var cachedCount = 0
+
+        for path in tilePaths {
+            guard let url = radarTileURL(for: path, timeStep: latestStep) else { continue }
+            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+
+            if cachedTile(url) != nil {
+                cachedCount += 1
+                continue
+            }
+
+            if let cachedResponse = URLCache.radarTileCache.cachedResponse(for: request),
+               let validData = Self.validateTile(cachedResponse.data, cachedResponse.response) {
+                storeTile(validData, url)
+                cachedCount += 1
+                continue
+            }
+
+            URLCache.radarTileCache.removeCachedResponse(for: request)
+            pendingRequests.append((url, request))
+        }
+
+        guard !pendingRequests.isEmpty else {
+            finishLatestFrameTilePreload()
+            let elapsed = Date().timeIntervalSince(startTime)
+            print("[RadarCache] latest frame tile preload complete - \(cachedCount)/\(tilePaths.count) valid tiles already cached in \(String(format: "%.1f", elapsed))s")
+            return
+        }
+
+        let group = DispatchGroup()
+        let stats = RadarTileDownloadStats()
+
+        for (url, request) in pendingRequests {
+            group.enter()
+            latestFrameTileSession.dataTask(with: request) { data, response, _ in
+                if let validData = Self.validateTile(data, response) {
+                    storeTile(validData, url)
+                    if let response {
+                        URLCache.radarTileCache.storeCachedResponse(CachedURLResponse(response: response, data: validData), for: request)
+                    }
+                    stats.recordDownloaded()
+                } else {
+                    URLCache.radarTileCache.removeCachedResponse(for: request)
+                    stats.recordRejected()
+                }
+                group.leave()
+            }.resume()
+        }
+
+        group.notify(queue: .main) { [weak self] in
+            let (downloaded, rejected) = stats.snapshot()
+
+            self?.finishLatestFrameTilePreload()
+            let validCount = cachedCount + downloaded
+            let elapsed = Date().timeIntervalSince(startTime)
+            print("[RadarCache] latest frame tile preload complete - \(validCount)/\(tilePaths.count) valid tiles in \(String(format: "%.1f", elapsed))s (cached=\(cachedCount), downloaded=\(downloaded), rejected=\(rejected))")
+        }
+    }
+
+    private func finishLatestFrameTilePreload() {
+        lock.lock()
+        isPreloadingLatestFrameTiles = false
+        lock.unlock()
+    }
+
+    private func radarTilePaths(centerLat: Double, centerLon: Double,
+                                zoom: Int, halfSpanKm: Double) -> [RadarTilePath] {
+        let earthRadiusMeters = 6_378_137.0
+        let latDelta = (halfSpanKm * 1000) / earthRadiusMeters * (180 / .pi)
+        let lonDelta = latDelta / max(cos(centerLat * .pi / 180), 0.01)
+
+        let minLat = max(-85.0511, centerLat - latDelta)
+        let maxLat = min(85.0511, centerLat + latDelta)
+        let minLon = max(-180.0, centerLon - lonDelta)
+        let maxLon = min(180.0, centerLon + lonDelta)
+
+        let minTile = latLonToTileXY(lat: maxLat, lon: minLon, zoom: zoom)
+        let maxTile = latLonToTileXY(lat: minLat, lon: maxLon, zoom: zoom)
+
+        guard minTile.x <= maxTile.x, minTile.y <= maxTile.y else { return [] }
+
+        var paths: [RadarTilePath] = []
+        for x in minTile.x...maxTile.x {
+            for y in minTile.y...maxTile.y {
+                paths.append(RadarTilePath(x: x, y: y, z: zoom))
+            }
+        }
+        return paths
+    }
+
+    private func latLonToTileXY(lat: Double, lon: Double, zoom: Int) -> (x: Int, y: Int) {
+        let n = pow(2.0, Double(zoom))
+        let x = ((lon + 180.0) / 360.0 * n).rounded(.down)
+
+        let latRad = lat * .pi / 180
+        let yRaw = (1 - log(tan(latRad) + 1 / cos(latRad)) / .pi) / 2 * n
+        let y = yRaw.rounded(.down)
+
+        let maxIndex = Int(n) - 1
+        return (x: max(0, min(Int(x), maxIndex)),
+                y: max(0, min(Int(y), maxIndex)))
+    }
+
+    private func radarTileURL(for path: RadarTilePath, timeStep: String) -> URL? {
+        let bbox = tileBBox(x: path.x, y: path.y, z: path.z)
+        let urlString = "https://geo.weather.gc.ca/geomet?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=RADAR_1KM_RRAI&CRS=EPSG:3857&BBOX=\(bbox.minX),\(bbox.minY),\(bbox.maxX),\(bbox.maxY)&WIDTH=256&HEIGHT=256&FORMAT=image/png&TRANSPARENT=TRUE&TIME=\(timeStep)"
+        return URL(string: urlString)
+    }
+
+    private func tileBBox(x: Int, y: Int, z: Int) -> (minX: Double, minY: Double, maxX: Double, maxY: Double) {
+        let originShift = 20037508.342789244
+        let tileSize = (2 * originShift) / pow(2.0, Double(z))
+        let minX = Double(x) * tileSize - originShift
+        let maxX = minX + tileSize
+        let maxY = originShift - Double(y) * tileSize
+        let minY = maxY - tileSize
+        return (minX, minY, maxX, maxY)
+    }
+
+    private static let pngSignature: [UInt8] = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]
+
+    private static func validateTile(_ data: Data?, _ response: URLResponse?) -> Data? {
+        guard let data, data.count >= pngSignature.count,
+              let http = response as? HTTPURLResponse,
+              (200..<300).contains(http.statusCode) else {
+            return nil
+        }
+        for (offset, byte) in pngSignature.enumerated() where data[data.startIndex + offset] != byte {
+            return nil
+        }
+        return data
+    }
+    #endif
 
 }
 

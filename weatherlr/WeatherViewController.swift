@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MapKit
 import WidgetKit
 
 class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, @preconcurrency LocationServicesDelegate, @preconcurrency ModalDelegate {
@@ -79,7 +78,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         locationServices?.start()
 
         RadarTimeStepCache.shared.preload()
-        preloadLatestRadarFrameTilesSoon()
+        preloadLatestRadarFrameTiles()
 
         NotificationCenter.default.addObserver(self, selector: #selector(willGoToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
 
@@ -126,91 +125,23 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     @objc private func radarDataDidUpdate() {
+        preloadLatestRadarFrameTiles()
         // Radar time steps just became available — re-enable the radar button.
         decorate()
     }
 
     @objc func applicationWillEnterForeground(_ notification: Notification) {
         RadarTimeStepCache.shared.preload()
-        preloadLatestRadarFrameTilesSoon()
+        preloadLatestRadarFrameTiles()
         refresh(false)
     }
 
-    private func preloadLatestRadarFrameTilesSoon() {
-        DispatchQueue.global(qos: .utility).asyncAfter(deadline: .now() + 1.0) {
-            Task { @MainActor in
-                self.preloadLatestRadarFrameTiles()
-            }
-        }
-    }
-
     private func preloadLatestRadarFrameTiles() {
-        let city = PreferenceHelper.getCityToUse()
-        guard let lat = Double(city.latitude),
-              let lon = Double(city.longitude),
-              let latestStep = RadarTimeStepCache.shared.getCachedSteps()?.last else {
-            return
-        }
-
-        let tilePaths = radarTilePaths(centerLat: lat, centerLon: lon, zoom: 7, halfSpanKm: 200)
-        guard !tilePaths.isEmpty else { return }
-
-        let overlay = WMSTileOverlay(time: latestStep)
-        let config = URLSessionConfiguration.default
-        config.httpMaximumConnectionsPerHost = 6
-        config.urlCache = .radarTileCache
-        config.requestCachePolicy = .returnCacheDataElseLoad
-        let session = URLSession(configuration: config)
-
-        for path in tilePaths {
-            let url = overlay.url(forTilePath: path)
-            if TileDataCache.shared.get(url) != nil { continue }
-
-            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-            session.dataTask(with: request) { data, _, _ in
-                if let data = data {
-                    TileDataCache.shared.set(data, for: url)
-                }
-            }.resume()
-        }
-    }
-
-    private func radarTilePaths(centerLat: Double, centerLon: Double,
-                                zoom: Int, halfSpanKm: Double) -> [MKTileOverlayPath] {
-        let earthRadiusMeters = 6_378_137.0
-        let latDelta = (halfSpanKm * 1000) / earthRadiusMeters * (180 / .pi)
-        let lonDelta = latDelta / max(cos(centerLat * .pi / 180), 0.01)
-
-        let minLat = max(-85.0511, centerLat - latDelta)
-        let maxLat = min(85.0511, centerLat + latDelta)
-        let minLon = max(-180.0, centerLon - lonDelta)
-        let maxLon = min(180.0, centerLon + lonDelta)
-
-        let minTile = latLonToTileXY(lat: maxLat, lon: minLon, zoom: zoom)
-        let maxTile = latLonToTileXY(lat: minLat, lon: maxLon, zoom: zoom)
-
-        guard minTile.x <= maxTile.x, minTile.y <= maxTile.y else { return [] }
-
-        var paths: [MKTileOverlayPath] = []
-        for x in minTile.x...maxTile.x {
-            for y in minTile.y...maxTile.y {
-                paths.append(MKTileOverlayPath(x: x, y: y, z: zoom, contentScaleFactor: 1.0))
-            }
-        }
-        return paths
-    }
-
-    private func latLonToTileXY(lat: Double, lon: Double, zoom: Int) -> (x: Int, y: Int) {
-        let n = pow(2.0, Double(zoom))
-        let x = ((lon + 180.0) / 360.0 * n).rounded(.down)
-
-        let latRad = lat * .pi / 180
-        let yRaw = (1 - log(tan(latRad) + 1 / cos(latRad)) / .pi) / 2 * n
-        let y = yRaw.rounded(.down)
-
-        let maxIndex = Int(n) - 1
-        return (x: max(0, min(Int(x), maxIndex)),
-                y: max(0, min(Int(y), maxIndex)))
+        RadarTimeStepCache.shared.preloadLatestFrameTiles(
+            for: PreferenceHelper.getCityToUse(),
+            cachedTile: { TileDataCache.shared.get($0) },
+            storeTile: { TileDataCache.shared.set($0, for: $1) }
+        )
     }
 
     override func viewDidLayoutSubviews() {

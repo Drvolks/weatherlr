@@ -10,7 +10,35 @@ import UIKit
 import MapKit
 import CoreLocation
 
+private final class RadarTilePrefetchStats: @unchecked Sendable {
+    private let lock = NSLock()
+    private var downloadedTiles = 0
+    private var rejectedTiles = 0
+
+    func recordDownloaded() {
+        lock.lock()
+        downloadedTiles += 1
+        lock.unlock()
+    }
+
+    func recordRejected() {
+        lock.lock()
+        rejectedTiles += 1
+        lock.unlock()
+    }
+
+    func snapshot() -> (downloaded: Int, rejected: Int) {
+        lock.lock()
+        defer { lock.unlock() }
+        return (downloadedTiles, rejectedTiles)
+    }
+}
+
 class RadarViewController: UIViewController, MKMapViewDelegate {
+    private enum Constants {
+        static let visibleTilePrefetchPadding = 1
+        static let maxConcurrentTileRequestsPerFrame = 4
+    }
 
     var city: City?
     private var mapView: MKMapView!
@@ -22,6 +50,10 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     private var animationTimer: Timer?
     private var isPlaying = false
     private var sliderDebounceWorkItem: DispatchWorkItem?
+    private var isInitialPrefetchPending = false
+    private var didStartInitialPrefetch = false
+    private var isPreparingPlaybackFrames = false
+    private var didPreparePlaybackFrames = false
 
     // Stacked overlays: one per time step, toggled via renderer alpha
     private var tileOverlays: [WMSTileOverlay] = []
@@ -81,6 +113,11 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopAnimation()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        startInitialPrefetchIfReady()
     }
 
     override func didReceiveMemoryWarning() {
@@ -213,6 +250,8 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
         timeSteps = steps
         currentFrameIndex = steps.count - 1
+        isPreparingPlaybackFrames = false
+        didPreparePlaybackFrames = false
 
         // Create one overlay per time step
         for step in steps {
@@ -226,24 +265,12 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         timeSlider.isEnabled = true
         updateTimeLabel()
 
-        // Show immediately; MapKit will render tiles as they arrive.
-        addOverlayToMap(at: currentFrameIndex)
-        applyCurrentFrame()
-
-        // Phase 1: prefetch current frame tiles, then background frames.
-        let tilePaths = visibleTilePaths()
-        prefetchTilesForFrame(currentFrameIndex, tilePaths: tilePaths, session: prefetchSession) { [weak self] in
-            guard let self = self else { return }
-
-            // Phase 2: prefetch remaining frames with bounded concurrency.
-            let remaining = Array(0..<steps.count).filter { $0 != self.currentFrameIndex }
-            self.prefetchFramesSequentially(remaining, tilePaths: tilePaths)
-        }
-
-        // The first frame renders before the prefetch burst finishes, so any tile
-        // that came back rate-limited won't recover on its own (no region change to
-        // nudge MapKit). Re-request the current frame's tiles once it has settled.
-        scheduleInitialOverlayRefresh()
+        // Defer visibleTilePaths() until after the map has laid out, then add
+        // the first overlay only after its visible tiles have been prefetched.
+        // That prevents MapKit from drawing a half-populated first frame.
+        isInitialPrefetchPending = true
+        didStartInitialPrefetch = false
+        startInitialPrefetchIfReady()
     }
 
     private func addOverlayToMap(at index: Int) {
@@ -260,62 +287,180 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
     // MARK: - Tile Prefetching
 
-    private func prefetchTilesForFrame(_ frameIndex: Int, tilePaths: [MKTileOverlayPath], session: URLSession, completion: @escaping () -> Void) {
+    private struct TilePrefetchResult {
+        let totalTiles: Int
+        let cachedTiles: Int
+        let downloadedTiles: Int
+        let rejectedTiles: Int
+
+        var validTiles: Int {
+            cachedTiles + downloadedTiles
+        }
+    }
+
+    private struct TilePrefetchSummary {
+        var frameCount = 0
+        var totalTiles = 0
+        var cachedTiles = 0
+        var downloadedTiles = 0
+        var rejectedTiles = 0
+
+        var validTiles: Int {
+            cachedTiles + downloadedTiles
+        }
+
+        mutating func add(_ result: TilePrefetchResult) {
+            frameCount += 1
+            totalTiles += result.totalTiles
+            cachedTiles += result.cachedTiles
+            downloadedTiles += result.downloadedTiles
+            rejectedTiles += result.rejectedTiles
+        }
+    }
+
+    private final class TilePrefetchCompletion: @unchecked Sendable {
+        private let completion: (TilePrefetchResult) -> Void
+
+        init(_ completion: @escaping (TilePrefetchResult) -> Void) {
+            self.completion = completion
+        }
+
+        func callAsFunction(_ result: TilePrefetchResult) {
+            completion(result)
+        }
+    }
+
+    private func startInitialPrefetchIfReady() {
+        guard isInitialPrefetchPending,
+              !didStartInitialPrefetch,
+              !timeSteps.isEmpty,
+              mapView.bounds.width > 0,
+              mapView.bounds.height > 0 else {
+            return
+        }
+
+        let tilePaths = visibleTilePaths()
+        guard !tilePaths.isEmpty else { return }
+
+        isInitialPrefetchPending = false
+        didStartInitialPrefetch = true
+        playPauseButton.isEnabled = false
+
+        let initialFrameIndex = currentFrameIndex
+        let zoomLevel = tilePaths.first?.z ?? -1
+        let currentFrameStartTime = Date()
+        print("[Radar] initial prefetch starting - \(tilePaths.count) visible tiles at z=\(zoomLevel)")
+
+        prefetchTilesForFrame(initialFrameIndex, tilePaths: tilePaths, session: prefetchSession) { [weak self] result in
+            guard let self = self else { return }
+
+            var summary = TilePrefetchSummary()
+            summary.add(result)
+            self.logPrefetch(summary, elapsed: Date().timeIntervalSince(currentFrameStartTime), context: "current frame")
+
+            self.addOverlayToMap(at: initialFrameIndex)
+            self.applyCurrentFrame()
+
+            if result.rejectedTiles > 0 {
+                self.reloadCurrentFrameRenderer(reason: "current frame prefetch rejected \(result.rejectedTiles) tiles")
+            }
+
+            let remaining = Array(0..<self.timeSteps.count).filter { $0 != initialFrameIndex }
+            self.prefetchFrames(remaining, tilePaths: tilePaths, referenceFrameIndex: initialFrameIndex)
+        }
+
+    }
+
+    private func prefetchTilesForFrame(_ frameIndex: Int, tilePaths: [MKTileOverlayPath], session: URLSession, completion: @escaping (TilePrefetchResult) -> Void) {
         guard frameIndex < tileOverlays.count else {
-            DispatchQueue.main.async { completion() }
+            DispatchQueue.main.async {
+                completion(TilePrefetchResult(totalTiles: 0, cachedTiles: 0, downloadedTiles: 0, rejectedTiles: 0))
+            }
             return
         }
 
         let overlay = tileOverlays[frameIndex]
         var urls: [URL] = []
+        var cachedTiles = 0
         for path in tilePaths {
             let url = overlay.url(forTilePath: path)
             if TileDataCache.shared.get(url) == nil {
                 urls.append(url)
+            } else {
+                cachedTiles += 1
             }
         }
 
         guard !urls.isEmpty else {
-            DispatchQueue.main.async { completion() }
+            DispatchQueue.main.async {
+                completion(TilePrefetchResult(totalTiles: tilePaths.count, cachedTiles: cachedTiles, downloadedTiles: 0, rejectedTiles: 0))
+            }
             return
         }
 
         let group = DispatchGroup()
-        for url in urls {
-            group.enter()
-            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-            session.dataTask(with: request) { data, response, error in
-                if let validData = WMSTileOverlay.validate(data, response) {
-                    TileDataCache.shared.set(validData, for: url)
-                } else {
-                    // Same guard as WMSTileOverlay.loadTile: never cache a non-PNG body,
-                    // and evict any poisoned disk entry so the tile is re-fetched later.
-                    session.configuration.urlCache?.removeCachedResponse(for: request)
-                    WMSTileOverlay.logRejectedTile(data: data, response: response, error: error)
-                }
-                group.leave()
-            }.resume()
-        }
+        let stats = RadarTilePrefetchStats()
+        let pendingURLs = urls
+        let alreadyCachedTiles = cachedTiles
+        let totalTiles = tilePaths.count
+        let completionHandler = TilePrefetchCompletion(completion)
 
-        group.notify(queue: .main) { completion() }
+        DispatchQueue.global(qos: .utility).async {
+            let semaphore = DispatchSemaphore(value: Constants.maxConcurrentTileRequestsPerFrame)
+
+            for url in pendingURLs {
+                semaphore.wait()
+                group.enter()
+                let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+                session.dataTask(with: request) { data, response, error in
+                    if let validData = WMSTileOverlay.validate(data, response) {
+                        TileDataCache.shared.set(validData, for: url)
+                        if let response {
+                            session.configuration.urlCache?.storeCachedResponse(CachedURLResponse(response: response, data: validData), for: request)
+                        }
+                        stats.recordDownloaded()
+                    } else {
+                        // Same guard as WMSTileOverlay.loadTile: never cache a non-PNG body,
+                        // and evict any poisoned disk entry so the tile is re-fetched later.
+                        session.configuration.urlCache?.removeCachedResponse(for: request)
+                        WMSTileOverlay.logRejectedTile(data: data, response: response, error: error)
+                        stats.recordRejected()
+                    }
+                    semaphore.signal()
+                    group.leave()
+                }.resume()
+            }
+
+            group.notify(queue: .main) {
+                let (downloaded, rejected) = stats.snapshot()
+
+                completionHandler(TilePrefetchResult(totalTiles: totalTiles,
+                                                     cachedTiles: alreadyCachedTiles,
+                                                     downloadedTiles: downloaded,
+                                                     rejectedTiles: rejected))
+            }
+        }
     }
 
     /// Prefetches remaining frames with bounded concurrency and proximity priority.
-    private func prefetchFramesSequentially(_ frameIndices: [Int], tilePaths: [MKTileOverlayPath]) {
+    private func prefetchFrames(_ frameIndices: [Int], tilePaths: [MKTileOverlayPath], referenceFrameIndex: Int) {
         guard !frameIndices.isEmpty else {
-            playPauseButton.isEnabled = true
+            preparePlaybackFramesForAnimation(reason: "single-frame prefetch complete") { [weak self] in
+                self?.playPauseButton.isEnabled = true
+            }
             return
         }
 
         let startTime = Date()
-        let sorted = frameIndices.sorted { abs($0 - currentFrameIndex) < abs($1 - currentFrameIndex) }
+        let sorted = frameIndices.sorted { abs($0 - referenceFrameIndex) < abs($1 - referenceFrameIndex) }
         let totalFrames = sorted.count
         var completedCount = 0
         var nextIndex = 0
         var inFlight = 0
         let maxInFlight = 3
+        var summary = TilePrefetchSummary()
 
-        print("[Radar] bounded prefetch starting — \(totalFrames) frames")
+        print("[Radar] bounded prefetch starting - \(totalFrames) frames, maxInFlight=\(maxInFlight)")
 
         func launchMoreIfNeeded() {
             while inFlight < maxInFlight, nextIndex < sorted.count {
@@ -323,15 +468,18 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
                 nextIndex += 1
                 inFlight += 1
 
-                prefetchTilesForFrame(frameIndex, tilePaths: tilePaths, session: prefetchSession) { [weak self] in
+                prefetchTilesForFrame(frameIndex, tilePaths: tilePaths, session: prefetchSession) { [weak self] result in
                     guard let self = self else { return }
                     inFlight -= 1
                     completedCount += 1
+                    summary.add(result)
 
                     if completedCount == totalFrames {
                         let elapsed = Date().timeIntervalSince(startTime)
-                        print("[Radar] bounded prefetch complete — \(totalFrames) frames in \(String(format: "%.1f", elapsed))s")
-                        self.playPauseButton.isEnabled = true
+                        self.logPrefetch(summary, elapsed: elapsed, context: "remaining frames")
+                        self.preparePlaybackFramesForAnimation(reason: "prefetch complete") {
+                            self.playPauseButton.isEnabled = true
+                        }
                         return
                     }
 
@@ -343,16 +491,81 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         launchMoreIfNeeded()
     }
 
+    private func logPrefetch(_ summary: TilePrefetchSummary, elapsed: TimeInterval, context: String) {
+        let frameWord = summary.frameCount == 1 ? "frame" : "frames"
+        let elapsedText = elapsed > 0 ? " in \(String(format: "%.1f", elapsed))s" : ""
+        print("[Radar] prefetch: \(summary.validTiles)/\(summary.totalTiles) valid tiles across \(summary.frameCount) \(frameWord)\(elapsedText) (\(context), cached=\(summary.cachedTiles), downloaded=\(summary.downloadedTiles), rejected=\(summary.rejectedTiles))")
+    }
+
+    private func preparePlaybackFramesForAnimation(reason: String, completion: @escaping () -> Void) {
+        guard !tileOverlays.isEmpty else {
+            completion()
+            return
+        }
+
+        if didPreparePlaybackFrames {
+            completion()
+            return
+        }
+
+        guard !isPreparingPlaybackFrames else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                self?.preparePlaybackFramesForAnimation(reason: reason, completion: completion)
+            }
+            return
+        }
+
+        isPreparingPlaybackFrames = true
+        addRemainingOverlays()
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.setPlaybackRendererAlphas()
+            self.didPreparePlaybackFrames = true
+            self.isPreparingPlaybackFrames = false
+            print("[Radar] playback ready - \(self.overlaysAddedToMap.count)/\(self.tileOverlays.count) overlays prepared (\(reason))")
+            completion()
+        }
+    }
+
+    private func setPlaybackRendererAlphas() {
+        for (index, overlay) in tileOverlays.enumerated() {
+            renderer(for: overlay)?.alpha = (index == currentFrameIndex) ? 1.0 : 0.0
+        }
+    }
+
+    private func renderer(for overlay: WMSTileOverlay) -> MKTileOverlayRenderer? {
+        let id = ObjectIdentifier(overlay)
+        if let renderer = rendererMap[id] {
+            return renderer
+        }
+        if let renderer = mapView.renderer(for: overlay) as? MKTileOverlayRenderer {
+            rendererMap[id] = renderer
+            return renderer
+        }
+        return nil
+    }
+
     private func visibleTilePaths() -> [MKTileOverlayPath] {
         let mapRect = mapView.visibleMapRect
+        guard mapRect.size.width > 0, mapRect.size.height > 0 else { return [] }
+
         let zoomScale = Double(mapView.bounds.width) / mapRect.size.width
+        guard zoomScale.isFinite, zoomScale > 0 else { return [] }
+
         let zoomLevel = max(0, Int(log2(zoomScale * MKMapSize.world.width / 256.0)))
 
         let tileCount = Double(1 << zoomLevel)
-        let minX = max(0, Int(mapRect.origin.x / MKMapSize.world.width * tileCount))
-        let maxX = min(Int(tileCount) - 1, Int((mapRect.origin.x + mapRect.size.width) / MKMapSize.world.width * tileCount))
-        let minY = max(0, Int(mapRect.origin.y / MKMapSize.world.height * tileCount))
-        let maxY = min(Int(tileCount) - 1, Int((mapRect.origin.y + mapRect.size.height) / MKMapSize.world.height * tileCount))
+        let maxTileIndex = Int(tileCount) - 1
+        let rawMinX = Int((mapRect.origin.x / MKMapSize.world.width * tileCount).rounded(.down))
+        let rawMaxX = Int(((mapRect.origin.x + mapRect.size.width) / MKMapSize.world.width * tileCount).rounded(.down))
+        let rawMinY = Int((mapRect.origin.y / MKMapSize.world.height * tileCount).rounded(.down))
+        let rawMaxY = Int(((mapRect.origin.y + mapRect.size.height) / MKMapSize.world.height * tileCount).rounded(.down))
+
+        let minX = max(0, rawMinX - Constants.visibleTilePrefetchPadding)
+        let maxX = min(maxTileIndex, rawMaxX + Constants.visibleTilePrefetchPadding)
+        let minY = max(0, rawMinY - Constants.visibleTilePrefetchPadding)
+        let maxY = min(maxTileIndex, rawMaxY + Constants.visibleTilePrefetchPadding)
 
         guard minX <= maxX, minY <= maxY else { return [] }
 
@@ -407,6 +620,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
                     mapView.removeOverlay(overlay)
                     overlaysAddedToMap.remove(index)
                     rendererMap.removeValue(forKey: ObjectIdentifier(overlay))
+                    didPreparePlaybackFrames = false
                 }
             }
             addOverlayToMap(at: currentFrameIndex)
@@ -426,18 +640,31 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
     }
 
     private func startAnimation() {
-        // Ensure all overlays are added before animating
-        addRemainingOverlays()
+        guard animationTimer == nil, !isPreparingPlaybackFrames else { return }
 
+        guard didPreparePlaybackFrames else {
+            playPauseButton.isEnabled = false
+            preparePlaybackFramesForAnimation(reason: "manual playback start") { [weak self] in
+                guard let self = self else { return }
+                self.playPauseButton.isEnabled = true
+                self.startAnimation()
+            }
+            return
+        }
+
+        addRemainingOverlays()
+        setPlaybackRendererAlphas()
         isPlaying = true
         playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
 
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
-            guard let self = self, !self.timeSteps.isEmpty else { return }
-            self.currentFrameIndex = (self.currentFrameIndex + 1) % self.timeSteps.count
-            self.timeSlider.value = Float(self.currentFrameIndex)
-            self.updateTimeLabel()
-            self.applyCurrentFrame()
+            Task { @MainActor [weak self] in
+                guard let self = self, !self.timeSteps.isEmpty else { return }
+                self.currentFrameIndex = (self.currentFrameIndex + 1) % self.timeSteps.count
+                self.timeSlider.value = Float(self.currentFrameIndex)
+                self.updateTimeLabel()
+                self.applyCurrentFrame()
+            }
         }
     }
 
@@ -476,16 +703,6 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
         guard let renderer = rendererMap[id] else { return }
         print("[Radar] \(reason) — reloading current frame renderer")
         renderer.reloadData()
-    }
-
-    /// One-shot recovery for the very first frame, which has no region change
-    /// between `setRegion(animated: false)` and its first render to trigger
-    /// `regionDidChangeAnimated`. 2s is enough for the initial prefetch wave to
-    /// finish so tiles rejected by validation are re-requested.
-    private func scheduleInitialOverlayRefresh() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
-            self?.reloadCurrentFrameRenderer(reason: "initial refresh")
-        }
     }
 
     // MARK: - MKMapViewDelegate

@@ -8,16 +8,16 @@
 
 import MapKit
 
-extension URLCache {
-    static let radarTileCache: URLCache = {
-        let cachesDir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
-        // "V2": bumped from "RadarTiles" to abandon any poisoned tiles cached by
-        // earlier builds that stored non-PNG responses (see WMSTileOverlay.validate).
-        let directory = cachesDir?.appendingPathComponent("RadarTilesV2", isDirectory: true)
-        return URLCache(memoryCapacity: 50 * 1024 * 1024,
-                        diskCapacity: 200 * 1024 * 1024,
-                        directory: directory)
-    }()
+private final class TileLoadResult: @unchecked Sendable {
+    private let result: (Data?, Error?) -> Void
+
+    init(_ result: @escaping (Data?, Error?) -> Void) {
+        self.result = result
+    }
+
+    func callAsFunction(_ data: Data?, _ error: Error?) {
+        result(data, error)
+    }
 }
 
 class TileDataCache: @unchecked Sendable {
@@ -71,9 +71,10 @@ class WMSTileOverlay: MKTileOverlay {
 
     override func loadTile(at path: MKTileOverlayPath, result: @escaping (Data?, Error?) -> Void) {
         let tileURL = url(forTilePath: path)
+        let tileResult = TileLoadResult(result)
 
         if let cached = TileDataCache.shared.get(tileURL) {
-            result(cached, nil)
+            tileResult(cached, nil)
             return
         }
 
@@ -81,7 +82,7 @@ class WMSTileOverlay: MKTileOverlay {
         WMSTileOverlay.sharedTileSession.dataTask(with: request) { data, response, error in
             if let validData = WMSTileOverlay.validate(data, response) {
                 TileDataCache.shared.set(validData, for: tileURL)
-                result(validData, nil)
+                tileResult(validData, nil)
             } else {
                 // Don't cache garbage (429s, error pages, truncated bodies). Evict any
                 // poisoned disk entry and report a failure so MKTileOverlayRenderer
@@ -89,7 +90,7 @@ class WMSTileOverlay: MKTileOverlay {
                 // RadarViewController.mapView(_:regionDidChangeAnimated:).
                 WMSTileOverlay.sharedTileSession.configuration.urlCache?.removeCachedResponse(for: request)
                 WMSTileOverlay.logRejectedTile(data: data, response: response, error: error)
-                result(nil, error)
+                tileResult(nil, error)
             }
         }.resume()
     }

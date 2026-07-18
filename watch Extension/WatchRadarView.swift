@@ -135,7 +135,6 @@ struct WatchRadarView: View {
 
             Text(radarModel.currentTimeLabel)
                 .font(.footnote.monospacedDigit())
-                .padding(.horizontal, 5)
                 .padding(.vertical, 5)
         }
         .padding(.horizontal, 4)

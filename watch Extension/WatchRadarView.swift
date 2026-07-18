@@ -30,7 +30,6 @@ struct WatchRadarView: View {
                     radarModel.load(for: city, sizePoints: geometry.size)
                 }
         }
-        .ignoresSafeArea(edges: .bottom)
         .onDisappear {
             radarModel.cancel()
         }
@@ -74,22 +73,23 @@ struct WatchRadarView: View {
 
     private var radarStack: some View {
         ZStack {
-            basemapBackground
+            ZStack {
+                basemapBackground
 
-            if let frame = radarModel.currentImage {
-                Image(uiImage: frame)
-                    .resizable()
-                    .scaledToFill()
+                if let frame = radarModel.currentImage {
+                    Image(uiImage: frame)
+                        .resizable()
+                        .scaledToFill()
+                }
+
+                cityDot
             }
-
-            cityDot
-
-            VStack {
-                Spacer()
-                controlBar
-            }
+            .ignoresSafeArea()
         }
-        .clipped()
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            controlBar
+                .padding(.bottom, 30)
+        }
         .focusable(true)
         .digitalCrownRotation($crownValue,
                               from: 0,
@@ -132,25 +132,12 @@ struct WatchRadarView: View {
 
     private var controlBar: some View {
         HStack {
-            Button {
-                radarModel.togglePlayback()
-            } label: {
-                Image(systemName: radarModel.isPlaying ? "pause.fill" : "play.fill")
-                    .font(.footnote)
-            }
-            .buttonStyle(.plain)
-            .frame(width: 28, height: 28)
-            .background(.black.opacity(0.55), in: Circle())
-
-            Spacer()
 
             Text(radarModel.currentTimeLabel)
                 .font(.footnote.monospacedDigit())
-                .padding(.horizontal, 6)
-                .padding(.vertical, 3)
-                .background(.black.opacity(0.55), in: Capsule())
+                .padding(.horizontal, 5)
+                .padding(.vertical, 5)
         }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 30)
+        .padding(.horizontal, 4)
     }
 }

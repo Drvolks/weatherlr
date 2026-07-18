@@ -10,8 +10,7 @@ import SwiftUI
 
 struct WeatherContentView: View {
     @State private var model = WatchWeatherModel.shared
-    @State private var showCityPicker = false
-    @State private var cityPickerCities: [City] = []
+    @State private var cityPickerSelection: CityPickerSelection?
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
@@ -84,8 +83,8 @@ struct WeatherContentView: View {
                 model.loadData(showError: false)
             }
         }
-        .sheet(isPresented: $showCityPicker) {
-            CityPickerView(cities: cityPickerCities) { city in
+        .sheet(item: $cityPickerSelection) { selection in
+            CityPickerView(cities: selection.cities) { city in
                 PreferenceHelper.addFavorite(city)
                 model.resetWeather()
                 model.cityDidChange(city)
@@ -199,7 +198,7 @@ struct WeatherContentView: View {
     }
 
     private func handleCityInput(_ result: [Any]?) {
-        guard let result = result, let choice = result[0] as? String else { return }
+        guard let choice = result?.first as? String else { return }
 
         // Check favorites
         for city in PreferenceHelper.getFavoriteCities() {
@@ -231,8 +230,14 @@ struct WeatherContentView: View {
         if cities.count == 1 {
             model.cityDidChange(cities[0])
         } else {
-            cityPickerCities = cities
-            showCityPicker = true
+            cityPickerSelection = CityPickerSelection(cities: cities)
         }
     }
+}
+
+// sheet(item:) hands the cities to the sheet directly; sheet(isPresented:) with a
+// separate @State array intermittently built the sheet with the stale empty value.
+private struct CityPickerSelection: Identifiable {
+    let id = UUID()
+    let cities: [City]
 }

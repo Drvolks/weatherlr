@@ -191,7 +191,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate {
 
         NSLayoutConstraint.activate([
             dismissButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            dismissButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            dismissButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             dismissButton.widthAnchor.constraint(equalToConstant: 44),
             dismissButton.heightAnchor.constraint(equalToConstant: 44),
         ])

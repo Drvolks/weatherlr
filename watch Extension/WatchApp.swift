@@ -14,7 +14,7 @@ struct WatchApp: App {
 
     var body: some Scene {
         WindowGroup {
-            WeatherContentView()
+            WatchRootView()
                 .onOpenURL { url in
                     // Tapping the complication launches the app via the
                     // "previca://open" URL. No parameters are parsed yet;

@@ -119,6 +119,9 @@
 		A3C4E5F6B7D8091A40516A7B /* RadarTimeStepCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */; };
 		A4C5E6F7B8D90A1B50617A8B /* RadarTimeStepCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */; };
 		A5C6E7F8B9DA0B1C60718A9B /* RadarTimeStepCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */; };
+		B2C3E4F5B6D7081930415A6C /* RadarImagery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2E3F4B5D6071829304A5C /* RadarImagery.swift */; };
+		B3C4E5F6B7D8091A40516A7C /* RadarImagery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2E3F4B5D6071829304A5C /* RadarImagery.swift */; };
+		B5C6E7F8B9DA0B1C60718A9C /* RadarImageryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5E6F7B8D90A1B50617A8C /* RadarImageryTests.swift */; };
 		AA11BB22CC33DD44EE55FF01 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
 		AA11BB22CC33DD44EE55FF02 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D03D3773F468F88CE22B2 /* WeatherKitService.swift */; };
 		AA11BB22CC33DD44EE55FF03 /* WeatherKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125FC5A2B304D0EBFE70DE8 /* WeatherKitData.swift */; };
@@ -148,6 +151,9 @@
 		CC10000100000001WATCH00A /* CityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00A /* CityPickerView.swift */; };
 		CC10000100000001WATCH00B /* WatchHourlyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00B /* WatchHourlyRow.swift */; };
 		CC10000100000001WATCH00C /* WatchHourlyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00C /* WatchHourlyDetailView.swift */; };
+		CC10000100000001WATCH00D /* WatchRadarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00D /* WatchRadarModel.swift */; };
+		CC10000100000001WATCH00E /* WatchRadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00E /* WatchRadarView.swift */; };
+		CC10000100000001WATCH00F /* WatchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000001WATCH00F /* WatchRootView.swift */; };
 		CC22222222222222222222C2 /* JsonWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22222222222222222222A2 /* JsonWeatherParser.swift */; };
 		CC44444444444444444444C4 /* JsonWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22222222222222222222A2 /* JsonWeatherParser.swift */; };
 		CD6F9B3556F43D730A6FE30B /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6898273E6B4D6B8702EE1 /* UrlHelper.swift */; };
@@ -410,6 +416,8 @@
 		A1B2C3D400000001AAAA0000 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		A1B2C3D4WMSTILE00000000 /* WMSTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMSTileOverlay.swift; sourceTree = "<group>"; };
 		A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarTimeStepCache.swift; sourceTree = "<group>"; };
+		B1C2E3F4B5D6071829304A5C /* RadarImagery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarImagery.swift; sourceTree = "<group>"; };
+		B4C5E6F7B8D90A1B50617A8C /* RadarImageryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarImageryTests.swift; sourceTree = "<group>"; };
 		A2B2C2D2E2F2021222324252 /* PWSObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSObservation.swift; sourceTree = "<group>"; };
 		A3B3C3D3E3F3031323334353 /* PWSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSService.swift; sourceTree = "<group>"; };
 		AA11111111111111111111A1 /* WeatherApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiResponse.swift; sourceTree = "<group>"; };
@@ -431,6 +439,9 @@
 		CC00000100000001WATCH00A /* CityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerView.swift; sourceTree = "<group>"; };
 		CC00000100000001WATCH00B /* WatchHourlyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHourlyRow.swift; sourceTree = "<group>"; };
 		CC00000100000001WATCH00C /* WatchHourlyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHourlyDetailView.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH00D /* WatchRadarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRadarModel.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH00E /* WatchRadarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRadarView.swift; sourceTree = "<group>"; };
+		CC00000100000001WATCH00F /* WatchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRootView.swift; sourceTree = "<group>"; };
 		D10200000000000000000002 /* weatherlr Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "weatherlr Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10700000000000000000007 /* weatherlrWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherlrWidget.swift; sourceTree = "<group>"; };
 		D10800000000000000000008 /* weatherlrWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = weatherlrWidget.entitlements; sourceTree = "<group>"; };
@@ -615,6 +626,7 @@
 				6EFA11CA000000000000000B /* HourlyForecastInfoTests.swift */,
 				6EFA11CA0000000000000017 /* MiscHelperTests.swift */,
 				6EFA11CA0000000000000118 /* WMSTileOverlayTests.swift */,
+				B4C5E6F7B8D90A1B50617A8C /* RadarImageryTests.swift */,
 				6EFA11CA0000000000000019 /* ViewControllerUnitTests.swift */,
 			);
 			path = weatherlrTests;
@@ -681,6 +693,9 @@
 				CC00000100000001WATCH00A /* CityPickerView.swift */,
 				CC00000100000001WATCH00B /* WatchHourlyRow.swift */,
 				CC00000100000001WATCH00C /* WatchHourlyDetailView.swift */,
+				CC00000100000001WATCH00D /* WatchRadarModel.swift */,
+				CC00000100000001WATCH00E /* WatchRadarView.swift */,
+				CC00000100000001WATCH00F /* WatchRootView.swift */,
 				6EB154861D282B0E0005B02A /* Info.plist */,
 				6EAA0E6A1E663C150023DB15 /* WatchImageHelper.swift */,
 			);
@@ -717,6 +732,7 @@
 				B5D158442297480091B3540E /* WeatherKit */,
 				561E43F6910A882D75EE4C72 /* ExpiringCache.swift */,
 				A1C2E3F4B5D6071829304A5B /* RadarTimeStepCache.swift */,
+				B1C2E3F4B5D6071829304A5C /* RadarImagery.swift */,
 				5C9C35C05D39F0641C27E887 /* Global.swift */,
 				431B1023FCFAC6D86C3A3EFD /* LocatedCity.swift */,
 				364582F5E25B18C9B9930D00 /* LocationErrors.swift */,
@@ -1112,6 +1128,7 @@
 				6E9E12C11CE92BEC00791284 /* AlertViewController.swift in Sources */,
 				6592D7D8BB470F147AC8C725 /* ExpiringCache.swift in Sources */,
 				A2C3E4F5B6D7081930415A6B /* RadarTimeStepCache.swift in Sources */,
+				B2C3E4F5B6D7081930415A6C /* RadarImagery.swift in Sources */,
 				3ACC8744F047C9AF1CCE736D /* Global.swift in Sources */,
 				C070BDF92A8A6BE0560DF6FB /* LocatedCity.swift in Sources */,
 				DD8B1EC322E334146BFBFF86 /* LocationErrors.swift in Sources */,
@@ -1171,6 +1188,7 @@
 				6EFA11CA0000000000000016 /* HourlyForecastInfoTests.swift in Sources */,
 				6EFA11CA0000000000000018 /* MiscHelperTests.swift in Sources */,
 				6EFA11CA0000000000000117 /* WMSTileOverlayTests.swift in Sources */,
+				B5C6E7F8B9DA0B1C60718A9C /* RadarImageryTests.swift in Sources */,
 				6EFA11CA0000000000000020 /* ViewControllerUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1200,11 +1218,15 @@
 				CC10000100000001WATCH00A /* CityPickerView.swift in Sources */,
 				CC10000100000001WATCH00B /* WatchHourlyRow.swift in Sources */,
 				CC10000100000001WATCH00C /* WatchHourlyDetailView.swift in Sources */,
+				CC10000100000001WATCH00D /* WatchRadarModel.swift in Sources */,
+				CC10000100000001WATCH00E /* WatchRadarView.swift in Sources */,
+				CC10000100000001WATCH00F /* WatchRootView.swift in Sources */,
 				6EAA0E6E1E6646110023DB15 /* UIColorExtension.swift in Sources */,
 				6EB154981D2859140005B02A /* Constants.swift in Sources */,
 				6EAA0E6B1E663C150023DB15 /* WatchImageHelper.swift in Sources */,
 				BCB9BB212DDE3528939EE764 /* ExpiringCache.swift in Sources */,
 				A3C4E5F6B7D8091A40516A7B /* RadarTimeStepCache.swift in Sources */,
+				B3C4E5F6B7D8091A40516A7C /* RadarImagery.swift in Sources */,
 				E98870E878869244EC02A828 /* Global.swift in Sources */,
 				5C7AE36D3C95A7893930EAC0 /* LocatedCity.swift in Sources */,
 				98F8E52295DA21326A29F0C0 /* LocationErrors.swift in Sources */,

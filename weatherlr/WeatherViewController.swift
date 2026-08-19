@@ -337,21 +337,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
             }
             items.append(radarButton)
-            hideSharedBackgrounds(of: items)
             toolbarItems = items
-        }
-    }
-
-    /// Drops the shared (glass) background painted behind toolbar items.
-    ///
-    /// On iOS 26 the glass renders as neat capsules around each icon and is
-    /// kept. On iOS 27 it becomes a light block over the forecast content —
-    /// a centred one under the warning button (#33) — so it is suppressed
-    /// there, leaving flat icons over the transparent toolbar.
-    private func hideSharedBackgrounds(of items: [UIBarButtonItem]) {
-        guard #available(iOS 27.0, *) else { return }
-        for item in items {
-            item.hidesSharedBackground = true
         }
     }
 

@@ -83,12 +83,27 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl = UIRefreshControl()
         refreshLabel()
         refreshControl.addTarget(self, action: #selector(refreshFromScroll(_:)), for: UIControl.Event.valueChanged)
-        weatherTable.addSubview(refreshControl)
+        // Assign rather than addSubview: an unowned refresh control sitting in
+        // the table's subviews is positioned and drawn by nobody, and iOS 27
+        // renders its container as a light panel behind the pinned header (#33).
+        // The scroll view manages the attached control's frame and visibility.
+        weatherTable.refreshControl = refreshControl
+
+        // The screen draws its own solid background, so the scroll edge effects
+        // iOS 26+ adds at the top and bottom of a scroll view have nothing to
+        // fade content into — they only render as lighter bands across the
+        // table's width, behind the pinned header and above the toolbar (#33).
+        if #available(iOS 26.0, *) {
+            weatherTable.topEdgeEffect.isHidden = true
+            weatherTable.bottomEdgeEffect.isHidden = true
+        }
 
         let appearance = UIToolbarAppearance()
         appearance.configureWithTransparentBackground()
         navigationController?.toolbar.standardAppearance = appearance
         navigationController?.toolbar.scrollEdgeAppearance = appearance
+        navigationController?.toolbar.compactAppearance = appearance
+        navigationController?.toolbar.compactScrollEdgeAppearance = appearance
 
         locationServices?.start()
 
@@ -322,7 +337,21 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
             }
             items.append(radarButton)
+            hideSharedBackgrounds(of: items)
             toolbarItems = items
+        }
+    }
+
+    /// Drops the shared (glass) background painted behind toolbar items.
+    ///
+    /// On iOS 26 the glass renders as neat capsules around each icon and is
+    /// kept. On iOS 27 it becomes a light block over the forecast content —
+    /// a centred one under the warning button (#33) — so it is suppressed
+    /// there, leaving flat icons over the transparent toolbar.
+    private func hideSharedBackgrounds(of items: [UIBarButtonItem]) {
+        guard #available(iOS 27.0, *) else { return }
+        for item in items {
+            item.hidesSharedBackground = true
         }
     }
 

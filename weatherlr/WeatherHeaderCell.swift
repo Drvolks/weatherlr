@@ -12,6 +12,23 @@ class WeatherHeaderCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
 
+    /// The weather screen paints its own solid background and every surface on
+    /// top of it must be fully transparent. Clearing `backgroundColor` alone is
+    /// not enough: a cell also renders `backgroundView` and, on iOS 14+, a
+    /// `backgroundConfiguration` that takes precedence over both. iOS 27 draws a
+    /// light panel behind this header when those are left at their defaults
+    /// (#33), so pin all of them to transparent and opt out of the automatic
+    /// configuration updates that would otherwise restore a default background.
+    private func makeTransparent() {
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        backgroundView = nil
+        selectedBackgroundView = nil
+        automaticallyUpdatesBackgroundConfiguration = false
+        backgroundConfiguration = .clear()
+        selectionStyle = .none
+    }
+
     override func prepareForReuse() {
         super.prepareForReuse()
 
@@ -23,6 +40,8 @@ class WeatherHeaderCell: UITableViewCell {
         cityLabel.text = nil
         cityLabel.accessibilityLabel = nil
         temperatureLabel.text = nil
+
+        makeTransparent()
     }
 
     #if ENABLE_PWS
@@ -31,7 +50,7 @@ class WeatherHeaderCell: UITableViewCell {
             populate(city: city, weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
         }
 
-        backgroundColor = UIColor.clear
+        makeTransparent()
     }
 
     private func populate(city: City, weatherInformationWrapper: WeatherInformationWrapper, pwsStationName: String?, pwsTemperature: Int?) {
@@ -99,7 +118,7 @@ class WeatherHeaderCell: UITableViewCell {
             populate(city: city, weatherInformationWrapper: weatherInformationWrapper)
         }
 
-        backgroundColor = UIColor.clear
+        makeTransparent()
     }
 
     private func populate(city: City, weatherInformationWrapper: WeatherInformationWrapper) {

@@ -398,15 +398,19 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard let header = tableView.dequeueReusableCell(withIdentifier: "header") as? WeatherHeaderCell else { return UIView() }
         #if ENABLE_PWS
         // Station name and temperature are only meaningful together: they come
-        // from an actual PWS reading. The name is never used as the city label
-        // (#34) — it only feeds the sensor icon's accessibility text.
+        // from an actual PWS reading.
         var pwsStationName: String? = nil
         var pwsTemperature: Int? = nil
         if let pws = pwsResult, let tempC = pws.observation.tempC {
             pwsStationName = pws.station.name
             pwsTemperature = Int(tempC.rounded())
         }
-        header.initialize(city: displayedCity, weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
+        // A city the user picked in Settings always wins over the station name
+        // (#34). Under "use current location" there is no such choice — the
+        // header shows whichever Environment Canada city the fix resolved to,
+        // so the station is the more precise label and takes its place.
+        let prefersStationName = LocationServices.isUseCurrentLocation(PreferenceHelper.getSelectedCity())
+        header.initialize(city: displayedCity, weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature, prefersStationName: prefersStationName)
         #else
         header.initialize(city: displayedCity, weatherInformationWrapper: weatherInformationWrapper)
         #endif

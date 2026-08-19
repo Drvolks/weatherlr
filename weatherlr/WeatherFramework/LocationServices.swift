@@ -53,7 +53,12 @@ public class LocationServices : NSObject, CLLocationManagerDelegate, @unchecked 
             #endif
 
             disableLocation()
-            cityHasBeenUpdated(cityToUse)
+            // Notify without recording this as the last *located* city:
+            // `getCityToUse()` falls back to that value while "use current
+            // location" is selected, so storing a hand-picked city here makes
+            // the header keep showing it after the user switches back to
+            // geolocation, until (or unless) a GPS fix lands (#34).
+            delegate?.cityHasBeenUpdated(cityToUse)
         }
     }
     

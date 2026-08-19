@@ -45,15 +45,18 @@ class WeatherHeaderCell: UITableViewCell {
     }
 
     #if ENABLE_PWS
-    func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper, pwsStationName: String? = nil, pwsTemperature: Int? = nil) {
+    /// - Parameter prefersStationName: when true the station name labels the
+    ///   header instead of the city — only for "use current location", where the
+    ///   user has not named a city of their own (#34).
+    func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper, pwsStationName: String? = nil, pwsTemperature: Int? = nil, prefersStationName: Bool = false) {
         if let city = city {
-            populate(city: city, weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
+            populate(city: city, weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature, prefersStationName: prefersStationName)
         }
 
         makeTransparent()
     }
 
-    private func populate(city: City, weatherInformationWrapper: WeatherInformationWrapper, pwsStationName: String?, pwsTemperature: Int?) {
+    private func populate(city: City, weatherInformationWrapper: WeatherInformationWrapper, pwsStationName: String?, pwsTemperature: Int?, prefersStationName: Bool) {
         if LocationServices.isUseCurrentLocation(city) {
             temperatureLabel.text = ""
             cityLabel.text = "Locating".localized()
@@ -62,13 +65,15 @@ class WeatherHeaderCell: UITableViewCell {
                 let weatherInfo = weatherInformationWrapper.weatherInformations[0]
 
                 if weatherInfo.weatherDay == WeatherDay.now {
-                    // The label always names the selected city. When the
-                    // temperature comes from a personal weather station, that is
-                    // indicated with the sensor icon only — the station name must
-                    // never replace the city name (#34).
+                    // A city the user chose is never replaced by the station
+                    // name (#34); the sensor icon alone marks the reading as
+                    // coming from a personal station. Only when the city itself
+                    // was derived from the current location does the station
+                    // name — the more precise of the two — label the header.
                     if let pwsTemp = pwsTemperature {
                         temperatureLabel.text = String(pwsTemp) + "°"
-                        setCityWithStationIcon(CityHelper.cityName(city), stationName: pwsStationName)
+                        let name = (prefersStationName ? pwsStationName : nil) ?? CityHelper.cityName(city)
+                        setCityWithStationIcon(name, stationName: pwsStationName)
                     } else {
                         temperatureLabel.text = String(weatherInfo.temperature) + "°"
                         cityLabel.text = CityHelper.cityName(city)
@@ -86,7 +91,7 @@ class WeatherHeaderCell: UITableViewCell {
     private func setCityWithStationIcon(_ cityName: String, stationName: String?) {
         // Keep the station out of the visible label but not out of VoiceOver:
         // the icon alone doesn't say where the reading came from.
-        if let stationName = stationName {
+        if let stationName = stationName, stationName != cityName {
             cityLabel.accessibilityLabel = cityName + ", " + stationName
         } else {
             cityLabel.accessibilityLabel = nil

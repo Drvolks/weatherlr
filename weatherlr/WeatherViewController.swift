@@ -36,6 +36,21 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var pwsResult: (station: PWSStation, observation: WUObservation)?
     #endif
 
+    /// City id of the fetch currently in flight, used both to coalesce duplicate
+    /// refreshes and to drop completions for a city the user has since left.
+    private var pendingFetchCityId: String?
+
+    /// Single source of truth for the city the screen is currently rendering.
+    /// The body cells display `weatherInformationWrapper`, so the header must
+    /// name the city that wrapper was fetched for — reading the preference
+    /// directly let the two desync while a fetch was in flight (#32). Falls back
+    /// to the preference before the first wrapper arrives, and while locating.
+    var displayedCity: City {
+        let city = PreferenceHelper.getCityToUse()
+        guard !LocationServices.isUseCurrentLocation(city) else { return city }
+        return weatherInformationWrapper.city ?? city
+    }
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -148,15 +163,28 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         locationServices?.refreshLocation()
 
         let city = PreferenceHelper.getCityToUse()
-        if !LocationServices.isUseCurrentLocation(city) {
-            DispatchQueue.global().async { [weak self] in
-                let wrapper = WeatherHelper.getWeatherInformations(city)
+        guard !LocationServices.isUseCurrentLocation(city) else { return }
 
-                DispatchQueue.main.async {
-                    guard let self = self else { return }
-                    self.weatherInformationWrapper = wrapper
-                    self.displayWeather(false)
-                }
+        // Dismissing Settings fires refresh() twice — once from the modal's
+        // viewWillDisappear (via ModalDelegate) and once from our own
+        // viewWillAppear. Coalesce them: a fetch already running for this city
+        // will deliver exactly what the second call would have asked for.
+        guard pendingFetchCityId != city.id else { return }
+        pendingFetchCityId = city.id
+
+        DispatchQueue.global().async { [weak self] in
+            let wrapper = WeatherHelper.getWeatherInformations(city)
+
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                // The user picked another city while this fetch was in flight.
+                // Dropping the result keeps `weatherInformationWrapper` in sync
+                // with the current selection instead of letting whichever fetch
+                // finishes last win (#32).
+                guard self.pendingFetchCityId == city.id else { return }
+                self.pendingFetchCityId = nil
+                self.weatherInformationWrapper = wrapper
+                self.displayWeather(false)
             }
         }
     }
@@ -189,13 +217,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     private func fetchExtraData() {
-        let selectedCity = PreferenceHelper.getSelectedCity()
-        let city: City
-        if LocationServices.isUseCurrentLocation(selectedCity) {
-            city = weatherInformationWrapper.city ?? PreferenceHelper.getCityToUse()
-        } else {
-            city = PreferenceHelper.getCityToUse()
-        }
+        // Same source of truth as the header and the cells, so the PWS reading
+        // shown belongs to the city currently on screen (#32, #34).
+        let city = displayedCity
         guard !LocationServices.isUseCurrentLocation(city) else { return }
 
         Task {
@@ -324,9 +348,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             cell.backgroundColor = .clear
             #if ENABLE_PRECIPITATION
-            cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, precipitationData: precipitationData)
+            cell.initialize(city: displayedCity, weatherInformationWrapper: weatherInformationWrapper, precipitationData: precipitationData)
             #else
-            cell.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
+            cell.initialize(city: displayedCity, weatherInformationWrapper: weatherInformationWrapper)
             #endif
             return cell
         }
@@ -358,17 +382,18 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableCell(withIdentifier: "header") as? WeatherHeaderCell else { return UIView() }
         #if ENABLE_PWS
+        // Station name and temperature are only meaningful together: they come
+        // from an actual PWS reading. The name is never used as the city label
+        // (#34) — it only feeds the sensor icon's accessibility text.
         var pwsStationName: String? = nil
         var pwsTemperature: Int? = nil
         if let pws = pwsResult, let tempC = pws.observation.tempC {
             pwsStationName = pws.station.name
             pwsTemperature = Int(tempC.rounded())
-        } else {
-            pwsStationName = PWSService.shared.closestStationName(to: PreferenceHelper.getCityToUse())
         }
-        header.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
+        header.initialize(city: displayedCity, weatherInformationWrapper: weatherInformationWrapper, pwsStationName: pwsStationName, pwsTemperature: pwsTemperature)
         #else
-        header.initialize(city: PreferenceHelper.getCityToUse(), weatherInformationWrapper: weatherInformationWrapper)
+        header.initialize(city: displayedCity, weatherInformationWrapper: weatherInformationWrapper)
         #endif
         return header
     }

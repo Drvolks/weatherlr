@@ -174,4 +174,66 @@ class ViewControllerUnitTests: XCTestCase {
         XCTAssertNotNil(vc.view)
         XCTAssertFalse((vc.errorLabel.text ?? "").isEmpty)
     }
+
+    // MARK: - WeatherViewController.displayedCity (#32)
+
+    /// These tests write to the shared app-group defaults; restore them so the
+    /// rest of the suite isn't affected by the city we select here.
+    private func restoreDefaultsAfterTest() {
+        addTeardownBlock {
+            UserDefaults(suiteName: Global.SettingGroup)?
+                .removePersistentDomain(forName: Global.SettingGroup)
+        }
+    }
+
+    private func testCity(id: String, en: String) -> City {
+        return City(id: id, frenchName: en, englishName: en, province: "QC",
+                    radarId: "WMN", latitude: "45", longitude: "-73")
+    }
+
+    /// Before any fetch has landed there is no wrapper city, so the header has
+    /// nothing to follow but the selection.
+    func testDisplayedCityFallsBackToSelectionWhenNoWrapperCity() {
+        restoreDefaultsAfterTest()
+        let montreal = testCity(id: "s0000635", en: "Montreal")
+        PreferenceHelper.saveSelectedCity(montreal)
+
+        let vc = WeatherViewController()
+        XCTAssertEqual(montreal.id, vc.displayedCity.id)
+    }
+
+    /// The header must name the city the on-screen data was fetched for, not the
+    /// newly selected one — otherwise header and body desync while the fetch for
+    /// the new city is still in flight.
+    func testDisplayedCityFollowsWrapperCityNotSelection() {
+        restoreDefaultsAfterTest()
+        let granby = testCity(id: "s0000255", en: "Granby")
+        let montreal = testCity(id: "s0000635", en: "Montreal")
+
+        let vc = WeatherViewController()
+        vc.weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: [],
+                                                                 alerts: [],
+                                                                 hourlyForecasts: [],
+                                                                 city: granby)
+        PreferenceHelper.saveSelectedCity(montreal)
+
+        XCTAssertEqual(granby.id, vc.displayedCity.id)
+    }
+
+    /// While locating, the placeholder city drives the "Locating" header state
+    /// and must not be overridden by a stale wrapper.
+    func testDisplayedCityKeepsLocatingPlaceholder() {
+        restoreDefaultsAfterTest()
+        let defaults = UserDefaults(suiteName: Global.SettingGroup)
+        defaults?.removeObject(forKey: Global.lastLocatedCityKey)
+        PreferenceHelper.saveSelectedCity(CityHelper.getCurrentLocationCity())
+
+        let vc = WeatherViewController()
+        vc.weatherInformationWrapper = WeatherInformationWrapper(weatherInformations: [],
+                                                                 alerts: [],
+                                                                 hourlyForecasts: [],
+                                                                 city: testCity(id: "s0000255", en: "Granby"))
+
+        XCTAssertTrue(LocationServices.isUseCurrentLocation(vc.displayedCity))
+    }
 }

@@ -12,6 +12,19 @@ class WeatherHeaderCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        // `initialize` re-sets both labels on every dequeue, so this is
+        // belt-and-braces — but it also clears the attributed text and
+        // accessibility label left by the PWS sensor-icon path, which the plain
+        // `cityLabel.text = …` assignment on the next pass would not.
+        cityLabel.attributedText = nil
+        cityLabel.text = nil
+        cityLabel.accessibilityLabel = nil
+        temperatureLabel.text = nil
+    }
+
     #if ENABLE_PWS
     func initialize(city: City?, weatherInformationWrapper: WeatherInformationWrapper, pwsStationName: String? = nil, pwsTemperature: Int? = nil) {
         if let city = city {
@@ -30,16 +43,16 @@ class WeatherHeaderCell: UITableViewCell {
                 let weatherInfo = weatherInformationWrapper.weatherInformations[0]
 
                 if weatherInfo.weatherDay == WeatherDay.now {
+                    // The label always names the selected city. When the
+                    // temperature comes from a personal weather station, that is
+                    // indicated with the sensor icon only — the station name must
+                    // never replace the city name (#34).
                     if let pwsTemp = pwsTemperature {
                         temperatureLabel.text = String(pwsTemp) + "°"
-                        setCityWithStationIcon(pwsStationName ?? CityHelper.cityName(city))
+                        setCityWithStationIcon(CityHelper.cityName(city), stationName: pwsStationName)
                     } else {
                         temperatureLabel.text = String(weatherInfo.temperature) + "°"
-                        if let stationName = pwsStationName {
-                            setCityWithStationIcon(stationName)
-                        } else {
-                            cityLabel.text = CityHelper.cityName(city)
-                        }
+                        cityLabel.text = CityHelper.cityName(city)
                     }
 
                     return
@@ -51,7 +64,15 @@ class WeatherHeaderCell: UITableViewCell {
         }
     }
 
-    private func setCityWithStationIcon(_ cityName: String) {
+    private func setCityWithStationIcon(_ cityName: String, stationName: String?) {
+        // Keep the station out of the visible label but not out of VoiceOver:
+        // the icon alone doesn't say where the reading came from.
+        if let stationName = stationName {
+            cityLabel.accessibilityLabel = cityName + ", " + stationName
+        } else {
+            cityLabel.accessibilityLabel = nil
+        }
+
         let fontSize = cityLabel.font.pointSize
         let config = UIImage.SymbolConfiguration(pointSize: fontSize * 0.35, weight: .medium)
         guard let icon = UIImage(systemName: "sensor.fill", withConfiguration: config)?.withTintColor(UIColor.white.withAlphaComponent(0.7), renderingMode: .alwaysOriginal) else {

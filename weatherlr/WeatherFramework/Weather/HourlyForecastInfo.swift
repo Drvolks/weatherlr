@@ -23,7 +23,7 @@ public struct HourlyForecastInfo {
     }
 
     public var imageName: String {
-        if let code = iconCode, let name = WeatherHelper.imageNameForIconCode(code) {
+        if let code = iconCode, let name = WeatherHelper.imageNameForIconCode(code, precipChance: precipChance) {
             return name
         }
         return "na"

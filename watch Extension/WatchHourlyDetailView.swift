@@ -98,7 +98,7 @@ struct WatchHourlyDetailView: View {
     }
 
     private func hourlyImage(_ hourly: HourlyForecastInfo) -> UIImage {
-        if let name = WeatherHelper.imageNameForIconCode(hourly.iconCode ?? -1),
+        if let name = WeatherHelper.imageNameForIconCode(hourly.iconCode ?? -1, precipChance: hourly.precipChance),
            let image = UIImage(named: name) {
             return image
         }

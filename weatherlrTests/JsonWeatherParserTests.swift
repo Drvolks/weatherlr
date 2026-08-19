@@ -562,4 +562,65 @@ class JsonWeatherParserTests: XCTestCase {
         XCTAssertEqual(.ended, parser.extractAlertType("Avertissement TERMINÉ"))
         XCTAssertEqual(.warning, parser.extractAlertType("Severe thunderstorm warning in effect"))
     }
+
+    // MARK: - Probability of precipitation
+
+    /// The daily forecast has no POP field; the only number EC gives is in the
+    /// cloudPrecip sentence.
+    private static func popFixture(cloudPrecipEn: String, cloudPrecipFr: String) -> String {
+        """
+        {
+          "type": "Feature",
+          "id": "qc-147",
+          "properties": {
+            "forecastGroup": {
+              "forecasts": [
+                {
+                  "period": {
+                    "textForecastName": { "en": "Saturday", "fr": "Samedi" },
+                    "value": { "en": "Saturday", "fr": "Samedi" }
+                  },
+                  "temperatures": {
+                    "temperature": [{
+                      "class": { "en": "high", "fr": "maximum" },
+                      "value": { "en": 15.0, "fr": 15.0 }
+                    }]
+                  },
+                  "cloudPrecip": { "en": "\(cloudPrecipEn)", "fr": "\(cloudPrecipFr)" },
+                  "abbreviatedForecast": {
+                    "icon": { "format": "png", "value": 12, "url": "" },
+                    "textSummary": { "en": "Rain showers", "fr": "Averses" }
+                  },
+                  "textSummary": { "en": "Rain showers. High 15.", "fr": "Averses. Maximum 15." }
+                }
+              ]
+            }
+          }
+        }
+        """
+    }
+
+    private func parseFirstForecast(_ json: String, language: Language) -> WeatherInformation? {
+        let parser = JsonWeatherParser(data: json.data(using: .utf8)!, language: language)
+        return parser.parse().0.first
+    }
+
+    func testDailyPopParsedFromCloudPrecip() {
+        let json = Self.popFixture(cloudPrecipEn: "Cloudy with 60 percent chance of showers.",
+                                   cloudPrecipFr: "Nuageux avec 60 pour cent de probabilité d'averses.")
+        XCTAssertEqual(60, parseFirstForecast(json, language: .English)?.precipChance)
+        XCTAssertEqual(60, parseFirstForecast(json, language: .French)?.precipChance)
+    }
+
+    func testDailyPopNilWhenTextHasNoPercentage() {
+        let json = Self.popFixture(cloudPrecipEn: "Periods of rain.", cloudPrecipFr: "Pluie intermittente.")
+        XCTAssertNil(parseFirstForecast(json, language: .English)?.precipChance)
+    }
+
+    func testNowPopComesFromFirstHourlyLop() {
+        let parser = JsonWeatherParser(data: Self.morningFixture.data(using: .utf8)!, language: .English)
+        let now = parser.parse().0.first
+        XCTAssertEqual(.now, now?.weatherDay)
+        XCTAssertEqual(10, now?.precipChance)
+    }
 }

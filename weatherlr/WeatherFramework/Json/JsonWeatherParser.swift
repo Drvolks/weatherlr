@@ -10,6 +10,10 @@ import Foundation
 
 public class JsonWeatherParser {
     private static let nightRegex = try! NSRegularExpression(pattern: "(Ce soir|Soir et nuit|night)", options: [.caseInsensitive])
+    // "60 percent chance of showers" / "60 pour cent de probabilité d'averses".
+    // The daily forecast carries no POP field, so the only chance of rain the
+    // API gives for a day is inside the cloudPrecip sentence.
+    private static let popRegex = try! NSRegularExpression(pattern: "(\\d{1,3})\\s*(?:percent|pour cent)", options: [.caseInsensitive])
     private static let endedRegex = try! NSRegularExpression(pattern: "(TERMINÉ|ENDED)", options: [.caseInsensitive])
 
     let data: Data
@@ -90,7 +94,8 @@ public class JsonWeatherParser {
                 when: "",
                 night: false,
                 dateObservation: dateObservation,
-                iconCode: resolvedIconCode
+                iconCode: resolvedIconCode,
+                precipChance: firstHourly?.lop?.value?.value(for: language)
             )
             result.append(now)
         }
@@ -131,7 +136,8 @@ public class JsonWeatherParser {
                 when: when,
                 night: night,
                 dateObservation: "",
-                iconCode: forecast.abbreviatedForecast?.icon?.value
+                iconCode: forecast.abbreviatedForecast?.icon?.value,
+                precipChance: extractPop(forecast)
             )
 
             // If today's night forecast follows a .now entry, mark .now as night too
@@ -201,6 +207,21 @@ public class JsonWeatherParser {
         default:
             return .na
         }
+    }
+
+    /// Pulls the probability of precipitation out of the forecast wording.
+    func extractPop(_ forecast: Forecast) -> Int? {
+        guard let text = forecast.cloudPrecip?.value(for: language) ?? forecast.textSummary?.value(for: language) else {
+            return nil
+        }
+
+        let range = NSRange(text.startIndex..., in: text)
+        guard let match = Self.popRegex.firstMatch(in: text, options: [], range: range),
+              let valueRange = Range(match.range(at: 1), in: text) else {
+            return nil
+        }
+
+        return Int(text[valueRange])
     }
 
     func extractAlertType(_ alertText: String) -> AlertType {

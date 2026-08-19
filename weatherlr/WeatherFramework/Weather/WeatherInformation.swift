@@ -19,6 +19,8 @@ public class WeatherInformation {
     public var night:Bool
     public var dateObservation:String
     public var iconCode:Int?
+    /// Probability of precipitation in percent, when the forecast provides one.
+    public var precipChance:Int?
 
     public init() {
         temperature = 0
@@ -31,9 +33,10 @@ public class WeatherInformation {
         night = false
         dateObservation = ""
         iconCode = nil
+        precipChance = nil
     }
 
-    public init(temperature: Int, weatherStatus: WeatherStatus, weatherDay: WeatherDay, summary: String, detail: String, tendancy:Tendency, when: String, night: Bool, dateObservation: String, iconCode: Int? = nil) {
+    public init(temperature: Int, weatherStatus: WeatherStatus, weatherDay: WeatherDay, summary: String, detail: String, tendancy:Tendency, when: String, night: Bool, dateObservation: String, iconCode: Int? = nil, precipChance: Int? = nil) {
         self.temperature = temperature
         self.weatherStatus = weatherStatus
         self.weatherDay = weatherDay
@@ -44,11 +47,12 @@ public class WeatherInformation {
         self.night = night
         self.dateObservation = dateObservation
         self.iconCode = iconCode
+        self.precipChance = precipChance
     }
 
     public func image() -> UIImage {
         // Prefer icon code mapping when available
-        if let code = iconCode, let name = WeatherHelper.imageNameForIconCode(code) {
+        if let code = iconCode, let name = WeatherHelper.imageNameForIconCode(code, precipChance: precipChance) {
             if let image = UIImage(named: name) {
                 return image
             }

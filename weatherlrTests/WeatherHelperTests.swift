@@ -101,6 +101,21 @@ class WeatherHelperTests: XCTestCase {
         XCTAssertEqual("smoke", WeatherHelper.imageNameForIconCode(44))
     }
 
+    func testImageNameForIconCode12DowngradesOnLowPop() {
+        // No chance known → keep the full rain artwork
+        XCTAssertEqual("rain", WeatherHelper.imageNameForIconCode(12))
+        XCTAssertEqual("lightRain", WeatherHelper.imageNameForIconCode(12, precipChance: 0))
+        XCTAssertEqual("lightRain", WeatherHelper.imageNameForIconCode(12, precipChance: 40))
+        XCTAssertEqual("lightRain", WeatherHelper.imageNameForIconCode(12, precipChance: 60))
+        XCTAssertEqual("rain", WeatherHelper.imageNameForIconCode(12, precipChance: 61))
+        XCTAssertEqual("rain", WeatherHelper.imageNameForIconCode(12, precipChance: 100))
+    }
+
+    func testImageNameForIconCodePopDoesNotAffectOtherCodes() {
+        XCTAssertEqual("rain", WeatherHelper.imageNameForIconCode(13, precipChance: 10))
+        XCTAssertEqual("snow", WeatherHelper.imageNameForIconCode(17, precipChance: 10))
+    }
+
     func testImageNameForIconCodeUnknownReturnsNil() {
         XCTAssertNil(WeatherHelper.imageNameForIconCode(-1))
         XCTAssertNil(WeatherHelper.imageNameForIconCode(999))

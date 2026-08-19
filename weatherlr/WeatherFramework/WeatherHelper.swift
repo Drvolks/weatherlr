@@ -282,9 +282,18 @@ public class WeatherHelper {
         }
     }
 
+    /// Highest probability of precipitation (percent) that still gets the light
+    /// rain artwork for icon code 12.
+    public static let lightRainPopThreshold = 60
+
     // Environment Canada icon code → image asset name
     // Reference: https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/
-    public static func imageNameForIconCode(_ code: Int) -> String? {
+    ///
+    /// - Parameter precipChance: probability of precipitation, in percent, when
+    ///   known. EC reuses the full "rain" icon (code 12) for anything from a
+    ///   40% chance of showers to steady rain, so a low chance is downgraded to
+    ///   the lighter artwork.
+    public static func imageNameForIconCode(_ code: Int, precipChance: Int? = nil) -> String? {
         switch code {
         // Day-only conditions (0-9)
         case 0:  return "sunny"                              // Sunny
@@ -301,7 +310,11 @@ public class WeatherHelper {
         // Day and night conditions (10-28)
         case 10: return "cloudy"                             // Cloudy / Overcast
         case 11: return "lightRain"                          // Light rain showers
-        case 12: return "rain"                               // Rain showers
+        case 12:                                             // Rain showers
+            if let pop = precipChance, pop <= lightRainPopThreshold {
+                return "lightRain"
+            }
+            return "rain"
         case 13: return "rain"                               // Rain
         case 14: return "freezingRain"                       // Freezing rain
         case 15: return "periodsOfRainOrSnow"                // Rain or snow mixed

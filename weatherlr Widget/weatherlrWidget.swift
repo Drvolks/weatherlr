@@ -212,7 +212,7 @@ struct WeatherTimelineProvider: TimelineProvider {
     }
 
     static func weatherImageName(for info: WeatherInformation) -> String {
-        if let code = info.iconCode, let name = WeatherHelper.imageNameForIconCode(code) {
+        if let code = info.iconCode, let name = WeatherHelper.imageNameForIconCode(code, precipChance: info.precipChance) {
             return name
         }
 

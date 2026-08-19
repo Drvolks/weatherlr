@@ -145,7 +145,7 @@ struct WatchWeatherTimelineProvider: TimelineProvider {
         let temperature = pwsTemp ?? current.temperature
 
         let imageName: String
-        if let code = current.iconCode, let name = WeatherHelper.imageNameForIconCode(code) {
+        if let code = current.iconCode, let name = WeatherHelper.imageNameForIconCode(code, precipChance: current.precipChance) {
             imageName = name
         } else {
             var status = current.weatherStatus

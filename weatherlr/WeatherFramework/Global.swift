@@ -25,6 +25,7 @@ public struct Global {
     public static let pwsStationsKey = "pwsStations"
     public static let pwsTemperatureKey = "pwsTemperature"
     public static let pwsStationNameKey = "pwsStationName"
+    public static let pwsStationIdKey = "pwsStationId"
     public static let pwsTemperatureUpdatedAtKey = "pwsTemperatureUpdatedAt"
     #endif
 }

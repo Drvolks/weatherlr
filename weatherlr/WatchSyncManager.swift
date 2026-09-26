@@ -56,6 +56,9 @@ class WatchSyncManager: NSObject, WCSessionDelegate {
         if let stationName = defaults.string(forKey: Global.pwsStationNameKey) {
             context[Global.pwsStationNameKey] = stationName
         }
+        if let stationId = defaults.string(forKey: Global.pwsStationIdKey) {
+            context[Global.pwsStationIdKey] = stationId
+        }
         if defaults.object(forKey: Global.pwsTemperatureUpdatedAtKey) != nil {
             context[Global.pwsTemperatureUpdatedAtKey] = defaults.double(forKey: Global.pwsTemperatureUpdatedAtKey)
         }

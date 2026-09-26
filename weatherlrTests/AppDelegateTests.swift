@@ -11,25 +11,25 @@ import XCTest
 
 @MainActor
 class AppDelegateTests: XCTestCase {
-    var appDelegate:AppDelegate = AppDelegate()
+    var sceneDelegate = SceneDelegate()
     
     override func setUp() {
         super.setUp()
         
-        appDelegate = AppDelegate()
+        sceneDelegate = SceneDelegate()
     }
     
     func test_getCityIdFromShortcutItem() {
-        var result = appDelegate.getCityIdFromShortcutItem(shortcutName: "City:123")
+        var result = sceneDelegate.getCityIdFromShortcutItem(shortcutName: "City:123")
         XCTAssertEqual("123", result)
         
-        result = appDelegate.getCityIdFromShortcutItem(shortcutName: "City:")
+        result = sceneDelegate.getCityIdFromShortcutItem(shortcutName: "City:")
         XCTAssertEqual("", result)
         
-        result = appDelegate.getCityIdFromShortcutItem(shortcutName: "123")
+        result = sceneDelegate.getCityIdFromShortcutItem(shortcutName: "123")
         XCTAssertEqual("", result)
         
-        result = appDelegate.getCityIdFromShortcutItem(shortcutName: "Test:123")
+        result = sceneDelegate.getCityIdFromShortcutItem(shortcutName: "Test:123")
         XCTAssertEqual("123", result)
     }
     

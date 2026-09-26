@@ -37,6 +37,7 @@
 		6E1627C81FFFDCBE00B2969E /* CellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1627C71FFFDCBE00B2969E /* CellHelper.swift */; };
 		6E24A4C61E3E2E7D0063A839 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6E24A4C51E3E2E7D0063A839 /* test.xml */; };
 		6E29052C1CB2D5550040EB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052B1CB2D5550040EB8B /* AppDelegate.swift */; };
+		5CE0DE1E0000000000000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0DE1E0000000000000001 /* SceneDelegate.swift */; };
 		6E29052E1CB2D5550040EB8B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */; };
 		6E2905311CB2D5550040EB8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E29052F1CB2D5550040EB8B /* Main.storyboard */; };
 		6E2905361CB2D5550040EB8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2905341CB2D5550040EB8B /* LaunchScreen.storyboard */; };
@@ -336,6 +337,7 @@
 		6E24A4C51E3E2E7D0063A839 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
 		6E2905281CB2D5550040EB8B /* weatherlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E29052B1CB2D5550040EB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5CE0DE1E0000000000000001 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6E29052D1CB2D5550040EB8B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		6E2905301CB2D5550040EB8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E2905321CB2D5550040EB8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				6E1627C01FFEB9C400B2969E /* images */,
 				6EB154921D284E6C0005B02A /* weatherlr.entitlements */,
 				6E29052B1CB2D5550040EB8B /* AppDelegate.swift */,
+				5CE0DE1E0000000000000001 /* SceneDelegate.swift */,
 				6EFA11CA00000000DEADBEE1 /* UITestSupport.swift */,
 				6EFA11CA00000000DEADBEE3 /* ui_test_fixture.json */,
 				6E2906001CB2D5550040EB8B /* WatchSyncManager.swift */,
@@ -1117,6 +1120,7 @@
 				6E9F33601CB942C700A9D6A7 /* WeatherHeaderCell.swift in Sources */,
 				6EEBDE611CC5821E00C5B14B /* LangTableViewCell.swift in Sources */,
 				6E29052C1CB2D5550040EB8B /* AppDelegate.swift in Sources */,
+				5CE0DE1E0000000000000002 /* SceneDelegate.swift in Sources */,
 				6EFA11CA00000000DEADBEE2 /* UITestSupport.swift in Sources */,
 				6E2905FF1CB2D5550040EB8B /* WatchSyncManager.swift in Sources */,
 				6E4910CE1CCC3335006D3C82 /* GradientView.swift in Sources */,

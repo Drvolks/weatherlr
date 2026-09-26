@@ -256,10 +256,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if let pws = pws, let tempC = pws.observation.tempC {
                     defaults.set(Int(tempC.rounded()), forKey: Global.pwsTemperatureKey)
                     defaults.set(pws.station.name, forKey: Global.pwsStationNameKey)
+                    defaults.set(pws.station.stationId, forKey: Global.pwsStationIdKey)
                     defaults.set(Date().timeIntervalSince1970, forKey: Global.pwsTemperatureUpdatedAtKey)
                 } else {
                     defaults.removeObject(forKey: Global.pwsTemperatureKey)
                     defaults.removeObject(forKey: Global.pwsStationNameKey)
+                    defaults.removeObject(forKey: Global.pwsStationIdKey)
                     defaults.removeObject(forKey: Global.pwsTemperatureUpdatedAtKey)
                 }
                 WatchSyncManager.shared.syncSettings()

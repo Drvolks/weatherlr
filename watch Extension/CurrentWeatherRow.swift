@@ -34,6 +34,15 @@ struct CurrentWeatherRow: View {
             if weather.weatherDay == WeatherDay.now {
                 Text(temperatureText)
                     .font(.body)
+
+                #if ENABLE_PWS
+                if model.pwsTemperature != nil, let stationId = model.pwsStationId {
+                    Text(stationId)
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+                #endif
             }
         }
         .padding(5)

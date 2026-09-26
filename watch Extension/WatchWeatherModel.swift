@@ -24,6 +24,7 @@ final class WatchWeatherModel {
     #if ENABLE_PWS
     var pwsTemperature: Int?
     var pwsStationName: String?
+    var pwsStationId: String?
     var pwsUpdatedAt: Date?
     #endif
 
@@ -43,6 +44,7 @@ final class WatchWeatherModel {
         #if ENABLE_PWS
         pwsTemperature = nil
         pwsStationName = nil
+        pwsStationId = nil
         pwsUpdatedAt = nil
         #endif
     }
@@ -153,7 +155,12 @@ final class WatchWeatherModel {
         updatedDate = wrapper.lastRefresh
 
         #if ENABLE_PWS
+        // Show whatever reading we already have right away, then fetch a fresh one
+        // directly from the PWS API instead of waiting for the iPhone to push it.
         loadSyncedPWS()
+        if let city = wrapper.city {
+            Task { await fetchPWS(for: city) }
+        }
         #endif
     }
 
@@ -231,22 +238,23 @@ final class WatchWeatherModel {
         return closestName
     }
 
-    nonisolated static func syncedPWSData() -> (temperature: Int?, stationName: String?, updatedAt: Date?) {
+    nonisolated static func syncedPWSData() -> (temperature: Int?, stationName: String?, stationId: String?, updatedAt: Date?) {
         let defaults = UserDefaults(suiteName: Global.SettingGroup)!
         // The temperature is the source of truth: if it is present, a PWS reading is in
         // play. The station name is best-effort — it may be missing if the sync delivered
         // temperature first, so don't drop the temperature just because the name is absent.
         guard defaults.object(forKey: Global.pwsTemperatureKey) != nil else {
-            return (nil, nil, nil)
+            return (nil, nil, nil, nil)
         }
         let stationName = defaults.string(forKey: Global.pwsStationNameKey)
+        let stationId = defaults.string(forKey: Global.pwsStationIdKey)
         let updatedAt: Date?
         if defaults.object(forKey: Global.pwsTemperatureUpdatedAtKey) != nil {
             updatedAt = Date(timeIntervalSince1970: defaults.double(forKey: Global.pwsTemperatureUpdatedAtKey))
         } else {
             updatedAt = nil
         }
-        return (defaults.integer(forKey: Global.pwsTemperatureKey), stationName, updatedAt)
+        return (defaults.integer(forKey: Global.pwsTemperatureKey), stationName, stationId, updatedAt)
     }
 
     nonisolated static func isPWSFresh(updatedAt: Date?) -> Bool {
@@ -260,12 +268,49 @@ final class WatchWeatherModel {
         if Self.isPWSFresh(updatedAt: synced.updatedAt) {
             self.pwsTemperature = synced.temperature
             self.pwsStationName = synced.stationName ?? Self.closestStationName(for: wrapper.city)
+            self.pwsStationId = synced.stationId
             self.pwsUpdatedAt = synced.updatedAt
         } else {
             self.pwsTemperature = nil
             self.pwsStationName = nil
+            self.pwsStationId = nil
             self.pwsUpdatedAt = nil
         }
+    }
+
+    private func fetchPWS(for city: City) async {
+        guard PreferenceHelper.hasPWSCredentials(),
+              !PreferenceHelper.getPWSStations().isEmpty else {
+            return
+        }
+
+        let result = await PWSService.shared.findClosestStation(to: city)
+
+        // The user may have switched city while the request was in flight.
+        guard wrapper.city?.id == city.id,
+              let defaults = UserDefaults(suiteName: Global.SettingGroup) else {
+            return
+        }
+
+        if let result, let tempC = result.observation.tempC {
+            let now = Date()
+            // Persist under the same keys the iPhone syncs, so the complication and the
+            // next launch pick up the Watch's own reading.
+            defaults.set(Int(tempC.rounded()), forKey: Global.pwsTemperatureKey)
+            defaults.set(result.station.name, forKey: Global.pwsStationNameKey)
+            defaults.set(result.station.stationId, forKey: Global.pwsStationIdKey)
+            defaults.set(now.timeIntervalSince1970, forKey: Global.pwsTemperatureUpdatedAtKey)
+        } else {
+            // No station in range for this city (or none reporting): drop any stale reading
+            // rather than keep showing a value that belongs elsewhere.
+            defaults.removeObject(forKey: Global.pwsTemperatureKey)
+            defaults.removeObject(forKey: Global.pwsStationNameKey)
+            defaults.removeObject(forKey: Global.pwsStationIdKey)
+            defaults.removeObject(forKey: Global.pwsTemperatureUpdatedAtKey)
+        }
+
+        loadSyncedPWS()
+        updateComplication()
     }
     #endif
 

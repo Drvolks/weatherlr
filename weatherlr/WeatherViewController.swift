@@ -61,7 +61,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         locationServices = LocationServices()
         locationServices?.delegate = self
 
-        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIScene.willEnterForegroundNotification, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(radarDataDidUpdate), name: RadarTimeStepCache.didUpdateNotification, object: nil)
 
